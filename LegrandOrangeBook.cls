@@ -122,7 +122,11 @@
 	\begin{tikzpicture}[remember picture, overlay]
 		\node[anchor=center, rectangle, fill=ocre!20, inner sep=0pt, minimum height=\paperheight, minimum width=\paperwidth] at (current page.center) {}; % Background color
 		\node[anchor=north west, inner sep=0pt, xshift=\Gm@lmargin, yshift=-\Gm@tmargin] at (current page.north west) {\fontsize{200pt}{200pt}\selectfont\sffamily\bfseries\textcolor{ocre!40}{#1}}; % Part number
-		\node[anchor=north east, inner sep=0pt, xshift=-\Gm@rmargin, yshift=-\Gm@tmargin] at (current page.north east) {\fontsize{20pt}{20pt}\selectfont\sffamily\bfseries\textcolor{part_title}{\strut #2}}; % Part title
+		\node[anchor=north east, inner sep=0pt, xshift=-\Gm@rmargin, yshift=-\Gm@tmargin] at (current page.north east) {
+			\parbox[t][][t]{10cm}{
+				\fontsize{30pt}{30pt}\selectfont\sffamily\bfseries\textcolor{part_title}{\strut #2}
+			} % Part title
+		};
 		\node[anchor=south east, inner sep=0pt, xshift=-\Gm@rmargin, yshift=\Gm@bmargin] at (current page.south east) { % Mini table of contents
 			\parbox[t][][t]{10cm}{ % Width of box holding the mini ToC
 				\printcontents[part]{l}{0}{\setcounter{tocdepth}{1}} % Display the mini table of contents showing chapters and sections, change tocdepth to 2 to also show subsections or 0 to only show chapters
@@ -174,7 +178,7 @@
 			rounded corners=10pt, % Rounded corners amount
 			draw=ocre, % Border line color
 			fill=black!5, % Box background color
-			fill opacity=0.6, % Background transparency
+			fill opacity=0.8, % Background transparency
 			text opacity=1, % Text transparency
 			inner ysep=12.5pt, % Inner vertical padding
 			inner xsep=20pt, % Inner horizontal padding
@@ -310,8 +314,8 @@
 		}%
 		\hspace{4pt}%
 		% Part title box
-		\colorbox{ocre!40}{% Background color
-			\strut\parbox[c][.7cm]{\linewidth-1.25cm}{% Box size
+		\colorbox{ocre!30}{% Background color
+			\strut\parbox[c][.8cm]{\linewidth-1.25cm}{% Box size
 				\centering\Large\sffamily #1% Part title
 			}%
 		}%
@@ -333,7 +337,7 @@
 
 \titlecontents{part} % Section type being modified
 [1.25cm] % Left indentation
-{\addvspace{20pt}\Large\sffamily\bfseries\hypersetup{linkcolor=black}} % Before code
+{\addvspace{20pt}\Large\sffamily\bfseries\hypersetup{linkcolor=part_title}} % Before code
 {\tocentrypartnumbered} % Formatting of numbered sections of this type
 {\tocentrypartunnumbered} % Formatting of numberless sections of this type
 {} % Formatting of the filler to the right of the heading and the page number
