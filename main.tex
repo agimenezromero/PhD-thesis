@@ -1,0 +1,390 @@
+\documentclass[
+	10pt, % Default font size, select one of 10pt, 11pt or 12pt
+	fleqn, % Left align equations
+	a4paper, %a4paper, b5paper
+]{LegrandOrangeBook}
+
+% Book information for PDF metadata, remove/comment this block if not required 
+\hypersetup{
+	pdftitle={Title}, % Title field
+	pdfauthor={Author}, % Author field
+	pdfsubject={Subject}, % Subject field
+	pdfkeywords={Keyword1, Keyword2, ...}, % Keywords
+	pdfcreator={LaTeX}, % Content creator field
+}
+
+\DeclareUnicodeCharacter{0301}{*************************************}
+
+% Bibliography files
+\addbibresource{refs.bib}
+
+\definecolor{ocre}{RGB}{40, 173, 213} % Define the color used for highlighting throughout the book
+\definecolor{part_title}{RGB}{213, 80, 40} % Define the color used for the title of parts
+
+\chapterimage{} % Chapter heading image
+\chapterspaceabove{6.5cm} % Default whitespace from the top of the page to the chapter title on chapter pages
+\chapterspacebelow{6.75cm} % Default amount of vertical whitespace from the top margin to the start of the text on chapter pages
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+%----------------------------------------------------------------------------------------
+%	COVER PAGE
+%----------------------------------------------------------------------------------------
+
+\input{Front/cover.tex}
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\input{Front/title_page.tex}
+
+%----------------------------------------------------------------------------------------
+%	COPYRIGHT PAGE
+%----------------------------------------------------------------------------------------
+
+\thispagestyle{empty} % Suppress headers and footers on this page
+
+~\vfill % Push the text down to the bottom of the page
+\sffamily
+
+\noindent \textbf{Supervisors:}
+
+\noindent Manuel Matías \\
+
+\noindent Àlex Giménez Romero.
+
+\noindent \textit{Theoretical and data-driven models in Ecology.} \copyright
+
+\noindent Palma de Mallorca, July 2024
+\pagebreak
+
+%----------------------------------------------------------------------------------------
+%	DEDICATION
+%----------------------------------------------------------------------------------------
+\input{Front/Dedication.tex}
+\newpage
+\thispagestyle{plain} % empty
+\mbox{}
+
+%----------------------------------------------------------------------------------------
+%	INTERNATIONAL PhD PROGRAM IN PHYSICS
+%----------------------------------------------------------------------------------------
+
+\newpage
+\thispagestyle{plain} % empty
+\mbox{}
+\input{Front/International.tex}
+\newpage
+\thispagestyle{plain} % empty
+\mbox{}
+
+%----------------------------------------------------------------------------------------
+%	ACKNOWLEDGEMENTS
+%----------------------------------------------------------------------------------------
+
+\input{Front/Acknowledgements.tex}
+\newpage
+\thispagestyle{plain} % empty
+\mbox{}
+
+%----------------------------------------------------------------------------------------
+%	RESUM
+%----------------------------------------------------------------------------------------
+
+\input{Front/Resum.tex}
+
+%----------------------------------------------------------------------------------------
+%	RESUMEN
+%----------------------------------------------------------------------------------------
+
+\input{Front/Resumen.tex}
+
+%----------------------------------------------------------------------------------------
+%	ABSTRACT
+%----------------------------------------------------------------------------------------
+
+\input{Front/Abstract.tex}
+
+%----------------------------------------------------------------------------------------
+%	TABLE OF CONTENTS
+%----------------------------------------------------------------------------------------
+
+\pagestyle{empty} % Disable headers and footers for the following pages
+
+\tableofcontents % Output the table of contents
+
+%\listoffigures % Output the list of figures, comment or remove this command if not required
+
+%\listoftables % Output the list of tables, comment or remove this command if not required
+
+\pagestyle{fancy} % Enable default headers and footers again
+
+\cleardoublepage % Start the following content on a new page
+
+%----------------------------------------------------------------------------------------
+%	LIST OF PUBLICATIONS
+%----------------------------------------------------------------------------------------
+
+\chapterimage{} % Chapter heading image
+\chapterspaceabove{6.75cm} % Whitespace from the top of the page to the chapter title on chapter pages
+\chapterspacebelow{7.25cm} % Amount of vertical whitespace from the top margin to the start of the text on chapter pages
+
+\chapter*{List of publications}
+
+\begin{enumerate}
+	\item \fullcite{Abella-2022}
+	      % Leave some space between the publications
+	      \vspace{0.5 cm}
+	\item \fullcite{Abella-2022-AME}
+	      \vspace{0.5 cm}
+	\item Aging in Symmetrical Threshold Models
+	      \vspace{0.5 cm}
+	\item Idealista model for complex systems housing
+	      \vspace{0.5 cm}
+	\item Idealista spatial segmentation of the real state market
+	      \vspace{0.5 cm}
+\end{enumerate}
+
+%----------------------------------------------------------------------------------------
+%	PART I: Introduction
+%----------------------------------------------------------------------------------------
+
+\part{Introduction}
+
+%----------------------------------------------------------------------------------------
+%	Introduction
+%----------------------------------------------------------------------------------------
+\chapterimage{orange2.png}
+\chapterspaceabove{6.75cm}
+\chapterspacebelow{7.25cm}
+
+\chapter{The global biodiversity crisis}
+%\input{Chapters/Introduction.tex}
+
+%----------------------------------------------------------------------------------------
+%	Why do we need models?
+%----------------------------------------------------------------------------------------
+\chapterimage{orange3.png}
+\chapterspaceabove{6.75cm}
+\chapterspacebelow{7.25cm}
+
+\chapter{Why do we need models?}
+%\input{Chapters/Models.tex}
+
+%----------------------------------------------------------------------------------------
+%	Main original contributions of this thesis
+%----------------------------------------------------------------------------------------
+\chapterimage{orange3.png}
+\chapterspaceabove{6.75cm}
+\chapterspacebelow{7.25cm}
+
+\chapter{Main original contributions of this thesis}
+%\input{Chapters/Contributions.tex}
+
+%----------------------------------------------------------------------------------------
+%	PART II: Towards more realistic models for Xylella fastidiosa spread
+%----------------------------------------------------------------------------------------
+
+\part{Realistic models for vector-borne plant diseases}
+
+%----------------------------------------------------------------------------------------
+%	Vector-borne diseases with non-stationary vector populations: the case
+%   of growing and decaying populations
+%----------------------------------------------------------------------------------------
+\chapterimage{orange2.png}
+\chapterspaceabove{6.75cm}
+\chapterspacebelow{7.25cm}
+
+\chapter{Vector-borne diseases with non-stationary vector populations: the case
+  of growing and decaying populations}
+%\input{Chapters/Aging_Threshold.tex}
+
+%----------------------------------------------------------------------------------------
+%	A compartmental model for Xylella fastidiosa diseases with explicit
+%   vector seasonal dynamics
+%----------------------------------------------------------------------------------------
+\chapterimage{orange2.png}
+\chapterspaceabove{6.75cm}
+\chapterspacebelow{7.25cm}
+
+\chapter{A compartmental model for \textit{Xylella fastidiosa} diseases with
+  explicit vector seasonal dynamics}
+%\input{Chapters/Aging_Schelling.tex}
+
+%----------------------------------------------------------------------------------------
+%	Degree-day-based model to predict egg hatching of Philaenus spumarius
+%   (Hemiptera: Aphrophoridae), the main vector of Xylella fastidiosa in Europe
+%----------------------------------------------------------------------------------------
+\chapterimage{orange2.png}
+\chapterspaceabove{6.75cm}
+\chapterspacebelow{7.25cm}
+
+\chapter{Degree-day-based model to predict egg hatching of Philaenus spumarius
+  (Hemiptera: Aphrophoridae), the main vector of \textit{Xylella fastidiosa} in
+  Europe}
+%\input{Chapters/Aging_Schelling.tex}
+
+%----------------------------------------------------------------------------------------
+%	PART III: Modelling the risk of establishment of vector-borne plant diseases
+%----------------------------------------------------------------------------------------
+
+\part{Modelling the risk of vector-borne plant diseases}
+%----------------------------------------------------------------------------------------
+%	Global predictions for the risk of establishment of Pierce’s disease
+%   of grapevines
+%----------------------------------------------------------------------------------------
+\chapterimage{orange3.png}
+\chapterspaceabove{6.75cm}
+\chapterspacebelow{7.25cm}
+
+\chapter{Global predictions for the risk of establishment of Pierce’s disease
+  of grapevines}
+%\input{Chapters/Idealista_dynamics.tex}
+
+%----------------------------------------------------------------------------------------
+%	Global warming significantly increases the risk of Pierce's disease epidemics
+%   in European vineyards	
+%----------------------------------------------------------------------------------------
+\chapterimage{orange3.png}
+\chapterspaceabove{6.75cm}
+\chapterspacebelow{7.25cm}
+
+\chapter{Global warming significantly increases the risk of Pierce's disease
+  epidemics in European vineyards}
+%\input{Chapters/Idealista_segmentation.tex}
+
+%----------------------------------------------------------------------------------------
+%	High-resolution climate data reveals increased risk of Pierce's Disease for 
+%   grapevines worldwide	
+%----------------------------------------------------------------------------------------
+\chapterimage{orange3.png}
+\chapterspaceabove{6.75cm}
+\chapterspacebelow{7.25cm}
+
+\chapter{High-resolution climate data reveals increased risk of Pierce's
+  Disease for grapevines worldwide}
+%\input{Chapters/Idealista_segmentation.tex}
+
+%----------------------------------------------------------------------------------------
+%	PART IV: A global analysis of coral reef structure
+%----------------------------------------------------------------------------------------
+
+\part{Data-driven methods for global ecological problems}
+
+%----------------------------------------------------------------------------------------
+%	A comprehensive dataset on global coral reefs size and geometry
+%----------------------------------------------------------------------------------------
+\chapterimage{orange3.png}
+\chapterspaceabove{6.75cm}
+\chapterspacebelow{7.25cm}
+
+\chapter{A comprehensive dataset on global coral reefs size and geometry}
+%\input{Chapters/Idealista_segmentation.tex}
+
+%----------------------------------------------------------------------------------------
+%	Universal spatial properties of coral reefs	
+%----------------------------------------------------------------------------------------
+\chapterimage{orange3.png}
+\chapterspaceabove{6.75cm}
+\chapterspacebelow{7.25cm}
+
+\chapter{Universal spatial properties of coral reefs}
+%\input{Chapters/Idealista_segmentation.tex}
+
+%----------------------------------------------------------------------------------------
+%	Mapping the distribution of seagrass meadows from space with deep
+%   convolutional neural networks
+%----------------------------------------------------------------------------------------
+\chapterimage{orange3.png}
+\chapterspaceabove{6.75cm}
+\chapterspacebelow{7.25cm}
+
+\chapter{Mapping the distribution of seagrass meadows from space with deep
+  convolutional neural networks}
+%\input{Chapters/Idealista_segmentation.tex}
+
+\stopcontents[part] % Manually stop the 'part' table of contents here so the previous Part page table of contents doesn't list the following chapters
+
+%----------------------------------------------------------------------------------------
+%	BIBLIOGRAPHY
+%----------------------------------------------------------------------------------------
+
+\chapterimage{} % Chapter heading image
+\chapterspaceabove{2.5cm} % Whitespace from the top of the page to the chapter title on chapter pages
+\chapterspacebelow{2cm} % Amount of vertical whitespace from the top margin to the start of the text on chapter pages
+
+%------------------------------------------------
+
+\chapter*{Bibliography}
+\markboth{\sffamily\normalsize\bfseries
+	Bibliography}{\sffamily\normalsize\bfseries Bibliography}
+% Set the page headers to display a Bibliography chapter name
+\printbibliography
+
+%\addcontentsline{toc}{chapter}{\textcolor{ocre}{Bibliography}} % Add a Bibliography heading to the table of contents
+
+%\section*{Articles}
+%\addcontentsline{toc}{section}{Articles} % Add the Articles subheading to the table of contents
+
+%\printbibliography[heading=bibempty, type=article] % Output article bibliography entries
+
+%\section*{Books}
+%\addcontentsline{toc}{section}{Books} % Add the Books subheading to the table of contents
+
+%\printbibliography[heading=bibempty, type=book] % Output book bibliography entries
+
+%----------------------------------------------------------------------------------------
+%	INDEX
+%----------------------------------------------------------------------------------------
+
+\cleardoublepage % Make sure the index starts on an odd (right side) page
+\phantomsection
+\addcontentsline{toc}{chapter}{\textcolor{ocre}{Index}}
+% Add an Index heading to the table of contents
+\printindex % Output the index
+
+%----------------------------------------------------------------------------------------
+%	APPENDICES
+%----------------------------------------------------------------------------------------
+
+\chapterimage{orange2.png} % Chapter heading image
+\chapterspaceabove{6.75cm} % Whitespace from the top of the page to the chapter title on chapter pages
+\chapterspacebelow{7.25cm} % Amount of vertical whitespace from the top margin to the start of the text on chapter pages
+
+% \begin{appendices}
+
+% 	\renewcommand{\chaptername}{Appendix}
+% 	% Change the chapter name to Appendix, i.e. "Appendix A: Title", instead of "Chapter A: Title" in the headers
+
+% 	%------------------------------------------------
+
+% 	\chapterimage{orange2.png}
+% 	\chapterspaceabove{6.75cm}
+% 	\chapterspacebelow{7.25cm}
+
+% 	\chapter{Effect of a higher vacancy density $\rho_{v}$ in the
+% 	  coarsening
+% 	  dynamics of the Schelling model}
+% 	\input{Chapters/Appendix_Schelling.tex}
+
+% 	%------------------------------------------------
+
+% 	\chapterimage{orange3.png}
+% 	\chapterspaceabove{6.75cm}
+% 	\chapterspacebelow{7.25cm}
+
+% 	\chapter{\label{app:DERIVATION OF MASTER EQUATION WITH AGING}
+% 	  Generalized
+% 	  master equation for binary state dynamics with aging}
+% 	\input{Chapters/Appendix2_Threshold.tex}
+
+% 	%------------------------------------------------
+
+% \end{appendices}
+
+%----------------------------------------------------------------------------------------
+
+\end{document}
