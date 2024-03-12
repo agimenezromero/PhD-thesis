@@ -28,6 +28,26 @@
 
 %----------------------------------------------------------------------------------------
 
+\usepackage{siunitx}
+\usepackage[capitalise, nameinlink]{cleveref}
+\usepackage{float}
+\usepackage{physics}
+\usepackage{arydshln}
+\usepackage{esint}
+
+\usepackage{subfigure}
+\usepackage{caption}
+
+%% My commands %%
+\newcommand{\dif}{\mathrm{d}}
+\newcommand{\avg}[1]{\left<#1\right>}
+\newcommand{\parentesi}[1]{\left(#1\right)}
+\newcommand{\claudator}[1]{\left[#1\right]}
+\newcommand{\keys}[1]{\left\{#1\right\}}
+\newcommand{\limitss}[2]{_{#1}^{#2}}
+\newcommand{\dpart}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\der}[2]{\frac{\dif #1}{\dif #2}}
+
 \begin{document}
 
 %----------------------------------------------------------------------------------------
@@ -136,6 +156,8 @@
 \chapter*{List of publications}
 
 \begin{enumerate}
+	\item \fullcite{GimenezRomero2021}
+	      \vspace{0.5 cm}
 	\item \fullcite{Flecha2022}
 	      \vspace{0.5 cm}
 	\item \fullcite{GimenezRomero_2022_RSos}
@@ -146,6 +168,19 @@
 	      \vspace{0.5 cm}
 	\item \fullcite{GimenezRomero2023}
 	      \vspace{0.5 cm}
+	\item \fullcite{GimenezRomero2023_PD}
+	      \vspace{0.5 cm}
+	\item \fullcite{GimenezRomero2024}
+	      \vspace{0.5 cm}
+	\item A comprehensive dataset on global coral reefs size and geometry
+	\item Universal spatial properties of coral reefs
+	\item Mapping the distribution of seagrass meadows from space with deep
+	      convolutional neural networks
+\end{enumerate}
+
+\chapter*{Other publications}
+
+\begin{enumerate}
 	\item \fullcite{Lago2023}
 	      \vspace{0.5 cm}
 \end{enumerate}
@@ -184,10 +219,10 @@
 \chapterspacebelow{7.25cm}
 
 \chapter{Main original contributions of this thesis}
-%\input{Chapters/Contributions.tex}
+\input{Chapters/Contributions.tex}
 
 %----------------------------------------------------------------------------------------
-%	PART II: Towards more realistic models for Xylella fastidiosa spread
+%	PART II: Modelling parasite-produced marine diseases
 %----------------------------------------------------------------------------------------
 \part{Modelling parasite-produced marine diseases}
 
@@ -201,6 +236,7 @@
 
 \chapter{Modelling parasite-produced marine diseases: The case of the mass
   mortality event of \textit{Pinna nobilis}}
+\input{Chapters/Nacras_I.tex}
 
 %----------------------------------------------------------------------------------------
 %	Spatial effects in parasite-induced marine diseases of immobile hosts
@@ -210,6 +246,7 @@
 \chapterspacebelow{7.25cm}
 
 \chapter{Spatial effects in parasite-induced marine diseases of immobile hosts}
+\input{Chapters/Nacras_II.tex}
 
 %----------------------------------------------------------------------------------------
 %	PART III: Towards more realistic models for Xylella fastidiosa spread
@@ -227,7 +264,7 @@
 
 \chapter{Vector-borne diseases with non-stationary vector populations: the case
   of growing and decaying populations}
-%\input{Chapters/Aging_Threshold.tex}
+\input{Chapters/Xf_PRE.tex}
 
 %----------------------------------------------------------------------------------------
 %	A compartmental model for Xylella fastidiosa diseases with explicit
@@ -239,19 +276,6 @@
 
 \chapter{A compartmental model for \textit{Xylella fastidiosa} diseases with
   explicit vector seasonal dynamics}
-%\input{Chapters/Aging_Schelling.tex}
-
-%----------------------------------------------------------------------------------------
-%	Degree-day-based model to predict egg hatching of Philaenus spumarius
-%   (Hemiptera: Aphrophoridae), the main vector of Xylella fastidiosa in Europe
-%----------------------------------------------------------------------------------------
-\chapterimage{philaenus.jpg}
-\chapterspaceabove{6.75cm}
-\chapterspacebelow{7.25cm}
-
-\chapter{Degree-day-based model to predict egg hatching of Philaenus spumarius
-  (Hemiptera: Aphrophoridae), the main vector of \textit{Xylella fastidiosa} in
-  Europe}
 %\input{Chapters/Aging_Schelling.tex}
 
 %----------------------------------------------------------------------------------------
@@ -319,6 +343,18 @@
 \chapterspacebelow{7.25cm}
 
 \chapter{Universal spatial properties of coral reefs}
+%\input{Chapters/Idealista_segmentation.tex}
+
+%----------------------------------------------------------------------------------------
+%	pH trends and seasonal cycle in the coastal Balearic Sea reconstructed
+%   through machine learning
+%----------------------------------------------------------------------------------------
+\chapterimage{mar.jpg}
+\chapterspaceabove{6.75cm}
+\chapterspacebelow{7.25cm}
+
+\chapter{pH trends and seasonal cycle in the coastal Balearic Sea reconstructed
+  through machine learning}
 %\input{Chapters/Idealista_segmentation.tex}
 
 %----------------------------------------------------------------------------------------
