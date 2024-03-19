@@ -1,3 +1,28 @@
+\vspace{1cm}
+
+\textbf{Àlex Giménez-Romero$^{1}$, Federico Vázquez$^{2,1}$, Cristóbal
+    López$^{1}$, Manuel A. Matías$^{1}$}
+
+\vspace{1cm}
+
+\begin{enumerate}
+    \small
+    \item Instituto de Física Interdisciplinar y Sistemas Complejos, IFISC
+          (CSIC-UIB), Palma de Mallorca 07122, Spain
+    \item Instituto de Cálculo, FCEyN, Universidad de Buenos Aires and CONICET,
+          Buenos Aires, Argentina
+
+\end{enumerate}
+
+\vspace{1cm}
+
+\textbf{Published as}
+
+\vspace{0.5cm}
+
+\fullcite{GimenezRomero_2022_RSos}
+
+\newpage
 \section{Introduction}
 
 Wildlife emergent infectious diseases represent a substantial threat to
@@ -150,21 +175,9 @@ a new infection occurs a parasite of that particular site is removed. Infected
 individuals die at rate $\gamma$ and produce parasites at rate $\lambda$, while
 parasites die at rate $\mu$. Parasites move randomly between the four
 neighbouring lattice sites at rate $\kappa$, which corresponds to a diffusive
-motion. \cref{tab:my_label} contains the definitions of the variables and
-parameters of the model , \cref{fig:IBM} shows a schematic representation of
-the dynamics and \cref{eq:scheme} summarises the reactive events
-\begin{equation}\label{eq:scheme}
-    S+P \stackrel{\beta}{\rightarrow} I + \varnothing \quad I
-    \stackrel{\gamma}{\rightarrow} R \quad I \stackrel{\lambda}{\rightarrow}
-    I+P
-    \quad P \stackrel{\mu}{\rightarrow} \varnothing \ .
-\end{equation}
-
-Formally, the model is mathematically described by a system of $N$ master
-equations for the probabilities of the states in each lattice site $i$. This is
-very difficult to manage analytically, so the time evolution of the model is
-numerically solved using Gillespie's algorithm \cite{Gillespie1977} (the code
-can be found in \cite{CODE}).
+motion. \cref{tab:IBM_params} contains the definitions of the variables and
+parameters of the model and \cref{fig:IBM} shows a schematic representation of
+the dynamics.
 
 \begin{figure}[H]
     \centering
@@ -183,7 +196,7 @@ can be found in \cite{CODE}).
 \begin{table}[H]
     \centering
     \caption{Variables and parameters of the model}
-    \resizebox{\columnwidth}{!}{
+    \resizebox{0.8\columnwidth}{!}{
         \begin{tabular}{cl}
             \hline \hline
             \textbf{Variable/Parameter} & \textbf{Definition}
@@ -213,8 +226,21 @@ can be found in \cite{CODE}).
             \\ \hline \hline
         \end{tabular}
     }
-    \label{tab:my_label}
+    \label{tab:IBM_params}
 \end{table}
+
+Formally, the model is mathematically described by a system of $N$ master
+equations for the probabilities of the states in each lattice site $i$.
+\cref{eq:scheme} summarises the reactive events. This is
+very difficult to manage analytically, so the time evolution of the model is
+numerically solved using Gillespie's algorithm \cite{Gillespie1977} (the code
+can be found in \cite{CODE}).
+\begin{equation}\label{eq:scheme}
+    S+P \stackrel{\beta}{\rightarrow} I + \varnothing \quad I
+    \stackrel{\gamma}{\rightarrow} R \quad I \stackrel{\lambda}{\rightarrow}
+    I+P
+    \quad P \stackrel{\mu}{\rightarrow} \varnothing
+\end{equation}
 
 \section{Results}\label{sec:results}
 In this section several features of the model are studied, both numerically
@@ -274,17 +300,6 @@ final number of dead individuals (cf. \cref{app:Rinf}),
 with $\displaystyle\xi=S(0)\frac{\beta\parentesi{\lambda-\gamma}}{\mu\gamma}$
 and $\displaystyle C=P_0+\frac{\lambda}{\gamma}\parentesi{S(0)+I(0)}-S(0)$.
 
-The non-spatial limit of the model has been evaluated by comparing realisations
-of the stochastic model (in the limit $\kappa\gg\mu,\beta$) with numerical
-solutions of the non-spatial ODE system of \cref{eq:SIRP_MF}. Furthermore, the
-analytical expression for $R(\infty)$ using the non-spatial model,
-\cref{eq:R_inf}, is also compared to the numerical results of the individual
-based model. As shown in \cref{fig:MF_limit} (a)-(c), as $\kappa$ is increased
-compared to $\mu$ the individual based model approaches the non-spatial one.
-\cref{fig:MF_limit}(d) shows how the numerical results for $R(\infty)$ for
-different $R_0$ values approach the analytical solution in the non-spatial
-limit.
-
 \begin{figure}[H]
     \centering
     \includegraphics[width=\columnwidth]{Figures/MF_comparison.png}
@@ -302,6 +317,17 @@ limit.
         result.}
     \label{fig:MF_limit}
 \end{figure}
+
+The non-spatial limit of the model has been evaluated by comparing realisations
+of the stochastic model (in the limit $\kappa\gg\mu,\beta$) with numerical
+solutions of the non-spatial ODE system of \cref{eq:SIRP_MF}. Furthermore, the
+analytical expression for $R(\infty)$ using the non-spatial model,
+\cref{eq:R_inf}, is also compared to the numerical results of the individual
+based model. As shown in \cref{fig:MF_limit} (a)-(c), as $\kappa$ is increased
+compared to $\mu$ the individual based model approaches the non-spatial one.
+\cref{fig:MF_limit}(d) shows how the numerical results for $R(\infty)$ for
+different $R_0$ values approach the analytical solution in the non-spatial
+limit.
 
 \subsection{Approximate relation between parasites and infected hosts}
 
@@ -553,7 +579,7 @@ agreement with other mathematically similar models \cite{Bertuzzo2010}.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.6\textwidth]{Figures/Front_velocity.png}
+    \includegraphics[width=1\textwidth]{Figures/Front_velocity.png}
     \caption{(a) Disease spreading speed as function of the square root of
         the parasite mobility for several values of $R_0$. The plot shows a
         remarkable
@@ -563,25 +589,6 @@ agreement with other mathematically similar models \cite{Bertuzzo2010}.
         several
         values of the parasite mobility.}
     \label{fig:front_velocity}
-\end{figure}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=\textwidth]{Figures/Extinction_time.png}
-    \caption{(a) Extinction time for some values of the parasite mobility.
-        (b) Comparison of the critical $R_0$ value computed with
-        \cref{eq:R_0ibm}
-        compared to the values obtained numerically by computing the maximum of
-        the
-        extinction time. (c) Scaling of the extinction time with several values
-        of the
-        parasite mobility. (d) Representation of the square of the extinction
-        time as
-        function of the inverse of the parasite mobility. The inset shows the
-        zone
-        where this relation has been computed, showing a good agreement with
-        \cref{eq:t_ext}.}
-    \label{fig:extinction_time}
 \end{figure}
 
 The extinction time is defined as the time elapsed from the beginning of
@@ -615,6 +622,25 @@ the faster the epidemic will reach its absorbing state with a non-negligible
 number of dead individuals. So, with this interpretation, the peaks of the
 extinction time should coincide with the epidemic threshold for each value of
 the parasite mobility.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{Figures/Extinction_time.png}
+    \caption{(a) Extinction time for some values of the parasite mobility.
+        (b) Comparison of the critical $R_0$ value computed with
+        \cref{eq:R_0ibm}
+        compared to the values obtained numerically by computing the maximum of
+        the
+        extinction time. (c) Scaling of the extinction time with several values
+        of the
+        parasite mobility. (d) Representation of the square of the extinction
+        time as
+        function of the inverse of the parasite mobility. The inset shows the
+        zone
+        where this relation has been computed, showing a good agreement with
+        \cref{eq:t_ext}.}
+    \label{fig:extinction_time}
+\end{figure}
 
 In \cref{fig:extinction_time}(b) we compare the numerical value of $R_0$ at
 which the extinction time peaks with the theoretical value of $R_0^c$, computed

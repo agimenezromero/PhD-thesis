@@ -1,4 +1,32 @@
-\section{Introduction} \label{sec:Introduction_Nacras_I}
+\vspace{1cm}
+
+\textbf{Àlex Giménez-Romero$^{1}$, Amalia Grau$^{2,3}$, Iris E.
+    Hendriks$^{4}$, Manuel A. Matías$^{1}$}
+
+\vspace{1cm}
+
+\begin{enumerate}
+    \small
+    \item Instituto de Física Interdisciplinar y Sistemas Complejos, IFISC
+          (CSIC-UIB), Palma de Mallorca 07122, Spain
+    \item Laboratori d’Investigacions Marines i Aqüicultura (LIMIA), Govern de
+          les Illes Balears, Av. Gabriel Roca 69 E-07158 Port d’Andratx,
+          Mallorca, Spain
+    \item INAGEA (INIA-CAIB-UIB), Campus UIB, E-07122 Palma de Mallorca, Spain
+    \item Instituto Mediterráneo de Estudios Avanzados, IMEDEA (CSIC-UIB),
+          E-07190 Esporles, Mallorca, Spain
+\end{enumerate}
+
+\vspace{1cm}
+
+\textbf{Published as}
+
+\vspace{0.5cm}
+
+\fullcite{GimenezRomero2021}
+
+\newpage
+\section{Introduction}\label{sec:Introduction_Nacras_I}
 
 Marine organisms, like their terrestrial counterparts, can serve as hosts
 for a diversity of parasites and pathogens present in the ecosystem, which are
@@ -15,7 +43,6 @@ appropriate scales (spatial and temporal) and biological organisation levels
 (species, populations and communities) is crucial to accurately anticipate
 future changes in marine ecosystems and propose adapted management and
 conservation plans \cite{Pairaud2014}. Thus, there is a strong need to address
-
 the mechanism of disease propagation in marine organisms.
 
 However, the state of the art of epidemiological studies in marine
@@ -343,7 +370,7 @@ differentiation with respect to time: $\dot{S}=dS/dt$.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{Figures/SIRP_scheme_mod.jpg}
+    \includegraphics[width=1\textwidth]{Figures/SIRP_scheme_mod.jpg}
     \caption{SIRP model flow diagram. The model variables are represented
         by capital letters: susceptible hosts ($S$), infected hosts ($I$), dead
         hosts
@@ -672,18 +699,6 @@ with the decrease of both $S_0$ or $\bar{\beta}$.
     \label{fig:Local_Sensitivity_Analysis_R0}
 \end{figure}
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.7\textwidth]{Figures/GSA_R_inf.png}
-    \caption{Sensitivity indices (LSA) for the final number of dead
-        individuals ($R_\infty$) for each one of the indicated parameters. The
-        black
-        bars represent the total order indices of sensitivity while white
-        (grey) colour
-        represents the contribution of the first (second) order indices.}
-    \label{fig: GSA_R_inf}
-\end{figure}
-
 \subsection{Final state of the epidemic}
 
 Another important quantity in epidemiology is the final state of the
@@ -705,6 +720,33 @@ dead individuals. Note that the second order indices are larger than the first
 order ones for all the parameters, which indicates a high influence of the
 nonlinearities in our model, at least for the particular quantity under study.
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{Figures/GSA_R_inf.png}
+    \caption{Sensitivity indices (LSA) for the final number of dead
+        individuals ($R_\infty$) for each one of the indicated parameters. The
+        black
+        bars represent the total order indices of sensitivity while white
+        (grey) colour
+        represents the contribution of the first (second) order indices.}
+    \label{fig: GSA_R_inf}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \subfigure[Epidemic
+        peak]{\includegraphics[width=0.49\textwidth]{Figures/GS_peak.png}}
+    \subfigure[Time of epidemic
+        peak]{\includegraphics[width=0.49\textwidth]{Figures/GS_peak_time.png}}
+    \caption{Global sensitivity analysis for the maximum of infected
+        individuals $I_{\textrm{max}}$ (a) and its time occurrence
+        $t_{\textrm{max}}$
+        (b). The black bars represent sensitivity at all orders,
+        while white (grey) colour represents the contribution of the first
+        (second) order indices.}
+    \label{fig: GS_analysis}
+\end{figure}
+
 \subsection{Maximum of infected individuals}
 
 A GSA of the maximum number of infected individuals, $I_{\textrm{max}}$ and
@@ -717,6 +759,32 @@ parameters have basically the same influence. Again, the second order indices
 (the first order interactions between parameters) account for most of parameter
 sensitivity, in particular in the time of the epidemic peak, indicating the
 high degree of nonlinearity of this effect.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{Figures/P_comparison.jpg}
+    \caption{Numerical check of the approximate expression for the pathogen
+        concentration, (\cref{eq:P_approx}), $\bar{\beta}=1/50$ and $\gamma=1$:
+        (a)
+        $\mu=1$; (b) $\mu=10$; (c) $\mu=100$, while $\lambda$ is varied to keep
+        $R_0=2.5$, defined in (\cref{eq:R_0_SIRP}) (with $S_0=N=50$), i.e.,
+        $\lambda=5,
+            27.5, 252.5$ respectively for (a)-(b)-(c), respectively.
+        The blue solid line represents the numerically integrated quantity, the
+        red dashed line (superimposed to the blue solid one as they are
+        identical) is
+        the exact solution for this quantity, (\cref{eq:P_exact}) and the green
+        dotted
+        line accounts for the approximate expression from the timescale
+        separation
+        (\cref{eq:P_approx}). The dash-dotted pink line represents the
+        derivative of
+        $P$, $\dot{P}$, in the scaled time frame. Panel (d): Mean error between
+        the
+        approximate and exact solutions for increasing
+        $\mu/\gamma=\mu/\bar{\beta}$.}
+    \label{fig:P_comparison}
+\end{figure}
 
 \subsection{Numerical verification of the fast-slow approximation}
 
@@ -744,43 +812,23 @@ of the numerical integration of \cref{eq:SIRP}, as should be the case.
 
 \begin{figure}[H]
     \centering
-    \subfigure[Epidemic
-        peak]{\includegraphics[width=0.49\textwidth]{Figures/GS_peak.png}}
-    \subfigure[Time of epidemic
-        peak]{\includegraphics[width=0.49\textwidth]{Figures/GS_peak_time.png}}
-    \caption{Global sensitivity analysis for the maximum of infected
-        individuals $I_{\textrm{max}}$ (a) and its time occurrence
-        $t_{\textrm{max}}$
-        (b). The black bars represent sensitivity at all orders,
-        while white (grey) colour represents the contribution of the first
-        (second) order indices.}
-    \label{fig: GS_analysis}
-\end{figure}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=1\textwidth]{Figures/P_comparison.jpg}
-    \caption{Numerical check of the approximate expression for the pathogen
-        concentration, (\cref{eq:P_approx}), $\bar{\beta}=1/50$ and $\gamma=1$:
-        (a)
-        $\mu=1$; (b) $\mu=10$; (c) $\mu=100$, while $\lambda$ is varied to keep
-        $R_0=2.5$, defined in (\cref{eq:R_0_SIRP}) (with $S_0=N=50$), i.e.,
-        $\lambda=5,
-            27.5, 252.5$ respectively for (a)-(b)-(c), respectively.
-        The blue solid line represents the numerically integrated quantity, the
-        red dashed line (superimposed to the blue solid one as they are
-        identical) is
-        the exact solution for this quantity, (\cref{eq:P_exact}) and the green
-        dotted
-        line accounts for the approximate expression from the timescale
-        separation
-        (\cref{eq:P_approx}). The dash-dotted pink line represents the
-        derivative of
-        $P$, $\dot{P}$, in the scaled time frame. Panel (d): Mean error between
-        the
-        approximate and exact solutions for increasing
-        $\mu/\gamma=\mu/\bar{\beta}$.}
-    \label{fig:P_comparison}
+    \includegraphics[width=1\textwidth]{Figures/exact_reduction_approx.jpg}
+    \caption{Numerical check of the exact model reduction along with the
+        subsequent approximation shown in \cref{sec:exactred} with $N=100$,
+        $\bar{\beta}=1/100$, $\gamma=1$, (a) $\lambda=5$, $\mu=1.1$; (b)
+        $\lambda=50$,
+        $\mu=20$; (c) $\lambda=500$, $\mu=209$. $R_0=2.38$ for all the panels.
+        The
+        solid semitransparent lines represent the original 4D model, the dashed
+        lines
+        the exact reduction and the dotted lines the approximate model from the
+        exact
+        reduction. Panel (d): Mean error between the approximate and exact
+        solutions
+        for increasing $\mu\ln(N)/\bar{\beta}N$ and $\lambda/\gamma$ while
+        $R_0=2.38$
+        is kept constant.}
+    \label{fig:verification_exact_reduction}
 \end{figure}
 
 \subsection{Numerical verification of the model approximation from the
@@ -849,27 +897,6 @@ way. Finally, the evidence of the time course of the disease compared to the
 long life cycle of {\it P. nobilis\/} suggests host vital dynamics (i.e.
 recruitment (reproduction) and natural death) can be neglected.
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=1\textwidth]{Figures/exact_reduction_approx.jpg}
-    \caption{Numerical check of the exact model reduction along with the
-        subsequent approximation shown in \cref{sec:exactred} with $N=100$,
-        $\bar{\beta}=1/100$, $\gamma=1$, (a) $\lambda=5$, $\mu=1.1$; (b)
-        $\lambda=50$,
-        $\mu=20$; (c) $\lambda=500$, $\mu=209$. $R_0=2.38$ for all the panels.
-        The
-        solid semitransparent lines represent the original 4D model, the dashed
-        lines
-        the exact reduction and the dotted lines the approximate model from the
-        exact
-        reduction. Panel (d): Mean error between the approximate and exact
-        solutions
-        for increasing $\mu\ln(N)/\bar{\beta}N$ and $\lambda/\gamma$ while
-        $R_0=2.38$
-        is kept constant.}
-    \label{fig:verification_exact_reduction}
-\end{figure}
-
 After an epidemic outbreak that took place in Portlligat, in the north east
 of Catalonia, $215$ \textit{Pinna nobilis} individuals were extracted from
 their natural medium in order to be preserved as a genetic reserve in several
@@ -900,28 +927,6 @@ tanks in IFAPA in Huelva and the Oceanogr\`afic of Valencia (OCE), both Spanish
 institutes. These water tanks have been selected to validate our model,
 maintaining constant temperatures of $14\, {}^o$C and $17\, {}^o$C,
 respectively.
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=1\textwidth]{Figures/exact_SIR_fitting.jpg}
-    \caption{Parameter estimation for the approximation from the exact
-        reduction of the SIRP model (\cref{eq:SIR_exact_reduced}) using data
-        from IFAPA
-        (panel (a)) and OCE (panel (b)) water tanks, at $\SI{14}{\degree C}$
-        and
-        $\SI{17}{\degree C}$ respectively. Left figures represent several fits
-        of the
-        model to empirical data of the number of dead hosts ($R(t)$) using
-        different
-        optimal combinations of the parameters. Right figures are the RSS
-        errors as a
-        function of the input parameters, where the green dashed line
-        represents the
-        set of optimal combinations of the parameters with $RSS=60, 0.8$ for
-        IFAPA and
-        OCE, respectively.}
-    \label{fig: exact_SIR_fit}
-\end{figure}
 
 First we will fit the exact reduction of the SIRP model, assuming
 $\mu\log(N)\gg\bar{\beta}N$ and $\lambda/\gamma\gg 1$ as discussed in
@@ -960,19 +965,24 @@ the cost function value of the optimisation algorithm is plotted as heat map.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=1\textwidth]{Figures/approx_SIR_fitting.jpg}
-    \caption{Parameter fitting for the R compartment to model
-        (\cref{eq:SIRslow}) using data from IFAPA (panel (a)) and Oceanogràfic
-        (panel
-        (b)). The left part of both panels of the figure shows the optimal fit
+    \includegraphics[width=1\textwidth]{Figures/exact_SIR_fitting.jpg}
+    \caption{Parameter estimation for the approximation from the exact
+        reduction of the SIRP model (\cref{eq:SIR_exact_reduced}) using data
+        from IFAPA
+        (panel (a)) and OCE (panel (b)) water tanks, at $\SI{14}{\degree C}$
+        and
+        $\SI{17}{\degree C}$ respectively. Left figures represent several fits
         of the
-        model to empirical data with $RSS=10.9, 0.8$ for IFAPA and OCE,
-        respectively.
-        The right panels show the variation of the $RSS$ error for some values
-        of
-        $\gamma$.  The $\beta'$ values have been obtained assuming a standard
-        incidence, as explained in the main text.}
-    \label{fig:approx_SIR_fit}
+        model to empirical data of the number of dead hosts ($R(t)$) using
+        different
+        optimal combinations of the parameters. Right figures are the RSS
+        errors as a
+        function of the input parameters, where the green dashed line
+        represents the
+        set of optimal combinations of the parameters with $RSS=60, 0.8$ for
+        IFAPA and
+        OCE, respectively.}
+    \label{fig: exact_SIR_fit}
 \end{figure}
 
 Now we reach the point regarding the dilemma between mass action and
@@ -1030,6 +1040,23 @@ implying a probably more reasonable ratio of $1.43$ for $\beta'$ in both tanks
 From the optimal parameters we obtain the basic reproduction number, since
 $R_0=\beta'/\gamma$ we have that $R_0^{\textrm{IFAPA}}\simeq2$ and
 $R_0^{\textrm{OCE}}\simeq4$, clearly above the epidemic threshold.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{Figures/approx_SIR_fitting.jpg}
+    \caption{Parameter fitting for the R compartment to model
+        (\cref{eq:SIRslow}) using data from IFAPA (panel (a)) and Oceanogràfic
+        (panel
+        (b)). The left part of both panels of the figure shows the optimal fit
+        of the
+        model to empirical data with $RSS=10.9, 0.8$ for IFAPA and OCE,
+        respectively.
+        The right panels show the variation of the $RSS$ error for some values
+        of
+        $\gamma$.  The $\beta'$ values have been obtained assuming a standard
+        incidence, as explained in the main text.}
+    \label{fig:approx_SIR_fit}
+\end{figure}
 
 Summarising, the SIRP model is able to fit two sets of experimental data,
 agreeing with a standard incidence, according to which the infection rate
@@ -1118,7 +1145,8 @@ an effective way.
 
 \section{Appendix}
 
-\subsection{Finding a conserved quantity for the SIRP model} \label{app:P_exact}
+\subsection{Finding a conserved quantity for the SIRP model}
+\label{app:P_exact}
 
 Starting with the SIRP model,
 \begin{equation}\label{eq:SIRP2}
@@ -1275,7 +1303,7 @@ and $I(\infty)=P(\infty)=0$.
 smallest one.
 
 \subsection{Calculation of $R_0$ using the Next Generation Matrix
-  method}\label{app:NGM}
+    method}\label{app:NGM}
 
 The so called Next Generation Method (NGM) is a method to obtain $R_0$, the
 basic epidemiological quantity that measures the number of secondary cases

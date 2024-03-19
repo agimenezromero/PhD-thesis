@@ -1,7 +1,7 @@
 \documentclass[
 	10pt, % Default font size, select one of 10pt, 11pt or 12pt
 	fleqn, % Left align equations
-	a4paper, %a4paper, b5paper
+	b5paper, %a4paper, b5paper
 ]{LegrandOrangeBook}
 
 % Book information for PDF metadata, remove/comment this block if not required 
@@ -52,6 +52,8 @@
 
 \newcommand{\xf}{Xf$_{\mathrm{PD}}$}
 \newcommand{\webpage}{\href{https://pdrisk.ifisc.uib-csic.es/future}{webpage}}
+
+% Adding authors and affiliations in each chapter
 
 \begin{document}
 
@@ -228,15 +230,7 @@
 %----------------------------------------------------------------------------------------
 \part{Modelling parasite-produced marine diseases}
 
-%----------------------------------------------------------------------------------------
-%	Introduction \& Contributions
-%----------------------------------------------------------------------------------------
-\chapterimage{nacra_I.jpg}
-\chapterspaceabove{6.75cm}
-\chapterspacebelow{7.25cm}
-
-\chapter{Introduction \& Contributions}
-\input{Chapters/Intro_nacras.tex}
+\input{Chapters/Preface_part_II.tex}
 
 %----------------------------------------------------------------------------------------
 %	Modelling parasite-produced marine diseases: The case of the mass
@@ -246,8 +240,8 @@
 \chapterspaceabove{6.75cm}
 \chapterspacebelow{7.25cm}
 
-\chapter{Modelling parasite-produced marine diseases: The case of the mass
-  mortality event of \textit{Pinna nobilis}}
+\chapter{The case of the mass mortality event of \textit{Pinna nobilis}}
+
 \input{Chapters/Nacras_I.tex}
 
 %----------------------------------------------------------------------------------------
@@ -257,24 +251,14 @@
 \chapterspaceabove{6.75cm}
 \chapterspacebelow{7.25cm}
 
-\chapter{Spatial effects in parasite-induced marine diseases of immobile hosts}
+\chapter{Spatial effects in parasite-induced marine diseases}
 \input{Chapters/Nacras_II.tex}
 
 %----------------------------------------------------------------------------------------
 %	PART III: Towards more realistic models for Xylella fastidiosa spread
 %----------------------------------------------------------------------------------------
 
-\part{Modelling the spread of vector-borne plant diseases}
-
-%----------------------------------------------------------------------------------------
-%	Introduction \& Contributions
-%----------------------------------------------------------------------------------------
-\chapterimage{nacra.jpg}
-\chapterspaceabove{6.75cm}
-\chapterspacebelow{7.25cm}
-
-\chapter{Introduction \& Contributions}
-\input{Chapters/Intro_xf_spread.tex}
+\part{Modelling vector-borne plant diseases}
 
 %----------------------------------------------------------------------------------------
 %	Vector-borne diseases with non-stationary vector populations: the case
@@ -284,8 +268,7 @@
 \chapterspaceabove{6.75cm}
 \chapterspacebelow{7.25cm}
 
-\chapter{Vector-borne diseases with non-stationary vector populations: the case
-  of growing and decaying populations}
+\chapter{Non-stationary vector populations}
 \input{Chapters/Xf_PRE.tex}
 
 %----------------------------------------------------------------------------------------
@@ -305,16 +288,6 @@
 %----------------------------------------------------------------------------------------
 
 \part{Modelling the risk of vector-borne plant diseases}
-
-%----------------------------------------------------------------------------------------
-%	Introduction \& Contributions
-%----------------------------------------------------------------------------------------
-\chapterimage{nacra.jpg}
-\chapterspaceabove{6.75cm}
-\chapterspacebelow{7.25cm}
-
-\chapter{Introduction \& Contributions}
-\input{Chapters/Intro_xf_risk.tex}
 
 %----------------------------------------------------------------------------------------
 %	Global predictions for the risk of establishment of Pierce’s disease
@@ -357,16 +330,6 @@
 %----------------------------------------------------------------------------------------
 
 \part{Data-driven methods for global ecological problems}
-
-%----------------------------------------------------------------------------------------
-%	Introduction \& Contributions
-%----------------------------------------------------------------------------------------
-\chapterimage{nacra.jpg}
-\chapterspaceabove{6.75cm}
-\chapterspacebelow{7.25cm}
-
-\chapter{Introduction \& Contributions}
-\input{Chapters/Intro_data_driven.tex}
 
 %----------------------------------------------------------------------------------------
 %	Universal spatial properties of coral reefs	

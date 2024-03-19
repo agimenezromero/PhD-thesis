@@ -639,6 +639,7 @@
 \newtheorem{exampleT}{Example}[chapter] % Examples, the first argument is the theorem name, the second the theorem title used before the number and the third optional argument is whether to number under chapters (e.g. 2.1) or sections (e.g. 2.1.1)
 \newtheorem{notation}{Notation}[chapter] % Notations, the first argument is the theorem name, the second the theorem title used before the number and the third optional argument is whether to number under chapters (e.g. 2.1) or sections (e.g. 2.1.1)
 \newtheorem{vocabulary}{Vocabulary}[chapter] % Vocabularies, the first argument is the theorem name, the second the theorem title used before the number and the third optional argument is whether to number under chapters (e.g. 2.1) or sections (e.g. 2.1.1)
+\newtheorem{objectivesT}{Objectives}[part] % Examples, the first argument is the theorem name, the second the theorem title used before the number and the third optional argument is whether to number under chapters (e.g. 2.1) or sections (e.g. 2.1.1)
 
 % Black theorem number and optional black title with padding above and below
 \theoremstyle{blacknumbox}
@@ -721,12 +722,33 @@
 	rightmargin=0cm % Outside right margin width
 ]{cBox}
 
+% Objectives box
+\newmdenv[
+	skipabove=7pt, % Whitespace above box
+	skipbelow=7pt, % Whitespace below box
+	rightline=false, % Right line visible
+	leftline=true, % Left line visible
+	topline=false, % Top line visible
+	bottomline=false, % Bottom line visible
+	linecolor=ocre, % Line color
+	linewidth=4pt, % Line width
+	backgroundcolor=ocre!10, % Background color
+	innerleftmargin=5pt, % Inside left margin width
+	innerrightmargin=5pt, % Inside right margin width
+	innertopmargin=5pt, % Inside top margin height
+	innerbottommargin=5pt, % Inside bottom margin height
+	leftmargin=0cm, % Outside left margin width
+	rightmargin=0cm % Outside right margin width
+]{oBox}
+
 % Creates an environment for each type of theorem and assigns it a theorem text style from the THEOREM STYLES block above and a colored box from above
 \newenvironment{theorem}{\begin{tBox}\begin{theoremeT}}{\end{theoremeT}\end{tBox}}
 \newenvironment{exercise}{\begin{eBox}\begin{exerciseT}}{\hfill{\color{ocre}\tiny\ensuremath{\blacksquare}}\end{exerciseT}\end{eBox}}
 \newenvironment{definition}{\begin{dBox}\begin{definitionT}}{\end{definitionT}\end{dBox}}
 \newenvironment{example}{\begin{exampleT}}{\hfill{\tiny\ensuremath{\blacksquare}}\end{exampleT}}
 \newenvironment{corollary}{\begin{cBox}\begin{corollaryT}}{\end{corollaryT}\end{cBox}}
+
+\newenvironment{objectives}{\begin{oBox}\begin{objectivesT}}{\hfill{\color{ocre}\tiny\ensuremath{\blacksquare}}\end{objectivesT}\end{oBox}}
 
 %----------------------------------------------------------------------------------------
 %	REMARK ENVIRONMENT
@@ -743,6 +765,36 @@
 		\advance\baselineskip -1pt% Reduce line spacing
 		}{%
 	\end{adjustwidth}
+}
+
+% Environment to list goals and objectives
+\newenvironment{objectiveslist}{%
+	\begin{oBox}
+		% Set title
+		\begin{center}
+			\color{ocre}\sffamily\bfseries\Large Objectives
+		\end{center}
+		\begin{itemize}[leftmargin=*,labelsep=5pt]
+			\renewcommand\labelitemi{\color{ocre}\raisebox{1.25pt}{\tiny\ensuremath{\blacksquare}}}
+			\advance\baselineskip -1pt% Reduce line spacing
+			}{%
+		\end{itemize}
+	\end{oBox}
+}
+
+% Environment to list contributions
+\newenvironment{contributionslist}{%
+	\begin{oBox}
+		% Set title
+		\begin{center}
+			\color{ocre}\sffamily\bfseries\Large Contributions
+		\end{center}
+		\begin{itemize}[leftmargin=*,labelsep=5pt]
+			\renewcommand\labelitemi{\color{ocre}\raisebox{1.25pt}{\tiny\ensuremath{\blacksquare}}}
+			\advance\baselineskip -1pt% Reduce line spacing
+			}{%
+		\end{itemize}
+	\end{oBox}
 }
 
 %----------------------------------------------------------------------------------------
