@@ -1,94 +1,117 @@
+\vspace{1cm}
+
+\textbf{Àlex Giménez-Romero$^{1}$, Eduardo Moralejo$^{2}$, Manuel A.
+    Matías$^{1}$}
+
+\vspace{1cm}
+
+\begin{enumerate}
+    \small
+    \item Instituto de Física Interdisciplinar y Sistemas Complejos, IFISC
+          (CSIC-UIB), Palma de Mallorca 07122, Spain
+    \item Tragsa, Passatge Cala Figuera 6, 07009 Palma de Mallorca, Spain
+\end{enumerate}
+
+\vspace{1cm}
+
+\textbf{Published as}
+
+\vspace{0.5cm}
+
+\fullcite{GimenezRomero2023}
+
+\newpage
 \section{Introduction}
 
 Mathematical and computational modeling in Ecology and, in particular,
 Epidemiology have been recently recognized as powerful approaches to guide
 empirical work and provide a framework for the synthesis, analysis and
 development of conservation plans and policy-making
-(\cite{levin1992mathematics,murray1989mathematical,sarkar2006biodiversity,Chew2014}).
+\cite{levin1992mathematics,murray1989mathematical,sarkar2006biodiversity,Chew2014}.
 Plant epidemics, mainly plant-virus diseases, have been often described by
 compartmental models, which deal with the overriding importance of transmission
 mechanisms in determining epidemic dynamics
-(\cite{Jeger1998,Jeger2004,Madden2000}). These models have contributed to
+\cite{Jeger1998,Jeger2004,Madden2000}. These models have contributed to
 providing answers to some questions related to the ecology of plant diseases
 and have led to direct applications in disease control while guiding research
-directions (\cite{Jeger2019}).
+directions \cite{Jeger2019}.
 
 The emergence of vector-borne plant pathogens in new areas causing huge
 economic impacts, such as \textit{Xylella fastidiosa} and the
 \textit{Candidatus} Liberibacter spp. (Huanglongbing or citrus greening), has
 sparked interest in modeling vector-transmitted plant-disease epidemics
-(\cite{chiyaka2012modeling,Jeger2019}). The vector-borne bacterium \textit{X.
+\cite{chiyaka2012modeling,Jeger2019}. The vector-borne bacterium \textit{X.
     fastidiosa} (Xf) is a multi-host pathogen endemic to the Americas that
 causes
-economically important diseases, mostly in woody crops (\cite{Hopkins2002}). Xf
+economically important diseases, mostly in woody crops \cite{Hopkins2002}. Xf
 is a genetically diverse species with three evolutionary well-defined clades
 forming the \textit{pauca}, \textit{fastidiosa}, and \textit{multiplex}
 subspecies, native from South, Central, and North America, respectively
-(\cite{vanhove2019genomic}). Within each subspecies, diverse genetic lineages
+\cite{vanhove2019genomic}. Within each subspecies, diverse genetic lineages
 with different host ranges are found. Xf is transmitted non-specifically by
 xylem-sap-feeding insects belonging to the sharpshooter leafhoppers (Hemiptera:
 Cicadellidae, Cicadellinae) and spittlebugs (Hemiptera: Cercopoidae)
-(\cite{Redak2004}).
+\cite{Redak2004}.
 
 Recently, Xf has gained renewed interest due to the massive mortality of
-olive trees in Apulia, Italy (\cite{saponari2019xylella}). The first focus of
+olive trees in Apulia, Italy \cite{saponari2019xylella}. The first focus of
 the olive quick decline syndrome (OQDS) was detected in 2013 around Gallipoli
-(Apulia, Italy)(\cite{saponari2013identification}) and since then has spread
+(Apulia, Italy)\cite{saponari2013identification} and since then has spread
 throughout the region by the meadow spittlebug, \textit{Philaenus spumarius}.
 Although this was the first official detection of Xf in Europe, it has recently
 been demonstrated that the pathogen arrived much earlier in Corsica
-(\cite{Soubeyrand2018}) and in the Balearic islands (\cite{Moralejo2020}).
+\cite{Soubeyrand2018} and in the Balearic islands \cite{Moralejo2020}.
 Around 1993, two strains of the subspecies \textit{fastidiosa} (ST1) and
 \textit{multiplex} (ST81) were introduced from California to Mallorca (Spain)
-with infected almond plants (\cite{Moralejo2020}). To date, over 80\% of the
+with infected almond plants \cite{Moralejo2020}. To date, over 80\% of the
 almond trees in Mallorca show leaf scorch symptoms and the outbreak has changed
-the iconic rural landscape of this Mediterranean island (\cite{Olmo2021b}).
+the iconic rural landscape of this Mediterranean island \cite{Olmo2021b}.
 
 The meadow spittlebug,	\textit{P. spumarius} (Hemiptera: Aphrophoridae),
 has recently been shown to be the main vector of Xf in Europe both in
 transmission experiments and in field studies
-(\cite{Cornara2017,Cornara2018,lopez2022mechanical,Moralejo2019,saponari2019xylella}).
+\cite{Cornara2017,Cornara2018,lopez2022mechanical,Moralejo2019,saponari2019xylella}.
 \textit{P. spumarius} is a polyphagous species from the Palearctic region,
 presenting one generation per year (univoltine) and overwintering as eggs.
 Foam-forming nymphs emerge at the end of winter, feeding on herbaceous plants.
 The time required for their development to the adult stage depends mainly on
 temperature and humidity
-(\cite{bodino2019phenology,Chmiel1979,cornara2018philaenus}). In Mediterranean
+\cite{bodino2019phenology,Chmiel1979,cornara2018philaenus}. In Mediterranean
 climates,  \textit{P. spumarius} adults generally move from the herbaceous
 cover to the crop canopy as evapotranspiration increases in late spring
 (May–June). In mid-summer, the populations of \textit{P. spumarius} tend to
 decrease in the crop canopy, while the insects are captured more frequently in
 trees and shrubs interspersed in crops. Summer dispersal of spittlebugs to wild
 hosts as refugee seems a common general pattern in Mediterranean crops in Italy
-(\cite{bodino2019phenology,cornara2021natural}) and Spain
-(\cite{morente2018distribution}). Because the bacterium has not been detected
+\cite{bodino2019phenology,cornara2021natural} and Spain
+\cite{morente2018distribution}. Because the bacterium has not been detected
 in spring on insects feeding on the herbaceous cover or in weeds in Europe
-(\cite{bodino2019phenology,cornara2018philaenus,Olmo2021b}), it is assumed that
+\cite{bodino2019phenology,cornara2018philaenus,Olmo2021b}, it is assumed that
 all spittlebug adults acquire the bacteria from the main crop (olive, almond,
 vine, etc.). Once infected, Xf colonizes the insect foregut in a persistent and
 non-circulatory manner without transovarial (parent to offspring) or
 transstadial (inter-stage) transmission
-(\cite{Almeida2003,freitag1951host,purcell1979evidence}) and without
-a period latency after vector acquisition (\cite{Almeida2015,freitag1951host}).
+\cite{Almeida2003,freitag1951host,purcell1979evidence} and without
+a period latency after vector acquisition \cite{Almeida2015,freitag1951host}.
 
 Several epidemic models have been already developed for Xf-diseases, but
 they lack a realistic description of some relevant processes
-(\cite{Jeger2019}). Some of these models assume a simple general form for
-infected host dynamics (\cite{White2017,Abboud2019,Daugherty2019}) or use a
+\cite{Jeger2019}. Some of these models assume a simple general form for
+infected host dynamics \cite{White2017,Abboud2019,Daugherty2019} or use a
 simplified S-I compartmental scheme for hosts, disregarding important features
-such as the latent period or the host mortality rate (\cite{Soubeyrand2018}).
+such as the latent period or the host mortality rate \cite{Soubeyrand2018}.
 Models that do take these features into account, however, do not explicitly
 model the population of vectors responsible for disease transmission
-(\cite{White2020}). Other more recent models have taken a step further in
-explicitly modeling the vector population (\cite{BRUNETTI2020,
-    GimenezRomero2022_CommsBio}), but the characterization of its dynamics is
+\cite{White2020}. Other more recent models have taken a step further in
+explicitly modeling the vector population \cite{BRUNETTI2020,
+    GimenezRomero2022_CommsBio}, but the characterization of its dynamics is
 still
 relatively simple, as it overlooks the known seasonal patterns of vector
 abundance. Several recent studies have provided new insights into the ecology
 and temporal dynamics of the transmission of Xf by \textit{P. spumarius} in
-olive plants (\cite{Bodino2021,bodino2019phenology}). However, these
+olive plants \cite{Bodino2021,bodino2019phenology}. However, these
 experimental data of the pathosystem have not been yet integrated at the
-population level . Thus, there is a need to continue advancing in the modeling
+population level. Thus, there is a need to continue advancing in the modeling
 of Xf diseases by developing more realistic models that can elucidate the
 fundamental processes involved in vector-host-pathogen interactions and help to
 design effective control strategies.
@@ -106,7 +129,6 @@ mortality in both diseases by performing a global sensibility analysis. With
 this information, the next goal was to explore control strategies acting
 especially on the vector population.
 
-%\newpage
 \section{Materials and Methods}
 
 \subsection{Epidemic model: the SEIR-V model}
@@ -114,18 +136,18 @@ especially on the vector population.
 We developed a deterministic continuous-time compartmental model that
 incorporates the specific biological features of Xf diseases in Europe,
 including the dynamics of the main relevant vector \textit{P. spumarius}
-(\cite{ Cavalieri2019}). To build the model we took the following
+\cite{Cavalieri2019}. To build the model we took the following
 considerations: (i) we assume there is no winter recovery of infected hosts and
 thus they die sometime after infection; (ii) hosts show an asymptomatic period
 in which they are non-infectious in practice (exposed compartment) because the
 bacteria are not yet systemically extended
-(\cite{teviotdale2003almond,Stevenson238}), while vectors are infectious
-immediately after acquiring the bacterium (\cite{Fierro2019}); (iii) vectors
+\cite{teviotdale2003almond,Stevenson238}, while vectors are infectious
+immediately after acquiring the bacterium \cite{Fierro2019}; (iii) vectors
 have an annual life cycle without mother-to-offspring disease transmission
-(\cite{freitag1951host,purcell1979evidence}), so we consider the annual
+\cite{freitag1951host,purcell1979evidence}, so we consider the annual
 emergence of susceptible newborn vectors and a constant death rate for both
 susceptible and infected vectors; (iv) infected vectors carry the bacterium
-during their entire lifespan without affecting their fitness ; and finally, (v)
+during their entire lifespan without affecting their fitness; and finally, (v)
 we do not consider host recruitment or natural death given that the typical
 development time of Xf-epidemics is faster than the typical host's life cycle.
 
@@ -134,7 +156,7 @@ of six compartments, four describing the host population (susceptible, $S_H$,
 exposed, $E_H$, infectious, $I_H$, and removed, $R_H$), and two describing the
 vector population (susceptible, $S_V$, and infected, $I_V$). The model is
 defined according to the following processes,
-\begin{equation}\label{eq:scheme_infection}
+\begin{equation}\label{eq:scheme_infection_phyto}
     \begin{aligned}
          & S_H+I_V \stackrel{\beta}{\rightarrow} E_H + I_V, \quad
         E_H \stackrel{\kappa}{\rightarrow} I_H, \quad
@@ -146,7 +168,7 @@ defined according to the following processes,
         \ ,
     \end{aligned}
 \end{equation}
-which are illustrated in \cref{fig:model_diagram}, being the birth of new
+which are illustrated in \cref{fig:model_diagram_phyto}, being the birth of new
 susceptible vectors described as a source term.
 Thus, the host-vector compartmental model is written as,
 \begin{equation}\label{eq:SEIR_v}
@@ -161,8 +183,9 @@ Thus, the host-vector compartmental model is written as,
     \end{aligned}
 \end{equation}
 
-\begin{figure}[H]
+\begin{figure}
     \centering
+    \label{fig:model_diagram_phyto}
     \includegraphics[width=0.8\textwidth]{Figures/SEIR_v_scheme.pdf}
     \caption{Schematic representation of the model \cref{eq:SEIR_v}. Boxes
         are the compartments in which the population is divided, solid curved
@@ -172,7 +195,6 @@ Thus, the host-vector compartmental model is written as,
         arrows depict the crossed interaction between hosts and vectors and
         solid
         straight arrows represent demographic changes in vector population.}
-    \label{fig:model_diagram}
 \end{figure}
 
 The model describes the exposure of susceptible hosts, $S_H$, at a rate
@@ -193,7 +215,7 @@ $\mu$, which we consider identical for susceptible and infected vectors. For
 simplicity, we consider that the quantity of annual newborn adults, $N_v(0)$,
 is constant. This outburst of new adults followed by an exponential decay
 resembles the temporal patterns on the abundance of \textit{P. spumarius}
-observed in crop fields  (\cite{Antonatos2021,Beal2021,Cornara2017,Lopez2021})
+observed in crop fields  \cite{Antonatos2021,Beal2021,Cornara2017,Lopez2021}
 (see \cref{fig:vector_dynamics}).
 
 In our model (\cref{eq:SEIR_v}) the crossed nonlinear terms in $\dot{S}_H$
@@ -201,7 +223,7 @@ and $\dot{S}_v$, $S_H I_v$ and $S_v I_H$, are divided by the total host
 population, $N_H$. Thus, the vector-to-plant infection process is modeled using
 mass action incidence, which is density dependent, while the plant-to-vector
 infection process is modeled using standard incidence, which is frequency
-dependent (\cite{MartchevaBook}). This implies that doubling the number of
+dependent \cite{MartchevaBook}. This implies that doubling the number of
 vectors in the crop field would double the number of resulting exposed (or
 infected) hosts, as this process is population-dependent (mass action
 incidence), while doubling the number of hosts would not result in more vectors
@@ -215,9 +237,9 @@ field, while the number of vectors is an independent quantity.
 
 The basic reproductive number, $R_0$, of the model cannot be trivially
 computed using standard methods such as the Next Generation Matrix (NGM)
-(\cite{Diekmann2010}), as there is no pre-pandemic fixed point in the system of
+\cite{Diekmann2010}, as there is no pre-pandemic fixed point in the system of
 differential equations \cref{eq:SEIR_v}. For periodically varying vector
-populations, rigorous methods have been developed (\cite{Bacaer2007}), but not
+populations, rigorous methods have been developed \cite{Bacaer2007}, but not
 for the case of growing or decaying vector populations. Here we use the simple
 method developed in the work of \cite{GimenezRomero2022_PRE} (see
 \cref{app:R0}), which
@@ -240,26 +262,26 @@ Epidemiological data from an ALSD outbreak in the island of Mallorca,
 Balearic Islands, Spain were taken from \cite{Moralejo2020}. Dated phylogenetic
 analysis and estimates of disease incidence showed that the introduction of
 both subspecies occurred around 1993 and $\sim 79$\% almond trees were infected
-in 2017 (\cite{Moralejo2020}). The annual proportion of infected individuals in
+in 2017 \cite{Moralejo2020}. The annual proportion of infected individuals in
 the almond tree population between 1993 and 2017 was estimated by analyzing
 through qPCR the presence of Xf-DNA in the growth rings of $34$ sampled trees
-(cf. Fig. 3 in (\cite{Moralejo2020})). The disease progression curve was
+(cf. Fig. 3 in \cite{Moralejo2020}). The disease progression curve was
 estimated without distinguishing whether infections were caused by
 \textit{multiplex} or \textit{fastidiosa} subspecies. In addition, a two-sided
 bootstrap confidence interval for each data point was set using the SciPy
-bootstrap function in Python (\cite{SciPy}). On the other hand, epidemic data
-for OQDS were retrieved from (\cite{White2020}). The data consisted of 2 to 3
+bootstrap function in Python \cite{SciPy}. On the other hand, epidemic data
+for OQDS were retrieved from \cite{White2020}. The data consisted of 2 to 3
 yearly censuses of symptom prevalence in 17 olive groves infected with Xf
 subsp. \textit{pauca} in Apulia, Italy, which were aggregated to fit our model
-as shown in Fig. 4 in (\cite{White2020}). Because the compartments of our model
+as shown in Fig. 4 in \cite{White2020}. Because the compartments of our model
 are not in one-to-one correspondence with those shown in the work of White et
-al. (\cite{White2020}), we used the sum of the symptomatic and desiccated
+al. \cite{White2020}, we used the sum of the symptomatic and desiccated
 infected trees in the dataset ($I_S+I_D$) to fit the sum of the infected and
 dead trees ($I+R$) and the sum of susceptible and asymptomatic hosts ($S+I_A$)
 to fit the sum of susceptible and exposed hosts ($S+E$). The processed data
-used to fit the model can be found in (\cite{CODE}), while the raw data can be
+used to fit the model can be found in \cite{CODE}, while the raw data can be
 found in the supplementary data accessible online of the cited articles
-(\cite{Moralejo2020,White2020}).
+\cite{Moralejo2020,White2020}.
 
 \subsection{Model fitting through Bayesian Inference}
 
@@ -268,9 +290,9 @@ prior distribution, with $\hat{\mu}$ and
 $\sigma$, the mean and standard deviation, respectively, for previously
 measured parameters in the literature, such as the infectious and latent
 periods for ALSD, $\tau_I\sim\mathcal{N}(14, 4)$, $\tau_E\sim\mathcal{N}(4, 1)$
-(\cite{teviotdale2003almond, Moralejo2020}) and OQDS,
+\cite{teviotdale2003almond, Moralejo2020} and OQDS,
 $\tau_I\sim\mathcal{N}(3.5, 1)$, $\tau_E\sim\mathcal{N}(1.75, 0.5)$
-(\cite{Fierro2019}). The corresponding rates are given by $\gamma=1/\tau_I$ and
+\cite{Fierro2019}. The corresponding rates are given by $\gamma=1/\tau_I$ and
 $\kappa=1/\tau_E$, respectively. Similarly, a prior normal distribution was
 used for the removal rate of vectors, $\mu\sim\mathcal{N}(0.02, 0.0075)$, as
 the mean value $\mu=0.02$ already captures the vector dynamics observed in
@@ -285,7 +307,7 @@ our results by changing $N_v(0)$.
 
 The posterior distributions of the parameters were approximated using the
 Markov Chain Monte Carlo algorithm No U-Turn Sampler (NUTS) with the
-recommended target acceptance rate of 65\% (\cite{Homan2014}). To ensure a
+recommended target acceptance rate of 65\% \cite{Homan2014}. To ensure a
 proper convergence, we constructed three independent Markov Chains with $10^5$
 iterations each after a burn-in of $10^4$ iterations and checked that the
 results were statistically equivalent. For each chain, we started at the
@@ -294,18 +316,18 @@ iterations.
 
 The parameters of our compartmental model were determined by fitting the
 model to data by means of a Bayesian Inference framework using the Turing.jl
-package (\cite{Turing.jl}) in Julia (\cite{julia}). The scripts used to fit the
-model can be found in (\cite{CODE}).
+package \cite{Turing.jl} in Julia \cite{julia}. The scripts used to fit the
+model can be found in \cite{CODE}.
 
 \subsection{Sensitivity Analysis}
 
 We performed a Global Sensitivity Analysis (GSA)
-(\cite{Sensitivity_analysis_book}) of the model to assess the relative
+\cite{Sensitivity_analysis_book} of the model to assess the relative
 contribution of its parameters and their interactions with different features
 of the epidemic. In contrast to the Local Sensitivity Analysis (LSA), the GSA
 assesses the influence of a large domain of the parameter space in the desired
 outputs of the model. We performed GSA by means of a variance-based analysis,
-the Sobol method (\cite{SOBOL2001271}). This particular method provides
+the Sobol method \cite{SOBOL2001271}. This particular method provides
 information not only on how a particular parameter alone influences the model
 outputs (as happens with LSA), but also due to the nonlinear interactions among
 two or more parameters. Briefly, the method considers the model output, $Y$, as
@@ -328,11 +350,10 @@ Following the Sobol method, we analyzed the variation of the time at which
 the infectious population peaks, $t_{peak}$, the magnitude of this peak,
 $I_{peak}$ and the final number of dead hosts, $R_{\infty}$, relative to
 variations of the model parameters. The method was implemented within the Julia
-high-level programming language (\cite{julia}) using the sub-package
+high-level programming language \cite{julia} using the sub-package
 DiffEqSensitivity.jl in DifferentialEquations.jl package
-(\cite{DifferentialEquations.jl}).
+\cite{DifferentialEquations.jl}.
 
-%\newpage
 \section{Results}
 
 \subsection{Model fit and parameter estimates}
@@ -354,23 +375,6 @@ successfully converged to the posterior distributions
 (\cref{fig:parameter_estimates_ALSD}(D-E) and
 \cref{fig:parameter_estimates_OQDS}(D-E)).
 
-\begin{figure}[H]
-    \centering
-
-    \includegraphics[width=\textwidth]{Figures/Parameter_estimates_ALSD.pdf}
-    \caption{Posterior (blue histograms) and prior (red line) distributions
-        of the model parameters for ALSD. Solid and dashed black lines
-        correspond to
-        the mean and median of the posterior distributions. (A) Host infectious
-        period
-        $\tau_I=1/\gamma$. (B) Host latent period $\tau_E=1/\kappa$.  (C)
-        Vector
-        removal rate $\mu$. (D) Vector infection rate $\alpha$. (E) Host
-        infection rate
-        $\beta$. (F) The variance of the field data $\sigma^2$.}
-    \label{fig:parameter_estimates_ALSD}
-\end{figure}
-
 The latter distributions are far from a Gaussian-like shape (note that the
 x-axis is log-scaled), being heavy-tailed. This kind of distribution highly
 distorts the statistical measures of mean, median and standard error,
@@ -385,6 +389,39 @@ parameters, although quite different, are able to perfectly fit the data
 (\cref{fig:best_fit_model}). Finally, we also observe that the variance for the
 field data also converged to a bell-shaped distribution.
 
+\begin{figure}[H]
+    \centering
+    \label{fig:parameter_estimates_ALSD}
+
+    \includegraphics[width=0.95\textwidth]{Figures/Parameter_estimates_ALSD.pdf}
+    \caption{Posterior (blue histograms) and prior (red line) distributions
+        of the model parameters for ALSD. Solid and dashed black lines
+        correspond to
+        the mean and median of the posterior distributions. (A) Host infectious
+        period
+        $\tau_I=1/\gamma$. (B) Host latent period $\tau_E=1/\kappa$.  (C)
+        Vector
+        removal rate $\mu$. (D) Vector infection rate $\alpha$. (E) Host
+        infection rate
+        $\beta$. (F) The variance of the field data $\sigma^2$.}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \label{fig:parameter_estimates_OQDS}
+
+    \includegraphics[width=0.95\textwidth]{Figures/Parameter_estimates_OQDS.pdf}
+    \caption{Posterior (blue histograms) and prior (red line) distributions
+        of the model parameters for OQDS. Solid and dashed black lines
+        correspond to
+        the mean and median of the posterior distributions. (A) Host infectious
+        period
+        $\tau_I=1/\gamma$. (B) Host latent period $\tau_E=1/\kappa$. (C) Vector
+        removal
+        rate $\mu$. (D) Vector infection rate $\alpha$. (E) Host infection rate
+        $\beta$. (F) Variance of the field data $\sigma^2$.}
+\end{figure}
+
 Mean and median parameter estimates, i.e. the best-fit parameter values for
 ALSD and OQDS, are summarized in
 \cref{tab:parameter_estimates_ALSD,tab:parameter_estimates_OQDS}, respectively.
@@ -395,22 +432,6 @@ uninformative, as their 95\% confidence intervals cover almost two orders of
 magnitude. This again indicates that without some data about the evolution of
 the vector states in time, $S_v(t)$ and $I_v(t)$, it is nearly impossible to
 derive the proper values for these parameters.
-
-\begin{figure}[H]
-    \centering
-
-    \includegraphics[width=\textwidth]{Figures/Parameter_estimates_OQDS.pdf}
-    \caption{Posterior (blue histograms) and prior (red line) distributions
-        of the model parameters for OQDS. Solid and dashed black lines
-        correspond to
-        the mean and median of the posterior distributions. (A) Host infectious
-        period
-        $\tau_I=1/\gamma$. (B) Host latent period $\tau_E=1/\kappa$. (C) Vector
-        removal
-        rate $\mu$. (D) Vector infection rate $\alpha$. (E) Host infection rate
-        $\beta$. (F) Variance of the field data $\sigma^2$.}
-    \label{fig:parameter_estimates_OQDS}
-\end{figure}
 
 \begin{table}[H]
     \centering
@@ -521,7 +542,7 @@ infected every year (\cref{fig:best_fit_model}(A)), while a very small
 proportion is needed in OQDS to produce a lethal outbreak
 (\cref{fig:best_fit_model}(C)). However, this last statement is rather
 unrealistic, as around 50\% of the vectors that are captured in Apulia are
-indeed infected by Xf (\cite{Cavalieri2019,cornara2017transmission}). Thus, the
+indeed infected by Xf \cite{Cavalieri2019,cornara2017transmission}. Thus, the
 evolution of the infected vector population should be qualitatively similar to
 that obtained for ALSD (\cref{fig:best_fit_model}(C)). As previously explained,
 different suitable combinations of $\alpha$ and $\beta$ parameters should give
@@ -557,8 +578,8 @@ that is still able to fit the available data for the hosts.
 previously inferred best-fit median parameters for OQDS. By changing the values
 of $\alpha$ and $\beta$, we obtain a more realistic scenario, i.e. around a
 50\% of the vector population getting infected during the outbreak
-(\cref{fig:best_fit_model_OQDS}(B)) (\cite{Cavalieri2019,
-    cornara2017transmission}). Noteworthy, the $\beta$ value obtained in this
+(\cref{fig:best_fit_model_OQDS}(B)) \cite{Cavalieri2019,
+    cornara2017transmission}. Noteworthy, the $\beta$ value obtained in this
 way
 is almost identical to the transmission rate recently reported by
 \cite{Bodino2021} for OQDS. This change in the transmission parameters only
@@ -567,6 +588,13 @@ progression of the host compartments practically unchanged
 (\cref{fig:best_fit_model_OQDS}(C)). Anyway, both sets of parameter values for
 $\alpha$ and $\beta$ can properly fit the field data, corresponding exclusively
 to the	host population (\cref{fig:best_fit_model_OQDS}(D)).
+
+The model adjusted to the progression curves of both diseases indicates
+that the transmission rate $\alpha$ must be greater than $\beta$ when the
+proportion of infected vectors is relatively high ($>30\%$). We checked if the
+relation between $\alpha$ and $\beta$ held when changing the assumed
+$N_v(0)=N_H/2$, obtaining that it kept approximately the same for very
+different values of the initial vector population.
 
 \begin{figure}[H]
     \centering
@@ -591,13 +619,6 @@ to the	host population (\cref{fig:best_fit_model_OQDS}(D)).
     \label{fig:best_fit_model_OQDS}
 \end{figure}
 
-The model adjusted to the progression curves of both diseases indicates
-that the transmission rate $\alpha$ must be greater than $\beta$ when the
-proportion of infected vectors is relatively high ($>30\%$). We checked if the
-relation between $\alpha$ and $\beta$ held when changing the assumed
-$N_v(0)=N_H/2$, obtaining that it kept approximately the same for very
-different values of the initial vector population.
-
 \subsection{Global Sensitivity Analysis}
 
 We computed the sensitivity indices for the model parameters with respect
@@ -612,7 +633,7 @@ samples and are summarized in \cref{fig:GSA}.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{Figures/GSA.pdf}
+    \includegraphics[width=0.9\textwidth]{Figures/GSA.pdf}
     \caption{Global Sensitivity Analysis of the model parameters performed
         with the Sobol method with respect to the time at which the infectious
         population peaks, $t_{peak}$ (A-B), the magnitude of this peak,
@@ -654,7 +675,7 @@ model, there are two ways of implementing vector-population control: (i)
 decreasing the typical time, $1/\mu$, that vectors spend between crops each
 year by some mechanism (thus increasing $\mu$) and (ii) reducing the initial
 number of vectors that invade crops each year (e.g. lowering $N_v(0)$ via egg
-or nymph control (\cite{Lago2022}).
+or nymph control \cite{Lago2022}).
 
 We analyzed the effect of vector management by simulating epidemic
 outbreaks using different values of $\mu$ and $N_v(0)$, and keeping the rest of
@@ -703,11 +724,11 @@ non-stationary populations of \textit{P. spumarius}, mathematically represented
 by a sporadic source term through which vectors are born every year, and an
 exponential decay term. Due to the non-stationarity of the vector dynamics,
 $R_0$ in the model cannot be computed with standard methods such as the Next
-Generation Matrix (\cite{Diekmann2010}). To circumvent this problem, we applied
+Generation Matrix \cite{Diekmann2010}. To circumvent this problem, we applied
 an approximate method to compute it as previously proposed by
-(\cite{GimenezRomero2022_PRE}). We show that this approximate $R_0$ correctly
+\cite{GimenezRomero2022_PRE}. We show that this approximate $R_0$ correctly
 characterizes the epidemic, further validating the method proposed by
-(\cite{GimenezRomero2022_PRE}).
+\cite{GimenezRomero2022_PRE}.
 
 Nonlinear mathematical models of disease transmission enhance our
 understanding of the different mechanisms operating in an epidemic, especially
@@ -741,7 +762,7 @@ $\beta$) that get infected very often (high $\alpha$). The great difference in
 these situations would be that, in the former, the infected vector population
 would be very low, while in the latter, it would be quite high. This is a
 manifestation of parameter unidentifiability from the fit
-(\cite{Chowel2017,Roosa2019}), which stresses the importance of transmission
+\cite{Chowel2017,Roosa2019}, which stresses the importance of transmission
 and calls for detailed measurements of the vector population, and not just of
 the hosts. Furthermore, to compare transmission rates between different
 diseases caused by Xf (e.g. $\beta$, $\alpha$), it is necessary to know the
@@ -749,7 +770,7 @@ vector-host population ratio of the pathosystem ($N_v/N_H$), since $\beta$ is
 expressed as a number of hosts per vectors per day. Although, in general,
 populations of \textit{P. spumarius} in the canopy of olive trees are much
 larger than those found in the almond trees of the Balearic Islands during the
-months of July and August (\cite{Lopez2021}),
+months of July and August \cite{Lopez2021},
 our work is based on data from studies in which information of the vector
 populations is not provided. Without this information, therefore, conclusive
 results regarding transmission cannot be obtained.
@@ -792,7 +813,7 @@ eradicate the disease. Interestingly, we also show that acting on the vector
 removal $\mu$ is more effective than controlling the newborn vector population
 $N_v(0)$. In fact, most control strategies carried out in practice for Xf
 diseases focus on the latter factor, reducing $N_v(0)$ via egg or nymph control
-(\cite{Cornara2018, lopez2022mechanical, Lago2022}). However, our results
+\cite{Cornara2018, lopez2022mechanical, Lago2022}. However, our results
 indicate that alternative strategies based on increasing the removal (or
 dispersal) rate of vectors should be explored. Furthermore, the evolution of
 the population compartments of the hosts and vectors provides relevant
@@ -812,7 +833,7 @@ model is the fact that the spatial constraints and the intrinsic stochasticity
 of the transmission processes are neglected. A straightforward extension of the
 model would be to include a specific spatial setting and implement the explicit
 motion of the vector within a stochastic framework, such as Individual Based
-Models (\cite{Grimm2005}). With this, the effectiveness of current and further
+Models \cite{Grimm2005}. With this, the effectiveness of current and further
 control strategies could be tested and improved controlling for the motion of
 the vector. For instance, the control strategy based on the removal of
 symptomatic trees together with their surrounding trees at a given distance
@@ -823,11 +844,11 @@ freedom are explicitly represented would require access to further information
 about vector mobility and spatially resolved data to confront the model, which
 is not currently available.
 
-Mathematical models tested against experimental data increase our
-understanding of the system under study. They also help to identify critical
+Mathematical models tested against experimental data increase our understanding
+of the system under study. They also help to identify critical
 parameters that require better prior information to adjust functions relating
 to different variables and make the model predictions more accurate to suggest
-and test control strategies (\cite{cunniffe2015thirteen, jeger2018plant}). Our
+and test control strategies \cite{cunniffe2015thirteen, jeger2018plant}. Our
 mathematical model suggests a certain lack of knowledge of the transmission
 processes and reveals that the currently available data is not enough to fit
 complex models dealing with the explicit dynamics of the vector population. \\
@@ -837,16 +858,16 @@ complex models dealing with the explicit dynamics of the vector population. \\
 \subsection{Vector population dynamics}\label{app:vector_dynamics}
 
 \cref{fig:vector_dynamics} shows a time series for the population of
-\textit{Philaenus spumarius} in Mallorca, taken from (\cite{Lopez2021}) (in
+\textit{Philaenus spumarius} in Mallorca, taken from \cite{Lopez2021} (in
 blue). Superimposed (in orange) is the assumption used in our model
 \cref{eq:SEIR_v}, the $\delta(t-nT)$, i.e. every year susceptible vectors
 appear in the system.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{Figures/Vector_dynamics.pdf}
+    \includegraphics[width=0.7\textwidth]{Figures/Vector_dynamics.pdf}
     \caption{Vector dynamics produced by the model compared to field-data
-        from (\cite{Lopez2021}).}
+        from \cite{Lopez2021}.}
     \label{fig:vector_dynamics}
 \end{figure}
 
@@ -856,9 +877,9 @@ The handicap of determining the basic reproductive number of the model
 \cref{eq:SEIR_v} is that the pre-pandemic fixed point given by $I_H=I_v=0$ and
 $S_H=S_H(0)$ is not a fixed point of the system of differential equations,
 because vector population decays, so that the standard methods to compute $R_0$
-such as the Next Generation Matrix (\cite{Diekmann2010, GimenezRomero2022_PRE})
+such as the Next Generation Matrix \cite{Diekmann2010, GimenezRomero2022_PRE}
 do not
-apply. In (\cite{GimenezRomero2022_PRE}) a method was suggested to determine
+apply. In \cite{GimenezRomero2022_PRE} a method was suggested to determine
 the basic
 reproductive number in the case of compartmental models of vector-borne
 transmitted diseases in which the vector population grows or decays. It
@@ -867,7 +888,7 @@ of a generation.
 
 To proceed we consider that $I_H=I_v=0$, $S_H=S_H(0)$ is indeed a fixed
 point of the system. Then, the basic reproductive number could be determined,
-e.g. as shown in (\cite{Brauer2016}). First, an infectious host infects vectors
+e.g. as shown in \cite{Brauer2016}. First, an infectious host infects vectors
 at a rate $\beta S_H(0)/N_H$ for a time $1/\gamma$. This produces $\beta
     S_H(0)/\gamma N_H$ infected vectors. The second stage is that these
 infectious
@@ -888,8 +909,8 @@ use a nongeneric initial condition that sits at the fixed point of the model.
 In practice, our initial condition will never be a fixed point of the
 model, and, as mentioned above, we will obtain an approximate basic
 reproductive number, to which we will refer as $R_0$ using the method suggested
-in (\cite{GimenezRomero2022_PRE}), that consists in
-%(\cite{Gimenez2022}). 
+in \cite{GimenezRomero2022_PRE}, that consists in
+%\cite{Gimenez2022}). 
 calculating the \textit{average} number of secondary infections produced by
 an infectious host in \textit{one generation}. One first defines an
 instantaneous basic reproductive number,

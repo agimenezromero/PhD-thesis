@@ -1,3 +1,26 @@
+\vspace{1cm}
+
+\textbf{Àlex Giménez-Romero$^{1}$, Eduardo Moralejo$^{2}$, Manuel A.
+    Matías$^{1}$}
+
+\vspace{1cm}
+
+\begin{enumerate}
+    \small
+    \item Instituto de Física Interdisciplinar y Sistemas Complejos, IFISC
+          (CSIC-UIB), Palma de Mallorca 07122, Spain
+    \item Tragsa, Passatge Cala Figuera 6, 07009 Palma de Mallorca, Spain
+\end{enumerate}
+
+\vspace{1cm}
+
+\textbf{Published as}
+
+\vspace{0.5cm}
+
+\fullcite{GimenezRomero2024}
+
+\newpage
 \section{Introduction}
 
 Climate plays a pivotal role in shaping the distribution and dynamics of
@@ -153,7 +176,7 @@ slopes of mountain systems
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.92\textwidth]{Figures/ERA5_vs_CHELSA_dif.pdf}
+    \includegraphics[width=1\textwidth]{Figures/ERA5_vs_CHELSA_dif.pdf}
     \caption{Difference in risk projections based on CHELSA
         (high-resolution, 1 km) and ERA5 (mid-resolution 10 km) datasets in
         global
@@ -162,6 +185,16 @@ slopes of mountain systems
         (E) South Africa.}
     \label{fig:risk_indices_dif}
 \end{figure}
+
+Next, we compared the temporal progression of the area at risk using both
+high and mid-resolution data over the entire available time span (1986-2016),
+considering that the risk for each year is computed based on the preceding
+seven years. We found a notable global surge in the rate increase of the area
+at risk within viticulture zones worldwide, practically doubling previous
+estimates (Online Supplementary Information). These results point to an
+accelerated
+pace at which the risk of PD is growing, compatible with the predictions of
+different global warming scenarios \cite{GimenezRomero2023_PD}.
 
 \begin{figure}[H]
     \centering
@@ -179,15 +212,66 @@ slopes of mountain systems
     \label{fig:risk_categories_dif}
 \end{figure}
 
-Next, we compared the temporal progression of the area at risk using both
-high and mid-resolution data over the entire available time span (1986-2016),
-considering that the risk for each year is computed based on the preceding
-seven years. We found a notable global surge in the rate increase of the area
-at risk within viticulture zones worldwide, practically doubling previous
-estimates (Online Supplementary Information). These results point to an
-accelerated
-pace at which the risk of PD is growing, compatible with the predictions of
-different global warming scenarios \cite{GimenezRomero2023_PD}.
+\begin{table}[H]
+    \caption{Changes in Pierce's Disease Risk Zones in Different Viticulture
+        Regions. The table illustrates transitions between risk and no-risk
+        categories,
+        as well as transitions among risk categories, highlighting the dynamic
+        shifts
+        in risk patterns across viticulture areas in Europe, the USA, South
+        Africa,
+        South America, and Australia. Risk increase refers to changes from low
+        to
+        moderate risk or from moderate to high risk. Likewise, risk decrease
+        refers to
+        changes from moderate to low risk or high to moderate risk.}
+    \label{tab:risk_category_dif}
+    \resizebox{\textwidth}{!}{%
+        \begin{tabular}{lccccc}
+            \hline
+                                                 & \textbf{Europe}       &
+            \textbf{USA}                         & \textbf{South Africa} &
+            \textbf{South America}               & \textbf{Australia}
+            \\ \hline
+            \textbf{Risk to no-risk (km$^2$)}    & 1.91e+04
+                                                 & 3.93e+04
+                                                 & 2.26e+04
+                                                 & 2.49e+05
+                                                 & 5.81e+04
+            \\
+            \textbf{Transition to risk (km$^2$)} & 6.37e+04
+                                                 & 1.37e+05
+                                                 & 5.53e+04
+                                                 & 3.79e+04
+                                                 & 8.49e+04
+            \\
+            \textbf{Risk decrease (km$^2$)}      & 3.58e+04
+                                                 & 1.46e+05
+                                                 & 3.56e+05
+                                                 & 1.76e+05
+                                                 & 1.28e+06
+            \\
+            \textbf{Risk increase (km$^2$)}      & 6.28e+04
+                                                 & 2.37e+05
+                                                 & 1.05e+05
+                                                 & 1.50e+05
+                                                 & 1.55e+05
+            \\
+            \textbf{No risk to risk (km$^2$)}    & 2.04e+05
+                                                 & 2.36e+05
+                                                 & 2.77e+05
+                                                 & 1.90e+05
+                                                 & 2.15e+05
+            \\
+            \textbf{Total changes (km$^2$)}      & 3.85e+05
+                                                 & 7.95e+05
+                                                 & 8.15e+05
+                                                 & 8.03e+05
+                                                 & 1.79e+06
+            \\ \hline
+        \end{tabular}
+    }
+\end{table}
 
 \subsection{Pierce's Disease risk surges in previously unresolved
     microclimates}
@@ -214,56 +298,6 @@ isolated. Coastal areas close to cool water masses may also undergo an increase
 in risk  when using higher resolutions data, as exemplified in California
 (\cref{fig:microclimates} e,f).
 
-\begin{table}[H]
-    \centering
-    \caption{Changes in Pierce's Disease Risk Zones in Different Viticulture
-        Regions. The table illustrates transitions between risk and no-risk
-        categories,
-        as well as transitions among risk categories, highlighting the dynamic
-        shifts
-        in risk patterns across viticulture areas in Europe, the USA, South
-        Africa,
-        South America, and Australia. Risk increase refers to changes from low
-        to
-        moderate risk or from moderate to high risk. Likewise, risk decrease
-        refers to
-        changes from moderate to low risk or high to moderate risk.}
-    \label{tab:risk_category_dif}
-    \resizebox{\textwidth}{!}{%
-        \begin{tabular}{lcccccc}
-            \hline \hline
-            \multicolumn{1}{c}{}                 &
-            \textbf{Risk to no-risk (km$^2$)}    &
-            \textbf{Transition to risk (km$^2$)} &
-            \textbf{Risk decrease (km$^2$)}      &
-            \textbf{Risk increase (km$^2$)}      &
-            \textbf{No risk to risk (km$^2$)}    &
-            \textbf{Total changes (km$^2$)}
-            \\ \hline
-            \textbf{Europe}                      & 1.91e+04 & 6.37e+04 &
-            3.58e+04                             & 6.28e+04 &
-            2.04e+05                             & 3.85e+05
-            \\
-            \textbf{USA}                         & 3.93e+04 & 1.37e+05 &
-            1.46e+05                             & 2.37e+05 &
-            2.36e+05                             & 7.95e+05
-            \\
-            \textbf{South Africa}                & 2.26e+04 & 5.53e+04 &
-            3.56e+05                             & 1.05e+05 &
-            2.77e+05                             & 8.15e+05
-            \\
-            \textbf{South America}               & 2.49e+05 & 3.79e+04 &
-            1.76e+05                             & 1.50e+05 &
-            1.90e+05                             & 8.03e+05
-            \\
-            \textbf{Australia}                   & 5.81e+04 & 8.49e+04 &
-            1.28e+06                             & 1.55e+05 &
-            2.15e+05                             & 1.79e+06
-            \\ \hline \hline
-        \end{tabular}%
-    }
-\end{table}
-
 Finally, to obtain a comprehensive assessment of the impact of
 microclimatic conditions on the risk of PD establishment, we collated a dataset
 of over 100,000 \textit {Vitis vinifera} presence locations worldwide from GBIF
@@ -271,7 +305,25 @@ of over 100,000 \textit {Vitis vinifera} presence locations worldwide from GBIF
 (Online Supplementary Information). Each data point was assigned a risk index
 based on
 the ERA5 and CHELSA projections, respectively, using the nearest pixel from
-each database. This approach revealed an increase in the risk indices
+each database.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{Figures/ERA5_vs_CHELSA_rivers.pdf}
+    \caption{Effect of microclimatic conditions of rivers and valleys on
+        Pierce's Disease of grapevines. Comparison of the risk predicted using
+        ERA5
+        mid-resolution dataset (A,C,E) and CHELSA high-resolution dataset
+        (B,D,F).
+        (A-B) North-western Iberian Peninsula. (C-D) Sourthern France and
+        North-eastern
+        Spain. (E-F) Western United States. Black dots represent grapevines
+        (\textit{Vitis vinifera}) presence data obtained from GBIF (see
+        Methods).}
+    \label{fig:microclimates}
+\end{figure}
+
+This approach revealed an increase in the risk indices
 associated with the vine locations (\cref{fig:risk_dif_vid} A-D), mostly
 showing shifts towards higher risk indices (\cref{fig:risk_dif_vid} A,E) from
 no risk to risk, or increases in risk category (low to moderate or moderate to
@@ -282,6 +334,33 @@ with substantial expansion of vineyard areas at risk in Europe and South Africa
 (\cref{tab:risk_increase_vid}). Overall, our results emphasise the global
 relevance of microclimatic conditions in influencing the risk landscape for PD
 in viticultural areas (\cref{tab:risk_increase_vid}).
+
+\begin{figure}[H]
+    \centering
+
+    \includegraphics[width=0.9\textwidth]{Figures/risk_difference_vineyards.pdf}
+    \caption{Impact of high-resolution climate data on the risk of Pierce's
+        Disease for grapevines worldwide. (A) Difference in risk indices in
+        Europe,
+        which accounts for the 96\% of the points in the dataset. (B)
+        Comparison of the
+        risk indices derived from CHELSA and ERA5 datasets. Points with perfect
+        agreement would lie in the solid black diagonal curve. (C) Histogram of
+        risk
+        indices derived from ERA5 (blue) and CHELSA (orange). (D) Histogram of
+        the
+        differences in risk indices between CHELSA and ERA5 datasets. (E)
+        Changes in
+        risk categories when using high-resolution climate data (CHELSA) with
+        respect
+        to mid-resolution data (ERA5). Risk category increase refers to changes
+        from
+        low to moderate risk or from moderate to high risk. Likewise, risk
+        category
+        decrease refers to changes from moderate to low risk or high to
+        moderate risk.}
+    \label{fig:risk_dif_vid}
+\end{figure}
 
 \begin{table}[H]
     \centering
@@ -319,49 +398,6 @@ in viticultural areas (\cref{tab:risk_increase_vid}).
         \end{tabular}%
     }
 \end{table}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=\textwidth]{Figures/ERA5_vs_CHELSA_rivers.pdf}
-    \caption{Effect of microclimatic conditions of rivers and valleys on
-        Pierce's Disease of grapevines. Comparison of the risk predicted using
-        ERA5
-        mid-resolution dataset (A,C,E) and CHELSA high-resolution dataset
-        (B,D,F).
-        (A-B) North-western Iberian Peninsula. (C-D) Sourthern France and
-        North-eastern
-        Spain. (E-F) Western United States. Black dots represent grapevines
-        (\textit{Vitis vinifera}) presence data obtained from GBIF (see
-        Methods).}
-    \label{fig:microclimates}
-\end{figure}
-
-\begin{figure}[H]
-    \centering
-
-    \includegraphics[width=\textwidth]{Figures/risk_difference_vineyards.pdf}
-    \caption{Impact of high-resolution climate data on the risk of Pierce's
-        Disease for grapevines worldwide. (A) Difference in risk indices in
-        Europe,
-        which accounts for the 96\% of the points in the dataset. (B)
-        Comparison of the
-        risk indices derived from CHELSA and ERA5 datasets. Points with perfect
-        agreement would lie in the solid black diagonal curve. (C) Histogram of
-        risk
-        indices derived from ERA5 (blue) and CHELSA (orange). (D) Histogram of
-        the
-        differences in risk indices between CHELSA and ERA5 datasets. (E)
-        Changes in
-        risk categories when using high-resolution climate data (CHELSA) with
-        respect
-        to mid-resolution data (ERA5). Risk category increase refers to changes
-        from
-        low to moderate risk or from moderate to high risk. Likewise, risk
-        category
-        decrease refers to changes from moderate to low risk or high to
-        moderate risk.}
-    \label{fig:risk_dif_vid}
-\end{figure}
 
 \section{Discussion}
 

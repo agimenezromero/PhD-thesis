@@ -516,7 +516,7 @@
 	colorlinks=true, % Whether to color links (a thin box is output around links if this is false)
 	%hidelinks, % Hide the default boxes around links
 	urlcolor=ocre, % Color for \url and \href links
-	linkcolor=black, % Color for \ref/\nameref links
+	linkcolor=ref_color, % Color for \ref/\nameref links
 	citecolor=ocre, % Color for reference citations like \cite{}
 	hyperindex=true, % Adds links from the page numbers in the index to the relevant page
 	linktoc=all, % Link from section names and page numbers in the table of contents

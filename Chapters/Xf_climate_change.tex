@@ -1,3 +1,28 @@
+\vspace{1cm}
+
+\textbf{Àlex Giménez-Romero$^{1}$, Maialen Iturbide$^{2}$, Eduardo
+    Moralejo$^{3}$, Jose M. Gutiérrez$^{2}$, Manuel A. Matías$^{1}$}
+
+\vspace{1cm}
+
+\begin{enumerate}
+    \small
+    \item Instituto de Física Interdisciplinar y Sistemas Complejos, IFISC
+          (CSIC-UIB), Palma de Mallorca 07122, Spain
+    \item Instituto de Física de Cantábria (CSIC-University of Cantabria),
+          Avenida de los Castros, 39005 Santander, Spain
+    \item Tragsa, Passatge Cala Figuera 6, 07009 Palma de Mallorca, Spain
+\end{enumerate}
+
+\vspace{1cm}
+
+\textbf{Published as}
+
+\vspace{0.5cm}
+
+\fullcite{GimenezRomero2023_PD}
+
+\newpage
 \section{Introduction}
 
 Climate change is widely recognized as an important driver of shifts in the
@@ -133,7 +158,7 @@ designated level within the RCP8.5 scenario (see
 \cite{diez-sierra_consistency_2023}). This information is available at the IPCC
 WGI Atlas GitHub repository \cite{iturbide_repository_2021}.
 
-\begin{table}
+\begin{table}[H]
     \centering
     \caption{\textbf{EURO-CORDEX GCM-RCM combinations used in this study.
             Numbers indicate the number of runs in each combination.}}
@@ -493,7 +518,7 @@ lower risk and potential economic impact of \textit{X. fastidiosa}-induced
 diseases on any host in southern Europe, particularly Spain, than previously
 predicted \cite{Schneider2020}. Realistic risk maps require a defined
 epidemiological framework to account for inter-annual climate variation and
-transmission in disease dynamics , in addition to accounting for changes in the
+transmission in disease dynamics, in addition to accounting for changes in the
 distribution of climatic conditions favorable to the pathogen and vector (i.e.
 climatic suitability). Our epidemic risk model focuses on delimiting the
 disease dynamics by simulating an epidemic process in which the emergence of
@@ -501,11 +526,7 @@ newly exposed hosts is influenced by the climatic suitability of the vector,
 while the transition to the infectious state is driven by the climatic
 suitability for \xf{} chronic infections. The effective growth rate of the
 infected host population over the simulated period is used to derive a risk
-index $r$, bounded between $-1$ and $1$. Within this modeling framework,
-different risk categories naturally emerge: no risk ($r<-0.1$), transition zone
-($-0.1\leq r<0.1$), low risk ($0.1\leq r<0.33$), moderate risk ($0.33\leq
-    r<0.66$) and high risk ($r\geq0.66$). For further details see the Methods
-section and the original paper \cite{GimenezRomero2022_CommsBio} .
+index $r$, bounded between $-1$ and $1$.
 
 \begin{figure}[H]
     \centering
@@ -527,6 +548,12 @@ section and the original paper \cite{GimenezRomero2022_CommsBio} .
         (1$\sigma$).}
     \label{fig:uncertainty}
 \end{figure}
+
+Within this modeling framework, different risk categories naturally emerge: no
+risk ($r<-0.1$), transition zone ($-0.1\leq r<0.1$), low risk ($0.1\leq
+    r<0.33$), moderate risk ($0.33\leq r<0.66$) and high risk ($r\geq0.66$).
+For further details see the Methods section and the original paper
+\cite{GimenezRomero2022_CommsBio}.
 
 Global warming (+1.5ºC, +2ºC, +3ºC, and +4ºC) is expected to increase the
 risk of PD epidemics in southern Europe, with France, Italy and Portugal being
@@ -553,22 +580,6 @@ velocity are broadly consistent with estimates of the velocity of temperature
 change \cite{Loarie2009}, indicating that shifts in PD risk in our model
 adequately track climate change.
 
-\begin{figure}[H]
-    \centering
-
-    \includegraphics[width=0.96\textwidth]{Figures/Future_risk_country_and_vineyards.pdf}
-    \caption{\textbf{Multi-scale spatial analysis of PD future risk in
-            Europe.} (a, c, e, g) Percentage of country areas at risk ($r>0.1$)
-        for each
-        climate projection. (b, d, f, h) PD risk zones in Protected Designation
-        of
-        Origin (PDO) wine regions for each climate projection. PDO data was
-        obtained
-        from \cite{Candiago2022}. The corresponding interactive analysis at the
-        vineyard level can be found in \cite{Webpage}}
-    \label{fig:vineyards}
-\end{figure}
-
 \cref{fig:uncertainty} shows the uncertainty in the projections of the PD
 risk map, comparing the 16th and 84th percentiles ($1\sigma$) from the set of
 40 regional climate models to the median risk map. The spatial distribution of
@@ -589,7 +600,25 @@ national level to the regions with Protected Designation of Origin (PDO) and
 finally taking into account the distribution of vineyards. This approach allows
 us to disaggregate the results at different administrative levels to facilitate
 the design of risk management and the implementation of appropriate
-phytosanitary measures. Overall, our model simulations show a consistent
+phytosanitary measures.
+
+\begin{figure}[H]
+    \centering
+
+    \includegraphics[width=\textwidth]{Figures/Future_risk_country_and_vineyards.pdf}
+    \caption{\textbf{Multi-scale spatial analysis of PD future risk in
+            Europe.} (a, c, e, g) Percentage of country areas at risk ($r>0.1$)
+        for each
+        climate projection. (b, d, f, h) PD risk zones in Protected Designation
+        of
+        Origin (PDO) wine regions for each climate projection. PDO data was
+        obtained
+        from \cite{Candiago2022}. The corresponding interactive analysis at the
+        vineyard level can be found in \cite{Webpage}}
+    \label{fig:vineyards}
+\end{figure}
+
+Overall, our model simulations show a consistent
 increasing trend in the risk of PD in Europe under all climate change
 scenarios. The percentage of land area at risk in Europe increases from 0.32\%
 in the +1.5ºC scenario to 1.87\% in the +4ºC, while the number of regions with

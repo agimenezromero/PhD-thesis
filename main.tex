@@ -20,7 +20,7 @@
 
 \definecolor{ocre}{RGB}{40, 173, 213} % Define the color used for highlighting throughout the book
 \definecolor{part_title}{RGB}{29, 117, 175} % Define the color used for the title of parts
-%\definecolor{part_title}{RGB}{45, 95, 144} % Define the color used for the title of parts
+\definecolor{ref_color}{RGB}{255, 153, 0} % Define the color used for the title of parts
 
 \chapterimage{} % Chapter heading image
 \chapterspaceabove{6.5cm} % Default whitespace from the top of the page to the chapter title on chapter pages
@@ -37,7 +37,7 @@
 \usepackage{amssymb}
 
 \usepackage{subfigure}
-\usepackage{caption}
+\usepackage[labelfont=bf]{caption}
 \usepackage{longtable}
 
 %% My commands %%
@@ -142,7 +142,10 @@
 
 \pagestyle{empty} % Disable headers and footers for the following pages
 
-\tableofcontents % Output the table of contents
+{
+	\hypersetup{hidelinks}
+	\tableofcontents % Output the table of contents
+}
 
 %\listoffigures % Output the list of figures, comment or remove this command if not required
 
@@ -202,8 +205,10 @@
 %----------------------------------------------------------------------------------------
 %	PART I: Introduction
 %----------------------------------------------------------------------------------------
-
+{
+\hypersetup{hidelinks}
 \part{Introduction}
+}
 
 %----------------------------------------------------------------------------------------
 %	Introduction
@@ -228,8 +233,10 @@
 %----------------------------------------------------------------------------------------
 %	PART II: Modelling parasite-produced marine diseases
 %----------------------------------------------------------------------------------------
-\part{Modelling parasite-produced marine diseases}
-
+{
+	\hypersetup{hidelinks}
+	\part{Modelling parasite-produced marine diseases}
+}
 \input{Chapters/Preface_part_II.tex}
 
 %----------------------------------------------------------------------------------------
@@ -257,8 +264,10 @@
 %----------------------------------------------------------------------------------------
 %	PART III: Towards more realistic models for Xylella fastidiosa spread
 %----------------------------------------------------------------------------------------
-
-\part{Modelling vector-borne plant diseases}
+{
+	\hypersetup{hidelinks}
+	\part{Modelling vector-borne plant diseases}
+}
 
 %----------------------------------------------------------------------------------------
 %	Vector-borne diseases with non-stationary vector populations: the case
@@ -279,15 +288,16 @@
 \chapterspaceabove{6.75cm}
 \chapterspacebelow{7.25cm}
 
-\chapter{A compartmental model for \textit{Xylella fastidiosa} diseases with
-  explicit vector seasonal dynamics}
+\chapter{A compartmental model for \textit{Xylella fastidiosa} diseases}
 \input{Chapters/Xf_phyto.tex}
 
 %----------------------------------------------------------------------------------------
 %	PART III: Modelling the risk of establishment of vector-borne plant diseases
 %----------------------------------------------------------------------------------------
-
-\part{Modelling the risk of vector-borne plant diseases}
+{
+	\hypersetup{hidelinks}
+	\part{Modelling the risk of vector-borne plant diseases}
+}
 
 %----------------------------------------------------------------------------------------
 %	Global predictions for the risk of establishment of Pierce’s disease
@@ -309,8 +319,7 @@
 \chapterspaceabove{6.75cm}
 \chapterspacebelow{7.25cm}
 
-\chapter{Global warming significantly increases the risk of Pierce's disease
-  epidemics in European vineyards}
+\chapter{Pierce's disease epidemic risk under global warming}
 \input{Chapters/Xf_climate_change.tex}
 
 %----------------------------------------------------------------------------------------
@@ -321,15 +330,16 @@
 \chapterspaceabove{6.75cm}
 \chapterspacebelow{7.25cm}
 
-\chapter{High-resolution climate data reveals increased risk of Pierce's
-  Disease for grapevines worldwide}
+\chapter{Pierce's Disease risk with high-resolution climate data}
 \input{Chapters/Xf_high_resolution.tex}
 
 %----------------------------------------------------------------------------------------
 %	PART IV: A global analysis of coral reef structure
 %----------------------------------------------------------------------------------------
-
-\part{Data-driven methods for global ecological problems}
+{
+	\hypersetup{hidelinks}
+	\part{Data-driven methods for global ecological problems}
+}
 
 %----------------------------------------------------------------------------------------
 %	Universal spatial properties of coral reefs	
