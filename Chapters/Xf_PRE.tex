@@ -431,6 +431,18 @@ vectors lifetime,
     t_D\sim\frac{1}{\mu}=\tau_v \ .
 \end{equation}
 
+\cref{fig:delay}(a) shows an example of the time delay caused in the hosts
+dynamics when the vector population grows from an initial condition far from
+the stationary value. In \cref{fig:delay}(b) we can qualitatively observe that
+all the predicted properties of the delay are fulfilled, namely, the time delay
+saturates for low $f$ values and decreases with increasing $R_0$. Although the
+analytical expression (black dashed line) is clearly not exact due to nonlinear
+effects, \cref{eq:delay} captures the basic trends of the time delay, $t_D$.
+This is clear from \cref{fig:delay}(c), that shows that the delay scales with
+$1/\mu$ and in \cref{fig:delay}(d) that shows that the delay tends to $0$ in
+the limit $R_0\rightarrow\infty$, in agreement with the prediction of
+\cref{eq:limit_tD_infty}.
+
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{Figures/delay.pdf}
@@ -445,18 +457,6 @@ vectors lifetime,
     $f=10^{-5}$.}
     \label{fig:delay}
 \end{figure}
-
-\cref{fig:delay}(a) shows an example of the time delay caused in the hosts
-dynamics when the vector population grows from an initial condition far from
-the stationary value. In \cref{fig:delay}(b) we can qualitatively observe that
-all the predicted properties of the delay are fulfilled, namely, the time delay
-saturates for low $f$ values and decreases with increasing $R_0$. Although the
-analytical expression (black dashed line) is clearly not exact due to nonlinear
-effects, \cref{eq:delay} captures the basic trends of the time delay, $t_D$.
-This is clear from \cref{fig:delay}(c), that shows that the delay scales with
-$1/\mu$ and in \cref{fig:delay}(d) that shows that the delay tends to $0$ in
-the limit $R_0\rightarrow\infty$, in agreement with the prediction of
-\cref{eq:limit_tD_infty}.
 
 \subsection{The basic reproduction number for non-stationary vector
     populations}
@@ -480,6 +480,22 @@ decaying vector population on the stationary $R_0$ (see
 \cref{app:R0_non_stationary} for the full derivation of
 \cref{eq:R0_non_stationary}).
 
+A first observation is that $\overline{R_0}>R_0$ always (for $f>1$). This
+stems from the fact that $\tau=1+\mu/\gamma>1$, so that $e^{-\tau}-1<0$, and
+$f-1>0$, which yields $\mathcal{F}>1$. This discussion unravels why standard
+methods fail to predict the onset of an epidemic under decaying vector
+populations. Another important point is that if $\mu/\gamma\gg 1$, which
+implies $\tau\gg1$,
+\begin{equation}
+    \lim_{\tau\gg1}\mathcal{F}=\lim_{\tau\gg1}\claudator{1-\frac{1}{\tau}
+        \parentesi{f-1}\parentesi{e^{-\tau}-1}}=1+\frac{f-1}{\tau}\
+    ,
+\end{equation}
+and if furthermore $\tau\sim\frac{\mu}{\gamma}\gg (f-1)$ then
+$\mathcal{F}\to 1$ and $\overline{R_0}\to R_0$. This is in agreement with the
+discussion in \cref{sec:R0statvp} showing that the $R_0$ computed from standard
+methods works if $\mu\gg\gamma$.
+
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{Figures/R0_check_mean_value.pdf}
@@ -498,22 +514,6 @@ decaying vector population on the stationary $R_0$ (see
         $\mu=\gamma$ has been used in all the simulations.}
     \label{fig:R0_check_mean_value}
 \end{figure}
-
-A first observation is that $\overline{R_0}>R_0$ always (for $f>1$). This
-stems from the fact that $\tau=1+\mu/\gamma>1$, so that $e^{-\tau}-1<0$, and
-$f-1>0$, which yields $\mathcal{F}>1$. This discussion unravels why standard
-methods fail to predict the onset of an epidemic under decaying vector
-populations. Another important point is that if $\mu/\gamma\gg 1$, which
-implies $\tau\gg1$,
-\begin{equation}
-    \lim_{\tau\gg1}\mathcal{F}=\lim_{\tau\gg1}\claudator{1-\frac{1}{\tau}
-        \parentesi{f-1}\parentesi{e^{-\tau}-1}}=1+\frac{f-1}{\tau}\
-    ,
-\end{equation}
-and if furthermore $\tau\sim\frac{\mu}{\gamma}\gg (f-1)$ then
-$\mathcal{F}\to 1$ and $\overline{R_0}\to R_0$. This is in agreement with the
-discussion in \cref{sec:R0statvp} showing that the $R_0$ computed from standard
-methods works if $\mu\gg\gamma$.
 
 \cref{fig:R0_check_mean_value}(a-b) contrasts numerically the validity of
 \cref{eq:R0_non_stationary} to predict the final size of the epidemic as a
