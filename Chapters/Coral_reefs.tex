@@ -1,3 +1,28 @@
+\vspace{1cm}
+
+\begin{center}
+    \textbf{Àlex Giménez-Romero$^{1}$, Manuel A. Matías$^{1}$, Carlos M.
+        Duarte$^{2}$}
+\end{center}
+
+\vspace{1cm}
+
+\begin{enumerate}
+    \small
+    \item Instituto de Física Interdisciplinar y Sistemas Complejos, IFISC
+          (CSIC-UIB), Palma de Mallorca 07122, Spain
+    \item Tragsa, Passatge Cala Figuera 6, 07009 Palma de Mallorca, Spain
+\end{enumerate}
+
+\vspace{1cm}
+
+\textbf{Published as}
+
+\vspace{0.5cm}
+
+%\fullcite{GimenezRomero2024}
+
+\newpage
 \section{Introduction}
 
 Coral reefs form some of the largest biogenic structures in the biosphere
@@ -168,26 +193,6 @@ function of reef size. This indicates that as coral reefs grow, their contour
 gets more and more convoluted, increasing its complexity, while its surface
 remains geometrically more stable.
 
-\begin{figure}[H]
-    \centering
-
-    \includegraphics[width=0.8\textwidth]{Figures/individual_reef_analysis_complete.pdf}
-    \caption{\textbf{The fractal nature of global coral reefs.} 2D
-        histograms from all shallow-water coral reefs worldwide for: (a) the
-        surface
-        fractal dimension and area; (b) the perimeter fractal dimension and
-        perimeter;
-        (c) the compactness and area and (d) the elongation index and area. The
-        black
-        line corresponds to the mean values of the Y axis measure as function
-        of the X
-        axis measure. The red histogram corresponds to the distribution of the
-        Y axis
-        measure. (e) Example of coral reefs shape as function of their
-        surface.}
-    \label{fig:individual_reef_analysis}
-\end{figure}
-
 To further understand the reef formation process from a geometric
 perspective, we computed other shape measurements such as compactness and
 elongation indices (see Methods). We observe that the compactness of coral
@@ -209,10 +214,42 @@ index), giving rise to fractal objects with stable surface fractal dimension
 and increasing perimeter fractal dimension as they grow
 (\cref{fig:individual_reef_analysis} e).
 
+\subsection{Fractality extends up to coral provinces}
+
+The fractal dimension of coral reefs varies across a range of spatial
+scales, spanning from individual colonies to entire reef systems
+\cite{George2021}. This variability arises from the different physical,
+biological, and ecological processes that come into play during the development
+of the different structures present at each organization level. The different
+coral provinces can be understood as the largest organizational level of these
+organisms, and the processes involved in maintaining such big structures should
+be different from that of individual reefs, giving rise to a different fractal
+dimension.
+
 \begin{figure}[H]
     \centering
 
-    \includegraphics[width=0.8\textwidth]{Figures/Box_Counting_Dimensions.pdf}
+    \includegraphics[width=1\textwidth]{Figures/individual_reef_analysis_complete.pdf}
+    \caption{\textbf{The fractal nature of global coral reefs.} 2D
+        histograms from all shallow-water coral reefs worldwide for: (a) the
+        surface
+        fractal dimension and area; (b) the perimeter fractal dimension and
+        perimeter;
+        (c) the compactness and area and (d) the elongation index and area. The
+        black
+        line corresponds to the mean values of the Y axis measure as function
+        of the X
+        axis measure. The red histogram corresponds to the distribution of the
+        Y axis
+        measure. (e) Example of coral reefs shape as function of their
+        surface.}
+    \label{fig:individual_reef_analysis}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+
+    \includegraphics[width=1\textwidth]{Figures/Box_Counting_Dimensions.pdf}
     \caption{Box Counting Dimension of coral reef provinces surface. (a)
         Scaling of the measure (number of boxes of length $\epsilon$,
         $N(\epsilon)$) as
@@ -229,18 +266,6 @@ and increasing perimeter fractal dimension as they grow
         correspond to a 1 $\sigma$ deviation from the mean.}
     \label{fig:Box_Counting_Dimension}
 \end{figure}
-
-\subsection{Fractality extends up to coral provinces}
-
-The fractal dimension of coral reefs varies across a range of spatial
-scales, spanning from individual colonies to entire reef systems
-\cite{George2021}. This variability arises from the different physical,
-biological, and ecological processes that come into play during the development
-of the different structures present at each organization level. The different
-coral provinces can be understood as the largest organizational level of these
-organisms, and the processes involved in maintaining such big structures should
-be different from that of individual reefs, giving rise to a different fractal
-dimension.
 
 To investigate this hypothesis, we computed the surface fractal dimension
 for each coral province as a whole using the well-known box-counting algorithm

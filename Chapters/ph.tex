@@ -1,3 +1,36 @@
+\vspace{3cm}
+
+\begin{center}
+    \textbf{Susana Flecha$^{1,2}$, Àlex Giménez-Romero$^{3}$, Joaquín
+        Tintoré$^{2,4}$, Fiz F. Pérez$^{5}$, Eva Alou-Font$^{4}$, Manuel A.
+        Matías$^{3}$, Iris E. Hendriks$^{2}$}
+\end{center}
+
+\vspace{1cm}
+
+\begin{enumerate}
+    \small
+    \item Instituto de Ciencias Marinas de Andalucía (ICMAN-CSIC), Polígono Río
+          San Pedro s/n, 11519 Cádiz, Puerto Real, Spain.
+    \item Instituto Mediterráneo de Estudios Avanzados, IMEDEA (CSIC-UIB),
+          E-07190 Esporles, Mallorca, Spain.
+    \item Instituto de Física Interdisciplinar y Sistemas Complejos, IFISC
+          (CSIC-UIB), Palma de Mallorca 07122, Spain.
+    \item Balearic Islands Coastal Observing and Forecasting System (SOCIB),
+          Parc Bit, Naorte, Bloc A 2op. pta. 3, 07121 Palma, Spain
+    \item Instituto de Investigaciones Marinas (IIM-CSIC), Eduardo Cabello 6,
+          36208 Vigo, Spain.
+\end{enumerate}
+
+\vspace{1cm}
+
+\textbf{Published as}
+
+\vspace{0.5cm}
+
+\fullcite{Flecha2022}
+
+\newpage
 \section{Introduction}
 
 Atmospheric carbon dioxide (CO\textsubscript{2}) emissions are
@@ -167,7 +200,24 @@ prolonged for an extended period of time owing to the Covid-19 lockdown.
 Additional environmental parameters like temperature, salinity and dissolved
 oxygen (DO) concentration are available from the Bay of Palma station since
 2012, while only a limited time series of these variables (since 2019) is
-available for Cabrera (\cref{fig:data}(a-c)). \\
+available for Cabrera (\cref{fig:data}(a-c)).
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{Figures/Data_study.pdf}
+    \caption{Daily averaged time series data from the Bay of Palma (black dots)
+        and Cabrera stations (grey dots): a) Temperature (Cº), b) Salinity
+        (psu), c)
+        Dissolved oxygen (DO) values (${\mu\textrm{mol
+                        kg}\textsuperscript{-1}}$) and
+        d) pH\textsubscript{T} in pH units. The pH time series of the Bay of
+        Palma will
+        be reconstructed in the period 2012-2021 while only gaps will be filled
+        in
+        Cabrera, as marked in blue in the figure.}
+    \label{fig:data}
+\end{figure}
+
 In both stations, temperature ranged from a minimum of 12.99 ºC to maximum
 values of 29.07ºC from 2012 to 2021, with no observed differences between the
 stations in Cabrera and the Bay of Palma (\cref{fig:data}(a)). The surface
@@ -176,7 +226,8 @@ climate seasonality with mild winters and warm to hot summers. Salinity did not
 show a repetitive seasonal pattern between years in either stations. However,
 in Cabrera salinity is slightly lower than in the Bay of Palma. During the data
 acquisition period, the lowest salinity value of 36.83 was found in Cabrera and
-highest of 38.30 in the Bay of Palma (\cref{fig:data}(b)).\\
+highest of 38.30 in the Bay of Palma (\cref{fig:data}(b)).
+
 The surface water of the coastal sites in the Balearic Sea in the Palma Bay
 and the Cabrera stations was highly saturated with oxygen during all the
 seasons, with DO concentrations up to  348.94 ${\mu \textrm{mol\,kg}^{-1}}$
@@ -185,7 +236,8 @@ early autumn (\cref{fig:data}(c)). pH\textsubscript{T} values obtained starting
 in December, 2018 to December, 2021 increased during winter reaching up to 8.18
 pH units at \emph{in situ} temperature and decreasing to 7.91 pH units in
 summer, with the highest variability and maximum and minimum values measured in
-Cabrera (\cref{fig:data}(d)).\\
+Cabrera (\cref{fig:data}(d)).
+
 Considering sampling period of the additional (temperature and salinity)
 and calculated parameters (Total Alkalinity; TA) was larger in the Bay of Palma
 compared to Cabrera, we evaluate the linear tendencies with time for the Bay of
@@ -202,18 +254,26 @@ supported by the discrete water samples for TA obtained during the period from
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.7\textwidth]{Figures/Data_study.pdf}
-    \caption{Daily averaged time series data from the Bay of Palma (black dots)
-        and Cabrera stations (grey dots): a) Temperature (Cº), b) Salinity
-        (psu), c)
-        Dissolved oxygen (DO) values (${\mu\textrm{mol
-                        kg}\textsuperscript{-1}}$) and
-        d) pH\textsubscript{T} in pH units. The pH time series of the Bay of
-        Palma will
-        be reconstructed in the period 2012-2021 while only gaps will be filled
-        in
-        Cabrera, as marked in blue in the figure.}
-    \label{fig:data}
+    \includegraphics[width=0.85\textwidth]{Figures/Best_bidirectional_LSTM.pdf}
+    \caption{Bidirectional LSTM neural network model applied to assess the
+        decadal pH\textsubscript{T} trend in the Bay of Palma: a) Training
+        process
+        monitoring loss for both training and validation sets, b) Predicted
+        pH\textsubscript{T} values against their true values where the black
+        line is
+        the reference for a perfect prediction, c) Predicted
+        pH\textsubscript{T} time
+        series in the training process (orange) and ground truth series (blue)
+        and d)
+        Final prediction for the decadal pH\textsubscript{T} time series using
+        the
+        output data of the trained model and the measured data. Measured pH
+        data shown
+        in blue, predicted data in the training process is shown in orange and
+        reconstructed data is shown in red. The black line represents the
+        decadal pH
+        trend.}
+    \label{fig:best_LSTM}
 \end{figure}
 
 \subsection{Reconstruction pH time series with Deep Learning}
@@ -240,6 +300,28 @@ pH\textsubscript{T} time series exhibits. Thus, we will use the model to fill
 the gaps in the pH\textsubscript{T} time series from 2019 to present, as shown
 in (\cref{fig:data}(d)).
 
+\begin{figure}[H]
+    \centering
+
+    \includegraphics[width=0.85\textwidth]{Figures/bidirectional_LSTM_gap_filling.pdf}
+    \caption{Bidirectional LSTM Neural Network model applied to fill the
+        gaps in the pH\textsubscript{T} time series in Cabrera: a) Training
+        process
+        monitoring loss for both training and validation sets, b) Predicted
+        pH\textsubscript{T} values against their true values where the black
+        line is
+        the reference for perfect prediction, c) Predicted pH\textsubscript{T}
+        time
+        series in the training process (orange) and ground truth series (blue)
+        and d)
+        Gaps in the pH\textsubscript{T} time series filled with the trained
+        model
+        (red), while measured pH\textsubscript{T} are shown in blue and
+        predicted data
+        in the training process shown in orange.}
+    \label{fig:Cabrera_gap_filling}
+\end{figure}
+
 A BiDireccional Long Short-Term Memory (BD-LSTM) neural network
 (\cref{fig:BD_LSTM_scheme}) was selected as the best recurrent neural network
 architecture to reconstruct the pH\textsubscript{T} time series in the Bay of
@@ -259,30 +341,6 @@ $1000$ independent training-prediction processes were carried out using a
 BD-LSTM neural network. The results showed a mean slope of  $-0.0020 \pm
     0.00054$ for the decadal acidification trend (see methods).
 
-\begin{figure}
-    \centering
-    \includegraphics[width=\textwidth]{Figures/Best_bidirectional_LSTM.pdf}
-    \caption{Bidirectional LSTM neural network model applied to assess the
-        decadal pH\textsubscript{T} trend in the Bay of Palma: a) Training
-        process
-        monitoring loss for both training and validation sets, b) Predicted
-        pH\textsubscript{T} values against their true values where the black
-        line is
-        the reference for a perfect prediction, c) Predicted
-        pH\textsubscript{T} time
-        series in the training process (orange) and ground truth series (blue)
-        and d)
-        Final prediction for the decadal pH\textsubscript{T} time series using
-        the
-        output data of the trained model and the measured data. Measured pH
-        data shown
-        in blue, predicted data in the training process is shown in orange and
-        reconstructed data is shown in red. The black line represents the
-        decadal pH
-        trend.}
-    \label{fig:best_LSTM}
-\end{figure}
-
 Regarding the Cabrera data set, with the available ambient time series it
 is only possible to fill the data gaps, task for which a BD-LSTM neural network
 was also used. As for the Bay of Palma the training process was successfully
@@ -294,28 +352,6 @@ training dataset, showing some deviations as usual
 perfectly captured by the model (\cref{fig:Cabrera_gap_filling}(c)) and thus
 the gap can be filled with reliable data, red points in
 (\cref{fig:Cabrera_gap_filling}(d)).
-
-\begin{figure}
-    \centering
-
-    \includegraphics[width=\textwidth]{Figures/bidirectional_LSTM_gap_filling.pdf}
-    \caption{Bidirectional LSTM Neural Network model applied to fill the
-        gaps in the pH\textsubscript{T} time series in Cabrera: a) Training
-        process
-        monitoring loss for both training and validation sets, b) Predicted
-        pH\textsubscript{T} values against their true values where the black
-        line is
-        the reference for perfect prediction, c) Predicted pH\textsubscript{T}
-        time
-        series in the training process (orange) and ground truth series (blue)
-        and d)
-        Gaps in the pH\textsubscript{T} time series filled with the trained
-        model
-        (red), while measured pH\textsubscript{T} are shown in blue and
-        predicted data
-        in the training process shown in orange.}
-    \label{fig:Cabrera_gap_filling}
-\end{figure}
 
 \section{Discussion}
 The achievement of long time oceanographic data series suitable to evaluate
@@ -487,7 +523,7 @@ inputs. Both stations are part of the Balearic Ocean Acidification Time Series
 (BOATS) network included in the Interdisciplinary Thematic Platform: Water:iOS
 (https://pti-waterios.csic.es/).
 
-\begin{figure}
+\begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{Figures/Fig_1.jpg}
     \caption{a) Map of the stations location in the Western Mediterranean Sea
