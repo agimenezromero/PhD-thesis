@@ -365,15 +365,16 @@ together with the assumed prior distributions. We observe that the
 literature-driven priors for the latent and infectious period, $\tau_E$ and
 $\tau_I$, were already very good guesses and changed slightly converging to the
 appropriate distribution that better fitted the epidemic data for both ALSD and
-OQDS (\cref{fig:parameter_estimates_ALSD}(A-B) and
-\cref{fig:parameter_estimates_OQDS}(A-B)). Similarly, the prior for the vector
+OQDS (\cref{fig:parameter_estimates_ALSD} (A-B) and
+\cref{fig:parameter_estimates_OQDS} (A-B)). Similarly, the prior for the vector
 removal rate, $\mu$, obtained from field data, was good enough so that little
-changes were needed for convergence (\cref{fig:parameter_estimates_ALSD}(C) and
-\cref{fig:parameter_estimates_OQDS}(C)). On the other hand, we also observe
+changes were needed for convergence (\cref{fig:parameter_estimates_ALSD} (C)
+and
+\cref{fig:parameter_estimates_OQDS} (C)). On the other hand, we also observe
 that the completely uninformative priors for the transmission rates
 successfully converged to the posterior distributions
-(\cref{fig:parameter_estimates_ALSD}(D-E) and
-\cref{fig:parameter_estimates_OQDS}(D-E)).
+(\cref{fig:parameter_estimates_ALSD} (D-E) and
+\cref{fig:parameter_estimates_OQDS} (D-E)).
 
 \begin{table}[H]
     \centering
@@ -546,25 +547,27 @@ derive the proper values for these parameters.
 \end{figure}
 
 Overall, the data falls within the 99\% confidence limits of the fitted
-model for both the ALSD and OQDS outbreaks (\cref{fig:best_fit_model}(B,D)). We
+model for both the ALSD and OQDS outbreaks (\cref{fig:best_fit_model} (B,D)).
+We
 also computed the instantaneous reproductive number, $R_0(t)$, by using
 \cref{eq:R0} with $S_H(t)$ instead of only $S_H(0)$ along the simulation.
 Noteworthy, $R_0(t)=1$ coincides with the stopping of new infections being
 produced, i.e. the number of exposed hosts does not increase
-(\cref{fig:best_fit_model}(A,C)). This supports our approximate method for
+(\cref{fig:best_fit_model} (A,C)). This supports our approximate method for
 computing the reproductive number for Xf diseases (\cref{app:R0},
 \cref{eq:R0}). Due to the different time scales of both epidemics
 ($\tau_I^{ALSD}+\tau_E^{ALSD} > \tau_I^{OQDS}+\tau_E^{OQDS}$), the OQDS
 outbreak dies out earlier than the one for ALSD.
 
 We notice that for ALSD a large proportion of the vector population gets
-infected every year (\cref{fig:best_fit_model}(A)), while a very small
+infected every year (\cref{fig:best_fit_model} (A)), while a very small
 proportion is needed in OQDS to produce a lethal outbreak
-(\cref{fig:best_fit_model}(C)). However, this last statement is rather
+(\cref{fig:best_fit_model} (C)). However, this last statement is rather
 unrealistic, as around 50\% of the vectors that are captured in Apulia are
 indeed infected by Xf \cite{Cavalieri2019,cornara2017transmission}. Thus, the
 evolution of the infected vector population should be qualitatively similar to
-that obtained for ALSD (\cref{fig:best_fit_model}(C)). As previously explained,
+that obtained for ALSD (\cref{fig:best_fit_model} (C)). As previously
+explained,
 different suitable combinations of $\alpha$ and $\beta$ parameters should give
 rise to similar progression curves for the hosts while different ones for the
 vectors, but the realistic values for these parameters cannot be obtained from
@@ -597,20 +600,20 @@ $I_v(t)$.
 Nevertheless, by manually exploring other values for $\alpha$ and $\beta$
 parameters, we can obtain a more biologically plausible scenario for the OQDS
 that is still able to fit the available data for the hosts.
-\cref{fig:best_fit_model_OQDS}(A) shows a simulation of the model with
+\cref{fig:best_fit_model_OQDS} (A) shows a simulation of the model with
 previously inferred best-fit median parameters for OQDS. By changing the values
 of $\alpha$ and $\beta$, we obtain a more realistic scenario, i.e. around a
 50\% of the vector population getting infected during the outbreak
-(\cref{fig:best_fit_model_OQDS}(B)) \cite{Cavalieri2019,
+(\cref{fig:best_fit_model_OQDS} (B)) \cite{Cavalieri2019,
     cornara2017transmission}. Noteworthy, the $\beta$ value obtained in this
 way
 is almost identical to the transmission rate recently reported by
 \cite{Bodino2021} for OQDS. This change in the transmission parameters only
 affects the progression curve of the infected vector population, being the
 progression of the host compartments practically unchanged
-(\cref{fig:best_fit_model_OQDS}(C)). Anyway, both sets of parameter values for
+(\cref{fig:best_fit_model_OQDS} (C)). Anyway, both sets of parameter values for
 $\alpha$ and $\beta$ can properly fit the field data, corresponding exclusively
-to the	host population (\cref{fig:best_fit_model_OQDS}(D)).
+to the	host population (\cref{fig:best_fit_model_OQDS} (D)).
 
 The model adjusted to the progression curves of both diseases indicates
 that the transmission rate $\alpha$ must be greater than $\beta$ when the

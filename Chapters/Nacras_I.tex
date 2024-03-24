@@ -277,7 +277,7 @@ SIRP model includes a
 fourth compartment that represents the parasite population in the water
 medium, whose population needs to be described explicitly. An explicit
 compartment allows to model the situation in which the population of parasites
-may evolve dynamically in time, although in Sec.~\ref{sec:fastslow} we will
+may evolve dynamically in time, although in \cref{sec:fastslow} we will
 consider the case in which the parasite populations accommodates almost
 instantaneously to the infected host population, and the description of the
 parasite can be simplified.
@@ -434,16 +434,16 @@ We will study the stability of the fixed point defined by $S(0)$,
 $I(0)=P(0)=0$ and $R(0)=N-S(0)$.
 A linear stability analysis of this fixed point reveals that it has two
 null eigenvalues, that stem from the condition $N=S+I+R$ and the conserved
-quantity of \ref{app:P_exact}.
+quantity of \cref{app:P_exact}.
 The first condition, $S+I+R=N$, implies that it is enough to consider two
 of the host populations, e.g. $S$ and $I$, as the third one can be obtained
 from the other two. The implications of the conserved quantity reported in
-\ref{app:P_exact} are more subtle, as it implies that fixed points are not
+\cref{app:P_exact} are more subtle, as it implies that fixed points are not
 isolated, as it happens in ordinary dissipative dynamical systems, and there is
 an infinite number (a line of) fixed points for the final state of the
 epidemic, depending on the initial conditions. This also implies that the phase
 space is foliated by the conserved quantity, $C$ of
-\cref{eq:conservedquantity}, and every initial condition, $S_0$, with a
+\cref{eq:conservedquantity_nacras_I}, and every initial condition, $S_0$, with a
 different value of $C$ leads to a different asymptotic condition, $S_{\infty}$,
 just as shown in \cite{Murray_book} for the SIR model (cf. Fig. 10.1 in
 \textit{op. cit.}).
@@ -451,7 +451,7 @@ The third eigenvalue, that is the largest of the two non-zero eigenvalues,
 can be positive if $\beta S_0 \lambda>\gamma(\beta S_0+\mu)$ and negative if
 the inequality is reversed, defining the conditional stability of the fixed
 point. The fourth eigenvalue is always negative and all the eigenvalues are
-always real (cf. \ref{app:linstabfp}).
+always real (\cref{app:linstabfp}).
 The instability of the fixed point along the third eigenvalue drives the
 beginning of the epidemic.
 
@@ -466,8 +466,8 @@ naturally.
 This quantity can be formally obtained making use of the Next Generation
 Matrix (NGM) method \cite{Theory_next_gen_matrix, Diekmann2010}. Applying this
 formal method to our system of ordinary differential equations (ODE's) one
-obtains the following relation for the basic reproduction number (cf.
-\ref{app:NGM}),
+obtains the following relation for the basic reproduction number
+(\cref{app:NGM}),
 \begin{equation}\label{eq:R_0_SIRP}
     R_0=\frac{\lambda}{\gamma\parentesi{1+\displaystyle\frac{\mu}{\bar{\beta}
                 S(0)}}} \ .
@@ -479,11 +479,11 @@ to the linear stability condition for the third eigenvalue of the initial,
 pre-epidemic, fixed point, as $\bar{\beta} S(0) \lambda>\gamma(\beta S(0)+\mu)$
 implies that this eigenvalue is positive and the disease-free equilibrium
 state unstable being this
-equivalent to $R_0>1$ (cf. \ref{app:linstabfp}).
+equivalent to $R_0>1$ (\cref{app:linstabfp}).
 Thus, if $R_0>1$ the fixed point is unstable, and an epidemic will ensure
 if infected hosts, $I$, or parasites, $P$ appear in the system. An epidemic
 will propagate until the system reaches an stable fixed point, that signals the
-end of the epidemic (cf. \ref{app:linstabfp}).
+end of the epidemic (\cref{app:linstabfp}).
 
 \subsection{Model reduction} \label{sec:reduction}
 
@@ -492,7 +492,7 @@ parameters, what makes difficult to confront it with experimental data. Thus,
 we will discuss here
 three alternative ways of reducing the model. The first involves an exact
 reduction of the model, based on the conserved quantity derived in
-\ref{app:P_exact}. The second reduction consists of an approximation to the
+\cref{app:P_exact}. The second reduction consists of an approximation to the
 previous exact reduction, that turns out to be equivalent to an exact reduction
 of a slightly simplified model (without the $-\bar{\beta}SP$ term in the
 equation of $\dot{P}$). The third one is based on an approximation valid if the
@@ -500,7 +500,7 @@ system parameters fulfil certain conditions.
 
 \subsubsection{Exact reduction of the SIRP model} \label{sec:exactred}
 
-From the conserved quantity derived in	\ref{app:P_exact}, it is possible
+From the conserved quantity derived in \cref{app:P_exact}, it is possible
 to write the parasite population in the SIRP model as a function of the host
 states as follows,
 \begin{equation}\label{eq:P_exact}
@@ -525,7 +525,7 @@ Substituting \cref{eq:P_exact} into the general SIRP model of
 Although using the conserved quantity yields an exact reduction from a 4D
 dynamical system to a 3D one, the number of independent parameters and initial
 conditions remain unchanged, i.e. they still depend on $4$ parameters and $4$
-initial conditions. Thus, although useful, (\ref{eq:SIR_exact}) is not ideal
+initial conditions. Thus, although useful, (\cref{eq:SIR_exact}) is not ideal
 when trying to fit experimental data, and this is the reason for trying a
 further approximation to \cref{eq:SIR_exact} to be discussed next.
 
@@ -541,10 +541,11 @@ $S$ term in \cref{eq:P_exact}, what is possible if $\lambda/\gamma\gg 1$
 and also $\mu\ln N/(\bar{\beta} N)\gg 1$, as $S(t)$ decreases monotonically
 with time and is, at most, $N$ at the initial time. Interestingly, this
 approximation is equivalent to the simplification of the equation for $\dot{P}$
-in (\ref{eq:SIRP}) so that the $-\bar{\beta}SP$ is skipped, what yields exactly
+in (\cref{eq:SIRP}) so that the $-\bar{\beta}SP$ is skipped, what yields
+exactly
 the SIP model of Ref. \cite{article_SIP}. This reduced model has an exact
 conserved quantity, $\mathcal{C}$, that differs from that of the SIRP model in
-the linear $S$ term (cf. \ref{app:P_exact}).
+the linear $S$ term (\cref{app:P_exact}).
 Using this approximation one can write,
 \begin{equation}\label{eq:SIR_exact_reduced}
     \begin{aligned}
@@ -655,7 +656,7 @@ variations in other input parameters while second order indices take into
 account first order interactions between parameters. While LSA is carried out
 analytically (if exact expressions are available), GSA is a purely numerical
 approach. Further mathematical details on Sensitivity Analysis can be found in
-\ref{app:sensanal}.
+\cref{app:sensanal}.
 
 For all the sensitivity analysis performed in the following sections, and
 in order to avoid ambiguities associated to the definition of $\bar{\beta}$ as
@@ -710,7 +711,7 @@ analytical expression of $R(t)$ so that we need to tackle the problem
 numerically. To this end, we perform GSA for the final number of dead
 individuals in order to determine the most influential parameters for this
 quantity. In particular, we apply the Sobol method, discussed in
-\ref{app:sensanal}.
+\cref{app:sensanal}.
 The Confidence Interval, CI, obtained in our
 study is less than 1\% of the index value, indicating a very high accuracy,
 therefore it is not shown in the figures. The results of the explained
@@ -1005,7 +1006,7 @@ $\beta'$ parameter corresponds to an increase of $3\,{}^o$C. This relation is
 in good agreement with the typical changes in rates of a wide range of
 organisms with a $\SI{3}{\degree C}$ change in temperature, while a 19-fold
 change in the rate would imply at least a $\SI{30}{\degree C}$ change in
-temperature (cf. \ref{app:rate_change}).
+temperature (\cref{app:rate_change}).
 
 The fact that there is an infinite number of combinations of the parameters
 that optimally fit the real data suggests that, as two parameters are slaved
@@ -1145,7 +1146,7 @@ model that one could think of having in mind its practical application, but
 could be extended to incorporate further effects that are so far described in
 an effective way.
 
-\section{Appendix}
+\section{Appendix} \label{sec:appendix_nacras}
 
 \subsection{Finding a conserved quantity for the SIRP model}
 \label{app:P_exact}
@@ -1181,7 +1182,7 @@ yielding,
 
 \begin{equation}
     P + \frac{\lambda}{\gamma}\parentesi{S+I}-S-\frac{\mu}{\bar{\beta}}\ln S=C
-    \label{eq:conservedquantity}
+    \label{eq:conservedquantity_nacras_I}
 \end{equation}
 with the integration constant $C$,
 that is a conserved quantity, i.e., it takes the same value at one time of
@@ -1195,7 +1196,7 @@ $C$ is related to the initial conditions by,
     \label{eq:C_constant}
 \end{equation}
 
-It is possible to use \cref{eq:conservedquantity}-\cref{eq:C_constant} to
+It is possible to use \cref{eq:conservedquantity_nacras_I}-\cref{eq:C_constant} to
 express one of variables as a function of the others, for example
 the parasite concentration $P$ as,
 \begin{equation} \label{eq:PSI_exact}
@@ -1208,7 +1209,7 @@ or equivalently as,
         \frac{\mu\gamma}{\bar{\beta}\lambda}\ln{\frac{S}{S(0)}}} + S - S(0)
 \end{equation}
 
-From \cref{eq:conservedquantity}, it is easy to show that the SIP model
+From \cref{eq:conservedquantity_nacras_I}, it is easy to show that the SIP model
 of Ref. \cite{article_SIP}, that differs from the SIRP model in that the
 fourth equation is simplified to $\dot{P}=\lambda I-\mu P$, has as
 exact conserved quantity,
@@ -1227,7 +1228,7 @@ of
     I+S-{{\gamma}\over{\beta'}} \ln S =C\ .
     \label{eq:SIRconservedquantity}
 \end{equation}
-Rewriting \cref{eq:conservedquantity} in the alternative form,
+Rewriting \cref{eq:conservedquantity_nacras_I} in the alternative form,
 \begin{equation}
     {{\gamma}\over{\lambda}} P +\left(1-{{\gamma}\over{\lambda}}\right) S + I
     -{{\mu\gamma}\over{\lambda\bar{\beta}}} \ln S=C'
@@ -1311,7 +1312,7 @@ The so called Next Generation Method (NGM) is a method to obtain $R_0$, the
 basic epidemiological quantity that measures the number of secondary cases
 produced by a typical infected individual during its entire period of
 infectiousness in a completely susceptible population. It was discussed in
-\ref{app:linstabfp} that $R_0$ is related to the largest non-zero eigenvalue,
+\cref{app:linstabfp} that $R_0$ is related to the largest non-zero eigenvalue,
 say $\Lambda$, of the fixed point corresponding to the infection-free
 equilibrium. An outbreak occurs when $\Lambda>0$ (or equivalently when $R_0>1$)
 and the NGM is an ingenious method to obtain directly $R_0$ in a reduced linear

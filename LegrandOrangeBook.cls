@@ -457,9 +457,64 @@
 	abbreviate=false, % Suppress abbreviations such as "Ed." for Editor
 	backref=true, % List the page where references were cited in the bibliography
 	defernumbers=true,
+	url=false, % Suppress printing URLs in the bibliography
+	eprint=false, % Suppress printing the eprint field in the bibliography
 ]{biblatex}
 
 \defbibheading{bibempty}{} % Suppress default bibliography headings
+
+% Link doi to journal name, volume, pages, etc
+\ExecuteBibliographyOptions{doi=false}
+\ExecuteBibliographyOptions{doi=false}
+\DeclareFieldFormat{doilink}{%
+	\iffieldundef{doi}{#1}%
+	{\href{http://dx.doi.org/\thefield{doi}}{#1}}}
+
+\DeclareBibliographyDriver{article}{%
+	\usebibmacro{bibindex}%
+	\usebibmacro{begentry}%
+	\usebibmacro{author/translator+others}%
+	\setunit{\labelnamepunct}\newblock
+	\usebibmacro{title}%
+	\newunit
+	\printlist{language}%
+	\newunit\newblock
+	\usebibmacro{byauthor}%
+	\newunit\newblock
+	\usebibmacro{bytranslator+others}%
+	\newunit\newblock
+	\printfield{version}%
+	\newunit\newblock
+	\usebibmacro{in:}%
+	\printtext[doilink]{%
+		\usebibmacro{journal+issuetitle}%
+		\newunit
+		\usebibmacro{byeditor+others}%
+		\newunit
+		\usebibmacro{note+pages}%
+	}%
+	\newunit\newblock
+	\newunit\newblock
+	\usebibmacro{doi+eprint+url}%
+	\newunit\newblock
+	\usebibmacro{addendum+pubstate}%
+	\setunit{\bibpagerefpunct}\newblock
+	\usebibmacro{pageref}%
+	\usebibmacro{finentry}}
+
+\AtEveryBibitem{\clearfield{issn}} %no issn
+\AtEveryBibitem{\clearfield{number}} %no number (issue)
+\AtEveryBibitem{\clearfield{isbn}}  %no isbn
+\AtEveryBibitem{\clearfield{month}}  %no month
+
+\DeclareFieldFormat{titlecase}{#1}
+
+%remove "In" in articles
+\renewbibmacro{in:}{%
+	\ifentrytype{article}{}{\printtext{\bibstring{in}\intitlepunct}}}
+
+%Bold volume
+\DeclareFieldFormat[article]{volume}{\mkbibbold{#1}}
 
 %----------------------------------------------------------------------------------------
 %	INDEX

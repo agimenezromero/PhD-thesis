@@ -214,8 +214,8 @@ conditions.
 When contrasting model results derived from high- and medium-resolution
 data for the latest available time (2016), the disparity in risk projections
 extends beyond regional differences, showing a global increase in risk indices
-across wine-growing areas (\cref{fig:risk_indices_dif} and
-Online Supplementary Information).  Overall, these increases
+across wine-growing areas (\cref{fig:risk_indices_dif,fig:ERA5_vs_chelsa}).
+Overall, these increases
 (\cref{fig:risk_categories_dif}) in the extension of PD risk areas ranged from
 100,000 to 1 million km$^2$ across viticulture regions worldwide. Transitions
 from no-risk to risk zones covered an area one order of magnitude larger than
@@ -252,7 +252,7 @@ high and mid-resolution data over the entire available time span (1986-2016),
 considering that the risk for each year is computed based on the preceding
 seven years. We found a notable global surge in the rate increase of the area
 at risk within viticulture zones worldwide, practically doubling previous
-estimates (Online Supplementary Information). These results point to an
+estimates (\cref{fig:area_at_risk}). These results point to an
 accelerated
 pace at which the risk of PD is growing, compatible with the predictions of
 different global warming scenarios \cite{GimenezRomero2023_PD}.
@@ -347,7 +347,7 @@ Finally, to obtain a comprehensive assessment of the impact of
 microclimatic conditions on the risk of PD establishment, we collated a dataset
 of over 100,000 \textit {Vitis vinifera} presence locations worldwide from GBIF
 \cite{GBIF}, with a predominant concentration of points from Europe
-(Online Supplementary Information). Each data point was assigned a risk index
+(\cref{fig:vid_locations}). Each data point was assigned a risk index
 based on
 the ERA5 and CHELSA projections, respectively, using the nearest pixel from
 each database.
@@ -520,7 +520,7 @@ present, we collected a comprehensive dataset of over 100,000 \textit{Vitis
     vinifera} presence data records from the Global Biodiversity Information
 Facility (GBIF) \cite{noauthor_what_nodate,GBIF}. We note that while the
 dataset spans the globe, 96\% of the points are located in Europe
-(Online Supplementary Information).
+(\cref{fig:vid_locations}).
 
 \subsection{Climate-driven epidemiological model}
 
@@ -635,3 +635,41 @@ in Spain (AEMET) using several locations and years, showing no differences
 between the use of hourly or daily temperatures to estimate MGDD and CDD.
 Similarly, the use of the approximation was validated across Europe using
 EURO-CORDEX data.
+
+\section{Appendix}
+
+\subsection{Risk chelsa vs ERA5}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Figures/area_risk.pdf}
+    \caption{Difference in projected risk in increase rate based on CHELSA
+        (high-resolution, 1 km) and ERA5 (mid-resolution, 10 km) datasets in
+        global
+        viticulture areas. (A) Europe (B) United States (C) South Africa (D)
+        South
+        America (E) Australia.}
+    \label{fig:area_at_risk}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.75\textwidth]{Figures/ERA5_vs_Chelsa_SI.pdf}
+    \caption{Comparison of risk indices obtained with ERA5 (mid-resolution
+        -- 10 km, left column) and CHELSA (high-resolution -- 1 km, right
+        column)
+        datasets in Europe (A-B), United States (C-D), South Africa (E-F),
+        South
+        America (G-H) and Australia (I-J).}
+    \label{fig:ERA5_vs_chelsa}
+\end{figure}
+
+\subsection{\textit{Vitis vinifera} global distribution}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{Figures/vid_locations.pdf}
+    \caption{Presence locations of \textit{Vitis vinifera} obtained from
+        GBIF.}
+    \label{fig:vid_locations}
+\end{figure}

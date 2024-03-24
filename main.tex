@@ -39,6 +39,7 @@
 \usepackage{subfigure}
 \usepackage[labelfont=bf]{caption}
 \usepackage{longtable}
+\usepackage{tabularray}
 
 %% My commands %%
 \newcommand{\dif}{\mathrm{d}}
@@ -52,6 +53,9 @@
 
 \newcommand{\xf}{Xf$_{\mathrm{PD}}$}
 \newcommand{\webpage}{\href{https://pdrisk.ifisc.uib-csic.es/future}{webpage}}
+
+\AtBeginEnvironment{appendices}{\crefalias{section}{appendix}}
+\AtBeginEnvironment{appendices}{\crefalias{subsection}{appendix}}
 
 \begin{document}
 
@@ -419,36 +423,37 @@
 \chapterspaceabove{6.75cm} % Whitespace from the top of the page to the chapter title on chapter pages
 \chapterspacebelow{7.25cm} % Amount of vertical whitespace from the top margin to the start of the text on chapter pages
 
-% \begin{appendices}
+\begin{appendices}
 
-% 	\renewcommand{\chaptername}{Appendix}
-% 	% Change the chapter name to Appendix, i.e. "Appendix A: Title", instead of "Chapter A: Title" in the headers
+	% Change the chapter name to Appendix, i.e. "Appendix A: Title", instead of "Chapter A: Title" in the headers
+	\renewcommand{\chaptername}{Appendix}
 
-% 	%------------------------------------------------
+	% Change the references to sections as Appendix instead of Section
+	\crefname{section}{Appendix}{Appendices}
 
-% 	\chapterimage{orange2.png}
-% 	\chapterspaceabove{6.75cm}
-% 	\chapterspacebelow{7.25cm}
+	%------------------------------------------------
 
-% 	\chapter{Effect of a higher vacancy density $\rho_{v}$ in the
-% 	  coarsening
-% 	  dynamics of the Schelling model}
-% 	\input{Chapters/Appendix_Schelling.tex}
+	\chapterimage{orange2.png}
+	\chapterspaceabove{6.75cm}
+	\chapterspacebelow{7.25cm}
 
-% 	%------------------------------------------------
+	\chapter{Modelling Pierce’s disease risk}
+	\input{Chapters/SI_commsbio.tex}
 
-% 	\chapterimage{orange3.png}
-% 	\chapterspaceabove{6.75cm}
-% 	\chapterspacebelow{7.25cm}
+	%------------------------------------------------
 
-% 	\chapter{\label{app:DERIVATION OF MASTER EQUATION WITH AGING}
-% 	  Generalized
-% 	  master equation for binary state dynamics with aging}
-% 	\input{Chapters/Appendix2_Threshold.tex}
+	% \chapterimage{orange3.png}
+	% \chapterspaceabove{6.75cm}
+	% \chapterspacebelow{7.25cm}
 
-% 	%------------------------------------------------
+	% \chapter{\label{app:DERIVATION OF MASTER EQUATION WITH AGING}
+	%   Generalized
+	%   master equation for binary state dynamics with aging}
+	% \input{Chapters/Appendix2_Threshold.tex}
 
-% \end{appendices}
+	%------------------------------------------------
+
+\end{appendices}
 
 %----------------------------------------------------------------------------------------
 

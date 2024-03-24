@@ -346,14 +346,14 @@ stations in the period 2010-2020 and computed both MGDD and CDD using the full
 hourly data and only the daily maximum and minimum temperatures, in the latter
 case using \cref{eq:approx}. The results showed no differences between hourly
 or daily temperatures computation to estimate MGDD and CDD
-(Online Supplementary Information). Because the temporal resolution
+(\cref{fig:MGDD_app,fig:CDD_app}). Because the temporal resolution
 of the E-OBS and ERA-5 land data sets are different and are acquired using
 different methodologies, we evaluated the possible divergence between the MGDD
 and CDD estimates  \cite{GimenezRomero2022_CommsBio}. These metrics calculated
 with
 both data agreed, showing a mean difference of 54 and 17 units for MGDD and
 CDD, respectively, and a standard deviation of 200 units for both metrics
-(Online Supplementary Information).
+(\cref{fig:EOBS_vs_ERA5}).
 
 \subsection{Vector climatic suitability}
 
@@ -447,7 +447,7 @@ climate projections covering Europe \cite{jacob_regional_2020} (see Methods).
 Progressive global warming increases the accumulation of MGDD during the
 growing season and reduces the recovery rate (i.e. CDD) during winter, thus
 favouring the geographic expansion of the pathogen
-(\cref{fig:Xf_Ps_suitability_change} and Online Supplementary Information).
+(\cref{fig:Xf_Ps_suitability_change} and \cref{fig:Xf_Ps_suitability}).
 Conversely, increasing temperatures tend to reduce the climatic suitability of
 vectors in more arid areas of southern Europe leading to a progressive
 migration to higher areas and latitudes in continental regions in search of
@@ -462,15 +462,15 @@ Bordeaux region in western France has not been at risk due to low cumulative
 MGDD and low winter protection effect.	In the transition from the +1.5ºC
 scenario to the +4ºC scenario, this area will experience a spectacular increase
 in risk mainly due to the expected summer warming
-(Online Supplementary Information). Conversely, areas of Central
+(\cref{fig:Xf_suitability_explainability}). Conversely, areas of Central
 Europe such as Hungary and Serbia already experience suitable conditions for
 pathogen growth in a +1.5ºC scenario ($\mathcal{F}(MGDD) > 0.6$); however, cold
 winters tend to eliminate any potential summer infection $[\mathcal{G}(CDD) <
-            0.3]$ (Online Supplementary Information). Climate change
+            0.3]$ (\cref{fig:Xf_suitability_explainability}). Climate change
 would further
 increase the growth of the pathogen  and reduce the winter curing effect in
 Central Europe, ultimately exposing the region to \xf{}
-(Online Supplementary Information).
+(\cref{fig:Xf_suitability_explainability}).
 
 \begin{figure}[H]
     \centering
@@ -536,23 +536,23 @@ For further details see the Methods section and the original paper
 Global warming (+1.5ºC, +2ºC, +3ºC, and +4ºC) is expected to increase the
 risk of PD epidemics in southern Europe, with France, Italy and Portugal being
 particularly affected (\cref{fig:PD_future_risk_zones} and
-Online Supplementary Information). This general trend affects each of the risk
+\cref{fig:PD_future_risk}). This general trend affects each of the risk
 categories under the different climate change scenarios
-(Online Supplementary Information). Furthermore, we observed that a global
+(\cref{fig:PD_future_risk_velocity}). Furthermore, we observed that a global
 temperature increase above +3ºC represents a tipping point for the possible
 spread of PD beyond the Mediterranean (\cref{fig:PD_future_risk_zones} and
-Online Supplementary Information). To quantify the potential spread of PD, we
+\cref{fig:PD_future_risk}). To quantify the potential spread of PD, we
 calculated risk velocity, an index that allows us to identify areas where risk
 is changing  or spreading rapidly (see Methods). We found a consistent and
 notable increase in the mean risk velocity within most of the identified risk
-zones (\cref{fig:PD_future_risk_zones} and
-Online Supplementary Information), increasing from almost 1 km y$^{-1}$ to 5
+zones (\cref{fig:PD_future_risk_zones} and \cref{fig:PD_future_risk_velocity}),
+increasing from almost 1 km y$^{-1}$ to 5
 km y$^{-1}$ as the temperature rises from a +1.5ºC to a +4ºC scenario
-(Online Supplementary Information). This acceleration is evident when we
+(\cref{tab:risk_vel}). This acceleration is evident when we
 compare that in
 the +1.5ºC scenario, approximately 6\% of the grid cells have risk velocities
 greater than 5 km y$^{\mathrm{-1}}$, while this value increases to 50\% in the
-+4ºC scenario (Online Supplementary Information). Furthermore, our estimates of
++4ºC scenario (\cref{tab:risk_vel}). Furthermore, our estimates of
 PD risk
 velocity are broadly consistent with estimates of the velocity of temperature
 change \cite{Loarie2009}, indicating that shifts in PD risk in our model
@@ -622,7 +622,7 @@ increasing trend in the risk of PD in Europe under all climate change
 scenarios. The percentage of land area at risk in Europe increases from 0.32\%
 in the +1.5ºC scenario to 1.87\% in the +4ºC, while the number of regions with
 PDO at risk increases from 18.17\% to 47.32\% . The vineyard area  increases
-from 18.67\% to 40.35\% (Online Supplementary Information). At country level
+from 18.67\% to 40.35\% (\cref{tab:general}). At country level
 Portugal and
 Greece face the highest overall risk, escalating from 12\% and 2\% of their
 area  in the +1.5ºC scenario to a striking 47\% and 63\%  respectively in a
@@ -630,7 +630,7 @@ area  in the +1.5ºC scenario to a striking 47\% and 63\%  respectively in a
 smaller but still significant increase in risk area, never exceeding the 20\%
 threshold, while Spain, the third largest wine producer, shows a decreasing
 trend in risk areas above the +2ºC scenario (\cref{fig:vineyards} and
-Online Supplementary Information). Such contrasting patterns in PD risk between
+\cref{tab:countries}). Such contrasting patterns in PD risk between
 countries
 only emerge when using our modelling framework.
 
@@ -638,7 +638,7 @@ A different picture emerges when looking at the spatial distribution of PDO
 regions and vineyards. For example, PD risk within French and Italian PDO
 regions increases significantly from 13.4\% and 45.8\% in a +1.5ºC scenario to
 41.6\% and 82.7\% in a +4ºC scenario (\cref{fig:vineyards} and
-Online Supplementary Information), while the percentage of vineyard area at
+\cref{tab:countries}), while the percentage of vineyard area at
 risk rises
 from 24.21\% and 57.49\% in a +1.5ºC scenario to an astonishing 80\% in a +4ºC
 scenario. Important European PDOs would be at risk from a warming of  +2ºC,
@@ -788,3 +788,501 @@ and the explicit consideration of the vineyard spatial setting. These findings
 can inform decision-making processes and support the development of effective
 strategies to mitigate the risks posed by PD and safeguard the future of
 viticulture in the face of a changing climate.
+
+\section{Appendix}
+
+\subsection{Present and future climate suitability for \textit{Xylella
+        fastidiosa} (PD) \& \textit{Philaenus spumarius}}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{Figures/Xf_Ps_suitability.pdf}
+    \caption{\textbf{Climate suitability for \xf{} and \textit{P.
+                spumarius} under the current scenario and different climate
+            projections.} (a,b)
+        Current scenario. (c,d) +2 ºC climate projection. (e,f) +3 ºC climate
+        projection. (g,h) +4 ºC climate projection.}
+    \label{fig:Xf_Ps_suitability}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+
+    \includegraphics[width=\textwidth]{Figures/Xf_suitability_explainability.pdf}
+    \caption{\textbf{$\mathcal{F}(MGDD)$, $\mathcal{G}(CDD)$ and
+            suitability of \xf{} ($\mathcal{F}(MGDD)\cdot\mathcal{G}(CDD)$)
+            under different
+            climate projections.} (a-c) +1.5 ºC climate projection. (d-f) +2 ºC
+        climate
+        projection. (g-i) +3 ºC climate projection. (j-l) +4 ºC climate
+        projection.}
+    \label{fig:Xf_suitability_explainability}
+\end{figure}
+
+\subsection{Future Pierce’s disease risk projections under climate change}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Figures/Future_risk_vector.pdf}
+    \caption{\textbf{Future risk of PD epidemics under different climate
+            projections.} (a) +1.5 ºC climate projection. (b) +2 ºC climate
+        projection. (c)
+        +3 ºC climate projection. (d) +4 ºC climate projection.}
+    \label{fig:PD_future_risk}
+\end{figure}
+
+\begin{table}[H]
+    \centering
+    \caption{Some risk velocity statistics for each climate projection.}
+    \begin{tabular}{ccccc}
+        \hline \hline
+        \textbf{Scenario}                & \textbf{+1.5} ºC & \textbf{+2 ºC} &
+        \textbf{+3
+        ºC}                              & \textbf{+4 ºC}
+        \\ \hline
+        Risk velocity $> 5$ km/year (\%) & 6.34             & 33.44          &
+        23.56                            & 52.48
+        \\
+        Max risk velocity (km/year)      & 181              & 691            &
+        393                              & 667
+        \\
+        Mean risk velocity (km/year)     & 0.78             & 1.9            &
+        3.84                             & 5.15
+        \\ \hline
+        \hline
+    \end{tabular}
+    \label{tab:risk_vel}
+\end{table}
+
+\begin{figure}[H]
+    \centering
+
+    \includegraphics[width=0.8\textwidth]{Figures/Future_risk_velocity_vector_histogram.png}
+    \caption{\textbf{Risk and risk velocity shifts as function of the
+            climate projections.} (a) Number of grid cells at each risk level
+        across the
+        different climate projections. (b) Histograms of PD risk velocities in
+        each
+        climate projection. A shift toward higher velocities can be clearly
+        observed.}
+    \label{fig:PD_future_risk_velocity}
+\end{figure}
+
+\subsection{Risk analysis within European wine Protected Designation of Origin
+    regions}
+
+An extended analysis on the potential impact of PD in European PDOs can be
+easily performed using our PD establishment risk \webpage, where the following
+insights can be contrasted in an interactive way.
+
+Some French wine regions consistently remain risk-free in all scenarios, such
+as Alsace, Jura, and Champagne, while others, like Bourgogne (including
+Beaujolais) and the Loire Valley, only reach the transitional risk region in
+the warmest scenarios . Conversely, the Rhône Valley, Southwest, Languedoc,
+Roussillon, Provence, and Bordeaux face increasing risk in warmer scenarios.
+Within the Rhône region, Condrieu PDO stays out of risk in the northern part,
+while Côte-Rotie reaches low risk only in the +4 ºC scenario. Further south,
+Châteauneuf-du-Pape reaches low risk from the +2 ºC scenario, and Costières de
+Nîmes becomes low risk from the +1.5 ºC scenario, escalating to medium risk
+from the +2 ºC scenario. Regions directly influenced by the Mediterranean, like
+Cassis and Bandol in Provence or Muscat de Frontignan in Languedoc, experience
+higher risk, with some coastal areas reaching medium-high risk levels. In
+Provence, the risk becomes medium in the warmest scenarios, while in
+Languedoc-Roussillon, it typically decreases to low risk from the +2 or +3 ºC
+scenarios (except for Muscat DOPs). In Bordeaux, certain right bank PDOs
+(Pomerol, Lalande de Pomerol) become low risk in the +3 ºC scenario, while
+Saint Emilion achieves the same in the +4 ºC scenario. On the left bank, major
+DOPs such as Margaux, Saint Julien, Pauillac, and Saint Estèphe reach low risk
+in the +4 ºC scenario, along with Pessac-Léognan in the region below the city
+of Bordeaux. Graves and Sauternes, however, reach at most the transitional risk
+level in the +3 ºC scenario.
+
+In Spain, contrasting patterns are observed. The northwestern part, including
+Rioja and Ribera del Duero DOPs, consistently remains risk-free in all four
+scenarios, except for the coastal Rías Baixas DOP, which becomes low risk in
+the +4 ºC scenario. In the southern region of Andalusia, a decrease in risk
+level is observed with increasing warming, as seen in the cases of the
+Jerez/Sherry PDO (labeled as Manzanilla) and Sierras de Málaga, which have low
+risk in the +1.5 ºC and +2 ºC scenarios and become transitional at +3 ºC and +4
+ºC, respectively. This decrease in risk is associated with decreased vector
+suitability as temperatures rise. In the more continental DOPs of Aragón and
+Valencia (Utiel-Requena), the risk remains non-existent, while those closer to
+the Mediterranean exhibit increased risk levels. Penedès becomes low risk in
+the +2 ºC scenario, and the coastal DOPs of Alella and Empordà clearly increase
+to medium risk at the +2 ºC scenario from a low risk level at the +1.5 ºC
+scenario. Other more continental DOPs, such as Priorat, become transitional at
+most. A similar pattern is observed in central Spain, with northern DOPs
+remaining risk-free and more southern ones (Méntrida, Ribera del Guadiana)
+becoming transitional. Notably, the large La Mancha DOP remains risk-free,
+again due to decreased vector suitability.
+
+In Portugal, a similar pattern of decreasing risk is observed in the southern
+regions of Algarve and Setúbal. However, there is a clear increase in risk in
+the central DOPs of Bairrada (reaching low-risk in the +2ºC scenario and
+medium-risk from +3ºC), Dão DOP (becoming low-risk from the +3ºC scenario), and
+Vinho Verde DOP, which exhibits the same pattern as the Rías Baixas region in
+Galicia, becoming low risk in the +4ºC scenario. The Óbidos DOP also becomes
+low risk from the +2ºC scenario. The Carcavelos and Colares DOPs, with their
+strong maritime influence, maintain or reach a medium risk level, while other
+DOPs like Alentejo, Beira Interior, and Trás-os-Montes are not at risk. The
+Douro DOP transitions from no risk to the transitional level, but this change
+may be influenced by the relatively low spatial resolution of our study, as the
+wine-producing area is relatively narrow (less than 0.1º).
+
+In Italy, there is an overall increase in risk observed across the country.
+However, the increase is more limited in Piedmont, where DOPs such as Barolo,
+Alba, Barbera, and Langhe only reach low-risk levels at 4ºC. Similarly, in
+Veneto and Friuli, they become low risk drom the 3ºC scenario, while Alto Adige
+DOP remains non-risk. In Tuscany, there is a considerable higher increase in
+risk. Coastal regions like Maremma and Bolgheri reach medium and high risk at
+2ºC, respectively, having positive risk already in the 1.5ºC scenario and the
+island of Elba already is already at high risk in the base scenario. More
+interior tuscan DOPs like Chianti and Brunello di Montalcino become low-risk
+from the +2ºC scenario. In Umbria, the risk increases rapidly, with Colli
+Perugini DOP reaching medium-risk at the +3ºC scenario, and Torgiano and
+Orvieto transitioning from low-risk at +2ºC to medium risk at +3ºC. In the
+Apulia region, there are distinct differences between the lower tip of the
+Apulian peninsula, where the risk levels remain consistently high, and the more
+continental north, where DOPs like Gravina in Bari province become low-risk
+from the +2ºC scenario, and San Severo DOP in Foggia province consistently
+stays at low-risk across all scenarios. In the islands, the risk decreases with
+increasing warming scenarios in some zones of Sicily, like Marsala, while
+others stay at risk and not changing the level, and a nonmonotonic behavior is
+found in Etna (decreases at 2ºC and increases again at 3ºC), while Sardinian
+DOPs maintain their risk level, typically medium, like Malvasia di Bosa,
+Vermentino di Gallura and Vernaccia di Oristano.
+
+\begin{table}[H]
+    \centering
+    \caption{\textbf{Percentage of land surface, vineyard surface and PDOs at
+            risk
+            in Europe under different climate projections.}}
+    \label{tab:general}
+    \resizebox{\textwidth}{!}{%
+        \begin{tabular}{cllll|llll|llll}
+            \hline
+            \textit{}                                          &
+            \multicolumn{4}{c}{\textbf{Land surface (\%)}}     &
+            \multicolumn{4}{c}{\textbf{Vineyard surface (\%)}} &
+            \multicolumn{4}{c}{\textbf{PDOs (\%)}}               \\ \hline
+            \textbf{Scenario}                                  &
+            \multicolumn{1}{c}{\textit{\textbf{+1.5 ºC}}}      &
+            \multicolumn{1}{c}{\textit{\textbf{+ 2 ºC}}}       &
+            \multicolumn{1}{c}{\textit{\textbf{+3 ºC}}}        &
+            \multicolumn{1}{c}{\textit{\textbf{+4 ºC}}}        &
+            \multicolumn{1}{c}{\textit{\textbf{+1.5 ºC}}}      &
+            \multicolumn{1}{c}{\textit{\textbf{+ 2 ºC}}}       &
+            \multicolumn{1}{c}{\textit{\textbf{+3 ºC}}}        &
+            \multicolumn{1}{c}{\textit{\textbf{+4 ºC}}}        &
+            \multicolumn{1}{c}{\textit{\textbf{+1.5 ºC}}}      &
+            \multicolumn{1}{c}{\textit{\textbf{+ 2 ºC}}}       &
+            \multicolumn{1}{c}{\textit{\textbf{+3 ºC}}}        &
+            \multicolumn{1}{c}{\textit{\textbf{+4 ºC}}}          \\ \hline
+            \textbf{No risk}                                   &
+            99.4                                               &
+            99.15                                              &
+            98.61                                              &
+            96.14                                              &
+            68.89                                              &
+            61.3                                               &
+            45.54                                              &
+            37.64                                              &
+            72.7                                               &
+            64.88                                              &
+            49.17                                              &
+            33.89                                                \\
+            \textbf{Transition}                                &
+            0.28                                               &
+            0.39                                               &
+            0.64                                               &
+            1.99                                               &
+            12.44                                              &
+            14.35                                              &
+            21.86                                              &
+            22.0                                               &
+            9.13                                               &
+            9.39                                               &
+            15.28                                              &
+            18.79                                                \\
+            \textbf{Low}                                       &
+            0.12                                               &
+            0.18                                               &
+            0.32                                               &
+            0.82                                               &
+            8.01                                               &
+            10.26                                              &
+            14.58                                              &
+            18.51                                              &
+            7.11                                               &
+            12.64                                              &
+            15.45                                              &
+            20.19                                                \\
+            \textbf{Medium}                                    &
+            0.15                                               &
+            0.22                                               &
+            0.34                                               &
+            0.87                                               &
+            9.33                                               &
+            12.1                                               &
+            15.93                                              &
+            19.96                                              &
+            9.13                                               &
+            10.01                                              &
+            15.63                                              &
+            22.3                                                 \\
+            \textbf{High}                                      &
+            0.04                                               &
+            0.06                                               &
+            0.09                                               &
+            0.18                                               &
+            1.34                                               &
+            1.99                                               &
+            2.09                                               &
+            1.89                                               &
+            1.93                                               &
+            3.07                                               &
+            4.48                                               &
+            4.83                                                 \\
+            \textbf{Total risk (r\textgreater{}0.1)}           &
+            0.32                                               &
+            0.46                                               &
+            0.75                                               &
+            1.87                                               &
+            18.67                                              &
+            24.35                                              &
+            32.6                                               &
+            40.35                                              &
+            18.17                                              &
+            25.72                                              &
+            35.56                                              &
+            47.32                                                \\ \hline
+        \end{tabular}%
+    }
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \caption{\textbf{Percentage of land surface, vineyard surface and PDOs at
+            risk
+            per different European countries under different climate
+            projections.}}
+    \label{tab:countries}
+    \resizebox{\textwidth}{!}{%
+        \begin{tabular}{lllllllllllll}
+            \hline
+            \multicolumn{1}{c}{\textit{}}                      &
+            \multicolumn{4}{c}{\textbf{Total surface (\%)}}    &
+            \multicolumn{4}{c}{\textbf{Vineyard surface (\%)}} &
+            \multicolumn{4}{c}{\textbf{PDO (\%)}}                \\ \hline
+            \multicolumn{1}{c}{\textbf{Scenario}}              &
+            \multicolumn{1}{c}{\textit{\textbf{+1.5 ºC}}}      &
+            \multicolumn{1}{c}{\textit{\textbf{+ 2 ºC}}}       &
+            \multicolumn{1}{c}{\textit{\textbf{+3 ºC}}}        &
+            \multicolumn{1}{c}{\textit{\textbf{+4 ºC}}}        &
+            \multicolumn{1}{c}{\textit{\textbf{+1.5 ºC}}}      &
+            \multicolumn{1}{c}{\textit{\textbf{+ 2 ºC}}}       &
+            \multicolumn{1}{c}{\textit{\textbf{+3 ºC}}}        &
+            \multicolumn{1}{c}{\textit{\textbf{+4 ºC}}}        &
+            \multicolumn{1}{c}{\textit{\textbf{+1.5 ºC}}}      &
+            \multicolumn{1}{c}{\textit{\textbf{+ 2 ºC}}}       &
+            \multicolumn{1}{c}{\textit{\textbf{+3 ºC}}}        &
+            \multicolumn{1}{c}{\textit{\textbf{+4 ºC}}}          \\ \hline
+            \textbf{Austria}                                   &
+            0.0                                                &
+            0.0                                                &
+            0.0                                                &
+            0.0                                                &
+            0.0                                                &
+            0.0                                                &
+            0.0                                                &
+            0.0                                                &
+            0.0                                                &
+            0.0                                                &
+            0.0                                                &
+            0.0                                                  \\
+            \textbf{Belgium}                                   &
+            0.0                                                &
+            0.0                                                &
+            0.0                                                &
+            0.0                                                &
+            0.0                                                &
+            0.0                                                &
+            0.0                                                &
+            0.0                                                &
+            0.0                                                &
+            0.0                                                &
+            0.0                                                &
+            0.0                                                  \\
+            \textbf{Bulgaria}                                  &
+            0.01                                               &
+            0.03                                               &
+            0.11                                               &
+            3.43                                               &
+            0.25                                               &
+            0.41                                               &
+            2.74                                               &
+            4.88                                               &
+            0.22                                               &
+            0.56                                               &
+            1.91                                               &
+            3.27                                                 \\
+            \textbf{Croatia}                                   &
+            0.24                                               &
+            0.38                                               &
+            0.64                                               &
+            14.82                                              &
+            31.53                                              &
+            42.6                                               &
+            45.89                                              &
+            47.65                                              &
+            31.27                                              &
+            23.75                                              &
+            27.93                                              &
+            32.47                                                \\
+            \textbf{France}                                    &
+            0.53                                               &
+            0.84                                               &
+            2.32                                               &
+            7.25                                               &
+            24.21                                              &
+            35.75                                              &
+            56.43                                              &
+            80.0                                               &
+            13.37                                              &
+            15.62                                              &
+            22.73                                              &
+            41.65                                                \\
+            \textbf{Germany}                                   &
+            0.0                                                &
+            0.0                                                &
+            0.0                                                &
+            0.0                                                &
+            0.0                                                &
+            0.0                                                &
+            0.0                                                &
+            0.0                                                &
+            0.0                                                &
+            0.0                                                &
+            0.0                                                &
+            0.0                                                  \\
+            \textbf{Greece}                                    &
+            1.62                                               &
+            2.33                                               &
+            3.32                                               &
+            53.37                                              &
+            59.61                                              &
+            65.08                                              &
+            70.36                                              &
+            66.69                                              &
+            66.38                                              &
+            71.19                                              &
+            72.61                                              &
+            74.68                                                \\
+            \textbf{Italy}                                     &
+            3.44                                               &
+            4.98                                               &
+            8.39                                               &
+            13.8                                               &
+            57.49                                              &
+            65.4                                               &
+            77.34                                              &
+            81.79                                              &
+            45.77                                              &
+            58.34                                              &
+            74.71                                              &
+            82.65                                                \\
+            \textbf{Portugal}                                  &
+            4.66                                               &
+            8.36                                               &
+            30.05                                              &
+            30.22                                              &
+            12.7                                               &
+            28.14                                              &
+            33.77                                              &
+            42.71                                              &
+            19.54                                              &
+            27.9                                               &
+            35.43                                              &
+            36.82                                                \\
+            \textbf{Slovenia}                                  &
+            0.01                                               &
+            0.01                                               &
+            0.05                                               &
+            0.14                                               &
+            1.26                                               &
+            4.5                                                &
+            12.99                                              &
+            21.3                                               &
+            2.86                                               &
+            3.73                                               &
+            6.05                                               &
+            11.14                                                \\
+            \textbf{Slovakia}                                  &
+            0.0                                                &
+            0.0                                                &
+            0.0                                                &
+            0.0                                                &
+            0.0                                                &
+            0.0                                                &
+            0.0                                                &
+            0.0                                                &
+            0.0                                                &
+            0.0                                                &
+            0.0                                                &
+            0.0                                                  \\
+            \textbf{Spain}                                     &
+            6.98                                               &
+            7.43                                               &
+            6.33                                               &
+            6.34                                               &
+            3.77                                               &
+            3.99                                               &
+            4.55                                               &
+            4.42                                               &
+            12.74                                              &
+            13.41                                              &
+            10.6                                               &
+            10.83                                                \\ \hline
+        \end{tabular}%
+    }
+\end{table}
+
+\subsection{MGDD and CDD from daily temperature approximation}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.64\textwidth]{Figures/MGDD_approx_comparison.pdf}
+    \caption{Comparison of MGDD accumulation computed with hourly mean
+        temperature data (solid line) and daily maximum and minimum values
+        (dashed
+        line) using data from several meteorological stations in Spain and
+        different
+        years. The last row shows the distribution of errors and mean error in
+        MGDD and
+        the mean and maximum potential errors in infection probability.}
+    \label{fig:MGDD_app}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.64\textwidth]{Figures/CDD_approx_comparison.pdf}
+    \caption{Comparison of CDD accumulation computed with hourly mean
+        temperature data (solid line) and daily maximum and minimum values
+        (dashed
+        line) using data from several meteorological stations in Spain and
+        different
+        years. The last row shows the distribution of errors and mean error in
+        CDD and
+        the mean and maximum potential errors in infection probability.}
+    \label{fig:CDD_app}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{Figures/E-OBS_vs_ERA5.pdf}
+    \caption{Differences in annual accumulated MGDD and CDD when using
+        ERA5-Land dataset with hourly mean temperature and EOBS dataset with
+        maximum
+        and minimum daily temperatures.}
+    \label{fig:EOBS_vs_ERA5}
+\end{figure}
