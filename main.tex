@@ -250,8 +250,7 @@
 \chapterspacebelow{7.25cm}
 
 \chapter{The case of the mass mortality event of \textit{Pinna nobilis}}
-
-\input{Chapters/Nacras_I.tex}
+%\input{Chapters/Nacras_I.tex}
 
 %----------------------------------------------------------------------------------------
 %	Spatial effects in parasite-induced marine diseases of immobile hosts
@@ -261,15 +260,15 @@
 \chapterspacebelow{7.25cm}
 
 \chapter{Spatial effects in parasite-induced marine diseases}
-\input{Chapters/Nacras_II.tex}
+ %\input{Chapters/Nacras_II.tex}
 
-%----------------------------------------------------------------------------------------
-%	PART III: Towards more realistic models for Xylella fastidiosa spread
-%----------------------------------------------------------------------------------------
-{
-	\hypersetup{hidelinks}
-	\part{Modelling vector-borne plant diseases}
-}
+ %----------------------------------------------------------------------------------------
+ %	PART III: Towards more realistic models for Xylella fastidiosa spread
+ %----------------------------------------------------------------------------------------
+ {
+  \hypersetup{hidelinks}
+  \part{Modelling vector-borne plant diseases}
+ }
 
 %----------------------------------------------------------------------------------------
 %	Vector-borne diseases with non-stationary vector populations: the case
@@ -280,7 +279,7 @@
 \chapterspacebelow{7.25cm}
 
 \chapter{Non-stationary vector populations}
-\input{Chapters/Xf_PRE.tex}
+%\input{Chapters/Xf_PRE.tex}
 
 %----------------------------------------------------------------------------------------
 %	A compartmental model for Xylella fastidiosa diseases with explicit
@@ -291,15 +290,15 @@
 \chapterspacebelow{7.25cm}
 
 \chapter{A compartmental model for \textit{Xylella fastidiosa} diseases}
-\input{Chapters/Xf_phyto.tex}
+ %\input{Chapters/Xf_phyto.tex}
 
-%----------------------------------------------------------------------------------------
-%	PART III: Modelling the risk of establishment of vector-borne plant diseases
-%----------------------------------------------------------------------------------------
-{
-	\hypersetup{hidelinks}
-	\part{Modelling the risk of vector-borne plant diseases}
-}
+ %----------------------------------------------------------------------------------------
+ %	PART III: Modelling the risk of establishment of vector-borne plant diseases
+ %----------------------------------------------------------------------------------------
+ {
+  \hypersetup{hidelinks}
+  \part{Modelling the risk of vector-borne plant diseases}
+ }
 
 %----------------------------------------------------------------------------------------
 %	Global predictions for the risk of establishment of Pierce’s disease
@@ -311,7 +310,7 @@
 
 \chapter{Global predictions for the risk of establishment of Pierce’s disease
   of grapevines}
-\input{Chapters/Xf_commsbio.tex}
+%\input{Chapters/Xf_commsbio.tex}
 
 %----------------------------------------------------------------------------------------
 %	Global warming significantly increases the risk of Pierce's disease epidemics
@@ -322,7 +321,7 @@
 \chapterspacebelow{7.25cm}
 
 \chapter{Pierce's disease epidemic risk under global warming}
-\input{Chapters/Xf_climate_change.tex}
+%\input{Chapters/Xf_climate_change.tex}
 
 %----------------------------------------------------------------------------------------
 %	High-resolution climate data reveals increased risk of Pierce's Disease for 
@@ -333,15 +332,15 @@
 \chapterspacebelow{7.25cm}
 
 \chapter{Pierce's Disease risk with high-resolution climate data}
-\input{Chapters/Xf_high_resolution.tex}
+ %\input{Chapters/Xf_high_resolution.tex}
 
-%----------------------------------------------------------------------------------------
-%	PART IV: A global analysis of coral reef structure
-%----------------------------------------------------------------------------------------
-{
-	\hypersetup{hidelinks}
-	\part{Data-driven methods for global ecological problems}
-}
+ %----------------------------------------------------------------------------------------
+ %	PART IV: A global analysis of coral reef structure
+ %----------------------------------------------------------------------------------------
+ {
+  \hypersetup{hidelinks}
+  \part{Data-driven methods for global ecological problems}
+ }
 
 %----------------------------------------------------------------------------------------
 %	Universal spatial properties of coral reefs	
@@ -351,7 +350,7 @@
 \chapterspacebelow{7.25cm}
 
 \chapter{Universal spatial properties of coral reefs}
-\input{Chapters/Coral_reefs.tex}
+%\input{Chapters/Coral_reefs.tex}
 
 %----------------------------------------------------------------------------------------
 %	pH trends and seasonal cycle in the coastal Balearic Sea reconstructed
@@ -362,7 +361,7 @@
 \chapterspacebelow{7.25cm}
 
 \chapter{Reconstructing coastal pH time-series with machine learning}
-\input{Chapters/ph.tex}
+%\input{Chapters/ph.tex}
 
 %----------------------------------------------------------------------------------------
 %	Mapping the distribution of seagrass meadows from space with deep
@@ -373,7 +372,7 @@
 \chapterspacebelow{7.25cm}
 
 \chapter{Mapping the distribution of seagrass meadows from space}
-\input{Chapters/Posidonia.tex}
+%\input{Chapters/Posidonia.tex}
 
 \stopcontents[part] % Manually stop the 'part' table of contents here so the previous Part page table of contents doesn't list the following chapters
 
@@ -437,19 +436,28 @@
 	\chapterspaceabove{6.75cm}
 	\chapterspacebelow{7.25cm}
 
-	\chapter{Modelling Pierce’s disease risk}
-	\input{Chapters/SI_commsbio.tex}
+	\chapter{Analysis of the SIRP model}
+	\input{Chapters/Appendix_Nacras.tex}
 
 	%------------------------------------------------
 
-	% \chapterimage{orange3.png}
-	% \chapterspaceabove{6.75cm}
-	% \chapterspacebelow{7.25cm}
+	%------------------------------------------------
 
-	% \chapter{\label{app:DERIVATION OF MASTER EQUATION WITH AGING}
-	%   Generalized
-	%   master equation for binary state dynamics with aging}
-	% \input{Chapters/Appendix2_Threshold.tex}
+	\chapterimage{orange2.png}
+	\chapterspaceabove{6.75cm}
+	\chapterspacebelow{7.25cm}
+
+	\chapter{Analysis of the SIR-V model and application to Xf diseases}
+	\input{Chapters/Appendix_VBD.tex}
+
+	%------------------------------------------------
+
+	\chapterimage{orange2.png}
+	\chapterspaceabove{6.75cm}
+	\chapterspacebelow{7.25cm}
+
+	\chapter{Modelling Pierce’s disease risk}
+	\input{Chapters/Appendix_PD_risk.tex}
 
 	%------------------------------------------------
 
