@@ -829,7 +829,8 @@
 		\begin{center}
 			\color{ocre}\sffamily\bfseries\Large Objectives
 		\end{center}
-		\begin{itemize}[leftmargin=*,labelsep=5pt]
+		\vspace{15pt}
+		\begin{itemize}[leftmargin=*,labelsep=5pt, itemsep=8pt]
 			\renewcommand\labelitemi{\color{ocre}\raisebox{1.25pt}{\tiny\ensuremath{\blacksquare}}}
 			\advance\baselineskip -1pt% Reduce line spacing
 			}{%
@@ -844,7 +845,8 @@
 		\begin{center}
 			\color{ocre}\sffamily\bfseries\Large Contributions
 		\end{center}
-		\begin{itemize}[leftmargin=*,labelsep=5pt]
+		\vspace{15pt}
+		\begin{itemize}[leftmargin=*,labelsep=5pt,itemsep=8pt]
 			\renewcommand\labelitemi{\color{ocre}\raisebox{1.25pt}{\tiny\ensuremath{\blacksquare}}}
 			\advance\baselineskip -1pt% Reduce line spacing
 			}{%
