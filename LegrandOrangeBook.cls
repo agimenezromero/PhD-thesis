@@ -451,14 +451,15 @@
 \usepackage[
 	backend=biber, % Use the biber engine for compiling the bibliography
 	bibstyle=numeric, % Main bibliography style
-	citestyle=numeric, % In-text citation style
-	sorting=nyt, % Sort references in the bibliography by name, then year, then title
+	citestyle=numeric-comp, % In-text citation style
+	sorting=none, % Sort references in the bibliography by name, then year, then title
 	sortcites=true, % If multiple citekeys are passed to a citation command, sort them in the citation
 	abbreviate=false, % Suppress abbreviations such as "Ed." for Editor
 	backref=true, % List the page where references were cited in the bibliography
 	defernumbers=true,
 	url=false, % Suppress printing URLs in the bibliography
 	eprint=false, % Suppress printing the eprint field in the bibliography
+	maxcitenames=2, % Max number of names displayed in a citation before truncation
 ]{biblatex}
 
 \defbibheading{bibempty}{} % Suppress default bibliography headings
