@@ -588,14 +588,25 @@ where $\gamma$ is the death rate of infected vines, $R_0$ is the basic
 reproduction number of the disease and $\mathcal{F}(\cdot)$ and
 $\mathcal{G}(\cdot)$ are sigmoidal-like functions that relate the MGDD and CDD
 metrics to the probability of developing an infection from a given inoculation.
-Following \cite{GimenezRomero2022_CommsBio}, $R_0$ in each cell $j$ is related
-to the
-climatic suitability of the vector such that
+
+To incorporate the spatial heterogeneity of the vector population, $R_0$ in
+each cell $j$ can be related to the climatic suitability of the vector, such
+that
 \begin{equation}
-    R_0^j=R_0^*\cdot s_j=5\cdot s_j \ ,
+    R_0^j=R_0^*\cdot s_j \ .
 \end{equation}
-$\gamma=0.2$ and the specific form of $\mathcal{F}(\cdot)$ and
-$\mathcal{G}(\cdot)$ is given by
+
+For Europe, we use the climatic suitability of the main vector,
+\textit{Philaenus spumarius}, and $R_0^*=5.0$ for all simulations
+\cite{Giménez-Romero2022}. For the United States we use a homogeneous basic
+reproductive number $R_0=8.0$ in all cells, as this choice of the parameter
+reproduces spatiotemporal data on PD epidemics in the US with an area under the
+curve of $\sim 90\%$. For the rest of the zones, we use $R_0=5$ because of the
+lower presence of vectors compared to the United States
+\cite{Giménez-Romero2022}.
+
+We use $\gamma=0.2$ as previously estimated \cite{Almeida2003} and the
+specific form of $\mathcal{F}(\cdot)$ and $\mathcal{G}(\cdot)$ is given by
 \begin{align}
     \mathcal{F}(x) & = \frac{1}{1+e^{-0.012(x-975)}}        \\
     \mathcal{G}(x) & = \frac{2\cdot10^7}{2\cdot 10^7 + x^3}
@@ -608,8 +619,8 @@ infected population over the simulated time \cite{GimenezRomero2022_CommsBio},
         T}\right\} \ .
 \end{equation}
 
-Because the typical time scale of the disease is 5 years ($1/\gamma$)
-\cite{Almeida2003}, we simulate periods of 7 years. If more years are available
+Because the typical time scale of the disease is 5 years ($1/\gamma$), we
+simulate periods of 7 years. If more years are available
 to simulate, we perform a re-introduction of the disease as a single infected
 plant in each cell after each 7-year period
 \cite{GimenezRomero2022_CommsBio}.

@@ -319,8 +319,8 @@ $\mathcal{G}(\cdot)$ is given by
 Finally, the risk index is derived as the effective growth rate of the
 infected population over the simulated time \cite{GimenezRomero2022_CommsBio},
 \begin{equation}
-    r_j=\max\left\{\frac{\ln(I_j(T) / I(0))}{\gamma(R_0^j-1)\cdot T},
-    -1\right\} \ .
+    r_j=\max\left\{-1,\frac{\ln(I_j(T) / I(0))}{\gamma(R_0^j-1)\cdot T}\right\}
+    \ .
 \end{equation}
 Because the typical time scale of the disease is 5 years ($1/\gamma$), we
 simulate periods of 7 years. If more years are available to simulate, we
