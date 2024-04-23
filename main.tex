@@ -56,6 +56,9 @@
 \newcommand{\xf}{Xf$_{\mathrm{PD}}$}
 \newcommand{\webpage}{\href{https://pdrisk.ifisc.uib-csic.es/future}{webpage}}
 
+\newcommand{\AG}[1]{\textcolor{red}{#1}}
+\newcommand{\addref}[1]{\AG{(REF)}}
+
 \AtBeginEnvironment{appendices}{\crefalias{section}{appendix}}
 \AtBeginEnvironment{appendices}{\crefalias{subsection}{appendix}}
 
@@ -210,10 +213,10 @@
 %----------------------------------------------------------------------------------------
 %	PART I: Introduction
 %----------------------------------------------------------------------------------------
-{
-\hypersetup{hidelinks}
-\part{Introduction}
-}
+% {
+% \hypersetup{hidelinks}
+% \part{Introduction}
+% }
 
 %----------------------------------------------------------------------------------------
 %	Introduction
@@ -222,7 +225,7 @@
 \chapterspaceabove{6.75cm}
 \chapterspacebelow{7.25cm}
 
-\chapter{The global biodiversity crisis}
+\chapter{Introduction}
 \input{Chapters/Introduction.tex}
 
 %----------------------------------------------------------------------------------------
