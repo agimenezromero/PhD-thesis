@@ -256,28 +256,48 @@ of the most powerful approaches to guide empirical work and provide a framework
 for synthesis, analysis, development of conservation plans and policy making
 \cite{levin1992mathematics,Murray_book,sarkar2006biodiversity}
 
-One of the simplest and most widely used types of models in ecology are those
-based on ordinary differential equations (ODEs), which describe how the state
-of a system changes over time based on the interactions among its components.
-ODEs are widely used to model population dynamics, community interactions, and
-ecosystem processes, providing insights into the factors that drive the
-dynamics of ecological systems. For example, the classic Lotka-Volterra
-equations describe the dynamics of predator-prey interactions, capturing the
-oscillatory behavior that arises from the feedback between predator and prey
-populations \cite{Murray_book}. These models have been instrumental in
-understanding the factors that regulate population sizes, the conditions that
-lead to coexistence or competitive exclusion, and the consequences of
-perturbations on ecosystem stability. Another common and similar set of models
-are those base on partial differential equations (PDEs), which are used to
-describe smooth spatially explicit processes, such as the diffusion of
-nutrients, or the growth of populations across a landscape
-\cite{Murray_book,tilman1997spatial,dale2014spatial}. These models are
-particularly valuable in conservation planning, helping to determine the most
-effective configurations of habitats to preserve species diversity and
-ecological function.
+One of the simplest and most widely used types of models in ecology are
+deterministic continuous-time models, such as ordinary differential equations
+(ODEs), which describe how the state of a system changes over time based on
+known biological or ecological processes. For example, ODEs have been
+instrumental in modeling predator-prey dynamics, revealing the cyclical nature
+of these interactions and how they are influenced by factors such as carrying
+capacity and reproduction rates. Similarly, ODEs have been used to study the
+dynamics of infectious diseases, showing which are the determinants that can
+lead to the emergence and spread of epidemics \cite{Murray_book}. However,
+deterministic models may not fully capture the inherent variability
+and uncertainty present in ecological systems, which can be crucial for
+understanding the dynamics of populations and communities. Stochastic
+differential equations (SDEs) extend ODEs by including random fluctuations in
+the system, providing a more realistic representation of the dynamics of
+ecological systems. Stochastic models have been used to explore the effects of
+environmental variability, genetic drift, and demographic processes on
+population dynamics, providing insights into the factors that influence the
+viability of populations in changing environments. Obviously, continuous-time
+models are not the only way to model the dynamics of ecological systems.
+Discrete-time models, such as difference equations, are also widely used in
+Ecology. Perhaps the logistic map, which describes the growth of a population
+over discrete generations, is by far the most famous example \cite{May1976}.
+
+Nevertheless, the dynamics of ecological systems are not only determined by
+their internal processes, but also by the spatial structure of the environment
+in which they are embedded. The natural extension of continuous-time models to
+incorporate spatial dynamics is the use of partial differential equations
+(PDEs), which describe how the state of a system changes over time and
+space \cite{Murray_book}. These models have been instrumental in exploring
+dispersal mechanisms and predict changes in population density across space.
+PDEs are also used to model the spread of invasive species and disease
+transmission through susceptible populations, providing insights into the
+impacts of spatial structure on ecological invasions
+\cite{tilman1997spatial}. In addition, PDEs are the basis for
+reaction-diffusion models, which simulate the interactions between diffusion
+and reaction processes that lead to the formation of spatial patterns and
+structures in ecological systems. These models are particularly valuable in
+conservation planning, helping to determine the most effective configurations
+of habitats to preserve species diversity and ecological function.
 
 Network models and individual-based models (IBMs) provide frameworks
-for studying more complex interactions and behaviors within ecosystems. Network
+for studying more complex and heterogeneous interactions. Network
 models are used to analyze the structure and dynamics of various ecological
 networks, such as food webs and pollination networks, and provide a rich
 framework to tackle problems in which interactions among many species are
@@ -297,21 +317,27 @@ relationships and behaviors \cite{deangelis2014}.
 
 % Machine learning and ecological modeling
 Data-driven techniques such as Machine Learning (ML) are also increasingly
-being used in ecological modeling to analyze large datasets, identify patterns,
-and make predictions. These methods, which include neural networks, support
-vector machines, and random forests, are particularly useful for handling
-complex, high-dimensional data and capturing non-linear relationships. Machine
-learning models can be used to predict species distributions, classify
-habitats, and detect patterns in ecological communities. They are also valuable
-for analyzing remote sensing data, such as satellite imagery, to monitor land
-cover changes, track
-deforestation, and assess the impacts of climate change on ecosystems.As
-computational capabilities continue to grow, and as datasets become more
-comprehensive and accessible, the potential for mathematical and computational
-models in ecology expands. This progression promises not only to deepen our
-understanding of ecological systems but also improve our ability to predict and
-mitigate the impacts of human activities and environmental changes on the
-natural world.
+being used in ecological modeling. These methods, are particularly useful for
+handling complex, high-dimensional data and capturing non-linear relationships.
+In short, ML algorithms learn how to predict an output variable from input data
+by iteraively adjusting their parameters to minimize the error between the
+predicted and observed values. Machine learning models have been widely used to
+predict species distributions and habitat suitability from environmental
+variables, providing valuable insights into the impacts of climate change on
+biodiversity \cite{Christin2019}. More recently, deep learning models, a
+subfield of ML based on artificial neural networks, have shown promise in
+ecological applications, such as identifying species in camera trap images
+\cite{Tabak2019} or classifying the behaviour of animals captured in images and
+videos \cite{Christin2019}. Specifically, the conjuntion of deep learning
+models with remote sensing data is revolutionizing the field of landscape
+ecology, allowing to monitor land cover changes \cite{Kussul2017}, map canopy
+height \cite{Lang2023}, track animal migrations \cite{Wu2023} or detect plant
+diseases \cite{Zarco-Tejada2021}. As computational capabilities continue to
+grow, and as datasets become more comprehensive and accessible, the potential
+for mathematical and computational models in ecology expands. This progression
+promises not only to deepen our understanding of ecological systems but also
+improve our ability to predict and mitigate the impacts of human activities and
+environmental changes on the natural world.
 
 Despite their utility, all these methodologies are not without limitations.
 Challenges include the accuracy of the models, the reliability of data, and the
@@ -336,8 +362,26 @@ address timely problems in Ecology and Conservation Biology from the
 perspective of Complex Systems. We tackle a variety of current challenges
 related to biodiversity loss caused by climate change and emergent diseases,
 including expanding vector-borne plant diseases, Mass Mortality Events (MMEs)
-in marine ecosystems, ocean acidification, and the decline of important coastal
-ecosystems like coral reefs or seagrass meadows. To address these challenges,
-we developed a series of theoretical and data-driven models that integrate
-ecological theory, data analysis, mathematical models, computational
-simulations, and artificial intelligence. The thesis is structured as follows:
+produced by marine diseases, ocean acidification, and the decline of important
+coastal ecosystems like coral reefs or seagrass meadows. To address these
+challenges, we developed a series of theoretical and data-driven models that
+integrate ecological theory, data analysis, mathematical models, computational
+simulations, and artificial intelligence. The thesis is structured as follows.
+In Chapter 2, we present the theoretical framework and scientific background
+that underpins the research presented in this thesis. We review basic concepts
+of infectious disease modelling and disease biogeography, explain the main
+data and methods used in the data-driven approaches, and present the case
+studies that will be addressed in the following chapters. The main results of
+the thesis are divided into four parts, each formed by several chapters. In
+Part I, we focus on the development of theoretical models to understand the
+dynamics of marine diseases and their impacts on marine ecosystems,
+exemplified by the Mass Mortality Event of \textit{Pinna nobilis}. Similarly,
+in Part II, we develop theoretical models to study the vector-borne plant
+diseases caused by the bacterium \textit{Xylella fastidiosa}. In Part III, we
+develop and apply a climate-driven model to predict the risk of establishment
+of \textit{Xylella fastidiosa} diseases globally, both in current and future
+climates. In Part IV, we develop data-driven models to address global
+ecological problems, such as the decline of coral reefs and seagrass meadows
+or ocean acidification. Finally, in Part V, we present the main conclusions of
+the thesis and discuss the implications of our results for the conservation of
+biodiversity and the management of ecosystems under global change.
