@@ -292,28 +292,35 @@ impacts of spatial structure on ecological invasions
 \cite{tilman1997spatial}. In addition, PDEs are the basis for
 reaction-diffusion models, which simulate the interactions between diffusion
 and reaction processes that lead to the formation of spatial patterns and
-structures in ecological systems. These models are particularly valuable in
-conservation planning, helping to determine the most effective configurations
-of habitats to preserve species diversity and ecological function.
+structures in ecological systems. Environmental or demographic noise can also
+be incorporated into these models by means of stochastic partial differential
+equations (SPDEs), which provide a more realistic representation of the
+variability and uncertainty present in spatially structured ecological systems.
+Overall, spatial models are particularly valuable in conservation planning,
+helping to determine the most effective configurations of habitats to preserve
+species diversity and ecological function.
 
 Network models and individual-based models (IBMs) provide frameworks
-for studying more complex and heterogeneous interactions. Network
-models are used to analyze the structure and dynamics of various ecological
-networks, such as food webs and pollination networks, and provide a rich
-framework to tackle problems in which interactions among many species are
-central, such as coevolution in species-rich communities \cite{Bascompte2007}.
-IBMs simulate the behaviors of individual organisms or entities based on a set
-of simple rules. These models are exceptionally useful to study heterogeneous
-populations, in which individuals differ in their characteristics or behaviors,
-and spatially explicit interactions. IBMs help in understanding how individual
-heterogeneity contribute to group dynamics and ecosystem-level patterns,
-providing insights that are often obscured in more traditional approaches.
-Initially, IBMs were used to model forest succession, exemplified by the JABOWA
-model, which described tree community dynamics in response to shading and
-growth patterns. Their applications then expanded to animal populations,
-including fish recruitment, bird nesting colonies, and predator-prey
-interactions, allowing for the examination of complex interspecific
-relationships and behaviors \cite{deangelis2014}.
+for studying more complex and heterogeneous interactions, both in a spatially
+extended and non-spatial context. Network models describe the interactions
+between the entities under study as a network of nodes and edges, where nodes
+represent individuals and edges represent the interactions between
+them. These models have been used to study the structure and dynamics of
+various ecological networks, such as food webs and pollination networks, and
+provide a rich framework to tackle problems in which interactions among many
+species are central, such as coevolution in species-rich communities
+\cite{Bascompte2007}. IBMs simulate the behaviors of individual organisms or
+entities based on a set of simple rules. These models are exceptionally useful
+to study heterogeneous populations, in which individuals differ in their
+characteristics or behaviors, and spatially explicit interactions. IBMs help in
+understanding how individual heterogeneity contribute to group dynamics and
+ecosystem-level patterns, providing insights that are often obscured in more
+traditional approaches. Initially, IBMs were used to model forest succession,
+exemplified by the JABOWA model, which described tree community dynamics in
+response to shading and growth patterns. Their applications then expanded to
+animal populations, including fish recruitment, bird nesting colonies, and
+predator-prey interactions, allowing for the examination of complex
+interspecific relationships and behaviors \cite{deangelis2014}.
 
 % Machine learning and ecological modeling
 Data-driven techniques such as Machine Learning (ML) are also increasingly
@@ -339,21 +346,17 @@ promises not only to deepen our understanding of ecological systems but also
 improve our ability to predict and mitigate the impacts of human activities and
 environmental changes on the natural world.
 
-Despite their utility, all these methodologies are not without limitations.
-Challenges include the accuracy of the models, the reliability of data, and the
-complexity of translating real-world phenomena into mathematical equations.
-Models often rely on simplifications that may not fully capture the nuances of
-natural systems, leading to uncertainties in predictions. Furthermore, the
-parameters used in these models frequently come from empirical data that can be
-variable or incomplete. As a result, ecologists must carefully validate their
-models against observed data, a process that can be as demanding as it is
-crucial. Purely data-driven techniques such as machine learning can also be
-prone to overfitting, where models perform well on training data but fail to
-generalize to new data. In addition,  machine learning models can be
-challenging to interpret, making it difficult to understand the underlying
-mechanisms driving their predictions. Despite these challenges, mathematical
-and computational models remain essential tools for advancing ecological
-research and addressing the complex challenges facing our planet.
+This is only a brief overview of the wide range of mathematical and
+computational models that have been developed and applied in Ecology. The
+diversity of models reflects the complexity of ecological systems and the
+diverse questions that ecologists seek to answer. By combining theoretical
+insights with empirical data, mathematical and computational models provide a
+powerful framework for understanding the dynamics of ecological systems,
+predicting their responses to environmental changes, and informing management
+decisions. In the following chapters, we will explore how these models can be
+used to address some of the most pressing challenges in Ecology and
+Conservation Biology, from the spread of infectious diseases to the decline of
+important ecosystems under global change.
 
 \section{\label{sec:Thesis structure} Thesis structure}
 
@@ -370,8 +373,9 @@ simulations, and artificial intelligence. The thesis is structured as follows.
 In Chapter 2, we present the theoretical framework and scientific background
 that underpins the research presented in this thesis. We review basic concepts
 of infectious disease modelling and disease biogeography, explain the main
-data and methods used in the data-driven approaches, and present the case
-studies that will be addressed in the following chapters. The main results of
+data and methods used in the data-driven approaches, present the case
+studies that will be addressed in the following chapters and summarize the main
+original contributions of the thesis. The main results of
 the thesis are divided into four parts, each formed by several chapters. In
 Part I, we focus on the development of theoretical models to understand the
 dynamics of marine diseases and their impacts on marine ecosystems,

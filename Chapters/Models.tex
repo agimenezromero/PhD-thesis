@@ -2,7 +2,322 @@
 \section{\label{sec:Infectious disease modelling} Infectious
   disease modelling}
 
+Infectious diseases are caused by pathogenic microorganisms, such as
+bacteria, viruses, parasites, or fungi, when they invade other organisms, which
+are called \textit{hosts} in this context. These pathogens proliferate inside
+the host and can disrupt the normal functioning of the host organism by
+damaging tissues, altering physiological processes, or triggering immune
+responses that contribute to illness. Infectious diseases can affect a wide
+variety of organisms, from plants and animals to humans, and they can spread
+through various means, including direct interaction from infected individuals,
+both by close contact or at a distance, or through vectors. Vectors are
+organisms that transmit pathogens from one host to another, such as mosquitoes,
+that usually are not affected by the disease themselves.
+
+Modelling the spread of infectious diseases has a long history, with the first
+mathematical model coming from the hand of Bernoulli in 1760
+\cite{Bernoulli1760}, who developed a model to understand the spread of
+smallpox. However, it was not until the early 20th century that we find the
+foundation of the modern theory of infectious disease dynamics, with the
+seminal work of Ronald Ross and Hilda P. Hudson
+\cite{Ross1916,Ross1917,Ross1917_2} and Kermack and McKendrick
+\cite{McKendrick}. Since then, a wide range of models have been
+developed to understand the dynamics of infectious diseases and to predict
+their spread. In general, these models can be classified into two main
+categories: compartmental models and individual-based models.
+
 \subsection{\label{sec:Compartmental models} Compartmental models}
+
+Compartmental models are based on the assumption that the population can be
+divided into different compartments or categories, each representing a
+different state of the disease (e.g. susceptible to infection and infected).
+Individuals move from one compartment to another following some dynamical
+rules. Under the assumption of a well-mixed and sufficiently large population,
+one can consider that  every pair of individuals has equal probability of
+coming into contact with one another and that fluctuations in the number of
+individuals in each compartment can be neglected. This is known as the mean
+field approximation. Under these assumptions the dynamics of the disease can be
+described by a set of differential equations that govern the transitions
+between compartments.
+
+\subsubsection*{\label{sec:The SIR model} The SIR model}
+
+The most famous compartmental model is the SIR model, which is a simple
+particular case of the general mathematical framework formulated by Kermack and
+McKendrick \cite{McKendrick}. Because the original Kermack-McKendrick model
+is quite general and complex, I will explain the SIR model following a more
+modern and intuitive approach. The SIR model divides the population into three
+compartments: susceptible individuals (S), infected individuals (I), and
+recovered individuals (R). Individuals come into contact with each other at a
+given rate $a$ and, in the case of a $S-I$ contact, the susceptible individual
+becomes infected with a probability $b$. We assume that the incubation period
+is short enough to be negligible; that is, a susceptible who contracts the
+disease is infective right away. Infected individuals recover at a constant
+rate $\gamma$, and once recovered, are assumed to be immune to the disease and
+cannot be reinfected. We finally assume that there is no entry into or
+departure from the population, no birth or natural deaths, so that
+the population remains constant.
+
+According to the mean field approximation, the probability that an infected
+individual contacts a susceptible one is given by $a\cdot S/N$. Thus, the
+average number of contacts between infected and susceptible individuals is
+given by $a\cdot S/N\cdot I=a\cdot SI/N$. Finally, as the probability that a
+susceptible individual becomes infected after a contact is $b$, the average
+number of new infections will be given by the product of this probability and
+average number of contacts between infected and susceptible individuals,
+$b\cdot a\cdot SI/N=\beta SI/N$. These considerations lead to the following
+description of the model given by a system of differential equations,
+\begin{equation}\label{eq: normal_SIR_theo}
+  \begin{array}{l}
+    \dot{S}=-\beta SI/N          \\
+    \dot{I}=\beta SI/N -\gamma I \\
+    \dot{R}=\gamma I \ ,
+  \end{array}
+\end{equation}
+
+Despite the aparent simplicity of the model, the non-linear nature of the
+differential equations makes it difficult to find analytical solutions.
+However, important quantitative insights can still be obtained by performing an
+analytical study of the model. We will now derive some important results from
+the SIR model, most of which cane be already found in reference
+\cite{Murray_book}.
+
+First let's start by the simplest insight: the assumption of population
+conservation is inherently included in the model. We can prove this statement
+by just adding the three differential equations in \cref{eq: normal_SIR_theo},
+\begin{equation}
+  \dot{S}+\dot{I}+\dot{R}=0\Longrightarrow S+I+R=\mathrm{const.}=N \ .
+\end{equation}
+
+Now consider the starting point of an epidemic, such our old friend the
+COVID-19 pandemic. For sure at the beginning of the epidemic the number of
+infectedindividuals is not zero, $I(0)>0$, while the number of recovered
+individuals is indeed zero, $R(0)=0$. Thus, the number of susceptible
+individuals at the beginning of the epidemic is $S(0)=N-I(0)$. If an epidemic
+is to develop, the number of infected individuals must increase at the
+beginning of the epidemic, but which are the conditions for this to happen?
+
+Just by considering the differential equation for $I$ in \cref{eq:
+  normal_SIR_theo} with our initial conditions we find the following
+expression,
+\begin{equation}\label{eq: threshold}
+  \der{I}{t}\Big|\limitss{t=0}{}=I(0)\parentesi{\beta
+    S(0)/N-\gamma}\Longrightarrow\left\{\begin{array}{l}
+    \displaystyle\der{I}{t}\Big|\limitss{t=0}{}<0 \Longleftrightarrow
+    S(0)<\frac{\gamma N}{\beta} \\\\
+    \displaystyle\der{I}{t}\Big|\limitss{t=0}{}>0 \Longleftrightarrow
+    S(0)>\frac{\gamma N}{\beta}
+  \end{array}\right. \ \ .
+\end{equation}
+
+The condition \cref{eq: threshold} defines a threshold for the developing of an
+epidemic in the $SIR$ model! This is, there is a critical number of susceptible
+individuals below which the epidemic will not develop,
+\begin{equation}
+  S_c=\frac{\gamma N}{\beta}\equiv \rho \ .
+\end{equation}
+
+The critical parameter $\rho$ is sometimes called the \textit{relative removal
+  rate} and its reciprocal, $\sigma=\beta/(\gamma N)$, the \textit{infection’s
+  contact rate}. This threshold behaviour can be further simplified by
+considering the so-called \textit{basic reproduction number}, $R_0$, defined
+as,
+\begin{equation}
+  R_0=\frac{S(0)}{\rho}=S(0)\sigma=\frac{\beta S(0)}{\gamma N} \ ,
+\end{equation}
+which measures the number of secondary infections given by a primary
+infection in a whole susceptible population. I am sure you have already heard
+about the basic reproduction number in the context of the COVID-19 pandemic.
+
+To see that this quantity measures the number of secondary infections produced
+by a primary infection we just need to recall the definition of the rates and
+``read'' the expression. $\beta S(0)/N$ is the rate of new infections produced
+by a primary infection (as we are at time $t=0$). In other words, $\beta
+  S(0)/N$ is the number of secondary infections produced by a primary infection
+\textit{per unit time}. Finally, we observe that, as $\gamma$ is the rate of
+recovery of infected individuals, $1/\gamma$ is the average time an
+individual remains infected. The product of the number of secondary infections
+produced by a primary infection per unit time and the average time an infected
+individual remains infected gives the total number of secondary infections
+produced by a primary infection in the whole susceptible population. Voilà!
+This is nothing but the basic reproduction number, $R_0$.
+
+It can be formally proved that this quantity defines a threshold for the
+development of an epidemic from the fact that $S$ is a monotonically decreasing
+function, which implies $S(t)<S(0) \ \forall t>0$.
+\begin{equation}\label{eq: threshold_t}
+  \der{I}{t}=I\parentesi{\beta S-\gamma}\leq I\parentesi{\beta
+    S(0)-\gamma}=\gamma I\parentesi{\frac{S(0)}{\rho}-1}=\gamma
+  I\parentesi{R_0-1} \
+  ,
+\end{equation}
+so that for $R_0<1$, $\dot{I}<0 \ \forall t>0$ and thus $I(0)>I(t)$ as
+$t\to\infty$, which basically means that the epidemic dies out, while for
+$R_0>1$ the epidemic grows.
+
+This threshold behaviour agrees with our intuition given the definition of
+the basic reproduction number: if a primary infection produces more than 1
+secondary infection an epidemic will develop, while if it does not reach to
+infect at least one individual it will die out. Furthermore, note that
+because of our mean field approach, the number of secondary infections produced
+by a primary one refers to the \textit{average} number of secondary
+infections.
+
+Another important analytical result that can be obtained from this model is
+the maximum of infected individuals, that gives an idea of how severe the
+epidemic will be. To find this maximum we just need to find the maximum of
+$I(t)$, which is given by the condition $\dot{I}=0$. From the differential
+equation for $I$ in \cref{eq: normal_SIR_theo} we find the following relation,
+\begin{equation}
+  \der{I}{t}=0\Longrightarrow\beta S/N-\gamma=0\Longrightarrow
+  S=\frac{\gamma N}{\beta}=\rho \ .
+\end{equation}
+
+So the maximum of infected individuals, given the development of a proper
+epidemic, will take place when $S(t)=\rho$. But we still don't know the
+maximum number of infected individuals. To do so, we first need to go through
+a smart mathematical trick. Dividing the differential equations for $S$ and $I$
+(considering $I\neq0)$) we obtain,
+
+\begin{equation*}
+  \frac{\dif I}{\dif S}=-1+\frac{\gamma}{\beta S}=-1+\rho/S \quad (I\neq0) \
+  .
+\end{equation*}
+
+Integrating the relation,
+\begin{equation*}
+  \int_{I(0)}^{I}\dif I=\int_{S(0)}^S\dif S \keys{-1 + \rho/S} \Longrightarrow
+  I-I(0)=S(0)-S+\rho\ln(\frac{S}{S(0)}) \ ,
+\end{equation*}
+we obtain the phase plane trajectories for $S$ and $I$ given by,
+\begin{equation}\label{eq: max_I_eq}
+  I+S=I_0+S_0+\rho\ln(\frac{S}{S(0)})=N+\rho\ln(\frac{S}{S(0)}) \ ,
+\end{equation}
+where we have considered $I(0)+S(0)=N$ given that $R(0)=0$.
+
+Finally we find an expression for the maximum of infected individuals by
+substituting the condition previously found (the maximum occurs when
+$S(t)=\rho$)
+in \cref{eq:  max_I_eq},
+\begin{equation}
+  I(t)=N+\rho\ln{\frac{S(t)}{S(0)}}-S(t) \Longrightarrow
+  I_{max}=N+\rho\claudator{\ln(\frac{\rho}{S_0}) - 1} \ .
+\end{equation}
+
+Similarly we can find the final number of susceptible individuals at the end
+of
+the epidemic, for sure a very important quantity. By dividing the
+differential
+equations for $S$ and $R$, we obtain,
+\begin{equation*}
+  \frac{\dif S}{\dif R} = -\frac{\beta}{\gamma}S=-\frac{S}{\rho}
+  \Longrightarrow\int_{S(0)}^S\frac{\dif
+    S}{S}=-\frac{1}{\rho}\int_{R(0)=0}^R\dif
+  R\Longrightarrow\ln(\frac{S}{S(0)})=-\frac{R}{\rho} \ .
+\end{equation*}
+
+As $I(\infty)=0$, necessarily $R(\infty)=N-S(\infty)$ so that we get the
+following expression for the final number of susceptible individuals,
+\begin{equation}\label{eq: trascendental_S_inf}
+  S(\infty) - \rho\ln(S(\infty))=N-\rho\ln(S(0)) \ .
+\end{equation}
+
+$S(\infty)$ is nothing but the positive root of the transcendental equation
+\cref{eq: trascendental_S_inf}. In fact, this transcendental equation can be
+solved by means of the Lambert's $W$ function \cite{Lethonen2016},
+\begin{equation}
+  S(\infty)=-\rho\cdot W_0\claudator{-\frac{S(0)}{\rho} \,
+    e^{-N/\rho}}=-\rho\cdot W_0\claudator{-R_0 \, e^{-N/\rho}} \ .
+\end{equation}
+
+% The Lambert's $W_l(x)$ function is bivalued for $x\in(-1/e,0)$, so that it is
+% necessary to choose a branch for such values of $x$. In this epidemiological
+% context it has been already shown that the branch $l=0$ has to be chosen when
+% $S(t)<S_c$ \cite{Rodri_thesis}, and clearly $S_\infty<S_c$. With this analysis
+% we ensure that the final number of susceptible individuals is a strictly
+% positive number, $S_\infty>0$, given the properties of the Lambert's
+% function.
+
+So far we have shown how, under minimal assumptions, one can build an epidemic
+model such as the SIR model. In addition, we have shown how to obtain some
+important analytical results from the model, such as the threshold for the
+development of an epidemic, ultimately transformed in to the famous
+\textit{basic reproduction number}; the maximum number of infected individuals,
+and the final number of susceptible individuals. However, the SIR model is
+one of the simplest compartmental models, and more complex models have been
+developed to account for more realistic scenarios. For such models, analytical
+results are usually not available, and numerical simulations are required to
+understand the dynamics of the diseases they describe. Fortunately, there are a
+couple of formal approaches that can be used to derive the basic reproduction
+number of basically any compartmental model: linear stability analysis and the
+next generation matrix approach.
+
+\subsubsection*{Linear stability analysis}
+
+\subsubsection*{The next generation matrix approach}
+
+Now that we know how to derive the basic reproduction number of a compartmental
+model, let's see how to apply this knowledge to a more complex model. In the
+next section we will introduce a modification of the SIR model that can be used
+to model vector-borne plant diseases, which are of particular interest in the
+context of this thesis.
+
+\subsubsection*{A compartmental model for vector-borne plant diseases}
+
+The SIR model can be easily modified to account for vector-borne plant diseases
+by adding new compartments representing the vector population. The simplest
+way to do this is to consider a compartmental model with five compartments:
+susceptible individuals ($S$), infected individuals ($I$), recovered
+individuals ($R$), susceptible vectors ($S_v$), and infected vectors ($I_v$).
+
+For most vector-borne plant diseases, we can assume that the only mechanism of
+disease spread is the direct transmission from infected vectors to susceptible
+plants at a given rate $\alpha$. Infected individuals recover at
+a rate $\gamma$. The total number of plants is given by $N$, and the total
+number of vectors is given by $N_v$. Vectors are assumed to be born at a
+constant rate $\delta$ proportional to the total number of vectors and die at a
+constant rate $\mu$. With these assumptions, the dynamics of the disease can be
+described by the following system of differential equations,
+\begin{equation}\label{eq: SIRV_model}
+  \begin{array}{l}
+    \dot{S}=-\beta SI_v/N_v                       \\
+    \dot{I}=\beta SI_v/N_v -\gamma I              \\
+    \dot{R}=\gamma I                              \\
+    \dot{S_v}=\delta N_v -\alpha S_vI/N - \mu S_v \\
+    \dot{I_v}=\alpha S_vI/N-\mu I_v \ ,
+  \end{array}
+\end{equation}
+
+We can easily check that the plant population is conserved by adding the
+differential equations for $S$, $I$, and $R$,
+\begin{equation}
+  \dot{S}+\dot{I}+\dot{R}=0\Longrightarrow S+I+R=N \ .
+\end{equation}
+
+Similarly, to check if the vector population is conserved we add the
+differential equations for $S_v$ and $I_v$,
+\begin{equation}
+  \dot{S_v}+\dot{I_v}=\delta N_v -\mu S_v -\mu I_v=0\Longrightarrow
+  \delta N_v(\delta-\mu)=0 \ .
+\end{equation}
+
+This equation implies that the vector population is conserved only if
+$\delta=\mu$, which is a reasonable assumption given that the birth and death
+rates of vectors are usually similar. By now, this is the case we will
+consider in the following analysis, but we will see in \cref{part:VBD}
+that thinks can get really complicated if we relax this assumption.
+
+After this initial check, we can proceed to analyse the model. The first
+important result we can obtain is the threshold for the development of an
+epidemic. This threshold is given by the basic reproduction number, $R_0$, as
+in the SIR model. To compute it we can follow any of the two approaches
+previously described, linear stability analysis and the next generation matrix
+approach. In order to do not extend this thesis too much, we refer the reader
+to \cref{app:VBD} for the details of the derivation of the basic reproduction
+number of a very similar model, and we just present the final result here,
+\begin{equation}
+  R_0=\frac{\beta\alpha}{\gamma\mu} \ .
+\end{equation}
 
 \subsection{\label{sec:Individual-based models} Individual-based models}
 
