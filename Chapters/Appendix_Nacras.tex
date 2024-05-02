@@ -160,27 +160,15 @@ smallest one.
 \section{Calculation of $R_0$ using the Next Generation Matrix
   method}\label{app:NGM}
 
-The so called Next Generation Method (NGM) is a method to obtain $R_0$, the
-basic epidemiological quantity that measures the number of secondary cases
-produced by a typical infected individual during its entire period of
-infectiousness in a completely susceptible population. It was discussed in
-\cref{app:linstabfp} that $R_0$ is related to the largest non-zero eigenvalue,
-say $\Lambda$, of the fixed point corresponding to the infection-free
-equilibrium. An outbreak occurs when $\Lambda>0$ (or equivalently when $R_0>1$)
-and the NGM is an ingenious method to obtain directly $R_0$ in a reduced linear
-system.
-In more concrete terms, within the NGM method $R_0$ is the dominant eigenvalue
-of a suitably defined linear operator (a linear matrix in a suitable basis).
-This operator is obtained from a decomposition of the Jacobian, $J$ of
-the infected/infecting compartments (i.e. excluding susceptible and removed
-compartments) in the form $J=T+\Sigma$, where $T$ is
-the
-\textit{transmission part}, that describes the production of new infections,
-and $\Sigma$  the \textit{transition part}, that describes changes of
-state (including death). Then, it can be proved \cite{Diekmann2010} that the
-\textit{basic reproduction number} $R_0$ is given by the spectral radius (i.e.
-the largest eigenvalue) of the (next generation) matrix $K=- T
-    \Sigma^{-1}$.
+Here we will use the Next Generation Matrix (NGM) method, explained In
+\cref{sec:Compartmental models}, to calculate the basic reproduction number
+$R_0$ for the SIRP model. The NGM method is based on the decomposition of the
+Jacobian matrix of the system of differential equations into a transmission
+matrix $T$ and a transition matrix $\Sigma$, where the transmission matrix
+contains the terms that contribute to the transmission of the disease, while
+the transition matrix contains the terms that imply transitions between
+compartments \cite{Diekmann2000}. The basic reproduction number $R_0$ is then
+given by the dominant eigenvalue of the matrix $K=-T\Sigma^{-1}$.
 
 In the case of the SIRP model the decomposition is applied to the $2\times 2$
 Jacobian corresponding to the dynamical evolution of the $(I,P)$

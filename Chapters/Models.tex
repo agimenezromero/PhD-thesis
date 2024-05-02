@@ -89,6 +89,18 @@ by just adding the three differential equations in \cref{eq: normal_SIR_theo},
   \dot{S}+\dot{I}+\dot{R}=0\Longrightarrow S+I+R=\mathrm{const.}=N \ .
 \end{equation}
 
+Physicists usually call this kind of quantity a \textbf{conserved quantity}
+or a \textbf{conservation law}. In this case, the conservation law has a
+particular meaning: the total number of individuals in the population remains
+constant, which was already assumed in the model. In general, conservation laws
+can arise from other symmetries of the system and are not always so obvious. In
+any case, these conserved quantities allow us to reduce the number of
+independent variables in the system, which can be very useful to simplify the
+analysis of the model. In this case, the conservation law allows us to reduce
+the number of independent variables from three to two, so that we can study the
+dynamics of the system in a two-dimensional phase space given by the variables
+$S$ and $I$, as $R$ can be obtained from the relation $R=N-S-I$.
+
 Now consider the starting point of an epidemic, such our old friend the
 COVID-19 pandemic. For sure at the beginning of the epidemic the number of
 infectedindividuals is not zero, $I(0)>0$, while the number of recovered
@@ -178,7 +190,6 @@ epidemic, will take place when $S(t)=\rho$. But we still don't know the
 maximum number of infected individuals. To do so, we first need to go through
 a smart mathematical trick. Dividing the differential equations for $S$ and $I$
 (considering $I\neq0)$) we obtain,
-
 \begin{equation*}
   \frac{\dif I}{\dif S}=-1+\frac{\gamma}{\beta S}=-1+\rho/S \quad (I\neq0) \
   .
@@ -194,6 +205,14 @@ we obtain the phase plane trajectories for $S$ and $I$ given by,
   I+S=I_0+S_0+\rho\ln(\frac{S}{S(0)})=N+\rho\ln(\frac{S}{S(0)}) \ ,
 \end{equation}
 where we have considered $I(0)+S(0)=N$ given that $R(0)=0$.
+
+Note that \cref{eq: max_I_eq} can be rewritten as
+$I+S-\rho\ln(S)=N-\rho\ln(S_0)=\mathcal{C}$, so that the right-hand side of the
+equation is a constant. This means that we have just found another conservation
+law for the system! This one is not so obvious as the previous one, but it is
+still a very useful result. In essence, we now can describe the dynamics of the
+system with only one independent variable, $S$, as $I$ can be obtained from the
+relation in \cref{eq: max_I_eq}.
 
 Finally we find an expression for the maximum of infected individuals by
 substituting the condition previously found (the maximum occurs when
@@ -241,20 +260,158 @@ solved by means of the Lambert's $W$ function \cite{Lethonen2016},
 So far we have shown how, under minimal assumptions, one can build an epidemic
 model such as the SIR model. In addition, we have shown how to obtain some
 important analytical results from the model, such as the threshold for the
-development of an epidemic, ultimately transformed in to the famous
-\textit{basic reproduction number}; the maximum number of infected individuals,
-and the final number of susceptible individuals. However, the SIR model is
-one of the simplest compartmental models, and more complex models have been
-developed to account for more realistic scenarios. For such models, analytical
-results are usually not available, and numerical simulations are required to
-understand the dynamics of the diseases they describe. Fortunately, there are a
-couple of formal approaches that can be used to derive the basic reproduction
-number of basically any compartmental model: linear stability analysis and the
-next generation matrix approach.
+development of an epidemic, i.e. the \textit{basic reproduction number}; the
+maximum number of infected individuals, and the final number of susceptible
+individuals.
+
+However, the SIR model is one of the simplest compartmental models, and more
+complex models have been developed to account for more realistic scenarios. For
+such models, analytical results are usually not available, and numerical
+simulations are required to understand the dynamics of the diseases they
+describe. Fortunately, there are a couple of formal approaches that can be used
+to derive the basic reproduction number of basically any compartmental model:
+linear stability analysis and the next generation matrix approach.
 
 \subsubsection*{Linear stability analysis}
 
+Linear stability analysis is a powerful tool that can be used to study the
+dynamics of a \textbf{dynamical system} around its \textbf{fixed points}. The
+basic idea is to linearize the system of differential equations around these
+equilibrium points and study the stability of the system by analysing the
+\textbf{eigenvalues} of the \textbf{Jacobian} of the system. A
+\textit{dynamical system} is a system that evolves over time,
+such as the SIR model. The \textit{fixed points} of the system are the points
+where it does not change over time, i.e. the points where the derivatives of
+the variables of the model are zero. The \textit{Jacobian} of the system is a
+matrix that contains the first-order partial derivatives of the variables of
+the system. The \textit{eigenvalues} of the Jacobian matrix are the roots of
+the characteristic polynomial of the matrix, obtained through the equation
+$\det(J-\lambda I)=0 $, and they determine the stability of the system. If the
+real part of all the eigenvalues is negative, the system is stable, while if
+the real part of at least one eigenvalue is positive, the system is unstable.
+Let's see how this works in practice.
+
+For the SIR model, the fixed points are given by the condition
+$\dot{S}=\dot{I}=\dot{R}=0$, which implies $I=0$ with any value of $S$ and $R$.
+Thus, the fixed points of the system are given by $(S^*,I^*,R^*)=(S,0,N-S)$.
+These fixed points are also called \textit{disease-free} state of the system,
+as the number of infected individuals is zero. The Jacobian matrix of the
+system is given by,
+\begin{equation}
+  J=\begin{pmatrix}
+    \partial\dot{S}/\partial S & \partial\dot{S}/\partial I &
+    \partial\dot{S}/\partial R                                \\
+    \partial\dot{I}/\partial S & \partial\dot{I}/\partial I &
+    \partial\dot{I}/\partial R                                \\
+    \partial\dot{R}/\partial S & \partial\dot{R}/\partial I &
+    \partial\dot{R}/\partial R
+  \end{pmatrix}=\begin{pmatrix}
+    -\beta I/N & -\beta S/N       & 0 \\
+    \beta I/N  & \beta S/N-\gamma & 0 \\
+    0          & \gamma           & 0
+  \end{pmatrix} \ ,
+\end{equation}
+
+Now we substitute the fixed point in the Jacobian matrix and we obtain,
+\begin{equation}
+  J=\begin{pmatrix}
+    0 & -\beta S^*/N       & 0 \\
+    0 & \beta S^*/N-\gamma & 0 \\
+    0 & \gamma             & 0
+  \end{pmatrix} \ .
+\end{equation}
+
+The eigenvalues of the Jacobian matrix are the roots of the characteristic
+polynomial of the matrix, which is given by $\det(J-\lambda I)=0$. In this case
+the characteristic polynomial is given by,
+\begin{equation}
+  \det(J-\lambda I)=\begin{vmatrix}
+    -\lambda & -\beta S^*/N                & 0        \\
+    0        & \beta S^*/N-\gamma -\lambda & 0        \\
+    0        & \gamma                      & -\lambda
+  \end{vmatrix}=\lambda^2(\beta S^*/N-\gamma-\lambda) \ .
+\end{equation}
+
+The roots of the characteristic polynomial are given by $\lambda_1=\lambda_2=0$
+and $\lambda_3=\beta S^*/N-\gamma$. As we have previously stated, the stability
+of the system is determined by the real part of these eigenvalues. Of course,
+the eigenvalues $\lambda_1$ and $\lambda_2$ are zero, so they do not provide
+any information about the stability of the system.
+
+The eigenvalue $\lambda_3$ is negative if $\beta S^*/N<\gamma$, thus meaning
+that the fixed point $(S^*,I^*,R^*)$ is stable if this condition is satisfied.
+On the other hand, the fixed point is unstable if $\beta S^*/N>\gamma$. Indeed,
+this conditon defines the basic reproduction number, $R_0$, as we can rewrite
+the condition for the stability of the fixed point as $R_0=\beta S^*/\gamma N$
+greater or smaller than 1.
+
+\AG{Comment on the conserved quantities that can be already observed from the
+  Jacobian matrix.}
+
 \subsubsection*{The next generation matrix approach}
+The next generation matrix approach is a more general method that can be used
+to derive the basic reproduction number of any compartmental model. We have
+previously shown that $R_0$ is related to the largest non-zero eigenvalue,
+say $\Lambda$, of the fixed point corresponding to the disease-free state.
+Specifically, an outbreak occurs when $\Lambda>0$, which is equivalent to
+$R_0>1$. Instead, the NGM is an ingenious method to obtain directly $R_0$ in a
+reduced linear system. In more concrete terms, within the NGM method $R_0$ is
+the dominant eigenvalue of a suitably defined linear operator (a linear matrix
+in a suitable basis). This operator is obtained from a decomposition of the
+Jacobian, $J$ of the infected/infecting compartments (i.e. excluding
+susceptible and removed compartments) in the form $J=T+\Sigma$, where $T$ is
+the \textit{transmission part}, that describes the production of new
+infections, and $\Sigma$  the \textit{transition part}, that describes changes
+of state (including death). Then, it can be proved \cite{Diekmann2010} that the
+\textit{basic reproduction number} $R_0$ is given by the spectral radius (i.e.
+the largest eigenvalue) of the (next generation) matrix $K=- T\Sigma^{-1}$.
+
+To appreciate the power of the NGM method, let's see how it can be applied to
+a slight modification of the SIR model that includes an exposed compartment,
+the SEIR model. In short, exposed individuals are those who have been infected
+but are not yet infectious. The SEIR model can be described by the following
+system of differential equations,
+\begin{equation}\label{eq: SEIR_model}
+  \begin{array}{l}
+    \dot{S}=-\beta SI/N          \\
+    \dot{E}=\beta SI/N -\sigma E \\
+    \dot{I}=\sigma E -\gamma I   \\
+    \dot{R}=\gamma I \ ,
+  \end{array}
+\end{equation}
+
+The fixed points of the system are given by the condition
+$\dot{S}=\dot{E}=\dot{I}=\dot{R}=0$, which implies $I=E=0$ with any value of
+$S$, and $R$. Thus, the fixed points of the system are given by
+$(S^*,E^*,I^*,R^*)=(S,0,0,N-S)$. The Jacobian matrix of the system is given by,
+\begin{equation}
+  J=\begin{pmatrix}
+    -\beta I/N & 0       & -\beta S/N & 0 \\
+    \beta I/N  & -\sigma & \beta S/N  & 0 \\
+    0          & \sigma  & -\gamma    & 0 \\
+    0          & 0       & \gamma     & 0
+  \end{pmatrix} \ ,
+\end{equation}
+so that the submatrix corresponding to the infected and infecting compartments
+is given by,
+\begin{equation}
+  J_{I}=\begin{pmatrix}
+    -\sigma & \beta S/N \\
+    \sigma  & -\gamma
+  \end{pmatrix} \ .
+\end{equation}
+
+Now we have to divide the Jacobian matrix in the transmission and transition
+parts, which are given by,
+\begin{equation}
+  T=\begin{pmatrix}
+    0 & -\beta S/N \\
+    0 & 0
+  \end{pmatrix} \quad \text{and} \quad \Sigma=\begin{pmatrix}
+    -\sigma & 0       \\
+    \sigma  & -\gamma
+  \end{pmatrix} \ .
+\end{equation}
 
 Now that we know how to derive the basic reproduction number of a compartmental
 model, let's see how to apply this knowledge to a more complex model. In the
