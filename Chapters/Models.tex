@@ -345,91 +345,67 @@ this conditon defines the basic reproduction number, $R_0$, as we can rewrite
 the condition for the stability of the fixed point as $R_0=\beta S^*/\gamma N$
 greater or smaller than 1.
 
-\AG{Comment on the conserved quantities that can be already observed from the
-  Jacobian matrix.}
+% Comment on the conserved quantities that can be already observed from the Jacobian matrix.
+Finally note that the Jacobian matrix also provides us with another important
+insight about the system: the presence of conserved quantities. In this case,
+the sum of the first and third rows of the Jacobian matrix is zero, which
+indicates that the system has two conserved quantities, which we have already
+found: the total number of individuals in the population and \cref{eq:
+  max_I_eq}.
 
-\subsubsection*{The next generation matrix approach}
-The next generation matrix approach is a more general method that can be used
-to derive the basic reproduction number of any compartmental model. We have
-previously shown that $R_0$ is related to the largest non-zero eigenvalue,
-say $\Lambda$, of the fixed point corresponding to the disease-free state.
-Specifically, an outbreak occurs when $\Lambda>0$, which is equivalent to
-$R_0>1$. Instead, the NGM is an ingenious method to obtain directly $R_0$ in a
-reduced linear system. In more concrete terms, within the NGM method $R_0$ is
-the dominant eigenvalue of a suitably defined linear operator (a linear matrix
-in a suitable basis). This operator is obtained from a decomposition of the
-Jacobian, $J$ of the infected/infecting compartments (i.e. excluding
-susceptible and removed compartments) in the form $J=T+\Sigma$, where $T$ is
-the \textit{transmission part}, that describes the production of new
+\begin{remark}
+  The stability of the fixed points of a dynamical system can be determined by
+  analysing the eigenvalues of the Jacobian matrix of the system. If the real
+  part of all the eigenvalues is negative, the fixed point is stable, while if
+  the real part of at least one eigenvalue is positive, the fixed point is
+  unstable. In epidemic models the basic reproduction number, $R_0$, determines
+  the	stability of the disease-free states of the system, which are the fixed
+  points where the number of infected individuals is zero. If $R_0<1$, the
+  fixed points are stable, while if $R_0>1$, the fixed points are unstable.
+  The basic reproduction number is a threshold for the development of an
+  epidemic: if $R_0<1$, the epidemic will die out, while if $R_0>1$, the
+  epidemic will propagate. In addition, the Jacobian matrix of the system
+  provides us with important insights about the system, such as the presence of
+  conserved quantities.
+\end{remark}
+
+\subsubsection*{The next generation matrix method}
+We have previously shown that the basic reproduction number, $R_0$ of a
+compartmental model can be obtained by analysing the stability of the fixed
+points corresponding to the disease-free state of the model. Specifically, the
+basic reproduction number, $R_0$, is related to the largest non-zero eigenvalue
+of a fixed point, $\Lambda$, such that $R_0>1$ if $\Lambda>0$. However, the
+Jacobian matrix of a compartmental model can be quite large and complicated, so
+the derivation of the basic reproduction number following this method can be
+cumbersome. The next generation matrix method is an ingenious method that can
+be used to derive the basic reproduction number of any compartmental model
+directly, without the need to analyse the stability of the fixed points.
+
+In the NGM method, $R_0$ is identified as the dominant eigenvalue of a suitably
+defined linear operator (a linear matrix in a suitable basis). This operator is
+obtained by decomposing the Jacobian of the infected/infecting compartments
+evaluated at the disease-free state,  $J^*$, in the form $J=T+\Sigma$, where
+$T$ is the \textit{transmission part}, that describes the production of new
 infections, and $\Sigma$  the \textit{transition part}, that describes changes
-of state (including death). Then, it can be proved \cite{Diekmann2010} that the
-\textit{basic reproduction number} $R_0$ is given by the spectral radius (i.e.
-the largest eigenvalue) of the (next generation) matrix $K=- T\Sigma^{-1}$.
-
-To appreciate the power of the NGM method, let's see how it can be applied to
-a slight modification of the SIR model that includes an exposed compartment,
-the SEIR model. In short, exposed individuals are those who have been infected
-but are not yet infectious. The SEIR model can be described by the following
-system of differential equations,
-\begin{equation}\label{eq: SEIR_model}
-  \begin{array}{l}
-    \dot{S}=-\beta SI/N          \\
-    \dot{E}=\beta SI/N -\sigma E \\
-    \dot{I}=\sigma E -\gamma I   \\
-    \dot{R}=\gamma I \ ,
-  \end{array}
-\end{equation}
-
-The fixed points of the system are given by the condition
-$\dot{S}=\dot{E}=\dot{I}=\dot{R}=0$, which implies $I=E=0$ with any value of
-$S$, and $R$. Thus, the fixed points of the system are given by
-$(S^*,E^*,I^*,R^*)=(S,0,0,N-S)$. The Jacobian matrix of the system is given by,
+of state. Then, it can be proved \cite{Diekmann2010} that the \textit{basic
+  reproduction number} $R_0$ is given by the spectral radius (i.e. the largest
+eigenvalue) of the next generation matrix, $K$, defined as,
 \begin{equation}
-  J=\begin{pmatrix}
-    -\beta I/N & 0       & -\beta S/N & 0 \\
-    \beta I/N  & -\sigma & \beta S/N  & 0 \\
-    0          & \sigma  & -\gamma    & 0 \\
-    0          & 0       & \gamma     & 0
-  \end{pmatrix} \ ,
-\end{equation}
-so that the submatrix corresponding to the infected and infecting compartments
-is given by,
-\begin{equation}
-  J_{I}=\begin{pmatrix}
-    -\sigma & \beta S/N \\
-    \sigma  & -\gamma
-  \end{pmatrix} \ .
+  R_0=\rho(K) \quad \textrm{with} \quad K=-T\Sigma^{-1} \
 \end{equation}
 
-Now we have to divide the Jacobian matrix in the transmission and transition
-parts, which are given by,
-\begin{equation}
-  T=\begin{pmatrix}
-    0 & -\beta S/N \\
-    0 & 0
-  \end{pmatrix} \quad \text{and} \quad \Sigma=\begin{pmatrix}
-    -\sigma & 0       \\
-    \sigma  & -\gamma
-  \end{pmatrix} \ .
-\end{equation}
-
-Now that we know how to derive the basic reproduction number of a compartmental
-model, let's see how to apply this knowledge to a more complex model. In the
-next section we will introduce a modification of the SIR model that can be used
-to model vector-borne plant diseases, which are of particular interest in the
-context of this thesis.
+To appreciate the power of the NGM method, let's see how it can be applied to a
+slightly more complex model than the SIR model. We will now consider a
+compartmental model for vector-borne plant diseases.
 
 \subsubsection*{A compartmental model for vector-borne plant diseases}
 
-The SIR model can be easily modified to account for vector-borne plant diseases
-by adding new compartments representing the vector population. The simplest
-way to do this is to consider a compartmental model with five compartments:
-susceptible individuals ($S$), infected individuals ($I$), recovered
-individuals ($R$), susceptible vectors ($S_v$), and infected vectors ($I_v$).
-
-For most vector-borne plant diseases, we can assume that the only mechanism of
-disease spread is the direct transmission from infected vectors to susceptible
-plants at a given rate $\alpha$. Infected individuals recover at
+The simplest way to do this is to consider a compartmental model with five
+compartments: susceptible individuals ($S$), infected individuals ($I$),
+recovered individuals ($R$), susceptible vectors ($S_v$), and infected vectors
+($I_v$). For most vector-borne plant diseases, we can assume that the only
+mechanism of disease spread is the direct transmission from infected vectors to
+susceptible plants at a given rate $\alpha$. Infected individuals recover at
 a rate $\gamma$. The total number of plants is given by $N$, and the total
 number of vectors is given by $N_v$. Vectors are assumed to be born at a
 constant rate $\delta$ proportional to the total number of vectors and die at a
@@ -455,7 +431,7 @@ Similarly, to check if the vector population is conserved we add the
 differential equations for $S_v$ and $I_v$,
 \begin{equation}
   \dot{S_v}+\dot{I_v}=\delta N_v -\mu S_v -\mu I_v=0\Longrightarrow
-  \delta N_v(\delta-\mu)=0 \ .
+  N_v(\delta-\mu)=0 \ .
 \end{equation}
 
 This equation implies that the vector population is conserved only if
@@ -464,19 +440,101 @@ rates of vectors are usually similar. By now, this is the case we will
 consider in the following analysis, but we will see in \cref{part:VBD}
 that thinks can get really complicated if we relax this assumption.
 
-After this initial check, we can proceed to analyse the model. The first
-important result we can obtain is the threshold for the development of an
-epidemic. This threshold is given by the basic reproduction number, $R_0$, as
-in the SIR model. To compute it we can follow any of the two approaches
-previously described, linear stability analysis and the next generation matrix
-approach. In order to do not extend this thesis too much, we refer the reader
-to \cref{app:VBD} for the details of the derivation of the basic reproduction
-number of a very similar model, and we just present the final result here,
+After this initial check, we can proceed to obtain an expression for the basic
+reproduction number, $R_0$. To compute it we can follow the next generation
+matrix approach. We first need to identify the disease-free state of the
+system, which is given by $(S^*,I^*,R^*,S_v^*,I_v^*)=(S(0),0,N-S(0),N_v,0)$.
+Then we need to write down the Jacobian matrix of the subsystem corresponding
+to the infected/infecting compartments, $I$ and $I_v$ in this case and evaluate
+it at the disease-free state. This matrix is given by,
 \begin{equation}
-  R_0=\frac{\beta\alpha}{\gamma\mu} \ .
+  J=\begin{pmatrix}
+    \partial \dot{I}/\partial I   & \partial \dot{I}/\partial I_v   \\
+    \partial \dot{I_v}/\partial I & \partial \dot{I_v}/\partial I_v
+  \end{pmatrix}=
+  \begin{pmatrix}
+    -\gamma      & \beta S/N_v \\
+    \alpha S_v/N & -\mu
+  \end{pmatrix}=
+  \begin{pmatrix}
+    -\gamma      & \beta S(0)/N_v \\
+    \alpha N_v/N & 0
+  \end{pmatrix} \ ,
+\end{equation}
+where we have substituted the fixed point
+$(S^*,I^*,R^*,S_v^*,I_v^*)=(S(0),0,N-S(0),N_v,0)$ in the last step.
+
+Next we decompose the matrix in the transmission and transition parts,
+$J=T+\Sigma$, and compute the inverse of the transition part, $\Sigma^{-1}$,
+\begin{equation}
+  T=\begin{pmatrix}
+    0 & \beta S(0)/N_v \\
+    0 & 0
+  \end{pmatrix} \quad \text{and} \quad
+  \Sigma=\begin{pmatrix}
+    -\gamma      & 0    \\
+    \alpha N_v/N & -\mu
+  \end{pmatrix} \quad \Longrightarrow \quad
+  \Sigma^{-1}=\frac{-1}{\gamma\mu}\begin{pmatrix}
+    \mu          & 0      \\
+    \alpha N_v/N & \gamma
+  \end{pmatrix} \ .
+\end{equation}
+
+We finally obtain the next generation matrix, $K$, as the product of the
+transmission and transition parts,
+\begin{equation}
+  K=-T\Sigma^{-1}=\frac{1}{\gamma}\begin{pmatrix}
+    \frac{\beta\alpha}{\gamma\mu}\frac{S(0)}{N} &
+    \frac{\beta}{\mu}\frac{S(0)}{N}                 \\
+    0                                           & 0
+  \end{pmatrix} \ .
+\end{equation}
+
+The basic reproduction number, $R_0$, is given by the spectral radius of the
+next generation matrix, $K$, which is the largest eigenvalue of the matrix. In
+this case, the matrix is a $2\times2$ matrix, so the eigenvalues can be easily
+obtained. The characteristic polynomial of the matrix is given by,
+\begin{equation}
+  \det(K-\lambda I)=\begin{vmatrix}
+    \frac{\beta\alpha}{\gamma\mu}\frac{S(0)}{N}-\lambda &
+    \frac{\beta}{\mu}\frac{S(0)}{N}                                \\
+    0                                                   & -\lambda
+
+  \end{vmatrix}=\lambda\parentesi{\lambda-\frac{\beta\alpha}{\gamma\mu}
+    \frac{S(0)}{N}}
+  \ ,
+\end{equation}
+so the eigenvalues are $\lambda_1=0$ and $\lambda_2=\beta\alpha S(0)/(\gamma\mu
+  N)$. The basic reproduction number, $R_0$, is given by the largest eigenvalue
+of the matrix, so
+\begin{equation}
+  R_0=\frac{\beta\alpha S(0)}{\gamma\mu N} \ .
 \end{equation}
 
 \subsection{\label{sec:Individual-based models} Individual-based models}
+
+Individual-based models describe the dynamics of infectious diseases by
+considering the individuals of the population as discrete entities that can
+interact with each other. These models are particularly useful when the
+population is not well-mixed, the interactions between individuals are
+heterogeneous, the individuals can not be considered as identical or when an
+spatial setting is considered. In individual-based models, the dynamics of the
+disease are described by stochastic processes that govern the interactions
+between individuals. These models are usually more complex than compartmental
+models, so that analytical results are not usually available, but they can
+provide more realistic insights into the dynamics of infectious diseases. Thus,
+to study the dynamics of individual-based models, we must rely on numerical
+simulations.
+
+There are several ways to simulate the dynamics of individual-based models,
+but one of the most common methods is the Gillespie algorithm, which is indeed
+an exact and unbiased algorithm to simulate stochastic processes. The Gillespie
+algorithm is based on the idea of simulating the dynamics of the system by
+considering the possible events that can occur and the rates at which they
+occur. The algorithm proceeds by selecting one of the possible events at random
+and updating the state of the system accordingly. This process is repeated
+until the desired time is reached or the system reaches a steady state.
 
 \section{\label{sec:Disease biogeography} Disease biogeography}
 
@@ -514,55 +572,3 @@ number of a very similar model, and we just present the final result here,
 
 \subsection{\label{sec:The decline of seagrass meadows} The decline of seagrass
   meadows}
-
-% \section{\label{sec:Infectious diseases} Infectious
-%   diseases}
-
-% \subsection{\label{sec:Compartmental models} Compartmental models}
-
-% \subsection{\label{sec:Individual-based models} Individual-based models}
-
-% % \subsection{\label{sec:Marine diseases} Marine diseases}
-
-% % \subsection{\label{sec:Vector-borne diseases} Vector-borne diseases}
-
-% \section{\label{sec:Disease biogeography} Disease biogeography}
-
-% % Ecological niche concept
-% \subsection{\label{sec:Ecological niches} Ecological niches}
-
-% % Explaining the concept of ecological niches
-
-% % Species distribution models
-% \subsection{\label{sec:Species distribution models} Species distribution
-%   models}
-
-% % Explaining the concept of species distribution models
-
-% % Explain their use in disease biogeography
-
-% % Explain limitations
-
-% % The role of climate change
-% \subsection{\label{sec:The role of climate change} The role of climate change}
-
-% % Explain the role of climate change in disease biogeography
-
-% % Explain the role of climate change in the spread of infectious diseases
-
-% % Explain the limitations of using SDMs to predict the impact of climate change 
-% % on disease spread
-
-% % \subsection{\label{sec:The risk of Xylella fastidiosa diseases} The risk of
-% %   \textit{Xylella fastidiosa} diseases}
-
-% \section{\label{sec:Data-driven modelling for coastal ecosystems} Coastal
-%   ecosystems}
-
-% \subsection{\label{sec:Coral reefs macroecological patterns} Coral reefs
-%   macroecological patterns}
-
-% \subsection{\label{sec:Monitoring biogeochemical cycles} Monitoring
-%   biogeochemical cycles}
-
-% \subsection{\label{sec:Seagrass ecosystems} Seagrass ecosystems}
