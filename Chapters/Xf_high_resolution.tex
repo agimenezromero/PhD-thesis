@@ -522,117 +522,11 @@ Facility (GBIF) \cite{noauthor_what_nodate,GBIF}. We note that while the
 dataset spans the globe, 96\% of the points are located in Europe
 (\cref{fig:vid_locations}).
 
-\subsection{Climate-driven epidemiological model}
-
-We used the model developed in \cite{GimenezRomero2022_CommsBio}, which
-describes
-the initial exponential rise (or decrease) of infected plants at the onset of
-an epidemic based on the spatial distribution of the vector and the bacterial
-growth and survival processes mediated by temperature. The density of vectors
-at a given cell controls the number of new plants that will be inoculated with
-the bacterium, while the local temperature mediates the growth and survival
-processes of the in-plant bacterial population, leading the initial inoculation
-to an infection or not. These temperature-driven growth and survival processes
-are described with the accumulation of two metrics denoted \textit{Modified
-    Growing Degree Days} (MGDD) and \textit{Cold Degree Days} (CDD). The base
-function to compute the MGDD is proportional to the Xf temperature-dependent
-growth rate and is defined by
-\begin{align*}
-     & f(T)=\left\{\begin{array}{lll}
-                       0                & \textrm{if} & T<T_{\textrm{base}}
-                       \\
-                       m_1\cdot T-b_1   & \textrm{if} & T_{\textrm{base}} \leq
-                       T < T_1
-                       \\
-                       m_2\cdot T + b_2 & \textrm{if} & T_{1} \leq T <
-                       T_{\textrm{opt}}
-                       \\
-                       m_3\cdot T + b_3 & \textrm{if} & T_{\textrm{opt}}
-                       \leq T
-                       < T_2
-                       \\
-                       m_4\cdot T + b_4 & \textrm{if} & T_2 \leq
-                       T_{\textrm{max}}
-                       \\
-                       0                & \textrm{if} & T\geq T_{\textrm{max}}
-                   \end{array}\right. \,
-\end{align*}
-where $T_{\textrm{base}}=\SI{12}{\degree C}$, $T_1=18$,
-$T_{\textrm{opt}}=\SI{28}{\degree C}$,	$T_2=32$ and
-$T_{\textrm{max}}=\SI{35}{\degree C}$; the slopes are $m_1= 0.66$, $m_2=1$,
-$m_3=-1.25$ and $m_4=-3$ and the intercepts are $b_1=-8$, $b_2=-14$, $b_3=4$
-and $b_4=105$. MGDD are then computed as
-\begin{equation}\label{eq:MGDDdef}
-    MGDD(t) = \frac{1}{24}\sum_{\tau \in t} f(T(\tau)),
-\end{equation}
-where $\tau$ is expressed in hours, $t$ in years and we divide by $24$ to
-obtain $MGDD(t)$ in degree days. The accumulation period goes from the
-$1^{\mathrm{st}}$ of April to the $31^{\mathrm{st}}$ of October in the northern
-hemisphere and from the $1^{\mathrm{st}}$ of November to the $31^{\mathrm{st}}$
-of March in the southern hemisphere.
-
-CDD are computed between $1^{\mathrm{st}}$ November and $31^{\mathrm{st}}$
-March in the northern hemisphere and between $1^{\mathrm{st}}$ April and
-$31^{\mathrm{st}}$ October in the southern hemisphere as
-\begin{equation}
-    CDD(t)= \frac{1}{24}\sum_{\tau \in t} (6-T(\tau)) \ \quad \textrm{for}
-    \quad T_i\le 6\textrm{\textdegree C} .	\label{eq:CDDdef}
-\end{equation}
-
-Altogether, the number of infected hosts is described by the following
-recurrence relation
-\begin{equation}
-    I(t)=I(t-1)e^{\gamma(R_0-1)}\mathcal{F}(MGDD(t))\mathcal{G}(CDD(t)) \ ,
-\end{equation}
-where $\gamma$ is the death rate of infected vines, $R_0$ is the basic
-reproduction number of the disease and $\mathcal{F}(\cdot)$ and
-$\mathcal{G}(\cdot)$ are sigmoidal-like functions that relate the MGDD and CDD
-metrics to the probability of developing an infection from a given inoculation.
-
-To incorporate the spatial heterogeneity of the vector population, $R_0$ in
-each cell $j$ can be related to the climatic suitability of the vector, such
-that
-\begin{equation}
-    R_0^j=R_0^*\cdot s_j \ .
-\end{equation}
-
-For Europe, we use the climatic suitability of the main vector,
-\textit{Philaenus spumarius}, and $R_0^*=5.0$ for all simulations
-\cite{Giménez-Romero2022}. For the United States we use a homogeneous basic
-reproductive number $R_0=8.0$ in all cells, as this choice of the parameter
-reproduces spatiotemporal data on PD epidemics in the US with an area under the
-curve of $\sim 90\%$. For the rest of the zones, we use $R_0=5$ because of the
-lower presence of vectors compared to the United States
-\cite{Giménez-Romero2022}.
-
-We use $\gamma=0.2$ as previously estimated \cite{Almeida2003} and the
-specific form of $\mathcal{F}(\cdot)$ and $\mathcal{G}(\cdot)$ is given by
-\begin{align}
-    \mathcal{F}(x) & = \frac{1}{1+e^{-0.012(x-975)}}        \\
-    \mathcal{G}(x) & = \frac{2\cdot10^7}{2\cdot 10^7 + x^3}
-\end{align}
-
-Finally, the risk index is derived as the effective growth rate of the
-infected population over the simulated time \cite{GimenezRomero2022_CommsBio},
-\begin{equation}
-    r_j=\max\left\{-1, \frac{\ln(I_j(T) / I(0))}{\gamma(R_0^j-1)\cdot
-        T}\right\} \ .
-\end{equation}
-
-Because the typical time scale of the disease is 5 years ($1/\gamma$), we
-simulate periods of 7 years. If more years are available
-to simulate, we perform a re-introduction of the disease as a single infected
-plant in each cell after each 7-year period
-\cite{GimenezRomero2022_CommsBio}.
-
-The code used to run the model is freely accessible at GitHub
-\cite{CODE_model}.
-
 \subsection{Model adaptation to daily temperature data}
 
-MGDD and CDD metrics were originally defined using hourly temperature data
-(\cref{eq:MGDDdef,eq:CDDdef}) \cite{GimenezRomero2022_CommsBio}. However, the
-CHELSA
+We used the model developed in \cref{ch:commsbio}
+\cite{GimenezRomero2022_CommsBio}, in which MGDD and CDD metrics were defined
+using hourly temperature data (\cref{eq:MGDDdef,eq:CDDdef}).However, the CHELSA
 dataset only provide daily granularity. To overcome this limitation, we use a
 basic sinusoidal extrapolation relating maximum and minimum daily temperature
 to hourly temperatures,
@@ -641,9 +535,8 @@ to hourly temperatures,
     \ ,
 \end{equation}
 with $w=2\pi/24$ and $h$ ranging from $0$ to $23$. This approximation was
-validated in \cite{GimenezRomero2023_PD} with data from national meteorological
-stations
-in Spain (AEMET) using several locations and years, showing no differences
-between the use of hourly or daily temperatures to estimate MGDD and CDD.
-Similarly, the use of the approximation was validated across Europe using
-EURO-CORDEX data.
+validated in \cref{ch:xf_climate_change} \cite{GimenezRomero2023_PD} with data
+from national meteorological stations in Spain (AEMET) using several locations
+and years, showing no differences between the use of hourly or daily
+temperatures to estimate MGDD and CDD. Similarly, the use of the approximation
+was validated across Europe using EURO-CORDEX data.

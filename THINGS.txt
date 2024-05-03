@@ -1,4 +1,14 @@
-- Si faig compendi, puc posar motivació i contribució de cada paper en cada capitol (e.g. tesis Rodri) i unes contribucions més generals a la intro.
-- Si faig monografia, millor només les contribucions generals a l'inici (?)
+- Checkear/retocar las intros de los capitulos 4, 6, 8 y 9.
 
-- Em plantejo fer monografia per poder posar el primer paper de nacres, que si no només hi ha 1 paper a la part de "Modelling parasite-produced marine diseases" i a més es el segon, necessita context...
+- Añadir referencias a capitulos donde se citan nuestros artículos previos
+
+- Revisar los "See methods" y referencias a mano a supplementary material (tipo Section S2F en el commsbio). Poner las referencias bien!
+
+- Introducir figuras en capitulo 2:
+
+	- SIR scheme
+	- S_inf, R_inf and I_max as function of R_0 (analytical and numerical)
+	- SIR-V scheme
+	- R_inf as function of R_0 (only numerical)
+	
+
