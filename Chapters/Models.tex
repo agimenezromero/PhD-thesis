@@ -523,29 +523,186 @@ spatial setting is considered. In individual-based models, the dynamics of the
 disease are described by stochastic processes that govern the interactions
 between individuals. These models are usually more complex than compartmental
 models, so that analytical results are not usually available, but they can
-provide more realistic insights into the dynamics of infectious diseases. Thus,
-to study the dynamics of individual-based models, we must rely on numerical
-simulations.
+provide more realistic insights into the dynamics of infectious diseases.
 
-There are several ways to simulate the dynamics of individual-based models,
-but one of the most common methods is the Gillespie algorithm, which is indeed
-an exact and unbiased algorithm to simulate stochastic processes. The Gillespie
-algorithm is based on the idea of simulating the dynamics of the system by
-considering the possible events that can occur and the rates at which they
-occur. The algorithm proceeds by selecting one of the possible events at random
-and updating the state of the system accordingly. This process is repeated
-until the desired time is reached or the system reaches a steady state.
+In individual-based models the population is represented by a set of
+individuals, each of which can be in different \textbf{states}. More formally,
+the \textbf{system} at time $t$ is defined by the set of states of the
+individuals in the population at that time. The states of the individuals can
+change over time according to \textbf{events} that occur in the system, whcih
+consequently change the state of the system. These events can be triggered by
+the interactions between individuals, the environment, internal or other
+external factors. The events are characterized by their \textbf{rates}, which
+determine the probability of occurence per unit time. Mathematically, the
+dynamics of the system are described by the \textbf{master equations}
+\cite{Toral_master_eqs}, which are a set of differential equations that
+describe the probability of the system being in a given state at a given time.
+The master equations are usually difficult to solve analytically, so numerical
+methods are used to simulate the dynamics of the system.
+
+\subsubsection*{The Gillespie algorithm}
+
+There are several ways to simulate the dynamics of individual-based models, but
+one of the most common methods is the Gillespie algorithm \cite{Gillespie1977},
+which is indeed an exact and unbiased algorithm to simulate stochastic
+processes. The Gillespie algorithm is based on the idea that the system will
+remain in a given state for a random amount of time until an event occurs,
+which will then change the state of the system. Thus, the change of state of
+the system can determined by two independent random processes: the time to the
+next event and the particular event that occurs.
+
+Consider that we are simulating a system with $M$ possible events, each of
+which has a rate $w_i$ of occurence. The time of the next event is given by
+\begin{equation}
+  t_{\textrm{next}}=\frac{-\ln(r_1)}{W} \ ,
+\end{equation}
+where $W=\sum_i^M w_i$ is the total rate of any event happening and
+$r_1=\hat{\mathbb{U}}(0,1)$ is a distributed random number in the interval
+$[0,1]$.
+
+Once the time of the next event has been computed, we choose the event to
+implement according to their conditional probabilities $p_i=w_i/W$. Basically,
+we draw another uniformly distributed random number $r_2$ and compare it to
+these conditional probabilities, finding the smallest $i$ satisfying
+$\sum_i^Mp_i>v$. The system is then updated according to the chosen event and
+the time is updated to $t_{\textrm{next}}$. This process is repeated until a
+termination condition is met. In \cref{alg:gillespie} we show a pseudocode
+implementation of the Gillespie algorithm.
+
+\begin{algorithm}
+  \caption{Gillespie Algorithm}
+  \label{alg:gillespie}
+  \begin{algorithmic}[1]
+    \State Initialize time $t \gets 0$, and set the initial state of the
+    system.
+    \While{termination condition is not met}
+    \State Calculate the propensity functions $w_i(t)$ for all possible
+    events $i$.
+    \State Calculate the total propensity $W(t) = \sum_i^M w_i(t)$.
+    \State Generate two random numbers $r_1$ and $r_2$ uniformly
+    distributed in $[0,1]$.
+    \State Calculate the time until the next reaction event $\tau =
+      \frac{-\ln(r_1)}{W(t)}$.
+    \State Select the next reaction $j$ according to the probabilities
+    $P(j) = \frac{w_j(t)}{W(t)}$.
+    \State Update the system state according to the chosen reaction.
+    \State Update time $t \gets t + \tau$.
+    \EndWhile
+  \end{algorithmic}
+\end{algorithm}
+
+The Gillespie algorithm provides a statistically exact way to solve the
+master equations underlying the IBM and gives a physical sense to the simulated
+time, as it comes directly from the event rates. However, one of its major
+drawbacks is the computational expense of the algorithm. Nevertheless, some
+tricks can be implemented to overcome these limitations and still provide an
+exact solution to the stochastic process. Two tricks have been used in our
+implementation of the Gillespie algorithm of \cref{ch:nacras_II}: first,
+instead of comparing $p_i$ with the random number $r_2$ we use $w_i$ over
+$v\cdot W$, as this way only a product is computed (instead of $M$)
+\cite{Toral_master_eqs}; second, we implemented the sorting direct method
+\cite{MCCOLLUM200639}. The method consists in dynamically sorting the events
+and try to apply the most frequent ones first, which can save a considerably
+amount of computational time. In \cref{alg:Chose_apply_event} we show a
+pseudocode implementation of core of the numerical method.
+
+\begin{algorithm}[H]
+  \caption{Choose and apply event}
+  \label{alg:Chose_apply_event}
+  \begin{algorithmic}[1]
+
+    \State U = rand() * W \Comment{Random number multiplied by
+      total rate}
+
+    \For {$i=1,\ldots,M$} \Comment{Iterate over events}
+
+    \If {U $<$ sum(rates[orders[1:i]])}
+
+    \State events[i](*args) \Comment{Execute corresponding event}\\
+
+    \If {i != 1} \Comment{Sort reactions array}
+
+    \State aux\_e = copy(events)
+    \State aux\_o = copy(orders)\\
+
+    \State events[i-1] = aux\_e[i]
+    \State events[i] = aux\_e[i-1]\\
+
+    \State orders[i-1] = aux\_o[i]
+    \State orders[i] = aux\_o[i-1]
+
+    \EndIf
+
+    \State break
+
+    \EndIf
+
+    \EndFor
+
+  \end{algorithmic}
+\end{algorithm}
+
+\AG{Something that could be added here is an example of the SIR model
+  implemented with the Gillespie algorithm. We could also show how the mean
+  field approximation works, both analytically and numerically.}
 
 \section{\label{sec:Disease biogeography} Disease biogeography}
+
+We have seen how mathematical models can be used to study the dynamics of
+infectious diseases, which can provide important insights into the spread of
+diseases \textit{at a local level}. However, another important aspect of
+infectious diseases is their spread \textit{at a global level}. Disease
+biogeography is the study of the geographical distribution of infectious
+diseases and the factors that influence their establishment. This is influenced
+by a variety of factors, such as climate, land use, human activities, and the
+presence of vectors or reservoirs. Understanding how these factors influence
+the establishment of diseases at a geographical scale is essential to predict
+the risk of emergent diseases developing in new areas. In this section, we will
+discuss the most common methods used to study the potential distribution of
+diseases and their limitations, particularly in a context of climate change.
 
 % Ecological niche concept
 \subsection{\label{sec:Ecological niches} Ecological niches}
 
-% Explaining the concept of ecological niches
+The concept of ecological niches is central to the study of disease
+biogeography. An ecological niche is defined as the set of environmental
+conditions under which a species can persist and maintain a stable population.
+The niche of a species is determined by a variety of factors, such as
+temperature, humidity, precipitation, and the presence of other species. The
+fundamental niche of a species is the set of environmental conditions under
+which a species can persist in the absence of other species. The realized niche
+of a species is the set of environmental conditions under which a species can
+persist in the presence of other species. The difference between the
+fundamental
+and realized niches of a species is known as the \textit{niches overlap}, which
+is a measure of the degree of competition between species. The concept of
+ecological niches is particularly important in the study of disease
+biogeography, as it can help to predict the potential distribution of diseases
+based on the environmental conditions that favor their establishment.
 
 % Species distribution models
 \subsection{\label{sec:Species distribution models} Species distribution
   models}
+
+Species distribution models (SDMs) are a powerful tool that can be used to
+predict the potential geographic distribution of species based on the
+environmental conditions that favor their establishment. SDMs are based on the
+concept of ecological niches, and they use environmental data, such as
+temperature, humidity, precipitation, and land use, to predict the potential
+distribution of the species. SDMs are usually based on statistical models that
+relate the presence and absence of a species to environmental variables. If
+this relation renders successful, the model can be then used to predict the
+potential distribution of the species at different locations based on their
+environmental conditions. SDMs have been widely used in the study of disease
+biogeography, as they can help to predict the potential distribution of
+diseases based on the environmental conditions that favor the establishment of
+the pathogens and/or vectors that transmit them.
+
+There are several methods that can be used to build SDMs, such as logistic
+regression, generalized linear models, and machine learning algorithms, such as
+random forests, support vector machines, and artificial neural networks. These
+methods have different strengths and weaknesses, and the choice of method
+depends on the characteristics of the data and the research question.
 
 \subsection{\label{sec:The role of climate change} The role of climate change}
 
