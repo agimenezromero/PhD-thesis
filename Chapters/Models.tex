@@ -1,4 +1,24 @@
 
+\section{\label{sec:Ecological systems} Ecological systems}
+
+In this section we will introduce the basic concepts and context of the
+ecological systems that will be studied throughout the thesis.
+
+\subsection{\label{sec:The Mass Mortality Event of Pinna nobilis} The Mass
+  Mortality Event of \textit{Pinna nobilis}}
+
+\subsection{\label{sec:Xylella fastidiosa: an emerging global
+    threat}\textit{Xylella
+    fastidiosa}: an emerging global threat}
+
+\subsection{\label{sec:Coral reefs under threat} Coral reefs under threat}
+
+\subsection{\label{sec:Ocean acidification} Ocean acidification}
+
+\subsection{\label{sec:The decline of seagrass meadows} The decline of seagrass
+  meadows}
+
+\newpage
 \section{\label{sec:Infectious disease modelling} Infectious
   disease modelling}
 
@@ -272,7 +292,7 @@ describe. Fortunately, there are a couple of formal approaches that can be used
 to derive the basic reproduction number of basically any compartmental model:
 linear stability analysis and the next generation matrix approach.
 
-\subsubsection*{Linear stability analysis}
+\subsection{Linear stability analysis}
 
 Linear stability analysis is a powerful tool that can be used to study the
 dynamics of a \textbf{dynamical system} around its \textbf{fixed points}. The
@@ -369,7 +389,7 @@ found: the total number of individuals in the population and \cref{eq:
   conserved quantities.
 \end{remark}
 
-\subsubsection*{The next generation matrix method}
+\subsection{The next generation matrix method}
 We have previously shown that the basic reproduction number, $R_0$ of a
 compartmental model can be obtained by analysing the stability of the fixed
 points corresponding to the disease-free state of the model. Specifically, the
@@ -607,7 +627,7 @@ amount of computational time. In \cref{alg:Chose_apply_event} we show a
 pseudocode implementation of core of the numerical method.
 
 \begin{algorithm}[H]
-  \caption{Choose and apply event}
+  \caption{Sorting direct method}
   \label{alg:Chose_apply_event}
   \begin{algorithmic}[1]
 
@@ -646,39 +666,113 @@ pseudocode implementation of core of the numerical method.
   implemented with the Gillespie algorithm. We could also show how the mean
   field approximation works, both analytically and numerically.}
 
-\section{\label{sec:Disease biogeography} Disease biogeography}
-
 We have seen how mathematical models can be used to study the dynamics of
 infectious diseases, which can provide important insights into the spread of
 diseases \textit{at a local level}. However, another important aspect of
-infectious diseases is their spread \textit{at a global level}. Disease
-biogeography is the study of the geographical distribution of infectious
-diseases and the factors that influence their establishment. This is influenced
-by a variety of factors, such as climate, land use, human activities, and the
-presence of vectors or reservoirs. Understanding how these factors influence
-the establishment of diseases at a geographical scale is essential to predict
-the risk of emergent diseases developing in new areas. In this section, we will
-discuss the most common methods used to study the potential distribution of
-diseases and their limitations, particularly in a context of climate change.
+infectious diseases is their spread and establishment \textit{at a global
+  level}. In the following section, we will discuss the most common methods
+used to study the potential distribution of diseases and their limitations,
+particularly in a context of climate change.
+
+\section{\label{sec:Disease biogeography} Disease biogeography}
+
+Biogeography is the study of the distribution of species and ecosystems across
+the Earth's surface, and it is a fundamental field in ecology. Disease
+biogeography is a subfield of biogeography that focuses on the geographical
+distribution of infectious diseases and the factors that influence their
+establishment, such as climate, land use, human activities, and the presence of
+vectors or reservoirs. Understanding how these factors influence the
+spread of diseases at a geographical scale is essential to predict the
+risk of emergent diseases developing in new areas. This, in turn, can help
+public health authorities to design effective strategies to prevent and control
+the spread of diseases.
+
+The study of disease biogeography is particularly challenging due to the
+complexity of the interactions between the environment, the pathogens, the
+vectors, and the hosts involved in the disease transmission cycle. The
+potential distribution of diseases has been mostly studied using correlative
+species distribution models, which link presence and absence data of diseases
+to environmental variables based on correlative methods. Despite their wide
+use, these models have several limitations, both conceptual and practical. In
+this section, we will briefly review the main concepts of biogeography and
+explain the basic principles of species distribution models. Finally, we will
+discuss how the limitation of using this framework to study the potential
+distribution of infectious diseases.
 
 % Ecological niche concept
 \subsection{\label{sec:Ecological niches} Ecological niches}
 
-The concept of ecological niches is central to the study of disease
-biogeography. An ecological niche is defined as the set of environmental
-conditions under which a species can persist and maintain a stable population.
-The niche of a species is determined by a variety of factors, such as
-temperature, humidity, precipitation, and the presence of other species. The
-fundamental niche of a species is the set of environmental conditions under
-which a species can persist in the absence of other species. The realized niche
-of a species is the set of environmental conditions under which a species can
-persist in the presence of other species. The difference between the
-fundamental
-and realized niches of a species is known as the \textit{niches overlap}, which
-is a measure of the degree of competition between species. The concept of
-ecological niches is particularly important in the study of disease
-biogeography, as it can help to predict the potential distribution of diseases
-based on the environmental conditions that favor their establishment.
+The concept of ``ecological niche'' is central to the study of biogeography,
+but it has evolved significantly since its inception. The term "niche" was
+first introduced by Grinnell in 1917 to describe the set of environmental
+conditions within a species' range that dictate its distribution
+\cite{Grinnell1917}. This is, the niche of a species is the set of
+environmental conditions, such as temperature, humidity, and precipitation,
+that are suitable for the species to survive and reproduce. This early
+interpretation, known as the Grinnellian niche, emphasized the abiotic factors
+essential for the survival and distribution of species, but neglected the
+biotic interactions that also shape species' distributions. Indeed, some years
+later Charles S. Elton redefined the niche concept to encompass the roles
+species play within an ecosystem, including their interactions with other
+species. This Eltonian definition shifted the focus towards the biotic aspects
+of ecological niches \cite{Elton1927}.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=1\textwidth]{Figures/Niche_theory.pdf}
+  \caption[Historical development of the ecological niche concept]{
+    \textbf{Historical development of the ecological niche concept.} The
+    Grinnellian niche emphasizes the abiotic factors that determine the
+    distribution of species, while the Eltonian niche focuses on the biotic
+    interactions that shape the distribution of species. The Hutchinsonian
+    niche integrates both abiotic and biotic factors, distinguishing
+    between the fundamental and realized niches of a species. The BAM
+    (Biotic-Abiotic-Movement) framework of the ecological niche concept. The
+    full ecological niche of a species includes the abiotic conditions that are
+    suitable for the species (abiotic niche), the biotic interactions that
+    favor the species (biotic niche), and the areas that the species can
+    physically reach and colonize (dispersal niche). The realized niche is the
+    intersection of these three components.}
+  \label{fig:niche_concept}
+\end{figure}
+
+To solve this apparent contradiction, Hutchinson introduced the concepts of
+fundamental and realized niches \cite{Hutchinson1957}. The fundamental niche
+describes a hypervolume of environmental conditions under which a species can
+survive without immigration (i.e. the Grinnellian niche), while the realized
+niche is the subset of the fundamental niche that the species can actually
+exploit due to biotic interactions (e.g. competition). This distinction between
+the fundamental and realized niches provides a more comprehensive understanding
+of the ecological niche of a species, taking into account both abiotic and
+biotic factors. For example, a species may have broad tolerances of abiotic
+conditions such as wide ranges of temperature and rainfall, thus providing a
+large fundamental niche, which translates in a wide potential distribution of
+the species. However, the interactions of this species with other ones may
+restrict it to only a subset of the abiotically suitable areas. The presence of
+competitors, predators, and pathogens (e.g. negative interactions) or the
+absence of key mutualistic species (e.g. positive interactions) can influence
+the survival of a species, ultimately shaping its realized niche. In
+mathematical terms, we can express the realized niche $R$ of a given species as
+the intersection of the abiotic niche $A$ and the biotic niche $B$, $R=A\cap
+  B$ (\cref{fig:niche_concept} (a)).
+
+However, the realized niche of a species can be further constrained by
+dispersal limitations, which can prevent the species from fully exploiting its
+fundamental niche. This idea was comprehensively developed by Soberón and
+Peterson in 2005, who introduced the BAM (Biotic-Abiotic-Movement) framework to
+clarify the niche concept by emphasizing the species' dispersal capabilities
+alongside biotic and abiotic factors \cite{Soberon2005}. This framework
+suggests that the full ecological niche of a species includes not only the
+environmental conditions that are abiotically suitable and biotically favorable
+but also the areas that the species can physically reach and colonize. For
+example, a species originating from a tropical region in the Americas may have
+suitable environmental conditions in other tropical regions around the world,
+such as Southeast Asia, and even may be lucky enough to find an absence of
+competitors or predators in there. Yet, it will not be able to establish there
+if it is unable to disperse. So, in mathematical terms, the realized niche $R$
+of a species can be expressed as the intersection of the abiotic niche $A$, the
+biotic niche $B$, and the dispersal (movement) niche $M$, $R=A\cap B\cap M$
+(\cref{fig:niche_concept} (b)).
 
 % Species distribution models
 \subsection{\label{sec:Species distribution models} Species distribution
@@ -689,43 +783,121 @@ predict the potential geographic distribution of species based on the
 environmental conditions that favor their establishment. SDMs are based on the
 concept of ecological niches, and they use environmental data, such as
 temperature, humidity, precipitation, and land use, to predict the potential
-distribution of the species. SDMs are usually based on statistical models that
-relate the presence and absence of a species to environmental variables. If
-this relation renders successful, the model can be then used to predict the
+distribution of the species. In general, SDMs can be both mechanistic and
+correlative, depending on the underlying assumptions of the model. Mechanistic
+SDMs are based on the physiological or ecological requirements of the species,
+while correlative SDMs are based on statistical relationships between the
+presence and absence of the species in different locations and their
+environmental conditions. Thus, correlative SDMs make use of statistical models
+that relate the presence and absence of a species to environmental variables.
+If this relation renders successful, the model can be then used to predict the
 potential distribution of the species at different locations based on their
-environmental conditions. SDMs have been widely used in the study of disease
-biogeography, as they can help to predict the potential distribution of
-diseases based on the environmental conditions that favor the establishment of
-the pathogens and/or vectors that transmit them.
+environmental conditions. Because most of the SDMs that have been employed so
+far are in the literature are based on correlative methods, we will refer to
+correlative SDMs as just SDMs in the following.
 
-There are several methods that can be used to build SDMs, such as logistic
-regression, generalized linear models, and machine learning algorithms, such as
-random forests, support vector machines, and artificial neural networks. These
-methods have different strengths and weaknesses, and the choice of method
-depends on the characteristics of the data and the research question.
+Many statistical methods can be used to build SDMs, such as logistic
+regression, generalized linear models and machine learning algorithms, like
+random forests or support vector machines \cite{Franklin2010}. These methods
+have different strengths and weaknesses, and the choice of method depends on
+the characteristics of the data and the research question. For example,
+logistic regression is simple and interpretable, allowing researchers to
+understand the relationship between the species and the environmental
+variables, while machine learning algorithms are more flexible and can capture
+complex relationships but often lack the explanatory power of simpler models.
 
-\subsection{\label{sec:The role of climate change} The role of climate change}
+The overall process of building an SDM can be divided into several steps
+\cite{Elith2006}:
 
-\section{\label{sec:Data-driven modelling} Data-driven modelling}
+\begin{enumerate}
+  \item \textbf{Data collection:} The first step in building an SDM is to
+        collect data on the species of interest and the environmental variables
+        that may influence its distribution. This data can be obtained from
+        field surveys, remote sensing, or databases such as GBIF (Global
+        Biodiversity Information Facility) \cite{GBIF} or WorldClim
+        \cite{WorldClim}.
 
-\subsection{\label{sec:Climate data} Climate data}
+  \item \textbf{Data preprocessing:} Once the data has been collected, it needs
+        to be preprocessed to remove missing values, outliers, and redundant
+        variables. This can involve cleaning the data, transforming variables,
+        and	standardizing the scales of the variables.
 
-\subsection{\label{sec:Remote sensing} Remote sensing}
+  \item \textbf{Pseudo-absence data generation:} In many cases, the data on the
+        presence of the species is more abundant than the data on the absence
+        of the species, or directly there is no absence data available. To
+        address this issue, we can generate pseudo-absence data by randomly
+        selecting points from areas where the species is not known to occur
+        \addref.
 
-\subsection{\label{sec:Machine learning} Machine learning}
+  \item \textbf{Data partitioning:} The data is then partitioned into a
+        training set and a testing set. The training set is used to fit the
+        model to the data, while the testing set is used to evaluate the
+        performance of the model.
 
-\section{\label{sec:Case studies} Case studies}
+  \item \textbf{Model training:} Once the data has been preprocessed, it can be
+        used to train the model. This involves fitting the model to the data
+        and estimating the parameters that best predict the presence and
+        absence of the species based on the environmental variables.
 
-\subsection{\label{sec:The Mass Mortality Event of Pinna nobilis} The Mass
-  Mortality Event of \textit{Pinna nobilis}}
+  \item \textbf{Model evaluation:} After the model has been trained, it needs
+        to be evaluated to assess its performance. This can be done using
+        metrics such as the area under the receiver operating characteristic
+        curve (AUC), the true skill statistic (TSS), or the Kappa statistic.
+        k-fold cross-validation is usually used to evaluate the model on
+        different subsets of the data.
 
-\subsection{\label{sec:Xylella fastidiosa: an emerging global
-    threat}\textit{Xylella
-    fastidiosa}: an emerging global threat}
+  \item \textbf{Model application:} The model can be used to predict
+        the potential distribution of the species at different locations based
+        on their environmental conditions. This can help researchers to
+        understand the factors that influence the distribution of the species
+        and to design conservation strategies to protect it.
 
-\subsection{\label{sec:Coral reefs under threat} Coral reefs under threat}
+\end{enumerate}
 
-\subsection{\label{sec:Ocean acidification} Ocean acidification}
+\AG{Add an example of a SDM with an image of the potential distribution of a
+  species.}
 
-\subsection{\label{sec:The decline of seagrass meadows} The decline of seagrass
-  meadows}
+\subsection{\label{sec:Applications of SDMs to disease biogeography}
+  Applications of SDMs to disease biogeography}
+
+SDMs have been widely used in the study of disease biogeography, as they can
+help to predict the potential distribution of diseases based on the
+environmental conditions that favor the establishment of the pathogens and/or
+vectors that transmit them.
+
+\AG{CONTINUE HERE}
+
+\subsection{\label{sec:Limitations of SDMs} Limitations of SDMs}
+
+One of the key assumptions of SDMs are that species are at equilibrium with
+their environments and that relevant environmental gradients have been
+adequately sampled. However, SDMs are often used in non-equilibrium scenarios,
+such to predict the future potential distribution of species after emerging
+invasions or climate change, which involves that current species records are
+unrepresentative of new conditions. In this new context, new combinations of
+environmental factors and biotic interactions previously unseen might play a
+role in the distribution of the species, thus rendering the predictions of the
+SDMs unreliable. In addition, the successful establishment of a species in a
+new area is influenced by genetic variability, phenotypic plasticity and
+evolutionary changes, which are not accounted for in SDMs \cite{Elith2009}.
+
+For the particular case of the application of SDMs in disease biogeography, the
+limitations of the models are even more pronounced. Infectious diseases are
+determined by complex interactions between the pathogens, the vectors, the
+hosts, and the environment, which are not captured when applying SDMs to derive
+the potential distribution of each of the pathosystem components individually.
+
+\AG{Continue and check the references}
+
+\section{\label{sec:Data-driven methods} Data-driven methods}
+
+\subsection{\label{sec:Datasets} Datasets}
+
+\subsection{\label{sec:Power-law distributions in empirical data} Power-law
+  distributions in empirical data}
+
+\subsection{\label{sec:Long-Short Term Memory networks} Long-Short Term Memory
+  networks}
+
+\subsection{\label{sec:Convolutional Neural Networks} Convolutional Neural
+  Networks}
