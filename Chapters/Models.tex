@@ -102,6 +102,8 @@ analytical study of the model. We will now derive some important results from
 the SIR model, most of which cane be already found in reference
 \cite{Murray_book}.
 
+\subsubsection*{Conservation of the total population}
+
 First let's start by the simplest insight: the assumption of population
 conservation is inherently included in the model. We can prove this statement
 by just adding the three differential equations in \cref{eq: normal_SIR_theo},
@@ -120,6 +122,8 @@ analysis of the model. In this case, the conservation law allows us to reduce
 the number of independent variables from three to two, so that we can study the
 dynamics of the system in a two-dimensional phase space given by the variables
 $S$ and $I$, as $R$ can be obtained from the relation $R=N-S-I$.
+
+\subsubsection*{Threshold behaviour: the basic reproduction number}
 
 Now consider the starting point of an epidemic, such our old friend the
 COVID-19 pandemic. For sure at the beginning of the epidemic the number of
@@ -155,26 +159,28 @@ The critical parameter $\rho$ is sometimes called the \textit{relative removal
 considering the so-called \textit{basic reproduction number}, $R_0$, defined
 as,
 \begin{equation}
-  R_0=\frac{S(0)}{\rho}=S(0)\sigma=\frac{\beta S(0)}{\gamma N} \ ,
+  R_0=\frac{S(0)}{\rho}=S(0)\sigma=\frac{\beta S(0)}{\gamma
+    N}\simeq\frac{\beta}{\gamma} \ ,
 \end{equation}
-which measures the number of secondary infections given by a primary
-infection in a whole susceptible population. I am sure you have already heard
-about the basic reproduction number in the context of the COVID-19 pandemic.
+in which we have considered that $S(0)\simeq N$ at the beginning of the
+epidemic.
 
-To see that this quantity measures the number of secondary infections produced
-by a primary infection we just need to recall the definition of the rates and
-``read'' the expression. $\beta S(0)/N$ is the rate of new infections produced
-by a primary infection (as we are at time $t=0$). In other words, $\beta
-  S(0)/N$ is the number of secondary infections produced by a primary infection
-\textit{per unit time}. Finally, we observe that, as $\gamma$ is the rate of
-recovery of infected individuals, $1/\gamma$ is the average time an
-individual remains infected. The product of the number of secondary infections
-produced by a primary infection per unit time and the average time an infected
-individual remains infected gives the total number of secondary infections
-produced by a primary infection in the whole susceptible population. Voilà!
-This is nothing but the basic reproduction number, $R_0$.
+The basic reproduction number is a very important quantity in
+epidemiology, an it can be proved that it measures the average number of
+secondary infections given by a primary infection in a \textit{fully
+  susceptible population}. To see it we just need to recall the definition of
+the rates and ``read'' the expression. $\beta S(0)/N$ is the rate of new
+infections produced by a primary infection (as we are at time $t=0$). In other
+words, $\beta	S(0)/N$ is the number of secondary infections produced by a
+primary infection \textit{per unit time}. Finally, we observe that, as $\gamma$
+is the rate of recovery of infected individuals, $1/\gamma$ is the average time
+an individual remains infected. The product of the number of secondary
+infections produced by a primary infection per unit time and the average time
+an infected individual remains infected gives the total number of secondary
+infections produced by a primary infection in the whole susceptible population.
+Voilà! This is nothing but the basic reproduction number, $R_0$.
 
-It can be formally proved that this quantity defines a threshold for the
+It can be more formally proved that this quantity defines a threshold for the
 development of an epidemic from the fact that $S$ is a monotonically decreasing
 function, which implies $S(t)<S(0) \ \forall t>0$.
 \begin{equation}\label{eq: threshold_t}
@@ -194,6 +200,39 @@ infect at least one individual it will die out. Furthermore, note that
 because of our mean field approach, the number of secondary infections produced
 by a primary one refers to the \textit{average} number of secondary
 infections.
+
+\subsubsection*{Initial phase approximation}
+
+An approximated closed analytical result can be obtained by considering the
+initial phase of the epidemic, when the number of infected individuals is small
+compared to the number of susceptible individuals, $I\ll S$. In this case, the
+number of susceptible individuals is approximately the total population,
+$S\approx N$, as the number of recovered individuals is negligible,
+$R\approx0$. Under these conditions, the dynamics of the infected population
+can be described by the following differential equation,
+\begin{equation}
+  \der{I}{t}=\beta S/N I-\gamma I\approx\beta I-\gamma I=(\beta-\gamma)I \ ,
+\end{equation}
+which has the solution,
+\begin{equation}
+  I(t)=I(0)e^{(\beta-\gamma)t}=I(0)e^{\gamma(R_0-1)t} \ .
+\end{equation}
+
+This result shows that the number of infected individuals grows exponentially
+at the beginning of the epidemic, with a growth rate related to $R_0$.
+This approximation is very useful to understand the initial phase of the
+epidemic, when the number of infected individuals is small, but it is only
+valid and useful for short times after the beginning of the epidemic.
+
+In \cref{fig: SIR_model}(a) we show the numerical solution of the SIR model for
+a given set of parameters. The fraction of susceptible, infected, and recovered
+population is shown as function of time. The black dashed line represents the
+initial phase approximation of the model, which is in good agreement with the
+numerical solution of the model at the beginning of the epidemic. In the inset,
+we can see that the initial growth of the epidemic is indeed exponential
+(a straight line in log-linear scale), as predicted by the model.
+
+\subsubsection*{Maximum number of infected individuals}
 
 Another important analytical result that can be obtained from this model is
 the maximum of infected individuals, that gives an idea of how severe the
@@ -240,8 +279,32 @@ $S(t)=\rho$)
 in \cref{eq:  max_I_eq},
 \begin{equation}
   I(t)=N+\rho\ln{\frac{S(t)}{S(0)}}-S(t) \Longrightarrow
-  I_{max}=N+\rho\claudator{\ln(\frac{\rho}{S_0}) - 1} \ .
+  I_{max}=N+\rho\claudator{\ln(\frac{\rho}{S_0}) -
+    1}=N+\frac{S(0)}{R_0}\claudator{\ln(\frac{1}{R_0}) - 1} \ .
 \end{equation}
+
+In \cref{fig: SIR_model}(b) we can see how the analytical result compares with
+the numerical solution of the model for different values of $R_0$.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=1\textwidth]{Figures/SIR_model_analysis.pdf}
+  \caption[Numerical and analytical analysis of the SIR model.]{\label{fig:
+      SIR_model} \textbf{Numerical and analytical analysis of the SIR model.}
+    (a) Numerical solution of the SIR model for a given set of parameters. The
+    fraction of susceptible (green), infected (red), and recovered (blue)
+    population is shown as function of time. The black dashed line represents
+    the initial phase approximation of the model. (b) Comparison between the
+    analytical results obtained from the SIR model and the numerical solution
+    of the model for different values of $R_0$. The maximum number of infected
+    individuals, $I_{max}$, and the final number of susceptible individuals,
+    $S_{\infty}$, are shown as function of the basic reproduction number,
+    $R_0$. The analytical results are in good agreement with the numerical
+    solution of the model.
+  }
+\end{figure}
+
+\subsubsection*{Final number of susceptible individuals}
 
 Similarly we can find the final number of susceptible individuals at the end
 of
@@ -266,8 +329,22 @@ $S(\infty)$ is nothing but the positive root of the transcendental equation
 solved by means of the Lambert's $W$ function \cite{Lethonen2016},
 \begin{equation}
   S(\infty)=-\rho\cdot W_0\claudator{-\frac{S(0)}{\rho} \,
-    e^{-N/\rho}}=-\rho\cdot W_0\claudator{-R_0 \, e^{-N/\rho}} \ .
+    e^{-N/\rho}}=-\frac{S(0)}{R_0}\cdot W_0\claudator{-R_0 \, e^{-R_0N/S(0)}} \
+  .
 \end{equation}
+
+Of course, given that $N=S+I+R$ and $I(\infty)=0$, we can obtain the final
+number of recovered individuals as $R(\infty)=N-S(\infty)$. In \cref{fig:
+  SIR_model}(b) we show how the analytical result compares with the numerical
+solution of the model for different values of $R_0$.
+
+\begin{remark}
+  Note that all the analytical results that we have obtained can be expressed
+  as function of the initial conditions of the system (e.g. $S(0)$) and the
+  basic reproduction number, $R_0$. This is a very important result, as it
+  allows us to understand and predict the dynamics of the whole system by just
+  knowing, in essence, the basic reproduction number.
+\end{remark}
 
 % The Lambert's $W_l(x)$ function is bivalued for $x\in(-1/e,0)$, so that it is
 % necessary to choose a branch for such values of $x$. In this epidemiological
@@ -282,15 +359,14 @@ model such as the SIR model. In addition, we have shown how to obtain some
 important analytical results from the model, such as the threshold for the
 development of an epidemic, i.e. the \textit{basic reproduction number}; the
 maximum number of infected individuals, and the final number of susceptible
-individuals.
-
-However, the SIR model is one of the simplest compartmental models, and more
-complex models have been developed to account for more realistic scenarios. For
-such models, analytical results are usually not available, and numerical
-simulations are required to understand the dynamics of the diseases they
-describe. Fortunately, there are a couple of formal approaches that can be used
-to derive the basic reproduction number of basically any compartmental model:
-linear stability analysis and the next generation matrix approach.
+individuals. However, the SIR model is one of the simplest compartmental
+models, and more complex models have been developed to account for more
+realistic scenarios. For such models, analytical results are usually not
+available, and numerical simulations are required to understand the dynamics of
+the diseases they describe. Fortunately, there are a couple of formal
+approaches that can be used to derive the basic reproduction number of
+basically any compartmental model: linear stability analysis and the next
+generation matrix approach.
 
 \subsection{Linear stability analysis}
 
@@ -854,8 +930,20 @@ The overall process of building an SDM can be divided into several steps
 
 \end{enumerate}
 
-\AG{Add an example of a SDM with an image of the potential distribution of a
-  species.}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=1\textwidth]{Figures/SDM_example.pdf}
+  \caption[Example of a species distribution model]{
+    \textbf{Example of a species distribution model.} The figure shows the
+    potential distribution of a species based on the environmental conditions
+    that favor its establishment. The model uses data on the presence and
+    absence of the species in different locations and their environmental
+    variables to predict the potential distribution of the species at different
+    locations.}
+  \label{fig:SDM_example}
+\end{figure}
+
+\AG{Explain the example}
 
 \subsection{\label{sec:Applications of SDMs to disease biogeography}
   Applications of SDMs to disease biogeography}

@@ -7,7 +7,7 @@
 - Introducir figuras en capitulo 2:
 
 	- SIR scheme
-	- S_inf, R_inf and I_max as function of R_0 (analytical and numerical)
+	- R_inf and I_max as function of R_0 (analytical and numerical)
 	- SIR-V scheme
 	- R_inf as function of R_0 (only numerical)
 	- SIR gillespie + mean field approximation
