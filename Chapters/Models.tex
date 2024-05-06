@@ -875,20 +875,19 @@ biotic niche $B$, and the dispersal (movement) niche $M$, $R=A\cap B\cap M$
 Species distribution models (SDMs) are a powerful tool that can be used to
 predict the potential geographic distribution of species based on the
 environmental conditions that favor their establishment. SDMs are based on the
-concept of ecological niches, and they use environmental data, such as
-temperature, humidity, precipitation, and land use, to predict the potential
-distribution of the species. In general, SDMs can be both mechanistic and
-correlative, depending on the underlying assumptions of the model. Mechanistic
-SDMs are based on the physiological or ecological requirements of the species,
-while correlative SDMs are based on statistical relationships between the
-presence and absence of the species in different locations and their
-environmental conditions. Thus, correlative SDMs make use of statistical models
-that relate the presence and absence of a species to environmental variables.
-If this relation renders successful, the model can be then used to predict the
-potential distribution of the species at different locations based on their
-environmental conditions. Because most of the SDMs that have been employed so
-far are in the literature are based on correlative methods, we will refer to
-correlative SDMs as just SDMs in the following.
+concept of ecological niches, and they use environmental data to predict the
+potential distribution of the species. In general, SDMs can be both mechanistic
+and correlative, depending on the underlying assumptions of the model.
+Mechanistic SDMs are based on the physiological or ecological requirements of
+the species, while correlative SDMs are based on statistical relationships
+between the presence and absence of the species in different locations and
+their environmental conditions. Thus, correlative SDMs make use of statistical
+models that relate the presence and absence of a species to environmental
+variables. If this relation renders successful, the model can be then used to
+predict the potential distribution of the species at different locations based
+on their environmental conditions. Because most of the SDMs that have been
+employed so far are in the literature are based on correlative methods, we will
+refer to correlative SDMs as just SDMs in the following.
 
 Many statistical methods can be used to build SDMs, such as logistic
 regression, generalized linear models and machine learning algorithms, like
@@ -900,74 +899,85 @@ understand the relationship between the species and the environmental
 variables, while machine learning algorithms are more flexible and can capture
 complex relationships but often lack the explanatory power of simpler models.
 
-The overall process of building an SDM can be divided into several steps
-\cite{Elith2006}:
-
-\begin{enumerate}
-  \item \textbf{Data collection:} The first step in building an SDM is to
-        collect data on the species of interest and the environmental variables
-        that may influence its distribution. This data can be obtained from
-        field surveys, remote sensing, or databases such as GBIF (Global
-        Biodiversity Information Facility) \cite{GBIF} or WorldClim
-        \cite{WorldClim}.
-
-  \item \textbf{Data preprocessing:} Once the data has been collected, it needs
-        to be preprocessed to remove missing values, outliers, and redundant
-        variables. This can involve cleaning the data, transforming variables,
-        and	standardizing the scales of the variables.
-
-  \item \textbf{Pseudo-absence data generation:} In many cases, the data on the
-        presence of the species is more abundant than the data on the absence
-        of the species, or directly there is no absence data available. To
-        address this issue, we can generate pseudo-absence data by randomly
-        selecting points from areas where the species is not known to occur
-        \addref.
-
-  \item \textbf{Data partitioning:} The data is then partitioned into a
-        training set and a testing set. The training set is used to fit the
-        model to the data, while the testing set is used to evaluate the
-        performance of the model.
-
-  \item \textbf{Model training:} Once the data has been preprocessed, it can be
-        used to train the model. This involves fitting the model to the data
-        and estimating the parameters that best predict the presence and
-        absence of the species based on the environmental variables.
-
-  \item \textbf{Model evaluation:} After the model has been trained, it needs
-        to be evaluated to assess its performance. This can be done using
-        metrics such as the area under the receiver operating characteristic
-        curve (AUC), the true skill statistic (TSS), or the Kappa statistic.
-        k-fold cross-validation is usually used to evaluate the model on
-        different subsets of the data.
-
-  \item \textbf{Model application:} The model can be used to predict
-        the potential distribution of the species at different locations based
-        on their environmental conditions. This can help researchers to
-        understand the factors that influence the distribution of the species
-        and to design conservation strategies to protect it.
-
-\end{enumerate}
+The overall process of building an SDM can be often divided into several steps
+\cite{Elith2006}: First we need to collect data on the species of interest and
+the environmental variables that may influence its distribution. This data can
+be obtained from field surveys, remote sensing, or databases such as GBIF
+(Global Biodiversity Information Facility) \cite{GBIF} or WorldClim
+\cite{WorldClim}. Once the data has been collected, it needs to be preprocessed
+to remove missing values, outliers, and redundant variables. In many cases, the
+data on the presence of the species is more abundant than the data on the
+absence of the species, or directly there is no absence data available. To
+address this issue, we can generate pseudo-absence data by randomly selecting
+points from areas where the species is not known to occur \cite{Iturbide2015}.
+The data is then partitioned into a training set and a testing set. The
+training set is used to fit the model to the data, while the testing set is
+used to evaluate the performance of the model. We then train the model by
+fitting it to the data and estimating the parameters that best predict the
+presence and absence of the species based on the environmental variables. We
+then evaluate the model to assess its performance using metrics such as the
+area under the receiver operating characteristic curve (AUC), or the Kappa
+statistic. Finally, the model can be used to predict the potential distribution
+of the species at different locations based on their environmental conditions.
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=1\textwidth]{Figures/SDM_example.pdf}
+  \includegraphics[width=0.87\textwidth]{Figures/SDM_example.pdf}
   \caption[Example of a species distribution model]{
     \textbf{Example of a species distribution model.} (a) Distribution of
     the banana slug \textit{Ariolimax buttoni}, which is only present in the
     west of the United States. Inset:  \textit{Ariolimax (Ariolimax) buttoni}
     (Pilsbry \& Vanatta, 1896) observed by
     \href{https://www.inaturalist.org/photos/345291902}{citysalamanders} (under
-    \href{http://creativecommons.org/licenses/by-nc/4.0/}{CC BY-NC 4.0})
-    (b) Presemce and modeled pseudo-absence data of the banana slug
-    \textit{Ariolimax buttoni} in the west of the United States. (c) Predicted
-    potential distribution of the banana slug \textit{Ariolimax buttoni} based
-    on climatic variables.}
+    \href{http://creativecommons.org/licenses/by-nc/4.0/}{CC BY-NC 4.0}) (b-d)
+    Environmental variables used to build the SDM. (e) Presence and modeled
+    pseudo-absence data of the banana slug \textit{Ariolimax buttoni} in the
+    west of the United States. (f) Predicted potential distribution of the
+    banana slug \textit{Ariolimax buttoni} based on climatic variables.}
   \label{fig:SDM_example}
 \end{figure}
 
 % Referencia inset: https://www.gbif.org/es/occurrence/4510206467
 
-\AG{Explain the example}
+To illustrate the process of building an SDM, we will consider the example of
+\textit{Ariolimax buttoni}, a species of banana slug native to coastal
+California in the west of the United States (\cref{fig:SDM_example}). This is
+example is provided by the \textit{elapid} Python library \cite{Elapid}, which
+uses temperature, cloud cover and leaf area index as environmental variables to
+predict the potential distribution of the banana slug using a MaxEnt model. The
+code is freely available at the documentation webpage of the library.
+
+In \cref{fig:SDM_example}(a) we show the distribution of the banana slug
+\textit{Ariolimax buttoni} in the west of the United States. The species is
+only present in coastal California, where the environmental conditions are
+suitable for its survival. In \cref{fig:SDM_example}(b-d) we show the annual
+mean of the environmental variables used to build the SDM \footnote{The standar
+  deviation of these variables are also used in the SDM but are not shown in
+  the	figure for simplicity}. The presence and modeled pseudo-absence data of
+the banana slug \textit{Ariolimax buttoni} are shown in
+\cref{fig:SDM_example}(e) and the predicted potential distribution of the
+banana slug based on the environmental variables is shown in
+\cref{fig:SDM_example}(f).
+
+\begin{theorem}[Species distribution models]
+  \small\sffamily
+  Steps of building a species distribution model:
+  \begin{enumerate}
+    \item Collect data on the species of interest and the environmental
+          variables that may influence its distribution.
+    \item Preprocess the data to remove missing values, outliers, and redundant
+          variables.
+    \item Generate pseudo-absence data to balance the presence and absence
+          data.
+    \item Partition the data into a training set and a testing set.
+    \item Train the model and estimate the parameters that best predict the
+          presence and absence of the species based on the environmental
+          variables.
+    \item Evaluate the model using the testing set.
+    \item Apply the model to predict the potential distribution of the species
+          at different locations based on their environmental conditions.
+  \end{enumerate}
+\end{theorem}
 
 \subsection{\label{sec:Applications of SDMs to disease biogeography}
   Applications of SDMs to disease biogeography}
