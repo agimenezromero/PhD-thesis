@@ -490,6 +490,24 @@ eigenvalue) of the next generation matrix, $K$, defined as,
   R_0=\rho(K) \quad \textrm{with} \quad K=-T\Sigma^{-1} \
 \end{equation}
 
+\begin{theorem}[The next generation matrix method]
+  \small\sffamily
+  Steps of the next generation matrix:
+  \begin{enumerate}
+    \item Compute the Jacobian matrix of the infected/infecting compartments of
+          the model evaluated at the disease-free state, $J^*$.
+    \item Decompose the Jacobian matrix in the form $J^*=T+\Sigma$, where $T$
+          is
+          the transmission part and $\Sigma$ the transition part.
+    \item Compute the inverse of the transition part, $\Sigma^{-1}$.
+    \item Compute the next generation matrix, $K=-T\Sigma^{-1}$.
+    \item Solve the characteristic equation $\det(K-\lambda I)=0$ to obtain the
+          eigenvalues of the next generation matrix.
+    \item Obtain the basic reproduction number, $R_0$, as the largest
+          eigenvalue of the next generation matrix.
+  \end{enumerate}
+\end{theorem}
+
 To appreciate the power of the NGM method, let's see how it can be applied to a
 slightly more complex model than the SIR model. We will now consider a
 compartmental model for vector-borne plant diseases.
@@ -680,7 +698,7 @@ implementation of the Gillespie algorithm.
     \State Calculate the time until the next reaction event $\tau =
       \frac{-\ln(r_1)}{W(t)}$.
     \State Select the next reaction $j$ according to the probabilities
-    $P(j) = \frac{w_j(t)}{W(t)}$.
+    $P(j) = \frac{w_j(t)}{W(t)}$ compared to $r_2$.
     \State Update the system state according to the chosen reaction.
     \State Update time $t \gets t + \tau$.
     \EndWhile
@@ -934,16 +952,20 @@ The overall process of building an SDM can be divided into several steps
   \centering
   \includegraphics[width=1\textwidth]{Figures/SDM_example.pdf}
   \caption[Example of a species distribution model]{
-    \textbf{Example of a species distribution model.} The figure shows the
-    potential distribution of a species based on the environmental conditions
-    that favor its establishment. The model uses data on the presence and
-    absence of the species in different locations and their environmental
-    variables to predict the potential distribution of the species at different
-    locations.}
+    \textbf{Example of a species distribution model.} (a) Distribution of
+    the banana slug \textit{Ariolimax buttoni}, which is only present in the
+    west of the United States. Inset:  \textit{Ariolimax (Ariolimax) buttoni}
+    (Pilsbry \& Vanatta, 1896) observed by
+    \href{https://www.inaturalist.org/photos/345291902}{citysalamanders} (under
+    \href{http://creativecommons.org/licenses/by-nc/4.0/}{CC BY-NC 4.0})
+    (b) Presemce and modeled pseudo-absence data of the banana slug
+    \textit{Ariolimax buttoni} in the west of the United States. (c) Predicted
+    potential distribution of the banana slug \textit{Ariolimax buttoni} based
+    on climatic variables.}
   \label{fig:SDM_example}
 \end{figure}
 
-% Referencia figura: https://www.gbif.org/es/occurrence/4510206467
+% Referencia inset: https://www.gbif.org/es/occurrence/4510206467
 
 \AG{Explain the example}
 
@@ -979,15 +1001,10 @@ the potential distribution of each of the pathosystem components individually.
 
 \AG{Continue and check the references}
 
-\section{\label{sec:Data-driven methods} Data-driven methods}
+\section{\label{sec:Data-driven methods} Data-driven models}
 
 \subsection{\label{sec:Datasets} Datasets}
 
-\subsection{\label{sec:Power-law distributions in empirical data} Power-law
-  distributions in empirical data}
+\subsection{\label{sec:Time series forecasting} Time series forecasting}
 
-\subsection{\label{sec:Long-Short Term Memory networks} Long-Short Term Memory
-  networks}
-
-\subsection{\label{sec:Convolutional Neural Networks} Convolutional Neural
-  Networks}
+\subsection{\label{sec:Image segmentation} Image segmentation}
