@@ -475,7 +475,8 @@ Jacobian matrix of a compartmental model can be quite large and complicated, so
 the derivation of the basic reproduction number following this method can be
 cumbersome. The next generation matrix method is an ingenious method that can
 be used to derive the basic reproduction number of any compartmental model
-directly, without the need to analyse the stability of the fixed points.
+directly, without the need to analyse the stability of the fixed points. We
+will make use of this method in \cref{part:nacras,part:VBD} of this thesis.
 
 In the NGM method, $R_0$ is identified as the dominant eigenvalue of a suitably
 defined linear operator (a linear matrix in a suitable basis). This operator is
@@ -979,21 +980,30 @@ banana slug based on the environmental variables is shown in
   \end{enumerate}
 \end{theorem}
 
-\subsection{\label{sec:Applications of SDMs to disease biogeography}
-  Applications of SDMs to disease biogeography}
-
 SDMs have been widely used in the study of disease biogeography, as they can
 help to predict the potential distribution of diseases based on the
 environmental conditions that favor the establishment of the pathogens and/or
 vectors that transmit them \cite{Pigott2014,Barro2016,Alimi2015}. Two main
 approaches have been used to apply SDMs to disease biogeography: the
-disease-based SDMs and the pathosystem-based SDMs. In the disease-based SDMs,
-disease cases are considered as occurrences of the ``species'' to be modeled,
-while in the pathosystem-based SDMs, the pathosystem components (pathogens,
-vectors, and hosts) are considered as separate species and their potential
-distributions are modeled individually.
+disease-based SDMs and the pathosystem-based SDMs. Disease-based SDMs assume
+that disease outbreaks are the final manifestation that results from the
+interaction between the environment, the pathogens, the vectors, and the hosts.
+Thus, the disease cases are considered as occurrences of the ``species'' to be
+modeled \cite{Pigott2015,Quiner2017}. This more pragmatic approach can be
+useful when the data on the pathosystem components is scarce or disease
+transmission is not well understood \cite{Johnson2019}. On the other hand,
+pathosystem-based SDMs consider the pathogens, vectors, and hosts as separate
+species and model their potential distributions individually
+\cite{Samy2014,Baak2017}. This more systematic approach can provide better
+knowledge on the environmental factors that influence the distribution of the
+pathosystem components, but it requires more data and a better understanding of
+the interactions between the components.
 
-\AG{CONTINUE HERE}
+However, despite the wide use of SDMs in the literature, these models have
+several limitations that need to be urgently addressed, especially for the case
+of disease biogeography. This is indeed one of the main reasons that led us to
+develop a new method to study the potential distribution of infectious
+diseases, which we will present in \cref{part:PD_risk} of this thesis.
 
 \subsection{\label{sec:Limitations of SDMs} Limitations of SDMs}
 
