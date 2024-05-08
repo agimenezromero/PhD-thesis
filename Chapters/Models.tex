@@ -1,5 +1,6 @@
 
-\section{\label{sec:Ecological systems} Ecological systems}
+\section{\label{sec:Ecological systems} Ecological
+  systems}
 
 In this section we will introduce the basic concepts and context of the
 ecological systems that will be studied throughout the thesis.
@@ -1019,15 +1020,90 @@ SDMs unreliable. In addition, the successful establishment of a species in a
 new area is influenced by genetic variability, phenotypic plasticity and
 evolutionary changes, which are not accounted for in SDMs \cite{Elith2009}.
 
+Another limitation of SDMs is that they assume that the relationships between
+species and environmental variables are stationary over time, which may not be
+true in a context of climate change. The environmental conditions that favor
+the establishment of a species may change over time, leading to shifts in the
+species' distribution. Furthermore, the results of SDMs are highly dependent on
+the covariates used to fit the model, so that their choice can influence the
+predictions. For example, the choice of environmental variables can affect the
+performance of the model, and the inclusion of irrelevant variables can lead to
+overfitting. Of course, choices can be made based on biological considerations
+or statistical methods based on information criteria, such as the Akaike
+Information Criterion (AIC) or the Bayesian Information Criterion (BIC)
+\cite{Burnham2002}, but the final choice is often subjective.
+
 For the particular case of the application of SDMs in disease biogeography, the
-limitations of the models are even more pronounced. Infectious diseases are
-determined by complex interactions between the pathogens, the vectors, the
-hosts, and the environment, which are not captured when applying SDMs to derive
-the potential distribution of each of the pathosystem components individually.
+limitations of the models are even more pronounced. Infectious diseases are the
+result of complex interactions occuring at multiple spatial and temporal scales
+among pathogens, vectors, hosts and the environment, i.e. a disease is an
+emergent feature of the pathosystem. Indeed, basically this same idea was
+previously discussed by A. Townsend Peterson in 2008 \cite{Peterson2008},
+despite complex systems science being a relatively new field of study. He
+argued that
+\begin{displayquote}
+  ``\textit{Because disease processes are dynamic, taking place on extremely
+    diverse
+    scales of space (microscopic to continental) and time (minutes to
+    centuries),
+    and are the products of interactions among species (pathogens, reservoirs,
+    vectors, etc.), their ecological and distributional dynamics may differ
+    from
+    those of more normal species.}''
+\end{displayquote}
 
-\AG{Continue and check the references}
+However, current applications of  SDMs to study the potential distribution of
+infectious diseases neglect these complex interactions, which can lead to
+biased predictions of the potential distribution of diseases. The disease-based
+SDMs assume that the distribution of disease occurrences can be seen as the
+joint spatial distribution of suitable ecological conditions for all of the
+biological species involved in the transmission cycle. Yet, the current
+distribution of the disease may not reflect the full range of suitable
+conditions for its transmission. On the other hand, the pathosystem-based SDMs
+consider that the potential distribution of the disease is the result of the
+intersection of the potential distributions of the pathosystem components based
+on arbitrary thresholds \cite{Samy2014,Baak2017,YoonLee2023}. This is ignoring
+completely the fact that the interactions between the components of the
+pathosystem are often non-linear and that the distribution of the disease is
+not the simple intersection of the distributions of the components.
 
-\section{\label{sec:Data-driven methods} Data-driven models}
+In \cref{ch:commsbio}, we will present a new method to study the potential
+distribution of vector-borne plant diseases that overcomes these limitations by
+considering the interactions driving to disease transmission using a
+mathematical epidemiological model while accounting for climatic factors
+limiting the distribution of the pathosystem components.
+
+% Deep learning
+\section{\label{sec:Data-driven methods} Data-driven methods}
+
+The last part of this thesis, \cref{part:data-driven} is focused on different
+global ecological problems such as ocean acidification or the loss of important
+coastal ecosystems like seagrass meadows and coral reefs. The causes of
+these problems have been extensively studied, so that our goal is more
+practical than theoretical. In this context, we aim to develop new methods to
+solve some challenges that are currently faced by ecologists.
+
+As we have seen in \cref{sec:Ecological systems}, monitoring ocean
+acidification means constantly dealing with missing data, often giving rise to
+large gaps in the time series that lead to biased estimates of the trends in
+the pH of the oceans. In \cref{ch:ph}, we will present a new method to
+reconstruct the missing data in the time series of ocean pH based on deep
+learning. On the other hand, the monitoring of seagrass meadows is challenging,
+an the most accurate methods to day, based on side-scan sonar, are expensive
+and time-consuming. In \cref{ch:seagrass}, we will present a new method to
+monitor seagrass meadows based on deep learning that can provide accurate and
+cost-effective estimates of the extent of seagrass meadows. Finally, despite
+the monitoring of coral reefs has been sucessflly achieved using remote sensing
+and deep learning, a comprehensive analysis of this data was still missing.
+In \cref{ch:coral}, we will present a global analysis on the spatial properties
+of all tropical coral reefs worldwide, which has unraveled universal patterns
+in their size distribution and geometry. This analysis provide important
+insights into the ecology of coral reefs and can help to design effective
+conservation strategies.
+
+In the following sections, we will briefly introduce the datasets used in each
+chapter and the basics of the methods used to solve the problems addressed in
+each chapter.
 
 \subsection{\label{sec:Datasets} Datasets}
 
