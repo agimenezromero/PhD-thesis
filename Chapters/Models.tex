@@ -1086,27 +1086,155 @@ solve some challenges that are currently faced by ecologists.
 As we have seen in \cref{sec:Ecological systems}, monitoring ocean
 acidification means constantly dealing with missing data, often giving rise to
 large gaps in the time series that lead to biased estimates of the trends in
-the pH of the oceans. In \cref{ch:ph}, we will present a new method to
+the pH of the oceans. In \cref{ch:ph}, we will present a new framework to
 reconstruct the missing data in the time series of ocean pH based on deep
 learning. On the other hand, the monitoring of seagrass meadows is challenging,
 an the most accurate methods to day, based on side-scan sonar, are expensive
-and time-consuming. In \cref{ch:seagrass}, we will present a new method to
+and time-consuming. In \cref{ch:posidonia}, we will present a new framework to
 monitor seagrass meadows based on deep learning that can provide accurate and
 cost-effective estimates of the extent of seagrass meadows. Finally, despite
 the monitoring of coral reefs has been sucessflly achieved using remote sensing
 and deep learning, a comprehensive analysis of this data was still missing.
-In \cref{ch:coral}, we will present a global analysis on the spatial properties
-of all tropical coral reefs worldwide, which has unraveled universal patterns
-in their size distribution and geometry. This analysis provide important
-insights into the ecology of coral reefs and can help to design effective
-conservation strategies.
+In \cref{ch:coral_reefs}, we will present a global analysis on the spatial
+properties of all tropical coral reefs worldwide, which has unraveled universal
+patterns in their size distribution and geometry. This analysis provide
+important insights into the ecology of coral reefs and can help to design
+effective conservation strategies.
 
-In the following sections, we will briefly introduce the datasets used in each
-chapter and the basics of the methods used to solve the problems addressed in
-each chapter.
+The frameworks presented in these chapters are based on deep learning, a
+subfield of machine learning that uses artificial neural networks to model
+complex patterns in large datasets. In this section, we will provide a brief
+overview to machine learning, specifically focusing on deep learning. After
+that, we will introduce the two main types of deep learning models that we will
+use in this thesis: long-short-term memory neural networks, which are used in
+time-series forecasting, and convolutional neural networks, employed in image
+segmentation problems.
 
-\subsection{\label{sec:Datasets} Datasets}
+\subsection{\label{sec:Machine learning} Machine learning}
 
-\subsection{\label{sec:Time series forecasting} Time series forecasting}
+Machine learning is a subfield of artificial intelligence that focuses on the
+development of statistical algorithms that use input data to achieve a desired
+task without being literally programmed to produce a particular outcome
+\cite{Michalski2013,ElNaqa2015}. The concept of machine learning was pioneered
+by Arthur Samuel in 1959, who demonstrated that machines could learn to play
+checkers and improve at the game through their own experiences, rather than
+through human instruction \cite{Samuel2000}. This capability marks a
+significant shift from traditional programming methods where decisions and
+rules are explicitly defined by human programmers. The field of machine
+learning integrates principles from computer science, statistics, and
+information theory to create algorithms capable of generalizing behaviors from
+input data, allowing machines to perform tasks that typically require human
+intelligence, such as predicting consumer behavior, filtering spam in emails,
+chating with other humans or even driving autonomous vehicles.
 
-\subsection{\label{sec:Image segmentation} Image segmentation}
+Machine learning is generally divided into three main types: supervised,
+unsupervised, and reinforcement learning. \textbf{Supervised learning}
+algorithms need a dataset containing several instances of the input data from
+which the model is expected to predict an output (features) together with the
+correct output (labels). Initially, the model parameters are set randomly and
+the model undergoes a training process where the parameters are iteratively
+adjusted to minimize the difference between the predicted output and the true
+output \cite{Nielsen2015}. On the contrary, \textbf{unsupervised learning} is
+used when the dataset does not contain the labels for each instance of the
+input data. In this case, the algorithms are designed to find patterns and
+structures in the data on their own \cite{Duda2006}. A clear example is that of
+clustering algorithms, which group instances of the input data forming
+different clusters based on their similarity in a high-dimensional space.
+Finally, \textbf{reinforcement learning} is a type of machine learning where an
+agent learns to make decisions by interacting with an environment. The agent
+receives rewards or penalties based on its actions and learns to optimize its
+decisions (i.e. maximizing the reward or minimizing the penalty) to achieve a
+specific goal \cite{Sutton2018}. Reinforcement learning is particularly useful
+in applications such as robotics and gaming, being the algorithm behind the
+success of the AlphaGo program that defeated the world champion in the game of
+Go \cite{Silver2017}.
+
+Data is the cornerstone of machine learning, and the quality and quantity of
+the data used to train the model are crucial to its performance. Traditional
+machine learning algorithms require the data to be preprocessed and
+transformed into a suitable format before being fed into the model, which
+prevented the widespread use of machine learning in many applications in its
+early times. However, the surge of representation learning methods, such as
+deep learning, has revolutionized the field of machine learning by allowing the
+model to learn the features directly from the raw data, without the need for
+manual feature engineering \cite{LeCun2015}. Deep-learning models use multiple
+levels of representation obtained by composing simple non-linear
+transformations, which allow the model to learn very complex functions if
+enough compositions of such transformations are considered. For example, in
+classification tasks, higher layers of representation amplify aspects of the
+input that are important for discrimination and suppress irrelevant variations,
+thus allowing the model to learn the features that are most relevant for the
+task at hand. This is particularly useful in image recognition, speech
+recognition, and natural language processing, where the raw data is high
+dimensional and complex, and the features that are relevant for the task are
+not known a priori.
+
+The core of deep learning models are artificial neural networks, which are
+computational models inspired by the structure and function of the human brain.
+Artificial neural networks consist of interconnected nodes, called neurons,
+that process information and transmit it to other neurons. The connections
+between neurons are represented by weights, which determine the strength of the
+connection between neurons. The neurons are organized into layers, with each
+layer performing a specific function. The input layer receives the input data,
+the hidden layers process the data, and the output layer produces the final
+output of the network. The information is passed through the network by
+adjusting the weights of the connections between neurons using an optimization
+algorithm, such as gradient descent, which adjusts the weights to minimize the
+error between the predicted output of the network and the true output
+\cite{Goodfellow2016}.
+
+\subsection{\label{sec:Artificial neural networks} Artificial neural networks}
+
+The basic building block of an artificial neural network is the perceptron, a
+simple model of a biological neuron. The perceptron takes a set of input values
+$x_1, x_2, \ldots, x_n$ and produces an output value $y$ based on a set of
+weights $w_1, w_2, \ldots, w_n$ and a bias term $b$. The output of the
+perceptron is given by the formula
+\begin{equation}
+  y = \sigma(w_1x_1 + w_2x_2 + \ldots + w_nx_n + b) \ ,
+\end{equation}
+
+where $\sigma$ is an activation function that introduces non-linearity into the
+model. The most common activation function is the sigmoid function, which
+saturates to 1 for large positive inputs and to 0 for large negative inputs.
+The sigmoid function is given by
+\begin{equation}
+  \sigma(z) = \frac{1}{1 + e^{-z}} \ ,
+\end{equation}
+where $z$ is the input to the activation function. The sigmoid function is used
+to introduce non-linearity into the model, allowing the neural network to model
+complex patterns in the data.
+
+\AG{figure of a perceptron}
+
+The perceptron is a simple model of a biological neuron, but it can be
+combined to form more complex models called artificial neural networks. An
+artificial neural network consists of multiple layers of neurons, with each
+layer performing a specific function. The input layer receives the input data,
+the hidden layers process the data, and the output layer produces the final
+output of the network. The neurons in each layer are connected to the neurons
+in
+the next layer, and the information is passed through the network by adjusting
+the weights of the connections between neurons. The weights of the connections
+are learned from the data using an optimization algorithm, such as gradient
+descent, which adjusts the weights to minimize the error between the predicted
+output of the network and the true output.
+
+\AG{figure of a neural network}
+
+The most common type of artificial neural network is the feedforward neural
+network, in which the connections between neurons do not form cycles. In a
+feedforward neural network, the information flows in one direction, from the
+input layer to the output layer, and the network is trained using an
+optimization algorithm to minimize the error between the predicted output of
+the network and the true output. Feedforward neural networks can have multiple
+hidden layers, and they are known as deep neural networks. Deep neural networks
+have been shown to be effective at modeling complex patterns in large datasets
+and have achieved state-of-the-art performance in many tasks, such as image
+recognition, speech recognition, and natural language processing.
+
+\subsection{\label{sec:Long-Short-term-memory neural networks} Long-Short-term
+  memory neural networks}
+
+\subsection{\label{sec:Convolutional neural networks} Convolutional neural
+  networks}
