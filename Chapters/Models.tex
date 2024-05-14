@@ -1410,32 +1410,27 @@ We will make use of BD-LSTM neural networks in \cref{ch:ph} to predict the
 missing values of the ocean pH based on the past and ``future'' available
 observations of temperature, salinity and dissolved oxygen.
 
-\subsection{\label{sec:Convolutional neural networks} Convolutional neural
-  networks}
+\subsection{\label{sec: Image segmentation} Image segmentation}
 
-Convolutional neural networks (CNNs) are a class of artificial neural networks
-that are particularly well-suited for image recognition and segmentation
-problems. CNNs are inspired by the visual cortex of the brain, which contains
-neurons that are sensitive to small regions of the visual field, called
-receptive fields. The basic building block of a CNN is the convolutional layer,
-which applies a set of filters to the input data to extract features from the
-data. The filters are learned during the training process and are used to
-detect patterns in the data, such as edges, textures, and shapes. The output of
-the convolutional layer is called a feature map, which contains the features
-extracted from the input data. The feature map is then passed through an
-activation function, such as the rectified linear unit (ReLU) function, to
-introduce non-linearity into the model. The output of the activation function
-is
-then passed through a pooling layer, which reduces the dimensionality of the
-data by downsampling the feature map. The pooling layer helps to make the model
-more robust to variations in the input data and reduces the computational
-complexity of the model.
+Image segmentation is a computer vision task that involves partitioning an
+image into multiple segments, i.e. regions that share similar properties, such
+as color, texture, or intensity. Image segmentation is used in a wide range of
+applications, such as medical imaging, object detection, and autonomous
+driving. Traditional methods for image segmentation include thresholding,
+clustering, and edge detection, which are based on handcrafted features and
+heuristics. These methods are effective at segmenting images with simple
+patterns, but they often struggle to segment images with complex patterns and
+variations in lighting and texture.
 
-CNNs are composed of multiple layers of convolutional layers, activation
-functions, and pooling layers, followed by one or more fully connected layers
-that produce the final output of the network. The convolutional layers learn
-the features in the data that are most relevant for the task at hand, while the
-fully connected layers combine the features learned by the convolutional
-layers to make the final prediction. CNNs have been shown to be effective at
-modeling complex patterns in images and have achieved state-of-the-art
-performance in image recognition and segmentation tasks.
+Deep learning models have been developed for image segmentation, which are
+commonly known as convolutional neural networks (CNNs). CNNs are a class of
+artificial neural networks that are designed to process grid-like data, such as
+images. CNNs consist of multiple layers of neurons, called convolutional
+layers, which apply a set of filters to the input image to extract features.
+The filters are learned during the training process and are used to detect
+patterns in the image, such as edges, textures, and shapes. The output of the
+convolutional layers is passed through a series of non-linear activation
+functions which introduce non-linearity into the model and allow the network to
+model complex patterns in the data. A schematic representation of a CNN is
+shown in \cref{fig:CNN_scheme}, where we can observe how the network receives
+as input an image and produces an output image with the segmented regions.
