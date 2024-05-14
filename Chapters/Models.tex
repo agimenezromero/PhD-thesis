@@ -1169,13 +1169,14 @@ recognition, and natural language processing, where the raw data is high
 dimensional and complex, and the features that are relevant for the task are
 not known a priori.
 
-The core of deep learning models are artificial neural networks, which are
-computational models inspired by the structure and function of the human brain.
-Artificial neural networks consist of interconnected nodes, called neurons,
-that process information and transmit it to other neurons. The connections
-between neurons are represented by weights, which determine the strength of the
-connection between neurons. The neurons are organized into layers, with each
-layer performing a specific function. The input layer receives the input data,
+\subsection{\label{sec:Artificial neural networks} Artificial neural networks}
+
+The core of deep learning models are artificial neural networks (ANN), which
+are computational models inspired by the structure and function of the human
+brain. ANN consist of interconnected nodes, called neurons, which indeed model
+the biological neurons of a brain. The neurons are connected to each other by
+weighted edges, which determine the strength of the connection between neurons
+and mimic the synapses in the brain. The input layer receives the input data,
 the hidden layers process the data, and the output layer produces the final
 output of the network. The information is passed through the network by
 adjusting the weights of the connections between neurons using an optimization
@@ -1183,58 +1184,258 @@ algorithm, such as gradient descent, which adjusts the weights to minimize the
 error between the predicted output of the network and the true output
 \cite{Goodfellow2016}.
 
-\subsection{\label{sec:Artificial neural networks} Artificial neural networks}
-
-The basic building block of an artificial neural network is the perceptron, a
-simple model of a biological neuron. The perceptron takes a set of input values
-$x_1, x_2, \ldots, x_n$ and produces an output value $y$ based on a set of
-weights $w_1, w_2, \ldots, w_n$ and a bias term $b$. The output of the
-perceptron is given by the formula
+The basic building block of ANN is the \textbf{perceptron}, a simple model of a
+biological neuron. The perceptron takes a set of input values $x_1, x_2,
+  \ldots, x_n$ and produces an output value $y$ based on a set of weights $w_1,
+  w_2, \ldots, w_n$ and a bias term $b$. The output of the perceptron is given
+by the formula
 \begin{equation}
-  y = \sigma(w_1x_1 + w_2x_2 + \ldots + w_nx_n + b) \ ,
+  y = \sigma(\sum_{i=1}^n w_ix_i + b) \ ,
 \end{equation}
+where $\sigma$ is an \textbf{activation function}. The most common activation
+functions are the sigmoid function, the hyperbolic tangent function, and the
+rectified linear unit (ReLU) function, which are given by
+\begin{align}
+  \sigma(z)      & = \frac{1}{1 + e^{-z}} \ ,              \\
+  \tanh(z)       & = \frac{e^z - e^{-z}}{e^z + e^{-z}} \ , \\
+  \text{ReLU}(z) & = \max(0, z) \ ,
+\end{align}
+where $z$ is the input to the activation function. The activation function is
+used to introduce non-linearity into the model, allowing the neural network to
+model complex patterns in the data. See \cref{fig:Perceptron} for a graphical
+representation of the perceptron model and the activation functions.
 
-where $\sigma$ is an activation function that introduces non-linearity into the
-model. The most common activation function is the sigmoid function, which
-saturates to 1 for large positive inputs and to 0 for large negative inputs.
-The sigmoid function is given by
-\begin{equation}
-  \sigma(z) = \frac{1}{1 + e^{-z}} \ ,
-\end{equation}
-where $z$ is the input to the activation function. The sigmoid function is used
-to introduce non-linearity into the model, allowing the neural network to model
-complex patterns in the data.
-
-\AG{figure of a perceptron}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=1\textwidth]{Figures/Perceptron.pdf}
+  \caption[The perceptron model of a biological neuron]{
+    \textbf{The perceptron model of a biological neuron.} (a) The perceptron
+    takes a set of input values $x_1, x_2, \ldots, x_n$ and produces an output
+    value $y$ based on a set of weights $w_1, w_2, \ldots, w_n$ and a bias term
+    $b$. The output of the perceptron is given by the formula
+    $y=\sigma(\sum_{i=1}^n w_ix_i + b)$, where $\sigma$ is an activation
+    function. (b) The sigmoid function saturates to 1 for large positive inputs
+    and to 0 for large negative inputs. (c) The hyperbolic tangent function
+    saturates to 1 for large positive inputs and to -1 for large negative
+    inputs. (d) The rectified linear unit (ReLU) function is linear for
+    positive inputs and zero for negative inputs.}
+  \label{fig:Perceptron}
+\end{figure}
 
 The perceptron is a simple model of a biological neuron, but it can be
-combined to form more complex models called artificial neural networks. An
-artificial neural network consists of multiple layers of neurons, with each
-layer performing a specific function. The input layer receives the input data,
-the hidden layers process the data, and the output layer produces the final
-output of the network. The neurons in each layer are connected to the neurons
-in
-the next layer, and the information is passed through the network by adjusting
-the weights of the connections between neurons. The weights of the connections
-are learned from the data using an optimization algorithm, such as gradient
-descent, which adjusts the weights to minimize the error between the predicted
-output of the network and the true output.
+combined to form more complex models, i.e. ANN, which consist of multiple
+layers of neurons connected to each other. The first layer of the network is
+the input layer, which receives the input data, then the hidden layers process
+the data, and the output layer produces the final output of the network. The
+most common type of ANN is the feedforward neural network, in which the
+connections between neurons do not form cycles, so that the information flows
+in only one direction, from the input layer to the output layer
+(\cref{fig:ANN}(a)).
 
-\AG{figure of a neural network}
+ANN are often used in supervised learning tasks, in which the model is trained
+using a dataset containing input-output pairs. The weights of the connections
+between neurons are adjusted using an optimization algorithm to minimize the
+error between the predicted output of the network and the true output, which is
+known as the loss function. The basic idea behind these algorithms can be
+illustrated with the traditional gradient descent algorithm: the gradient of
+the loss with respect to the weights of the connections is calculated, and the
+weights are updated in the opposite direction of the gradient to minimize the
+loss, as shown in \cref{fig:ANN}(b). The learning rate of the algorithm
+determines the size of the step taken in the direction of the gradient, and it
+is a hyperparameter that needs to be tuned to achieve good performance of the
+model. Nowadays, the most common optimization algorithms used to train ANN are
+variations of the traditional gradient descent algorithm, such as stochastic
+gradient descent or the Adam optimizer \cite{Goodfellow2016}.
 
-The most common type of artificial neural network is the feedforward neural
-network, in which the connections between neurons do not form cycles. In a
-feedforward neural network, the information flows in one direction, from the
-input layer to the output layer, and the network is trained using an
-optimization algorithm to minimize the error between the predicted output of
-the network and the true output. Feedforward neural networks can have multiple
-hidden layers, and they are known as deep neural networks. Deep neural networks
-have been shown to be effective at modeling complex patterns in large datasets
-and have achieved state-of-the-art performance in many tasks, such as image
-recognition, speech recognition, and natural language processing.
+Backpropagation is the algorithm used to calculate the gradient of the loss
+function with respect to the weights of the connections in a neural network.
+The algorithm works by propagating the error backwards through the network,
+starting from the output layer and moving towards the input layer. The
+gradient of the loss with respect to the weights is calculated using the chain
+rule of calculus, which allows the error to be decomposed into the errors of
+the neurons in the previous layer. The weights are then updated using the
+gradient of the loss with respect to the weights, which is calculated by
+multiplying the error of the neuron by the input to the neuron. The process is
+repeated iteratively until the weights converge to a set of values that
+minimize the loss function. Backpropagation is a fundamental algorithm in
+training neural networks, and it allows the model to learn the features in the
+data that are most relevant for the task at hand.
 
-\subsection{\label{sec:Long-Short-term-memory neural networks} Long-Short-term
-  memory neural networks}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=1\textwidth]{Figures/ANN.pdf}
+  \caption[The feedforward neural network]{
+    \textbf{The feedforward neural network.} (a) The feedforward neural network
+    consists of an input layer, multiple hidden layers, and an output layer.
+    The input layer receives the input data, the hidden layers process the
+    data, and the output layer produces the final output of the network.
+    (b) Illustration of the gradient descent algorithm used to train the
+    network. The weights of the connections between neurons are adjusted to
+    minimize the loss, i.e. the error between the predicted output of the
+    network and the true output.}
+  \label{fig:ANN}
+\end{figure}
+
+Several variations of ANN have been developed to address specific tasks, such
+as image recognition and segmentation, speech recognition, natural language
+processing, and time-series forecasting. These models have been shown to be
+effective at modeling complex patterns in large datasets and have achieved
+state-of-the-art performance in such tasks. In this thesis we have used two
+types of ANN: long-short-term memory neural networks and convolutional neural
+networks, which are particularly well-suited for time-series forecasting and
+image segmentation problems, respectively. In the following sections, we will
+provide a brief overview of these models.
+
+\subsection{\label{sec:Time-series forecasting} Time-series forecasting}
+
+Time-series forecasting is a common task in machine learning that involves
+predicting future values of a time series based on past observations. Time
+series are sequences of data points collected at regular intervals over time,
+such as stock prices, weather data, and sales figures. Time-series forecasting
+is used in a wide range of applications, such as predicting the stock market,
+forecasting the weather, and estimating the demand for products. Traditional
+methods for time-series forecasting include autoregressive integrated moving
+average (ARIMA) models, exponential smoothing models, and state-space models
+\cite{Hyndman2018}. These models are based on statistical methods and are
+effective at modeling linear relationships in the data, but they often struggle
+to capture complex patterns, such as non-linear relationships and long-term
+dependencies.
+
+To address these limitations, deep learning models have been developed for
+time-series forecasting, which are commonly known as recurrent neural networks
+(RNNs). RNNs are a class of artificial neural networks in which node
+connections arise along a temporal sequence, i.e. previous values in a time
+series are linked to current values. In simple words, RNNs predict a
+point of the time series using past information. Simple Recurrent Neural
+Networks (SRNNs) are an extension of Feedforward Neural Networks, in which past
+information and learned knowledge is encoded in the network as state vectors,
+$\vec{h}_t$, that are passed from one time step to the next. In this way, the
+information flows not only from the input layer to the output layer, but also
+from one time step to the next, allowing the network to learn temporal
+dependencies in the data. A schematic representation of the SRNN is shown in
+\cref{fig:SRNN_scheme}, where we can observe how the network receives as input
+a sequence of data points $x_1, x_2, \ldots, x_t$ and produces an output
+sequence $L_1, L_2, \ldots, L_t$, called latent state, from a sequence of
+hidden states $h_1, h_2, \ldots, h_t$, and the inputs. Notice how the current
+hidden state, $h_t$, is a function of the current input $x_{t}$ and the
+previous hidden state $h_{t-1}$.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.8\textwidth]{Figures/RNN.pdf}
+  \caption[Simple Recurrent Neural Network]{
+    \textbf{Simple Recurrent Neural Network.} The SRNN receives as input a
+    sequence of data points $x_1, x_2, \ldots, x_t$ and produces an output
+    sequence $L_1, L_2, \ldots, L_t$, called latent state, from a sequence of
+    hidden states $h_1, h_2, \ldots, h_t$, and the inputs. The produced latent
+    state can be used to predict the future values of the time series.}
+  \label{fig:SRNN_scheme}
+\end{figure}
+
+Unfortunately, SRNNs suffer from the so-called vanishing gradient problem, i.e.
+distant parts of the time series do not play a role in the training process,
+which prevents the network from learning long-term temporal dependencies. This
+problem arises because the gradients of the loss function with respect to the
+weights of the connections tend to become very small as they are backpropagated
+through the network, which makes it difficult for the network to learn from
+distant parts of the time series. This is, the errors commited in the past are
+not propagated to the present. Another related issue is the exploding gradient
+problem, where the gradients become very large and cause the weights of the
+connections to diverge, leading to numerical instability.
+
+We can visualize the problem by computing the backpropagation through time.
+Consider that we predict the output time-series $y_t$ at time $t$ using the
+previous $T$ time steps, i.e. $y_t = f(x_t, x_{t-1}, \ldots, x_{t-T})$. The
+change in the loss function with respect to the weights of the connections is
+given by
+\begin{equation}\label{eq:loss_RNN}
+  \frac{\partial L}{\partial w} = \sum_{t=1}^{T} \frac{\partial L_t}{\partial
+    w} \ ,
+\end{equation}
+where $L$ is the loss function and $w$ are the weights of the connections.
+
+The contribution to the loss function of time step $k$ can be obtained by the
+chain rule
+\begin{equation}
+  \frac{\partial L_k}{\partial w} = \frac{\partial L_k}{\partial
+    y_k}\cdot\frac{\partial y_k}{\partial
+    h_k}\cdot\left(\prod_{t=2}^k\textcolor{red}{\frac{\partial
+      h_t}{\partial h_{t-1}}}\right)\cdot\frac{\partial h_1}{\partial w} \ .
+\end{equation}
+
+The term in red is the one that causes the vanishing and exploding gradient
+problems. Because the term is in a productory, if it is smaller than 1 the
+gradient will vanish, while if it is larger than 1, the gradient will explode.
+This problem repercutes to the whole gradient (\cref{eq:loss_RNN}), which
+becomes very small or very large, making the training of the network unstable
+and useless.
+
+Long-Short Term Memory (LSTM) neural networks overcome this limitation by
+implementing three gates to update and control the cell state (forget gate,
+input gate, output gate), thus allowing to keep long-term dependencies
+\cite{LSTM_NN}. Bidirectional Long-Short Term Memory (BD-LSTM) neural networks
+are able to encode both past and future information by implementing two LSTM
+layers flowing in opposite time directions. The forward layer preserve past
+information while the backwards layer preserves future information.Thus, using
+the two hidden states combined BD-LSTM are able in any point in time to
+preserve information from both past and future. A schematic representation of
+the BD-LSTM neural network is shown in (\cref{fig:BD_LSTM_scheme}).
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{Figures/BD_LSTM_scheme.pdf}
+  \caption{Scheme for the Bidirectional-LSTM Neural Network. The network
+    receives as input a tensor of shape $(\textrm{batch}_\textrm{size},
+      \textrm{window}\_\textrm{size}, N_{\textrm{features}})$, where
+    $\textrm{batch}_\textrm{size}$ is the number of examples to train per
+    iteration, $\textrm{batch}_\textrm{size}$ is the number of past and
+    future
+    points considered and $N_{\textrm{features}}$ is the number of features
+    used to
+    predict the target series. First, the input is linearly transformed to
+    match
+    the number of cells of the network (3 in the figure). Then, the input
+    is
+    transformed by the backward (blue) and forward (orange) LSTM layers,
+    which
+    propagates information backwards and forwards, respectively. Finally,
+    the
+    values are transformed through an activation gate. In our model, this
+    values
+    will be ultimately transformed via a dense layer to a unique output.}
+  \label{fig:BD_LSTM_scheme}
+\end{figure}
+
+We will make use of BD-LSTM neural networks in \cref{ch:ph} to predict the
+missing values of the ocean pH based on the past and ``future'' available
+observations of temperature, salinity and dissolved oxygen.
 
 \subsection{\label{sec:Convolutional neural networks} Convolutional neural
   networks}
+
+Convolutional neural networks (CNNs) are a class of artificial neural networks
+that are particularly well-suited for image recognition and segmentation
+problems. CNNs are inspired by the visual cortex of the brain, which contains
+neurons that are sensitive to small regions of the visual field, called
+receptive fields. The basic building block of a CNN is the convolutional layer,
+which applies a set of filters to the input data to extract features from the
+data. The filters are learned during the training process and are used to
+detect patterns in the data, such as edges, textures, and shapes. The output of
+the convolutional layer is called a feature map, which contains the features
+extracted from the input data. The feature map is then passed through an
+activation function, such as the rectified linear unit (ReLU) function, to
+introduce non-linearity into the model. The output of the activation function
+is
+then passed through a pooling layer, which reduces the dimensionality of the
+data by downsampling the feature map. The pooling layer helps to make the model
+more robust to variations in the input data and reduces the computational
+complexity of the model.
+
+CNNs are composed of multiple layers of convolutional layers, activation
+functions, and pooling layers, followed by one or more fully connected layers
+that produce the final output of the network. The convolutional layers learn
+the features in the data that are most relevant for the task at hand, while the
+fully connected layers combine the features learned by the convolutional
+layers to make the final prediction. CNNs have been shown to be effective at
+modeling complex patterns in images and have achieved state-of-the-art
+performance in image recognition and segmentation tasks.
