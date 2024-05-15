@@ -1434,3 +1434,37 @@ functions which introduce non-linearity into the model and allow the network to
 model complex patterns in the data. A schematic representation of a CNN is
 shown in \cref{fig:CNN_scheme}, where we can observe how the network receives
 as input an image and produces an output image with the segmented regions.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=1\textwidth]{Figures/CNN.pdf}
+  \caption[Convolutional Neural Network]{
+    \textbf{Convolutional Neural Network.} The CNN receives as input an image
+    and produces an output image with the segmented regions. The network
+    consists of multiple convolutional layers, which apply a set of filters to
+    the input image to extract features, and non-linear activation functions,
+    which introduce non-linearity into the model.}
+  \label{fig:CNN_scheme}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.7\textwidth]{Figures/feature_maps.pdf}
+  \caption[Feature maps in a convolutional neural network]{
+    \textbf{Feature maps in a convolutional neural network.} The convolutional
+    layers of a CNN apply a set of filters to the input image to extract
+    features. The filters are learned during the training process and are used
+    to detect patterns in the image, such as edges, textures, and shapes.}
+\end{figure}
+
+% \begin{figure}
+%   \centering
+%   \includegraphics[width=0.8\textwidth]{Figures/UNet.pdf}
+%   \caption[The U-Net architecture]{
+%     \textbf{The U-Net architecture.} The U-Net consists of an encoder and a
+%     decoder, which are connected by skip connections. The encoder downsamples
+%     the input image to extract features, while the decoder upsamples the
+%     features to produce the output image. The skip connections allow the
+%     network to preserve spatial information and learn fine-grained details.}
+%   \label{fig:UNet_scheme}
+% \end{figure}
