@@ -1229,7 +1229,9 @@ the input layer, which receives the input data, then the hidden layers process
 the data, and the output layer produces the final output of the network. The
 most common type of ANN is the feedforward neural network, in which the
 connections between neurons do not form cycles, so that the information flows
-in only one direction, from the input layer to the output layer
+in only one direction, from the input layer to the output layer. A simple and
+common architecture of ANN is the feedforward neural network (FFNN), which
+consists of an input layer, multiple hidden layers, and an output layer
 (\cref{fig:ANN}(a)).
 
 ANN are often used in supervised learning tasks, in which the model is trained
@@ -1300,6 +1302,9 @@ average (ARIMA) models, exponential smoothing models, and state-space models
 effective at modeling linear relationships in the data, but they often struggle
 to capture complex patterns, such as non-linear relationships and long-term
 dependencies.
+
+\AG{Add a paragraph on how FFNN can be used for time-series forecasting and
+  the limitations of these models.}
 
 To address these limitations, deep learning models have been developed for
 time-series forecasting, which are commonly known as recurrent neural networks
@@ -1422,30 +1427,99 @@ heuristics. These methods are effective at segmenting images with simple
 patterns, but they often struggle to segment images with complex patterns and
 variations in lighting and texture.
 
-Deep learning models have been developed for image segmentation, which are
-commonly known as convolutional neural networks (CNNs). CNNs are a class of
-artificial neural networks that are designed to process grid-like data, such as
-images. CNNs consist of multiple layers of neurons, called convolutional
-layers, which apply a set of filters to the input image to extract features.
-The filters are learned during the training process and are used to detect
-patterns in the image, such as edges, textures, and shapes. The output of the
-convolutional layers is passed through a series of non-linear activation
-functions which introduce non-linearity into the model and allow the network to
-model complex patterns in the data. A schematic representation of a CNN is
-shown in \cref{fig:CNN_scheme}, where we can observe how the network receives
-as input an image and produces an output image with the segmented regions.
+FNNs can be used for image segmentation. To do so the image is
+flattened\footnote{The image is transformed from a 2D array to a 1D array.} and
+fed into the network. For example, in the case of an RGB image, the input layer
+of the network would have 3 neurons, one for each color channel, and the output
+layer would have $N$ neurons, where $N$ is the number of classes to segment.
+Despite FFNN can be used for image segmentation, they are not well-suited for
+this task because they do not take into account the spatial information in the
+image. Indeed, we know how the brain processes images: the visual cortex is
+organized in a hierarchical manner, with neurons in the lower layers detecting
+simple patterns, such as edges and textures, and neurons in the higher layers
+detecting more complex patterns, such as shapes and objects. This hierarchical
+organization allows the brain to model complex patterns in the image and
+segment the image into different regions based on the spatial information. To
+mimic this hierarchical organization, more advanced deep learning models have
+been developed for image segmentation, which are commonly known as
+convolutional neural networks (CNNs).
+
+CNNs are a class of artificial neural networks that are specificallty designed
+to process grid-like data, such as images. CNNs consist of multiple layers of
+neurons, called convolutional layers, which apply a set of filters (or kernels)
+to the input image to extract features. After each convolutional layer, a
+pooling layer is applied to reduce the spatial dimensions of the feature maps
+and make the network more computationally efficient, allowing the network to
+learn spatial hierarchies of features \cref{fig:CNN_scheme}. After the last
+pooling layer is applied, the output of the network is flattened and passed
+through a series of fully connected layers to produce the final output of the
+network, e.g. the classification of the image into differen classes, as shown
+in \cref{fig:CNN_scheme}.
 
 \begin{figure}[H]
   \centering
   \includegraphics[width=1\textwidth]{Figures/CNN.pdf}
   \caption[Convolutional Neural Network]{
     \textbf{Convolutional Neural Network.} The CNN receives as input an image
-    and produces an output image with the segmented regions. The network
-    consists of multiple convolutional layers, which apply a set of filters to
-    the input image to extract features, and non-linear activation functions,
-    which introduce non-linearity into the model.}
+    and produces an output image goes through a series of convolutional and
+    pooling layers, which apply a set of filters to the input image to extract
+    features. The filters are learned during the training process and are used
+    to detect patterns in the image, such as edges, textures, and shapes. The
+    output of the convolutional and poolin layers, which are called feature
+    maps, is passed through a series of non-linear activation functions, which
+    introduce non-linearity into the model and allow the network to model
+    complex patterns in the data.}
   \label{fig:CNN_scheme}
 \end{figure}
+
+% Mathematical explanation of the convolutional layer
+The convolutions in the convolutional layer are performed by sliding a filter
+over the input image and computing the dot product between the filter and the
+input at each position. The filter is nothing but a small matrix of weights
+that holds the information of the pattern that the filter is looking for in the
+image. Considering an image $I$ of size $N \times M \times L$ and a filter $K$
+of size $n \times m \times l$, the output of the convolutional layer, $F$, is
+given by the convolution of the image and the filter, which is computed as
+\begin{equation}
+  F(i, j) = \sum_{x}^{n}\sum_{y}^{m}\sum_{z}^{l}I(i+x, j+y, z)\cdot K(x, y,
+  z)
+  \ ,
+\end{equation}
+where $i$ and $j$ are the spatial coordinates of the output feature map $F$.
+
+For a 2D image with a single channel we can visualize the convolutional
+operation with the following example,
+\begin{equation}
+  \begin{bmatrix}
+    1 & 0 & 1 \\
+    0 & 1 & 0 \\
+    1 & 0 & 1
+  \end{bmatrix}
+  \ast
+  \begin{bmatrix}
+    1 & 0 \\
+    0 & 1
+  \end{bmatrix}
+  =
+  \begin{bmatrix}
+    2 & 0 \\
+    0 & 2
+  \end{bmatrix}
+  \ ,
+\end{equation}
+
+The outputs of the convolutional and pooling layers are called feature maps,
+which are used to detect patterns in the image, such as edges, textures, and
+shapes. The filters are learned during the training process and are used to
+detect patterns that are relevant for the task at hand. An example of feature
+maps produced by a CNN (VGG16) is shown in \cref{fig:feature_maps}.
+
+Many variations of CNNs have been developed for image segmentation, such as
+U-Net, SegNet, and DeepLab, which are specifically designed to segment images
+into different regions based on the spatial information. These models have
+achieved state-of-the-art performance in image segmentation tasks and have been
+used in a wide range of applications, such as medical imaging, object
+detection, and autonomous driving.
 
 \begin{figure}[H]
   \centering
@@ -1454,7 +1528,9 @@ as input an image and produces an output image with the segmented regions.
     \textbf{Feature maps in a convolutional neural network.} The convolutional
     layers of a CNN apply a set of filters to the input image to extract
     features. The filters are learned during the training process and are used
-    to detect patterns in the image, such as edges, textures, and shapes.}
+    to detect patterns in the image, such as edges, textures, and shapes.
+    inspired by \cite{Brownlee2019}}
+  \label{fig:feature_maps}
 \end{figure}
 
 % \begin{figure}
