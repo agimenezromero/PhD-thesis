@@ -1061,24 +1061,6 @@ these problems have been extensively studied, so that our goal is more
 practical than theoretical. In this context, we aim to develop new methods to
 solve some challenges that are currently faced by ecologists.
 
-As we have seen in \cref{sec:Ecological systems}, monitoring ocean
-acidification means constantly dealing with missing data, often giving rise to
-large gaps in the time series that lead to biased estimates of the trends in
-the pH of the oceans. In \cref{ch:ph}, we will present a new framework to
-reconstruct the missing data in the time series of ocean pH based on deep
-learning. On the other hand, the monitoring of seagrass meadows is challenging,
-and the most accurate methods to date, based on side-scan sonar, are expensive
-and time-consuming. In \cref{ch:posidonia}, we will present a new framework to
-monitor seagrass meadows based on deep learning that can provide accurate and
-cost-effective estimates of the extent of seagrass meadows. Finally, despite
-the monitoring of coral reefs has been sucessflly achieved using remote sensing
-and deep learning, a comprehensive analysis of this data was still missing.
-In \cref{ch:coral_reefs}, we will present a global analysis on the spatial
-properties of all tropical coral reefs worldwide, which has unraveled universal
-patterns in their size distribution and geometry. This analysis provide
-important insights into the ecology of coral reefs and can help to design
-effective conservation strategies.
-
 The frameworks presented in these chapters are based on deep learning, a
 subfield of machine learning that uses artificial neural networks to model
 complex patterns in large datasets. In this section, we will provide a brief
@@ -1799,9 +1781,203 @@ methodology helps to advance the field of disease biogeography by providing a
 mechanistic understanding on the role of environmental factors in the spread of
 plant diseases.
 
-\subsection{\label{sec:Coral reefs under threat} Coral reefs under threat}
-
-\subsection{\label{sec:Ocean acidification} Ocean acidification}
-
 \subsection{\label{sec:The decline of seagrass meadows} The decline of seagrass
   meadows}
+
+Seagrass meadows are among the most productive and diverse ecosystems on Earth,
+providing habitat for a wide range of marine species \cite{Beck2001} and
+playing a crucial role in the health of the oceans and the well-being of human
+populations worldwide. They provide vital food, shelter, and structural
+support, including nursery areas for commercially important species,
+thereby supporting both local economies and subsistence fisheries
+\cite{Heck2003}. Moreover, seagrass ecosystems play a significant role in
+coastal erosion prevention. The dense canopies of seagrass attenuate currents
+and waves, facilitating particle sedimentation and mitigating sediment
+resuspension \cite{Granata2001,Koch2006,Bos2007,Gacia2001}. Additionally, the
+extensive underground network of rhizomes and roots stabilizes sediment,
+reducing erosion and decreasing water turbidity \cite{Madsen2001}, strongly
+influencing coastal sedimentary dynamics \cite{Marba2002,vanderHeide2007}.
+Specifically, the robust root systems of \textit{Posidonia oceanica} beds act
+as natural barriers, protecting coastlines from the destructive force of strong
+waves and maintaining shoreline stability
+\cite{Fonseca1992,Sanchez-Gonzalez2011,vandeVijsel2023}. In addition,
+seagrasses keep overlying
+waters oxygenated and with low concentrations of nutrients and CO$_2$
+\cite{DuarteChiscano1999}. Seagrasses are among the planet’s most effective
+natural ecosystems for sequestering (capturing and storing) carbon, performing
+a rate that is $35$ times faster than tropical rainforests, while their
+sediments never become saturated \cite{Mcleod2011}.
+
+Unfortunately, seagrass meadows are facing numerous threats that are leading to
+their rapid decline worldwide. Human activities, such as coastal development,
+dredging, and land reclamation, are major contributors to habitat destruction.
+These activities often result in physical damage to seagrass beds and increased
+sedimentation, which can smother seagrass shoots and inhibit their growth.
+Pollution, particularly nutrient loading from agricultural runoff and sewage
+discharge, leads to eutrophication. This process stimulates excessive growth of
+algae, which can outcompete seagrasses for light and resources, ultimately
+causing large-scale die-offs of seagrass meadows\cite{Orth2006}. Climate change
+poses additional challenges to the health and sustainability of seagrass
+ecosystems. Rising sea temperatures can stress seagrass plants, reducing their
+overall effective growth rates and increasing their susceptibility to diseases
+\cite{Waycott2009}. Additionally, more frequent and severe storm events can
+cause physical damage to seagrass meadows, further exacerbating their
+decline \cite{Bjork2008}.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{Figures/Seagrass.pdf}
+  \caption[The seagrass \textit{Posidonia oceanica}]{
+    \textbf{The seagrass \textit{Pos
+        idonia oceanica}.} (a) A seagrass meadow of \textit{Posidonia oceanica}
+    in the Mediterranean Sea. (b) A close-up of a \textit{Posidonia oceanica}
+    meadow.}
+  \label{fig:Posidonia}
+\end{figure}
+
+In this context, the monitoring of seagrass meadows is crucial for the
+conservation and management of these ecosystems. Traditional methods for
+monitoring seagrass meadows, such as side-scan sonar, are expensive and
+time-consuming, making it difficult to obtain accurate and up-to-date
+information on the extent and health of seagrass meadows. Remote
+sensing offers a cost-effective and efficient alternative for monitoring
+seagrass meadows, providing valuable information on the spatial distribution
+and health of seagrass ecosystems. In \cref{ch:posidonia} of this thesis, we
+will develop a deep learning model for monitoring seagrass meadows based on
+satellite images. This model will provide accurate and cost-effective estimates
+of the extent of seagrass meadows, which can be used to assess the health and
+sustainability of these ecosystems and inform conservation and management
+efforts.
+
+\subsection{\label{sec:The structure of coral reefs} The structure of coral
+  reefs}
+
+Coral reefs are one of the most biodiverse ecosystems in Earth, holding more
+than 25\% of marine life with only 1\% of ocean floor coverage
+\cite{reaka1997global}. Corals are colonies of live organisms called polyps,
+held together by a self-produced exoskeleton made of calcium carbonate. Polyps
+host photosynthetic microalgae in a mutualistic interaction: polyps obtain
+nutrients from microalgae while microalgae are compensated with protection and
+some nutrients too \cite{Muller-Parker2015}. Consequences of global change,
+such as temperature increases and ocean acidification, represent a substantial
+threat to coral reef ecosystems \cite{Couce2013}. High ocean temperatures
+promote the ``bleaching'' phenomenon, in which individual polyps expel the
+microalgae symbionts, losing their characteristic color and getting rid of
+their primary source of nutrients \cite{Brown1997}. On the other hand, ocean
+acidification promotes the dissolution of the calcium carbonate exosquelet of
+corals \cite{Guldberg2007}. These two phenomena are causing widespread declines
+in coral reef ecosystems worldwide, leading to the loss of biodiversity and
+ecosystem services provided by coral reefs.
+
+Understanding the formation of coral reefs is crucial for the conservation and
+management of these ecosystems. Coral reefs are formed by the accumulation of
+coral exoskeletons over thousands of years, creating complex three-dimensional
+constructions that conform some of the largest biogenic structures in the
+biosphere \cite{wiener2021exploration}. Several forms and sizes of coral reefs
+can be found in the oceans, ranging from small fringing reefs to large barrier
+reefs, which can extend for hundreds of kilometers along the coastlines of
+continents and islands. Perhaps the most famous coral barrier reef is the
+Great Barrier Reef, located off the coast of Queensland, Australia, which is
+the largest coral reef in the world and one of the most diverse ecosystems on
+Earth.
+
+Some more mechanistic hypothesis on reef formation date back to the end of the
+19th century, when Charles Darwin proposed that coral reefs were formed by the
+growth of corals on the remains of extinct volcanoes
+\cite{darwin1874structure}. However, this would only explain the formation of
+atolls, which are circular coral reefs that enclose a lagoon, and not all the
+different observed forms. Recently, more detailed models have been proposed
+to explain the formation of coral reefs, which take into account the
+interactions between corals, algae, and other organisms, as well as the
+physical and chemical processes that shape the reef structure, such as
+hydrodynamics. To evaluate these models and ultimately understand the
+formation of coral reefs, it is necessary to contrast them with a comprehensive
+empirical dataset on the size and geometry of coral reefs. Unfortunately, such
+a dataset has been hitherto lacking.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{Figures/Corals.pdf}
+  \caption[The structure of a coral reef]{
+    \textbf{The structure of coral reefs.} (a) Aereal view of a coral reef in
+    the Great Barrier Reef, Australia. (b) A close-up of a coral reef in the
+    Read Sea, Egypt.}
+  \label{fig:Coral_reef}
+\end{figure}
+
+In \cref{ch:coral_reefs} of this thesis, we will present a global analysis on
+the spatial properties of all tropical coral reefs worldwide, which has
+unraveled universal patterns in their size distribution and geometry. The
+results of this analysis can be used to evaluate the performance of existing
+models of coral reef formation and to develop new models that can explain the
+observed patterns in the data. In addition, our analysis provides important
+insights into the ecology of coral reefs and can help to design effective
+conservation strategies. Thus, our work contributes to the understanding of the
+formation of coral reefs and the conservation of these important ecosystems.
+
+\section{\label{sec:Ocean acidification} Ocean acidification}
+
+Ocean acidification is a global environmental problem that is caused by the
+uptake of carbon dioxide (CO$_2$) from the atmosphere by the oceans. When
+CO$_2$ dissolves in seawater, it reacts with water to form carbonic acid, which
+dissociates into bicarbonate and hydrogen ions. The increase in hydrogen ions
+leads to a decrease in the pH of the oceans, making them more acidic. The
+pH of the oceans has decreased by 0.1 units since the beginning of the
+industrial revolution, which corresponds to a 30\% increase in the acidity of
+the oceans \cite{Orr2005}. This trend is expected to continue in the future
+as atmospheric CO$_2$ levels continue to rise, leading to further decreases
+in the pH of the oceans.
+
+Ocean acidification has a wide range of impacts on marine ecosystems,
+including changes in the growth and survival of marine organisms, the structure
+and function of marine communities, and the cycling of nutrients and energy in
+marine ecosystems. The decrease in the pH of the oceans can have negative
+effects on the growth and survival of marine organisms, particularly those that
+rely on calcium carbonate to build their shells and skeletons, such as corals,
+mollusks, and some planktonic species. The increase in acidity can make it more
+difficult for these organisms to build and maintain their calcium carbonate
+structures, leading to reduced growth rates and increased mortality
+\cite{kroeker2013impacts}. In addition, ocean acidification can alter the
+structure and function of marine communities by changing the composition of
+species and the interactions between them. For example, ocean acidification can
+favor the growth of some species over others, leading to shifts in the
+composition of marine communities and changes in the dynamics of marine food
+webs \cite{hendriks2015biological}. Finally, ocean acidification can affect the
+cycling of nutrients and energy in marine ecosystems by altering the rates of
+biological processes, such as photosynthesis and respiration, and the
+availability of nutrients, such as nitrogen and phosphorus.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.7\textwidth]{Figures/Ocean_acidification.pdf}
+  \caption[Global trend in ocean pH]{
+    \textbf{Global trend in ocean pH.} The pH of the oceans has decreased by
+    0.1 units since the beginning of the industrial revolution, which
+    corresponds to a 30\% increase in the acidity of the oceans. Data from
+    Copernicus Marine Service Information \cite{CMEMS2024}}
+  \label{fig:Ocean_acidification}
+\end{figure}
+
+Monitoring ocean acidification is crucial for understanding the impacts of
+this global environmental problem on marine ecosystems and for developing
+effective conservation and management strategies. However, monitoring ocean
+acidification is challenging due to the spatial and temporal variability of
+the pH of the oceans, which is influenced by a wide range of factors, such as
+temperature, salinity, and biological activity. In addition, the pH of the
+oceans is influenced by the uptake of CO$_2$ from the atmosphere, which
+varies seasonally and regionally. As a result, monitoring ocean acidification
+requires the collection of large amounts of data on the pH of the oceans.
+These challeges are exacerbated by the fact that pH sensors often fail or drift
+over time, leading to gaps in the time series of ocean pH data. These gaps can
+introduce bias in the estimates of the trends in the pH of the oceans and
+make it difficult to assess the impacts of ocean acidification on marine
+ecosystems \cite{Flecha2022}.
+
+In \cref{ch:ph}, we will present a new framework to reconstruct the missing
+data in the pH time series of a coastal area of the Balearic Islands.
+The framework is based on deep learning, specifically recurrent neural
+networks, which are able to learn the temporal patterns in the data and predict
+the missing values in the time series. Our framework provides accurate
+estimates of the pH that can be used to fill the gaps in the time series of pH
+data, providing valuable information on the impacts of ocean acidification on
+marine ecosystems.
