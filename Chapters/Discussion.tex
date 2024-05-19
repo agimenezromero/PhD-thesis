@@ -1,13 +1,218 @@
+
+In this thesis we have presented significant original contributions to Ecology
+and Conservation Biology through the lens of complex systems, specifically
+focusing on the development of innovative theoretical models and computational
+methods to address key challenges in the field. We have contributed to the
+advancement of marine epidemiology, vector-borne plant diseases, disease
+biogeography, and ecological monitoring, providing new insights into the
+dynamics of emergent diseases and the conservation of critical coastal
+ecosystems.
+
+%% NACRAS
+
+In \cref{ch:nacras_I} we have developed the
+Susceptible-Infected-Recovered-Parasite (SIRP) model, a compartmental model
+that describes the transmission dynamics of diseases affecting sessile marine
+organisms \cite{GimenezRomero2021}. The model has been specifically applied to
+study the Mass Mortality Event (MME) of the fan mussel \textit{Pinna nobilis}
+in the Mediterranean Sea. Empirical data on the spread of the disease in
+controlled water tanks was used to estimate the parameters of the model and the
+basic reproduction number, showing that the model was able to reproduce the
+observed disease dynamics. Interestingly, we observed that if the parasites
+died fast enough compared to infected hosts, the dynamics of the disease could
+be described by a simple SIR model (time-scale approximation). This means that,
+in this limit, a parasite-produced disease in immobile host populations can be
+described by the same model as a disease produced by a pathogen in mobile host
+populations.
+
+The natural extension of the SIRP model is the development of a spatially
+explicit version. In \cref{ch:nacras_II} we have developed an Individual-Based
+Model (IBM) to study the spatial spread of the disease in a realistic marine
+environment, showing several interesting results. First, we have shown that the
+non-spatial SIRP model describes the spatially extended system when the
+dispersal rate of the parasite is fast compared to its death and absorption
+rate (by susceptible hosts) \cite{GimenezRomero_2022_RSos}. Second, we have
+shown that the time-scale approximation also works in the spatial model in the
+low dispersal limit (i.e. when the non-spatial model is not valid). Third, we
+have shown that the threshold for disease invasion in the spatial model is
+different from the non-spatial model and have derived an expression for it that
+depends on the dispersal rate of the parasite. Finally we have analysed
+spreading speed of the infected population and the time to extinction, which
+are important epidemiological quantities that can be used to assess the impact
+of the disease on the host population.
+
+The development and detailed mathematical analysis of these models has provided
+new insights into the dynamics of emergent diseases in marine ecosystems, and
+has the potential to inform conservation and management efforts. For instance,
+the fact that the dynamics of the disease can be described by a simple SIR
+model in the limit of fast parasite dispersal, or that the spatial spread of
+the disease can be described by the non-spatial model in the limit of fast
+parasite dispersal, is a result that can be generalized to other diseases
+affecting sessile marine organisms. This can be crucial when facing emergent
+diseases in marine ecosystems, as it provides an easier way to predict the
+dynamics of the disease with limited data. Similarly, the closed mathematical
+form obtained for the threshold for disease invasion in the spatial model
+provides a way to estimate the death rate of the parasite from empirical data
+on the spread of the disease if the dispersal rate of the parasite is known.
+The results obtained can be compared with the death rate of the parasite in
+laboratory conditions. If both measures are inconsistent, this would suggest
+that other transmission mechanisms are at play (e.g. an intermediate vector).
+In addition, the analysis of the spreading speed of the infected population and
+the time to extinction as function of the parasite dispersal rate can be used
+to assess the impact of the disease on the host population as function of the
+ocean currents. This can be crucial to inform conservation and management
+efforts.
+
+Our research on parasite-produced diseases in marine ecosystems has also
+provided new questions and challenges that remain unexplored. The MME of the
+fan mussel \textit{Pinna nobilis} in the Mediterranean Sea has occured
+in the whole Mediterranean basin, travelling from west to east, in a relatively
+short period of time. The mechanisms that have allowed the disease to spread
+over such a large area in such a short period of time are still largely
+unknown. The SIRP model developed in this thesis can be used to study the
+spread of the disease in the whole Mediterranean basin, and to identify the key
+factors that have allowed the disease to spread so fast. For this purpose,
+metapopulation models that integrate a network of marine currents can be used
+to model the spread of the disease in the whole Mediterranean basin. Another
+interesting question that remains unexplored is the fact that a PDE model of
+the SIRP model does not show the same results as the IBM model with respect to
+the threshold for disease invasion. This is an interesting area of research
+that has not been explored in this thesis. The lack of stable funding and our
+impression of disinterest from the scientific community in this topic has
+prevented us from pursuing this line of research. We believe that these are
+interesting and important questions that could be addressed in future work.
+
+Moving forward to \cref{ch:xf_PRE}, another key contribution is the
+development of a theoretical framework for modeling vector-borne plant diseases
+where vector populations follow non-periodic seasonal dynamics, such as growing
+or decaying populations towards a stationary state
+\cite{GimenezRomero2022_PRE}. This study was motivated by the need to develop
+more realistic models for vector-borne plant diseases, such as those caused by
+\textit{Xylella fastidiosa}. Our main finding was that the threshold for
+disease invasion in this type of models can not be determined with traditional
+methods, such as the Next Generation Matrix (NGM) method. Thus, we developed a
+new method based on the concept of the basic reproduction number, which
+provides a more accurate estimate of the threshold for disease invasion in
+these models. In addition, we found that, if the vectors died fast enough
+compared to the infected hosts, the dynamics of the disease could be described
+by a simple SIR model.
+
+Once the theoretical framework was developed, we were ready to apply it to the
+case of \textit{Xylella fastidiosa} diseases. In \cref{ch:xf_phyto}, we adapted
+the model to apply it to the case of \textit{Xylella fastidiosa} diseases, in
+which the vector population shows non-periodic seasonal dynamics due to its
+complex life cycle \cite{GimenezRomero2023}. The model was contrasted with
+empirical data from the two main European outbreaks of \textit{Xylella
+    fastidiosa} diseases: Almond Leaf Scorch Disease (ALSD) in Mallorca and
+Olive Quick Decline Syndrome (OQDS) in Puglia. The model was able to reproduce
+the observed dynamics of the disease in both cases and provided valuable
+insights into new possible control strategies for the disease. However, we
+found that the cross-transmission rates (from infected hosts to vectors and
+vice versa) were not identifiable from the data, which was only available for
+the infected hosts. This is an important conclusion of our work: if we want to
+study vector-borne plant diseases using more realistic (and complex) models, we
+need to have data on the vector population.
+
+Again, the development and detailed mathematical analysis of these models has
+provided new insights into the dynamics of vector-borne plant diseases, which
+can be crucial to inform conservation and management efforts. The NGM method
+is widely used to estimate the threshold for disease invasion in
+epidemiological models, but we have shown that it is not always applicable.
+Indeed, it has been already wrongly used in the literature, which can lead to
+incorrect conclusions. Our new method provides a correct estimate of the
+threshold for disease invasion in models where the vector population is
+non-stationary and non-periodic, case in which the NGM method is not
+applicable. We have shown again that under certain conditions the dynamics of
+the disease can be described by a simple SIR model, which can be crucial to
+predict the dynamics of the disease with limited data. Interestingly, these
+conditions are exactly analogous to those found in the SIRP model developed in
+\cref{ch:nacras_I} for parasite-produced diseases in marine ecosystems of
+immobile hosts. This suggests that the dynamics of diseases in immobile host
+populations, under some conditions and to some extent, can be described by the
+same model regardless of the specific transmission mechanism (in our case a
+parasite with no epidemiological states or a vector that can take the
+susceptible or infected state). Finally, we have shown that the
+cross-transmission rates are not identifiable from the data, which means that
+we need to have data on the vector population if we want to study vector-borne
+plant diseases using more realistic and complex models.
+
+Our research in this part has also provided new questions and challenges that
+remain unexplored. Despite we successfully obtained a method to estimate the
+threshold for disease invasion in models where the vector population is
+non-stationary and non-periodic, the values we obtain for $R_0$ are not
+``realistic'', being usually much higher than 1. We observed that the way in
+which the outbreaks were produced was not the same as in the usual epidemic
+models. Basically, we did not seem to have a second-order phase transition
+between the disease-free and endemic states. This is an interesting area of
+research that has not been explored in this thesis.
+
+The last contributions to epidemiology come from the development in
+\cref{ch:commsbio} of a mechanistic climate-driven epidemiological model to
+assess the risk of establishment of Pierce's disease (PD), caused by
+\textit{Xylella fastidiosa}. Our model advances the field of disease
+biogeography by providing a mechanistic understanding of the role of
+environmental factors in the establishment of plant diseases, and provides
+a more reliable methodology than traditional methods, such as Species
+Distribution Models (SDMs) \cite{GimenezRomero2022_CommsBio}. We fitted the
+model to empirical data on the distribution of PD in the United States and
+showed that the model was able to reproduce the observed distribution of the
+disease. We then used the model to assess the risk of PD establishment under
+current climate conditions in all viticultural areas worldwide. The most
+important result is that, in Europe, the potential distribution of the disease
+is currently confined to the Mediterranean basin.
+
+The next logical step was to use the model to assess the risk of PD
+establishment under future climate conditions. Despite Europe is somehow
+protected from the establishment of the disease by now, climate change could
+change this scenario. In \cref{ch:xf_climate_change} we have used the latest
+regional climate change projections for Europe to assess the risk of PD
+establishment under future climate conditions \cite{GimenezRomero2023_PD}.
+Our results have shown that there is a critical warming level above which PD
+could become established in continental Europe. However, the risk of PD
+establishment and its potential impact is not uniform across Europe, with some
+regions being more vulnerable than others. Similarly, conclusions are not
+uniform across different administrative levels. Some countries can experience
+low overall areas at risk but these areas can be highly productive, thus
+translating into a high vineyard area at risk.
+
+These results must depend on the spatial scale of the climate data employed. Up
+to that point, we have used climate data at a coarse spatial resolution
+(0.1º$\sim 1 \, \textrm{km}^2$), which is the standard in the field.
+However, the use of high-resolution climate data can provide more accurate
+predictions of the risk of PD establishment taking into account previously
+neglected microclimates. In \cref{ch:xf_high_resolution} we have used
+high-resolution climate data to assess the risk of PD establishment in
+viticultural areas worldwide \cite{GimenezRomero2024}. We expected a small
+correction to our previous results, we found that the potential distribution of
+the disease is much larger than previously estimated. The differences appeared
+mostly in valleys and rivers, which are precisely the areas where vineyards are
+usually located. We then analyzed the change in vineyard locations, showing a
+significant increase of the vineyard area at risk worldwide.
+
+\AG{Continue here}
+
+Finally, we have developed data-driven methods for
+ecological monitoring and analysis. A deep learning framework based on
+recurrent neural networks was developed to reconstruct missing data in ocean
+pH time series, addressing data gaps in monitoring ocean acidification and
+providing reliable pH trend estimates \cite{Flecha2022}. Another deep learning
+framework based on convolutional neural networks was developed to monitor
+seagrass meadows using satellite imagery, providing accurate and cost-effective
+estimates of the extent of seagrass meadows in the Mediterranean sea
+\cite{GimenezRomero2024_posi}. Finally, a global analysis of the spatial
+properties of tropical coral reefs was conducted from mapped remote sensing
+data, revealing universal patterns in coral reef size distribution and
+geometry.
+
+Overall, the contributions of this thesis provide new insights into the
+dynamics of emergent diseases and the conservation of critical coastal
+ecosystems, and advance the field of Ecology and Conservation Biology by
+developing innovative theoretical models and computational methods to address
+key challenges in the field. These contributions have the potential to inform
+conservation and management efforts and contribute to the understanding of the
+impacts of global environmental change on the studied ecosystems.
+
 % Things that remain unexplored/unknown:
-
-% 1. Spatial effects of SIRP model are different when applying a PDE than
-% an IBM. We should be able to model the SIRP model with a PDE and obtain
-% the same results as the IBM, but the form of the PDE is not yet clear.
-
-% 2. Models of vector-borne diseases with growing and decaying populations
-% seem to produce epidemic outbreaks in a different way than usual epidemic
-% models. This is an interesting area of research that has not been explored
-% in this thesis.
 
 % 3. There is yet not an explanation for the macroecological patterns
 % observed for coral reefs. This is an interesting area of research that
