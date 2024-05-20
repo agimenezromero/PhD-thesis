@@ -23,7 +23,9 @@ died fast enough compared to infected hosts, the dynamics of the disease could
 be described by a simple SIR model (time-scale approximation). This means that,
 in this limit, a parasite-produced disease in immobile host populations can be
 described by the same model as a disease produced by a pathogen in mobile host
-populations.
+populations. In addition, we found an indication that the transmission of the
+disease follows an Arrhenius-like temperature dependence, which allowed us to
+discern between mass action law and frequency-dependent transmission.
 
 The natural extension of the SIRP model is the development of a spatially
 explicit version. In \cref{ch:nacras_II} we have developed an Individual-Based
@@ -36,10 +38,9 @@ shown that the time-scale approximation also works in the spatial model in the
 low dispersal limit (i.e. when the non-spatial model is not valid). Third, we
 have shown that the threshold for disease invasion in the spatial model is
 different from the non-spatial model and have derived an expression for it that
-depends on the dispersal rate of the parasite. Finally we have analysed
-spreading speed of the infected population and the time to extinction, which
-are important epidemiological quantities that can be used to assess the impact
-of the disease on the host population.
+depends on the dispersal rate of the parasite. Finally we have foundt that the
+spreading speed of the infected population and the time to extinction scale
+with the dispersal rate of the parasite.
 
 The development and detailed mathematical analysis of these models has provided
 new insights into the dynamics of emergent diseases in marine ecosystems, and
@@ -114,9 +115,8 @@ study vector-borne plant diseases using more realistic (and complex) models, we
 need to have data on the vector population.
 
 Again, the development and detailed mathematical analysis of these models has
-provided new insights into the dynamics of vector-borne plant diseases, which
-can be crucial to inform conservation and management efforts. The NGM method
-is widely used to estimate the threshold for disease invasion in
+provided new insights into the dynamics of vector-borne plant diseases. The NGM
+method is widely used to estimate the threshold for disease invasion in
 epidemiological models, but we have shown that it is not always applicable.
 Indeed, it has been already wrongly used in the literature, which can lead to
 incorrect conclusions. Our new method provides a correct estimate of the
@@ -132,9 +132,10 @@ populations, under some conditions and to some extent, can be described by the
 same model regardless of the specific transmission mechanism (in our case a
 parasite with no epidemiological states or a vector that can take the
 susceptible or infected state). Finally, we have shown that the
-cross-transmission rates are not identifiable from the data, which means that
-we need to have data on the vector population if we want to study vector-borne
-plant diseases using more realistic and complex models.
+cross-transmission rates are not identifiable from availabe data on the spread
+of \textit{Xylella fastidiosa} diseases. If we want to study vector-borne
+plant diseases using more realistic and complex models, we need to have data
+on the states of the vector population in addition to hosts.
 
 Our research in this part has also provided new questions and challenges that
 remain unexplored. Despite we successfully obtained a method to estimate the
@@ -149,11 +150,7 @@ research that has not been explored in this thesis.
 The last contributions to epidemiology come from the development in
 \cref{ch:commsbio} of a mechanistic climate-driven epidemiological model to
 assess the risk of establishment of Pierce's disease (PD), caused by
-\textit{Xylella fastidiosa}. Our model advances the field of disease
-biogeography by providing a mechanistic understanding of the role of
-environmental factors in the establishment of plant diseases, and provides
-a more reliable methodology than traditional methods, such as Species
-Distribution Models (SDMs) \cite{GimenezRomero2022_CommsBio}. We fitted the
+\textit{Xylella fastidiosa} \cite{GimenezRomero2022_CommsBio}. We fitted the
 model to empirical data on the distribution of PD in the United States and
 showed that the model was able to reproduce the observed distribution of the
 disease. We then used the model to assess the risk of PD establishment under
@@ -189,28 +186,89 @@ mostly in valleys and rivers, which are precisely the areas where vineyards are
 usually located. We then analyzed the change in vineyard locations, showing a
 significant increase of the vineyard area at risk worldwide.
 
-\AG{Continue here}
+Our model advances the field of disease biogeography by providing a mechanistic
+understanding of the role of environmental factors in the establishment of
+plant diseases, and provides a more reliable methodology than traditional
+methods, such as Species Distribution Models (SDMs). Our framework
+provides a robust way to map the suitability of the pathosystem components to
+the risk of disease establishment by considering the  epidemiological dynamics
+of the disease. In addition, our model outcomes naturally provide a measure of
+the potential impact of the disease as well as zones with high uncertainty in
+the predictions. With this framework, it is straightforward to assess the
+impact of different climate change scenarios on the risk of disease
+establishment, and to identify the most vulnerable regions. We have provided an
+answer to where the disease could become established in Europe under future
+climate conditions, which was an open question in the field. In addition, the
+analysis of the impact of high resolution climate data on the risk of disease
+establishment has shown that previous estimates of the potential distribution
+of the disease were underestimated. All our results are crucial to inform
+management, prevention and control efforts of plant diseases, such as
+\textit{Xylella fastidiosa} diseases.
 
-Finally, we have developed data-driven methods for
+Further extensions of the model could go in the direction of incorporating
+other environmental factors that could affect the establishment of the disease,
+such as the presence of alternative hosts or the presence of other vectors.
+Similarly, the model could be extended to consider the effect of control
+measures, such as vector control or host removal, or include expected mobility
+of vectors and infected hosts by plant-trade networks. Finally, the model could
+be extended to consider other vector-borne plant diseases than Pierce's
+disease.
+
+In the last part of this thesis, we have developed data-driven methods for
 ecological monitoring and analysis. A deep learning framework based on
 recurrent neural networks was developed to reconstruct missing data in ocean
 pH time series, addressing data gaps in monitoring ocean acidification and
-providing reliable pH trend estimates \cite{Flecha2022}. Another deep learning
-framework based on convolutional neural networks was developed to monitor
-seagrass meadows using satellite imagery, providing accurate and cost-effective
-estimates of the extent of seagrass meadows in the Mediterranean sea
-\cite{GimenezRomero2024_posi}. Finally, a global analysis of the spatial
-properties of tropical coral reefs was conducted from mapped remote sensing
-data, revealing universal patterns in coral reef size distribution and
-geometry.
+providing reliable pH trend estimates \cite{Flecha2022}. This has allowed to
+derive the decadal trend of pH in a coastal area of the Mediterranean sea,
+showing a significant decrease in pH over the last decades.
 
-Overall, the contributions of this thesis provide new insights into the
-dynamics of emergent diseases and the conservation of critical coastal
-ecosystems, and advance the field of Ecology and Conservation Biology by
-developing innovative theoretical models and computational methods to address
-key challenges in the field. These contributions have the potential to inform
-conservation and management efforts and contribute to the understanding of the
-impacts of global environmental change on the studied ecosystems.
+The development of these data-driven methods has provided new tools for
+ecological monitoring with the potential to inform conservation and management
+efforts. The deep learning framework for ocean pH reconstruction can be used to
+fill gaps in monitoring ocean acidification, providing reliable estimates of
+the pH trend that are crucial to properly assess the impact of ocean
+acidification on marine ecosystems. The model can also be used to reconstruct
+long chuncks of missing data in past ocean pH time series, but we should
+proceed with caution as the whole context at play could have changed. Future
+extensions of the model could go in the direction of incorporating other
+environmental factors that could affect the pH of the ocean and developing a
+generalized approach that could be applied to any region of the world.
+
+Another deep learning framework based on convolutional neural networks was
+developed to monitor seagrass meadows using satellite imagery, providing
+accurate and cost-effective estimates of the extent of seagrass meadows in the
+Balearic Islands \cite{GimenezRomero2024_posi}. We have provided a big step
+forward in the field. Previous studies were only a proof of concept for this
+methodology, often based on a single image or a small dataset and inaproppiate
+performance measures or model architectures. Furthermore, these works did not
+assess the role of image variability and geographic context in the model
+performance. In simpler words, these studies were not thought to be used in
+practice. Our model, on the contrary, has been trained and validated on a large
+dataset of satellite images from the whole Balearic Islands, showing that the
+model is able to generalize its learning, at least to the whole Balearic
+Islands.
+
+Our results hold significant importance for the conservation of seagrass
+meadows, as it provides the basis to monitor these critical ecosystems at a
+large scale. The model can be used to obtain the most up to date distribution
+of \textit{Posidonia oceanica} in the Balearic Islands, and, to some extent, in
+the whole Mediterranean sea. This is crucial to assess the impact of global
+change on seagrass meadows, and to inform conservation and management efforts.
+Several future extensions of the model could be considered:
+monitor seagrass meadows in other regions of the world, include other types of
+marine habitats or species, etc. By now, we will retrain our model with other
+satellite sources to obtain the distribution of \textit{Posidonia oceanica}
+some decades ago. Both results will be crucial to assess the impact of global
+change on seagrass meadows.
+
+Finally, we conducted a global analysis of the spatial properties of tropical
+coral reefs was conducted from mapped remote sensing data, revealing universal
+patterns in coral reef size distribution and geometry.
+
+The global analysis of the spatial properties of tropical coral reefs has
+provided new insights into the geometry of coral reefs, revealing universal
+patterns in coral reef size distribution and geometry that are independend on
+the reefs location.
 
 % Things that remain unexplored/unknown:
 

@@ -211,6 +211,24 @@ numerical solution of the model at the beginning of the epidemic. In the inset,
 we can see that the initial growth of the epidemic is indeed exponential
 (a straight line in log-linear scale), as predicted by the model.
 
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=1\textwidth]{Figures/SIR_model_analysis.pdf}
+  \caption[Numerical and analytical analysis of the SIR model.]{\label{fig:
+      SIR_model} \textbf{Numerical and analytical analysis of the SIR model.}
+    (a) Numerical solution of the SIR model for a given set of parameters. The
+    fraction of susceptible (green), infected (red), and recovered (blue)
+    population is shown as function of time. The black dashed line represents
+    the initial phase approximation of the model. (b) Comparison between the
+    analytical results obtained from the SIR model and the numerical solution
+    of the model for different values of $R_0$. The maximum number of infected
+    individuals, $I_{max}$, and the final number of susceptible individuals,
+    $S_{\infty}$, are shown as function of the basic reproduction number,
+    $R_0$. The analytical results are in good agreement with the numerical
+    solution of the model.
+  }
+\end{figure}
+
 \subsubsection*{Maximum number of infected individuals}
 
 Another important analytical result that can be obtained from this model is
@@ -264,24 +282,6 @@ in \cref{eq:  max_I_eq},
 
 In \cref{fig: SIR_model}(b) we can see how the analytical result compares with
 the numerical solution of the model for different values of $R_0$.
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=1\textwidth]{Figures/SIR_model_analysis.pdf}
-  \caption[Numerical and analytical analysis of the SIR model.]{\label{fig:
-      SIR_model} \textbf{Numerical and analytical analysis of the SIR model.}
-    (a) Numerical solution of the SIR model for a given set of parameters. The
-    fraction of susceptible (green), infected (red), and recovered (blue)
-    population is shown as function of time. The black dashed line represents
-    the initial phase approximation of the model. (b) Comparison between the
-    analytical results obtained from the SIR model and the numerical solution
-    of the model for different values of $R_0$. The maximum number of infected
-    individuals, $I_{max}$, and the final number of susceptible individuals,
-    $S_{\infty}$, are shown as function of the basic reproduction number,
-    $R_0$. The analytical results are in good agreement with the numerical
-    solution of the model.
-  }
-\end{figure}
 
 \subsubsection*{Final number of susceptible individuals}
 
@@ -736,9 +736,9 @@ pseudocode implementation of core of the numerical method.
   \end{algorithmic}
 \end{algorithm}
 
-\AG{Something that could be added here is an example of the SIR model
-  implemented with the Gillespie algorithm. We could also show how the mean
-  field approximation works, both analytically and numerically.}
+% \AG{Something that could be added here is an example of the SIR model
+%   implemented with the Gillespie algorithm. We could also show how the mean
+%   field approximation works, both analytically and numerically.}
 
 We have seen how mathematical models can be used to study the dynamics of
 infectious diseases, which can provide important insights into the spread of
@@ -791,25 +791,6 @@ species play within an ecosystem, including their interactions with other
 species. This Eltonian definition shifted the focus towards the biotic aspects
 of ecological niches \cite{Elton1927}.
 
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=1\textwidth]{Figures/Niche_theory.pdf}
-  \caption[Historical development of the ecological niche concept]{
-    \textbf{Historical development of the ecological niche concept.} The
-    Grinnellian niche emphasizes the abiotic factors that determine the
-    distribution of species, while the Eltonian niche focuses on the biotic
-    interactions that shape the distribution of species. The Hutchinsonian
-    niche integrates both abiotic and biotic factors, distinguishing
-    between the fundamental and realized niches of a species. The BAM
-    (Biotic-Abiotic-Movement) framework of the ecological niche concept. The
-    full ecological niche of a species includes the abiotic conditions that are
-    suitable for the species (abiotic niche), the biotic interactions that
-    favor the species (biotic niche), and the areas that the species can
-    physically reach and colonize (dispersal niche). The realized niche is the
-    intersection of these three components.}
-  \label{fig:niche_concept}
-\end{figure}
-
 To solve this apparent contradiction, Hutchinson introduced the concepts of
 fundamental and realized niches \cite{Hutchinson1957}. The fundamental niche
 describes a hypervolume of environmental conditions under which a species can
@@ -848,6 +829,25 @@ of a species can be expressed as the intersection of the abiotic niche $A$, the
 biotic niche $B$, and the dispersal (movement) niche $M$, $R=A\cap B\cap M$
 (\cref{fig:niche_concept} (b)).
 
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=1\textwidth]{Figures/Niche_theory.pdf}
+  \caption[Historical development of the ecological niche concept]{
+    \textbf{Historical development of the ecological niche concept.} The
+    Grinnellian niche emphasizes the abiotic factors that determine the
+    distribution of species, while the Eltonian niche focuses on the biotic
+    interactions that shape the distribution of species. The Hutchinsonian
+    niche integrates both abiotic and biotic factors, distinguishing
+    between the fundamental and realized niches of a species. The BAM
+    (Biotic-Abiotic-Movement) framework of the ecological niche concept. The
+    full ecological niche of a species includes the abiotic conditions that are
+    suitable for the species (abiotic niche), the biotic interactions that
+    favor the species (biotic niche), and the areas that the species can
+    physically reach and colonize (dispersal niche). The realized niche is the
+    intersection of these three components.}
+  \label{fig:niche_concept}
+\end{figure}
+
 % Species distribution models
 \subsection{\label{sec:Species distribution models} Species distribution
   models}
@@ -879,6 +879,25 @@ understand the relationship between the species and the environmental
 variables, while machine learning algorithms are more flexible and can capture
 complex relationships but often lack the explanatory power of simpler models.
 
+\begin{figure}
+  \centering
+  \includegraphics[width=0.87\textwidth]{Figures/SDM_example.pdf}
+  \caption[Example of a species distribution model]{
+    \textbf{Example of a species distribution model.} (a) Distribution of
+    the banana slug \textit{Ariolimax buttoni}, which is only present in the
+    west of the United States. Inset:  \textit{Ariolimax (Ariolimax) buttoni}
+    (Pilsbry \& Vanatta, 1896) observed by
+    \href{https://www.inaturalist.org/photos/345291902}{citysalamanders} (under
+    \href{http://creativecommons.org/licenses/by-nc/4.0/}{CC BY-NC 4.0}) (b-d)
+    Environmental variables used to build the SDM. (e) Presence and modeled
+    pseudo-absence data of the banana slug \textit{Ariolimax buttoni} in the
+    west of the United States. (f) Predicted potential distribution of the
+    banana slug \textit{Ariolimax buttoni} based on climatic variables.}
+  \label{fig:SDM_example}
+\end{figure}
+
+% Referencia inset: https://www.gbif.org/es/occurrence/4510206467
+
 The overall process of building an SDM can be often divided into several steps
 \cite{Elith2006}: First we need to collect data on the species of interest and
 the environmental variables that may influence its distribution. This data can
@@ -899,25 +918,6 @@ then evaluate the model to assess its performance using metrics such as the
 area under the receiver operating characteristic curve (AUC), or the Kappa
 statistic. Finally, the model can be used to predict the potential distribution
 of the species at different locations based on their environmental conditions.
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.87\textwidth]{Figures/SDM_example.pdf}
-  \caption[Example of a species distribution model]{
-    \textbf{Example of a species distribution model.} (a) Distribution of
-    the banana slug \textit{Ariolimax buttoni}, which is only present in the
-    west of the United States. Inset:  \textit{Ariolimax (Ariolimax) buttoni}
-    (Pilsbry \& Vanatta, 1896) observed by
-    \href{https://www.inaturalist.org/photos/345291902}{citysalamanders} (under
-    \href{http://creativecommons.org/licenses/by-nc/4.0/}{CC BY-NC 4.0}) (b-d)
-    Environmental variables used to build the SDM. (e) Presence and modeled
-    pseudo-absence data of the banana slug \textit{Ariolimax buttoni} in the
-    west of the United States. (f) Predicted potential distribution of the
-    banana slug \textit{Ariolimax buttoni} based on climatic variables.}
-  \label{fig:SDM_example}
-\end{figure}
-
-% Referencia inset: https://www.gbif.org/es/occurrence/4510206467
 
 To illustrate the process of building an SDM, we will consider the example of
 \textit{Ariolimax buttoni}, a species of banana slug native to coastal
@@ -1144,6 +1144,23 @@ algorithm, such as gradient descent, which adjusts the weights to minimize the
 error between the predicted output of the network and the true output
 \cite{Goodfellow2016}.
 
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{Figures/Perceptron.pdf}
+  \caption[The perceptron model of a biological neuron]{
+    \textbf{The perceptron model of a biological neuron.} (a) The perceptron
+    takes a set of input values $x_1, x_2, \ldots, x_n$ and produces an output
+    value $y$ based on a set of weights $w_1, w_2, \ldots, w_n$ and a bias term
+    $b$. The output of the perceptron is given by the formula
+    $y=\sigma(\sum_{i=1}^n w_ix_i + b)$, where $\sigma$ is an activation
+    function. (b) The sigmoid function saturates to 1 for large positive inputs
+    and to 0 for large negative inputs. (c) The hyperbolic tangent function
+    saturates to 1 for large positive inputs and to -1 for large negative
+    inputs. (d) The rectified linear unit (ReLU) function is linear for
+    positive inputs and zero for negative inputs.}
+  \label{fig:Perceptron}
+\end{figure}
+
 The basic building block of ANN is the \textbf{perceptron}, a simple model of a
 biological neuron. The perceptron takes a set of input values $x_1, x_2,
   \ldots, x_n$ and produces an output value $y$ based on a set of weights $w_1,
@@ -1165,23 +1182,6 @@ used to introduce non-linearity into the model, allowing the neural network to
 model complex patterns in the data. See \cref{fig:Perceptron} for a graphical
 representation of the perceptron model and the activation functions.
 
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=1\textwidth]{Figures/Perceptron.pdf}
-  \caption[The perceptron model of a biological neuron]{
-    \textbf{The perceptron model of a biological neuron.} (a) The perceptron
-    takes a set of input values $x_1, x_2, \ldots, x_n$ and produces an output
-    value $y$ based on a set of weights $w_1, w_2, \ldots, w_n$ and a bias term
-    $b$. The output of the perceptron is given by the formula
-    $y=\sigma(\sum_{i=1}^n w_ix_i + b)$, where $\sigma$ is an activation
-    function. (b) The sigmoid function saturates to 1 for large positive inputs
-    and to 0 for large negative inputs. (c) The hyperbolic tangent function
-    saturates to 1 for large positive inputs and to -1 for large negative
-    inputs. (d) The rectified linear unit (ReLU) function is linear for
-    positive inputs and zero for negative inputs.}
-  \label{fig:Perceptron}
-\end{figure}
-
 The perceptron is a simple model of a biological neuron, but it can be
 combined to form more complex models, i.e. ANN, which consist of multiple
 layers of neurons connected to each other. The first layer of the network is
@@ -1193,6 +1193,21 @@ in only one direction, from the input layer to the output layer. A simple and
 common architecture of ANN is the feedforward neural network (FFNN), which
 consists of an input layer, multiple hidden layers, and an output layer
 (\cref{fig:ANN}(a)).
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=1\textwidth]{Figures/ANN.pdf}
+  \caption[The feedforward neural network]{
+    \textbf{The feedforward neural network.} (a) The feedforward neural network
+    consists of an input layer, multiple hidden layers, and an output layer.
+    The input layer receives the input data, the hidden layers process the
+    data, and the output layer produces the final output of the network.
+    (b) Illustration of the gradient descent algorithm used to train the
+    network. The weights of the connections between neurons are adjusted to
+    minimize the loss, i.e. the error between the predicted output of the
+    network and the true output.}
+  \label{fig:ANN}
+\end{figure}
 
 ANN are often used in supervised learning tasks, in which the model is trained
 using a dataset containing input-output pairs. The weights of the connections
@@ -1222,21 +1237,6 @@ repeated iteratively until the weights converge to a set of values that
 minimize the loss function. Backpropagation is a fundamental algorithm in
 training neural networks, and it allows the model to learn the features in the
 data that are most relevant for the task at hand.
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=1\textwidth]{Figures/ANN.pdf}
-  \caption[The feedforward neural network]{
-    \textbf{The feedforward neural network.} (a) The feedforward neural network
-    consists of an input layer, multiple hidden layers, and an output layer.
-    The input layer receives the input data, the hidden layers process the
-    data, and the output layer produces the final output of the network.
-    (b) Illustration of the gradient descent algorithm used to train the
-    network. The weights of the connections between neurons are adjusted to
-    minimize the loss, i.e. the error between the predicted output of the
-    network and the true output.}
-  \label{fig:ANN}
-\end{figure}
 
 Several variations of ANN have been developed to address specific tasks, such
 as image recognition and segmentation, speech recognition, natural language
@@ -1288,6 +1288,17 @@ latent state, from a sequence of hidden states $h_1, h_2, \ldots, h_t$, and the
 inputs. Notice how the current hidden state, $h_t$, is a function of the
 current input $x_{t}$ and the previous hidden state $h_{t-1}$.
 
+Unfortunately, SRNNs suffer from the so-called vanishing gradient problem, i.e.
+distant parts of the time series do not play a role in the training process,
+which prevents the network from learning long-term temporal dependencies. This
+problem arises because the gradients of the loss function with respect to the
+weights of the connections tend to become very small as they are backpropagated
+through the network, which makes it difficult for the network to learn from
+distant parts of the time series. This is, the errors commited in the past are
+not propagated to the present. Another related issue is the exploding gradient
+problem, where the gradients become very large and cause the weights of the
+connections to diverge, leading to numerical instability.
+
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.8\textwidth]{Figures/RNN.pdf}
@@ -1299,17 +1310,6 @@ current input $x_{t}$ and the previous hidden state $h_{t-1}$.
     state can be used to predict the future values of the time series.}
   \label{fig:SRNN_scheme}
 \end{figure}
-
-Unfortunately, SRNNs suffer from the so-called vanishing gradient problem, i.e.
-distant parts of the time series do not play a role in the training process,
-which prevents the network from learning long-term temporal dependencies. This
-problem arises because the gradients of the loss function with respect to the
-weights of the connections tend to become very small as they are backpropagated
-through the network, which makes it difficult for the network to learn from
-distant parts of the time series. This is, the errors commited in the past are
-not propagated to the present. Another related issue is the exploding gradient
-problem, where the gradients become very large and cause the weights of the
-connections to diverge, leading to numerical instability.
 
 We can visualize the problem by computing the backpropagation through time.
 Consider that we predict the output time-series $y_t$ at time $t$ using the
@@ -1346,24 +1346,24 @@ are able to encode both past and future information by implementing two LSTM
 layers flowing in opposite time directions. The forward layer preserve past
 information while the backwards layer preserves future information.Thus, using
 the two hidden states combined BD-LSTM are able in any point in time to
-preserve information from both past and future. A schematic representation of
-the BD-LSTM neural network is shown in (\cref{fig:BD_LSTM_scheme}).
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=\textwidth]{Figures/BD_LSTM_scheme.pdf}
-  \caption[Scheme of a Bidirectional-LSTM Neural Network]{\textbf{Scheme of a
-      Bidirectional-LSTM Neural Network.} The BD-LSTM neural network consists
-    of two LSTM layers flowing in opposite time directions. The forward layer
-    preserves past information, while the backward layer preserves future
-    information. The two hidden states are combined to produce the final output
-    of the network.}
-  \label{fig:BD_LSTM_scheme}
-\end{figure}
+preserve information from both past and future.
+% A schematic representation of the BD-LSTM neural network is shown in (\cref{fig:BD_LSTM_scheme}).
 
 We will make use of BD-LSTM neural networks in \cref{ch:ph} to predict the
 missing values of the ocean pH based on the past and ``future'' available
 observations of temperature, salinity and dissolved oxygen.
+
+% \begin{figure}[H]
+%   \centering
+%   \includegraphics[width=\textwidth]{Figures/BD_LSTM_scheme.pdf}
+%   \caption[Scheme of a Bidirectional-LSTM Neural Network]{\textbf{Scheme of a
+%       Bidirectional-LSTM Neural Network.} The BD-LSTM neural network consists
+%     of two LSTM layers flowing in opposite time directions. The forward layer
+%     preserves past information, while the backward layer preserves future
+%     information. The two hidden states are combined to produce the final output
+%     of the network.}
+%   \label{fig:BD_LSTM_scheme}
+% \end{figure}
 
 \subsection{\label{sec: Image segmentation} Image segmentation}
 

@@ -74,3 +74,50 @@ and $T=1.0$ for temperature. The optimal fits are shown in
         Bay of Palma.}
     \label{fig:S1}
 \end{figure}
+
+\section{Bidirectional Long-Short Term Memory neural network}
+
+Recurrent Neural Networks (RNNs) are a class of artificial neural networks
+in which node connections arise along a temporal sequence, i.e. previous values
+in a time series are linked to current values. In simple words, RNNs predict a
+point of the time series using past information. Simple Recurrent Neural
+Networks (SRNNs) are the straightforward extension of Feedforward Neural
+Networks, in which past information and learned knowledge is encoded in the
+network as state vectors. SRNNs suffer from the so-called vanishing gradient
+problem, i.e. distant parts of the time series do not play a role in the
+training process. Thus, SRNNs are not capable to learn long-term dependencies.
+Long-Short Term Memory (LSTM) neural networks overcome this limitation by
+implementing three gates to update and control the cell state (forget gate,
+input gate, output gate), thus allowing to keep long-term dependencies
+\cite{LSTM_NN}. Bidirectional Long-Short Term Memory (BD-LSTM) neural networks
+are able to encode both past and future information by implementing two LSTM
+layers flowing in opposite time directions. The forward layer preserve past
+information while the backwards layer preserves future information.Thus, using
+the two hidden states combined BD-LSTM are able in any point in time to
+preserve information from both past and future. A schematic representation of
+the BD-LSTM neural network is shown in (\cref{fig:BD_LSTM_scheme}).
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{Figures/BD_LSTM_scheme.pdf}
+    \caption{Scheme for the Bidirectional-LSTM Neural Network. The network
+        receives as input a tensor of shape $(\textrm{batch}_\textrm{size},
+            \textrm{window}\_\textrm{size}, N_{\textrm{features}})$, where
+        $\textrm{batch}_\textrm{size}$ is the number of examples to train per
+        iteration, $\textrm{batch}_\textrm{size}$ is the number of past and
+        future
+        points considered and $N_{\textrm{features}}$ is the number of features
+        used to
+        predict the target series. First, the input is linearly transformed to
+        match
+        the number of cells of the network (3 in the figure). Then, the input
+        is
+        transformed by the backward (blue) and forward (orange) LSTM layers,
+        which
+        propagates information backwards and forwards, respectively. Finally,
+        the
+        values are transformed through an activation gate. In our model, this
+        values
+        will be ultimately transformed via a dense layer to a unique output.}
+    \label{fig:BD_LSTM_scheme}
+\end{figure}
