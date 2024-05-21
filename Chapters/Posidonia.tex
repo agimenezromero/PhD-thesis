@@ -162,27 +162,6 @@ different dates and
 satellite positions (\cref{fig:scheme}b,c, Methods \&
 \cref{app:satellite_imagery}).
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=\textwidth]{Figures/scheme.pdf}
-    \caption{(a) Spatial distribution of the 4 main ecological benthic habitats
-        in the Balearic Sea, present in the whole Mediterranean. The dataset
-        provides
-        detailed information at multiple spatial scales up to 3 m resolution.
-        (b-d)
-        Scheme of the pipeline to train CAMELE model. (b) Satellite-based
-        surface
-        reflectance data is merged with bathymetry estimates to produce the
-        inputs
-        (features) of the model. Habitat data obtained with side-scan sonar,
-        photo-interpretation and field observations were used as ground truth
-        data
-        (labels). (d) These features and labels are used to train deep
-        convolutional
-        neural networks to perform image segmentation.}
-    \label{fig:scheme}
-\end{figure}
-
 We trained 40 different deep learning models using 4
 different state-of-the-art architectures and 10 different backbones for each
 architecture (\cref{fig:scheme}d, Methods \& \cref{app:deep_learning_models}).
@@ -204,6 +183,27 @@ position of the satellite with respect to the sun and the earth, or even find
 new species not contained in the original training dataset. We thereafter refer
 to our test set as ``out-of-sample'' test set and to the model as ``Half
 model'' to emphasize this idea.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.87\textwidth]{Figures/scheme.pdf}
+    \caption{(a) Spatial distribution of the 4 main ecological benthic habitats
+        in the Balearic Sea, present in the whole Mediterranean. The dataset
+        provides
+        detailed information at multiple spatial scales up to 3 m resolution.
+        (b-d)
+        Scheme of the pipeline to train CAMELE model. (b) Satellite-based
+        surface
+        reflectance data is merged with bathymetry estimates to produce the
+        inputs
+        (features) of the model. Habitat data obtained with side-scan sonar,
+        photo-interpretation and field observations were used as ground truth
+        data
+        (labels). (d) These features and labels are used to train deep
+        convolutional
+        neural networks to perform image segmentation.}
+    \label{fig:scheme}
+\end{figure}
 
 We performed and extensive evaluation of the models' performance in the
 training and out-of-sample test datasets, using a variety of metrics such as
@@ -263,28 +263,6 @@ out-of-sample test dataset, demonstrating the generalization capability and
 robustness of CAMELE and highlighting its potential for real-world applications
 in biodiversity monitoring and management.
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=\textwidth]{Figures/Model_performance.pdf}
-    \caption{Model performance in train and out-of-sample test datasets. (a)
-        Violin plots for F1-score, IoU, Precision, Recall, Kappa and Accuracy
-        in both
-        training and out-of-sample test datasets. (b-c) True vs predicted area
-        for each
-        habitat class in the training (b) and out-of-sample test (c) datasets.
-        The
-        diagonal dashed line indicate perfect prediction. (d) Box plot for the
-        absolute
-        and relative errors commited in the prediction of \textit{Posidonia
-            oceanica}
-        area as function of the true area. Relative errors significantly
-        decrease with
-        the extent of the area to be predicted, linked to the wider spatial
-        context
-        available.}
-    \label{fig:model_performance}
-\end{figure}
-
 CAMELE's performance was further evaluated by comparing the true and predicted
 area for each habitat class in each image of the training and out-of-sample
 test datasets. The model achieved a notable performance in predicting the area
@@ -313,6 +291,28 @@ areas larger than 20 km$^2$.  This finding underscores the importance of
 considering the spatial context when predicting the area of benthic habitats,
 highlighting the potential of CAMELE to provide reliable estimates for the
 distribution and extension of the considered habitats in the Mediterranean Sea.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.95\textwidth]{Figures/Model_performance.pdf}
+    \caption{Model performance in train and out-of-sample test datasets. (a)
+        Violin plots for F1-score, IoU, Precision, Recall, Kappa and Accuracy
+        in both
+        training and out-of-sample test datasets. (b-c) True vs predicted area
+        for each
+        habitat class in the training (b) and out-of-sample test (c) datasets.
+        The
+        diagonal dashed line indicate perfect prediction. (d) Box plot for the
+        absolute
+        and relative errors commited in the prediction of \textit{Posidonia
+            oceanica}
+        area as function of the true area. Relative errors significantly
+        decrease with
+        the extent of the area to be predicted, linked to the wider spatial
+        context
+        available.}
+    \label{fig:model_performance}
+\end{figure}
 
 \begin{figure}[H]
     \centering
@@ -349,6 +349,11 @@ community with our final trained models, which are freely accessible at
 \cite{GimenezRomero_zenodo}. We thereafter refer to this model as the ``final''
 model.
 
+We evaluated the performance of the final model in the
+complete dataset and, for comparison, also in the previous training and
+out-of-sample test datasets, achieving a median IoU score of 95.22\%, 94.73\%
+and 96.22\%, respectively (\cref{tab:my-table}).
+
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{Figures/Final_predictions_example.pdf}
@@ -363,10 +368,7 @@ model.
     \label{fig:model_performance_complete}
 \end{figure}
 
-We evaluated the performance of the final model in the
-complete dataset and, for comparison, also in the previous training and
-out-of-sample test datasets, achieving a median IoU score of 95.22\%, 94.73\%
-and 96.22\%, respectively (\cref{tab:my-table}). Notably, the model's
+Notably, the model's
 segmented all the images in the complete dataset with an IoU score higher than
 90\%, with a mean, median and maximum IoU score of 94.64\% 95.22\% and 98.5\%,
 respectively (\cref{tab:metrics_img_final}). Finally, we assessed the model

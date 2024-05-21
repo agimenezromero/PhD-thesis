@@ -125,30 +125,53 @@ with international trade in plant diseases.
     climate data}
 
 We computed the risk of PD using the previously developed climate-driven
-epidemiological model \cite{GimenezRomero2022_CommsBio} coupled with the CHELSA
-dataset
-\cite{Karger2017}, which features key climate variables (e.g. temperature and
-precipitation) at a high spatial resolution of 1 km and daily temporal
-resolution covering the period 1979-2016. The resulting spatial and temporal
-patterns of disease risk in the main wine-growing regions were compared with
-previous risk projections derived from the ERA5 dataset
-\cite{munoz-sabater_era5-land_2021}, characterised by an intermediate  spatial
-resolution of 10 km  and hourly temporal resolution
-\cite{GimenezRomero2022_CommsBio}.
-Briefly, the model simulates the initial dynamics of the disease  influenced by
-climatic variables and the presence of vectors, giving rise to a risk index,
-$r$, which represents the normalised growth rate of the infected population,
-where $r=1$ is the maximum rate achieved at optimal climatic conditions (see
-Methods). Negative risk indices project an exponential decrease of the infected
-population (no risk), whereas positive values give rise to an outbreak, with
-higher values accounting for major incidence and potential severity. Risk
-categories  emerge naturally from this formalism as No Risk ($r\leq-0.1$)
-Transition ($-0.1<r \leq0.1$), Low Risk ($0.1<r\leq0.33$), Moderate Risk
-($0.33<r\leq0.66$) and High Risk ($r>0.66$). Risk projections in Europe use the
+epidemiological model in \cref{ch:commsbio} \cite{GimenezRomero2022_CommsBio}
+coupled with the CHELSA dataset \cite{Karger2017}, which features key climate
+variables (e.g. temperature and precipitation) at a high spatial resolution of
+1 km and daily temporal resolution covering the period 1979-2016. The resulting
+spatial and temporal patterns of disease risk in the main wine-growing regions
+were compared with the previous risk projections derived from the ERA5 dataset
+\cite{munoz-sabater_era5-land_2021} in \cref{ch:commsbio}, characterised by an
+intermediate  spatial resolution of 10 km  and hourly temporal resolution
+\cite{GimenezRomero2022_CommsBio}. Risk projections in Europe use the
 climatic suitability, $s$, of the main European vector, \textit{P. spumarius}
 (see Methods), while for the rest of the world it is assumed that there are no
 risk-limiting effects due to the vector  ($s=1$), but only due to climatic
 conditions.
+
+When contrasting model results derived from high- and medium-resolution
+data for the latest available time (2016), the disparity in risk projections
+extends beyond regional differences, showing a global increase in risk indices
+across wine-growing areas (\cref{fig:risk_indices_dif,fig:ERA5_vs_chelsa}).
+Overall, these increases
+(\cref{fig:risk_categories_dif}) in the extension of PD risk areas ranged from
+100,000 to 1 million km$^2$ across viticulture regions worldwide. Transitions
+from no-risk to risk zones covered an area one order of magnitude larger than
+those in the opposite direction --from risk to no-risk
+(\cref{fig:risk_categories_dif,tab:risk_category_dif}). In total, a surface of
+4.6 million km-2 changed its risk category with the CHELSA database,
+representing about a 16\% of the land area studied. In contrast, the largest
+decreases in the risk indices occurred mainly in the Southern Hemisphere,
+although with few exceptions most of these decreases remained within the risk
+zones (\cref{fig:risk_indices_dif}), while similar land expansions were
+observed to  increase their risk category (low to moderate or moderate to high)
+(\cref{fig:risk_categories_dif,tab:risk_category_dif}). The largest changes in
+risk indices occur in ecotones on both sides of the $r=0$ line, as is clearly
+seen in the south-eastern United States, in coastal areas (e.g., southern
+Australia and northern California) due to higher resolution that better
+distinguishes between land and coast, and finally in the river valleys and
+slopes of mountain systems
+(\cref{fig:risk_categories_dif,tab:risk_category_dif}).
+
+Next, we compared the temporal progression of the area at risk using both
+high and mid-resolution data over the entire available time span (1986-2016),
+considering that the risk for each year is computed based on the preceding
+seven years. We found a notable global surge in the rate increase of the area
+at risk within viticulture zones worldwide, practically doubling previous
+estimates (\cref{fig:area_at_risk}). These results point to an
+accelerated
+pace at which the risk of PD is growing, compatible with the predictions of
+different global warming scenarios \cite{GimenezRomero2023_PD}.
 
 \begin{table}[H]
     \caption{Changes in Pierce's Disease Risk Zones in Different Viticulture
@@ -211,33 +234,9 @@ conditions.
     }
 \end{table}
 
-When contrasting model results derived from high- and medium-resolution
-data for the latest available time (2016), the disparity in risk projections
-extends beyond regional differences, showing a global increase in risk indices
-across wine-growing areas (\cref{fig:risk_indices_dif,fig:ERA5_vs_chelsa}).
-Overall, these increases
-(\cref{fig:risk_categories_dif}) in the extension of PD risk areas ranged from
-100,000 to 1 million km$^2$ across viticulture regions worldwide. Transitions
-from no-risk to risk zones covered an area one order of magnitude larger than
-those in the opposite direction --from risk to no-risk
-(\cref{fig:risk_categories_dif,tab:risk_category_dif}). In total, a surface of
-4.6 million km-2 changed its risk category with the CHELSA database,
-representing about a 16\% of the land area studied. In contrast, the largest
-decreases in the risk indices occurred mainly in the Southern Hemisphere,
-although with few exceptions most of these decreases remained within the risk
-zones (\cref{fig:risk_indices_dif}), while similar land expansions were
-observed to  increase their risk category (low to moderate or moderate to high)
-(\cref{fig:risk_categories_dif,tab:risk_category_dif}). The largest changes in
-risk indices occur in ecotones on both sides of the $r=0$ line, as is clearly
-seen in the south-eastern United States, in coastal areas (e.g., southern
-Australia and northern California) due to higher resolution that better
-distinguishes between land and coast, and finally in the river valleys and
-slopes of mountain systems
-(\cref{fig:risk_categories_dif,tab:risk_category_dif}).
-
 \begin{figure}[H]
     \centering
-    \includegraphics[width=1\textwidth]{Figures/ERA5_vs_CHELSA_dif.pdf}
+    \includegraphics[width=0.8\textwidth]{Figures/ERA5_vs_CHELSA_dif.pdf}
     \caption{Difference in risk projections based on CHELSA
         (high-resolution, 1 km) and ERA5 (mid-resolution 10 km) datasets in
         global
@@ -246,16 +245,6 @@ slopes of mountain systems
         (E) South Africa.}
     \label{fig:risk_indices_dif}
 \end{figure}
-
-Next, we compared the temporal progression of the area at risk using both
-high and mid-resolution data over the entire available time span (1986-2016),
-considering that the risk for each year is computed based on the preceding
-seven years. We found a notable global surge in the rate increase of the area
-at risk within viticulture zones worldwide, practically doubling previous
-estimates (\cref{fig:area_at_risk}). These results point to an
-accelerated
-pace at which the risk of PD is growing, compatible with the predictions of
-different global warming scenarios \cite{GimenezRomero2023_PD}.
 
 \begin{figure}[H]
     \centering

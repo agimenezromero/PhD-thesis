@@ -108,7 +108,7 @@ can
 be usually reduced in terms of new parameters defined as combinations of some
 of the original parameters.
 
-The plan of this paper is as follows. In \cref{sec:model} we develop a
+The plan of this chapter is as follows. In \cref{sec:model} we develop a
 compartmental model of vector-borne transmitted diseases with constant, but
 different, birth and death rates for the vectors, that we will use to describe
 the case of growing and decaying vector populations. For simplicity, the model
@@ -117,7 +117,7 @@ development of the disease is faster than host recruitment, which is also a
 realistic assumption in  many cases, like plant diseases. \cref{sec:results}
 contains the main results of the study. In particular, we show that the
 asymptotic approach fails to estimate the $R_0$ of the model, overlooking
-outbreaks if some conditions are fulfilled. Here, we provide an alternative
+outbreaks if some conditions are fulfilled. We provide an alternative
 method to compute $R_0$ based on the average number of secondary host
 infections produced by a primary infected host in one generation. It turns out
 that the validity of the  asymptotic approach depends, among other things, on
@@ -568,6 +568,21 @@ vector population can be obtained from the relationship,
     I_v\approx\frac{\alpha}{\mu}\frac{S_v I_H}{N_H} \ .
 \end{equation}
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Figures/Timescale_approx.pdf}
+    \caption{Numerical verification of the time-scale approximation
+        (\cref{eq:Iv_timescale_approx}) with $N_H=100$, $\alpha=\gamma=1$.
+        $\beta$ is
+        chosen such that $R_0=3$. (a) $\mu=1$, (b) $\mu=10$, (c) $\mu=100$.
+        Panel (d)
+        shows a comparison between the approximate and original models for the
+        parameters used in (c), where the approximated models is expected to
+        represent
+        well the original one.}
+    \label{fig:timescale_approx}
+\end{figure}
+
 Substituting \cref{eq:Iv_timescale_approx} into the original system
 \cref{eq:SIR_v} and the identity $N_v(t)=S_v(t)+I_v(t)$, while considering that
 the conditions for which the time-scale approximation is valid, $\mu\gg\gamma$,
@@ -591,21 +606,6 @@ $\displaystyle\frac{\mu}{\gamma}\gg 1$. It is important to notice that the
 presence of direct host to host transmission would simply re-scale the
 coefficient $\beta'$, and the SIR reduction \cref{eq:SIR_like} would keep its
 validity.
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.8\textwidth]{Figures/Timescale_approx.pdf}
-    \caption{Numerical verification of the time-scale approximation
-        (\cref{eq:Iv_timescale_approx}) with $N_H=100$, $\alpha=\gamma=1$.
-        $\beta$ is
-        chosen such that $R_0=3$. (a) $\mu=1$, (b) $\mu=10$, (c) $\mu=100$.
-        Panel (d)
-        shows a comparison between the approximate and original models for the
-        parameters used in (c), where the approximated models is expected to
-        represent
-        well the original one.}
-    \label{fig:timescale_approx}
-\end{figure}
 
 In \cref{fig:timescale_approx} we numerically verify the validity of the
 presented fast-slow approximation. As expected, we observe that the
@@ -634,7 +634,7 @@ $\lambda N_H \gg I_H$ also holds (which is indeed plausible in this limit)
 where $\displaystyle\beta_{eff}=\frac{\beta'}{\lambda}=\frac{\beta\alpha
         N_v^*}{\mu N_H}$.
 
-\begin{figure*}[t!]
+\begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{Figures/SIR_like_approx_comp.pdf}
     \caption{Comparison between the original model and the reductions,
@@ -645,7 +645,7 @@ where $\displaystyle\beta_{eff}=\frac{\beta'}{\lambda}=\frac{\beta\alpha
     model and the SIR approximations as function of the ratio $\mu/\gamma$ and
     $f$.}
     \label{fig:SIR_like_approx}
-\end{figure*}
+\end{figure}
 
 In \cref{fig:SIR_like_approx} we show the validity of the reduced models
 \cref{eq:SIR_like} and \cref{eq:SIR}. \cref{fig:SIR_like_approx}(a) shows that

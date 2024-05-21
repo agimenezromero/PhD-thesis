@@ -791,6 +791,25 @@ species play within an ecosystem, including their interactions with other
 species. This Eltonian definition shifted the focus towards the biotic aspects
 of ecological niches \cite{Elton1927}.
 
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=1\textwidth]{Figures/Niche_theory.pdf}
+  \caption[Historical development of the ecological niche concept]{
+    \textbf{Historical development of the ecological niche concept.} The
+    Grinnellian niche emphasizes the abiotic factors that determine the
+    distribution of species, while the Eltonian niche focuses on the biotic
+    interactions that shape the distribution of species. The Hutchinsonian
+    niche integrates both abiotic and biotic factors, distinguishing
+    between the fundamental and realized niches of a species. The BAM
+    (Biotic-Abiotic-Movement) framework of the ecological niche concept. The
+    full ecological niche of a species includes the abiotic conditions that are
+    suitable for the species (abiotic niche), the biotic interactions that
+    favor the species (biotic niche), and the areas that the species can
+    physically reach and colonize (dispersal niche). The realized niche is the
+    intersection of these three components.}
+  \label{fig:niche_concept}
+\end{figure}
+
 To solve this apparent contradiction, Hutchinson introduced the concepts of
 fundamental and realized niches \cite{Hutchinson1957}. The fundamental niche
 describes a hypervolume of environmental conditions under which a species can
@@ -828,25 +847,6 @@ if it is unable to disperse. So, in mathematical terms, the realized niche $R$
 of a species can be expressed as the intersection of the abiotic niche $A$, the
 biotic niche $B$, and the dispersal (movement) niche $M$, $R=A\cap B\cap M$
 (\cref{fig:niche_concept} (b)).
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=1\textwidth]{Figures/Niche_theory.pdf}
-  \caption[Historical development of the ecological niche concept]{
-    \textbf{Historical development of the ecological niche concept.} The
-    Grinnellian niche emphasizes the abiotic factors that determine the
-    distribution of species, while the Eltonian niche focuses on the biotic
-    interactions that shape the distribution of species. The Hutchinsonian
-    niche integrates both abiotic and biotic factors, distinguishing
-    between the fundamental and realized niches of a species. The BAM
-    (Biotic-Abiotic-Movement) framework of the ecological niche concept. The
-    full ecological niche of a species includes the abiotic conditions that are
-    suitable for the species (abiotic niche), the biotic interactions that
-    favor the species (biotic niche), and the areas that the species can
-    physically reach and colonize (dispersal niche). The realized niche is the
-    intersection of these three components.}
-  \label{fig:niche_concept}
-\end{figure}
 
 % Species distribution models
 \subsection{\label{sec:Species distribution models} Species distribution
@@ -940,7 +940,7 @@ banana slug based on the environmental variables is shown in
 \cref{fig:SDM_example}(f).
 
 \begin{theorem}[Species distribution models]
-  \small\sffamily
+  %\small\sffamily
   Steps of building a species distribution model:
   \begin{enumerate}
     \item Collect data on the species of interest and the environmental
@@ -1437,6 +1437,18 @@ given by the convolution of the image and the filter, which is computed as
 \end{equation}
 where $i$ and $j$ are the spatial coordinates of the output feature map $F$.
 
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.7\textwidth]{Figures/feature_maps.pdf}
+  \caption[Feature maps in a convolutional neural network]{
+    \textbf{Feature maps in a convolutional neural network.} The convolutional
+    layers of a CNN apply a set of filters to the input image to extract
+    features. The filters are learned during the training process and are used
+    to detect patterns in the image, such as edges, textures, and shapes.
+    inspired by \cite{Brownlee2019}}
+  \label{fig:feature_maps}
+\end{figure}
+
 For a 2D image with a single channel we can visualize the convolutional
 operation with the following example,
 \begin{equation}
@@ -1469,18 +1481,6 @@ operation with the following example,
   \end{bmatrix}
   \ ,
 \end{equation}
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.7\textwidth]{Figures/feature_maps.pdf}
-  \caption[Feature maps in a convolutional neural network]{
-    \textbf{Feature maps in a convolutional neural network.} The convolutional
-    layers of a CNN apply a set of filters to the input image to extract
-    features. The filters are learned during the training process and are used
-    to detect patterns in the image, such as edges, textures, and shapes.
-    inspired by \cite{Brownlee2019}}
-  \label{fig:feature_maps}
-\end{figure}
 
 The outputs of the convolutional and pooling layers are called feature maps,
 which are used to detect patterns in the image, such as edges, textures, and
@@ -1682,6 +1682,17 @@ for several importan crop diseases, which lead to severe economic losses in
 agriculture and forestry and pose a serious threat to food security and
 biodiversity worldwide.
 
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.8\textwidth]{Figures/Xf_symptoms.pdf}
+  \caption[Symptoms of \textit{Xylella fastidiosa} infection]{
+    \textbf{Symptoms of \textit{Xylella fastidiosa} infection.} (a) Leaf
+    scorching in an american Elm leave (b) Wilted squash plant (b) Leaf
+    scorching (c) Chlorosis in a grapevine leaf (d) Dieback in an infected
+    olive tree.}
+  \label{fig:Xylella}
+\end{figure}
+
 As a taxonomic unit, Xf comprises three recognized subspecies,
 \textit{fastidiosa}, \textit{multiplex}, and \textit{pauca}, and more than 90
 sequence types (i.e. genetic lineages) with distinct host ranges.
@@ -1696,17 +1707,6 @@ California \cite{almeida2003biological}. On the other hand, Xf subsp.
 \textit{pauca} is the most virulent subspecies and is responsible for the olive
 quick decline syndrome (OQDS), citrus variegated chlorosis (CVC) and coffee
 leaf scorch (CLS).
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.8\textwidth]{Figures/Xf_symptoms.pdf}
-  \caption[Symptoms of \textit{Xylella fastidiosa} infection]{
-    \textbf{Symptoms of \textit{Xylella fastidiosa} infection.} (a) Leaf
-    scorching in an american Elm leave (b) Wilted squash plant (b) Leaf
-    scorching (c) Chlorosis in a grapevine leaf (d) Dieback in an infected
-    olive tree.}
-  \label{fig:Xylella}
-\end{figure}
 
 Until the beginning of the 21st century, Xf was a pathogen officially
 restricted to the American continent \cite{almeida2015plant}. In 2013, the
@@ -1808,6 +1808,16 @@ natural ecosystems for sequestering (capturing and storing) carbon, performing
 a rate that is $35$ times faster than tropical rainforests, while their
 sediments never become saturated \cite{Mcleod2011}.
 
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{Figures/Seagrass.pdf}
+  \caption[The seagrass \textit{Posidonia oceanica}]{
+    \textbf{The seagrass \textit{Posidonia oceanica}.} (a) A seagrass meadow of
+    \textit{Posidonia oceanica} in the Mediterranean Sea. (b) A close-up of a
+    \textit{Posidonia oceanica} meadow.}
+  \label{fig:Posidonia}
+\end{figure}
+
 Unfortunately, seagrass meadows are facing numerous threats that are leading to
 their rapid decline worldwide. Human activities, such as coastal development,
 dredging, and land reclamation, are major contributors to habitat destruction.
@@ -1823,17 +1833,6 @@ overall effective growth rates and increasing their susceptibility to diseases
 \cite{Waycott2009}. Additionally, more frequent and severe storm events can
 cause physical damage to seagrass meadows, further exacerbating their
 decline \cite{Bjork2008}.
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=\textwidth]{Figures/Seagrass.pdf}
-  \caption[The seagrass \textit{Posidonia oceanica}]{
-    \textbf{The seagrass \textit{Pos
-        idonia oceanica}.} (a) A seagrass meadow of \textit{Posidonia oceanica}
-    in the Mediterranean Sea. (b) A close-up of a \textit{Posidonia oceanica}
-    meadow.}
-  \label{fig:Posidonia}
-\end{figure}
 
 In this context, the monitoring of seagrass meadows is crucial for the
 conservation and management of these ecosystems. Traditional methods for

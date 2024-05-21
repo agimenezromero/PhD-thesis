@@ -768,26 +768,14 @@ into the spatial accuracy of predictions.
 \section{Spectral reflectance analysis}\label{app:spectral_reflectance}
 
 To gain a little understanding on our problem, we first perform a basic
-analysis on the spectral reflectance of the habitat classes.
-
-\begin{figure}[H]
-    \centering
-
-    \includegraphics[width=0.95\textwidth]{Figures/Reflectance_histograms_Mallorca_only.pdf}
-    \caption{Distribution of response values (surface reflectance) for the
-        different processed habitat classes with respect to the different bands
-        available from the satellite imagery and depth.}
-    \label{fig:reflectance}
-\end{figure}
-
-The distribution of reflectance values among the spectral bands plays a crucial
-role in the
-ability of the model to segment the different classes. When the reflectance
-values of the different classes do not overlap, the discrimination capability
-of the machine learning model is enhanced. Conversely, when reflectance values
-show significant overlap between classes, the model may encounter difficulties
-in categorizing pixels accurately, as the spectral information becomes less
-informative.
+analysis on the spectral reflectance of the habitat classes. The distribution
+of reflectance values among the spectral bands plays a crucial
+role in the ability of the model to segment the different classes. When the
+reflectance values of the different classes do not overlap, the discrimination
+capability of the machine learning model is enhanced. Conversely, when
+reflectance values show significant overlap between classes, the model may
+encounter difficulties in categorizing pixels accurately, as the spectral
+information becomes less informative.
 
 We computed the distribution of the response values of each habitat class
 to each of the satellite bands together with the mean Wasserstein distance
@@ -809,6 +797,16 @@ alone, but, we advance, observed that introducing the depth to the model highly
 improves model predictions. Thus, we can hypothesize that the model is somehow
 learning and applying a kind of depth reflectance correction to the input data
 to increase its accuracy.
+
+\begin{figure}[H]
+    \centering
+
+    \includegraphics[width=0.95\textwidth]{Figures/Reflectance_histograms_Mallorca_only.pdf}
+    \caption{Distribution of response values (surface reflectance) for the
+        different processed habitat classes with respect to the different bands
+        available from the satellite imagery and depth.}
+    \label{fig:reflectance}
+\end{figure}
 
 \section{Architecture selection}\label{app:architecture_selection}
 
@@ -870,7 +868,8 @@ main architecture for our models.
     \end{tabular}
 \end{table}
 
-\section{Out-of-sample predicting power and robustness}\label{app:out_of_sample}
+\section{Out-of-sample predicting power and
+  robustness}\label{app:out_of_sample}
 
 Because the performance of the different backbones can differ from one
 another, with some being better than others in certain situations, we
@@ -1668,8 +1667,6 @@ the whole Mediterranean sea.
     }
 \end{table}
 
-%\newpage
-
 \section{Effect of depth on model performance}\label{app:depth}
 
 Finally, we studied the effect of depth in model performance, focusing on
@@ -1683,7 +1680,7 @@ in accurately identifying and delineating Posidonia in underwater environments.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.85\textwidth]{Figures/IoU_class_depth.pdf}
+    \includegraphics[width=\textwidth]{Figures/IoU_class_depth.pdf}
     \caption{(a) Performance of voting\_all model as function of the depth
         of classified pixels. (b) Area of samples contained in each depth range
         for the
@@ -2134,97 +2131,99 @@ applications of the model.
     \caption{Performance metrics for the final model in segmenting
         individual images for the year 2023.}
     \label{tab:metrics_img_final_2023}
-    \begin{tabular}{llllllll}
-        \toprule
-        Image Name                             & IoU       & f1         &
-        Kappa                                  & Precision &
-        Recall                                 & Accuracy  & Area (Km²)
-        \\ \midrule
-        Formentera\_3\_august\_2023            & 93.78     & 96.77      &
-        93.76                                  & 96.78     &
-        96.77                                  & 96.77     & 29.04
-        \\
-        Sur\_Oeste\_Menorca\_9\_august\_2023   & 93.71     & 96.55      &
-        83.18                                  & 96.65     &
-        96.7                                   & 96.7      & 16.4
-        \\
-        PortoColom\_CalaMillor\_13\_july\_2023 & 92.21     & 95.85      &
-        91.41                                  & 95.9      &
-        95.89                                  & 95.89     & 28.23
-        \\
-        Sur\_Ibiza\_26\_august\_2023           & 90.07     & 94.56      &
-        86.7                                   & 94.62     &
-        94.69                                  & 94.69     & 22.55
-        \\
-        North\_Cabrera\_14\_july\_2023         & 87.8      & 92.87      &
-        69.54                                  & 93.3      &
-        93.28                                  & 93.28     & 1.36
-        \\
-        Pollença\_27\_june\_2023               & 87.68     & 93.0       &
-        77.37                                  & 93.16     &
-        93.34                                  & 93.34     & 26.05
-        \\
-        Capdepera\_31\_july\_2023              & 87.3      & 92.93      &
-        88.4                                   & 93.2      &
-        93.17                                  & 93.17     & 15.88
-        \\
-        South\_Cabrera\_29\_june\_2023         & 86.38     & 92.42      &
-        81.93                                  & 92.38     &
-        92.5                                   & 92.5      & 1.53
-        \\
-        Sur\_Este\_Menorca\_9\_august\_2023    & 85.02     & 91.69      &
-        87.11                                  & 92.36     &
-        91.93                                  & 91.93     & 16.57
-        \\
-        Norte\_Ibiza\_27\_june\_2023           & 84.32     & 91.28      &
-        87.09                                  & 91.95     &
-        91.45                                  & 91.45     & 4.42
-        \\
-        Alcudia\_15\_july\_2023                & 81.08     & 87.67      &
-        50.55                                  & 90.25     &
-        89.27                                  & 89.27     & 76.2
-        \\
-        Oeste\_Ibiza\_19\_july\_2023           & 80.96     & 89.21      &
-        80.97                                  & 90.04     &
-        89.59                                  & 89.59     & 7.74
-        \\
-        Es\_Trenc\_15\_july\_2023              & 79.47     & 86.24      &
-        67.01                                  & 91.98     &
-        86.47                                  & 86.47     & 12.66
-        \\
-        Este\_Ibiza\_14\_july\_2023            & 78.24     & 87.03      &
-        69.24                                  & 87.84     &
-        87.69                                  & 87.69     & 13.27
-        \\
-        CalaPi\_CalaFiguera\_12\_july\_2023    & 76.17     & 85.29      &
-        69.68                                  & 87.56     &
-        86.37                                  & 86.37     & 36.52
-        \\
-        Banyalbufar\_Soller\_12\_july\_2023    & 75.25     & 84.9       &
-        72.54                                  & 87.29     &
-        86.13                                  & 86.13     & 8.85
-        \\
-        Dragonera\_Banyalbufar\_16\_july\_2023 & 72.61     & 83.72      &
-        73.37                                  & 86.49     &
-        83.65                                  & 83.65     & 7.17
-        \\
-        Palma\_29\_june\_2023                  & 68.32     & 80.13      &
-        63.45                                  & 81.64     &
-        81.39                                  & 81.39     & 62.94
-        \\
-        Norte\_Menorca\_23\_june\_2023         & 67.65     & 79.55      &
-        69.89                                  & 86.56     &
-        78.33                                  & 78.33     & 14.16
-        \\
-        Este\_Menorca\_23\_june\_2023          & 66.3      & 79.37      &
-        69.65                                  & 83.97     &
-        79.37                                  & 79.37     & 27.04
-        \\
-        Soller\_Calobra\_18\_july\_2023        & 44.43     & 60.2       &
-        40.03                                  & 66.68     &
-        60.43                                  & 60.43     & 6.0
-        \\ \bottomrule
-    \end{tabular}%
+    \resizebox{\columnwidth}{!}{%
+        \begin{tabular}{lccccccc}
+            \toprule
+            Image Name                             & IoU       & f1         &
+            Kappa                                  & Precision &
+            Recall                                 & Accuracy  & Area (Km²)
+            \\ \midrule
+            Formentera\_3\_august\_2023            & 93.78     & 96.77      &
+            93.76                                  & 96.78     &
+            96.77                                  & 96.77     & 29.04
+            \\
+            Sur\_Oeste\_Menorca\_9\_august\_2023   & 93.71     & 96.55      &
+            83.18                                  & 96.65     &
+            96.7                                   & 96.7      & 16.4
+            \\
+            PortoColom\_CalaMillor\_13\_july\_2023 & 92.21     & 95.85      &
+            91.41                                  & 95.9      &
+            95.89                                  & 95.89     & 28.23
+            \\
+            Sur\_Ibiza\_26\_august\_2023           & 90.07     & 94.56      &
+            86.7                                   & 94.62     &
+            94.69                                  & 94.69     & 22.55
+            \\
+            North\_Cabrera\_14\_july\_2023         & 87.8      & 92.87      &
+            69.54                                  & 93.3      &
+            93.28                                  & 93.28     & 1.36
+            \\
+            Pollença\_27\_june\_2023               & 87.68     & 93.0       &
+            77.37                                  & 93.16     &
+            93.34                                  & 93.34     & 26.05
+            \\
+            Capdepera\_31\_july\_2023              & 87.3      & 92.93      &
+            88.4                                   & 93.2      &
+            93.17                                  & 93.17     & 15.88
+            \\
+            South\_Cabrera\_29\_june\_2023         & 86.38     & 92.42      &
+            81.93                                  & 92.38     &
+            92.5                                   & 92.5      & 1.53
+            \\
+            Sur\_Este\_Menorca\_9\_august\_2023    & 85.02     & 91.69      &
+            87.11                                  & 92.36     &
+            91.93                                  & 91.93     & 16.57
+            \\
+            Norte\_Ibiza\_27\_june\_2023           & 84.32     & 91.28      &
+            87.09                                  & 91.95     &
+            91.45                                  & 91.45     & 4.42
+            \\
+            Alcudia\_15\_july\_2023                & 81.08     & 87.67      &
+            50.55                                  & 90.25     &
+            89.27                                  & 89.27     & 76.2
+            \\
+            Oeste\_Ibiza\_19\_july\_2023           & 80.96     & 89.21      &
+            80.97                                  & 90.04     &
+            89.59                                  & 89.59     & 7.74
+            \\
+            Es\_Trenc\_15\_july\_2023              & 79.47     & 86.24      &
+            67.01                                  & 91.98     &
+            86.47                                  & 86.47     & 12.66
+            \\
+            Este\_Ibiza\_14\_july\_2023            & 78.24     & 87.03      &
+            69.24                                  & 87.84     &
+            87.69                                  & 87.69     & 13.27
+            \\
+            CalaPi\_CalaFiguera\_12\_july\_2023    & 76.17     & 85.29      &
+            69.68                                  & 87.56     &
+            86.37                                  & 86.37     & 36.52
+            \\
+            Banyalbufar\_Soller\_12\_july\_2023    & 75.25     & 84.9       &
+            72.54                                  & 87.29     &
+            86.13                                  & 86.13     & 8.85
+            \\
+            Dragonera\_Banyalbufar\_16\_july\_2023 & 72.61     & 83.72      &
+            73.37                                  & 86.49     &
+            83.65                                  & 83.65     & 7.17
+            \\
+            Palma\_29\_june\_2023                  & 68.32     & 80.13      &
+            63.45                                  & 81.64     &
+            81.39                                  & 81.39     & 62.94
+            \\
+            Norte\_Menorca\_23\_june\_2023         & 67.65     & 79.55      &
+            69.89                                  & 86.56     &
+            78.33                                  & 78.33     & 14.16
+            \\
+            Este\_Menorca\_23\_june\_2023          & 66.3      & 79.37      &
+            69.65                                  & 83.97     &
+            79.37                                  & 79.37     & 27.04
+            \\
+            Soller\_Calobra\_18\_july\_2023        & 44.43     & 60.2       &
+            40.03                                  & 66.68     &
+            60.43                                  & 60.43     & 6.0
+            \\ \bottomrule
+        \end{tabular}%
+    }
 \end{table}
 
 \begin{table}[H]

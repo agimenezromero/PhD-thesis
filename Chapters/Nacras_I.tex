@@ -288,6 +288,22 @@ The model is defined according to the following reaction processes,
 \end{equation}
 which is graphically summarised in \cref{fig: SIRP_scheme}.
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Figures/SIRP_scheme_mod.jpg}
+    \caption{SIRP model flow diagram. The model variables are represented
+        by capital letters: susceptible hosts ($S$), infected hosts ($I$), dead
+        hosts
+        ($R$) and the population of parasite ($P$). Arrows represent the
+        processes in
+        the model with their rates indicated next to them and blue rings
+        represent
+        parasites. The flow follows the scheme in \cref{eq:scheme_reinfection},
+        that
+        leads to the system of differential equations in \cref{eq:SIRP}.}
+    \label{fig: SIRP_scheme}
+\end{figure}
+
 According to the scheme in \cref{fig: SIRP_scheme}, we consider the host in 3
 possible states: susceptible, $S$, infected by the parasite, $I$ and removed
 (dead), $R$. Then we introduce the parasite population in the medium (water),
@@ -322,22 +338,6 @@ between susceptible fan mussels and the average parasite population is given by
 $PS$, and, thus, the change in the number of susceptible fan mussels takes the
 form $\dot{S}=-\bar{\beta} PS$,  where the dot over a variable indicates a
 differentiation with respect to time: $\dot{S}=dS/dt$.
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=1\textwidth]{Figures/SIRP_scheme_mod.jpg}
-    \caption{SIRP model flow diagram. The model variables are represented
-        by capital letters: susceptible hosts ($S$), infected hosts ($I$), dead
-        hosts
-        ($R$) and the population of parasite ($P$). Arrows represent the
-        processes in
-        the model with their rates indicated next to them and blue rings
-        represent
-        parasites. The flow follows the scheme in \cref{eq:scheme_reinfection},
-        that
-        leads to the system of differential equations in \cref{eq:SIRP}.}
-    \label{fig: SIRP_scheme}
-\end{figure}
 
 \begin{table}[H]
     \centering
@@ -640,7 +640,7 @@ with the decrease of both $S_0$ or $\bar{\beta}$.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=1\textwidth]{Figures/R_0_sensitivity.jpg}
+    \includegraphics[width=\textwidth]{Figures/R_0_sensitivity.jpg}
     \caption{Panel (a): Local sensitivity analysis of $R_0$ for the
         baseline parameters $\lambda=1$, $\gamma=1$ and
         $\mu=\bar{\beta}=S_0=1$. The
@@ -975,6 +975,23 @@ determined by the fit). For consistency with the previous fitting we expect to
 obtain $\beta'=2.28$ and $4.36$ as the optimal parameters for the IFAPA and OCE
 water tanks, respectively, and this is the case.
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{Figures/approx_SIR_fitting.jpg}
+    \caption{Parameter fitting for the R compartment to model
+        (\cref{eq:SIRslow}) using data from IFAPA (panel (a)) and Oceanogràfic
+        (panel
+        (b)). The left part of both panels of the figure shows the optimal fit
+        of the
+        model to empirical data with $RSS=10.9, 0.8$ for IFAPA and OCE,
+        respectively.
+        The right panels show the variation of the $RSS$ error for some values
+        of
+        $\gamma$.  The $\beta'$ values have been obtained assuming a standard
+        incidence, as explained in the main text.}
+    \label{fig:approx_SIR_fit}
+\end{figure}
+
 Interestingly, as reduced model \cref{eq:SIRslow} has fewer parameters to
 fit we can relax our initial assumption of $\gamma=\SI{1}{month^{-1}}$ and
 check how the fit improves or worsens when varying $\gamma$.
@@ -998,23 +1015,6 @@ implying a probably more reasonable ratio of $1.43$ for $\beta'$ in both tanks
 From the optimal parameters we obtain the basic reproduction number, since
 $R_0=\beta'/\gamma$ we have that $R_0^{\textrm{IFAPA}}\simeq2$ and
 $R_0^{\textrm{OCE}}\simeq4$, clearly above the epidemic threshold.
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=1\textwidth]{Figures/approx_SIR_fitting.jpg}
-    \caption{Parameter fitting for the R compartment to model
-        (\cref{eq:SIRslow}) using data from IFAPA (panel (a)) and Oceanogràfic
-        (panel
-        (b)). The left part of both panels of the figure shows the optimal fit
-        of the
-        model to empirical data with $RSS=10.9, 0.8$ for IFAPA and OCE,
-        respectively.
-        The right panels show the variation of the $RSS$ error for some values
-        of
-        $\gamma$.  The $\beta'$ values have been obtained assuming a standard
-        incidence, as explained in the main text.}
-    \label{fig:approx_SIR_fit}
-\end{figure}
 
 Summarising, the SIRP model is able to fit two sets of experimental data,
 agreeing with a standard incidence, according to which the infection rate

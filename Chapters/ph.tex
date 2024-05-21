@@ -204,7 +204,7 @@ available for Cabrera (\cref{fig:data}(a-c)).
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.7\textwidth]{Figures/Data_study.pdf}
+    \includegraphics[width=0.62\textwidth]{Figures/Data_study.pdf}
     \caption{Daily averaged time series data from the Bay of Palma (black dots)
         and Cabrera stations (grey dots): a) Temperature (Cº), b) Salinity
         (psu), c)
@@ -252,30 +252,6 @@ in surface salinity, showed a relevant decrease of -4.0 ± 0.4 ${\mu
 supported by the discrete water samples for TA obtained during the period from
 2019 to 2021  (\cref{fig:S1}).
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.85\textwidth]{Figures/Best_bidirectional_LSTM.pdf}
-    \caption{Bidirectional LSTM neural network model applied to assess the
-        decadal pH\textsubscript{T} trend in the Bay of Palma: a) Training
-        process
-        monitoring loss for both training and validation sets, b) Predicted
-        pH\textsubscript{T} values against their true values where the black
-        line is
-        the reference for a perfect prediction, c) Predicted
-        pH\textsubscript{T} time
-        series in the training process (orange) and ground truth series (blue)
-        and d)
-        Final prediction for the decadal pH\textsubscript{T} time series using
-        the
-        output data of the trained model and the measured data. Measured pH
-        data shown
-        in blue, predicted data in the training process is shown in orange and
-        reconstructed data is shown in red. The black line represents the
-        decadal pH
-        trend.}
-    \label{fig:best_LSTM}
-\end{figure}
-
 \subsection{Reconstruction pH time series with Deep Learning}
 
 The amount of available pH\textsubscript{T} data from both Palma Bay and
@@ -300,28 +276,6 @@ pH\textsubscript{T} time series exhibits. Thus, we will use the model to fill
 the gaps in the pH\textsubscript{T} time series from 2019 to present, as shown
 in (\cref{fig:data}(d)).
 
-\begin{figure}[H]
-    \centering
-
-    \includegraphics[width=0.85\textwidth]{Figures/bidirectional_LSTM_gap_filling.pdf}
-    \caption{Bidirectional LSTM Neural Network model applied to fill the
-        gaps in the pH\textsubscript{T} time series in Cabrera: a) Training
-        process
-        monitoring loss for both training and validation sets, b) Predicted
-        pH\textsubscript{T} values against their true values where the black
-        line is
-        the reference for perfect prediction, c) Predicted pH\textsubscript{T}
-        time
-        series in the training process (orange) and ground truth series (blue)
-        and d)
-        Gaps in the pH\textsubscript{T} time series filled with the trained
-        model
-        (red), while measured pH\textsubscript{T} are shown in blue and
-        predicted data
-        in the training process shown in orange.}
-    \label{fig:Cabrera_gap_filling}
-\end{figure}
-
 A BiDireccional Long Short-Term Memory (BD-LSTM) neural network
 (\cref{fig:BD_LSTM_scheme}) was selected as the best recurrent neural network
 architecture to reconstruct the pH\textsubscript{T} time series in the Bay of
@@ -341,6 +295,30 @@ $1000$ independent training-prediction processes were carried out using a
 BD-LSTM neural network. The results showed a mean slope of  $-0.0020 \pm
     0.00054$ for the decadal acidification trend (see methods).
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{Figures/Best_bidirectional_LSTM.pdf}
+    \caption{Bidirectional LSTM neural network model applied to assess the
+        decadal pH\textsubscript{T} trend in the Bay of Palma: a) Training
+        process
+        monitoring loss for both training and validation sets, b) Predicted
+        pH\textsubscript{T} values against their true values where the black
+        line is
+        the reference for a perfect prediction, c) Predicted
+        pH\textsubscript{T} time
+        series in the training process (orange) and ground truth series (blue)
+        and d)
+        Final prediction for the decadal pH\textsubscript{T} time series using
+        the
+        output data of the trained model and the measured data. Measured pH
+        data shown
+        in blue, predicted data in the training process is shown in orange and
+        reconstructed data is shown in red. The black line represents the
+        decadal pH
+        trend.}
+    \label{fig:best_LSTM}
+\end{figure}
+
 Regarding the Cabrera data set, with the available ambient time series it
 is only possible to fill the data gaps, task for which a BD-LSTM neural network
 was also used. As for the Bay of Palma the training process was successfully
@@ -352,6 +330,28 @@ training dataset, showing some deviations as usual
 perfectly captured by the model (\cref{fig:Cabrera_gap_filling}(c)) and thus
 the gap can be filled with reliable data, red points in
 (\cref{fig:Cabrera_gap_filling}(d)).
+
+\begin{figure}[H]
+    \centering
+
+    \includegraphics[width=\textwidth]{Figures/bidirectional_LSTM_gap_filling.pdf}
+    \caption{Bidirectional LSTM Neural Network model applied to fill the
+        gaps in the pH\textsubscript{T} time series in Cabrera: a) Training
+        process
+        monitoring loss for both training and validation sets, b) Predicted
+        pH\textsubscript{T} values against their true values where the black
+        line is
+        the reference for perfect prediction, c) Predicted pH\textsubscript{T}
+        time
+        series in the training process (orange) and ground truth series (blue)
+        and d)
+        Gaps in the pH\textsubscript{T} time series filled with the trained
+        model
+        (red), while measured pH\textsubscript{T} are shown in blue and
+        predicted data
+        in the training process shown in orange.}
+    \label{fig:Cabrera_gap_filling}
+\end{figure}
 
 \section{Discussion}
 The achievement of long time oceanographic data series suitable to evaluate

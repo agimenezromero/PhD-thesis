@@ -127,17 +127,17 @@ $1$, which implies that, as it could be expected, it is more difficult to
 induce a global outbreak in a spatially extended system (a two dimensional
 lattice in our case) that in a well mixed (non-spatial) population.
 
-The paper is organised as follows: in \cref{sec:model}, we introduce some
-biological considerations for bivalve epidemics, discussed in more detailed in
-Ref. \cite{GimenezRomero2021}, and build the spatially-explicit model. In
-\cref{sec:results}, we present analytical results that are discussed and
-supported by numerical simulations. Specifically, the high mobility limit is
-discussed and connected to the the compartmental model. An approximation for
-the parasite population is discussed. Then, the effect of parasite mobility to
-the epidemic threshold is characterised, deriving an analytical expression for
-the basic reproduction number. Furthermore, the spreading speed of the disease
-and the time-scale to extinction is investigated. Finally, \cref{sec:
-    conclusions} contains some concluding remarks.
+% The paper is organised as follows: in \cref{sec:model}, we introduce some
+% biological considerations for bivalve epidemics, discussed in more detailed in
+% Ref. \cite{GimenezRomero2021}, and build the spatially-explicit model. In
+% \cref{sec:results}, we present analytical results that are discussed and
+% supported by numerical simulations. Specifically, the high mobility limit is
+% discussed and connected to the the compartmental model. An approximation for
+% the parasite population is discussed. Then, the effect of parasite mobility to
+% the epidemic threshold is characterised, deriving an analytical expression for
+% the basic reproduction number. Furthermore, the spreading speed of the disease
+% and the time-scale to extinction is investigated. Finally, \cref{sec:
+%     conclusions} contains some concluding remarks.
 
 \section{The SIRP spatial model} \label{sec:model}
 
@@ -381,6 +381,23 @@ at time $t$ and $\kappa\ll\mu$ is fulfilled, there will be a total parasite
 population of $P(t)=(\lambda/\mu) I(t)$, which is equivalent to
 \cref{eq:P_approx_II}.
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\columnwidth]{Figures/P_approx.png}
+    \caption{Numerical verification of the approximate expression for the
+        parasite population dynamics, \cref{eq:P_approx_II}, for different
+        mobility
+        conditions. The simulations were performed fixing $\beta=\gamma=1$  for
+        all
+        panels. (a) $\mu=1$ $\kappa=10^2$, $\lambda=6.06$,
+        $\kappa/(\mu+\kappa)=0.99$;
+        (b) $\mu=100$, $\kappa=10^4$, $\lambda=306$,
+        $\kappa/(\mu+\kappa)=0.99$; (c)
+        $\mu=1$, $\kappa=0.01$, $\lambda=1200$, $\kappa/(\mu+\kappa)=0.01$; (d)
+        $\mu=100$, $\kappa=1$, $\lambda=60600$,  $\kappa/(\mu+\kappa)=0.01$}
+    \label{fig:P_approx}
+\end{figure}
+
 Thus, for the non-spatial limit ($\kappa\gg\mu$) we have that if
 $\mu\gg\beta,\gamma$ \cref{eq:P_approx_II} is valid, while for $\kappa\ll\mu$
 the
@@ -401,40 +418,6 @@ $\kappa\ll\mu$ but improves anyway when $\mu\gg\beta,\gamma$ (mean errors are
 $\kappa$ is with respect to $\mu$ the more valid \cref{eq:P_approx_II} is,
 regardless of the value of $\beta,\gamma$, while in the non-spatial limit,
 $\kappa\gg\mu$, the condition $\mu\gg\beta,\gamma$ is needed.
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=\columnwidth]{Figures/P_approx.png}
-    \caption{Numerical verification of the approximate expression for the
-        parasite population dynamics, \cref{eq:P_approx_II}, for different
-        mobility
-        conditions. The simulations were performed fixing $\beta=\gamma=1$  for
-        all
-        panels. (a) $\mu=1$ $\kappa=10^2$, $\lambda=6.06$,
-        $\kappa/(\mu+\kappa)=0.99$;
-        (b) $\mu=100$, $\kappa=10^4$, $\lambda=306$,
-        $\kappa/(\mu+\kappa)=0.99$; (c)
-        $\mu=1$, $\kappa=0.01$, $\lambda=1200$, $\kappa/(\mu+\kappa)=0.01$; (d)
-        $\mu=100$, $\kappa=1$, $\lambda=60600$,  $\kappa/(\mu+\kappa)=0.01$}
-    \label{fig:P_approx}
-\end{figure}
-
-\begin{figure*}[t!]
-    \centering
-    \includegraphics[width=1\textwidth]{Figures/PhaseDiagram.png}
-    \caption{(a) Phase diagram showing the transition between the the
-        disease-free phase and the propagation phase for several values of the
-        parasite
-        mobility and $R_0$. The colour code represents the fraction of dead
-        individuals
-        (i.e. $R/N$) in the final state of the epidemic computed by the average
-        over
-        1000 realisations. (b) Fit for the transition line following \cref{eq:
-            threshold_corrections}, where dots are the maximums of the ``order
-        parameter''
-        fluctuations, $\chi=\avg{{R(\infty})^2}-\avg{R(\infty)}^2$}
-    \label{fig:Phase_diagram}
-\end{figure*}
 
 \subsection{Spatial threshold}
 
@@ -537,6 +520,23 @@ mobility value as the $R_0$ value for which the fluctuations of the ``order
 parameter'' $\displaystyle \chi=\avg{{R(\infty})^2}-\avg{R(\infty)}^2$ are
 maximal, as this would be an indication of a transition between the
 disease-free and the propagation phases.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{Figures/PhaseDiagram.png}
+    \caption{(a) Phase diagram showing the transition between the the
+        disease-free phase and the propagation phase for several values of the
+        parasite
+        mobility and $R_0$. The colour code represents the fraction of dead
+        individuals
+        (i.e. $R/N$) in the final state of the epidemic computed by the average
+        over
+        1000 realisations. (b) Fit for the transition line following \cref{eq:
+            threshold_corrections}, where dots are the maximums of the ``order
+        parameter''
+        fluctuations, $\chi=\avg{{R(\infty})^2}-\avg{R(\infty)}^2$}
+    \label{fig:Phase_diagram}
+\end{figure}
 
 \cref{fig:Phase_diagram}(a) shows the numerical results of the computed
 transition between the disease-free and propagation phases. The heatmap coding

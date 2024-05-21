@@ -376,6 +376,64 @@ successfully converged to the posterior distributions
 (\cref{fig:parameter_estimates_ALSD} (D-E) and
 \cref{fig:parameter_estimates_OQDS} (D-E)).
 
+The latter distributions are far from a Gaussian-like shape (note that the
+x-axis is log-scaled), being heavy-tailed. This kind of distribution highly
+distorts the statistical measures of mean, median and standard error,
+indicating that the estimates for transmission rates are not as robust as the
+estimates for the other parameters. These rather uninformative distributions
+are most probably arising because of the lack of data about the vector, i.e.
+$S_v(t)$ and $I_v(t)$, to constrain the fits. In essence, many combinations of
+$\alpha$ and $\beta$ can similarly fit the host data while yielding quite
+different time series for $S_v(t)$ and $I_v(t)$, which cannot be contrasted due
+to the lack of field data. Nevertheless, the obtained best-fit mean and median
+parameters, although quite different, are able to perfectly fit the data
+(\cref{fig:best_fit_model}). Finally, we also observe that the variance for the
+field data also converged to a bell-shaped distribution.
+
+\begin{figure}[H]
+    \centering
+
+    \includegraphics[width=0.9\textwidth]{Figures/Parameter_estimates_ALSD.pdf}
+    \caption{Posterior (blue histograms) and prior (red line) distributions
+        of the model parameters for ALSD. Solid and dashed black lines
+        correspond to
+        the mean and median of the posterior distributions. (A) Host infectious
+        period
+        $\tau_I=1/\gamma$. (B) Host latent period $\tau_E=1/\kappa$.  (C)
+        Vector
+        removal rate $\mu$. (D) Vector infection rate $\alpha$. (E) Host
+        infection rate
+        $\beta$. (F) The variance of the field data $\sigma^2$.}
+    \label{fig:parameter_estimates_ALSD}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+
+    \includegraphics[width=0.9\textwidth]{Figures/Parameter_estimates_OQDS.pdf}
+    \caption{Posterior (blue histograms) and prior (red line) distributions
+        of the model parameters for OQDS. Solid and dashed black lines
+        correspond to
+        the mean and median of the posterior distributions. (A) Host infectious
+        period
+        $\tau_I=1/\gamma$. (B) Host latent period $\tau_E=1/\kappa$. (C) Vector
+        removal
+        rate $\mu$. (D) Vector infection rate $\alpha$. (E) Host infection rate
+        $\beta$. (F) Variance of the field data $\sigma^2$.}
+    \label{fig:parameter_estimates_OQDS}
+\end{figure}
+
+Mean and median parameter estimates, i.e. the best-fit parameter values for
+ALSD and OQDS, are summarized in
+\cref{tab:parameter_estimates_ALSD,tab:parameter_estimates_OQDS}, respectively.
+As already seen from the posterior distributions, the best-fit values for
+$\tau_E$, $\tau_I$ and $\mu$ are close to the ones given by literature and
+field data for both diseases. Conversely, $\alpha$ and $\beta$ are rather
+uninformative, as their 95\% confidence intervals cover almost two orders of
+magnitude. This again indicates that without some data about the evolution of
+the vector states in time, $S_v(t)$ and $I_v(t)$, it is nearly impossible to
+derive the proper values for these parameters.
+
 \begin{table}[H]
     \centering
     \caption{Estimated epidemiological parameters from Bayesian model
@@ -421,64 +479,6 @@ successfully converged to the posterior distributions
     }
     \label{tab:parameter_estimates_ALSD}
 \end{table}
-
-The latter distributions are far from a Gaussian-like shape (note that the
-x-axis is log-scaled), being heavy-tailed. This kind of distribution highly
-distorts the statistical measures of mean, median and standard error,
-indicating that the estimates for transmission rates are not as robust as the
-estimates for the other parameters. These rather uninformative distributions
-are most probably arising because of the lack of data about the vector, i.e.
-$S_v(t)$ and $I_v(t)$, to constrain the fits. In essence, many combinations of
-$\alpha$ and $\beta$ can similarly fit the host data while yielding quite
-different time series for $S_v(t)$ and $I_v(t)$, which cannot be contrasted due
-to the lack of field data. Nevertheless, the obtained best-fit mean and median
-parameters, although quite different, are able to perfectly fit the data
-(\cref{fig:best_fit_model}). Finally, we also observe that the variance for the
-field data also converged to a bell-shaped distribution.
-
-\begin{figure}[H]
-    \centering
-
-    \includegraphics[width=0.95\textwidth]{Figures/Parameter_estimates_ALSD.pdf}
-    \caption{Posterior (blue histograms) and prior (red line) distributions
-        of the model parameters for ALSD. Solid and dashed black lines
-        correspond to
-        the mean and median of the posterior distributions. (A) Host infectious
-        period
-        $\tau_I=1/\gamma$. (B) Host latent period $\tau_E=1/\kappa$.  (C)
-        Vector
-        removal rate $\mu$. (D) Vector infection rate $\alpha$. (E) Host
-        infection rate
-        $\beta$. (F) The variance of the field data $\sigma^2$.}
-    \label{fig:parameter_estimates_ALSD}
-\end{figure}
-
-\begin{figure}[H]
-    \centering
-
-    \includegraphics[width=0.95\textwidth]{Figures/Parameter_estimates_OQDS.pdf}
-    \caption{Posterior (blue histograms) and prior (red line) distributions
-        of the model parameters for OQDS. Solid and dashed black lines
-        correspond to
-        the mean and median of the posterior distributions. (A) Host infectious
-        period
-        $\tau_I=1/\gamma$. (B) Host latent period $\tau_E=1/\kappa$. (C) Vector
-        removal
-        rate $\mu$. (D) Vector infection rate $\alpha$. (E) Host infection rate
-        $\beta$. (F) Variance of the field data $\sigma^2$.}
-    \label{fig:parameter_estimates_OQDS}
-\end{figure}
-
-Mean and median parameter estimates, i.e. the best-fit parameter values for
-ALSD and OQDS, are summarized in
-\cref{tab:parameter_estimates_ALSD,tab:parameter_estimates_OQDS}, respectively.
-As already seen from the posterior distributions, the best-fit values for
-$\tau_E$, $\tau_I$ and $\mu$ are close to the ones given by literature and
-field data for both diseases. Conversely, $\alpha$ and $\beta$ are rather
-uninformative, as their 95\% confidence intervals cover almost two orders of
-magnitude. This again indicates that without some data about the evolution of
-the vector states in time, $S_v(t)$ and $I_v(t)$, it is nearly impossible to
-derive the proper values for these parameters.
 
 \begin{table}[H]
     \centering
@@ -526,26 +526,6 @@ derive the proper values for these parameters.
     \label{tab:parameter_estimates_OQDS}
 \end{table}
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.9\textwidth]{Figures/BayesianInference.pdf}
-    \caption{(A) Simulation of the model with the best-fit parameters for
-        ALSD. (B) Model fit to field data by means of the mean and median
-        values of the
-        posterior distributions of the parameters for ALSD. (C) Simulation of
-        the model
-        with the best-fit parameters for OQDS. (D) Model fit to field data by
-        means of
-        the mean and median values of the posterior distributions of the
-        parameters for
-        OQDS. The gray-shaded area corresponds to the 99\% confidence interval.
-        The
-        error bars for the field data correspond to their 95\% confidence
-        interval
-        obtained with a bootstrapping technique.}
-    \label{fig:best_fit_model}
-\end{figure}
-
 Overall, the data falls within the 99\% confidence limits of the fitted
 model for both the ALSD and OQDS outbreaks (\cref{fig:best_fit_model} (B,D)).
 We
@@ -576,25 +556,22 @@ $I_v(t)$.
 
 \begin{figure}[H]
     \centering
-
-    \includegraphics[width=\textwidth]{Figures/OQDS_different_vector_curves_same_host_curve.pdf}
-    \caption{(A) Simulation of the model with the original best-fit
-        parameters for OQDS. (B) Simulation of the model with the original
-        best-fit
-        parameters for OQDS but with different $\alpha$, $\beta$ values. (C)
-        Comparison
-        of the progression curves. Note that the curves for the hosts are very
-        similar
-        while the curve for the infected vector population is very different.
-        (D)
-        Comparison of the model fit to the data with both simulations. Solid
-        lines
-        correspond to results with the original best-fit parameters while
-        dash-dot
-        lines correspond to the results of the more realistic scenario with
-        different
-        $\alpha$ and $\beta$.}
-    \label{fig:best_fit_model_OQDS}
+    \includegraphics[width=0.9\textwidth]{Figures/BayesianInference.pdf}
+    \caption{(A) Simulation of the model with the best-fit parameters for
+        ALSD. (B) Model fit to field data by means of the mean and median
+        values of the
+        posterior distributions of the parameters for ALSD. (C) Simulation of
+        the model
+        with the best-fit parameters for OQDS. (D) Model fit to field data by
+        means of
+        the mean and median values of the posterior distributions of the
+        parameters for
+        OQDS. The gray-shaded area corresponds to the 99\% confidence interval.
+        The
+        error bars for the field data correspond to their 95\% confidence
+        interval
+        obtained with a bootstrapping technique.}
+    \label{fig:best_fit_model}
 \end{figure}
 
 Nevertheless, by manually exploring other values for $\alpha$ and $\beta$
@@ -622,6 +599,29 @@ relation between $\alpha$ and $\beta$ held when changing the assumed
 $N_v(0)=N_H/2$, obtaining that it kept approximately the same for very
 different values of the initial vector population.
 
+\begin{figure}[H]
+    \centering
+
+    \includegraphics[width=\textwidth]{Figures/OQDS_different_vector_curves_same_host_curve.pdf}
+    \caption{(A) Simulation of the model with the original best-fit
+        parameters for OQDS. (B) Simulation of the model with the original
+        best-fit
+        parameters for OQDS but with different $\alpha$, $\beta$ values. (C)
+        Comparison
+        of the progression curves. Note that the curves for the hosts are very
+        similar
+        while the curve for the infected vector population is very different.
+        (D)
+        Comparison of the model fit to the data with both simulations. Solid
+        lines
+        correspond to results with the original best-fit parameters while
+        dash-dot
+        lines correspond to the results of the more realistic scenario with
+        different
+        $\alpha$ and $\beta$.}
+    \label{fig:best_fit_model_OQDS}
+\end{figure}
+
 \subsection{Global Sensitivity Analysis}
 
 We computed the sensitivity indices for the model parameters with respect
@@ -633,21 +633,6 @@ to the intervals $\{\beta\in(0.001, 0.1), \ \tau_E\in(3,7), \ \tau_I\in(5,25),
     \ \alpha\in(0.001, 1), \ \mu\in(0.01, 0.04)\}$ using $10^4$ Quasi-Monte
 Carlo
 samples and are summarized in \cref{fig:GSA}.
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.75\textwidth]{Figures/GSA.pdf}
-    \caption{Global Sensitivity Analysis of the model parameters performed
-        with the Sobol method with respect to the time at which the infectious
-        population peaks, $t_{peak}$ (A-B), the magnitude of this peak,
-        $I_{peak}$
-        (C-D) and the final number of dead hosts, $R_{\infty}$ (E-F). The left
-        column
-        (A,C,E) shows the total and first-order indices and the right column
-        (B,D,F)
-        shows the second-order indices.}
-    \label{fig:GSA}
-\end{figure}
 
 Parameters $\alpha, \ \beta$ and $\mu$ are the most influential with regard
 to the time at which the infectious host population peaks, $t_{peak}$, the
@@ -667,6 +652,21 @@ the interactions between $\alpha-\beta$ and $\alpha-\mu$ produce the main
 contributions to the increase of output variance in all cases, while
 $\kappa-\beta$, $\kappa-\alpha$ and $\kappa-\mu$ interactions decrease the
 output variance.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.75\textwidth]{Figures/GSA.pdf}
+    \caption{Global Sensitivity Analysis of the model parameters performed
+        with the Sobol method with respect to the time at which the infectious
+        population peaks, $t_{peak}$ (A-B), the magnitude of this peak,
+        $I_{peak}$
+        (C-D) and the final number of dead hosts, $R_{\infty}$ (E-F). The left
+        column
+        (A,C,E) shows the total and first-order indices and the right column
+        (B,D,F)
+        shows the second-order indices.}
+    \label{fig:GSA}
+\end{figure}
 
 \subsection{Epidemic control through vector management}
 
