@@ -70,6 +70,8 @@
 
 \usepackage[utf8]{inputenc} % Required for inputting international characters
 \usepackage[T1]{fontenc} % Output font encoding for international characters
+\usepackage{tgbonum} % Use the TeX Gyre Bonum font
+\renewcommand{\sffamily}{\fontfamily{lmss}\selectfont}
 
 \usepackage{avant} % Use the Avantgarde font for headings
 

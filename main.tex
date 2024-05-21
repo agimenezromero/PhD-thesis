@@ -1,8 +1,11 @@
 \documentclass[
-	10pt, % Default font size, select one of 10pt, 11pt or 12pt
+	11pt, % Default font size, select one of 10pt, 11pt or 12pt
 	%fleqn, % Left align equations
 	a4paper, %a4paper, b5paper
 ]{LegrandOrangeBook}
+
+\usepackage{caption}
+\DeclareCaptionFont{lmss}{\fontfamily{lmss}\selectfont}
 
 % Book information for PDF metadata, remove/comment this block if not required 
 \hypersetup{
@@ -37,7 +40,7 @@
 \usepackage{amssymb}
 
 \usepackage{subfigure}
-\usepackage[labelfont=bf,font=sf]{caption}
+\usepackage[labelfont=bf, font=lmss]{caption}
 \usepackage{longtable}
 \usepackage{tabularray}
 
@@ -252,7 +255,7 @@
 \chapterspacebelow{7.25cm}
 
 \chapter{Introduction}
-\input{Chapters/Introduction.tex}
+\input{Chapters/Introduction.tex}\label{ch:introduction}
 
 %----------------------------------------------------------------------------------------
 %	Why do we need models?
