@@ -164,7 +164,7 @@ complex patterns at the flock level \cite{Vicsek1995}.
 Complex systems are also characterized by other features that are ubiquitous in
 Ecology, such as non-linear dynamics, feedback loops, self-organization, a lack
 of central control, pattern formation, unpredictability linked to the presence
-of chaors and the presence of multiple temporal, spatial or organizational
+of chaos and the presence of multiple temporal, spatial or organizational
 scales \cite{Bianconi_2023}. Non-linear dynamics are extremely common in
 ecological systems. An illustrative example are predator-prey interactions,
 where changes in the population of prey can lead to non-proportional changes in
@@ -279,68 +279,99 @@ for synthesis, analysis, development of conservation plans and policy making
 One of the simplest and most widely used types of models in ecology are
 deterministic continuous-time models, such as ordinary differential equations
 (ODEs), which describe how the state of a system changes over time based on
-known biological or ecological processes. For example, ODEs have been
-instrumental in modeling predator-prey dynamics, revealing the cyclical nature
-of these interactions and how they are influenced by factors such as carrying
-capacity and reproduction rates. Similarly, ODEs have been used to study the
-dynamics of infectious diseases, showing which are the determinants that can
-lead to the emergence and spread of epidemics \cite{Murray_book}. However,
-deterministic models may not fully capture the inherent variability
-and uncertainty present in ecological systems, which can be crucial for
-understanding the dynamics of populations and communities. Stochastic
-differential equations (SDEs) extend ODEs by including random fluctuations in
-the system, providing a more realistic representation of the dynamics of
-ecological systems. Stochastic models have been used to explore the effects of
-environmental variability, genetic drift, and demographic processes on
-population dynamics, providing insights into the factors that influence the
-viability of populations in changing environments. Obviously, continuous-time
-models are not the only way to model the dynamics of ecological systems.
-Discrete-time models, such as difference equations, are also widely used in
-Ecology. Perhaps the logistic map, which describes the growth of a population
-over discrete generations, is by far the most famous example \cite{May1976}.
+known biological or ecological processes. ODEs usually represent \textit{mean
+  field} descriptions of the system under study, assuming that the population
+or community is well-mixed and that the interactions among individuals are
+homogeneous. Under these assumptions, the system can be described by
+\textit{rate equations} that capture the dynamics of the system in terms of
+rates of change of the state variables. These models have been used to study a
+wide range of ecological processes, from population growth and competition to
+predator-prey dynamics and disease transmission, providing valuable insights
+into the mechanisms that drive the dynamics of ecological systems
+\cite{Murray_book}.
 
-Nevertheless, the dynamics of ecological systems are not only determined by
-their internal processes, but also by the spatial structure of the environment
-in which they are embedded. The natural extension of continuous-time models to
+Obviously, continuous-time models are not the only way to model the dynamics of
+ecological systems. Discrete-time models, such as difference equations, are
+also widely used in Ecology. Perhaps the logistic map, which describes the
+growth of a population over discrete generations, is by far the most famous
+example \cite{May1974}. Indeed, this model led to the discovery of
+\textit{chaotic dynamics} in simple ecological systems, in which small changes
+in the initial conditions can lead to large differences in the long-term
+behavior of the system. This discovery revolutionized the field of Ecology,
+highlighting the importance of non-linear dynamics in population and community
+dynamics. Of course, this chaotic behavior is not exclusive to discrete-time
+models, as it can also be observed in continuous-time models, such as the
+Lotka-Volterra predator-prey equations, which exhibit complex dynamics, such as
+limit cycles, bifurcations, and chaos, under certain parameter values
+\cite{Murray_book}.
+
+However, deterministic models may not fully capture the inherent variability
+and uncertainty present in ecological systems, which is not always due to
+chaotic dynamics. Stochastic models can provide a more realistic representation
+of the randomness and variability that are present in some ecological systems.
+For example, stochastic differential equations (SDEs) extend ODEs by including
+random fluctuations in the system that represent the effects of environmental
+variability, demographic stochasticity, or genetic drift. Similarly, discrete
+stochastic models simulate the dynamics of ecological systems by modeling the
+interactions among individuals as discrete events that occur with a certain
+probability. These models have been used to study the effects of environmental
+noise on population dynamics, the persistence of species in fluctuating
+environments, and the spread of diseases \cite{Murray_book}.
+
+The dynamics of ecological systems are not only determined by their internal
+processes, but also by the spatial structure of the environment in which they
+are embedded. The natural extension of continuous-time models to
 incorporate spatial dynamics is the use of partial differential equations
 (PDEs), which describe how the state of a system changes over time and
 space \cite{Murray_book}. These models have been instrumental in exploring
 dispersal mechanisms and predict changes in population density across space.
 PDEs are also used to model the spread of invasive species and disease
 transmission through susceptible populations, providing insights into the
-impacts of spatial structure on ecological invasions
-\cite{tilman1997spatial}. In addition, PDEs are the basis for
-reaction-diffusion models, which simulate the interactions between diffusion
-and reaction processes that lead to the formation of spatial patterns and
-structures in ecological systems. Environmental or demographic noise can also
-be incorporated into these models by means of stochastic partial differential
-equations (SPDEs), which provide a more realistic representation of the
-variability and uncertainty present in spatially structured ecological systems.
-Overall, spatial models are particularly valuable in conservation planning,
-helping to determine the most effective configurations of habitats to preserve
-species diversity and ecological function.
+impacts of spatial structure on ecological invasions \cite{tilman1997spatial}.
+In addition, nonlinear PDEs lead to pattern formation, the spontaneous
+emergence of spatial structure in systems with suitable local interaction and
+spatial coupling terms, like in the case of the Turing mechanism
+\cite{turing1952chemical}.
 
-Network models and individual-based models (IBMs) provide frameworks
-for studying more complex and heterogeneous interactions, both in a spatially
-extended and non-spatial context. Network models describe the interactions
-between the entities under study as a network of nodes and edges, where nodes
-represent individuals and edges represent the interactions between
-them. These models have been used to study the structure and dynamics of
-various ecological networks, such as food webs and pollination networks, and
-provide a rich framework to tackle problems in which interactions among many
-species are central, such as coevolution in species-rich communities
-\cite{Bascompte2007}. IBMs simulate the behaviors of individual organisms or
-entities based on a set of simple rules. These models are exceptionally useful
-to study heterogeneous populations, in which individuals differ in their
-characteristics or behaviors, and spatially explicit interactions. IBMs help in
-understanding how individual heterogeneity contribute to group dynamics and
-ecosystem-level patterns, providing insights that are often obscured in more
-traditional approaches. Initially, IBMs were used to model forest succession,
-exemplified by the JABOWA model, which described tree community dynamics in
-response to shading and growth patterns. Their applications then expanded to
-animal populations, including fish recruitment, bird nesting colonies, and
-predator-prey interactions, allowing for the examination of complex
-interspecific relationships and behaviors \cite{deangelis2014}.
+Environmental or demographic noise can also be incorporated into these models
+by means of stochastic partial differential equations (SPDEs), which provide a
+more realistic representation of the variability and uncertainty present in
+spatially structured ecological systems. Of course, spatial models can also
+be discrete, such as cellular automata, which divide the environment into
+discrete cells that can change state over time based on a set of rules. These
+models have been used to study the spread of forest fires, the dynamics of
+vegetation patterns, and the formation of spatially structured populations,
+providing insights into the effects of local interactions on the dynamics of
+ecological systems. Overall, spatial models are particularly valuable in
+conservation planning, helping to determine the most effective configurations
+of habitats to preserve species diversity and ecological function.
+
+Both these continuous and discrete models can be used to study the dynamics of
+ecological systems, but they are often limited by their assumptions of
+homogeneity in interactions and spatial structure. Network models and
+individual-based models (IBMs) provide frameworks for studying more complex and
+heterogeneous interactions, both in a spatially extended and non-spatial
+context. Network models describe the interactions between the entities under
+study as a network of nodes and edges, where nodes represent individuals or
+populations and edges represent the interactions between them. These models
+have been used to study the structure and dynamics of various ecological
+networks, such as food webs and pollination networks, and provide a rich
+framework to tackle problems in which interactions among many species are
+central, such as coevolution in species-rich communities \cite{Bascompte2007}.
+Of course, network models can be both deterministic or stochastic.
+
+IBMs simulate the behaviors of individual organisms or entities based on a set
+of simple rules. These models are exceptionally useful to study heterogeneous
+populations, in which individuals differ in their characteristics or behaviors,
+and spatially explicit interactions. IBMs help in understanding how individual
+heterogeneity contribute to group dynamics and ecosystem-level patterns,
+providing insights that are often obscured in more traditional approaches.
+Initially, IBMs were used to model forest succession, exemplified by the JABOWA
+model, which described tree community dynamics in response to shading and
+growth patterns. Their applications then expanded to animal populations,
+including fish recruitment, bird nesting colonies, and predator-prey
+interactions, allowing for the examination of complex interspecific
+relationships and behaviors \cite{deangelis2014}.
 
 % Machine learning and ecological modeling
 Data-driven techniques such as Machine Learning (ML) are also increasingly
