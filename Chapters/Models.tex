@@ -4,14 +4,15 @@
 Infectious diseases are caused by pathogenic microorganisms, such as
 bacteria, viruses, parasites, or fungi, when they invade other organisms, which
 are called \textit{hosts} in this context. These pathogens proliferate inside
-the host and can disrupt the normal functioning of the host organism by
+the host and can disrupt the normal functioning of the colonised organism by
 damaging tissues, altering physiological processes, or triggering immune
 responses that contribute to illness. Infectious diseases can affect a wide
-variety of organisms, from plants and animals to humans, and they can spread
-through various means, including direct interaction from infected individuals,
-both by close contact or at a distance, or through vectors. Vectors are
-organisms that transmit pathogens from one host to another, such as mosquitoes,
-that usually are not affected by the disease themselves.
+variety of organisms, from plants and animals to humans. The causal agents of
+infectious diseases can be transmitted from one host to another through
+different mechanisms, such as direct contact between an infected and a
+susceptible individual, through the air, water, or food, or through vectors.
+Vectors are organisms that transmit pathogens from one host to another, such as
+mosquitoes, that usually are not affected by the disease themselves.
 
 Modelling the spread of infectious diseases has a long history, with the first
 mathematical model coming from the hand of Bernoulli in 1760
@@ -19,17 +20,19 @@ mathematical model coming from the hand of Bernoulli in 1760
 smallpox. However, it was not until the early 20th century that we find the
 foundation of the modern theory of infectious disease dynamics, with the
 seminal work of Ronald Ross and Hilda P. Hudson
-\cite{Ross1916,Ross1917,Ross1917_2} and Kermack and McKendrick
-\cite{McKendrick}. Since then, a wide range of models have been
-developed to understand the dynamics of infectious diseases and to predict
-their spread. In general, these models can be classified into two main
-categories: compartmental models and individual-based models.
+\cite{Ross1916,Ross1917,Ross1917_2}, Kermack and McKendrick
+\cite{McKendrick} and later George Macdonald \cite{Macdonald1957}. Since then,
+a
+wide range of models have been developed to understand the dynamics of
+infectious diseases and to predict their spread. In general, these models can
+be classified into two main categories: compartmental models and
+individual-based models.
 
 \subsection{\label{sec:Compartmental models} Compartmental models}
 
 Compartmental models are based on the assumption that the population can be
 divided into different compartments or categories, each representing a
-different state of the disease (e.g. susceptible to infection and infected).
+different state of the disease (e.g. susceptible to infection, infected).
 Individuals move from one compartment to another following some dynamical
 rules. Under the assumption of a well-mixed and sufficiently large population,
 one can consider that  every pair of individuals has equal probability of
@@ -39,13 +42,25 @@ field approximation. Under these assumptions the dynamics of the disease can be
 described by a set of differential equations that govern the transitions
 between compartments.
 
-\subsubsection*{\label{sec:The SIR model} The SIR model}
-
-The most famous compartmental model is the SIR model, which is a simple
+Several compartmental models have been developed to describe the dynamics of
+infectious diseases. The most famous is the SIR model, which is a simple
 particular case of the general mathematical framework formulated by Kermack and
 McKendrick \cite{McKendrick}. Because the original Kermack-McKendrick model
 is quite general and complex, I will explain the SIR model following a more
-modern and intuitive approach. The SIR model divides the population into three
+modern and intuitive approach. In this model, the host population can be
+divided into three compartments: susceptible individuals (S), infected
+individuals (I), and recovered individuals (R). Other models have been
+developed to account for more complex scenarios, such as the SIS model (where
+recovered individuals become susceptible again), the SEIR model (where an
+exposed compartment is added to account for the incubation period of the
+disease), or the SIRS model (where recovered individuals can become susceptible
+again after some time). In addition, compartmental models have been developed
+to account for vector-borne diseases, including compartments for different
+states of the vector population.
+
+\subsubsection*{\label{sec:The SIR model} The SIR model}
+
+The SIR model divides the population into three
 compartments: susceptible individuals (S), infected individuals (I), and
 recovered individuals (R). Individuals come into contact with each other at a
 given rate $a$ and, in the case of a $S-I$ contact, the susceptible individual
@@ -78,7 +93,7 @@ Despite the aparent simplicity of the model, the non-linear nature of the
 differential equations makes it difficult to find analytical solutions.
 However, important quantitative insights can still be obtained by performing an
 analytical study of the model. We will now derive some important results from
-the SIR model, most of which cane be already found in reference
+the SIR model, most of which can be already found in reference
 \cite{Murray_book}.
 
 \subsubsection*{Conservation of the total population}
@@ -333,6 +348,24 @@ solution of the model for different values of $R_0$.
 % positive number, $S_\infty>0$, given the properties of the Lambert's
 % function.
 
+% Comment on standar incidence and mass action incidence.
+\subsubsection*{Incidence functions}
+In the SIR model we have considered a frequency-dependent function, where the
+rate of new infections is proportional to the product of the number of
+susceptible and infected individuals divided by the total population $\beta
+  SI/N$. This incidence function, known as \textit{standard incidence},
+considers that rate of infection is bounded as the population grows, assuming
+that the probability of a contact between a susceptible and an infected
+individual is less likely as the population grows. However, other incidence
+functions can be considered, such as the \textit{mass action incidence}, where
+the rate of new infections is proportional to the product of the number of
+susceptible and infected individuals, $\beta SI$. This incidence function can
+be used to describe scenarios in which all-to-all contacts are possible
+irrespective of the population size. The choice of the incidence function can
+have important consequences on the dynamics of the disease, as it can affect
+the threshold for the development of an epidemic, the maximum number of
+infected individuals, and the final number of susceptible individuals.
+
 So far we have shown how, under minimal assumptions, one can build an epidemic
 model such as the SIR model. In addition, we have shown how to obtain some
 important analytical results from the model, such as the threshold for the
@@ -504,7 +537,8 @@ a rate $\gamma$. The total number of plants is given by $N$, and the total
 number of vectors is given by $N_v$. Vectors are assumed to be born at a
 constant rate $\delta$ proportional to the total number of vectors and die at a
 constant rate $\mu$. With these assumptions, the dynamics of the disease can be
-described by the following system of differential equations,
+described by the following system of differential equations
+\cite{Brauer2016},
 \begin{equation}\label{eq: SIRV_model}
   \begin{array}{l}
     \dot{S}=-\beta SI_v/N_v                       \\
@@ -537,7 +571,7 @@ that thinks can get really complicated if we relax this assumption.
 After this initial check, we can proceed to obtain an expression for the basic
 reproduction number, $R_0$. To compute it we can follow the next generation
 matrix approach. We first need to identify the disease-free state of the
-system, which is given by $(S^*,I^*,R^*,S_v^*,I_v^*)=(S(0),0,N-S(0),N_v,0)$.
+system, which is given by $(S^*,I^*,R^*,S_v^*,I_v^*)=(S,0,N-S,N_v,0)$.
 Then we need to write down the Jacobian matrix of the subsystem corresponding
 to the infected/infecting compartments, $I$ and $I_v$ in this case and evaluate
 it at the disease-free state. This matrix is given by,
@@ -555,8 +589,9 @@ it at the disease-free state. This matrix is given by,
     \alpha N_v/N & 0
   \end{pmatrix} \ ,
 \end{equation}
-where we have substituted the fixed point
-$(S^*,I^*,R^*,S_v^*,I_v^*)=(S(0),0,N-S(0),N_v,0)$ in the last step.
+where we have substituted the fixed point $(S^*,I^*,R^*,S_v^*,I_v^*)$ in the
+last step considering, without loss of generality, that
+$(S^*,I^*,R^*,S_v^*,I_v^*)=(S(0),0,N-S(0),N_v,0)$
 
 Next we decompose the matrix in the transmission and transition parts,
 $J=T+\Sigma$, and compute the inverse of the transition part, $\Sigma^{-1}$,
@@ -586,8 +621,10 @@ transmission and transition parts,
 \end{equation}
 
 The basic reproduction number, $R_0$, is given by the spectral radius of the
-next generation matrix, $K$, which is the largest eigenvalue of the matrix. In
-this case, the matrix is a $2\times2$ matrix, so the eigenvalues can be easily
+next generation matrix, $K$, which is the largest eigenvalue of the matrix.
+In
+this case, the matrix is a $2\times2$ matrix, so the eigenvalues can be
+easily
 obtained. The characteristic polynomial of the matrix is given by,
 \begin{equation}
   \det(K-\lambda I)=\begin{vmatrix}
@@ -599,7 +636,8 @@ obtained. The characteristic polynomial of the matrix is given by,
     \frac{S(0)}{N}}
   \ ,
 \end{equation}
-so the eigenvalues are $\lambda_1=0$ and $\lambda_2=\beta\alpha S(0)/(\gamma\mu
+so the eigenvalues are $\lambda_1=0$ and $\lambda_2=\beta\alpha
+  S(0)/(\gamma\mu
   N)$. The basic reproduction number, $R_0$, is given by the largest eigenvalue
 of the matrix, so
 \begin{equation}
@@ -613,14 +651,16 @@ considering the individuals of the population as discrete entities that can
 interact with each other. These models are particularly useful when the
 population is not well-mixed, the interactions between individuals are
 heterogeneous, the individuals can not be considered as identical or when an
-spatial setting is considered. In individual-based models, the dynamics of the
+spatial setting is considered. In individual-based models, the dynamics of
+the
 disease are described by stochastic processes that govern the interactions
 between individuals. These models are usually more complex than compartmental
 models, so that analytical results are not usually available, but they can
 provide more realistic insights into the dynamics of infectious diseases.
 
 In individual-based models the population is represented by a set of
-individuals, each of which can be in different \textbf{states}. More formally,
+individuals, each of which can be in different \textbf{states}. More
+formally,
 the \textbf{system} at time $t$ is defined by the set of states of the
 individuals in the population at that time. The states of the individuals can
 change over time according to \textbf{events} that occur in the system, whcih
@@ -630,19 +670,24 @@ external factors. The events are characterized by their \textbf{rates}, which
 determine the probability of occurence per unit time. Mathematically, the
 dynamics of the system are described by the \textbf{master equations}
 \cite{Toral_master_eqs}, which are a set of differential equations that
-describe the probability of the system being in a given state at a given time.
-The master equations are usually difficult to solve analytically, so numerical
+describe the probability of the system being in a given state at a given
+time.
+The master equations are usually difficult to solve analytically, so
+numerical
 methods are used to simulate the dynamics of the system.
 
 \subsubsection*{The Gillespie algorithm}
 
-There are several ways to simulate the dynamics of individual-based models, but
-one of the most common methods is the Gillespie algorithm \cite{Gillespie1977},
+There are several ways to simulate the dynamics of individual-based models,
+but
+one of the most common methods is the Gillespie algorithm
+\cite{Gillespie1977},
 which is indeed an exact and unbiased algorithm to simulate stochastic
 processes. The Gillespie algorithm is based on the idea that the system will
 remain in a given state for a random amount of time until an event occurs,
 which will then change the state of the system. Thus, the change of state of
-the system can determined by two independent random processes: the time to the
+the system can determined by two independent random processes: the time to
+the
 next event and the particular event that occurs.
 
 Consider that we are simulating a system with $M$ possible events, each of
@@ -654,16 +699,7 @@ where $W=\sum_i^M w_i$ is the total rate of any event happening and
 $r_1=\hat{\mathbb{U}}(0,1)$ is a distributed random number in the interval
 $[0,1]$.
 
-Once the time of the next event has been computed, we choose the event to
-implement according to their conditional probabilities $p_i=w_i/W$. Basically,
-we draw another uniformly distributed random number $r_2$ and compare it to
-these conditional probabilities, finding the smallest $i$ satisfying
-$\sum_i^Mp_i>v$. The system is then updated according to the chosen event and
-the time is updated to $t_{\textrm{next}}$. This process is repeated until a
-termination condition is met. In \cref{alg:gillespie} we show a pseudocode
-implementation of the Gillespie algorithm.
-
-\begin{algorithm}
+\begin{algorithm}[H]
   \caption{Gillespie Algorithm}
   \label{alg:gillespie}
   \begin{algorithmic}[1]
@@ -685,20 +721,15 @@ implementation of the Gillespie algorithm.
   \end{algorithmic}
 \end{algorithm}
 
-The Gillespie algorithm provides a statistically exact way to solve the
-master equations underlying the IBM and gives a physical sense to the simulated
-time, as it comes directly from the event rates. However, one of its major
-drawbacks is the computational expense of the algorithm. Nevertheless, some
-tricks can be implemented to overcome these limitations and still provide an
-exact solution to the stochastic process. Two tricks have been used in our
-implementation of the Gillespie algorithm of \cref{ch:nacras_II}: first,
-instead of comparing $p_i$ with the random number $r_2$ we use $w_i$ over
-$v\cdot W$, as this way only a product is computed (instead of $M$)
-\cite{Toral_master_eqs}; second, we implemented the sorting direct method
-\cite{MCCOLLUM200639}. The method consists in dynamically sorting the events
-and try to apply the most frequent ones first, which can save a considerably
-amount of computational time. In \cref{alg:Chose_apply_event} we show a
-pseudocode implementation of core of the numerical method.
+Once the time of the next event has been computed, we choose the event to
+implement according to their conditional probabilities $p_i=w_i/W$.
+Basically,
+we draw another uniformly distributed random number $r_2$ and compare it to
+these conditional probabilities, finding the smallest $i$ satisfying
+$\sum_i^Mp_i>v$. The system is then updated according to the chosen event and
+the time is updated to $t_{\textrm{next}}$. This process is repeated until a
+termination condition is met. In \cref{alg:gillespie} we show a pseudocode
+implementation of the Gillespie algorithm.
 
 \begin{algorithm}[H]
   \caption{Sorting direct method}
@@ -736,9 +767,21 @@ pseudocode implementation of core of the numerical method.
   \end{algorithmic}
 \end{algorithm}
 
-% \AG{Something that could be added here is an example of the SIR model
-%   implemented with the Gillespie algorithm. We could also show how the mean
-%   field approximation works, both analytically and numerically.}
+The Gillespie algorithm provides a statistically exact way to solve the
+master equations underlying the IBM and gives a physical sense to the
+simulated
+time, as it comes directly from the event rates. However, one of its major
+drawbacks is the computational expense of the algorithm. Nevertheless, some
+tricks can be implemented to overcome these limitations and still provide an
+exact solution to the stochastic process. Two tricks have been used in our
+implementation of the Gillespie algorithm of \cref{ch:nacras_II}: first,
+instead of comparing $p_i$ with the random number $r_2$ we use $w_i$ over
+$v\cdot W$, as this way only a product is computed (instead of $M$)
+\cite{Toral_master_eqs}; second, we implemented the sorting direct method
+\cite{MCCOLLUM200639}. The method consists in dynamically sorting the events
+and try to apply the most frequent ones first, which can save a considerably
+amount of computational time. In \cref{alg:Chose_apply_event} we show a
+pseudocode implementation of core of the numerical method.
 
 We have seen how mathematical models can be used to study the dynamics of
 infectious diseases, which can provide important insights into the spread of
@@ -750,15 +793,18 @@ particularly in a context of climate change.
 
 \section{\label{sec:Disease biogeography} Disease biogeography}
 
-Biogeography is the study of the distribution of species and ecosystems across
+Biogeography is the study of the distribution of species and ecosystems
+across
 the Earth's surface, and it is a fundamental field in ecology. Disease
 biogeography is a subfield of biogeography that focuses on the geographical
 distribution of infectious diseases and the factors that influence their
-establishment, such as climate, land use, human activities, and the presence of
+establishment, such as climate, land use, human activities, and the presence
+of
 vectors or reservoirs. Understanding how these factors influence the
 spread of diseases at a geographical scale is essential to predict the
 risk of emergent diseases developing in new areas. This, in turn, can help
-public health authorities to design effective strategies to prevent and control
+public health authorities to design effective strategies to prevent and
+control
 the spread of diseases.
 
 The study of disease biogeography is particularly challenging due to the
@@ -783,13 +829,33 @@ conditions within a species' range that dictate its distribution
 \cite{Grinnell1917}. This is, the niche of a species is the set of
 environmental conditions, such as temperature, humidity, and precipitation,
 that are suitable for the species to survive and reproduce. This early
-interpretation, known as the Grinnellian niche, emphasized the abiotic factors
-essential for the survival and distribution of species, but neglected the
-biotic interactions that also shape species' distributions. Indeed, some years
-later Charles S. Elton redefined the niche concept to encompass the roles
+interpretation, known as the Grinnellian niche, emphasized the abiotic
+factors essential for the survival and distribution of species, but neglected
+the biotic interactions that also shape species' distributions. Indeed, some
+years later Charles S. Elton redefined the niche concept to encompass the roles
 species play within an ecosystem, including their interactions with other
-species. This Eltonian definition shifted the focus towards the biotic aspects
-of ecological niches \cite{Elton1927}.
+species. This Eltonian definition shifted the focus towards the biotic
+aspects of ecological niches \cite{Elton1927}.
+
+To integrate both views, Hutchinson introduced the concepts of
+fundamental and realized niches \cite{Hutchinson1957}. The fundamental niche
+describes a hypervolume of environmental conditions under which a species can
+survive without immigration (i.e. the Grinnellian niche), while the realized
+niche is the subset of the fundamental niche that the species can actually
+exploit due to biotic interactions (e.g. competition). This distinction
+between the fundamental and realized niches provides a more comprehensive
+understanding of the ecological niche of a species, taking into account both
+abiotic and biotic factors. For example, a species may have broad tolerances of
+abiotic conditions such as wide ranges of temperature and rainfall, thus
+providing a large fundamental niche, which translates in a wide potential
+distribution of the species. However, the interactions of this species with
+other ones may restrict it to only a subset of the abiotically suitable areas.
+The presence of competitors, predators, and pathogens (e.g. negative
+interactions) or the absence of key mutualistic species (e.g. positive
+interactions) can influence the survival of a species, ultimately shaping its
+realized niche. In mathematical terms, we can express the realized niche $R$ of
+a given species as the intersection of the abiotic niche $A$ and the biotic
+niche $B$, $R=A\cap B$ (\cref{fig:niche_concept} (a)).
 
 \begin{figure}[H]
   \centering
@@ -802,49 +868,38 @@ of ecological niches \cite{Elton1927}.
     niche integrates both abiotic and biotic factors, distinguishing
     between the fundamental and realized niches of a species. The BAM
     (Biotic-Abiotic-Movement) framework of the ecological niche concept. The
-    full ecological niche of a species includes the abiotic conditions that are
+    full ecological niche of a species includes the abiotic conditions that
+    are
     suitable for the species (abiotic niche), the biotic interactions that
     favor the species (biotic niche), and the areas that the species can
-    physically reach and colonize (dispersal niche). The realized niche is the
+    physically reach and colonize (dispersal niche). The realized niche is
+    the
     intersection of these three components.}
   \label{fig:niche_concept}
 \end{figure}
 
-To solve this apparent contradiction, Hutchinson introduced the concepts of
-fundamental and realized niches \cite{Hutchinson1957}. The fundamental niche
-describes a hypervolume of environmental conditions under which a species can
-survive without immigration (i.e. the Grinnellian niche), while the realized
-niche is the subset of the fundamental niche that the species can actually
-exploit due to biotic interactions (e.g. competition). This distinction between
-the fundamental and realized niches provides a more comprehensive understanding
-of the ecological niche of a species, taking into account both abiotic and
-biotic factors. For example, a species may have broad tolerances of abiotic
-conditions such as wide ranges of temperature and rainfall, thus providing a
-large fundamental niche, which translates in a wide potential distribution of
-the species. However, the interactions of this species with other ones may
-restrict it to only a subset of the abiotically suitable areas. The presence of
-competitors, predators, and pathogens (e.g. negative interactions) or the
-absence of key mutualistic species (e.g. positive interactions) can influence
-the survival of a species, ultimately shaping its realized niche. In
-mathematical terms, we can express the realized niche $R$ of a given species as
-the intersection of the abiotic niche $A$ and the biotic niche $B$, $R=A\cap
-  B$ (\cref{fig:niche_concept} (a)).
-
 However, the realized niche of a species can be further constrained by
-dispersal limitations, which can prevent the species from fully exploiting its
+dispersal limitations, which can prevent the species from fully exploiting
+its
 fundamental niche. This idea was comprehensively developed by Soberón and
-Peterson in 2005, who introduced the BAM (Biotic-Abiotic-Movement) framework to
+Peterson in 2005, who introduced the BAM (Biotic-Abiotic-Movement) framework
+to
 clarify the niche concept by emphasizing the species' dispersal capabilities
 alongside biotic and abiotic factors \cite{Soberon2005}. This framework
 suggests that the full ecological niche of a species includes not only the
-environmental conditions that are abiotically suitable and biotically favorable
+environmental conditions that are abiotically suitable and biotically
+favorable
 but also the areas that the species can physically reach and colonize. For
-example, a species originating from a tropical region in the Americas may have
+example, a species originating from a tropical region in the Americas may
+have
 suitable environmental conditions in other tropical regions around the world,
 such as Southeast Asia, and even may be lucky enough to find an absence of
-competitors or predators in there. Yet, it will not be able to establish there
-if it is unable to disperse. So, in mathematical terms, the realized niche $R$
-of a species can be expressed as the intersection of the abiotic niche $A$, the
+competitors or predators in there. Yet, it will not be able to establish
+there
+if it is unable to disperse. So, in mathematical terms, the realized niche
+$R$
+of a species can be expressed as the intersection of the abiotic niche $A$,
+the
 biotic niche $B$, and the dispersal (movement) niche $M$, $R=A\cap B\cap M$
 (\cref{fig:niche_concept} (b)).
 
@@ -854,30 +909,32 @@ biotic niche $B$, and the dispersal (movement) niche $M$, $R=A\cap B\cap M$
 
 Species distribution models (SDMs) are a powerful tool that can be used to
 predict the potential geographic distribution of species based on the
-environmental conditions that favor their establishment. SDMs are based on the
-concept of ecological niches, and they use environmental data to predict the
-potential distribution of the species. In general, SDMs can be both mechanistic
-and correlative, depending on the underlying assumptions of the model.
-Mechanistic SDMs are based on the physiological or ecological requirements of
-the species, while correlative SDMs are based on statistical relationships
-between the presence and absence of the species in different locations and
-their environmental conditions. Thus, correlative SDMs make use of statistical
-models that relate the presence and absence of a species to environmental
-variables. If this relation renders successful, the model can be then used to
-predict the potential distribution of the species at different locations based
-on their environmental conditions. Because most of the SDMs that have been
-employed so far are in the literature are based on correlative methods, we will
-refer to correlative SDMs as just SDMs in the following.
+environmental conditions that favor their establishment. SDMs are based on
+the concept of ecological niches, and they use environmental data to predict
+the potential distribution of the species. In general, SDMs can be both
+mechanistic and correlative, depending on the underlying assumptions of the
+model. Mechanistic SDMs are based on the physiological or ecological
+requirements of the species, while correlative SDMs are based on statistical
+relationships between the presence and absence of the species in different
+locations and their environmental conditions \cite{Kearney2009}. Thus,
+correlative SDMs make use of statistical models that relate the presence and
+absence of a species to certain environmental variables. If this relation
+renders successful, the model can be then used to predict the potential
+distribution of the species at different locations based on their environmental
+conditions. Because most of the SDMs that have been employed so far are in the
+literature are based on correlative methods, we will refer to correlative SDMs
+as just SDMs in the following.
 
 Many statistical methods can be used to build SDMs, such as logistic
 regression, generalized linear models and machine learning algorithms, like
-random forests or support vector machines \cite{Franklin2010}. These methods
-have different strengths and weaknesses, and the choice of method depends on
-the characteristics of the data and the research question. For example,
-logistic regression is simple and interpretable, allowing researchers to
-understand the relationship between the species and the environmental
-variables, while machine learning algorithms are more flexible and can capture
-complex relationships but often lack the explanatory power of simpler models.
+random forests or support vector machines or MaxEnt \cite{Franklin2010}. These
+methods have different strengths and weaknesses, and the choice of method
+depends on the characteristics of the data and the research question. For
+example, logistic regression is simple and interpretable, allowing researchers
+to understand the relationship between the species and the environmental
+variables, while machine learning algorithms are more flexible and can
+capture complex relationships but often lack the explanatory power of simpler
+models.
 
 \begin{figure}
   \centering
@@ -887,8 +944,10 @@ complex relationships but often lack the explanatory power of simpler models.
     the banana slug \textit{Ariolimax buttoni}, which is only present in the
     west of the United States. Inset:  \textit{Ariolimax (Ariolimax) buttoni}
     (Pilsbry \& Vanatta, 1896) observed by
-    \href{https://www.inaturalist.org/photos/345291902}{citysalamanders} (under
-    \href{http://creativecommons.org/licenses/by-nc/4.0/}{CC BY-NC 4.0}) (b-d)
+    \href{https://www.inaturalist.org/photos/345291902}{citysalamanders}
+    (under
+    \href{http://creativecommons.org/licenses/by-nc/4.0/}{CC BY-NC 4.0})
+    (b-d)
     Environmental variables used to build the SDM. (e) Presence and modeled
     pseudo-absence data of the banana slug \textit{Ariolimax buttoni} in the
     west of the United States. (f) Predicted potential distribution of the
@@ -898,42 +957,47 @@ complex relationships but often lack the explanatory power of simpler models.
 
 % Referencia inset: https://www.gbif.org/es/occurrence/4510206467
 
-The overall process of building an SDM can be often divided into several steps
-\cite{Elith2006}: First we need to collect data on the species of interest and
-the environmental variables that may influence its distribution. This data can
-be obtained from field surveys, remote sensing, or databases such as GBIF
-(Global Biodiversity Information Facility) \cite{GBIF} or WorldClim
+The overall process of building an SDM can be often divided into several
+steps \cite{Elith2006}: First we need to collect data on the species of
+interest and the environmental variables that may influence its distribution.
+This data can be obtained from field surveys, remote sensing, or databases such
+as GBIF (Global Biodiversity Information Facility) \cite{GBIF} or WorldClim
 \cite{WorldClim}. Once the data has been collected, it needs to be preprocessed
-to remove missing values, outliers, and redundant variables. In many cases, the
-data on the presence of the species is more abundant than the data on the
+to remove missing values, outliers, and redundant variables. In many cases,
+the data on the presence of the species is more abundant than the data on the
 absence of the species, or directly there is no absence data available. To
 address this issue, we can generate pseudo-absence data by randomly selecting
-points from areas where the species is not known to occur \cite{Iturbide2015}.
-The data is then partitioned into a training set and a testing set. The
-training set is used to fit the model to the data, while the testing set is
-used to evaluate the performance of the model. We then train the model by
-fitting it to the data and estimating the parameters that best predict the
-presence and absence of the species based on the environmental variables. We
-then evaluate the model to assess its performance using metrics such as the
+points from areas where the species is not known to occur
+\cite{Iturbide2015}. The data is then partitioned into a training set and a
+testing set. The training set is used to fit the model to the data, while the
+testing set is used to evaluate the performance of the model. We then train the
+model by fitting it to the data and estimating the parameters that best predict
+the presence and absence of the species based on the environmental variables.
+We then evaluate the model to assess its performance using metrics such as the
 area under the receiver operating characteristic curve (AUC), or the Kappa
-statistic. Finally, the model can be used to predict the potential distribution
-of the species at different locations based on their environmental conditions.
+statistic. Finally, the model can be used to predict the potential
+distribution of the species at different locations based on their environmental
+conditions.
 
 To illustrate the process of building an SDM, we will consider the example of
 \textit{Ariolimax buttoni}, a species of banana slug native to coastal
 California in the west of the United States (\cref{fig:SDM_example}). This is
-example is provided by the \textit{elapid} Python library \cite{Elapid}, which
-uses temperature, cloud cover and leaf area index as environmental variables to
-predict the potential distribution of the banana slug using a MaxEnt model. The
+example is provided by the \textit{elapid} Python library \cite{Elapid},
+which
+uses temperature, cloud cover and leaf area index as environmental variables
+to
+predict the potential distribution of the banana slug using a MaxEnt model.
+The
 code is freely available at the documentation webpage of the library.
 
 In \cref{fig:SDM_example}(a) we show the distribution of the banana slug
 \textit{Ariolimax buttoni} in the west of the United States. The species is
 only present in coastal California, where the environmental conditions are
 suitable for its survival. In \cref{fig:SDM_example}(b-d) we show the annual
-mean of the environmental variables used to build the SDM \footnote{The standar
+mean of the environmental variables used to build the SDM \footnote{The
+  standar
   deviation of these variables are also used in the SDM but are not shown in
-  the	figure for simplicity}. The presence and modeled pseudo-absence data of
+  the figure for simplicity}. The presence and modeled pseudo-absence data of
 the banana slug \textit{Ariolimax buttoni} are shown in
 \cref{fig:SDM_example}(e) and the predicted potential distribution of the
 banana slug based on the environmental variables is shown in
@@ -945,7 +1009,8 @@ banana slug based on the environmental variables is shown in
   \begin{enumerate}
     \item Collect data on the species of interest and the environmental
           variables that may influence its distribution.
-    \item Preprocess the data to remove missing values, outliers, and redundant
+    \item Preprocess the data to remove missing values, outliers, and
+          redundant
           variables.
     \item Generate pseudo-absence data to balance the presence and absence
           data.
@@ -954,7 +1019,8 @@ banana slug based on the environmental variables is shown in
           presence and absence of the species based on the environmental
           variables.
     \item Evaluate the model using the testing set.
-    \item Apply the model to predict the potential distribution of the species
+    \item Apply the model to predict the potential distribution of the
+          species
           at different locations based on their environmental conditions.
   \end{enumerate}
 \end{theorem}
@@ -966,56 +1032,53 @@ vectors that transmit them \cite{Pigott2014,Barro2016,Alimi2015}. Two main
 approaches have been used to apply SDMs to disease biogeography: the
 disease-based SDMs and the pathosystem-based SDMs. Disease-based SDMs assume
 that disease outbreaks are the final manifestation that results from the
-interaction between the environment, the pathogens, the vectors, and the hosts.
-Thus, the disease cases are considered as occurrences of the ``species'' to be
-modeled \cite{Pigott2015,Quiner2017}. This more pragmatic approach can be
+interaction between the environment, the pathogens, the vectors, and the
+hosts. Thus, the disease cases are considered as occurrences of the ``species''
+to be modeled \cite{Pigott2015,Quiner2017}. This more pragmatic approach can be
 useful when the data on the pathosystem components is scarce or disease
 transmission is not well understood \cite{Johnson2019}. On the other hand,
 pathosystem-based SDMs consider the pathogens, vectors, and hosts as separate
 species and model their potential distributions individually
 \cite{Samy2014,Baak2017}. This more systematic approach can provide better
 knowledge on the environmental factors that influence the distribution of the
-pathosystem components, but it requires more data and a better understanding of
-the interactions between the components.
+pathosystem components, but it requires more data and a better understanding
+of the interactions between the components.
 
 However, despite the wide use of SDMs in the literature, these models have
-several limitations that need to be urgently addressed, especially for the case
-of disease biogeography. This is indeed one of the main reasons that led us to
-develop a new method to study the potential distribution of infectious
+several limitations that need to be urgently addressed, especially for the
+case of disease biogeography. This is indeed one of the main reasons that led
+us to develop a new method to study the potential distribution of infectious
 diseases, which we will present in \cref{part:PD_risk} of this thesis.
 
 \subsection{\label{sec:Limitations of SDMs} Limitations of SDMs}
 
 One of the key assumptions of SDMs are that species are at equilibrium with
 their environments and that relevant environmental gradients have been
-adequately sampled. However, SDMs are often used in non-equilibrium scenarios,
-such to predict the future potential distribution of species after emerging
-invasions or climate change, which involves that current species records are
-unrepresentative of new conditions. In this new context, new combinations of
-environmental factors and biotic interactions previously unseen might play a
-role in the distribution of the species, thus rendering the predictions of the
-SDMs unreliable. In addition, the successful establishment of a species in a
-new area is influenced by genetic variability, phenotypic plasticity and
-evolutionary changes, which are not accounted for in SDMs \cite{Elith2009}.
+adequately sampled. However, SDMs are often used in non-equilibrium
+scenarios, such to predict the future potential distribution of species after
+emerging invasions or climate change, which involves that current species
+records are unrepresentative of new conditions. In this new context, new
+combinations of environmental factors and biotic interactions previously unseen
+might play a role in the distribution of the species, thus rendering the
+predictions of the SDMs unreliable. In addition, the successful establishment
+of a species in a new area is influenced by genetic variability, phenotypic
+plasticity and evolutionary changes, which are not accounted for in SDMs
+\cite{Elith2009}.
 
-Another limitation of SDMs is that they assume that the relationships between
-species and environmental variables are stationary over time, which may not be
-true in a context of climate change. The environmental conditions that favor
-the establishment of a species may change over time, leading to shifts in the
-species' distribution. Furthermore, the results of SDMs are highly dependent on
-the covariates used to fit the model, so that their choice can influence the
-predictions. For example, the choice of environmental variables can affect the
-performance of the model, and the inclusion of irrelevant variables can lead to
-overfitting. Of course, choices can be made based on biological considerations
-or statistical methods based on information criteria, such as the Akaike
-Information Criterion (AIC) or the Bayesian Information Criterion (BIC)
-\cite{Burnham2002}, but the final choice is often subjective.
+Another limitation of SDMs is that the results are highly dependent
+on the covariates used to fit the model, so that their choice can influence the
+predictions. In fact, the choice of environmental variables can affect
+the performance of the model, and the inclusion of irrelevant variables can
+lead to overfitting. Of course, choices can be made based on biological
+considerations or statistical methods based on information criteria, such as
+the Akaike Information Criterion (AIC) or the Bayesian Information Criterion
+(BIC) \cite{Burnham2002}, but the final choice is often subjective.
 
-For the particular case of the application of SDMs in disease biogeography, the
-limitations of the models are even more pronounced. Infectious diseases are the
-result of complex interactions occuring at multiple spatial and temporal scales
-among pathogens, vectors, hosts and the environment, i.e. a disease is an
-emergent feature of the pathosystem. Indeed, basically this same idea was
+For the particular case of the application of SDMs in disease biogeography,
+the limitations of the models are even more pronounced. Infectious diseases are
+the result of complex interactions occuring at multiple spatial and temporal
+scales among pathogens, vectors, hosts and the environment, i.e. a disease is
+an emergent feature of the pathosystem. Indeed, basically this same idea was
 previously discussed by A. Townsend Peterson in 2008 \cite{Peterson2008},
 despite complex systems science being a relatively new field of study. He
 argued that
@@ -1024,7 +1087,8 @@ argued that
     diverse
     scales of space (microscopic to continental) and time (minutes to
     centuries),
-    and are the products of interactions among species (pathogens, reservoirs,
+    and are the products of interactions among species (pathogens,
+    reservoirs,
     vectors, etc.), their ecological and distributional dynamics may differ
     from
     those of more normal species.}''
@@ -1032,21 +1096,26 @@ argued that
 
 However, current applications of  SDMs to study the potential distribution of
 infectious diseases neglect these complex interactions, which can lead to
-biased predictions of the potential distribution of diseases. The disease-based
+biased predictions of the potential distribution of diseases. The
+disease-based
 SDMs assume that the distribution of disease occurrences can be seen as the
 joint spatial distribution of suitable ecological conditions for all of the
 biological species involved in the transmission cycle. Yet, the current
 distribution of the disease may not reflect the full range of suitable
-conditions for its transmission. On the other hand, the pathosystem-based SDMs
+conditions for its transmission. On the other hand, the pathosystem-based
+SDMs
 consider that the potential distribution of the disease is the result of the
-intersection of the potential distributions of the pathosystem components based
-on arbitrary thresholds \cite{Samy2014,Baak2017,YoonLee2023}. This is ignoring
+intersection of the potential distributions of the pathosystem components
+based
+on arbitrary thresholds \cite{Samy2014,Baak2017,YoonLee2023}. This is
+ignoring
 completely the fact that the interactions between the components of the
 pathosystem are often non-linear and that the distribution of the disease is
 not the simple intersection of the distributions of the components.
 
 In \cref{ch:commsbio}, we will present a new method to study the potential
-distribution of vector-borne plant diseases that overcomes these limitations by
+distribution of vector-borne plant diseases that overcomes these limitations
+by
 considering the interactions driving to disease transmission using a
 mathematical epidemiological model while accounting for climatic factors
 limiting the distribution of the pathosystem components.
@@ -1055,7 +1124,8 @@ limiting the distribution of the pathosystem components.
 \section{\label{sec:Data-driven methods} Data-driven methods}
 
 The last part of this thesis, \cref{part:data-driven} is focused on different
-global ecological problems such as ocean acidification or the loss of important
+global ecological problems such as ocean acidification or the loss of
+important
 coastal ecosystems like seagrass meadows and coral reefs. The causes of
 these problems have been extensively studied, so that our goal is more
 practical than theoretical. In this context, we aim to develop new methods to
@@ -1065,7 +1135,8 @@ The frameworks presented in these chapters are based on deep learning, a
 subfield of machine learning that uses artificial neural networks to model
 complex patterns in large datasets. In this section, we will provide a brief
 overview to machine learning, specifically focusing on deep learning. After
-that, we will introduce the two main types of deep learning models that we will
+that, we will introduce the two main types of deep learning models that we
+will
 use in this thesis: long-short-term memory neural networks, which are used in
 time-series forecasting, and convolutional neural networks, employed in image
 segmentation problems.
@@ -1073,19 +1144,22 @@ segmentation problems.
 \subsection{\label{sec:Machine learning} Machine learning}
 
 Machine learning is a subfield of artificial intelligence that focuses on the
-development of statistical algorithms that use input data to achieve a desired
+development of statistical algorithms that use input data to achieve a
+desired
 task without being literally programmed to produce a particular outcome
-\cite{Michalski2013,ElNaqa2015}. The concept of machine learning was pioneered
+\cite{Michalski2013,ElNaqa2015}. The concept of machine learning was
+pioneered
 by Arthur Samuel in 1959, who demonstrated that machines could learn to play
 checkers and improve at the game through their own experiences, rather than
 through human instruction \cite{Samuel2000}. This capability marks a
 significant shift from traditional programming methods where decisions and
 rules are explicitly defined by human programmers. The field of machine
 learning integrates principles from computer science, statistics, and
-information theory to create algorithms capable of generalizing behaviors from
+information theory to create algorithms capable of generalizing behaviors
+from
 input data, allowing machines to perform tasks that typically require human
 intelligence, such as predicting consumer behavior, filtering spam in emails,
-chating with other humans or even driving autonomous vehicles.
+chatting with other humans or even driving autonomous vehicles.
 
 Machine learning is generally divided into three main types: supervised,
 unsupervised, and reinforcement learning. \textbf{Supervised learning}
@@ -1097,16 +1171,20 @@ adjusted to minimize the difference between the predicted output and the true
 output \cite{Nielsen2015}. On the contrary, \textbf{unsupervised learning} is
 used when the dataset does not contain the labels for each instance of the
 input data. In this case, the algorithms are designed to find patterns and
-structures in the data on their own \cite{Duda2006}. A clear example is that of
+structures in the data on their own \cite{Duda2006}. A clear example is that
+of
 clustering algorithms, which group instances of the input data forming
 different clusters based on their similarity in a high-dimensional space.
-Finally, \textbf{reinforcement learning} is a type of machine learning where an
+Finally, \textbf{reinforcement learning} is a type of machine learning where
+an
 agent learns to make decisions by interacting with an environment. The agent
 receives rewards or penalties based on its actions and learns to optimize its
 decisions (i.e. maximizing the reward or minimizing the penalty) to achieve a
-specific goal \cite{Sutton2018}. Reinforcement learning is particularly useful
+specific goal \cite{Sutton2018}. Reinforcement learning is particularly
+useful
 in applications such as robotics and gaming, being the algorithm behind the
-success of the AlphaGo program that defeated the world champion in the game of
+success of the AlphaGo program that defeated the world champion in the game
+of
 Go \cite{Silver2017}.
 
 Data is the cornerstone of machine learning, and the quality and quantity of
@@ -1115,53 +1193,45 @@ machine learning algorithms require the data to be preprocessed and
 transformed into a suitable format before being fed into the model, which
 prevented the widespread use of machine learning in many applications in its
 early times. However, the surge of representation learning methods, such as
-deep learning, has revolutionized the field of machine learning by allowing the
+deep learning, has revolutionized the field of machine learning by allowing
+the
 model to learn the features directly from the raw data, without the need for
-manual feature engineering \cite{LeCun2015}. Deep-learning models use multiple
+manual feature engineering \cite{LeCun2015}. Deep-learning models use
+multiple
 levels of representation obtained by composing simple non-linear
 transformations, which allow the model to learn very complex functions if
 enough compositions of such transformations are considered. For example, in
 classification tasks, higher layers of representation amplify aspects of the
-input that are important for discrimination and suppress irrelevant variations,
+input that are important for discrimination and suppress irrelevant
+variations,
 thus allowing the model to learn the features that are most relevant for the
 task at hand. This is particularly useful in image recognition, speech
 recognition, and natural language processing, where the raw data is high
 dimensional and complex, and the features that are relevant for the task are
 not known a priori.
 
-\subsection{\label{sec:Artificial neural networks} Artificial neural networks}
+\subsection{\label{sec:Artificial neural networks} Artificial neural
+  networks}
 
-The core of deep learning models are artificial neural networks (ANN), which
+The core of deep learning models are artificial neural networks (ANNs), which
 are computational models inspired by the structure and function of the human
-brain. ANN consist of interconnected nodes, called neurons, which indeed model
+brain. ANNs consist of interconnected nodes, called neurons, which indeed
+model
 the biological neurons of a brain. The neurons are connected to each other by
-weighted edges, which determine the strength of the connection between neurons
+weighted edges, which determine the strength of the connection between
+neurons
 and mimic the synapses in the brain. The input layer receives the input data,
 the hidden layers process the data, and the output layer produces the final
 output of the network. The information is passed through the network by
-adjusting the weights of the connections between neurons using an optimization
-algorithm, such as gradient descent, which adjusts the weights to minimize the
+adjusting the weights of the connections between neurons using an
+optimization
+algorithm, such as gradient descent, which adjusts the weights to minimize
+the
 error between the predicted output of the network and the true output
 \cite{Goodfellow2016}.
 
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=\textwidth]{Figures/Perceptron.pdf}
-  \caption[The perceptron model of a biological neuron]{
-    \textbf{The perceptron model of a biological neuron.} (a) The perceptron
-    takes a set of input values $x_1, x_2, \ldots, x_n$ and produces an output
-    value $y$ based on a set of weights $w_1, w_2, \ldots, w_n$ and a bias term
-    $b$. The output of the perceptron is given by the formula
-    $y=\sigma(\sum_{i=1}^n w_ix_i + b)$, where $\sigma$ is an activation
-    function. (b) The sigmoid function saturates to 1 for large positive inputs
-    and to 0 for large negative inputs. (c) The hyperbolic tangent function
-    saturates to 1 for large positive inputs and to -1 for large negative
-    inputs. (d) The rectified linear unit (ReLU) function is linear for
-    positive inputs and zero for negative inputs.}
-  \label{fig:Perceptron}
-\end{figure}
-
-The basic building block of ANN is the \textbf{perceptron}, a simple model of a
+The basic building block of ANNs is the \textbf{perceptron}, a simple model of
+a
 biological neuron. The perceptron takes a set of input values $x_1, x_2,
   \ldots, x_n$ and produces an output value $y$ based on a set of weights $w_1,
   w_2, \ldots, w_n$ and a bias term $b$. The output of the perceptron is given
@@ -1178,27 +1248,68 @@ rectified linear unit (ReLU) function, which are given by
   \text{ReLU}(z) & = \max(0, z) \ ,
 \end{align}
 where $z$ is the input to the activation function. The activation function is
-used to introduce non-linearity into the model, allowing the neural network to
+used to introduce non-linearity into the model, allowing the neural network
+to
 model complex patterns in the data. See \cref{fig:Perceptron} for a graphical
 representation of the perceptron model and the activation functions.
 
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{Figures/Perceptron.pdf}
+  \caption[The perceptron model of a biological neuron]{
+    \textbf{The perceptron model of a biological neuron.} (a) The perceptron
+    takes a set of input values $x_1, x_2, \ldots, x_n$ and produces an
+    output
+    value $y$ based on a set of weights $w_1, w_2, \ldots, w_n$ and a bias
+    term
+    $b$. The output of the perceptron is given by the formula
+    $y=\sigma(\sum_{i=1}^n w_ix_i + b)$, where $\sigma$ is an activation
+    function. (b) The sigmoid function saturates to 1 for large positive
+    inputs
+    and to 0 for large negative inputs. (c) The hyperbolic tangent function
+    saturates to 1 for large positive inputs and to -1 for large negative
+    inputs. (d) The rectified linear unit (ReLU) function is linear for
+    positive inputs and zero for negative inputs.}
+  \label{fig:Perceptron}
+\end{figure}
+
 The perceptron is a simple model of a biological neuron, but it can be
-combined to form more complex models, i.e. ANN, which consist of multiple
+combined to form more complex models, i.e. ANNs, which consist of multiple
 layers of neurons connected to each other. The first layer of the network is
-the input layer, which receives the input data, then the hidden layers process
+the input layer, which receives the input data, then the hidden layers
+process
 the data, and the output layer produces the final output of the network. The
-most common type of ANN is the feedforward neural network, in which the
+most common type of ANNs is the feedforward neural network (FFNN), in which the
 connections between neurons do not form cycles, so that the information flows
-in only one direction, from the input layer to the output layer. A simple and
-common architecture of ANN is the feedforward neural network (FFNN), which
-consists of an input layer, multiple hidden layers, and an output layer
+in only one direction, from the input layer to the output layer
 (\cref{fig:ANN}(a)).
+
+ANNs are often used in supervised learning tasks, in which the model is
+trained
+using a dataset containing input-output pairs. The weights of the connections
+between neurons are adjusted using an optimization algorithm to minimize the
+error between the predicted output of the network and the true output, which
+is
+known as the loss function. The basic idea behind these algorithms can be
+illustrated with the traditional gradient descent algorithm: the gradient of
+the loss with respect to the weights of the connections is calculated, and
+the
+weights are updated in the opposite direction of the gradient to minimize the
+loss, as shown in \cref{fig:ANN}(b). The learning rate of the algorithm
+determines the size of the step taken in the direction of the gradient, and
+it
+is a hyperparameter that needs to be tuned to achieve good performance of the
+model. Nowadays, the most common optimization algorithms used to train ANNs
+are
+variations of the traditional gradient descent algorithm, such as stochastic
+gradient descent or the Adam optimizer \cite{Goodfellow2016}.
 
 \begin{figure}[H]
   \centering
   \includegraphics[width=1\textwidth]{Figures/ANN.pdf}
   \caption[The feedforward neural network]{
-    \textbf{The feedforward neural network.} (a) The feedforward neural network
+    \textbf{The feedforward neural network.} (a) The feedforward neural
+    network
     consists of an input layer, multiple hidden layers, and an output layer.
     The input layer receives the input data, the hidden layers process the
     data, and the output layer produces the final output of the network.
@@ -1209,41 +1320,29 @@ consists of an input layer, multiple hidden layers, and an output layer
   \label{fig:ANN}
 \end{figure}
 
-ANN are often used in supervised learning tasks, in which the model is trained
-using a dataset containing input-output pairs. The weights of the connections
-between neurons are adjusted using an optimization algorithm to minimize the
-error between the predicted output of the network and the true output, which is
-known as the loss function. The basic idea behind these algorithms can be
-illustrated with the traditional gradient descent algorithm: the gradient of
-the loss with respect to the weights of the connections is calculated, and the
-weights are updated in the opposite direction of the gradient to minimize the
-loss, as shown in \cref{fig:ANN}(b). The learning rate of the algorithm
-determines the size of the step taken in the direction of the gradient, and it
-is a hyperparameter that needs to be tuned to achieve good performance of the
-model. Nowadays, the most common optimization algorithms used to train ANN are
-variations of the traditional gradient descent algorithm, such as stochastic
-gradient descent or the Adam optimizer \cite{Goodfellow2016}.
-
 Backpropagation is the algorithm used to calculate the gradient of the loss
 function with respect to the weights of the connections in a neural network.
 The algorithm works by propagating the error backwards through the network,
 starting from the output layer and moving towards the input layer. The
-gradient of the loss with respect to the weights is calculated using the chain
+gradient of the loss with respect to the weights is calculated using the
+chain
 rule of calculus, which allows the error to be decomposed into the errors of
 the neurons in the previous layer. The weights are then updated using the
 gradient of the loss with respect to the weights, which is calculated by
-multiplying the error of the neuron by the input to the neuron. The process is
+multiplying the error of the neuron by the input to the neuron. The process
+is
 repeated iteratively until the weights converge to a set of values that
 minimize the loss function. Backpropagation is a fundamental algorithm in
-training neural networks, and it allows the model to learn the features in the
+training neural networks, and it allows the model to learn the features in
+the
 data that are most relevant for the task at hand.
 
-Several variations of ANN have been developed to address specific tasks, such
+Several variations of ANNs have been developed to address specific tasks, such
 as image recognition and segmentation, speech recognition, natural language
 processing, and time-series forecasting. These models have been shown to be
 effective at modeling complex patterns in large datasets and have achieved
 state-of-the-art performance in such tasks. In this thesis we have used two
-types of ANN: long-short-term memory neural networks and convolutional neural
+types of ANNs: long-short-term memory neural networks and convolutional neural
 networks, which are particularly well-suited for time-series forecasting and
 image segmentation problems, respectively. In the following sections, we will
 provide a brief overview of these models.
@@ -1253,51 +1352,50 @@ provide a brief overview of these models.
 Time-series forecasting is a common task in machine learning that involves
 predicting future values of a time series based on past observations. Time
 series are sequences of data points collected at regular intervals over time,
-such as stock prices, weather data, and sales figures. Time-series forecasting
+such as stock prices, weather data, and sales figures. Time-series
+forecasting
 is used in a wide range of applications, such as predicting the stock market,
 forecasting the weather, and estimating the demand for products. Traditional
 methods for time-series forecasting include autoregressive integrated moving
 average (ARIMA) models, exponential smoothing models, and state-space models
 \cite{Hyndman2018}. These models are based on statistical methods and are
-effective at modeling linear relationships in the data, but they often struggle
+effective at modeling linear relationships in the data, but they often
+struggle
 to capture complex patterns, such as non-linear relationships and long-term
 dependencies. FFNN can be used for time-series forecasting by using the $T$
 previous values of the time series as input to the network and predicting the
 next value of the time series as output. However, this approach does not take
 into account the temporal dependencies in the data, i.e. the relationship
 between the current value of the time series and the previous values, as the
-network treats each input value independently. This limitation can prevent the
+network treats each input value independently. This limitation can prevent
+the
 network from learning temporal patterns in the data, which are crucial for
 accurate forecasting.
 
 To address these limitations, more advanced deep learning models have been
 developed for time-series forecasting, recurrent neural networks (RNNs). RNNs
-are a class of artificial neural networks in which node connections arise along
+are a class of artificial neural networks in which node connections arise
+along
 a temporal sequence, i.e. previous values in a time series are linked to
-current values. In simple words, RNNs predict a point of the time series using
-past information. Simple Recurrent Neural Networks (SRNNs) are an extension of
-Feedforward Neural Networks, in which past information and learned knowledge is
-encoded in the network as state vectors, $\vec{h}_t$, that are passed from one
+current values. In simple words, RNNs predict a point of the time series
+using
+past information. Simple Recurrent Neural Networks (SRNNs) are an extension
+of
+Feedforward Neural Networks, in which past information and learned knowledge
+is
+encoded in the network as state vectors, $\vec{h}_t$, that are passed from
+one
 time step to the next. In this way, the information flows not only from the
 input layer to the output layer, but also from one time step to the next,
 allowing the network to learn temporal dependencies in the data. A schematic
 representation of the SRNN is shown in \cref{fig:SRNN_scheme}, where we can
-observe how the network receives as input a sequence of data points $x_1, x_2,
+observe how the network receives as input a sequence of data points $x_1,
+  x_2,
   \ldots, x_t$ and produces an output sequence $L_1, L_2, \ldots, L_t$, called
-latent state, from a sequence of hidden states $h_1, h_2, \ldots, h_t$, and the
+latent state, from a sequence of hidden states $h_1, h_2, \ldots, h_t$, and
+the
 inputs. Notice how the current hidden state, $h_t$, is a function of the
 current input $x_{t}$ and the previous hidden state $h_{t-1}$.
-
-Unfortunately, SRNNs suffer from the so-called vanishing gradient problem, i.e.
-distant parts of the time series do not play a role in the training process,
-which prevents the network from learning long-term temporal dependencies. This
-problem arises because the gradients of the loss function with respect to the
-weights of the connections tend to become very small as they are backpropagated
-through the network, which makes it difficult for the network to learn from
-distant parts of the time series. This is, the errors commited in the past are
-not propagated to the present. Another related issue is the exploding gradient
-problem, where the gradients become very large and cause the weights of the
-connections to diverge, leading to numerical instability.
 
 \begin{figure}[H]
   \centering
@@ -1306,10 +1404,27 @@ connections to diverge, leading to numerical instability.
     \textbf{Simple Recurrent Neural Network.} The SRNN receives as input a
     sequence of data points $x_1, x_2, \ldots, x_t$ and produces an output
     sequence $L_1, L_2, \ldots, L_t$, called latent state, from a sequence of
-    hidden states $h_1, h_2, \ldots, h_t$, and the inputs. The produced latent
+    hidden states $h_1, h_2, \ldots, h_t$, and the inputs. The produced
+    latent
     state can be used to predict the future values of the time series.}
   \label{fig:SRNN_scheme}
 \end{figure}
+
+Unfortunately, SRNNs suffer from the so-called vanishing gradient problem,
+i.e.
+distant parts of the time series do not play a role in the training process,
+which prevents the network from learning long-term temporal dependencies.
+This
+problem arises because the gradients of the loss function with respect to the
+weights of the connections tend to become very small as they are
+backpropagated
+through the network, which makes it difficult for the network to learn from
+distant parts of the time series. This is, the errors commited in the past
+are
+not propagated to the present. Another related issue is the exploding
+gradient
+problem, where the gradients become very large and cause the weights of the
+connections to diverge, leading to numerical instability.
 
 We can visualize the problem by computing the backpropagation through time.
 Consider that we predict the output time-series $y_t$ at time $t$ using the
@@ -1333,7 +1448,8 @@ chain rule
 
 The term in red is the one that causes the vanishing and exploding gradient
 problems. Because the term is in a productory, if it is smaller than 1 the
-gradient will vanish, while if it is larger than 1, the gradient will explode.
+gradient will vanish, while if it is larger than 1, the gradient will
+explode.
 This problem repercutes to the whole gradient (\cref{eq:loss_RNN}), which
 becomes very small or very large, making the training of the network unstable
 and useless.
@@ -1341,10 +1457,12 @@ and useless.
 Long-Short Term Memory (LSTM) neural networks overcome this limitation by
 implementing three gates to update and control the cell state (forget gate,
 input gate, output gate), thus allowing to keep long-term dependencies
-\cite{LSTM_NN}. Bidirectional Long-Short Term Memory (BD-LSTM) neural networks
+\cite{LSTM_NN}. Bidirectional Long-Short Term Memory (BD-LSTM) neural
+networks
 are able to encode both past and future information by implementing two LSTM
 layers flowing in opposite time directions. The forward layer preserve past
-information while the backwards layer preserves future information.Thus, using
+information while the backwards layer preserves future information.Thus,
+using
 the two hidden states combined BD-LSTM are able in any point in time to
 preserve information from both past and future.
 % A schematic representation of the BD-LSTM neural network is shown in (\cref{fig:BD_LSTM_scheme}).
@@ -1368,8 +1486,10 @@ observations of temperature, salinity and dissolved oxygen.
 \subsection{\label{sec: Image segmentation} Image segmentation}
 
 Image segmentation is a computer vision task that involves partitioning an
-image into multiple segments, i.e. regions that share similar properties, such
-as color, texture, or intensity. Image segmentation is used in a wide range of
+image into multiple segments, i.e. regions that share similar properties,
+such
+as color, texture, or intensity. Image segmentation is used in a wide range
+of
 applications, such as medical imaging, object detection, and autonomous
 driving. Traditional methods for image segmentation include thresholding,
 clustering, and edge detection, which are based on handcrafted features and
@@ -1377,17 +1497,23 @@ heuristics. These methods are effective at segmenting images with simple
 patterns, but they often struggle to segment images with complex patterns and
 variations in lighting and texture.
 
-FNNs can be used for image segmentation. To do so the image is
-flattened\footnote{The image is transformed from a 2D array to a 1D array.} and
-fed into the network. For example, in the case of an RGB image, the input layer
-of the network would have 3 neurons, one for each color channel, and the output
+FFNNs can be used for image segmentation. To do so the image is
+flattened\footnote{The image is transformed from a 2D array to a 1D array.}
+and
+fed into the network. For example, in the case of an RGB image, the input
+layer
+of the network would have 3 neurons, one for each color channel, and the
+output
 layer would have $N$ neurons, where $N$ is the number of classes to segment.
 Despite FFNN can be used for image segmentation, they are not well-suited for
-this task because they do not take into account the spatial information in the
+this task because they do not take into account the spatial information in
+the
 image. Indeed, we know how the brain processes images: the visual cortex is
-organized in a hierarchical manner, with neurons in the lower layers detecting
+organized in a hierarchical manner, with neurons in the lower layers
+detecting
 simple patterns, such as edges and textures, and neurons in the higher layers
-detecting more complex patterns, such as shapes and objects. This hierarchical
+detecting more complex patterns, such as shapes and objects. This
+hierarchical
 organization allows the brain to model complex patterns in the image and
 segment the image into different regions based on the spatial information. To
 mimic this hierarchical organization, more advanced deep learning models have
@@ -1400,19 +1526,24 @@ convolutional neural networks (CNNs).
   \caption[Convolutional Neural Network]{
     \textbf{Convolutional Neural Network.} The CNN receives as input an image
     and produces an output image goes through a series of convolutional and
-    pooling layers, which apply a set of filters to the input image to extract
-    features. The filters are learned during the training process and are used
+    pooling layers, which apply a set of filters to the input image to
+    extract
+    features. The filters are learned during the training process and are
+    used
     to detect patterns in the image, such as edges, textures, and shapes. The
     output of the convolutional and poolin layers, which are called feature
-    maps, is passed through a series of non-linear activation functions, which
+    maps, is passed through a series of non-linear activation functions,
+    which
     introduce non-linearity into the model and allow the network to model
     complex patterns in the data.}
   \label{fig:CNN_scheme}
 \end{figure}
 
-CNNs are a class of artificial neural networks that are specificallty designed
+CNNs are a class of artificial neural networks that are specificallty
+designed
 to process grid-like data, such as images. CNNs consist of multiple layers of
-neurons, called convolutional layers, which apply a set of filters (or kernels)
+neurons, called convolutional layers, which apply a set of filters (or
+kernels)
 to the input image to extract features. After each convolutional layer, a
 pooling layer is applied to reduce the spatial dimensions of the feature maps
 and make the network more computationally efficient, allowing the network to
@@ -1426,8 +1557,10 @@ in \cref{fig:CNN_scheme}.
 The convolutions in the convolutional layer are performed by sliding a filter
 over the input image and computing the dot product between the filter and the
 input at each position. The filter is nothing but a small matrix of weights
-that holds the information of the pattern that the filter is looking for in the
-image. Considering an image $I$ of size $N \times M \times L$ and a filter $K$
+that holds the information of the pattern that the filter is looking for in
+the
+image. Considering an image $I$ of size $N \times M \times L$ and a filter
+$K$
 of size $n \times m \times l$, the output of the convolutional layer, $F$, is
 given by the convolution of the image and the filter, which is computed as
 \begin{equation}
@@ -1436,18 +1569,6 @@ given by the convolution of the image and the filter, which is computed as
   j+y, z)\cdot K(x, y,z) \ ,
 \end{equation}
 where $i$ and $j$ are the spatial coordinates of the output feature map $F$.
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.7\textwidth]{Figures/feature_maps.pdf}
-  \caption[Feature maps in a convolutional neural network]{
-    \textbf{Feature maps in a convolutional neural network.} The convolutional
-    layers of a CNN apply a set of filters to the input image to extract
-    features. The filters are learned during the training process and are used
-    to detect patterns in the image, such as edges, textures, and shapes.
-    inspired by \cite{Brownlee2019}}
-  \label{fig:feature_maps}
-\end{figure}
 
 For a 2D image with a single channel we can visualize the convolutional
 operation with the following example,
@@ -1488,14 +1609,31 @@ shapes. The filters are learned during the training process and are used to
 detect patterns that are relevant for the task at hand. An example of feature
 maps produced by a CNN (VGG16) is shown in \cref{fig:feature_maps}.
 
-CNNs are the basic blocks used in more complex models specidifcally design for
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.9\textwidth]{Figures/feature_maps.pdf}
+  \caption[Feature maps in a convolutional neural network]{
+    \textbf{Feature maps in a convolutional neural network.} The
+    convolutional
+    layers of a CNN apply a set of filters to the input image to extract
+    features. The filters are learned during the training process and are
+    used
+    to detect patterns in the image, such as edges, textures, and shapes.
+    Inspired by \cite{Brownlee2019}}
+  \label{fig:feature_maps}
+\end{figure}
+
+CNNs are the basic blocks used in more complex models specidifcally design
+for
 image segmentation, such as U-Net or Linknet. These models have achieved
-state-of-the-art performance in image segmentation tasks and have been used in
+state-of-the-art performance in image segmentation tasks and have been used
+in
 a wide range of applications, such as medical imaging, object detection, and
 autonomous driving. These models implement even more complex architectures
 called encoder-decoder networks, which consist of an encoder that extracts
 features from the input image and a decoder that reconstructs the image from
-the features. The encoder is composed of a series of convolutional and pooling
+the features. The encoder is composed of a series of convolutional and
+pooling
 layers that extract features from the input image, while the decoder is
 composed of a series of upsampling and convolutional layers that reconstruct
 the image from the features (\cref{fig:Unet}).
@@ -1508,7 +1646,8 @@ the image from the features (\cref{fig:Unet}).
     consists of an encoder that extracts features from the input image and a
     decoder that reconstructs the image from the features. The encoder is
     composed of a series of convolutional and pooling layers that extract
-    features from the input image, while the decoder is composed of a series of
+    features from the input image, while the decoder is composed of a series
+    of
     upsampling and convolutional layers that reconstruct the image from the
     features.}
   \label{fig:Unet}
@@ -1516,13 +1655,14 @@ the image from the features (\cref{fig:Unet}).
 
 In \cref{ch:posidonia}, we will use different advanced models based on CNNs
 with encoder-decoder architectures to segment satellite images of the coastal
-areas of the Balearic Islands into differen benthic habitats, such as seagrass
-meadows or sandy bottoms.
+areas of the Balearic Islands into differen benthic habitats, such as
+seagrass meadows or sandy bottoms.
 
 \subsection{Performance metrics}
 
 The performance of machine learning models can be evaluated using different
-metrics that quantify the accuracy of the predictions made by the model. These
+metrics that quantify the accuracy of the predictions made by the model.
+These
 metrics are used to compare the performance of different models and to assess
 the quality of the predictions made by the model. The choice of performance
 metrics depends on the task at hand, and different metrics are used for
@@ -1536,8 +1676,10 @@ true values,
 \begin{equation}
   \text{MAE} = \frac{1}{n}\sum_{i=1}^{n}|y_i - \hat{y}_i| \ ,
 \end{equation}
-where $y_i$ is the true value and $\hat{y}_i$ is the predicted value. The MAPE
-measures the average percentage difference between the predicted values and the
+where $y_i$ is the true value and $\hat{y}_i$ is the predicted value. The
+MAPE
+measures the average percentage difference between the predicted values and
+the
 true values,
 \begin{equation}
   \text{MAPE} = \frac{1}{n}\sum_{i=1}^{n}\left|\frac{y_i -
@@ -1561,14 +1703,17 @@ measures the overlap between the predicted segmentation and the true
 segmentation, and it is defined as the intersection of the predicted and true
 segmentation divided by the union of the predicted and true segmentation,
 \begin{equation}
-  \text{IoU} = \frac{A_{\text{pred}} \cap A_{\text{true}}}{A_{\text{pred}} \cup
+  \text{IoU} = \frac{A_{\text{pred}} \cap A_{\text{true}}}{A_{\text{pred}}
+    \cup
     A_{\text{true}}} \ ,
 \end{equation}
-where $A_{\text{pred}}$ is the set of pixels of the predicted segmentation and
+where $A_{\text{pred}}$ is the set of pixels of the predicted segmentation
+and
 $A_{\text{true}}$ is the set of pixels of the true segmentation. The F1 score
 is the harmonic mean of the precision and recall, and it is defined as
 \begin{equation}
-  \text{F1} = 2\cdot\frac{\text{precision}\cdot\text{recall}}{\text{precision}
+  \text{F1} =
+  2\cdot\frac{\text{precision}\cdot\text{recall}}{\text{precision}
     +
     \text{recall}} \ ,
 \end{equation}
@@ -1594,8 +1739,10 @@ ecological systems that will be studied throughout the thesis.
 \subsection{\label{sec:The Mass Mortality Event of Pinna nobilis} The Mass
   Mortality Event of \textit{Pinna nobilis}}
 
-\textit{Pinna nobilis} is the largest endemic bivalve in the Mediterranean Sea,
-and is under a serious extinction risk due to a Mass Mortality Event (MME) that
+\textit{Pinna nobilis} is the largest endemic bivalve in the Mediterranean
+Sea,
+and is under a serious extinction risk due to a Mass Mortality Event (MME)
+that
 has occurred throughout the whole Mediterranean basin very recently
 \cite{March, ZOTOU2020, VAZQUEZ2017}. Right before this
 MME, it was distributed across a wide type of habitats including coastal and
@@ -1606,8 +1753,10 @@ typically of \textit{Posidonia oceanica}, which has been indicated as its
 optimal habitat \cite{Hendriks2011}. Its lifespan is up to 50 years in
 favourable conditions and its size can get up to $\SI{1.2}{m}$, placing it
 among the largest bivalves of the  world \cite{Cabanellas2019}. These fan
-mussels play a crucial ecological role in their habitat, as \textit{P. nobilis}
-individuals filter water, thus retaining a large amount of organic matter from
+mussels play a crucial ecological role in their habitat, as \textit{P.
+  nobilis}
+individuals filter water, thus retaining a large amount of organic matter
+from
 suspended detritus, contributing to water clarity \cite{TRIGOS2014}.
 Furthermore, it is a habitat-forming species, because its shell provides a
 hard-surface within a soft bottom ecosystem, which can be colonised by
@@ -1616,16 +1765,19 @@ addition, at very dense populations, the species can function as an ecosystem
 engineer, creating biogenic reefs \cite{katsanevakis2016transplantation}.
 
 Despite \textit{P. nobilis} populations have greatly declined due to
-anthropogenic activities in the $20$th century \cite{VAZQUEZ2017}, the ongoing
+anthropogenic activities in the $20$th century \cite{VAZQUEZ2017}, the
+ongoing
 MME is the most worrying and widespread threat to \textit{P. nobilis}
 throughout the Mediterranean Sea. As a consequence, the species has been
-declared as critically endangered \cite{IUCN}. Although different aetiological
+declared as critically endangered \cite{IUCN}. Although different
+aetiological
 agents have been proposed, including Mycobacteria and other bacteria
 \cite{Carella2019, Saric2020, Scarpa2020}, there is evidence that the main
 cause of this mortality is the protozoan \textit{Haplosporidium pinnae}
 \cite{DARRIBA201714, CATANESE20189, Box2020}, a new species that belongs to
 the genus Haplosporidium, one of the four genera of the protist order
-Haplosporida. Indeed, other Haplosporidian parasites have been previously found
+Haplosporida. Indeed, other Haplosporidian parasites have been previously
+found
 to be behind the extensive mortality of several oyster species
 \cite{Burreson2004, Arzul2015}.
 
@@ -1633,7 +1785,8 @@ to be behind the extensive mortality of several oyster species
   \centering
   \includegraphics[width=\textwidth]{Figures/Nacras.pdf}
   \caption[The fan mussel \textit{Pinna nobilis}]{
-    \textbf{The fan mussel \textit{Pinna nobilis}.} (a) An alive individual of
+    \textbf{The fan mussel \textit{Pinna nobilis}.} (a) An alive individual
+    of
     \textit{Pinna nobilis} in its natural habitat. (b) Dead individuals of
     \textit{Pinna nobilis} after the Mass Mortality Event, Bay of Pollença,
     Mallorca, Spain.}
@@ -1642,24 +1795,31 @@ to be behind the extensive mortality of several oyster species
 
 \textit{Haplosporidium pinnae} exhibits a complex life cycle that includes
 uninucleate and binucleate cells, plasmodia, and spores. The parasite's life
-stages and infection mechanisms are not completely understood, but it is clear
-that it can cause severe pathology in infected mussels. Environmental factors,
+stages and infection mechanisms are not completely understood, but it is
+clear
+that it can cause severe pathology in infected mussels. Environmental
+factors,
 particularly temperature and salinity, significantly influence the expression
-and spread of the disease. Optimal conditions for the parasite's proliferation
+and spread of the disease. Optimal conditions for the parasite's
+proliferation
 are temperatures above 13.5°C and salinity ranges between 36.5 and 39.7 psu.
-Marine currents also play a vital role in dispersing the parasite, facilitating
+Marine currents also play a vital role in dispersing the parasite,
+facilitating
 its spread across large areas. This has been evidenced by the rapid spread of
 the disease throughout the Mediterranean basin, affecting populations in
-different regions, which poses a serious threat to the survival of the species
+different regions, which poses a serious threat to the survival of the
+species
 \cite{Cabanellas2019}.
 
 The event has spurred a concerted effort to better understand the dynamics of
 marine diseases, the role of environmental stressors, and the mechanisms of
-disease spread. In this context, the development of predictive models that can
+disease spread. In this context, the development of predictive models that
+can
 forecast the spread of the disease and assess the impact of environmental
 factors on the disease dynamics is crucial. In \cref{part:nacras} of this
 thesis, we will develop a compartmenal model to study the dynamics of the MME
-of \textit{P. nobilis} based on the theory of infectious diseases explained in
+of \textit{P. nobilis} based on the theory of infectious diseases explained
+in
 \cref{sec:Infectious disease modelling}.
 
 \subsection{\label{sec:Xylella fastidiosa: an emerging global
@@ -1669,14 +1829,18 @@ of \textit{P. nobilis} based on the theory of infectious diseases explained in
 \textit{Xylella fastidiosa} (Xf) is a Gram-negative\footnote{Gram-negative
   bacteria have a double cell wall, which makes them more resistant, in
   contrast to the Gram-positive bacteria, which have a single cell wall.}
-xylem-limited bacterium, this is, a bacterium that colonizes the xylem vessels
-of plants, where it multiplies \cite{Wells1987}. Xf is a plant pathogen with a
+xylem-limited bacterium, this is, a bacterium that colonizes the xylem
+vessels
+of plants, where it multiplies \cite{Wells1987}. Xf is a plant pathogen with
+a
 very wide host range, being able to infect over 600 plant species
 \cite{Delbianco2019}. The bacterium is transmitted by xylem-feeding insects,
-such as sharpshooters and spittlebugs, which acquire the bacterium when feeding
+such as sharpshooters and spittlebugs, which acquire the bacterium when
+feeding
 on infected plants and transmit it to healthy plants when feeding on them
 \cite{redak2004biology, Cornara2018}. The bacterium causes a variety of
-symptoms in infected plants, including leaf scorching, chlorosis, wilting, and
+symptoms in infected plants, including leaf scorching, chlorosis, wilting,
+and
 finally dieback, which can lead to the death of the plant. Xf is responsible
 for several importan crop diseases, which lead to severe economic losses in
 agriculture and forestry and pose a serious threat to food security and
@@ -1702,9 +1866,11 @@ the most widespread subspecies and is responsible for several important crop
 diseases, such as Pierce's disease of grapevines (PD) or almond leaf scorch
 disease (ALSD), the latter also caused by Xf subsp. \textit{multiplex}.
 Specifically, the Xf clonal lineage of the subspecies \textit{fastidiosa}
-that causes Pierce's disease (hereafter \xf) also causes almond leaf scorch in
+that causes Pierce's disease (hereafter \xf) also causes almond leaf scorch
+in
 California \cite{almeida2003biological}. On the other hand, Xf subsp.
-\textit{pauca} is the most virulent subspecies and is responsible for the olive
+\textit{pauca} is the most virulent subspecies and is responsible for the
+olive
 quick decline syndrome (OQDS), citrus variegated chlorosis (CVC) and coffee
 leaf scorch (CLS).
 
@@ -1729,15 +1895,19 @@ months before the writting of this thesis, \xf{} was also found in Italy
 feeds
 on a wide range of plant species, including many crops and ornamental plants.
 The insect is native to Europe and is widely distributed throughout the
-Mediterranean basin. Ps is a univoltine species\footnote{Species that have one
-  generation per year.} with a long life cycle. Eggs overwinter until hatching
+Mediterranean basin. Ps is a univoltine species\footnote{Species that have
+  one
+  generation per year.} with a long life cycle. Eggs overwinter until
+hatching
 occurs after enough heat is accumulated, usually in early spring
 \cite{morente2018distribution}. After egg hatching, the  nymphal stage goes
 through five instars during about 5–6 weeks until they become adults
-\cite{weaver1954meadow}. In the fall mature females lay masses of eggs on plant
+\cite{weaver1954meadow}. In the fall mature females lay masses of eggs on
+plant
 debris on the soil until they die during winter \cite{Lago2023}. This complex
 life cycle, which is influenced by temperature, gives rise to a seasonal
-pattern of Ps abundance, with a peak in the spring and a decline in the summer
+pattern of Ps abundance, with a peak in the spring and a decline in the
+summer
 and fall \cite{Lopez2021}.
 
 \begin{figure}[H]
@@ -1745,15 +1915,19 @@ and fall \cite{Lopez2021}.
   \includegraphics[width=\textwidth]{Figures/Xf_distribution.pdf}
   \caption[Distribution of \textit{Xylella fastidiosa} in Europe]{
     \textbf{Distribution of \textit{Xylella fastidiosa} in Europe.} The map
-    shows the distribution of \textit{Xylella fastidiosa} in Europe, including
-    the Balearic Islands, Corsica, the PACA region of France, Alicante, Tuscany
+    shows the distribution of \textit{Xylella fastidiosa} in Europe,
+    including
+    the Balearic Islands, Corsica, the PACA region of France, Alicante,
+    Tuscany
     and Portugal. Source: EPPO Global Database.}
   \label{fig:Xf_distribution}
 \end{figure}
 
-The introduction of Xf in the Mediterranean basin has raised concerns about its
+The introduction of Xf in the Mediterranean basin has raised concerns about
+its
 possible spread to continental Europe and the potential impact it might cause
-on the region's agriculture and biodiversity. In this context, the development
+on the region's agriculture and biodiversity. In this context, the
+development
 of predictive models that can forecast the spread of Xf in affected zones and
 assess the risk of disease establishment in new areas is crucial. Most of the
 efforts to model the spread of Xf have focused on the epidemiology of the
@@ -1763,8 +1937,10 @@ task. This has lead to biased predictions and a lack of understanding of the
 mechanisms driving the spread of the disease. On the other hand, most of the
 studies that have focused on the spread of Xf at the local level have ignored
 basic ecological principles, such as the role of the insect vector in the
-spread of the disease. Recent studies have greatly improved the models, but the
-characteristic seasonal patterns of the insect vector have not been taken into
+spread of the disease. Recent studies have greatly improved the models, but
+the
+characteristic seasonal patterns of the insect vector have not been taken
+into
 account, which can still lead to biased predictions and a lack of formal
 understanding of the mechanisms driving the spread of the disease.
 
@@ -1774,19 +1950,24 @@ relevant ecological and epidemiological processes of the disease, including
 the seasonal abundance patterns of the insect vector. Later on, on
 \cref{part:PD_risk} we will develop a mechanistic climate-driven
 epidemiological model to assess the risk of establishment of \xf{} in new
-areas. This model will be based on a simplified version of the model developed
+areas. This model will be based on a simplified version of the model
+developed
 in \cref{part:VBD} and will be used to assess the risk of establishment of
 \xf{} based on current and future climate conditions. Noteworthy, our
 methodology helps to advance the field of disease biogeography by providing a
-mechanistic understanding on the role of environmental factors in the spread of
+mechanistic understanding on the role of environmental factors in the spread
+of
 plant diseases.
 
-\subsection{\label{sec:The decline of seagrass meadows} The decline of seagrass
+\subsection{\label{sec:The decline of seagrass meadows} The decline of
+  seagrass
   meadows}
 
-Seagrass meadows are among the most productive and diverse ecosystems on Earth,
+Seagrass meadows are among the most productive and diverse ecosystems on
+Earth,
 providing habitat for a wide range of marine species \cite{Beck2001} and
-playing a crucial role in the health of the oceans and the well-being of human
+playing a crucial role in the health of the oceans and the well-being of
+human
 populations worldwide. They provide vital food, shelter, and structural
 support, including nursery areas for commercially important species,
 thereby supporting both local economies and subsistence fisheries
@@ -1798,13 +1979,15 @@ extensive underground network of rhizomes and roots stabilizes sediment,
 reducing erosion and decreasing water turbidity \cite{Madsen2001}, strongly
 influencing coastal sedimentary dynamics \cite{Marba2002,vanderHeide2007}.
 Specifically, the robust root systems of \textit{Posidonia oceanica} beds act
-as natural barriers, protecting coastlines from the destructive force of strong
+as natural barriers, protecting coastlines from the destructive force of
+strong
 waves and maintaining shoreline stability
 \cite{Fonseca1992,Sanchez-Gonzalez2011,vandeVijsel2023}. In addition,
 seagrasses keep overlying
 waters oxygenated and with low concentrations of nutrients and CO$_2$
 \cite{DuarteChiscano1999}. Seagrasses are among the planet’s most effective
-natural ecosystems for sequestering (capturing and storing) carbon, performing
+natural ecosystems for sequestering (capturing and storing) carbon,
+performing
 a rate that is $35$ times faster than tropical rainforests, while their
 sediments never become saturated \cite{Mcleod2011}.
 
@@ -1812,24 +1995,32 @@ sediments never become saturated \cite{Mcleod2011}.
   \centering
   \includegraphics[width=\textwidth]{Figures/Seagrass.pdf}
   \caption[The seagrass \textit{Posidonia oceanica}]{
-    \textbf{The seagrass \textit{Posidonia oceanica}.} (a) A seagrass meadow of
+    \textbf{The seagrass \textit{Posidonia oceanica}.} (a) A seagrass meadow
+    of
     \textit{Posidonia oceanica} in the Mediterranean Sea. (b) A close-up of a
     \textit{Posidonia oceanica} meadow.}
   \label{fig:Posidonia}
 \end{figure}
 
-Unfortunately, seagrass meadows are facing numerous threats that are leading to
+Unfortunately, seagrass meadows are facing numerous threats that are leading
+to
 their rapid decline worldwide. Human activities, such as coastal development,
-dredging, and land reclamation, are major contributors to habitat destruction.
-These activities often result in physical damage to seagrass beds and increased
+dredging, and land reclamation, are major contributors to habitat
+destruction.
+These activities often result in physical damage to seagrass beds and
+increased
 sedimentation, which can smother seagrass shoots and inhibit their growth.
 Pollution, particularly nutrient loading from agricultural runoff and sewage
-discharge, leads to eutrophication. This process stimulates excessive growth of
+discharge, leads to eutrophication. This process stimulates excessive growth
+of
 algae, which can outcompete seagrasses for light and resources, ultimately
-causing large-scale die-offs of seagrass meadows\cite{Orth2006}. Climate change
+causing large-scale die-offs of seagrass meadows \cite{Orth2006}. Climate
+change
 poses additional challenges to the health and sustainability of seagrass
-ecosystems. Rising sea temperatures can stress seagrass plants, reducing their
-overall effective growth rates and increasing their susceptibility to diseases
+ecosystems. Rising sea temperatures can stress seagrass plants, reducing
+their
+overall effective growth rates and increasing their susceptibility to
+diseases
 \cite{Waycott2009}. Additionally, more frequent and severe storm events can
 cause physical damage to seagrass meadows, further exacerbating their
 decline \cite{Bjork2008}.
@@ -1843,7 +2034,8 @@ sensing offers a cost-effective and efficient alternative for monitoring
 seagrass meadows, providing valuable information on the spatial distribution
 and health of seagrass ecosystems. In \cref{ch:posidonia} of this thesis, we
 will develop a deep learning model for monitoring seagrass meadows based on
-satellite images. This model will provide accurate and cost-effective estimates
+satellite images. This model will provide accurate and cost-effective
+estimates
 of the extent of seagrass meadows, which can be used to assess the health and
 sustainability of these ecosystems and inform conservation and management
 efforts.
@@ -1854,45 +2046,39 @@ efforts.
 Coral reefs are one of the most biodiverse ecosystems in Earth, holding more
 than 25\% of marine life with only 1\% of ocean floor coverage
 \cite{reaka1997global}. Corals are colonies of live organisms called polyps,
-held together by a self-produced exoskeleton made of calcium carbonate. Polyps
+held together by a self-produced exoskeleton made of calcium carbonate.
+Polyps
 host photosynthetic microalgae in a mutualistic interaction: polyps obtain
-nutrients from microalgae while microalgae are compensated with protection and
+nutrients from microalgae while microalgae are compensated with protection
+and
 some nutrients too \cite{Muller-Parker2015}. Consequences of global change,
-such as temperature increases and ocean acidification, represent a substantial
+such as temperature increases and ocean acidification, represent a
+substantial
 threat to coral reef ecosystems \cite{Couce2013}. High ocean temperatures
 promote the ``bleaching'' phenomenon, in which individual polyps expel the
 microalgae symbionts, losing their characteristic color and getting rid of
 their primary source of nutrients \cite{Brown1997}. On the other hand, ocean
 acidification promotes the dissolution of the calcium carbonate exosquelet of
-corals \cite{Guldberg2007}. These two phenomena are causing widespread declines
+corals \cite{Guldberg2007}. These two phenomena are causing widespread
+declines
 in coral reef ecosystems worldwide, leading to the loss of biodiversity and
 ecosystem services provided by coral reefs.
 
-Understanding the formation of coral reefs is crucial for the conservation and
+Understanding the formation of coral reefs is crucial for the conservation
+and
 management of these ecosystems. Coral reefs are formed by the accumulation of
-coral exoskeletons over thousands of years, creating complex three-dimensional
+coral exoskeletons over thousands of years, creating complex
+three-dimensional
 constructions that conform some of the largest biogenic structures in the
-biosphere \cite{wiener2021exploration}. Several forms and sizes of coral reefs
-can be found in the oceans, ranging from small fringing reefs to large barrier
+biosphere \cite{wiener2021exploration}. Several forms and sizes of coral
+reefs
+can be found in the oceans, ranging from small fringing reefs to large
+barrier
 reefs, which can extend for hundreds of kilometers along the coastlines of
 continents and islands. Perhaps the most famous coral barrier reef is the
 Great Barrier Reef, located off the coast of Queensland, Australia, which is
 the largest coral reef in the world and one of the most diverse ecosystems on
 Earth.
-
-Some more mechanistic hypothesis on reef formation date back to the end of the
-19th century, when Charles Darwin proposed that coral reefs were formed by the
-growth of corals on the remains of extinct volcanoes
-\cite{darwin1874structure}. However, this would only explain the formation of
-atolls, which are circular coral reefs that enclose a lagoon, and not all the
-different observed forms. Recently, more detailed models have been proposed
-to explain the formation of coral reefs, which take into account the
-interactions between corals, algae, and other organisms, as well as the
-physical and chemical processes that shape the reef structure, such as
-hydrodynamics. To evaluate these models and ultimately understand the
-formation of coral reefs, it is necessary to contrast them with a comprehensive
-empirical dataset on the size and geometry of coral reefs. Unfortunately, such
-a dataset has been hitherto lacking.
 
 \begin{figure}[H]
   \centering
@@ -1904,6 +2090,24 @@ a dataset has been hitherto lacking.
   \label{fig:Coral_reef}
 \end{figure}
 
+Some more mechanistic hypothesis on reef formation date back to the end of
+the
+19th century, when Charles Darwin proposed that coral reefs were formed by
+the
+growth of corals on the remains of extinct volcanoes
+\cite{darwin1874structure}. However, this would only explain the formation of
+atolls, which are circular coral reefs that enclose a lagoon, and not all the
+different observed forms. Recently, more detailed models have been proposed
+to explain the formation of coral reefs, which take into account the
+interactions between corals, algae, and other organisms, as well as the
+physical and chemical processes that shape the reef structure, such as
+hydrodynamics. To evaluate these models and ultimately understand the
+formation of coral reefs, it is necessary to contrast them with a
+comprehensive
+empirical dataset on the size and geometry of coral reefs. Unfortunately,
+such
+a dataset has been hitherto lacking.
+
 In \cref{ch:coral_reefs} of this thesis, we will present a global analysis on
 the spatial properties of all tropical coral reefs worldwide, which has
 unraveled universal patterns in their size distribution and geometry. The
@@ -1911,7 +2115,8 @@ results of this analysis can be used to evaluate the performance of existing
 models of coral reef formation and to develop new models that can explain the
 observed patterns in the data. In addition, our analysis provides important
 insights into the ecology of coral reefs and can help to design effective
-conservation strategies. Thus, our work contributes to the understanding of the
+conservation strategies. Thus, our work contributes to the understanding of
+the
 formation of coral reefs and the conservation of these important ecosystems.
 
 \section{\label{sec:Ocean acidification} Ocean acidification}
@@ -1922,30 +2127,14 @@ CO$_2$ dissolves in seawater, it reacts with water to form carbonic acid
 ($\textrm{H}_2\textrm{CO}_3$), which dissociates into bicarbonate
 ($\textrm{HCO}_3^-$) and hydrogen ions ($\textrm{H}^+$). The increase in
 hydrogen ions leads to a decrease in the pH of the oceans, making them more
-acidic. The pH of the oceans has decreased by 0.1 units since the beginning of
-the industrial revolution, which corresponds to a 30\% increase in the acidity
-of the oceans \cite{Orr2005}. This trend is expected to continue in the future
+acidic. The pH of the oceans has decreased by 0.1 units since the beginning
+of
+the industrial revolution, which corresponds to a 30\% increase in the
+acidity
+of the oceans \cite{Orr2005}. This trend is expected to continue in the
+future
 as atmospheric CO$_2$ levels continue to rise, leading to further decreases
 in the pH of the oceans.
-
-Ocean acidification has a wide range of impacts on marine ecosystems,
-including changes in the growth and survival of marine organisms, the structure
-and function of marine communities, and the cycling of nutrients and energy in
-marine ecosystems. The decrease in the pH of the oceans can have negative
-effects on the growth and survival of marine organisms, particularly those that
-rely on calcium carbonate to build their shells and skeletons, such as corals,
-mollusks, and some planktonic species. The increase in acidity can make it more
-difficult for these organisms to build and maintain their calcium carbonate
-structures, leading to reduced growth rates and increased mortality
-\cite{kroeker2013impacts}. In addition, ocean acidification can alter the
-structure and function of marine communities by changing the composition of
-species and the interactions between them. For example, ocean acidification can
-favor the growth of some species over others, leading to shifts in the
-composition of marine communities and changes in the dynamics of marine food
-webs \cite{hendriks2015biological}. Finally, ocean acidification can affect the
-cycling of nutrients and energy in marine ecosystems by altering the rates of
-biological processes, such as photosynthesis and respiration, and the
-availability of nutrients, such as nitrogen and phosphorus.
 
 \begin{figure}[H]
   \centering
@@ -1957,6 +2146,32 @@ availability of nutrients, such as nitrogen and phosphorus.
     Copernicus Marine Service Information \cite{CMEMS2024}}
   \label{fig:Ocean_acidification}
 \end{figure}
+
+Ocean acidification has a wide range of impacts on marine ecosystems,
+including changes in the growth and survival of marine organisms, the
+structure
+and function of marine communities, and the cycling of nutrients and energy
+in
+marine ecosystems. The decrease in the pH of the oceans can have negative
+effects on the growth and survival of marine organisms, particularly those
+that
+rely on calcium carbonate to build their shells and skeletons, such as
+corals,
+mollusks, and some planktonic species. The increase in acidity can make it
+more
+difficult for these organisms to build and maintain their calcium carbonate
+structures, leading to reduced growth rates and increased mortality
+\cite{kroeker2013impacts}. In addition, ocean acidification can alter the
+structure and function of marine communities by changing the composition of
+species and the interactions between them. For example, ocean acidification
+can
+favor the growth of some species over others, leading to shifts in the
+composition of marine communities and changes in the dynamics of marine food
+webs \cite{hendriks2015biological}. Finally, ocean acidification can affect
+the
+cycling of nutrients and energy in marine ecosystems by altering the rates of
+biological processes, such as photosynthesis and respiration, and the
+availability of nutrients, such as nitrogen and phosphorus.
 
 Monitoring ocean acidification is crucial for understanding the impacts of
 this global environmental problem on marine ecosystems and for developing
