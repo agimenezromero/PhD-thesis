@@ -1,22 +1,22 @@
-\vspace{1cm}
+\vspace{3cm}
 
-\begin{center}
-    \textbf{Àlex Giménez-Romero$^{1}$, Federico Vázquez$^{2,1}$, Cristóbal
-        López$^{1}$, Manuel A. Matías$^{1}$}
-\end{center}
+% \begin{center}
+%     \textbf{Àlex Giménez-Romero$^{1}$, Federico Vázquez$^{2,1}$, Cristóbal
+%         López$^{1}$, Manuel A. Matías$^{1}$}
+% \end{center}
 
-\vspace{1cm}
+% \vspace{1cm}
 
-\begin{enumerate}
-    \small
-    \item Instituto de Física Interdisciplinar y Sistemas Complejos, IFISC
-          (CSIC-UIB), Palma de Mallorca 07122, Spain
-    \item Instituto de Cálculo, FCEyN, Universidad de Buenos Aires and CONICET,
-          Buenos Aires, Argentina
+% \begin{enumerate}
+%     \small
+%     \item Instituto de Física Interdisciplinar y Sistemas Complejos, IFISC
+%           (CSIC-UIB), Palma de Mallorca 07122, Spain
+%     \item Instituto de Cálculo, FCEyN, Universidad de Buenos Aires and CONICET,
+%           Buenos Aires, Argentina
 
-\end{enumerate}
+% \end{enumerate}
 
-\vspace{1cm}
+% \vspace{1cm}
 
 \textbf{Published as}
 
@@ -145,14 +145,16 @@ The most important biological features of the system under study are as
 follows. First, hosts are immobile, while the disease is transmitted by
 parasites produced by infected hosts. There are two mechanisms by which
 parasites are cleared from the medium: i) they have a finite life time after
-which they die; ii) they get absorbed after they infect a host and thus are no
+which they die or get inactivated; ii) they get absorbed after they infect a
+host and thus are no
 longer in the medium and cannot infect other hosts. Recruiting (birth) of hosts
 occur at a very slow rate compared to other timescales in the system, and
 accordingly it will be considered negligible in the model. Moreover, hosts do
 not show long-term immunity, as is typical of invertebrates, like mollusks
 \cite{Powell2015}. We also assume that recovery (healing) of infected hosts, if
 it occurs, can be neglected. Furthermore, we consider that dead hosts are not a
-source of parasites in the medium. See \cite{GimenezRomero2021} for a detailed
+source of parasites in the medium. See \cref{ch:nacras_I}
+\cite{GimenezRomero2021} for a detailed
 presentation of the non-spatial SIRP model, including these biological
 modelling considerations.
 
@@ -254,12 +256,15 @@ small initial condition of $P(0)=50$ parasites in the centre site.
 An important test of the IBM implementation is to show that, under suitable
 circumstances, it converges to the non-spatial model on which the IBM is based.
 This occurs in the limit when the parasites move many times before dying or
-infecting a susceptible host. In this situation, each parasite visits typically
+infecting a susceptible host. In this situation, each parasite typically visits
 all the hosts of the system and may infect any of them. This is equivalent to
 infecting a random host of the system, which happens with probability $\beta
-    S/N$, being $S$ the total number of susceptible hosts in the system. An
-equivalent picture is that parasites will end up uniformly distributed in the
-lattice, so that there will be $P/N$ parasites in each lattice site at any
+    S/N$, being $S$ the total number of susceptible hosts in the system.
+This corresponds to standard incidence, which represents the most accurate
+description of the infection process
+(\cref{ch:nacras_I},\cite{GimenezRomero2021}).
+An equivalent picture is that parasites will end up uniformly distributed in
+the lattice, so that there will be $P/N$ parasites in each lattice site at any
 time. One expects to reach these conditions when $\kappa\gg\mu,\beta$, and,
 thus the system as a whole can be described by the following system of ordinary
 differential equations (ODE's),
@@ -451,12 +456,12 @@ is, the more difficult will be for a local outbreak to propagate through the
 system. Thus, it is natural to think of an spatial basic reproduction number of
 the form $\tilde{R}_0=R_0 f(\kappa)$, where $f(\kappa)$ is an increasing
 function of the parasite dispersal rate accounting for parasite mobility
-fulfilling the limit $\lim_{\kappa\to\infty}f(\kappa)=1$.
+fulfilling $\lim_{\kappa\to\infty}f(\kappa)=1$.
 
 Indeed, some authors recently showed that the spatial basic reproduction
 number can be defined as the product between the non-spatial value, $R_0$, and
 a factor accounting for spatially-dependent interactions, $f(r)$, in the form
-$\tilde{R}_0=R_0f(r)$ \cite{Filipe2003, Gilligan2021}. However, these
+$\tilde{R}_0=R_0f(r)$ \cite{Filipe2003,Filipe2004,Gilligan2021}. However, these
 expressions are not analytical \cite{Filipe2003,Filipe2004} or are not directly
 related to pathogen mobility \cite{Gilligan2021}. Here we propose a simple
 expression for the spatial basic reproduction number regulating the spatial

@@ -1,25 +1,25 @@
 \vspace{3cm}
 
-\begin{center}
-    \textbf{Àlex Giménez-Romero$^{1}$, Amalia Grau$^{2,3}$, Iris E.
-        Hendriks$^{4}$, Manuel A. Matías$^{1}$}
-\end{center}
+% \begin{center}
+%     \textbf{Àlex Giménez-Romero$^{1}$, Amalia Grau$^{2,3}$, Iris E.
+%         Hendriks$^{4}$, Manuel A. Matías$^{1}$}
+% \end{center}
 
-\vspace{1cm}
+% \vspace{1cm}
 
-\begin{enumerate}
-    \small
-    \item Instituto de Física Interdisciplinar y Sistemas Complejos, IFISC
-          (CSIC-UIB), Palma de Mallorca 07122, Spain
-    \item Laboratori d’Investigacions Marines i Aqüicultura (LIMIA), Govern de
-          les Illes Balears, Av. Gabriel Roca 69 E-07158 Port d’Andratx,
-          Mallorca, Spain
-    \item INAGEA (INIA-CAIB-UIB), Campus UIB, E-07122 Palma de Mallorca, Spain
-    \item Instituto Mediterráneo de Estudios Avanzados, IMEDEA (CSIC-UIB),
-          E-07190 Esporles, Mallorca, Spain
-\end{enumerate}
+% \begin{enumerate}
+%     \small
+%     \item Instituto de Física Interdisciplinar y Sistemas Complejos, IFISC
+%           (CSIC-UIB), Palma de Mallorca 07122, Spain
+%     \item Laboratori d’Investigacions Marines i Aqüicultura (LIMIA), Govern de
+%           les Illes Balears, Av. Gabriel Roca 69 E-07158 Port d’Andratx,
+%           Mallorca, Spain
+%     \item INAGEA (INIA-CAIB-UIB), Campus UIB, E-07122 Palma de Mallorca, Spain
+%     \item Instituto Mediterráneo de Estudios Avanzados, IMEDEA (CSIC-UIB),
+%           E-07190 Esporles, Mallorca, Spain
+% \end{enumerate}
 
-\vspace{1cm}
+% \vspace{1cm}
 
 \textbf{Published as}
 
@@ -485,9 +485,9 @@ further approximation to \cref{eq:SIR_exact} to be discussed next.
 \label{sec:exactredapp}
 
 A further approximation to \cref{sec:exactred}, that is less restrictive
-and expected to be valid in a broader parameter range than \cref{sec:fastslow}
-is possible. This approximation reduces the number of free parameters by one,
-what is useful in fitting available data.
+and expected to be valid in a broader parameter range than the one discussed in
+\cref{sec:fastslow} is possible. This approximation reduces the number of free
+parameters by one, what is useful in fitting available data.
 The approximation consists of neglecting the
 $S$ term in \cref{eq:P_exact}, what is possible if $\lambda/\gamma\gg 1$
 and also $\mu\ln N/(\bar{\beta} N)\gg 1$, as $S(t)$ decreases monotonically
@@ -521,12 +521,11 @@ facilitating, thus, the use of the model to fit experimental data.
 \subsubsection{Model reduction through fast-slow separation}
 \label{sec:fastslow}
 
-The third
-reduction of the $4$-D dynamical model \cref{eq:SIRP} makes the assumption
-that
-the time scale in which the parasite population changes are faster than the
-one corresponding to the host. This means that pathogen deactivation in the
-medium must be faster than host mortality. In terms of the rates associated to
+The third reduction of the $4$-D dynamical model \cref{eq:SIRP} makes the
+assumption that the time scale in which the parasite population changes is
+faster than the one corresponding to the host. This means that pathogen
+deactivation in the medium must be faster than host mortality, which is a very
+reasonable assumption. In terms of the rates associated to
 each of these processes, this means $\mu>\gamma$. Taking $\mu$ as common factor
 in $\dot{P}$ one can write,
 \begin{equation}
@@ -659,7 +658,7 @@ with the decrease of both $S_0$ or $\bar{\beta}$.
 Another important quantity in epidemiology is the final state of the
 epidemic, which can be characterised by the final number of dead individuals,
 $R_\infty$. Within our general SIRP model it is not possible to find an
-analytical expression of $R(t)$ so that we need to tackle the problem
+analytical expression for $R(t)$ so that we need to tackle the problem
 numerically. To this end, we perform GSA for the final number of dead
 individuals in order to determine the most influential parameters for this
 quantity. In particular, we apply the Sobol method, discussed in
@@ -748,8 +747,8 @@ discussed in \cref{sec:fastslow}, is now verified by computational means. The
 verification was performed using both mass action and standard incidence, but
 for the sake of simplicity we show only the results for the standard incidence
 case. Worth is to say that, mathematically, changing from standard incidence to
-mass action involves only a rescaling of the $\beta$ parameter, so that the
-numerical results are exactly the same. \cref{fig:P_comparison} contains a
+mass action involves only a rescaling of the $\bar{\beta}$ parameter, so that
+the numerical results are exactly the same. \cref{fig:P_comparison} contains a
 comparison for $3$ different values of the parasite deactivation rate, $\mu$.
 It can be seen that the approximation is poor when $\mu\sim
     \gamma,\bar{\beta}N$ \cref{fig:P_comparison}(a), as it could be expected.
@@ -890,7 +889,7 @@ This reduced model depends on three parameters ($\lambda'$, $\mu$,
 $\gamma$) and one constant, $\bar{\mathcal{C}}(0)$ (see
 \cref{sec:exactredapp}), that is related to the initial conditions of the
 model. The order of magnitude
-of the mortality rate can be deduced from data, with an estimate value of
+of the mortality rate can be deduced from data, with an estimated value of
 $\gamma\approx\SI{1}{month^{-1}}$. We fix this parameter in order to give some
 biological information to our model prior to the computational fit. We focus on
 the $R$ compartment, as it can be retrieved directly from data in
@@ -927,11 +926,11 @@ the cost function value of the optimisation algorithm is plotted as heat map.
         from IFAPA
         (panel (a)) and OCE (panel (b)) water tanks, at $\SI{14}{\degree C}$
         and
-        $\SI{17}{\degree C}$ respectively. Left figures represent several fits
+        $\SI{17}{\degree C}$ respectively. Left panels represent several fits
         of the
         model to empirical data of the number of dead hosts ($R(t)$) using
         different
-        optimal combinations of the parameters. Right figures are the RSS
+        optimal combinations of the parameters. Right panels are the RSS
         errors as a
         function of the input parameters, where the green dashed line
         represents the
