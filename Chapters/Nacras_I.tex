@@ -291,7 +291,8 @@ which is graphically summarised in \cref{fig: SIRP_scheme}.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{Figures/SIRP_scheme_mod.jpg}
-    \caption{SIRP model flow diagram. The model variables are represented
+    \caption[SIRP model flow diagram]{SIRP model flow diagram. The model
+        variables are represented
         by capital letters: susceptible hosts ($S$), infected hosts ($I$), dead
         hosts
         ($R$) and the population of parasite ($P$). Arrows represent the
@@ -638,7 +639,8 @@ with the decrease of both $S_0$ or $\bar{\beta}$.
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{Figures/R_0_sensitivity.jpg}
-    \caption{Panel (a): Local sensitivity analysis of $R_0$ for the
+    \caption[Sensitivity analysis of $R_0$]{Sensitivity analysis of $R_0$.
+        Panel (a): Local sensitivity analysis of $R_0$ for the
         baseline parameters $\lambda=1$, $\gamma=1$ and
         $\mu=\bar{\beta}=S_0=1$. The
         asterisks mark parameters for which the sensitivity index is not
@@ -677,7 +679,10 @@ nonlinearities in our model, at least for the particular quantity under study.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.7\textwidth]{Figures/GSA_R_inf.png}
-    \caption{Sensitivity indices (LSA) for the final number of dead
+    \caption[
+        Sensitivity analysis of the final number of dead individuals
+        ($R_\infty$)
+    ]{Sensitivity indices (LSA) for the final number of dead
         individuals ($R_\infty$) for each one of the indicated parameters. The
         black
         bars represent the total order indices of sensitivity while white
@@ -692,12 +697,13 @@ nonlinearities in our model, at least for the particular quantity under study.
         peak]{\includegraphics[width=0.49\textwidth]{Figures/GS_peak.png}}
     \subfigure[Time of epidemic
         peak]{\includegraphics[width=0.49\textwidth]{Figures/GS_peak_time.png}}
-    \caption{Global sensitivity analysis for the maximum of infected
-        individuals $I_{\textrm{max}}$ (a) and its time occurrence
-        $t_{\textrm{max}}$
-        (b). The black bars represent sensitivity at all orders,
-        while white (grey) colour represents the contribution of the first
-        (second) order indices.}
+    \caption[
+        Global sensitivity analysis of the maximum of infected individuals and
+        its time occurrence]{Global sensitivity analysis for the maximum of
+        infected individuals $I_{\textrm{max}}$ (a) and its time occurrence
+        $t_{\textrm{max}}$ (b). The black bars represent sensitivity at all
+        orders,  while white (grey) colour represents the contribution of the
+        first (second) order indices.}
     \label{fig: GS_analysis}
 \end{figure}
 
@@ -717,7 +723,10 @@ high degree of nonlinearity of this effect.
 \begin{figure}[H]
     \centering
     \includegraphics[width=1\textwidth]{Figures/P_comparison.jpg}
-    \caption{Numerical check of the approximate expression for the pathogen
+    \caption[
+        Numerical validation of the timescale approximation for the parasite
+        population
+    ]{Numerical check of the approximate expression for the pathogen
         concentration, (\cref{eq:P_approx}), $\bar{\beta}=1/50$ and $\gamma=1$:
         (a)
         $\mu=1$; (b) $\mu=10$; (c) $\mu=100$, while $\lambda$ is varied to keep
@@ -767,7 +776,10 @@ of the numerical integration of \cref{eq:SIRP}, as should be the case.
 \begin{figure}[H]
     \centering
     \includegraphics[width=1\textwidth]{Figures/exact_reduction_approx.jpg}
-    \caption{Numerical check of the exact model reduction along with the
+    \caption[
+        Numerical verification of the exact model reduction and the subsequent
+        approximation
+    ]{Numerical check of the exact model reduction along with the
         subsequent approximation shown in \cref{sec:exactred} with $N=100$,
         $\bar{\beta}=1/100$, $\gamma=1$, (a) $\lambda=5$, $\mu=1.1$; (b)
         $\lambda=50$,
@@ -921,7 +933,9 @@ the cost function value of the optimisation algorithm is plotted as heat map.
 \begin{figure}[H]
     \centering
     \includegraphics[width=1\textwidth]{Figures/exact_SIR_fitting.jpg}
-    \caption{Parameter estimation for the approximation from the exact
+    \caption[
+        Parameter estimation of the exact reduction of the SIRP model
+    ]{Parameter estimation for the approximation from the exact
         reduction of the SIRP model (\cref{eq:SIR_exact_reduced}) using data
         from IFAPA
         (panel (a)) and OCE (panel (b)) water tanks, at $\SI{14}{\degree C}$
@@ -963,7 +977,9 @@ temperature (\cref{app:rate_change}).
 \begin{figure}[H]
     \centering
     \includegraphics[width=1\textwidth]{Figures/approx_SIR_fitting.jpg}
-    \caption{Parameter fitting for the R compartment to model
+    \caption[
+        Parameter estimation of the approximate SIR model
+    ]{Parameter fitting for the R compartment to model
         (\cref{eq:SIRslow}) using data from IFAPA (panel (a)) and Oceanogràfic
         (panel
         (b)). The left part of both panels of the figure shows the optimal fit
