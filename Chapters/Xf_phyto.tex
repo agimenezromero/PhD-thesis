@@ -187,7 +187,8 @@ Thus, the host-vector compartmental model is written as,
     \centering
     \label{fig:model_diagram_phyto}
     \includegraphics[width=0.8\textwidth]{Figures/SEIR_v_scheme.pdf}
-    \caption{Schematic representation of the model \cref{eq:SEIR_v}. Boxes
+    \caption[Schematic representation of the model]{Schematic representation of
+        the model \cref{eq:SEIR_v}. Boxes
         are the compartments in which the population is divided, solid curved
         arrows
         represent changes in state, i.e. transitions between compartments,
@@ -392,9 +393,9 @@ field data also converged to a bell-shaped distribution.
 
 \begin{figure}[H]
     \centering
-
     \includegraphics[width=0.9\textwidth]{Figures/Parameter_estimates_ALSD.pdf}
-    \caption{Posterior (blue histograms) and prior (red line) distributions
+    \caption[Posterior and prior distributions of the model parameters for
+        ALSD]{Posterior (blue histograms) and prior (red line) distributions
         of the model parameters for ALSD. Solid and dashed black lines
         correspond to
         the mean and median of the posterior distributions. (A) Host infectious
@@ -409,9 +410,9 @@ field data also converged to a bell-shaped distribution.
 
 \begin{figure}[H]
     \centering
-
     \includegraphics[width=0.9\textwidth]{Figures/Parameter_estimates_OQDS.pdf}
-    \caption{Posterior (blue histograms) and prior (red line) distributions
+    \caption[Posterior and prior distributions of the model parameters for
+        OQDS]{Posterior (blue histograms) and prior (red line) distributions
         of the model parameters for OQDS. Solid and dashed black lines
         correspond to
         the mean and median of the posterior distributions. (A) Host infectious
@@ -436,7 +437,9 @@ derive the proper values for these parameters.
 
 \begin{table}[H]
     \centering
-    \caption{Estimated epidemiological parameters from Bayesian model
+    \caption[Estimated parameters of the model for ALSD in Mallorca]{Estimated
+        epidemiological
+        parameters from Bayesian model
         fitting to the disease progression curve of ALSD in Mallorca.}
     \resizebox{\textwidth}{!}{
         \begin{tabular}{cccccc}
@@ -482,7 +485,8 @@ derive the proper values for these parameters.
 
 \begin{table}[H]
     \centering
-    \caption{Estimated epidemiological parameters from Bayesian model
+    \caption[Estimated parameters of the model for OQDS in Apulia]{Estimated
+        epidemiological parameters from Bayesian model
         fitting to the disease progression curve of OQDS in Apulia.}
     \resizebox{\textwidth}{!}{%
         \begin{tabular}{cccccc}
@@ -557,7 +561,8 @@ $I_v(t)$.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.9\textwidth]{Figures/BayesianInference.pdf}
-    \caption{(A) Simulation of the model with the best-fit parameters for
+    \caption[Best-fit model to the field data for ALSD and OQDS]{(A) Simulation
+        of the model with the best-fit parameters for
         ALSD. (B) Model fit to field data by means of the mean and median
         values of the
         posterior distributions of the parameters for ALSD. (C) Simulation of
@@ -603,7 +608,9 @@ different values of the initial vector population.
     \centering
 
     \includegraphics[width=\textwidth]{Figures/OQDS_different_vector_curves_same_host_curve.pdf}
-    \caption{(A) Simulation of the model with the original best-fit
+    \caption[Comparison of the model fit to the data for OQDS with different
+        transmission rates]{(A) Simulation of the model with the original
+        best-fit
         parameters for OQDS. (B) Simulation of the model with the original
         best-fit
         parameters for OQDS but with different $\alpha$, $\beta$ values. (C)
@@ -656,7 +663,8 @@ output variance.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.75\textwidth]{Figures/GSA.pdf}
-    \caption{Global Sensitivity Analysis of the model parameters performed
+    \caption[Global Sensitivity Analysis of the model]{Global Sensitivity
+        Analysis of the model parameters performed
         with the Sobol method with respect to the time at which the infectious
         population peaks, $t_{peak}$ (A-B), the magnitude of this peak,
         $I_{peak}$
@@ -699,7 +707,9 @@ $N_v(0)$.
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{Figures/Control_strategy.png}
-    \caption{Epidemic control through vector management for ALSD in
+    \caption[Epidemic control through vector management for ALSD in Mallorca
+        and
+        OQDS in Apulia]{Epidemic control through vector management for ALSD in
         Mallorca (A) and OQDS in Apulia (B). The white shaded line denotes
         $R_0=1$, the
         white diamond corresponds to the parameter values of the fitted model.

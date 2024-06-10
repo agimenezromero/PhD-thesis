@@ -75,6 +75,8 @@ grapevine plants inoculated with the strain XYL 1981/17, ST81 subsp.
 on European grape varieties are shown in \cref{tableS1}.
 
 \begin{longtblr}[
+    theme = shortcaption,
+    entry = {Inoculation tests on different grapevine varieties},
     caption = {\textbf{Summary of the inoculation tests on grapevine varieties
                 ranked from most to less susceptible in the disease index.}
             Thirty-six local,
@@ -419,7 +421,10 @@ of the disease within vineyards (\cref{figS1}).
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{Figures/Fig S1.pdf}
-    \caption{\textbf{Factors influencing \textit {Xf-Philaenus
+    \caption[Factors influencing \textit {Xf-Philaenus
+            spumarius-Vitis vinifera} pathosystem]{\textbf{Factors influencing
+            \textit
+            {Xf-Philaenus
                 spumarius-Vitis vinifera} pathosystem.}\textbf{(a)} Virulence
         differences
         between \textit{Xf} subsp. \textit{fastidiosa} isolates on grapevines.
@@ -454,7 +459,8 @@ of the disease within vineyards (\cref{figS1}).
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{Figures/Experimental setup.jpg}
-    \caption{\textbf{Experimental setup.} Greenhouse facilities and general
+    \caption[Experimental setup]{\textbf{Experimental setup.} Greenhouse
+        facilities and general
         view of its interior and the arrangement of the vine plants. The
         metallic
         structure is covered with an anti-thrips mesh.}
@@ -528,7 +534,8 @@ rate $F(T)=C\cdot\sigma(T)$ (see \cref{figS2}).
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.6\textwidth]{Figures/Climatic_layer_1.png}
-    \caption{\textbf{Relationship between MGDD and temperature.}
+    \caption[Relationship between MGDD and temperature]{\textbf{Relationship
+            between MGDD and temperature.}
         Contribution to the $MGDD$ resulting from the fitting to the data in
         (1). The
         original Arrhenius plot, $\log{k} \ vs. \ 1/T$ in kelvin was converted
@@ -699,7 +706,8 @@ presence of PD in the US, with an area under the curve of $0.85$.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.65\textwidth]{Figures/validation.png}
-    \caption{\textbf{Model validation for an $R_0=8$ scenario with
+    \caption[Model validation with PD presence/absence data]{\textbf{Model
+            validation for an $R_0=8$ scenario with
             presence/absence data (black/white stars) of PD in the United
             States.} Panel
         (A) corresponds to data from California in 2015 while the other
@@ -716,7 +724,8 @@ presence of PD in the US, with an area under the curve of $0.85$.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.6\textwidth]{Figures/ROC_curve.png}
-    \caption{\textbf{ROC curve illustrating the model validation procedure
+    \caption[ROC curve illustrating the model validation procedure]{\textbf{ROC
+            curve illustrating the model validation procedure
             with spatiotemporal data from PD distribution in the US.} TPR
         is
         the
@@ -767,7 +776,8 @@ furthermore corroborated by the reasonability of the predictions obtained.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.6\textwidth]{Figures/R0_xylella.png}
-    \caption{\textbf{Fitting a $SIR$ model to the progress of the almond
+    \caption[Fit of an SIR model to ALSD data]{\textbf{Fitting a $SIR$ model to
+            the progress of the almond
             leaf scorch disease in the Balearic Islands from 1993 onward}. The
         best match
         was obtained with $R_0= 11.2$. Points represent an estimate of the
@@ -925,7 +935,9 @@ scaling between $R_0$ and climatic suitability for vectors.
 \begin{figure}[H]
     \centering
     \includegraphics[width=1\textwidth]{Figures/vector_layer.png}
-    \caption{\textbf{Average climatic suitability for \textit{Philaenus
+    \caption[Average climatic suitability for \textit{Philaenus
+            spumarius} in Europe]{\textbf{Average climatic suitability for
+            \textit{Philaenus
                 spumarius} in Europe.} The map shows the climatic suitability
         of the vector
         estimated from a generalized additive model of insect distribution and
@@ -960,7 +972,10 @@ a climate change scenario.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.85\textwidth]{Figures/MGDD_CDD_trends.png}
-    \caption{\textbf{Determination of $MGDD$ and $CDD$ metric trends and
+    \caption[Determination of $MGDD$ and $CDD$ trends and
+        future extrapolations]{\textbf{Determination of $MGDD$ and $CDD$ metric
+            trends
+            and
             future projections for two different European regions.} The $MGDD$
         (A) and
         $CDD$ (B) trends show steeper slopes in the temperate climate of
@@ -973,7 +988,9 @@ a climate change scenario.
     \centering
 
     \includegraphics[width=0.8\textwidth]{Figures/MGDD_CDD_scenarios.png}
-    \caption{\textbf{Interannual climatic variability extrapolations of
+    \caption[Interannual climatic variability extrapolations of
+        $MGDD$ and $CDD$]{\textbf{Interannual climatic
+            variability extrapolations of
             $MGDD$	(A) and $CDD$ (B) for Bordeaux.} A linear model was
         fitted using
         Sklearn's LinearRegression module in Python and the interannual
@@ -1086,7 +1103,9 @@ coefficient depends linearly on the vector population $N_v^*$.
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{Figures/Risk_risk_beta.png}
-    \caption{Risk index computed with (A) MGDD from the Arrhenius-based fit and
+    \caption[Comparison of Arrhenius-based vs beta function to define
+        MGDD]{Risk index computed with
+        (A) MGDD from the Arrhenius-based fit and
         (B) MGDD from the beta function fit.}
     \label{fig:R2} %S12
 \end{figure}
@@ -1095,8 +1114,9 @@ coefficient depends linearly on the vector population $N_v^*$.
     \centering
 
     \includegraphics[width=0.8\textwidth]{Figures/Diff_risk_beta_minus_risk.png}
-    \caption{Difference in risk index when computed using MGDD calculated from
-        the Arrhenius-based fit or the beta function fit.}
+    \caption[Difference on risk index using MGDD defined with an Arrhenius or
+        beta function]{Difference in risk index when computed using MGDD
+        calculated from the Arrhenius-based fit or the beta function fit.}
     \label{fig:R3} %S13
 \end{figure}
 
@@ -1105,7 +1125,8 @@ coefficient depends linearly on the vector population $N_v^*$.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.65\textwidth]{Figures/CDD_risk_evol_USA.png}
-    \caption{\textbf{Trends in the risk-epidemic zones during the 1981-2019
+    \caption[Comparison of risk areas and low CDD areas]{\textbf{Trends in the
+            risk-epidemic zones during the 1981-2019
             period (A) and the areas encompassed below the $CDD < 314$ line (B)
             comprising
             land areas between $103^o$W and $70^o$W of the United States}}.
@@ -1115,7 +1136,8 @@ coefficient depends linearly on the vector population $N_v^*$.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{Figures/Mean_MGDD_CDD_sites.png}
-    \caption{\textbf{Trends in $MGDD$ (A) and $CDD$ (B) values and
+    \caption[MGDD and CDD oscillations in different wine-growing
+        regions]{\textbf{Trends in $MGDD$ (A) and $CDD$ (B) values and
             oscillations during 1981-2019 for seven wine regions with different
             climates
             from Europe and the US.} $MGDD$s show a slight upward trend and
@@ -1127,6 +1149,9 @@ coefficient depends linearly on the vector population $N_v^*$.
 \section{Detailed analysis of PD risk}
 
 \begin{longtblr}[
+    theme = shortcaption,
+    entry = {PD risk areas in Europe with an homogeneous spatial vector
+            distribution},
     caption = {\textbf{PD risk areas in Europe after running the model under a
                 $R_0 = 5$ scenario and a homogeneous spatial vector
                 distribution.} The
@@ -1281,6 +1306,8 @@ coefficient depends linearly on the vector population $N_v^*$.
 \end{longtblr}
 
 \begin{longtblr}[
+    theme = shortcaption,
+    entry = {PD risk areas in the US},
     caption = {\textbf{PD risk areas in the United States after running the
                 model under a $R_0 = 8$ scenario and using a homogeneous
                 spatial vector
@@ -1470,6 +1497,9 @@ coefficient depends linearly on the vector population $N_v^*$.
 \end{longtblr}
 
 \begin{longtblr}[
+    theme = shortcaption,
+    entry = {Potential distribution of PD in other world winegrowing
+            regions},
     caption = {\textbf{Potential distribution of PD in other world winegrowing
                 regions.} In most areas of China and Australia \textit{Vitis
                 vinifera} is not
@@ -1512,6 +1542,8 @@ coefficient depends linearly on the vector population $N_v^*$.
 \end{longtblr}
 
 \begin{longtblr}[
+    theme = shortcaption,
+    entry = {Extrapolated PD risk areas in the US},
     caption = {\textbf{Predicted PD risk areas for the US  in 2050 considering
                 a $R_0 = 8$ scenario and a homogeneous spatial vector
                 distribution.}The
@@ -1764,6 +1796,9 @@ coefficient depends linearly on the vector population $N_v^*$.
 \end{longtblr}
 
 \begin{longtblr}[
+    theme = shortcaption,
+    entry = {Extrapolated PD risk areas in Europe in 2050 with a homogeneous
+            vector spatial distribution},
     caption = {\textbf{Predicted PD risk areas in Europe in 2050 after running
                 the model under a $R_0 = 5$ scenario and a homogeneous spatial
                 vector
@@ -2010,6 +2045,9 @@ coefficient depends linearly on the vector population $N_v^*$.
 \end{longtblr}
 
 \begin{longtblr}[
+    theme = shortcaption,
+    entry = {PD risk areas in Europe with a heterogeneous vector spatial
+            distribution},
     caption = {\textbf{PD risk areas in Europe after running the model under a
                 $R_0 = 5$ scenario and a spatial heterogeneous vector
                 distribution
@@ -2208,6 +2246,8 @@ coefficient depends linearly on the vector population $N_v^*$.
 \end{longtblr}
 
 \begin{longtblr}[
+    theme = shortcaption,
+    entry = {Surface of European vineyards at risk},
     caption = {\textbf{Surface of European vineyards in risk of PD given by the
                 intersection of (Corine-Land-Cover) and the projected model in
                 the ERA5-land
@@ -2313,6 +2353,8 @@ coefficient depends linearly on the vector population $N_v^*$.
 
 \newpage
 \begin{longtblr}[
+    theme = shortcaption,
+    entry = {Extrapolated surface of European vineyards at risk in 2050},
     caption = {\textbf{Predicted PD risk in 2050 in European vineyards
                 (Corine-Land-Cover) considering a $R_0 = 5$ scenario and the
                 vector climatic
@@ -2418,7 +2460,9 @@ coefficient depends linearly on the vector population $N_v^*$.
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{Figures/Xf_Ps_suitability.pdf}
-    \caption{\textbf{Climate suitability for \xf{} and \textit{P.
+    \caption[Climate suitability for \xf{} and \textit{P.
+            spumarius} under present and future climate
+        conditions.]{\textbf{Climate suitability for \xf{} and \textit{P.
                 spumarius} under the current scenario and different climate
             projections.} (a,b)
         Current scenario. (c,d) +2 ºC climate projection. (e,f) +3 ºC climate
@@ -2430,7 +2474,10 @@ coefficient depends linearly on the vector population $N_v^*$.
     \centering
 
     \includegraphics[width=\textwidth]{Figures/Xf_suitability_explainability.pdf}
-    \caption{\textbf{$\mathcal{F}(MGDD)$, $\mathcal{G}(CDD)$ and
+    \caption[$\mathcal{F}(MGDD)$, $\mathcal{G}(CDD)$ and
+        suitability of \xf{} under different climate
+        projections]{\textbf{$\mathcal{F}(MGDD)$,
+            $\mathcal{G}(CDD)$ and
             suitability of \xf{} ($\mathcal{F}(MGDD)\cdot\mathcal{G}(CDD)$)
             under different
             climate projections.} (a-c) +1.5 ºC climate projection. (d-f) +2 ºC
@@ -2445,7 +2492,9 @@ coefficient depends linearly on the vector population $N_v^*$.
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{Figures/Future_risk_vector.pdf}
-    \caption{\textbf{Future risk of PD epidemics under different climate
+    \caption[Future risk of PD epidemics under different climate
+        projections]{\textbf{Future risk of PD epidemics under different
+            climate
             projections.} (a) +1.5 ºC climate projection. (b) +2 ºC climate
         projection. (c)
         +3 ºC climate projection. (d) +4 ºC climate projection.}
@@ -2454,7 +2503,8 @@ coefficient depends linearly on the vector population $N_v^*$.
 
 \begin{table}[H]
     \centering
-    \caption{Some risk velocity statistics for each climate projection.}
+    \caption[Risk velocity statistics for each climate projection]{Some risk
+        velocity statistics for each climate projection.}
     \resizebox{\textwidth}{!}{
         \begin{tabular}{ccccc}
             \hline \hline
@@ -2485,7 +2535,10 @@ coefficient depends linearly on the vector population $N_v^*$.
     \centering
 
     \includegraphics[width=\textwidth]{Figures/Future_risk_velocity_vector_histogram.png}
-    \caption{\textbf{Risk and risk velocity shifts as function of the
+    \caption[Risk and risk velocity shifts as function of the
+        climate projections]{\textbf{Risk and risk velocity shifts as function
+            of
+            the
             climate projections.} (a) Number of grid cells at each risk level
         across the
         different climate projections. (b) Histograms of PD risk velocities in
@@ -2545,7 +2598,9 @@ again due to decreased vector suitability.
 
 \begin{table}[H]
     \centering
-    \caption{\textbf{Percentage of land surface, vineyard surface and PDOs at
+    \caption[Risk analysis in Europe under different climate
+        projections]{\textbf{Percentage of land surface, vineyard surface and
+            PDOs at
             risk
             in Europe under different climate projections.}}
     \label{tab:general}
@@ -2653,7 +2708,10 @@ again due to decreased vector suitability.
 
 \begin{table}[H]
     \centering
-    \caption{\textbf{Percentage of land surface, vineyard surface and PDOs at
+    \caption[Risk analysis for different European countries under different
+        climate projections]{\textbf{Percentage of land surface, vineyard
+            surface and PDOs
+            at
             risk
             per different European countries under different climate
             projections.}}
@@ -2910,7 +2968,8 @@ metrics
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.64\textwidth]{Figures/MGDD_approx_comparison.pdf}
-    \caption{Comparison of MGDD accumulation computed with hourly mean
+    \caption[Validation of MGDD computation from daily temperature
+        data]{Comparison of MGDD accumulation computed with hourly mean
         temperature data (solid line) and daily maximum and minimum values
         (dashed
         line) using data from several meteorological stations in Spain and
@@ -2924,7 +2983,8 @@ metrics
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.64\textwidth]{Figures/CDD_approx_comparison.pdf}
-    \caption{Comparison of CDD accumulation computed with hourly mean
+    \caption[Validation of CDD computation from daily temperature
+        data]{Comparison of CDD accumulation computed with hourly mean
         temperature data (solid line) and daily maximum and minimum values
         (dashed
         line) using data from several meteorological stations in Spain and
@@ -2938,7 +2998,10 @@ metrics
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{Figures/E-OBS_vs_ERA5.pdf}
-    \caption{Differences in annual accumulated MGDD and CDD when using
+    \caption[Comparison of annual cumulative MGDD and CDD using hourly and
+        daily temperature data]{Differences in annual accumulated MGDD and CDD
+        when
+        using
         ERA5-Land dataset with hourly mean temperature and EOBS dataset with
         maximum
         and minimum daily temperatures.}
@@ -2962,7 +3025,11 @@ similar in both datasets (\cref{fig:area_at_risk}).
 \begin{figure}[H]
     \centering
     \includegraphics[width=1\textwidth]{Figures/area_risk.pdf}
-    \caption{Difference in projected risk in increase rate based on CHELSA
+    \caption[Difference in the increase rate of projected risk for different
+        resolutions of the climate data used]{Difference in projected risk in
+        increase rate based
+        on
+        CHELSA
         (high-resolution, 1 km) and ERA5 (mid-resolution, 10 km) datasets in
         global
         viticulture areas. (A) Europe (B) United States (C) South Africa (D)
@@ -2974,7 +3041,10 @@ similar in both datasets (\cref{fig:area_at_risk}).
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.75\textwidth]{Figures/ERA5_vs_Chelsa_SI.pdf}
-    \caption{Comparison of risk indices obtained with ERA5 (mid-resolution
+    \caption[Comparison of risk indices for different
+        resolutions of the climate data used]{Comparison of risk indices
+        obtained
+        with ERA5 (mid-resolution
         -- 10 km, left column) and CHELSA (high-resolution -- 1 km, right
         column)
         datasets in Europe (A-B), United States (C-D), South Africa (E-F),
@@ -2988,7 +3058,8 @@ similar in both datasets (\cref{fig:area_at_risk}).
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{Figures/vid_locations.pdf}
-    \caption{Presence locations of \textit{Vitis vinifera} obtained from
+    \caption[Presence locations of \textit{Vitis vinifera} obtained from
+        GBIF]{Presence locations of \textit{Vitis vinifera} obtained from
         GBIF.}
     \label{fig:vid_locations}
 \end{figure}

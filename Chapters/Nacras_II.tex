@@ -200,7 +200,8 @@ the dynamics.
 
 \begin{table}[H]
     \centering
-    \caption{Variables and parameters of the model}
+    \caption[Variables and parameters of the individual based SIRP
+        model]{Variables and parameters of the individual based SIRP model.}
     \resizebox{0.8\columnwidth}{!}{
         \begin{tabular}{cl}
             \hline \hline
@@ -322,7 +323,10 @@ limit.
 \begin{figure}[H]
     \centering
     \includegraphics[width=\columnwidth]{Figures/MF_comparison.png}
-    \caption{Numerical solution of the non-spatial model (\cref{eq:SIRP_MF},
+    \caption[
+        Comparison between the non-spatial model and the individual based model
+        in the high mobility limit
+    ]{Numerical solution of the non-spatial model (\cref{eq:SIRP_MF},
         dashed lines) compared with numerical solutions of the individual based
         model
         (solid lines) approaching the non-spatial limit with fixed
@@ -390,13 +394,12 @@ population of $P(t)=(\lambda/\mu) I(t)$, which is equivalent to
 \begin{figure}[H]
     \centering
     \includegraphics[width=\columnwidth]{Figures/P_approx.png}
-    \caption{Numerical verification of the approximate expression for the
-        parasite population dynamics, \cref{eq:P_approx_II}, for different
-        mobility
-        conditions. The simulations were performed fixing $\beta=\gamma=1$  for
-        all
-        panels. (a) $\mu=1$ $\kappa=10^2$, $\lambda=6.06$,
-        $\kappa/(\mu+\kappa)=0.99$;
+    \caption[Validation of the approximate expression for the parasite
+        population dynamics]{Numerical verification of the approximate
+        expression for the parasite population dynamics, \cref{eq:P_approx_II},
+        for different mobility conditions. The simulations were performed
+        fixing $\beta=\gamma=1$ for all panels. (a) $\mu=1$ $\kappa=10^2$,
+        $\lambda=6.06$, $\kappa/(\mu+\kappa)=0.99$;
         (b) $\mu=100$, $\kappa=10^4$, $\lambda=306$,
         $\kappa/(\mu+\kappa)=0.99$; (c)
         $\mu=1$, $\kappa=0.01$, $\lambda=1200$, $\kappa/(\mu+\kappa)=0.01$; (d)
@@ -530,7 +533,10 @@ disease-free and the propagation phases.
 \begin{figure}[H]
     \centering
     \includegraphics[width=1\textwidth]{Figures/PhaseDiagram.png}
-    \caption{(a) Phase diagram showing the transition between the the
+    \caption[
+        Phase diagram and fit for the transition between the disease-free and
+        propagation phases]{(a) Phase diagram showing the transition between
+        the the
         disease-free phase and the propagation phase for several values of the
         parasite
         mobility and $R_0$. The colour code represents the fraction of dead
@@ -588,7 +594,9 @@ agreement with other mathematically similar models \cite{Bertuzzo2010}.
 \begin{figure}[H]
     \centering
     \includegraphics[width=1\textwidth]{Figures/Front_velocity.png}
-    \caption{(a) Disease spreading speed as function of the square root of
+    \caption[
+        Analysis of the spreading speed of the infected population
+    ]{(a) Disease spreading speed as function of the square root of
         the parasite mobility for several values of $R_0$. The plot shows a
         remarkable
         agreement with \cref{eq:front_vel}. (b) Disease spreading speed as
@@ -634,7 +642,9 @@ the parasite mobility.
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{Figures/Extinction_time.png}
-    \caption{(a) Extinction time for some values of the parasite mobility.
+    \caption[
+        Analysis of the extinction time of the epidemic]{(a) Extinction time
+        for some values of the parasite mobility.
         (b) Comparison of the critical $R_0$ value computed with
         \cref{eq:R_0ibm}
         compared to the values obtained numerically by computing the maximum of

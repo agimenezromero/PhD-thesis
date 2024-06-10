@@ -187,19 +187,22 @@ model'' to emphasize this idea.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.87\textwidth]{Figures/scheme.pdf}
-    \caption{(a) Spatial distribution of the 4 main ecological benthic habitats
+    \caption[AI framework for seagrass monitoring from satellite imagery]{(a)
+        Spatial distribution of the
+        4 main ecological
+        benthic habitats
         in the Balearic Sea, present in the whole Mediterranean. The dataset
         provides
         detailed information at multiple spatial scales up to 3 m resolution.
         (b-d)
-        Scheme of the pipeline to train CAMELE model. (b) Satellite-based
+        Scheme of the pipeline to train CAMELE model. Satellite-based
         surface
         reflectance data is merged with bathymetry estimates to produce the
         inputs
         (features) of the model. Habitat data obtained with side-scan sonar,
         photo-interpretation and field observations were used as ground truth
         data
-        (labels). (d) These features and labels are used to train deep
+        (labels). These features and labels are used to train deep
         convolutional
         neural networks to perform image segmentation.}
     \label{fig:scheme}
@@ -295,7 +298,8 @@ distribution and extension of the considered habitats in the Mediterranean Sea.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.95\textwidth]{Figures/Model_performance.pdf}
-    \caption{Model performance in train and out-of-sample test datasets. (a)
+    \caption[Model performance in train and out-of-sample test datasets]{Model
+        performance in train and out-of-sample test datasets. (a)
         Violin plots for F1-score, IoU, Precision, Recall, Kappa and Accuracy
         in both
         training and out-of-sample test datasets. (b-c) True vs predicted area
@@ -317,7 +321,10 @@ distribution and extension of the considered habitats in the Mediterranean Sea.
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{Figures/Predictions_example.pdf}
-    \caption{Example of model predictions for a satellite image in the training
+    \caption[Example of model predictions for a satellite image in the training
+        and out-of-sample test set]{Example of model predictions for a
+        satellite
+        image in the training
         and out-of-sample test set. (a) Satellite image from Pollença bay in
         the island of Mallorca, a part of the training set. Image © 2022 Planet
         Labs PBC (b) Ground truth
@@ -357,7 +364,9 @@ and 96.22\%, respectively (\cref{tab:my-table}).
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{Figures/Final_predictions_example.pdf}
-    \caption{Example of model predictions for a satellite image in the complete
+    \caption[Example of model predictions for a satellite image in the complete
+        dataset]{Example of model predictions for a satellite image in the
+        complete
         dataset. The first column shows the ground truth data for the benthic
         habitats, the second column shows the habitat classification from
         CAMELE model trained only with half of the data (from Mallorca island),
@@ -379,7 +388,8 @@ achieved a remarkable mean IoU score of 80\% in this new dataset
 
 \begin{table}[H]
     \centering
-    \caption{Performance (IoU score) of the final model in the complete dataset
+    \caption[Final model performance]{\textbf{Final model performance.}
+        Performance (IoU score) of the final model in the complete dataset
         and
         comparison with the previous model performance and previous data splits
         conforming the training and out-of-sample (OOS) test datasets.}

@@ -202,7 +202,8 @@ condition.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.9\textwidth]{Figures/Diagram.png}
-    \caption{Schematic representation of the model n \cref{eq:SIR_v}. Boxes
+    \caption[Diagram of the model]{Schematic representation of the model n
+        \cref{eq:SIR_v}. Boxes
         are the compartments in which the population is divided, solid arrows
         represent
         changes in state (so transitions between compartments), and dashed
@@ -258,7 +259,10 @@ population and cannot describe periodic vector populations.
 \begin{figure*}[t!]
     \centering
     \includegraphics[width=\textwidth]{Figures/R0_check_stationary.pdf}
-    \caption{Numerical verification of the predictive  power of the basic
+    \caption[
+        Numerical verification of the predictive power of the
+        stationary basic reproduction number
+    ]{Numerical verification of the predictive	power of the basic
         reproduction number relation \cref{eq:R0_asympt}, by plotting the final
         size of
         the epidemic, $R_\infty/N_H$ as function of $R_0$. In panels (a),(b)
@@ -445,7 +449,8 @@ the limit $R_0\rightarrow\infty$, in agreement with the prediction of
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{Figures/delay.pdf}
-    \caption{Numerical study of the delay induced by growing vector
+    \caption[Numerical study of the delay induced by growing vector
+    populations]{Numerical study of the delay induced by growing vector
     populations. (a) Comparison of hosts dynamics for a stationary vector
     population ($f=1$) and a growing vector population ($f=10^{-5}$). (b) Time
     delay as function of $f$ for different values of the basic reproduction
@@ -498,18 +503,15 @@ methods works if $\mu\gg\gamma$.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{Figures/R0_check_mean_value.pdf}
-    \caption{Numerical verification of the expression for the basic
-        reproduction number for vector-borne diseases with decaying vector
-        populations
-        \cref{eq:R0_non_stationary}. Final size of the epidemic as a function
-        of the
-        basic reproduction number in panels: (a) linear scale; (b) logarithmic
-        scale.
-        Phase space trajectories in panels: (c) $I_H/N_H$ vs $I_v/N_v(0)$ and
-        (d)
-        $I_H/N_H$ vs $S_H/N_H$, where an initial condition $I_H(0)/N_H=0.01,
-            S_H(0)/N_H=0.99$ and $I_v(0)/N_V(0)=0$ has been used for the $3$
-        cases.
+    \caption[Numerical verification of the expression for the non-stationaty
+        basic reproduction number]{Numerical verification of the expression for
+        the basic reproduction number for vector-borne diseases with decaying
+        vector populations \cref{eq:R0_non_stationary}. Final size of the
+        epidemic as a function of the basic reproduction number in panels: (a)
+        linear scale; (b) logarithmic scale. Phase space trajectories in
+        panels: (c) $I_H/N_H$ vs $I_v/N_v(0)$ and (d) $I_H/N_H$ vs $S_H/N_H$,
+        where an initial condition $I_H(0)/N_H=0.01, S_H(0)/N_H=0.99$ and
+        $I_v(0)/N_V(0)=0$ has been used for the $3$ cases.
         $\mu=\gamma$ has been used in all the simulations.}
     \label{fig:R0_check_mean_value}
 \end{figure}
@@ -571,7 +573,8 @@ vector population can be obtained from the relationship,
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{Figures/Timescale_approx.pdf}
-    \caption{Numerical verification of the time-scale approximation
+    \caption[Numerical verification of the time-scale approximation]{Numerical
+        verification of the time-scale approximation
         (\cref{eq:Iv_timescale_approx}) with $N_H=100$, $\alpha=\gamma=1$.
         $\beta$ is
         chosen such that $R_0=3$. (a) $\mu=1$, (b) $\mu=10$, (c) $\mu=100$.
@@ -637,7 +640,8 @@ where $\displaystyle\beta_{eff}=\frac{\beta'}{\lambda}=\frac{\beta\alpha
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{Figures/SIR_like_approx_comp.pdf}
-    \caption{Comparison between the original model and the reductions,
+    \caption[Comparison between the original model and the
+    reductions]{Comparison between the original model and the reductions,
     \cref{eq:SIR_like} (SIR-like) and \cref{eq:SIR} (SIR) with $N=100$,
     $\mu/\gamma=10^{3}$ and $f=1$. $\beta$ was chosen such that $R_0=3$.  (a)
     $\lambda=1$, (b) $\lambda=10^3$, (c) Mean Squared Error between the

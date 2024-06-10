@@ -16,8 +16,11 @@ satellite images used in the study is shown in
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{Figures/Images_used.pdf}
-    \caption{Coverage of the training and out-of-sample test datasets in
-        the Balearic Islands. Each image was obtained for different years
+    \caption[Coverage of the training and out-of-sample test datasets in
+        the Balearic Islands]{\textbf{Coverage of the training and
+            out-of-sample
+            test datasets in
+            the Balearic Islands}. Each image was obtained for different years
         from 2020 to 2023, depending on the availability.}
     \label{fig:images-dataset}
 \end{figure}
@@ -364,7 +367,8 @@ of algae might be present in only one island, such as \textit{Zostera noltii}).
 
 \begin{table}
     \centering
-    \caption{Ecological Categories and Subcategories in the ground truth
+    \caption[Ecological categories in the ground truth dataset]{Ecological
+        Categories and Subcategories in the ground truth
         habitat data.}
     \label{tab:ecological_categories}
     \resizebox{\columnwidth}{!}{%
@@ -802,7 +806,9 @@ to increase its accuracy.
     \centering
 
     \includegraphics[width=0.95\textwidth]{Figures/Reflectance_histograms_Mallorca_only.pdf}
-    \caption{Distribution of response values (surface reflectance) for the
+    \caption[Distribution of response values of different habitat
+        classes]{\textbf{Distribution of response values of different habitat
+            classes.} Distribution of surface reflectance values for the
         different processed habitat classes with respect to the different bands
         available from the satellite imagery and depth.}
     \label{fig:reflectance}
@@ -824,7 +830,8 @@ main architecture for our models.
 
 \begin{table}[H]
     \centering
-    \caption{Performance among all architectures for all backbones based on
+    \caption[Model performance comparison]{Performance among all architectures
+        for all backbones based on
         the Intersection over Union metric.}
     \label{tab:metrics-architectures}
     \begin{tabular}{lccccccc}
@@ -884,7 +891,8 @@ individually (voting\_specialists).
 
 \begin{table}[H]
     \centering
-    \caption{Number of total parameters among all architectures for all
+    \caption[Number of parameters of each model]{Number of total parameters
+        among all architectures for all
         backbones (in millions)}
     \label{tab:parameters-architectures}
     \begin{tabular}{lccccccc}
@@ -925,7 +933,10 @@ observed differences in IoU values between \cref{tab:metrics-architectures} and
 
 \begin{table}[H]
     \centering
-    \caption{Performance metrics for all models based on Linknet
+    \caption[Performance of all models based on Linknet
+        architecture in the training dataset]{Performance metrics for all
+        models
+        based on Linknet
         architecture in the training dataset}
     \label{tab:metrics-train}
     \begin{tabular}{lccccccc}
@@ -999,7 +1010,10 @@ are seasonal, etc.
 
 \begin{table}[H]
     \centering
-    \caption{Performance metrics for all models based on Linknet
+    \caption[Performance of all models based on Linknet
+        architecture in the out-of-sample test dataset]{Performance metrics for
+        all
+        models based on Linknet
         architecture in the out-of-sample test dataset}
     \label{tab:metrics-test}
     \begin{tabular}{lcccccc}
@@ -1065,7 +1079,8 @@ are seasonal, etc.
 
 \begin{table}[H]
     \centering
-    \caption{Performance in segmenting each habitat class individually,
+    \caption[Model performance per habitat class]{Performance in segmenting
+        each habitat class individually,
         measured by Intersection over Union, for all models in training and
         out-of-sample test datasets.}
     \label{tab:metrics_classes}
@@ -1224,7 +1239,10 @@ set (\cref{fig:confusion_matrix}c-d, sum over rows).
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{Figures/Confusion_matrix.pdf}
-    \caption{Confusion matrix for train (a) and out-of-sample test (b)
+    \caption[Confusion matrices for predicted classes and their
+        area]{\textbf{Confusion matrices for predicted classes and their area.}
+        Confusion
+        matrix for train (a) and out-of-sample test (b)
         dataset. Confusion matrix for the predicted area in train (c) and
         out-of-sample
         test (d) datasets.}
@@ -1264,7 +1282,9 @@ model predictions that are supposed to be incorrect, were indeed correct.
     \centering
 
     \includegraphics[width=\textwidth]{Figures/Wasserstein_distance_by_Classes_&_Datasets.pdf}
-    \caption{Wasserstein distance between Train and Test datasets for Blue
+    \caption[Wasserstein distance between Train and Test
+        datasets]{\textbf{Wasserstein
+            distance between Train and Test datasets.} Blue
         (a), Green I (b) and Green (c) bands.}
     \label{fig:similarity_train_test_classes}
 \end{figure}
@@ -1305,7 +1325,8 @@ the whole Mediterranean sea.
 
 \begin{table}[H]
     \centering
-    \caption{Performance metrics for voting\_all model in segmenting
+    \caption[Performance of the consensus method]{Performance metrics for
+        voting\_all model in segmenting
         individual images from training and testing datasets.}
     \label{tab:metrics_img}
     \resizebox{\columnwidth}{!}{%
@@ -1681,7 +1702,10 @@ in accurately identifying and delineating Posidonia in underwater environments.
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{Figures/IoU_class_depth.pdf}
-    \caption{(a) Performance of voting\_all model as function of the depth
+    \caption[Model performance as function of depth]{\textbf{Model performance
+            as function of depth.} (a) Performance of voting\_all model as
+        function of the
+        depth
         of classified pixels. (b) Area of samples contained in each depth range
         for the
         different habitat classes.}
@@ -1690,7 +1714,8 @@ in accurately identifying and delineating Posidonia in underwater environments.
 
 \begin{table}[H]
     \centering
-    \caption{Performance metrics for voting\_all model in segmenting
+    \caption[Performance metrics for the final model in the training
+        dataset]{Performance metrics for the final model in segmenting
         individual images from previous training and testing datasets.}
     \label{tab:metrics_img_final}
     \resizebox{\columnwidth}{!}{%
@@ -2128,7 +2153,8 @@ applications of the model.
 
 \begin{table}[H]
     \centering
-    \caption{Performance metrics for the final model in segmenting
+    \caption[Performance metrics for the final model in the test
+        dataset]{Performance metrics for the final model in segmenting
         individual images for the year 2023.}
     \label{tab:metrics_img_final_2023}
     \resizebox{\columnwidth}{!}{%
@@ -2228,7 +2254,8 @@ applications of the model.
 
 \begin{table}[H]
     \centering
-    \caption{Averge performance metrics for the final model with 2023 images.}
+    \caption[Average performance metrics of the final model]{Averge performance
+        metrics for the final model with 2023 images.}
     \label{tab:avg_performance_2023}
     \begin{tabular}{lcccccc}
         \toprule
