@@ -45,7 +45,6 @@
 \usepackage{csquotes}
 \usepackage{algorithm}
 \usepackage{algpseudocode}
-\usepackage[acronym,nomain,nonumberlist]{glossaries}
 
 % Theme for longtblr
 \DefTblrTemplate{caption-text}{short}{\InsertTblrText{entry}}
@@ -65,110 +64,8 @@
 }
 
 %% Acronyms %%
-\makeglossaries
-
-\newacronym{aca}{ACA}{Allen Coral Atlas}
-\newacronym{aemet}{AEMET}{Agencia Estatal de Meteorología}
-\newacronym{ai}{AI}{Artificial Intelligence}
-\newacronym{aic}{AIC}{Akaike Information Criterion}
-\newacronym{alsd}{ALSD}{Almond Leaf Scorch Disease}
-\newacronym{arima}{ARIMA}{Autoregressive Integrated Moving Average}
-\newacronym{auc}{AUC}{Area Under the Curve}
-\newacronym{bam}{BAM}{Biotic-Abiotic-Movement}
-\newacronym{bd}{BD-LSTM}{Bidirectional Long Short-Term Memory}
-\newacronym{bfgs}{BFGS}{Broyden–Fletcher–Goldfarb–Shanno}
-\newacronym{bic}{BIC}{Bayesian Information Criterion}
-\newacronym{bii}{BII}{Biodiversity Intactness Index}
-\newacronym{bmr}{BMR}{Basal Metabolic Rate}
-\newacronym{boats}{BOATS}{Balearic Ocean Acidification Time Series}
-\newacronym{camele}{CAMELE}{Consensus for Automated Marine Ecosystem Labelling
-	and Evaluation}
-\newacronym{ccdf}{CCDF}{Complementary Cumulative Distribution Function}
-\newacronym{cdd}{CDD}{Cold Degree Days}
-\newacronym{chelsa}{CHELSA}{Climatologies at high resolution for the earth’s
-	land surface areas}
-\newacronym{ci}{CI}{Confidence Interval}
-\newacronym{cls}{CLS}{Coffee Leaf Scorch}
-\newacronym{cnn}{CNN}{Convolutional Neural Network}
-\newacronym{cordex}{CORDEX}{Coordinated Regional Climate Downscaling
-	Experiment}
-\newacronym{corine}{CORINE}{Coordination of Information on the Environment}
-\newacronym{cvc}{CVC}{Citrus Variegated Chlorosis}
-\newacronym{dl}{DL}{Deep Learning}
-\newacronym{dna}{DNA}{Deoxyribonucleic Acid}
-\newacronym{do}{DO}{Dissolved Oxygen}
-\newacronym{dtm}{DTM}{Digital Terrain Model}
-\newacronym{emod}{EMODnet}{European Marine Observation and Data Network}
-\newacronym{eppo}{EPPO}{European and Mediterranean Plant Protection
-	Organization}
-\newacronym{era}{ERA}{ECMWF Reanalysis}
-\newacronym{ffnn}{FFNN}{Feedforward Neural Network}
-\newacronym{fn}{FN}{False Negative}
-\newacronym{fp}{FP}{False Positive}
-\newacronym{fpn}{FPN}{Feature Pyramid Network}
-\newacronym{fpr}{FPR}{False Positive Rate}
-\newacronym{gam}{GAM}{Generalized Additive Model}
-\newacronym{gbif}{GBIF}{Global Biodiversity Information Facility}
-\newacronym{gcm}{GCM}{Global Climate Model}
-\newacronym{gdd}{GDD}{Growing Degree Days}
-\newacronym{goa}{GOA-ON}{Global Ocean Acidification Observing Network}
-\newacronym{gru}{GRU}{Gated Recurrent Unit}
-\newacronym{gsa}{GSA}{Global Sensitivity Analysis}
-\newacronym{ibm}{IBM}{Individual-Based Model}
-\newacronym{ipcc}{IPCC}{Intergovernmental Panel on Climate Change}
-\newacronym{iucn}{IUCN}{International Union for Conservation of Nature}
-\newacronym{jabowa}{JABOWA}{JAnak-BOtkin-WAllis}
-\newacronym{lphme}{LPHME}{Standard List of Marine Habitats of Spain}
-\newacronym{lsa}{LSA}{Local Sensitivity Analysis}
-\newacronym{lstm}{LSTM}{Long Short-Term Memory}
-\newacronym{mae}{MAE}{Mean Absolute Error}
-\newacronym{mape}{MAPE}{Mean Absolute Percentage Error}
-\newacronym{mgdd}{MGDD}{Modified Growing Degree Days}
-\newacronym{ml}{ML}{Machine Learning}
-\newacronym{mme}{MME}{Mass Mortality Event}
-\newacronym{mow}{MOW}{Mediterranean Outflow Water}
-\newacronym{mse}{MSE}{Mean Squared Error}
-\newacronym{ngm}{NGM}{Next Generation Matrix}
-\newacronym{nir}{NIR}{Near Infrared}
-\newacronym{nuts}{NUTS}{Nomenclature of Territorial Units for Statistics / No
-	U-Turn Sampler}
-\newacronym{oa}{OA}{Ocean Acidification}
-\newacronym{ode}{ODE}{Ordinary Differential Equation}
-\newacronym{oos}{OOS}{Out-of-Sample}
-\newacronym{oqds}{OQDS}{Olive Quick Decline Syndrome}
-\newacronym{paca}{PACA}{Provence-Alpes-Côte d'Azur}
-\newacronym{pcr}{PCR}{Polymerase Chain Reaction}
-\newacronym{pd}{PD}{Pierce's Disease}
-\newacronym{pde}{PDE}{Partial Differential Equation}
-\newacronym{pdo}{PDO}{Protected Designation of Origin}
-\newacronym{ps}{Ps}{Philaenus spumarius}
-\newacronym{psb}{PSPnet}{Pyramid Scene Parsing Network}
-\newacronym{rcm}{RCM}{Regional Climate Model}
-\newacronym{rgb}{RGB}{Red Green Blue}
-\newacronym{rmse}{RMSE}{Root Mean Squared Error}
-\newacronym{rnn}{RNN}{Recurrent Neural Network}
-\newacronym{roc}{ROC}{Receiver Operating Characteristic}
-\newacronym{rss}{RSS}{Residual Sum of Squares}
-\newacronym{sa}{SA}{Sensitivity Analysis}
-\newacronym{sd}{SDE}{Stochastic Differential Equation}
-\newacronym{sdm}{SDM}{Species Distribution Model}
-\newacronym{seir}{SEIR}{Susceptible-Exposed-Infectious-Recovered}
-\newacronym{si}{SI}{Susceptible-Infectious}
-\newacronym{sip}{SIP}{Susceptible-Infectious-Parasite}
-\newacronym{sir}{SIR}{Susceptible-Infectious-Recovered}
-\newacronym{sirp}{SIRP}{Susceptible-Infectious-Recovered-Parasite}
-\newacronym{sirs}{SIRS}{Susceptible-Infectious-Recovered-Susceptible}
-\newacronym{sis}{SIS}{Susceptible-Infectious-Susceptible}
-\newacronym{sop}{SOP}{Standard Operation Procedure}
-\newacronym{sr}{SR}{Surface Reflectance}
-\newacronym{srnn}{SRNN}{Simple Recurrent Neural Network}
-\newacronym{ta}{TA}{Total Alkalinity}
-\newacronym{tn}{TN}{True Negative}
-\newacronym{tp}{TP}{True Positive}
-\newacronym{tpr}{TPR}{True Positive Rate}
-\newacronym{unet}{UNET}{U-Net}
-\newacronym{uv}{UV}{Ultraviolet}
-\newacronym{xylefa}{Xf}{Xylella fastidiosa}
+\newcommand{\abbrlabel}[1]{\makebox[3cm][l]{\textbf{#1}\ \dotfill}}
+\newenvironment{abbreviations}{\begin{list}{}{\renewcommand{\makelabel}{\abbrlabel}}}{\end{list}}
 
 %% My commands %%
 \newcommand{\dif}{\mathrm{d}}
@@ -310,10 +207,21 @@
 %	LIST OF ABBREVIATIONS
 %----------------------------------------------------------------------------------------
 
-\glsaddall
-\printglossary[type=\acronymtype,title=List of acronyms]
+% \glsaddall
+% \printglossary[type=\acronymtype,title=List of acronyms]
 
-\addcontentsline{toc}{chapter}{\textcolor{ocre}{List of abbreviations}}
+% \addcontentsline{toc}{chapter}{\textcolor{ocre}{List of abbreviations}}
+
+\chapterimage{} % Chapter heading image
+\chapterspaceabove{6.75cm} % Whitespace from the top of the page to the chapter title on chapter pages
+\chapterspacebelow{7.25cm} % Amount of vertical whitespace from the top margin to the start of the text on chapter pages
+
+\chapter*{List of acronyms}
+\input{Front/Acronyms.tex}
+
+\addcontentsline{toc}{chapter}{\textcolor{ocre}{List of acronyms}}
+
+%----------------------------------------------------------------------------------------
 
 \pagestyle{fancy} % Enable default headers and footers again
 
@@ -441,7 +349,7 @@
 %----------------------------------------------------------------------------------------
 {
 	\hypersetup{hidelinks}
-	\part{Vector-borne plant diseases}\label{part:VBD}
+	\part{Modelling vector-borne plant diseases}\label{part:VBD}
 }
 \input{Chapters/Summary_part_III.tex}
 
@@ -453,8 +361,8 @@
 \chapterspaceabove{6.75cm}
 \chapterspacebelow{7.25cm}
 
-\chapter{Non-stationary vector populations}
-\input{Chapters/Xf_PRE.tex}\label{ch:xf_PRE}
+\chapter{Non-stationary vector populations}\label{ch:xf_PRE}
+\input{Chapters/Xf_PRE.tex}
 
 %----------------------------------------------------------------------------------------
 %	A compartmental model for Xylella fastidiosa diseases with explicit

@@ -41,7 +41,7 @@ and the disease is a well-recognised limiting factor in the cultivation of
 \textit{Vitis vinifera} in the southeastern US \cite{Hopkins2002}. In Europe,
 despite strict quarantine measures to protect the wine industry (Directive
 2000/29/EC), PD has recently been established for the first time in vineyards
-on the island of Majorca, Spain \cite{Gomila2019, Moralejo2019}. This finding,
+on the island of Mallorca, Spain \cite{Gomila2019, Moralejo2019}. This finding,
 alongside the detection of PD in Taiwan \cite{Su2013}, has raised concerns
 about its possible spread to continental Europe and other wine-producing
 regions worldwide.
@@ -61,7 +61,7 @@ three subspecies have been detected in Europe mainly associated with crop and
 ornamental plants \cite{Denance2017, Olmo2017, Saponari2013}; among these, the
 clonal lineage of the subsp. \textit{fastidiosa} responsible for PD (hereafter
 termed Xf$_{\textrm{PD}}$). The same genetic lineage also causes almond leaf
-scorch disease in California \cite{Almeida2003} and Majorca (Spain)
+scorch disease in California \cite{Almeida2003} and Mallorca (Spain)
 \cite{Moralejo2020}, where it is widespread in almond plantations and
 vineyards, affecting more than 23 grape varieties \cite{Moralejo2019}.
 
@@ -71,11 +71,11 @@ sharpshooter leafhoppers (Hemiptera: Cicadellinae) and spittlebugs (Hemiptera:
 superfamily Cercopidae) \cite{Almeida2016, Cornara2018} -- e.g., at least eight
 species transmit PD in the southeastern US \cite{Overall2017}. Such
 non-specificity would have facilitated Xf$_{\textrm{PD}}$ invasion after being
-unwittingly brought to Majorca around 1993 with infected almond cuttings from
+unwittingly brought to Mallorca around 1993 with infected almond cuttings from
 California and its spread thereafter to grapevines through local populations of
 the meadow spittlebug, \textit{Philaenus spumarius} \cite{Moralejo2020}.
 Recently, the role of \textit{P. spumarius} in the transmission of PD in
-Majorca has been demonstrated \cite{Moralejo2019} and its involvement in
+Mallorca has been demonstrated \cite{Moralejo2019} and its involvement in
 epidemic outbreaks in California, previously thought marginal \cite{Redak2004,
     Severin1950}, is being revisited \cite{Cornara2016, Beal2021}. To date, the
 meadow spittlebug has been confirmed as the major vector in the olive quick
@@ -163,7 +163,7 @@ worldwide vineyard surface (https://www.oiv.int). Plants were randomly
 distributed in 12-plant rows along an insect-proof net tunnel and exposed
 to environmental temperature. In total, 57 rootstock-scion combinations were
 pin-prick mechanically inoculated \cite{Almeida2003} with two strains of
-Xf. subsp. \textit{fastidiosa} (ST1) isolated from grapevines in Majorca.
+Xf. subsp. \textit{fastidiosa} (ST1) isolated from grapevines in Mallorca.
 Disease severity was rated by counting the number of symptomatic leaves eight
 weeks after inoculation in mid-May and then every two weeks until the 16th week
 \cite{Moralejo2019}. Full details on the inoculation conditions, isolates,
@@ -272,7 +272,7 @@ correlation between $T_{\textrm{min}}$ and the average accumulated CDD between
 November 1 and March 31 in the northern hemisphere and between April 1 and
 October 31 in the southern hemisphere using 6,487,200 points distributed
 throughout the planet. The $CDD$ was estimated as
-\begin{equation}
+\begin{equation}\label{eq:CDDdef}
     CDD(t)= \frac{1}{24}\sum_{\tau \in t} (6-T(\tau)) \ \quad \textrm{for}
     \quad T_i\le 6\textrm{\textdegree C} ,
 \end{equation}
@@ -350,10 +350,11 @@ where $\Pi(t)=\mathcal{F}(MGDD(t))\, \mathcal{G}(CDD(t))$ is the cumulative
 probability of chronic infection, which depends on temperature, and $R_0$ bears
 the information on the vector density.
 
-The spatial unit of the model is given by the resolution of the climate data,
-in this case approximately $9 \times 9\,  \textrm{km}^2$ as it comes from
-ERA5-Land dataset. We assume uniform conditions within each of the grid cells
-in terms of vector population, susceptible vines and parameters that define the
+The spatial unit of the model is given by the resolution of the climate data.
+In this case it approximately $9 \times 9\,  \textrm{km}^2$, the native
+resolution of ERA5-Land dataset (0.1º $\times$ 0.1º). We assume uniform
+conditions within each of the grid cells in terms of vector population,
+susceptible vines and parameters that define the
 model. Risk outcome is calculated for each cell of the spatial raster
 individually; i.e., there is no simulated spread from one cell to another.
 Altogether, the equation representing the number of individuals with chronic
@@ -384,13 +385,13 @@ the
 number of infected plants has vanished. In the last seven years of the
 simulation, there is no reseeding to allow the system to relax. This
 process is
-repeated until the final year $\mathcal{T}$. Finally, the risk index
-$r_j(\mathcal{T})$ is calculated from the final number of infected plants at
+repeated until the final year $\tau$. Finally, the risk index
+$r_j(\tau)$ is calculated from the final number of infected plants at
 grid cell $j$ as
 \begin{equation}
-    r_j=\textrm{max}\left\{\frac{
-        \log(I_j(\mathcal{T})/I_j(t_0))}{\gamma\,
-        (R_0-1)\, \mathcal{T}}, -1 \right\} \ .
+    r_j(\tau)=\textrm{max}\left\{\frac{
+        \log(I_j(\tau)/I_j(t_0))}{\gamma\,
+        (R_0-1)\, \tau}, -1 \right\} \ .
     \label{eq:riskmeasure}
 \end{equation}
 In this equation, $r_j$ implicitly delimits three differential risk zones
@@ -422,15 +423,17 @@ where PD absence/presence fulfil the following conditions: true positive (TP),
 PD is positive and $r>0$;  true negative (TN), PD is negative and $r<0$; false
 positive (FP), PD absent but $r>0$; and false negative (FN), PD positive and
 $r<0$ (\cite{jimenez2012insights}). A different approach was followed to
-estimate $R_0$ for Europe given that PD is only present in Majorca and hence
+estimate $R_0$ for Europe given that PD is only present in Mallorca and hence
 spatiotemporal data on the PD distribution is limited to the island. First, we
 estimated the transmission rate of the main European vector \textit{P.
     spumarius} from the well-studied disease progress curve of the almond leaf
-scorch epidemic in Majorca. Then, using the known mortality rate of PD-infected
+scorch epidemic in Mallorca. Then, using the known mortality rate of
+PD-infected
 vines $\gamma\sim 0.2 \, \textrm{y}^{-1}$ and the inferred transmission rate,
-$\beta=0.8 \, \textrm{y}^{-1}$, the basic reproduction number for PD in Majorca
+$\beta=0.8 \, \textrm{y}^{-1}$, the basic reproduction number for PD in
+Mallorca
 yields $R_0=\beta/\gamma\approx4$. Finally, using data on the climate
-suitability of the vector in Majorca, $v=0.8$, and inverting the relation
+suitability of the vector in Mallorca, $v=0.8$, and inverting the relation
 $R_0(j)=R_0\, v(j)$, we estimated $R_0\approx 4/0.8=5$ as a maximal estimate
 baseline scenario for PD transmission in Europe (\cref{app:R0_Europe}). This
 figure is not intended to be an exact estimate of $R_0$ but rather an average
@@ -438,123 +441,6 @@ reference in our model in agreement with the lesser abundance of vectors
 relative to the US. Furthermore, since there is no information on the
 distribution of the potential vectors and no PD distribution data to calibrate,
 we also used a conservative $R_0 \approx 5$ scenario for the rest of the world.
-
-\subsection{A climate-driven epidemiological model}
-
-For the sake of clarity, as the model will be used in the following chapters,
-here we provide a more direct and concise description of the model.
-
-Our model describes the initial exponential rise (or decrease) of infected
-plants at the onset of an epidemic based on the spatial distribution of the
-vector and the bacterial growth and survival processes mediated by temperature.
-The density of vectors at a given cell controls the number of new plants that
-will be inoculated with the bacterium, while the local temperature mediates the
-growth and survival processes of the in-plant bacterial population, leading the
-initial inoculation to an infection or not. These temperature-driven growth and
-survival processes are described with the accumulation of two metrics denoted
-\textit{Modified Growing Degree Days} (MGDD) and \textit{Cold Degree Days}
-(CDD). The base function to compute the MGDD is proportional to the Xf
-temperature-dependent growth rate and is defined by
-\begin{align*}
-     & f(T)=\left\{\begin{array}{lll}
-                       0                & \textrm{if} & T<T_{\textrm{base}}
-                       \\
-                       m_1\cdot T-b_1   & \textrm{if} & T_{\textrm{base}} \leq
-                       T < T_1
-                       \\
-                       m_2\cdot T + b_2 & \textrm{if} & T_{1} \leq T <
-                       T_{\textrm{opt}}
-                       \\
-                       m_3\cdot T + b_3 & \textrm{if} & T_{\textrm{opt}}
-                       \leq T
-                       < T_2
-                       \\
-                       m_4\cdot T + b_4 & \textrm{if} & T_2 \leq
-                       T_{\textrm{max}}
-                       \\
-                       0                & \textrm{if} & T\geq T_{\textrm{max}}
-                   \end{array}\right. \,
-\end{align*}
-where $T_{\textrm{base}}=\SI{12}{\degree C}$, $T_1=18$,
-$T_{\textrm{opt}}=\SI{28}{\degree C}$,	$T_2=32$ and
-$T_{\textrm{max}}=\SI{35}{\degree C}$; the slopes are $m_1= 0.66$, $m_2=1$,
-$m_3=-1.25$ and $m_4=-3$ and the intercepts are $b_1=-8$, $b_2=-14$, $b_3=4$
-and $b_4=105$. MGDD are then computed as
-\begin{equation}\label{eq:MGDDdef}
-    MGDD(t) = \frac{1}{24}\sum_{\tau \in t} f(T(\tau)),
-\end{equation}
-where $\tau$ is expressed in hours, $t$ in years and we divide by $24$ to
-obtain $MGDD(t)$ in degree days. The accumulation period goes from the
-$1^{\mathrm{st}}$ of April to the $31^{\mathrm{st}}$ of October in the northern
-hemisphere and from the $1^{\mathrm{st}}$ of November to the $31^{\mathrm{st}}$
-of March in the southern hemisphere.
-
-CDD are computed between $1^{\mathrm{st}}$ November and $31^{\mathrm{st}}$
-March in the northern hemisphere and between $1^{\mathrm{st}}$ April and
-$31^{\mathrm{st}}$ October in the southern hemisphere as
-\begin{equation}
-    CDD(t)= \frac{1}{24}\sum_{\tau \in t} (6-T(\tau)) \ \quad \textrm{for}
-    \quad T_i\le 6\textrm{\textdegree C} .	\label{eq:CDDdef}
-\end{equation}
-
-Altogether, the number of infected hosts is described by the following
-recurrence relation
-\begin{equation}
-    I(t)=I(t-1)e^{\gamma(R_0-1)}\mathcal{F}(MGDD(t))\mathcal{G}(CDD(t)) \ ,
-\end{equation}
-where $\gamma$ is the death rate of infected vines, $R_0$ is the basic
-reproduction number of the disease and $\mathcal{F}(\cdot)$ and
-$\mathcal{G}(\cdot)$ are sigmoidal-like functions that relate the MGDD and CDD
-metrics to the probability of developing an infection from a given inoculation.
-
-To incorporate the spatial heterogeneity of the vector population, $R_0$ in
-each cell $j$ can be related to the climatic suitability of the vector, such
-that
-\begin{equation}
-    R_0^j=R_0^*\cdot s_j \ .
-\end{equation}
-
-For Europe, we use the climatic suitability of the main vector,
-\textit{Philaenus spumarius}, and $R_0^*=5.0$ for all simulations. For the
-United States we use a homogeneous basic reproductive number $R_0=8.0$ in all
-cells, as this choice of the parameter reproduces spatiotemporal data on PD
-epidemics in the US with an area under the curve of $\sim 90\%$. For the rest
-of the zones, we use $R_0=5$ because of the lower presence of vectors compared
-to the United States.
-
-We use $\gamma=0.2$ as previously estimated \cite{Almeida2003} and the
-specific form of $\mathcal{F}(\cdot)$ and $\mathcal{G}(\cdot)$ is given by
-\begin{align}
-    \mathcal{F}(x) & = \frac{1}{1+e^{-0.012(x-975)}}        \\
-    \mathcal{G}(x) & = \frac{2\cdot10^7}{2\cdot 10^7 + x^3}
-\end{align}
-
-Finally, the risk index is derived as the effective growth rate of the
-infected population over the simulated time,
-\begin{equation}
-    r_j=\max\left\{-1, \frac{\ln(I_j(T) / I(0))}{\gamma(R_0-1)\cdot
-        T}\right\} \ .
-\end{equation}
-
-Because the typical time scale of the disease is 5 years ($1/\gamma$), we
-simulate periods of 7 years. If more years are available
-to simulate, we perform a re-introduction of the disease as a single infected
-plant in each cell after each 7-year period.
-
-The code used to run the model is freely accessible at GitHub
-\cite{CODE_model}.
-
-\subsection{Distribution of wine-grape production areas.} Risk maps were
-focused solely on wine-grape regions excluding table and dried
-grapes-producing
-areas. Data on the vineyard surface in Europe were obtained from the CORINE
-land-cover map \cite{Corine} (\cref{fig6}). The Nomenclature of Territorial
-Units for Statistics (NUTS) was used as a geocoding for the subdivisions of
-European countries for statistical purposes. To visualize the locations of
-the
-main growing regions in the risk maps, we included dots representing the
-distribution of the main wine-growing regions collected from official
-statistics and maps from the countries (\cref{fig5}).
 
 \subsection{\textit{Philaenus spumarius} SDM}
 
@@ -574,7 +460,20 @@ climatic constraints on vector population sizes at optimal climatic conditions
 spatially-dependent basic reproduction number, $R_0(x)=R_0\, v(x)$. The linear
 dependence between the basic reproduction number and climatic suitability is
 justified by a vector-borne epidemic compartmental model
-(\cref{app:vector_influence,app:SIR_justifications}).
+(\cref{ch:xf_PRE,app:vector_influence,app:SIR_justifications}).
+
+\subsection{Distribution of wine-grape production areas.}
+Risk maps were
+focused solely on wine-grape regions excluding table and dried
+grapes-producing
+areas. Data on the vineyard surface in Europe were obtained from the CORINE
+land-cover map \cite{Corine} (\cref{fig6}). The Nomenclature of Territorial
+Units for Statistics (NUTS) was used as a geocoding for the subdivisions of
+European countries for statistical purposes. To visualize the locations of
+the
+main growing regions in the risk maps, we included dots representing the
+distribution of the main wine-growing regions collected from official
+statistics and maps from the countries (\cref{fig5}).
 
 \subsection{Risk assessment by 2050}
 
@@ -591,54 +490,6 @@ simulation procedure previously explained.
 
 \section{Results}
 
-\begin{figure*}[t!]
-    \centering
-    \includegraphics[width=\textwidth]{Figures/Fig1.pdf}
-    \caption[Climatic and transmission layers composing the
-        epidemiological model]{\textbf{Climatic and transmission layers
-            composing
-            the
-            epidemiological model}. (\textbf{a}) $MGDD$ profile fitted to the
-        \textit{in
-            vitro } data of Xf growth rate in Feil \& Purcell 2001
-        \cite{Feil2001}. The
-        original Arrhenius plot in Kelvin degrees (inset) was converted to
-        Celsius, as
-        explained in (\cref{app:MGDD}), to obtain the fit shown in the
-        main
-        plot red line; the blue line represents the fit with a Beta function.
-        (\textbf{b}) Correlation between CDD and the average $T_{\textrm{min}}$
-        of the
-        coldest month between 1981 and 2019. Plotted black dots (worldwide) and
-        yellow
-        dots (main wine-producing zones) depict climatic data from 6,487,200
-        cells at
-        $\SI{0.1}{\degree} \cross \SI{0.1}{\degree}$ resolution, spread
-        globally and
-        retrieved from ERA5-Land dataset. The red solid line depicts the fitted
-        exponential function for worldwide data and the blue solid line for
-        main
-        vineyard zones. (\textbf{c}) Nonlinear relationship between MGDD (red
-        line) and
-        CDD (blue line) and the likelihood of developing chronic infections.
-        Black dots
-        depict the cumulative proportion of grapevine plants in the population
-        of $36$
-        inoculated varieties showing five or more symptomatic leaves at each of
-        the 15
-        $MGDD$ levels (see \cref{app:PD_risk}). Vertical bars are the
-        95\% CI.
-        (\textbf{d}) Combined ranges of $MGDD$ and $CDD$ on the likelihood of
-        developing chronic infection. (\textbf{e}) Transmission layer in the
-        dynamic
-        equation (1) of the SIR compartmental model. (\textbf{f}) Relationship
-        between
-        the exponential growth of the number of infected plants with the risk
-        index and
-        their ranks.}
-    \label{fig1}
-\end{figure*}
-
 \subsection{Thermal requirements to develop PD} We examined the response of a
 wide spectrum of European grapevine varieties to Xf$_{\textrm{PD}}$ infection
 in three independent experiments conducted in 2018, 2019, and 2020. Overall,
@@ -651,7 +502,7 @@ previous field observations of general susceptibility to Xf$_{\textrm{PD}}$
 \cite{Hopkins2002, Moralejo2019, Purcell2013}.	We also found significant
 differences in virulence ($\chi^2=68.73$, $\textrm{df}=1$, $P=2.2 \cross
     10^{-16}$) between two Xf$_{\textrm{PD}}$ strains isolated from grapevines
-in Majorca across grapevine varieties (\cref{figS1}). Full details on the
+in Mallorca across grapevine varieties (\cref{figS1}). Full details on the
 results of the inoculation tests are available in Methods,
 \cref{app:inoculations}, \cref{tableS1}.
 
@@ -716,7 +567,7 @@ the accumulation of cold units in an analogy of the MGDD, we searched for a
 general correlation between $T_{min}$ and the cold degree days (CDDs) with base
 temperature = $6$ \textdegree C (see Methods). We found an exponential
 relation, $CDD \sim 230\exp(-0.26\cdot T_{\textrm{min}})$, where specifically,
-$CDD\gtrsim306$ correspond to $T_{\textrm{min}}<\SI{-1.1}{\degree C}$
+$CDD>306$ correspond to $T_{\textrm{min}}<\SI{-1.1}{\degree C}$
 (\cref{fig1}b). To transform this exponential relationship to a probabilistic
 function analogous to $\mathcal{F}(MGDD)$, hereafter denoted
 $\mathcal{G}(CDD)$, ranging between 0 and 1, we considered the sigmoidal family
@@ -725,6 +576,54 @@ and $C=3$ (\cref{fig1}c), fulfilling the limit $\mathcal{G}(CDD=0)=1$, i.e. no
 winter curing when no cold accumulated, and a conservative 75\% of the infected
 plants recovered at $T_{\textrm{min}}=\SI{-1.1}{\degree C}$ instead of 100\% to
 reflect uncertainties on the effect of winter curing.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{Figures/Fig1.pdf}
+    \caption[Climatic and transmission layers composing the
+        epidemiological model]{\textbf{Climatic and transmission layers
+            composing
+            the
+            epidemiological model}. (\textbf{a}) $MGDD$ profile fitted to the
+        \textit{in
+            vitro } data of Xf growth rate in Feil \& Purcell 2001
+        \cite{Feil2001}. The
+        original Arrhenius plot in Kelvin degrees (inset) was converted to
+        Celsius, as
+        explained in (\cref{app:MGDD}), to obtain the fit shown in the
+        main
+        plot red line; the blue line represents the fit with a Beta function.
+        (\textbf{b}) Correlation between CDD and the average $T_{\textrm{min}}$
+        of the
+        coldest month between 1981 and 2019. Plotted black dots (worldwide) and
+        yellow
+        dots (main wine-producing zones) depict climatic data from 6,487,200
+        cells at
+        $\SI{0.1}{\degree} \cross \SI{0.1}{\degree}$ resolution, spread
+        globally and
+        retrieved from ERA5-Land dataset. The red solid line depicts the fitted
+        exponential function for worldwide data and the blue solid line for
+        main
+        vineyard zones. (\textbf{c}) Nonlinear relationship between MGDD (red
+        line) and
+        CDD (blue line) and the likelihood of developing chronic infections.
+        Black dots
+        depict the cumulative proportion of grapevine plants in the population
+        of $36$
+        inoculated varieties showing five or more symptomatic leaves at each of
+        the 15
+        $MGDD$ levels (see \cref{app:PD_risk}). Vertical bars are the
+        95\% CI.
+        (\textbf{d}) Combined ranges of $MGDD$ and $CDD$ on the likelihood of
+        developing chronic infection. (\textbf{e}) Transmission layer in the
+        dynamic
+        equation (1) of the SIR compartmental model. (\textbf{f}) Relationship
+        between
+        the exponential growth of the number of infected plants with the risk
+        index and
+        their ranks.}
+    \label{fig1}
+\end{figure}
 
 \subsection{MGDD/CDD distribution maps}
 
@@ -748,6 +647,41 @@ $\mathcal{F}(MGDD) > 99\%$ comparable to areas with high disease incidence in
     coast from Oporto (Portugal) to Denmark are below suitable $MGDD$, with an
     important exception in the Garonne river basin in France (Bordeaux Area)
     with low to moderate $MGDD$ (\cref{fig2}b).
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.85\textwidth]{Figures/Fig2.pdf}
+        \caption[Average thermal-dependent maps for Pierce's disease
+            (PD) development and recovery]{\textbf{Average
+                thermal-dependent maps for Pierce's disease
+                (PD)
+                development and recovery in North America and Europe.} PD
+            development during
+            the growing season based on average $\mathcal{F}(MGDD)$ estimations
+            between
+            1981 and 2019 in North America (\textbf{a}) and Europe (\textbf{b})
+            derived
+            from the results of the inoculation experiments on 36 grapevine
+            varieties.
+            Large differences in the areal extension with favourable MGDDs can
+            be observed
+            between the US and Europe. The winter curing effect is reflected in
+            the
+            distribution of the average $\mathcal{G}(CDD)$ for the 1981-2019
+            period in the
+            United States (\textbf{c}) and Europe (\textbf{d}). A snapshot of
+            the
+            temperature-driven probability of chronic infection averaged for
+            the 1981-2019
+            period is obtained from the joint effect of MGDD and CDD in North
+            America
+            (\textbf{e}) and Europe (\textbf{f}). Warmer colours indicate more
+            favourable
+            conditions for chronic PD and the dashed line highlights the
+            threshold of
+            chronic infection probability being $0.5$.}
+        \label{fig2}
+    \end{figure}
 
     \cref{fig2}a shows how the area with high-risk MGDD values extends further
     north of the current known PD distribution in the southeastern US,
@@ -792,41 +726,6 @@ T_{\textrm{min}} < -1.1$ \textdegree C) since 1981, comprising land areas
     disease
     transmission dynamics and climate interannual variability.
 
-    \begin{figure}[H]
-        \centering
-        \includegraphics[width=0.85\textwidth]{Figures/Fig2.pdf}
-        \caption[Average thermal-dependent maps for Pierce's disease
-            (PD) development and recovery]{\textbf{Average
-                thermal-dependent maps for Pierce's disease
-                (PD)
-                development and recovery in North America and Europe.} PD
-            development during
-            the growing season based on average $\mathcal{F}(MGDD)$ estimations
-            between
-            1981 and 2019 in North America (\textbf{a}) and Europe (\textbf{b})
-            derived
-            from the results of the inoculation experiments on 36 grapevine
-            varieties.
-            Large differences in the areal extension with favourable MGDDs can
-            be observed
-            between the US and Europe. The winter curing effect is reflected in
-            the
-            distribution of the average $\mathcal{G}(CDD)$ for the 1981-2019
-            period in the
-            United States (\textbf{c}) and Europe (\textbf{d}). A snapshot of
-            the
-            temperature-driven probability of chronic infection averaged for
-            the 1981-2019
-            period is obtained from the joint effect of MGDD and CDD in North
-            America
-            (\textbf{e}) and Europe (\textbf{f}). Warmer colours indicate more
-            favourable
-            conditions for chronic PD and the dashed line highlights the
-            threshold of
-            chronic infection probability being $0.5$.}
-        \label{fig2}
-    \end{figure}
-
     \subsection{PD global risk}
     We ran several simulations of the model \cref{eq:evolution_eq} with $R_0$
     values between 1 and 14 to validate PD spatiotemporal distribution in the
@@ -854,7 +753,7 @@ $80\%$, except for 2006, due to data obtained from an area at the
                 positives and TN to true
                 negatives according to our model with $R_0=8$. }
             \label{tab:validation}
-            \resizebox{0.8\textwidth}{!}{%
+            \resizebox{0.6\textwidth}{!}{%
                 \begin{tabular}{llllll}
                     \hline
                     Year  & Presence & Absence & TP & TN & Accuracy \\
@@ -931,7 +830,8 @@ $80\%$, except for 2006, due to data obtained from an area at the
     \end{figure*}
 
     To date, PD is mainly restricted to the American continent with some
-    unrelated introductions of Xf$_{\textrm{PD}}$ to Taiwan and Majorca (Spain)
+    unrelated introductions of Xf$_{\textrm{PD}}$ to Taiwan and Mallorca
+    (Spain)
     from the United States \cite{Moralejo2019,Su2013}. To assess the risk of PD
     establishment elsewhere, we projected our epidemiological model into the
     main winegrowing regions of the Northern Hemisphere (US, Europe and China)
@@ -978,7 +878,7 @@ $3.5$-times greater than that of the eastern US, which could increase the
 
     Risk indexes may vary within epidemic-risk zones if any of the
     epidemiological parameters governing transmission change. As expected,
-$I(t) < I(0)$ boundaries increasingly displace to northern latitudes in the US
+$I(t) < I(0)$ regions increasingly displace to northern latitudes in the US
     and Europe under higher transmission scenarios, increasing the
     risk-epidemic zones significantly (\cref{fig4}a-f). The line representing
     the outbreak extinction i.e., the non-risk zone $r(t)<-0.09$, in the
@@ -1012,28 +912,6 @@ $I(t) < I(0)$ boundaries increasingly displace to northern latitudes in the US
     risk and non-risk zones (\cref{fig:R2,fig:R3}), and non-significant
     differences in risk zones at the global scale.
 
-    \begin{figure}[H]
-        \centering
-        \includegraphics[width=\textwidth]{Figures/Fig5.pdf}
-        \caption[Global shifts in PD risk index ($r_j(t)$) from 2020 to
-            2050]{\textbf{Global shifts in PD risk index ($r_j(t)$) from 2020
-                to
-                2050.} To build the maps, we have assumed a spatial homogeneous
-            vector
-            distribution and a $R_0=5$ scenario, except for the US where a
-            $R_0=8$ has been
-            used in the model simulations.\textbf{(a)} North
-            America;\textbf{(b)}
-            Europe;\textbf{(c)} Asia; \textbf{(d)} South America; \textbf{(e)}
-            Australia
-            and New Zealand; and \textbf{(f)} South Africa. Risk-index
-            increases are in red
-            and decreases in blue. The dashed line represents the spatial
-            threshold where
-            $r_j(t)$ difference changes from negative to positive.}
-        \label{fig5}
-    \end{figure}
-
     \subsection{PD risk projections for 2050}
 
     Global shifts in the risk index $r_j(t)$ between 2019 and those projected
@@ -1062,6 +940,25 @@ $I(t) < I(0)$ boundaries increasingly displace to northern latitudes in the US
     \cref{ch:xf_climate_change}, we explore the potential impact of climate
     change on the risk of PD establishment in Europe taking into account
     different global warming scenarios.
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.9\textwidth]{Figures/Fig5.pdf}
+        \caption[Global shifts in PD risk index ($r_j(t)$) from 2020 to
+            2050]{\textbf{Global shifts in PD risk index ($r_j(t)$) from 2020
+                to
+                2050.} We assume a homogeneous vector spatial distribution with
+            $R_0=5$ except for the US, where $R_0=8$ has been
+            considered. \textbf{(a)} North America;\textbf{(b)}
+            Europe;\textbf{(c)} Asia; \textbf{(d)} South America; \textbf{(e)}
+            Australia
+            and New Zealand; and \textbf{(f)} South Africa. Risk-index
+            increases are in red
+            and decreases in blue. The dashed line represents the spatial
+            threshold where
+            $r_j(t)$ difference changes from negative to positive.}
+        \label{fig5}
+    \end{figure}
 
     \begin{table}[H]
         \centering
@@ -1142,6 +1039,18 @@ $r(t)>0.075$) in $22.3\%$ of the vineyards in Europe. However, no vineyard is
     \cref{tableS4,tableS8}, we provide full details of the total vineyard
     areas currently at risk for each country and region.
 
+    Our model with climate and vector distribution projections for 2050
+    indicates a $ 55.8 \% $ increase in the epidemic-risk zone in Europe
+    (\cref{fig6}b). This increment would be mainly due to the extension of
+    epidemic-risk zones with very low and low-risk indexes. However, within the
+    epidemic-risk zones, areas with moderate risk indexes would decrease from
+$\SI{114925}{ha}$ in 2020 to $\SI{43114}{ha}$ in 2050, and no vineyards would
+    be at high risk (\cref{fig6}b; see \cref{tableS9}). Counterintuitively,
+    our model indicates a substantial increase in the area where PD could
+    establish and become endemic for 2050, but a moderate decline in those
+    areas where crop damage could be expected to be significant (e.g., Balearic
+    Islands, Crete, Cyprus, Apulia).
+
     \begin{figure}[H]
         \includegraphics[width=1\textwidth]{Figures/Fig6.png}
         \caption[PD risk in european vineyards for 2020 and
@@ -1166,18 +1075,6 @@ $r(t)>0.075$) in $22.3\%$ of the vineyards in Europe. However, no vineyard is
             dryer.}
         \label{fig6}
     \end{figure}
-
-    Our model with climate and vector distribution projections for 2050
-    indicates a $ 55.8 \% $ increase in the epidemic-risk zone in Europe
-    (\cref{fig6}b). This increment would be mainly due to the extension of
-    epidemic-risk zones with very low and low-risk indexes. However, within the
-    epidemic-risk zones, areas with moderate risk indexes would decrease from
-$\SI{114925}{ha}$ in 2020 to $\SI{43114}{ha}$ in 2050, and no vineyards would
-    be at high risk (\cref{fig6}b; see \cref{tableS9}). Counterintuitively,
-    our model indicates a substantial increase in the area where PD could
-    establish and become endemic for 2050, but a moderate decline in those
-    areas where crop damage could be expected to be significant (e.g., Balearic
-    Islands, Crete, Cyprus, Apulia).
 
     \section{Discussion}
 
@@ -1319,7 +1216,7 @@ $MGDD$ oscillations found in most locations. In addition, our model is general
     wet
     gets wetter" \cite{Feng2015}. In agreement, our model projection for PD on
     the
-    vineyards of Majorca (Spain) suggests shifts to slightly less favourable
+    vineyards of Mallorca (Spain) suggests shifts to slightly less favourable
     conditions for Xf$_{\textrm{PD}}$ transmission and an expected progressive
     decrease in the impact of the disease by 2050. This example and others in
     Mediterranean islands advocate for certain
@@ -1343,7 +1240,7 @@ $MGDD$ oscillations found in most locations. In addition, our model is general
     linearly
     under environmental conditions favouring vector abundance
     \cite{Gruber2012}, as
-    has been observed at a local scale on vineyards of Majorca
+    has been observed at a local scale on vineyards of Mallorca
     \cite{Moralejo2019}.
     Our study also does not contemplate likely changes within the PD
     pathosystem.
