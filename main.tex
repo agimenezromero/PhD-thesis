@@ -93,9 +93,6 @@
 \newacronym{cordex}{CORDEX}{Coordinated Regional Climate Downscaling
 	Experiment}
 \newacronym{corine}{CORINE}{Coordination of Information on the Environment}
-\newacronym{covid}{COVID}{Coronavirus Disease}
-\newacronym{crm}{CRM}{Certified Reference Material}
-\newacronym{csic}{CSIC}{Consejo Superior de Investigaciones Científicas}
 \newacronym{cvc}{CVC}{Citrus Variegated Chlorosis}
 \newacronym{dl}{DL}{Deep Learning}
 \newacronym{dna}{DNA}{Deoxyribonucleic Acid}
@@ -105,40 +102,27 @@
 \newacronym{eppo}{EPPO}{European and Mediterranean Plant Protection
 	Organization}
 \newacronym{era}{ERA}{ECMWF Reanalysis}
-\newacronym{eu}{EU}{European Union}
 \newacronym{ffnn}{FFNN}{Feedforward Neural Network}
 \newacronym{fn}{FN}{False Negative}
 \newacronym{fp}{FP}{False Positive}
 \newacronym{fpn}{FPN}{Feature Pyramid Network}
 \newacronym{fpr}{FPR}{False Positive Rate}
 \newacronym{gam}{GAM}{Generalized Additive Model}
-\newacronym{gb}{GB}{Gigabyte}
 \newacronym{gbif}{GBIF}{Global Biodiversity Information Facility}
 \newacronym{gcm}{GCM}{Global Climate Model}
 \newacronym{gdd}{GDD}{Growing Degree Days}
 \newacronym{goa}{GOA-ON}{Global Ocean Acidification Observing Network}
-\newacronym{grib}{GRIB}{GRIdded Binary}
 \newacronym{gru}{GRU}{Gated Recurrent Unit}
 \newacronym{gsa}{GSA}{Global Sensitivity Analysis}
 \newacronym{ibm}{IBM}{Individual-Based Model}
-\newacronym{ieo}{IEO}{Instituto Español de Oceanografía}
-\newacronym{ifapa}{IFAPA}{Instituto Andaluz de Investigación y Formación
-	Agraria, Pesquera, Alimentaria y de la Producción Ecológica}
-\newacronym{ifisc}{IFISC}{Institute for Cross-Disciplinary Physics and Complex
-	Systems}
-\newacronym{imedmar}{IMEDMAR}{Instituto de Investigación en Medio Ambiente y
-	Ciencia Marina}
 \newacronym{ipcc}{IPCC}{Intergovernmental Panel on Climate Change}
-\newacronym{irta}{IRTA}{Institut de Recerca i Tecnologia Agroalimentàries}
 \newacronym{iucn}{IUCN}{International Union for Conservation of Nature}
 \newacronym{jabowa}{JABOWA}{JAnak-BOtkin-WAllis}
-\newacronym{lmp}{LMP}{Lampedusa}
 \newacronym{lphme}{LPHME}{Standard List of Marine Habitats of Spain}
 \newacronym{lsa}{LSA}{Local Sensitivity Analysis}
 \newacronym{lstm}{LSTM}{Long Short-Term Memory}
 \newacronym{mae}{MAE}{Mean Absolute Error}
 \newacronym{mape}{MAPE}{Mean Absolute Percentage Error}
-\newacronym{matlab}{MATLAB}{Matrix Laboratory}
 \newacronym{mgdd}{MGDD}{Modified Growing Degree Days}
 \newacronym{ml}{ML}{Machine Learning}
 \newacronym{mme}{MME}{Mass Mortality Event}
@@ -146,11 +130,9 @@
 \newacronym{mse}{MSE}{Mean Squared Error}
 \newacronym{ngm}{NGM}{Next Generation Matrix}
 \newacronym{nir}{NIR}{Near Infrared}
-\newacronym{noaa}{NOAA}{National Oceanic and Atmospheric Administration}
 \newacronym{nuts}{NUTS}{Nomenclature of Territorial Units for Statistics / No
 	U-Turn Sampler}
 \newacronym{oa}{OA}{Ocean Acidification}
-\newacronym{oce}{OCE}{Oceanogràfic of Valencia}
 \newacronym{ode}{ODE}{Ordinary Differential Equation}
 \newacronym{oos}{OOS}{Out-of-Sample}
 \newacronym{oqds}{OQDS}{Olive Quick Decline Syndrome}
@@ -161,7 +143,6 @@
 \newacronym{pdo}{PDO}{Protected Designation of Origin}
 \newacronym{ps}{Ps}{Philaenus spumarius}
 \newacronym{psb}{PSPnet}{Pyramid Scene Parsing Network}
-\newacronym{ram}{RAM}{Random Access Memory}
 \newacronym{rcm}{RCM}{Regional Climate Model}
 \newacronym{rgb}{RGB}{Red Green Blue}
 \newacronym{rmse}{RMSE}{Root Mean Squared Error}
@@ -178,8 +159,6 @@
 \newacronym{sirp}{SIRP}{Susceptible-Infectious-Recovered-Parasite}
 \newacronym{sirs}{SIRS}{Susceptible-Infectious-Recovered-Susceptible}
 \newacronym{sis}{SIS}{Susceptible-Infectious-Susceptible}
-\newacronym{socib}{SOCIB}{Sistema de Observación y Predicción Costero de las
-	Illes Balears}
 \newacronym{sop}{SOP}{Standard Operation Procedure}
 \newacronym{sr}{SR}{Surface Reflectance}
 \newacronym{srnn}{SRNN}{Simple Recurrent Neural Network}
@@ -187,11 +166,7 @@
 \newacronym{tn}{TN}{True Negative}
 \newacronym{tp}{TP}{True Positive}
 \newacronym{tpr}{TPR}{True Positive Rate}
-\newacronym{uk}{UK}{United Kingdom}
-\newacronym{un}{UN}{United Nations}
 \newacronym{unet}{UNET}{U-Net}
-\newacronym{us}{US}{United States}
-\newacronym{usa}{USA}{United States of America}
 \newacronym{uv}{UV}{Ultraviolet}
 \newacronym{xylefa}{Xf}{Xylella fastidiosa}
 
@@ -317,9 +292,28 @@
 	\tableofcontents % Output the table of contents
 }
 
-%\listoffigures % Output the list of figures, comment or remove this command if not required
+{
+	\hypersetup{hidelinks}
+	\listoffigures % Output the list of figures
+}
 
-%\listoftables % Output the list of tables, comment or remove this command if not required
+\addcontentsline{toc}{chapter}{\textcolor{ocre}{List of figures}}
+
+{
+	\hypersetup{hidelinks}
+	\listoftables % Output the list of tables
+}
+
+\addcontentsline{toc}{chapter}{\textcolor{ocre}{List of tables}}
+
+%----------------------------------------------------------------------------------------
+%	LIST OF ABBREVIATIONS
+%----------------------------------------------------------------------------------------
+
+\glsaddall
+\printglossary[type=\acronymtype,title=List of acronyms]
+
+\addcontentsline{toc}{chapter}{\textcolor{ocre}{List of abbreviations}}
 
 \pagestyle{fancy} % Enable default headers and footers again
 
@@ -579,45 +573,6 @@
 \input{Chapters/Outlook.tex}
 
 \stopcontents[part] % Manually stop the 'part' table of contents here so the previous Part page table of contents doesn't list the following chapters
-
-%----------------------------------------------------------------------------------------
-%	LIST OF FIGURES
-%----------------------------------------------------------------------------------------
-
-\chapterimage{} % Chapter heading image
-\chapterspaceabove{6.75cm} % Whitespace from the top of the page to the chapter title on chapter pages
-\chapterspacebelow{7.25cm} % Amount of vertical whitespace from the top margin to the start of the text on chapter pages
-
-{
-	\hypersetup{hidelinks}
-	\listoffigures % Output the list of figures
-}
-
-\addcontentsline{toc}{chapter}{\textcolor{ocre}{List of figures}}
-
-%----------------------------------------------------------------------------------------
-%	LIST OF TABLES
-%----------------------------------------------------------------------------------------
-
-\chapterimage{} % Chapter heading image
-\chapterspaceabove{6.75cm} % Whitespace from the top of the page to the chapter title on chapter pages
-\chapterspacebelow{7.25cm} % Amount of vertical whitespace from the top margin to the start of the text on chapter pages
-
-{
-	\hypersetup{hidelinks}
-	\listoftables % Output the list of tables
-}
-
-\addcontentsline{toc}{chapter}{\textcolor{ocre}{List of tables}}
-
-%----------------------------------------------------------------------------------------
-%	LIST OF ABBREVIATIONS
-%----------------------------------------------------------------------------------------
-
-\glsaddall
-\printglossary[type=\acronymtype,title=List of acronyms]
-
-\addcontentsline{toc}{chapter}{\textcolor{ocre}{List of abbreviations}}
 
 %----------------------------------------------------------------------------------------
 %	BIBLIOGRAPHY
