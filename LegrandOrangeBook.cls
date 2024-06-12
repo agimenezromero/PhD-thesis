@@ -452,8 +452,10 @@
 
 \usepackage[
 	backend=biber, % Use the biber engine for compiling the bibliography
-	bibstyle=numeric, % Main bibliography style
-	citestyle=numeric-comp, % In-text citation style
+	% bibstyle=numeric, % Main bibliography style
+	% citestyle=numeric-comp, % In-text citation style
+	style=phys, % Use the Phys style for citations
+	biblabel=brackets, % Number entries by placing them in square brackets
 	sorting=none, % Sort references in the bibliography by name, then year, then title
 	sortcites=true, % If multiple citekeys are passed to a citation command, sort them in the citation
 	abbreviate=false, % Suppress abbreviations such as "Ed." for Editor
@@ -462,48 +464,50 @@
 	url=false, % Suppress printing URLs in the bibliography
 	eprint=false, % Suppress printing the eprint field in the bibliography
 	maxcitenames=2, % Max number of names displayed in a citation before truncation
+	maxbibnames=2, % Max number of names displayed in the bibliography before truncation
+	giveninits=true, % Use initials for first names
 ]{biblatex}
 
 \defbibheading{bibempty}{} % Suppress default bibliography headings
 
 % Link doi to journal name, volume, pages, etc
-\ExecuteBibliographyOptions{doi=false}
-\ExecuteBibliographyOptions{doi=false}
-\DeclareFieldFormat{doilink}{%
-	\iffieldundef{doi}{#1}%
-	{\href{http://dx.doi.org/\thefield{doi}}{#1}}}
+% \ExecuteBibliographyOptions{doi=false}
+% \ExecuteBibliographyOptions{doi=false}
+% \DeclareFieldFormat{doilink}{%
+% 	\iffieldundef{doi}{#1}%
+% 	{\href{http://dx.doi.org/\thefield{doi}}{#1}}}
 
-\DeclareBibliographyDriver{article}{%
-	\usebibmacro{bibindex}%
-	\usebibmacro{begentry}%
-	\usebibmacro{author/translator+others}%
-	\setunit{\labelnamepunct}\newblock
-	\usebibmacro{title}%
-	\newunit
-	\printlist{language}%
-	\newunit\newblock
-	\usebibmacro{byauthor}%
-	\newunit\newblock
-	\usebibmacro{bytranslator+others}%
-	\newunit\newblock
-	\printfield{version}%
-	\newunit\newblock
-	\usebibmacro{in:}%
-	\printtext[doilink]{%
-		\usebibmacro{journal+issuetitle}%
-		\newunit
-		\usebibmacro{byeditor+others}%
-		\newunit
-		\usebibmacro{note+pages}%
-	}%
-	\newunit\newblock
-	\newunit\newblock
-	\usebibmacro{doi+eprint+url}%
-	\newunit\newblock
-	\usebibmacro{addendum+pubstate}%
-	\setunit{\bibpagerefpunct}\newblock
-	\usebibmacro{pageref}%
-	\usebibmacro{finentry}}
+% \DeclareBibliographyDriver{article}{%
+% 	\usebibmacro{bibindex}%
+% 	\usebibmacro{begentry}%
+% 	\usebibmacro{author/translator+others}%
+% 	\setunit{\labelnamepunct}\newblock
+% 	\usebibmacro{title}%
+% 	\newunit
+% 	\printlist{language}%
+% 	\newunit\newblock
+% 	\usebibmacro{byauthor}%
+% 	\newunit\newblock
+% 	\usebibmacro{bytranslator+others}%
+% 	\newunit\newblock
+% 	\printfield{version}%
+% 	\newunit\newblock
+% 	\usebibmacro{in:}%
+% 	\printtext[doilink]{%
+% 		\usebibmacro{journal+issuetitle}%
+% 		\newunit
+% 		\usebibmacro{byeditor+others}%
+% 		\newunit
+% 		\usebibmacro{note+pages}%
+% 	}%
+% 	\newunit\newblock
+% 	\newunit\newblock
+% 	\usebibmacro{doi+eprint+url}%
+% 	\newunit\newblock
+% 	\usebibmacro{addendum+pubstate}%
+% 	\setunit{\bibpagerefpunct}\newblock
+% 	\usebibmacro{pageref}%
+% 	\usebibmacro{finentry}}
 
 \AtEveryBibitem{\clearfield{issn}} %no issn
 \AtEveryBibitem{\clearfield{number}} %no number (issue)
