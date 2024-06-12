@@ -9,10 +9,13 @@
 
 % Book information for PDF metadata, remove/comment this block if not required 
 \hypersetup{
-	pdftitle={Title}, % Title field
-	pdfauthor={Alex Giménez Romero}, % Author field
-	pdfsubject={Subject}, % Subject field
-	pdfkeywords={Keyword1, Keyword2, ...}, % Keywords
+	pdftitle={Theoretical and data-driven models in Ecology},
+	% Title field
+	pdfauthor={Àlex Giménez Romero}, % Author field
+	pdfsubject={PhD thesis}, % Subject field
+	pdfkeywords={Ecology, Mathematical Modelling, Computational Modelling,
+			Machine Learning, Epidemics},
+	% Keywords
 	pdfcreator={LaTeX}, % Content creator field
 }
 
@@ -83,9 +86,12 @@
 \newcommand{\AG}[1]{\textcolor{red}{#1}}
 \newcommand{\addref}[1]{\AG{(REF)}}
 
+%% Appendix %%
 \AtBeginEnvironment{appendices}{\crefalias{section}{appendix}}
 \AtBeginEnvironment{appendices}{\crefalias{subsection}{appendix}}
+\renewcommand\appendixtocname{\textcolor{ocre}{Appendices}}
 
+%% Citation fullcite%%
 \preto\fullcite{\AtNextCite{\defcounter{maxnames}{99}}}
 
 \DeclareBibliographyCategory{fullcited}
@@ -488,8 +494,8 @@
 %------------------------------------------------
 
 %\chapter*{Bibliography}
-% \markboth{\sffamily\tiny\bfseries
-% 	Bibliography}{\sffamily\tiny\bfseries Bibliography}
+\markboth{\sffamily\tiny\bfseries
+	Bibliography}{\sffamily\tiny\bfseries Bibliography}
 % Set the page headers to display a Bibliography chapter name
 \printbibliography[notcategory=fullcited,resetnumbers]
 
@@ -519,6 +525,13 @@
 %----------------------------------------------------------------------------------------
 %	APPENDICES
 %----------------------------------------------------------------------------------------
+
+\cleardoublepage % Make sure the index starts on an odd (right side) page
+% \phantomsection
+
+\chapterimage{} % Chapter heading image
+\chapterspaceabove{2.5cm} % Whitespace from the top of the page to the chapter title on chapter pages
+\chapterspacebelow{2cm} % Amount of vertical whitespace from the top margin to the start of the text on chapter pages
 
 \begin{appendices}
 
