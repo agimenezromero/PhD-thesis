@@ -339,13 +339,14 @@ to simulate, we perform a re-introduction of the disease as a single infected
 plant in each cell after each 7-year period.
 
 The code used to run the model is freely accessible at GitHub
-\cite{CODE_model}.
+\cite{CODE_2}.
 
 \subsection{Model adaptation to daily temperature data}
 
 We used the model developed in \cref{ch:commsbio}
 \cite{GimenezRomero2022_CommsBio}, in which MGDD and CDD metrics were defined
-using hourly temperature data (\cref{eq:MGDDdef,eq:CDDdef}). However, the E-OBS
+using hourly temperature data (\cref{eq:MGDD_def,eq:CDDdef}). However, the
+E-OBS
 and CORDEX datasets only provide daily granularity. To overcome this
 limitation, we use a basic sinusoidal extrapolation relating maximum and
 minimum daily temperature to hourly temperatures,

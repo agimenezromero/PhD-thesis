@@ -97,7 +97,7 @@ with ongoing climate change.
 Although risk maps based on hourly temperature data from the ERA5 have
 allowed fine adjustments in the calibration of the thermal response to Xf
 infection, these achievements have entailed losses in spatial resolution (0.1º
-spatial resolution) \cite{GimenezRomero2022_CommsBio, munoz2019era5land}. Such
+spatial resolution) \cite{GimenezRomero2022_CommsBio, ERA5_dataset}. Such
 limitation is particularly significant when dealing with vector-borne plant
 diseases like PD, where the interactions between the pathogen, vector, and host
 plants exhibit non-linear responses to climatic conditions. Subtle variations
@@ -499,7 +499,7 @@ enhancement of global food security.
 \subsection{Climate data}
 
 Climate data was downloaded from two datasets for our analysis: the ERA5
-dataset \cite{munoz-sabater_era5-land_2021, munoz2019era5land} and the CHELSA
+dataset \cite{munoz-sabater_era5-land_2021, ERA5_dataset} and the CHELSA
 dataset \cite{Karger2017, chelsa-climatologies-2021}. ERA5 offers
 mid-resolution climate data with a spatial resolution of 10 km and hourly
 temporal resolution, while CHELSA provides high-resolution data with a spatial
@@ -530,7 +530,8 @@ dataset spans the globe, 96\% of the points are located in Europe
 
 We used the model developed in \cref{ch:commsbio}
 \cite{GimenezRomero2022_CommsBio}, in which MGDD and CDD metrics were defined
-using hourly temperature data (\cref{eq:MGDDdef,eq:CDDdef}).However, the CHELSA
+using hourly temperature data (\cref{eq:MGDD_def,eq:CDDdef}).However, the
+CHELSA
 dataset only provide daily granularity. To overcome this limitation, we use a
 basic sinusoidal extrapolation relating maximum and minimum daily temperature
 to hourly temperatures,
