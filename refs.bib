@@ -8272,15 +8272,23 @@
   eprint  = {https://www.science.org/doi/pdf/10.1126/science.1149345}
 }
 #Not biological introduction
-@misc{Ronneberger2015,
-  title          = {U-Net: Convolutional Networks for Biomedical Image Segmentation},
-  author         = {Olaf Ronneberger and Philipp Fischer and Thomas Brox},
-  year           = 2015,
-  publisher      = {arXiv},
-  doi            = {https://10.48550/arXiv.1505.04597},
-  aarchiveprefix = {arXiv},
-  aprimaryclass  = {cs.CV},
-  aurl           = {https://doi.org/10.48550/arXiv.1505.04597}
+@inproceedings{Ronneberger2015,
+  author    = {Ronneberger, Olaf
+               and Fischer, Philipp
+               and Brox, Thomas},
+  editor    = {Navab, Nassir
+               and Hornegger, Joachim
+               and Wells, William M.
+               and Frangi, Alejandro F.},
+  title     = {U-Net: Convolutional Networks for Biomedical Image Segmentation},
+  booktitle = {Medical Image Computing and Computer-Assisted Intervention -- MICCAI 2015},
+  year      = {2015},
+  publisher = {Springer International Publishing},
+  address   = {Cham},
+  pages     = {234--241},
+  abstract  = {There is large consent that successful training of deep networks requires many thousand annotated training samples. In this paper, we present a network and training strategy that relies on the strong use of data augmentation to use the available annotated samples more efficiently. The architecture consists of a contracting path to capture context and a symmetric expanding path that enables precise localization. We show that such a network can be trained end-to-end from very few images and outperforms the prior best method (a sliding-window convolutional network) on the ISBI challenge for segmentation of neuronal structures in electron microscopic stacks. Using the same network trained on transmitted light microscopy images (phase contrast and DIC) we won the ISBI cell tracking challenge 2015 in these categories by a large margin. Moreover, the network is fast. Segmentation of a 512x512 image takes less than a second on a recent GPU. The full implementation (based on Caffe) and the trained networks are available at http://lmb.informatik.uni-freiburg.de/people/ronneber/u-net.},
+  isbn      = {978-3-319-24574-4},
+  doi       = {10.1007/978-3-319-24574-4_28}
 }
 @article{Franceschini2023,
   title   = {A deep learning model for measuring coral reef halos globally from multispectral satellite imagery},
@@ -8302,15 +8310,15 @@
   doi       = {10.1109/vcip.2017.8305148},
   url       = {https://doi.org/10.1109%2Fvcip.2017.8305148}
 }
-@misc{Lin2017,
-  title         = {Feature Pyramid Networks for Object Detection},
-  author        = {Tsung-Yi Lin and Piotr Dollár and Ross Girshick and Kaiming He and Bharath Hariharan and Serge Belongie},
-  year          = 2017,
-  doi           = {https://10.48550/arXiv.1612.03144},
-  eprint        = {1612.03144},
-  archiveprefix = {arXiv},
-  primaryclass  = {cs.CV},
-  aurl          = {https://doi.org/10.48550/arXiv.1612.03144}
+@inproceedings{Lin2017,
+  author    = {Lin, Tsung-Yi and Dollár, Piotr and Girshick, Ross and He, Kaiming and Hariharan, Bharath and Belongie, Serge},
+  booktitle = {2017 IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},
+  title     = {Feature Pyramid Networks for Object Detection},
+  year      = {2017},
+  volume    = {},
+  number    = {},
+  pages     = {936--944},
+  doi       = {10.1109/CVPR.2017.106}
 }
 @article{bench_stab,
   title   = {Benchmarking the Robustness of Semantic Segmentation Models with Respect to Common Corruptions.},
@@ -8406,15 +8414,19 @@
   doi     = {https://doi.org/10.1007/s41870-017-0080-1},
   issn    = {2511-2112}
 }
-@misc{Zhao2017,
-  title         = {Pyramid Scene Parsing Network},
-  author        = {Hengshuang Zhao and Jianping Shi and Xiaojuan Qi and Xiaogang Wang and Jiaya Jia},
-  year          = 2017,
-  doi           = {10.48550/arXiv.1612.01105},
-  url           = {https://doi.org/10.48550/arXiv.1612.01105},
-  eprint        = {1612.01105},
-  archiveprefix = {arXiv},
-  primaryclass  = {cs.CV}
+@inproceedings{Zhao2017,
+  author    = {H. Zhao and J. Shi and X. Qi and X. Wang and J. Jia},
+  booktitle = {2017 IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},
+  title     = {Pyramid Scene Parsing Network},
+  year      = {2017},
+  volume    = {},
+  issn      = {1063-6919},
+  pages     = {6230-6239},
+  doi       = {10.1109/CVPR.2017.660},
+  url       = {https://doi.ieeecomputersociety.org/10.1109/CVPR.2017.660},
+  publisher = {IEEE Computer Society},
+  address   = {Los Alamitos, CA, USA},
+  month     = {jul}
 }
 @article{Mumby2002,
   title   = {Mapping marine environments with IKONOS imagery: enhanced spatial resolution can deliver greater thematic accuracy},
@@ -9004,13 +9016,12 @@ hectare is estimated to be 15 times that of the Amazonic forest [
   issn    = {2072-4292},
   aurl    = {https://www.mdpi.com/2072-4292/11/11/1279}
 }
-@misc{segmentation_models,
-  title        = {Segmentation Models},
-  author       = {Pavel Iakubovskii},
-  year         = 2019,
-  journal      = {GitHub Repository},
-  publisher    = {GitHub},
-  howpublished = {\url{https://github.com/qubvel/segmentation_models}}
+@article{segmentation_models,
+  title   = {Segmentation Models},
+  author  = {Pavel Iakubovskii},
+  year    = 2019,
+  journal = {GitHub Repository},
+  url     = {https://github.com/qubvel/segmentation_models}
 }
 @misc{cartografia,
   title  = {Atlas Posidonia},
