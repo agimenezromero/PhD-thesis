@@ -174,18 +174,18 @@ an infected individual remains infected gives the total number of secondary
 infections produced by a primary infection in the whole susceptible population.
 Voilà! This is nothing but the basic reproduction number, $R_0$.
 
-It can be more formally proved that this quantity defines a threshold for the
-development of an epidemic from the fact that $S$ is a monotonically decreasing
-function, which implies $S(t)<S(0) \ \forall t>0$.
-\begin{equation}\label{eq: threshold_t}
-  \der{I}{t}=I\parentesi{\beta S-\gamma}\leq I\parentesi{\beta
-    S(0)-\gamma}=\gamma I\parentesi{\frac{S(0)}{\rho}-1}=\gamma
-  I\parentesi{R_0-1} \
-  ,
-\end{equation}
-so that for $R_0<1$, $\dot{I}<0 \ \forall t>0$ and thus $I(0)>I(t)$ as
-$t\to\infty$, which basically means that the epidemic dies out, while for
-$R_0>1$ the epidemic grows.
+% It can be more formally proved that this quantity defines a threshold for the
+% development of an epidemic from the fact that $S$ is a monotonically decreasing
+% function, which implies $S(t)<S(0) \ \forall t>0$.
+% \begin{equation}\label{eq: threshold_t}
+%   \der{I}{t}=I\parentesi{\beta S-\gamma}\leq I\parentesi{\beta
+%     S(0)-\gamma}=\gamma I\parentesi{\frac{S(0)}{\rho}-1}=\gamma
+%   I\parentesi{R_0-1} \
+%   ,
+% \end{equation}
+% so that for $R_0<1$, $\dot{I}<0 \ \forall t>0$ and thus $I(0)>I(t)$ as
+% $t\to\infty$, which basically means that the epidemic dies out, while for
+% $R_0>1$ the epidemic grows.
 
 This threshold behaviour agrees with our intuition given the definition of
 the basic reproduction number: if a primary infection produces more than 1
@@ -266,7 +266,7 @@ a smart mathematical trick. Dividing the differential equations for $S$ and $I$
   .
 \end{equation*}
 
-Integrating the relation,
+Integrating this relation,
 \begin{equation*}
   \int_{I(0)}^{I}\dif I=\int_{S(0)}^S\dif S \keys{-1 + \rho/S} \Longrightarrow
   I-I(0)=S(0)-S+\rho\ln(\frac{S}{S(0)}) \ ,
@@ -503,6 +503,10 @@ eigenvalue) of the next generation matrix, $K$, defined as,
   R_0=\rho(K) \quad \textrm{with} \quad K=-T\Sigma^{-1} \
 \end{equation}
 
+To appreciate the power of the NGM method, let's see how it can be applied to a
+slightly more complex model than the SIR model. We will now consider a
+compartmental model for vector-borne plant diseases.
+
 \begin{theorem}[The next generation matrix method]
   \small\sffamily
   Steps of the next generation matrix:
@@ -520,10 +524,6 @@ eigenvalue) of the next generation matrix, $K$, defined as,
           eigenvalue of the next generation matrix.
   \end{enumerate}
 \end{theorem}
-
-To appreciate the power of the NGM method, let's see how it can be applied to a
-slightly more complex model than the SIR model. We will now consider a
-compartmental model for vector-borne plant diseases.
 
 \subsubsection*{A compartmental model for vector-borne plant diseases}
 
@@ -676,14 +676,14 @@ The master equations are usually difficult to solve analytically, so
 numerical
 methods are used to simulate the dynamics of the system.
 
-\subsubsection*{The Gillespie algorithm}
+\subsubsection*{Gillespie's method}
 
 There are several ways to simulate the dynamics of individual-based models,
 but
-one of the most common methods is the Gillespie algorithm
+one of the most common methods is Gillespie's algorithm
 \cite{Gillespie1977},
 which is indeed an exact and unbiased algorithm to simulate stochastic
-processes. The Gillespie algorithm is based on the idea that the system will
+processes. Gillespie's algorithm is based on the idea that the system will
 remain in a given state for a random amount of time until an event occurs,
 which will then change the state of the system. Thus, the change of state of
 the system can determined by two independent random processes: the time to
@@ -729,7 +729,7 @@ these conditional probabilities, finding the smallest $i$ satisfying
 $\sum_i^Mp_i>v$. The system is then updated according to the chosen event and
 the time is updated to $t_{\textrm{next}}$. This process is repeated until a
 termination condition is met. In \cref{alg:gillespie} we show a pseudocode
-implementation of the Gillespie algorithm.
+implementation of Gillespie's algorithm.
 
 \begin{algorithm}[H]
   \caption{Sorting direct method}
@@ -767,14 +767,14 @@ implementation of the Gillespie algorithm.
   \end{algorithmic}
 \end{algorithm}
 
-The Gillespie algorithm provides a statistically exact way to solve the
+Gillespie's method provides a statistically exact way to solve the
 master equations underlying the IBM and gives a physical sense to the
 simulated
 time, as it comes directly from the event rates. However, one of its major
 drawbacks is the computational expense of the algorithm. Nevertheless, some
 tricks can be implemented to overcome these limitations and still provide an
 exact solution to the stochastic process. Two tricks have been used in our
-implementation of the Gillespie algorithm of \cref{ch:nacras_II}: first,
+implementation of Gillespie's algorithm of \cref{ch:nacras_II}: first,
 instead of comparing $p_i$ with the random number $r_2$ we use $w_i$ over
 $v\cdot W$, as this way only a product is computed (instead of $M$)
 \cite{Toral_master_eqs}; second, we implemented the sorting direct method
@@ -990,19 +990,6 @@ predict the potential distribution of the banana slug using a MaxEnt model.
 The
 code is freely available at the documentation webpage of the library.
 
-In \cref{fig:SDM_example}(a) we show the distribution of the banana slug
-\textit{Ariolimax buttoni} in the west of the United States. The species is
-only present in coastal California, where the environmental conditions are
-suitable for its survival. In \cref{fig:SDM_example}(b-d) we show the annual
-mean of the environmental variables used to build the SDM \footnote{The
-  standar
-  deviation of these variables are also used in the SDM but are not shown in
-  the figure for simplicity}. The presence and modeled pseudo-absence data of
-the banana slug \textit{Ariolimax buttoni} are shown in
-\cref{fig:SDM_example}(e) and the predicted potential distribution of the
-banana slug based on the environmental variables is shown in
-\cref{fig:SDM_example}(f).
-
 \begin{theorem}[Species distribution models]
   %\small\sffamily
   Steps of building a species distribution model:
@@ -1024,6 +1011,19 @@ banana slug based on the environmental variables is shown in
           at different locations based on their environmental conditions.
   \end{enumerate}
 \end{theorem}
+
+In \cref{fig:SDM_example}(a) we show the distribution of the banana slug
+\textit{Ariolimax buttoni} in the west of the United States. The species is
+only present in coastal California, where the environmental conditions are
+suitable for its survival. In \cref{fig:SDM_example}(b-d) we show the annual
+mean of the environmental variables used to build the SDM \footnote{The
+  standard
+  deviation of these variables are also used in the SDM but are not shown in
+  the figure for simplicity}. The presence and modeled pseudo-absence data of
+the banana slug \textit{Ariolimax buttoni} are shown in
+\cref{fig:SDM_example}(e) and the predicted potential distribution of the
+banana slug based on the environmental variables is shown in
+\cref{fig:SDM_example}(f).
 
 SDMs have been widely used in the study of disease biogeography, as they can
 help to predict the potential distribution of diseases based on the
@@ -1253,6 +1253,17 @@ to
 model complex patterns in the data. See \cref{fig:Perceptron} for a graphical
 representation of the perceptron model and the activation functions.
 
+The perceptron is a simple model of a biological neuron, but it can be
+combined to form more complex models, i.e. ANNs, which consist of multiple
+layers of neurons connected to each other. The first layer of the network is
+the input layer, which receives the input data, then the hidden layers
+process
+the data, and the output layer produces the final output of the network. The
+most common type of ANNs is the feedforward neural network (FFNN), in which the
+connections between neurons do not form cycles, so that the information flows
+in only one direction, from the input layer to the output layer
+(\cref{fig:ANN}(a)).
+
 \begin{figure}[H]
   \centering
   \includegraphics[width=\textwidth]{Figures/Perceptron.pdf}
@@ -1272,17 +1283,6 @@ representation of the perceptron model and the activation functions.
     positive inputs and zero for negative inputs.}
   \label{fig:Perceptron}
 \end{figure}
-
-The perceptron is a simple model of a biological neuron, but it can be
-combined to form more complex models, i.e. ANNs, which consist of multiple
-layers of neurons connected to each other. The first layer of the network is
-the input layer, which receives the input data, then the hidden layers
-process
-the data, and the output layer produces the final output of the network. The
-most common type of ANNs is the feedforward neural network (FFNN), in which the
-connections between neurons do not form cycles, so that the information flows
-in only one direction, from the input layer to the output layer
-(\cref{fig:ANN}(a)).
 
 ANNs are often used in supervised learning tasks, in which the model is
 trained
@@ -1304,22 +1304,6 @@ are
 variations of the traditional gradient descent algorithm, such as stochastic
 gradient descent or the Adam optimizer \cite{Goodfellow2016}.
 
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=1\textwidth]{Figures/ANN.pdf}
-  \caption[The feedforward neural network]{
-    \textbf{The feedforward neural network.} (a) The feedforward neural
-    network
-    consists of an input layer, multiple hidden layers, and an output layer.
-    The input layer receives the input data, the hidden layers process the
-    data, and the output layer produces the final output of the network.
-    (b) Illustration of the gradient descent algorithm used to train the
-    network. The weights of the connections between neurons are adjusted to
-    minimize the loss, i.e. the error between the predicted output of the
-    network and the true output.}
-  \label{fig:ANN}
-\end{figure}
-
 Backpropagation is the algorithm used to calculate the gradient of the loss
 function with respect to the weights of the connections in a neural network.
 The algorithm works by propagating the error backwards through the network,
@@ -1336,6 +1320,22 @@ minimize the loss function. Backpropagation is a fundamental algorithm in
 training neural networks, and it allows the model to learn the features in
 the
 data that are most relevant for the task at hand.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=1\textwidth]{Figures/ANN.pdf}
+  \caption[The feedforward neural network]{
+    \textbf{The feedforward neural network.} (a) The feedforward neural
+    network
+    consists of an input layer, multiple hidden layers, and an output layer.
+    The input layer receives the input data, the hidden layers process the
+    data, and the output layer produces the final output of the network.
+    (b) Illustration of the gradient descent algorithm used to train the
+    network. The weights of the connections between neurons are adjusted to
+    minimize the loss, i.e. the error between the predicted output of the
+    network and the true output.}
+  \label{fig:ANN}
+\end{figure}
 
 Several variations of ANNs have been developed to address specific tasks, such
 as image recognition and segmentation, speech recognition, natural language
@@ -1362,7 +1362,7 @@ average (ARIMA) models, exponential smoothing models, and state-space models
 effective at modeling linear relationships in the data, but they often
 struggle
 to capture complex patterns, such as non-linear relationships and long-term
-dependencies. FFNN can be used for time-series forecasting by using the $T$
+dependencies. FFNNs can be used for time-series forecasting by using the $T$
 previous values of the time series as input to the network and predicting the
 next value of the time series as output. However, this approach does not take
 into account the temporal dependencies in the data, i.e. the relationship
@@ -1497,6 +1497,25 @@ heuristics. These methods are effective at segmenting images with simple
 patterns, but they often struggle to segment images with complex patterns and
 variations in lighting and texture.
 
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=1\textwidth]{Figures/CNN.pdf}
+  \caption[Convolutional Neural Network]{
+    \textbf{Convolutional Neural Network.} The CNN receives as input an image
+    and produces an output image goes through a series of convolutional and
+    pooling layers, which apply a set of filters to the input image to
+    extract
+    features. The filters are learned during the training process and are
+    used
+    to detect patterns in the image, such as edges, textures, and shapes. The
+    output of the convolutional and poolin layers, which are called feature
+    maps, is passed through a series of non-linear activation functions,
+    which
+    introduce non-linearity into the model and allow the network to model
+    complex patterns in the data.}
+  \label{fig:CNN_scheme}
+\end{figure}
+
 FFNNs can be used for image segmentation. To do so the image is
 flattened\footnote{The image is transformed from a 2D array to a 1D array.}
 and
@@ -1519,25 +1538,6 @@ segment the image into different regions based on the spatial information. To
 mimic this hierarchical organization, more advanced deep learning models have
 been developed for image segmentation, which are commonly known as
 convolutional neural networks (CNNs).
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=1\textwidth]{Figures/CNN.pdf}
-  \caption[Convolutional Neural Network]{
-    \textbf{Convolutional Neural Network.} The CNN receives as input an image
-    and produces an output image goes through a series of convolutional and
-    pooling layers, which apply a set of filters to the input image to
-    extract
-    features. The filters are learned during the training process and are
-    used
-    to detect patterns in the image, such as edges, textures, and shapes. The
-    output of the convolutional and poolin layers, which are called feature
-    maps, is passed through a series of non-linear activation functions,
-    which
-    introduce non-linearity into the model and allow the network to model
-    complex patterns in the data.}
-  \label{fig:CNN_scheme}
-\end{figure}
 
 CNNs are a class of artificial neural networks that are specificallty
 designed
