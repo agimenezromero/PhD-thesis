@@ -99,6 +99,8 @@
 
 \begin{document}
 
+\frontmatter % Use Roman page numbering style
+
 %----------------------------------------------------------------------------------------
 %	COVER PAGE
 %----------------------------------------------------------------------------------------
@@ -224,10 +226,6 @@
 
 %----------------------------------------------------------------------------------------
 
-\pagestyle{fancy} % Enable default headers and footers again
-
-\cleardoublepage % Start the following content on a new page
-
 %----------------------------------------------------------------------------------------
 %	LIST OF PUBLICATIONS
 %----------------------------------------------------------------------------------------
@@ -287,6 +285,11 @@
 	\item \fullcite{Moralejo2024_e}\mybibexclude{Moralejo2024_e}
 
 \end{enumerate}
+
+\cleardoublepage % Start the following content on a new page
+
+\mainmatter % Use Arabic page numbering style
+\pagestyle{fancy} % Enable default headers and footers again
 
 %----------------------------------------------------------------------------------------
 %	PART I: Introduction
