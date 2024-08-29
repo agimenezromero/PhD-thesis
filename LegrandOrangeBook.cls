@@ -125,12 +125,14 @@
 		\node[anchor=center, rectangle, fill=ocre!20, inner sep=0pt, minimum height=\paperheight, minimum width=\paperwidth] at (current page.center) {}; % Background color
 		\node[anchor=north west, inner sep=0pt, xshift=\Gm@lmargin, yshift=-\Gm@tmargin] at (current page.north west) {\fontsize{200pt}{200pt}\selectfont\sffamily\bfseries\textcolor{ocre!40}{#1}}; % Part number
 		\node[anchor=north east, inner sep=0pt, xshift=-\Gm@rmargin, yshift=-\Gm@tmargin] at (current page.north east) {
-			\parbox[t][][t]{10cm}{
+			\parbox[t][][t]{11cm}{
+				\hyphenpenalty 10000
+				\exhyphenpenalty 10000
 				\fontsize{30pt}{30pt}\selectfont\sffamily\bfseries\textcolor{part_title}{\strut #2}
 			} % Part title
 		};
 		\node[anchor=south east, inner sep=0pt, xshift=-\Gm@rmargin, yshift=\Gm@bmargin] at (current page.south east) { % Mini table of contents
-			\parbox[t][][t]{10cm}{ % Width of box holding the mini ToC
+			\parbox[t][][t]{12cm}{ % Width of box holding the mini ToC
 				\printcontents[part]{l}{0}{\setcounter{tocdepth}{1}} % Display the mini table of contents showing chapters and sections, change tocdepth to 2 to also show subsections or 0 to only show chapters
 			}
 		};

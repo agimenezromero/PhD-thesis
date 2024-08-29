@@ -154,22 +154,14 @@
 \mbox{}
 
 %----------------------------------------------------------------------------------------
-%	ACKNOWLEDGEMENTS
-%----------------------------------------------------------------------------------------
-
-{
-	\noindent
-	\input{Front/Acknowledgements.tex}
-}
-\newpage
-\thispagestyle{plain} % empty
-\mbox{}
-
-%----------------------------------------------------------------------------------------
 %	PREFACE
 %----------------------------------------------------------------------------------------
 
 \input{Front/Preface.tex}
+
+\newpage
+\thispagestyle{plain} % empty
+\mbox{}
 
 %----------------------------------------------------------------------------------------
 %	ABSTRACT
@@ -188,6 +180,20 @@
 %----------------------------------------------------------------------------------------
 
 \input{Front/Resum.tex}
+
+\newpage
+\thispagestyle{plain} % empty
+\mbox{}
+
+%----------------------------------------------------------------------------------------
+%	ACKNOWLEDGEMENTS
+%----------------------------------------------------------------------------------------
+
+\newpage
+\thispagestyle{plain} % empty
+\mbox{}
+
+\input{Front/Acknowledgements.tex}
 
 %----------------------------------------------------------------------------------------
 %	TABLE OF CONTENTS
@@ -274,18 +280,67 @@
 
 \chapter*{Other publications}
 
+\underline{\textbf{\Large Scientific publications}}
+
+\vspace{0.5 cm}
+
 \begin{enumerate}
+	\setcounter{enumi}{10}
 	\item \fullcite{Lago2023_e}\mybibexclude{Lago2023_e}
 	      \vspace{0.5 cm}
+	\item
+
+	      \fullcite{Moralejo2024_e}\mybibexclude{Moralejo2024_e}
+	      \vspace{0.5 cm}
+
 	\item
 
 	      \fullcite{Moralejo2023_Phytophthora_e}\mybibexclude{Moralejo2023_Phytophthora_e}
 	      \vspace{0.5 cm}
 	\item À. Giménez-Romero, M. A. Matías and C. M. Duarte, ``A
-	      comprehensive dataset on global coral reefs size and
-	      geometry'' (Submitted for publication)
+	      comprehensive dataset on global coral reefs size and geometry''
+	      (Submitted for publication)
+\end{enumerate}
+
+\vspace{0.5 cm}
+
+\noindent\underline{\textbf{\Large Technical reports}}
+
+\vspace{0.5 cm}
+
+\begin{enumerate}
+	\item D. P. Bebber, S. J. Gurr, A. Karley, L. M. Lozada-Ellison,
+	      T. Beale and À. Giménez-Romero, ``Interdisciplinary Analysis of
+	      Plant Health Threats to Arable and Horticultural Crops in
+	      Scotland'',
+	      \href{https://doi.org/10.5281/zenodo.11613888}{Scotland's Centre
+		      of Expertise
+		      for Plant Health (2024)}
+\end{enumerate}
+
+\vspace{0.5 cm}
+
+\noindent\underline{\textbf{\Large Scientific dissemination}}
+
+\vspace{0.5 cm}
+
+\begin{enumerate}
+	\item À. Giménez-Romero and M. A. Matías, ``Descifrando
+	      el
+	      fondo marino desde el espacio con los ojos de la
+	      inteligencia artificial'',
+
+	      \href{https://theconversation.com/descifrando-el-fondo-marino-desde-el-espacio-con-los-ojos-de-la-inteligencia-artificial-219879}{The
+		      Conversation (2023)}
 	      \vspace{0.5 cm}
-	\item \fullcite{Moralejo2024_e}\mybibexclude{Moralejo2024_e}
+
+	\item À. Giménez-Romero, E. Moralejo and M. A.
+	      Matías, ``Xylella fastidiosa y el cambio climático
+	      amenazan la viticultura
+	      europea: hemos calculado cuánto'',
+
+	      \href{https://theconversation.com/xylella-fastidiosa-y-el-cambio-climatico-amenazan-la-viticultura-europea-hemos-calculado-cuanto-229446}{The
+		      Conversation (2024)}
 
 \end{enumerate}
 
@@ -313,7 +368,7 @@
 \input{Chapters/Introduction.tex}\label{ch:introduction}
 
 %----------------------------------------------------------------------------------------
-%	Why do we need models?
+%	Scientific background
 %----------------------------------------------------------------------------------------
 \chapterimage{models_ecology.pdf}
 \chapterspaceabove{6.75cm}
@@ -339,8 +394,9 @@
 \chapterspaceabove{7.75cm}
 \chapterspacebelow{7.25cm}
 
-\chapter{The case of the mass mortality event of \textit{Pinna nobilis}}
-\input{Chapters/Nacras_I.tex}\label{ch:nacras_I}
+\chapter{The case of the mass mortality event of \textit{Pinna
+	  nobilis}}\label{ch:nacras_I}
+\input{Chapters/Nacras_I.tex}
 
 %----------------------------------------------------------------------------------------
 %	Spatial effects in parasite-induced marine diseases of immobile hosts
@@ -381,8 +437,9 @@
 \chapterspaceabove{6.75cm}
 \chapterspacebelow{7.25cm}
 
-\chapter{A compartmental model for \textit{Xylella fastidiosa} diseases}
-\input{Chapters/Xf_phyto.tex}\label{ch:xf_phyto}
+\chapter{A compartmental model for \textit{Xylella fastidiosa}
+  diseases}\label{ch:xf_phyto}
+\input{Chapters/Xf_phyto.tex}
 
 %----------------------------------------------------------------------------------------
 %	PART IV: Modelling the risk of establishment of vector-borne plant diseases
@@ -413,8 +470,9 @@
 \chapterspaceabove{6.75cm}
 \chapterspacebelow{7.25cm}
 
-\chapter{Pierce's disease risk under global warming}
-\input{Chapters/Xf_climate_change.tex}\label{ch:xf_climate_change}
+\chapter{Pierce's disease risk under global
+  warming}\label{ch:xf_climate_change}
+\input{Chapters/Xf_climate_change.tex}
 
 %----------------------------------------------------------------------------------------
 %	High-resolution climate data reveals increased risk of Pierce's Disease for 
@@ -424,8 +482,9 @@
 \chapterspaceabove{6.75cm}
 \chapterspacebelow{7.25cm}
 
-\chapter{Pierce's disease risk with high-resolution climate data}
-\input{Chapters/Xf_high_resolution.tex}\label{ch:xf_high_resolution}
+\chapter{Pierce's disease risk with high-resolution climate
+  data}\label{ch:xf_high_resolution}
+\input{Chapters/Xf_high_resolution.tex}
 
 %----------------------------------------------------------------------------------------
 %	PART IV: Data-driven methods for global ecological problems
