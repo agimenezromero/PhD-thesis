@@ -23,7 +23,7 @@
 \newpage
 \section{Introduction}
 
-Coastal ecosystems, encompassing seagrasses, mangroves, saltmarshes, and coral
+Coastal ecosystems, encompassing seagrasses, mangroves, salt marshes, and coral
 reefs, among others, provide invaluable services that contribute to support the
 livelihoods of coastal communities, impacting the well-being of the residents
 \cite{MEA2005,IUCN2008}. Seagrass meadows, in particular, are crucial for
@@ -42,7 +42,7 @@ destruction, and climate change, particularly global warming
 sensitivity of seagrasses to future ocean temperatures under different emission
 scenarios poses significant concerns. Models project a decline in the global
 suitable habitat for these ecosystems throughout the current century, both
-latitudinally and across water depth, with a notable compression of suitable
+latitudinal and across water depth, with a notable compression of suitable
 habitat toward the lower distribution limit imposed by light availability
 \cite{Jorda2020}.
 
@@ -70,7 +70,7 @@ management practices. However, the cost and time-intensive nature of these
 methods present challenges in deploying continuous monitoring systems for
 marine environments. As a result, practical monitoring of biodiversity often
 occurs infrequently rather than in real-time, preventing a constant
-spatiotemporal evaluation of the status of these ecosystems.
+spatio-temporal evaluation of the status of these ecosystems.
 
 A recently emerging possibility is to combine remote sensing technologies with
 available georeferenced habitat data to develop correlative or mechanistic
@@ -134,7 +134,7 @@ regions, providing a lower bound for the model performance. This is a
 crucial step to advance in the development of a reliable map of the
 distribution of \textit{Posidonia oceanica} meadows in the Mediterranean Sea.
 Finally, we train the model with all available data so that the resulting
-model can be used to classify Posidonia meadows in other regions of the
+model can be used to classify posidonia meadows in other regions of the
 Mediterranean Sea.
 
 \section{Results}
@@ -145,7 +145,7 @@ Mediterranean Sea.
 We developed a deep learning framework based on convolutional neural networks
 to accurately classify benthic habitats in the Mediterranean Sea using
 satellite imagery (\cref{fig:scheme}). We used a comprehensive and extensive
-habitat dataset of the Balearic sea, comprising a 20 year effort of data
+habitat dataset of the Balearic sea, comprising a 20-year effort of data
 acquisition based on side-scan sonar supported by photo-interpretation of
 high-resolution airborne imagery and in-situ observations (\cref{fig:scheme}a).
 The dataset covers  about 2,500 km$^2$ of the coastal habitats of the Balearic
@@ -197,7 +197,7 @@ model'' to emphasize this idea.
         (b-d)
         Scheme of the pipeline to train CAMELE model. Satellite-based
         surface
-        reflectance data is merged with bathymetry estimates to produce the
+        reflectance data is merged with bathymetric estimates to produce the
         inputs
         (features) of the model. Habitat data obtained with side-scan sonar,
         photo-interpretation and field observations were used as ground truth
@@ -308,7 +308,7 @@ distribution and extension of the considered habitats in the Mediterranean Sea.
         The
         diagonal dashed line indicate perfect prediction. (d) Box plot for the
         absolute
-        and relative errors commited in the prediction of \textit{Posidonia
+        and relative errors committed in the prediction of \textit{Posidonia
             oceanica}
         area as function of the true area. Relative errors significantly
         decrease with
@@ -325,7 +325,7 @@ distribution and extension of the considered habitats in the Mediterranean Sea.
         and out-of-sample test set]{Example of model predictions for a
         satellite
         image in the training
-        and out-of-sample test set. (a) Satellite image from Pollença bay in
+        and out-of-sample test set. (a) Satellite image from Pollença bay on
         the island of Mallorca, a part of the training set. Image © 2022 Planet
         Labs PBC (b) Ground truth
         data for the benthic habitats in Pollença bay. (c) Habitat
@@ -372,7 +372,7 @@ and 96.22\%, respectively (\cref{tab:my-table}).
         CAMELE model trained only with half of the data (from Mallorca island),
         and the third column shows the habitat classification from CAMELE model
         trained with all available data. (a-c) Palma bay, Mallorca. (d-f) Son
-        Bou beach, south east of Menorca. (g-i) Es Còdols, south of Ibiza.
+        Bou beach, south-east of Menorca. (g-i) Es Còdols, south of Ibiza.
         (j-l) Cala San Vicente, east of Ibiza.}
     \label{fig:model_performance_complete}
 \end{figure}
@@ -482,7 +482,7 @@ for conservationists, policymakers, and researchers to make informed decisions
 and address pressing environmental challenges. With its ability to provide
 near-real-time data on ecosystem dynamics, our approach offers a cost-efficient
 and scalable solution for continuously assessing biodiversity distribution in
-the Mediterranean sea, allowing to identify habitat degradation and monitor
+the Mediterranean Sea, allowing to identify habitat degradation and monitor
 ecosystem resilience in the face of environmental change. This is particularly
 crucial in the context of the ongoing climate crisis, where the ability to
 rapidly detect and respond to habitat loss and degradation is essential for
@@ -544,7 +544,7 @@ future generations.
 
 Satellite imagery was obtained from Planet under the Education and Research
 Program, which provides limited, non-commercial access to PlanetScope and
-RapidEye imagery \cite{planet2017}. In particular, we adcquired PlanetScope
+RapidEye imagery \cite{planet2017}. In particular, we acquired PlanetScope
 images obtained through the Super Dove (PSB.SD) instrument, which consists of
 Coastal Blue, Blue, Green I, Green, Yellow, Red, Red Edge, NIR and operates
 from 2020. Surface Reflectance (SR) products were selected to ensure
@@ -562,7 +562,7 @@ is more abundant. No other filters were applied to the images, as we aimed to
 train the model in real-case scenarios, in which one can not control for
 specific
 environmental conditions, constrained dates for image acquisition, the position
-of the satellite with respect the sun and the earth, etc. Thus we obtained
+of the satellite with respect the sun and the earth, etc. Thus, we obtained
 images with different conditions
 (\cref{app:satellite_imagery,tab:metadata_satellite_images}).
 
@@ -575,12 +575,12 @@ total of 2,500 km$^2$ \cite{cartografia,ValleVillalonga2023}.
 The first
 project started
 around the year
-2000 and there has been a major recen update around 2018. The data consist of
+2000 and there has been a major recent update around 2018. The data consist of
 28 different habitat classes following the nomenclature and coding of the
 Standard List of Marine Habitats of Spain (LPHME), obtained from side scan
 sonar, photo-interpretation of airborne imagery and in-situ observations. We
 aggregated the different habitat classes in 4 major ecological groups, present
-in the whole Mediterranean sea. The aggregation was based on feature similarity
+in the whole Mediterranean Sea. The aggregation was based on feature similarity
 and ecological function, resulting in the following classes: Posidonia
 oceanica, green algae, brown algae \& rocks and sandy bottoms
 (\cref{app:satellite_imagery,tab:ecological_categories}).
@@ -594,9 +594,9 @@ significantly to the reliability of our model and the precision of our
 predictions, particularly vital in the context of habitat
 conservation for \textit{Posidonia oceanica} meadows.
 
-\subsection{Bathymetry data}
+\subsection{Bathymetric data}
 
-Bathymetry data was obtained from the European Marine Observation and Data
+Bathymetric data was obtained from the European Marine Observation and Data
 Network (EMODNET) \cite{emodnet}. EMODnet-Bathymetry provides a service for
 viewing and downloading a harmonised Digital Terrain Model (DTM) for the
 European sea regions. The data consist of GeoTIFF layers with $\sim100$ m pixel
@@ -604,11 +604,11 @@ resolution of mean depth values.
 
 \subsection{Dataset creation}
 
-Satellite images were processed together with habitat and bathymetry data to
+Satellite images were processed together with habitat and bathymetric data to
 construct the final training and testing datasets. The NIR band, which is
 strongly attenuated by water, was used to mask out pixels corresponding to land
 using a simple clustering algorithm (i.e. K-means) and subsequently substituted
-for bathymetry data. The resulting processed
+for bathymetric data. The resulting processed
 satellite images comprise the primary source for the input data of our model.
 The ground truth (or label) dataset consist of raster files analogous to the
 satellite image with single-band values representing the benthic class
@@ -622,11 +622,11 @@ each satellite and label image for the years 2020 to 2022 (keeping the year
 2023 as a final test), resulting in a final dataset comprising up to
 16,430 patches.
 
-Despite train-test data split usually follows a 80\%-20\% ratio, training was
+Despite train-test data split usually follows an 80\%-20\% ratio, training was
 conducted exclusively with data from Mallorca (8488
 patches, of which 1698 were allocated for validation) and tested with the
 remaining data from Menorca, Ibiza, Formentera, and Cabrera islands (7942
-patches), following a roughly 50\%-50\% train-test split . Furthermore, our
+patches), following a roughly 50\%-50\% train-test split. Furthermore, our
 test set represented diverse environmental conditions and even benthic habitats
 formed by slightly different species than the training set, thereby simulating
 real-world scenarios that the model may encounter in operational settings. By
@@ -644,7 +644,7 @@ years 2020 to 2022.
 
 We trained different state-of-the-art deep learning models for semantic image
 segmentation, such as UNET \cite{Ronneberger2015}, Linknet
-\cite{Chaurasia2017}, FPN \cite{Lin2017} , and PSPNet \cite{Zhao2017}. Each
+\cite{Chaurasia2017}, FPN \cite{Lin2017}, and PSPNet \cite{Zhao2017}. Each
 architecture is formed by repeating convolutional blocks, which are usually
 referred to as the ``backbone'' of the model. We tested 10 different backbone
 models for each architecture, leading to the training and evaluation of 40 deep
@@ -665,7 +665,7 @@ consistent scale, preventing the dominance of certain features during the
 training process. It is crucial to note that the same standard scaling
 procedure must be applied during predictions, using the mean and standard
 deviation computed from the training set. This consistency ensures that the
-model interprets new data in a comparable manner to the training data.
+model interprets new data comparably to the training data.
 
 Additionally, for the categorical nature of the output, labels were one-hot
 encoded. This encoding converts categorical labels into binary vectors, where
@@ -681,7 +681,7 @@ truth
 data by computing the intersection over the union of the two. To further
 account for class imbalance, we applied loss weights inversely proportional to
 the proportion of examples of each class. Learning rate was set to 0.001 to
-ensure an smoother training process.
+ensure a smoother training process.
 
 The models were trained in a computing cluster, using 10 cores and a maximum of
 400 GB of RAM for each model. The training process was performed for 1000
@@ -703,7 +703,7 @@ gauges the overall correctness of predictions, precision measures the accuracy
 of positive predictions, recall assesses the model's ability to capture all
 positive instances, and the F-1 score provides a balanced assessment of
 precision and recall. For a binary classification problem, the metrics can be
-define from the confusion matrix, where TP, TN, FP and FN represent true
+defined from the confusion matrix, where TP, TN, FP and FN represent true
 positives, true negatives, false positives and false negatives, respectively,
 and $N$ is the total number of pixels in the image.
 
@@ -734,7 +734,7 @@ and $N$ is the total number of pixels in the image.
 \end{equation}
 
 These metrics collectively offer a holistic understanding of the model's
-effectiveness in classifying benthic habitats. See Supplemantary information
+effectiveness in classifying benthic habitats. See Supplementary information
 for further details.
 
 \subsection{Consensus prediction}
@@ -749,7 +749,7 @@ the overall accuracy and generalization capabilities.
 For each input patch, predictions from all trained models were collected, and a
 voting mechanism was employed to determine the final consensus prediction.
 Specifically, the class label with the highest frequency across all model
-predictions was assigned to the each pixel. This ensemble-based strategy
+predictions was assigned to each pixel. This ensemble-based strategy
 leverages the diversity of information captured by different models, leading to
 a more robust and reliable classification outcome.
 

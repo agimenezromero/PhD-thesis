@@ -123,7 +123,7 @@ factors \textit{per se}. This leads frequently to risk overestimation
 \cite{Bebber2013,Coakley1999,Scherm1994,Truscott2003}. Increased availability
 of computational resources to deal with demanding climate databases now makes
 it possible to fit dynamic epidemiological models that include climate
-variability at broad spatiotemporal scales. For example, high-resolution
+variability at broad spatio-temporal scales. For example, high-resolution
 satellite-based climate data have been employed for testing mechanistic models
 that relate critical physiological processes of coffee rust with climate
 variables in past outbreak events \cite{Bebber2016}. Despite these important
@@ -209,7 +209,7 @@ MGDD is then defined as:
 \begin{equation}\label{eq:MGDD_def}
     MGDD(t) = \frac{1}{24}\sum_{\tau \in t} f(T(\tau)),
 \end{equation}
-where $\tau$ is expressed in hours, $t$ in years and we divide by $24$ to
+where $\tau$ is expressed in hours, $t$ in years, and we divide by $24$ to
 obtain $MGDD(t)$ in degree days. To compare whether using other functions
 for Xf's growth rates in vitro could yield differences in the risk indexes, we
 also fitted data to a smooth Beta function commonly used to represent the
@@ -220,7 +220,7 @@ thermal response in biological processes \cite{Yan1999,Magarey2005}.
 Hourly mean temperature data were recorded between April 1 and October 31 in
 2018, 2019 and 2020 with an automated weather station (Quimisur, IQ2000). The
 temperature sensor was at a two-meter height from the bare ground and around
-five meters from the entrance of the insect-proof net tunnel. To characterise
+five meters from the entrance of the insect-proof net tunnel. To characterize
 the progress of PD symptoms, we converted into $MGDD$ units the cumulative
 hourly mean temperatures measured from the time of inoculation to the day of
 disease evaluation using \cref{eq:MGDD_def}. In total, 15 $MGDD$ levels were
@@ -247,7 +247,7 @@ probability of survival for infections showing few symptomatic leaves during
 the growing season and thus support our heuristic approach of assigning five or
 more symptomatic leaves as a threshold for chronic infection (see
 \cref{app:PD_risk} and \cref{figS1} for assumptions of chronic infection).
-Using the ``survival'' package in R \cite{survival-package}, we analysed the
+Using the ``survival'' package in R \cite{survival-package}, we analyzed the
 cumulative probability of developing chronic infections as a function of
 $MGDD$. $F(MGDD)$ was adjusted to the experimental data by the nonlinear least
 squares method. The 10th, 33rd, 50th, 66th, and 90th percentiles were used to
@@ -269,8 +269,8 @@ has predicted with some precision the distribution of the establishment of Xf
 in the continent \cite{Bragard2019}. To capture the accumulation nature of the
 chilling process at different climatic zones, we determined the global average
 correlation between $T_{\textrm{min}}$ and the average accumulated CDD between
-November 1 and March 31 in the northern hemisphere and between April 1 and
-October 31 in the southern hemisphere using 6,487,200 points distributed
+November 1 and March 31 in the Northern Hemisphere and between April 1 and
+October 31 in the Southern Hemisphere using 6,487,200 points distributed
 throughout the planet. The $CDD$ was estimated as
 \begin{equation}\label{eq:CDDdef}
     CDD(t)= \frac{1}{24}\sum_{\tau \in t} (6-T(\tau)) \ \quad \textrm{for}
@@ -424,7 +424,7 @@ PD is positive and $r>0$;  true negative (TN), PD is negative and $r<0$; false
 positive (FP), PD absent but $r>0$; and false negative (FN), PD positive and
 $r<0$ (\cite{jimenez2012insights}). A different approach was followed to
 estimate $R_0$ for Europe given that PD is only present in Mallorca and hence
-spatiotemporal data on the PD distribution is limited to the island. First, we
+spatio-temporal data on the PD distribution is limited to the island. First, we
 estimated the transmission rate of the main European vector \textit{P.
     spumarius} from the well-studied disease progress curve of the almond leaf
 scorch epidemic in Mallorca. Then, using the known mortality rate of
@@ -446,7 +446,7 @@ we also used a conservative $R_0 \approx 5$ scenario for the rest of the world.
 
 The potential distribution of \textit{P. spumarius} in Europe under current and
 future (i.e., 2050) climatic conditions was provided by Godefroid et al.
-\cite{Godefroid2021}. Predictions were obtained using a generalised additive
+\cite{Godefroid2021}. Predictions were obtained using a generalized additive
 model and two bioclimatic descriptors i.e., a climatic moisture index for the
 coldest 8-month period of the year and the average maximum temperature in
 spring (March, April and May). Both descriptors reflect physiological
@@ -516,7 +516,7 @@ threshold temperature, we consider Xf's specific growth rate \textit{in vitro}
 within its cardinal temperatures. The empirical growth rates come from the
 seminal work by Feil \& Purcell \cite{Feil2001} shown in the inset of
 \cref{fig1}a. This Arrhenius plot was transformed, as explained in
-\cref{app:MGDD}, to obtain a a piece-wise function $f(T)$
+\cref{app:MGDD}, to obtain a piece-wise function $f(T)$
 \cref{eq:MGDD_def}. Our model and risk maps are based on $f(T)$ (red line in
 \cref{fig1}a) because it provides the best fit to the experimental data when
 compared with the commonly used Beta function (blue line) for representing the
@@ -570,7 +570,7 @@ relation, $CDD \sim 230\exp(-0.26\cdot T_{\textrm{min}})$, where specifically,
 $CDD>306$ correspond to $T_{\textrm{min}}<\SI{-1.1}{\degree C}$
 (\cref{fig1}b). To transform this exponential relationship to a probabilistic
 function analogous to $\mathcal{F}(MGDD)$, hereafter denoted
-$\mathcal{G}(CDD)$, ranging between 0 and 1, we considered the sigmoidal family
+$\mathcal{G}(CDD)$, ranging between 0 and 1, we considered the sigmoid family
 of functions $\displaystyle f(x)=\frac{A}{B+x^C}$ with $A=9\cdot 10^6$, $B=A$
 and $C=3$ (\cref{fig1}c), fulfilling the limit $\mathcal{G}(CDD=0)=1$, i.e. no
 winter curing when no cold accumulated, and a conservative 75\% of the infected
@@ -663,7 +663,7 @@ $\mathcal{F}(MGDD) > 99\%$ comparable to areas with high disease incidence in
             derived
             from the results of the inoculation experiments on 36 grapevine
             varieties.
-            Large differences in the areal extension with favourable MGDDs can
+            Large differences in the areal extension with favorable MGDDs can
             be observed
             between the US and Europe. The winter curing effect is reflected in
             the
@@ -675,8 +675,8 @@ $\mathcal{F}(MGDD) > 99\%$ comparable to areas with high disease incidence in
             the 1981-2019
             period is obtained from the joint effect of MGDD and CDD in North
             America
-            (\textbf{e}) and Europe (\textbf{f}). Warmer colours indicate more
-            favourable
+            (\textbf{e}) and Europe (\textbf{f}). Warmer colors indicate more
+            favorable
             conditions for chronic PD and the dashed line highlights the
             threshold of
             chronic infection probability being $0.5$.}
@@ -690,20 +690,20 @@ $\mathcal{F}(MGDD) > 99\%$ comparable to areas with high disease incidence in
     \cite{Hopkins2002}. A comparison between MGDD and CDD maps (\cref{fig2}a
     vs.
     \cref{fig2}c, \cref{fig2}e) further supports the idea that winter curing is
-    restricting PD northward migration from the southeastern US. However,
+    restricting PD northwards migration from the southeastern US. However,
     consistent with growing concern among Midwest states winegrowers on PD
-    northward migration led by climate change \cite{Galvez2010}, we found a
+    northwards migration led by climate change \cite{Galvez2010}, we found a
     mean
     increase of $0.12 \%$ y$^{-1}$ in the areal extent with $CDD < 306$ ($\sim
 T_{\textrm{min}} < -1.1$ \textdegree C) since 1981, comprising land areas
     between $103^o$W and $70^o$W of the US (\cref{fig:sup_CDD_evol}). Such an
     upward
-    trend corresponds to $\SI{5090}{km^2}$ y$^{-1}$ in the potential northward
+    trend corresponds to $\SI{5090}{km^2}$ y$^{-1}$ in the potential northwards
     expansion of PD due to climate change and an accumulation of $\sim
 \SI{193420}{km^2}$ of new areas at risk since 1981.
 
     High-CDD values would also be expected to restrict the potential PD
-    colonisation in continental Europe (\cref{fig2}d). Unlike North America,
+    colonization in continental Europe (\cref{fig2}d). Unlike North America,
     the
     East-West distribution of major European mountain ranges together with the
     warming effect of the Gulf Stream decreases the likelihood of cold winter
@@ -722,14 +722,13 @@ T_{\textrm{min}} < -1.1$ \textdegree C) since 1981, comprising land areas
     and
     temperature. Although all areas with current Xf$_{\textrm{PD}}$-related
     outbreaks are identified, risk predictions based only on the combination of
-    MGDD and CDD could lead to overestimations, as this approach overlooks
-    disease
-    transmission dynamics and climate interannual variability.
+    MGDD and CDD could lead to overestimation, as this approach overlooks
+    disease transmission dynamics and climate interannual variability.
 
     \subsection{PD global risk}
     We ran several simulations of the model \cref{eq:evolution_eq} with $R_0$
-    values between 1 and 14 to validate PD spatiotemporal distribution in the
-    US. We found $R_0=8$ as the optimal parameter for maximising the area under
+    values between 1 and 14 to validate PD spatio-temporal distribution in the
+    US. We found $R_0=8$ as the optimal parameter for maximizing the area under
     a ROC curve (\cref{fig:sup_ROC}), returning an accuracy of more than
 $80\%$, except for 2006, due to data obtained from an area at the
     transient-risk zone (\cref{fig:sup_validation} and \cref{tab:validation}).
@@ -834,7 +833,7 @@ $80\%$, except for 2006, due to data obtained from an area at the
     (Spain)
     from the United States \cite{Moralejo2019,Su2013}. To assess the risk of PD
     establishment elsewhere, we projected our epidemiological model into the
-    main winegrowing regions of the Northern Hemisphere (US, Europe and China)
+    main wine growing regions of the Northern Hemisphere (US, Europe and China)
     and Southern Hemisphere (Chile, Argentina, South Africa, Australia and New
     Zealand)(\cref{fig3}a-e). We found that emerging wine-producing areas in
     China are predominantly located in non-risk zones, whereas only some
@@ -865,7 +864,7 @@ $3.5$-times greater than that of the eastern US, which could increase the
     with somehow more suitable conditions in the interior of New South Wales,
     Greater Perth and Queensland (\cref{fig3}c); a general very-low or low-risk
     indexes are predicted in the Western Cape in South Africa (\cref{fig3}d);
-    overall very-low but localised low to moderate risk indexes in some areas
+    overall very-low but localized low to moderate risk indexes in some areas
     in
     Chile; and low to moderate growth of the number of infected vines in most
     of
@@ -885,13 +884,13 @@ $I(t) < I(0)$ regions increasingly displace to northern latitudes in the US
     validated $R_0=8$ scenario for the US, falls at some distance above the
     isoline $T_{\textrm{min}} = -1.1^o$C in comparison to the $R_0=5$ scenario
     (\cref{fig4}c vs \cref{fig4}a and \cite{Webpage}, Movies). This
-    distribution pattern holds and moves slightly northward over time in
+    distribution pattern holds and moves slightly northwards over time in
     parallel to global warming, although the trend of PD latitudinal change is
     moderated by high-CDD values (i.e. cold accumulation). In addition, the
     disease extension also declines due to CDD interannual fluctuations in the
     simulations. Cold waves periodically occur that reach latitudes close to
     the Gulf, such as those that occurred in 1983, 1993, 1995, 2000, 2009 and
-    2013 (Movies at \cite{Webpage}), thus preventing PD expansion northward.
+    2013 (Movies at \cite{Webpage}), thus preventing PD expansion northwards.
     The magnitude of this decrease is revealed after comparing the average
     annual increase of the areas between $r(t) > 0$ and $CDD < 306$ lines. From
     1981 to 2019, the area with risk $r(t) > 0$ increased at a rate of $0.05\%$
@@ -916,7 +915,7 @@ $I(t) < I(0)$ regions increasingly displace to northern latitudes in the US
 
     Global shifts in the risk index $r_j(t)$ between 2019 and those projected
     for 2050 were calculated under the same baseline scenario (\cref{fig5}a-f,
-    Methods). Our simulation shows a generalised increasing trend mainly due to
+    Methods). Our simulation shows a generalized increasing trend mainly due to
     shifts from transition zones to epidemic-risk zones with very low or
     low-risk indexes in the main wine-growing regions, except for the US. Here
     the epidemic-risk zone would increase by $12.8\%$ with the greater
@@ -1053,7 +1052,7 @@ $\SI{114925}{ha}$ in 2020 to $\SI{43114}{ha}$ in 2050, and no vineyards would
 
     \begin{figure}[H]
         \includegraphics[width=1\textwidth]{Figures/Fig6.png}
-        \caption[PD risk in european vineyards for 2020 and
+        \caption[PD risk in European vineyards for 2020 and
             2050]{\textbf{Intersection between Corine-land-cover vineyard
                 distribution map and PD-risk maps for 2020 and 2050.}  Data
             were obtained from
@@ -1061,11 +1060,11 @@ $\SI{114925}{ha}$ in 2020 to $\SI{43114}{ha}$ in 2050, and no vineyards would
             for\textit{P.
                 spumarius} in Europe from \cite{Godefroid2021}. The surface of
             the vineyard
-            contour has been enlarged to improve the visualisation of the risk
+            contour has been enlarged to improve the visualization of the risk
             zones and
             disease-incidence growth-rate ranks. \textbf{(a)} PD risk map for
             2019 and its
-            projection for 2050 \textbf{(b)}. Blue colours represent non-risk
+            projection for 2050 \textbf{(b)}. Blue colors represent non-risk
             zones and
             transient risk zones for chronic PD ($R_0 < 1$). The 2050 map shows
             some
@@ -1095,10 +1094,10 @@ $\SI{114925}{ha}$ in 2020 to $\SI{43114}{ha}$ in 2050, and no vineyards would
     Temperature regulates key physiological processes of the ectothermic
     organisms involved in PD and thus limits the thermal range in which they
     can thrive \cite{Coakley1999}. Xf$_{\textrm{PD}}$ multiplication and
-    survival within vine xylem vessels not only characterise PD, but also
+    survival within vine xylem vessels not only characterize PD, but also
     determine the bacterial population dynamics
     \cite{fry1990multiplication,Feil2001}. PD symptom development can be
-    therefore characterised as a thermal-dependent continuous process within
+    therefore characterized as a thermal-dependent continuous process within
     the range of  Xf$_{\textrm{PD}}$'s cardinal temperatures \cite{Scherm1994}.
     The combination of MGDD metrics with robust experimental data provides a
     reliable predictor of climatic suitability and the probability of
@@ -1138,7 +1137,7 @@ $MGDD$ oscillations found in most locations. In addition, our model is general
     \cref{tableS7}). This lack of information about vectors is one of the main
     reasons why the risk of vector-borne plant diseases is often overestimated.
 
-    Risk overestimations may involuntarily stem from other additional sources
+    Risk overestimation may involuntarily stem from other additional sources
     too. Using mean data as inputs in epidemiological models can lead to biased
     results when response functions are nonlinear and climate variability is
     not accounted for \cite{Scherm1994}. This study presents experimental
@@ -1205,18 +1204,18 @@ $MGDD$ oscillations found in most locations. In addition, our model is general
     (\cref{fig5}). Nonetheless, our model projection for 2050 that includes
     spatial
     heterogeneity in the vector distribution, as in Europe, would indicate
-    lower
-    transmissibility because global change is predicted to have negative
+    lower transmission rates because global change is predicted to have
+    negative
     effects on
     \textit{P. spumarius} abundance in Europe \cite{Godefroid2021,Karban2018}.
     At
     the global scale, there is certainly scientific consensus that climate
     change
-    will follow a general pattern summarised in the paradigm "dry gets drier,
+    will follow a general pattern summarized in the paradigm "dry gets drier,
     wet
     gets wetter" \cite{Feng2015}. In agreement, our model projection for PD on
     the
-    vineyards of Mallorca (Spain) suggests shifts to slightly less favourable
+    vineyards of Mallorca (Spain) suggests shifts to slightly less favorable
     conditions for Xf$_{\textrm{PD}}$ transmission and an expected progressive
     decrease in the impact of the disease by 2050. This example and others in
     Mediterranean islands advocate for certain
@@ -1238,7 +1237,7 @@ $MGDD$ oscillations found in most locations. In addition, our model is general
     could locally vary where the climate is conducive to PD. Such variation is
     because transmission rates tend to increase exponentially rather than
     linearly
-    under environmental conditions favouring vector abundance
+    under environmental conditions favoring vector abundance
     \cite{Gruber2012}, as
     has been observed at a local scale on vineyards of Mallorca
     \cite{Moralejo2019}.
@@ -1246,7 +1245,7 @@ $MGDD$ oscillations found in most locations. In addition, our model is general
     pathosystem.
     To date, PD is caused by Xf$_{\textrm{PD}}$ (i.e., ST1/ST2), but other
     genotypes of the subsp. \textit{fastidiosa} or other subspecies and their
-    recombinations could arise in the future with different ecological and
+    recombination could arise in the future with different ecological and
     virulence traits \cite{Vanhove2019}. On the other hand, new vector species
     could be accidentally brought in \cite{Redak2004}, as exemplified with the
     introduction of the glassy-winged sharpshooter (\textit{Homalodisca

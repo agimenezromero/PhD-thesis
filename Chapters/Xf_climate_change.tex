@@ -106,7 +106,7 @@ observational climatic dataset, providing daily gridded data for Europe at a
 resolution of 0.1 degrees ($\sim$10 km). Maximum and minimum temperature data
 was used to compute the MGDD and CDD indices involved in the growth and
 survival processes of the \xf{} pathogen (see ``Climate-driven epidemiological
-model" section below). To calibrate the distribution models of \textit{P.
+model'' section below). To calibrate the distribution models of \textit{P.
     spumarius} capturing the widest possible range (North America and Europe),
 we
 used the ERA5-Land reanalysis
@@ -249,15 +249,15 @@ and $b_4=105$. MGDD are then computed as
 \begin{equation*}
     MGDD(t) = \frac{1}{24}\sum_{\tau \in t} f(T(\tau)),
 \end{equation*}
-where $\tau$ is expressed in hours, $t$ in years and we divide by $24$ to
+where $\tau$ is expressed in hours, $t$ in years, and we divide by $24$ to
 obtain $MGDD(t)$ in degree days. The accumulation period goes from the
-$1^{\mathrm{st}}$ of April to the $31^{\mathrm{st}}$ of October in the northern
-hemisphere and from the $1^{\mathrm{st}}$ of November to the $31^{\mathrm{st}}$
-of March in the southern hemisphere.
+$1^{\mathrm{st}}$ of April to the $31^{\mathrm{st}}$ of October in the Northern
+Hemisphere and from the $1^{\mathrm{st}}$ of November to the $31^{\mathrm{st}}$
+of March in the Southern Hemisphere.
 
 CDD are computed between $1^{\mathrm{st}}$ November and $31^{\mathrm{st}}$
-March in the northern hemisphere and between $1^{\mathrm{st}}$ April and
-$31^{\mathrm{st}}$ October in the southern hemisphere as
+March in the Northern Hemisphere and between $1^{\mathrm{st}}$ April and
+$31^{\mathrm{st}}$ October in the Southern Hemisphere as
 \begin{equation*}
     CDD(t)= \frac{1}{24}\sum_{\tau \in t} (6-T(\tau)) \ \quad \textrm{for}
     \quad T_i\le 6\textrm{\textdegree C} .
@@ -283,7 +283,7 @@ that
 For Europe, we use the climatic suitability of the main vector,
 \textit{Philaenus spumarius}, and $R_0^*=5.0$ for all simulations. For the
 United States we use a homogeneous basic reproductive number $R_0=8.0$ in all
-cells, as this choice of the parameter reproduces spatiotemporal data on PD
+cells, as this choice of the parameter reproduces spatio-temporal data on PD
 epidemics in the US with an area under the curve of $\sim 90\%$. For the rest
 of the zones, we use $R_0=5$ because of the lower presence of vectors compared
 to the United States.
@@ -302,7 +302,7 @@ infected population over the simulated time,
         T}\right\} \ .
 \end{equation}
 
-Because the typical time scale of the disease is 5 years ($1/\gamma$), we
+Because the typical timescale of the disease is 5 years ($1/\gamma$), we
 simulate periods of 7 years. If more years are available
 to simulate, we perform a re-introduction of the disease as a single infected
 plant in each cell after each 7-year period.
@@ -325,11 +325,11 @@ minimum daily temperature to hourly temperatures,
 \end{equation}
 with $w=2\pi/24$ and $h$ ranging from $0$ to $23$. This approximation was
 validated with data from the national meteorological agency in Spain (AEMET).
-Basically, we used hourly tempererature data obtained from 50 meteorological
+Basically, we used hourly temperature data obtained from 50 meteorological
 stations in the period 2010-2020 and computed both MGDD and CDD using the full
 hourly data and only the daily maximum and minimum temperatures, in the latter
 case using \cref{eq:approx}. The results showed no differences between hourly
-or daily temperatures computation to estimate MGDD and CDD
+or daily temperatures' computation to estimate MGDD and CDD
 (\cref{fig:MGDD_app,fig:CDD_app}). Because the temporal resolution
 of the E-OBS and ERA-5 land data sets are different and are acquired using
 different methodologies, we evaluated the possible divergence between the MGDD
@@ -396,7 +396,7 @@ can be thought as the speed and direction the host would need to move to
 maintain its current risk conditions under climate change. Risk velocities were
 defined following the definition of climate velocity, as the ratio of the risk
 temporal trend and the risk spatial gradient in each cell. Thus, the units for
-the risk velocity correspond to kilometres per year ($km/\mathrm{year}$). Risk
+the risk velocity correspond to kilometers per year ($km/\mathrm{year}$). Risk
 velocities were computed using the VoCC R package \cite{VoCC, VoCC_paper}.
 
 \section{Results}
@@ -425,7 +425,7 @@ climate projections covering Europe \cite{jacob_regional_2020} (see Methods).
 
 Progressive global warming increases the accumulation of MGDD during the
 growing season and reduces the recovery rate (i.e. CDD) during winter, thus
-favouring the geographic expansion of the pathogen
+favoring the geographic expansion of the pathogen
 (\cref{fig:Xf_Ps_suitability_change} and \cref{fig:Xf_Ps_suitability}).
 Conversely, increasing temperatures tend to reduce the climatic suitability of
 vectors in more arid areas of southern Europe leading to a progressive
@@ -615,7 +615,7 @@ Greece face the highest overall risk, escalating from 12\% and 2\% of their
 area  in the +1.5ºC scenario to a striking 47\% and 63\%  respectively in a
 +4ºC scenario. In contrast, countries such as France and Italy experience a
 smaller but still significant increase in risk area, never exceeding the 20\%
-threshold, while Spain, the third largest wine producer, shows a decreasing
+threshold, while Spain, the third-largest wine producer, shows a decreasing
 trend in risk areas above the +2ºC scenario (\cref{fig:vineyards} and
 \cref{tab:countries}). Such contrasting patterns in PD risk between
 countries
@@ -649,7 +649,7 @@ the compound effect of climate change in the pathosystem using a mechanistic
 epidemiological model to overcome these limitations.  Unlike dimensionless
 climatic suitability indexes or disease probabilities used in SDMs, the risk
 index, $r$, in our model provides information on the expected growth rate in
-the event of an outbreak . Furthermore, the risk index is not fixed but varies
+the event of an outbreak. Furthermore, the risk index is not fixed but varies
 annually depending on the weather conditions of the previous years.
 Inter-annual climate variability thus has an impact on disease dynamics,
 especially in areas where the risk index is lower.  Another feature of our risk
@@ -701,7 +701,7 @@ therefore fairly good at  pointing  where the increased risk will occur, but it
 is more difficult to know when it will be reached.
 
 Overall, our results highlight the contrasting effect of climate change on
-PD risk distribution in Europe, revealing it as a multi-factor and multi-scale
+PD risk distribution in Europe, revealing it as a multifactor and multiscale
 process (\cref{tab:countries}). Climate change has an opposite effect on each
 component of the pathosystem, enhancing areas of potential chronic PD
 infections while diminishing the suitable geographic range for the vector. At
@@ -720,7 +720,7 @@ Our results are influenced by the intrinsic uncertainty associated with the
 correlative models used to determine the spatial distribution of the vector,
 the epidemiological parameters, and the uncertainties in the climatic
 projections. Although the spatial resolution of our climate projections is
-considered to be high, it may not capture the complex micro-climate structure
+considered to be high, it may not capture the complex microclimate structure
 found in certain European wine-producing regions. Therefore, risk assessment
 results could differ locally with higher-resolution data. In addition, we have
 not considered the possible influence of climate change on latitudinal and
@@ -730,8 +730,8 @@ calculation of the percentage of vineyard surface at risk but not the actual
 spatial distribution of risk. In any case, the risk estimates for the PDO
 regions include areas much larger than the areas of planted vines, which allows
 some margin in the adaptation and migration of the vineyards to different
-micro-climatic conditions. In addition, the PDO and vineyard databases used in
-this study are also have their own limitations. Future studies incorporating
+microclimatic conditions. In addition, the PDO and vineyard databases used in
+this study also have their own limitations. Future studies incorporating
 more refined modeling techniques, specific regional grapevine varieties, crop
 management and improved data resolution would enable a more nuanced
 understanding of PD risk and its potential impact at the local scale.
@@ -762,7 +762,7 @@ providing critical information for strategic crop protection. Our study
 evidences the need to selectively allocate more resources to surveillance and
 research on PD in southern European countries, considering the associated
 uncertainties. This strategic allocation of resources based on risk assessment
-can help to prioritise proactive measures and effectively manage the potential
+can help to prioritize proactive measures and effectively manage the potential
 impact of PD in different European countries.
 
 Our research highlights the complex dynamics of PD and its relationship

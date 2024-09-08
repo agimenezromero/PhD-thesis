@@ -4,7 +4,7 @@
 Infectious diseases are caused by pathogenic microorganisms, such as
 bacteria, viruses, parasites, or fungi, when they invade other organisms, which
 are called \textit{hosts} in this context. These pathogens proliferate inside
-the host and can disrupt the normal functioning of the colonised organism by
+the host and can disrupt the normal functioning of the colonized organism by
 damaging tissues, altering physiological processes, or triggering immune
 responses that contribute to illness. Infectious diseases can affect a wide
 variety of organisms, from plants and animals to humans. The causal agents of
@@ -21,9 +21,8 @@ smallpox. However, it was not until the early 20th century that we find the
 foundation of the modern theory of infectious disease dynamics, with the
 seminal work of Ronald Ross and Hilda P. Hudson
 \cite{Ross1916,Ross1917,Ross1917_2}, Kermack and McKendrick
-\cite{McKendrick} and later George Macdonald \cite{Macdonald1957}. Since then,
-a
-wide range of models have been developed to understand the dynamics of
+\cite{McKendrick}, and later George Macdonald \cite{Macdonald1957}. Since then,
+a wide range of models have been developed to understand the dynamics of
 infectious diseases and to predict their spread. In general, these models can
 be classified into two main categories: compartmental models and
 individual-based models.
@@ -32,14 +31,14 @@ individual-based models.
 
 Compartmental models are based on the assumption that the population can be
 divided into different compartments or categories, each representing a
-different state of the disease (e.g. susceptible to infection, infected).
+different state of the disease (e.g., susceptible to infection, infected).
 Individuals move from one compartment to another following some dynamical
 rules. Under the assumption of a well-mixed and sufficiently large population,
 one can consider that  every pair of individuals has equal probability of
 coming into contact with one another and that fluctuations in the number of
 individuals in each compartment can be neglected. This is known as the mean
-field approximation. Under these assumptions the dynamics of the disease can be
-described by a set of differential equations that govern the transitions
+field approximation. Under these assumptions, the dynamics of the disease can
+be described by a set of differential equations that govern the transitions
 between compartments.
 
 Several compartmental models have been developed to describe the dynamics of
@@ -63,13 +62,13 @@ states of the vector population.
 The SIR model divides the population into three
 compartments: susceptible individuals (S), infected individuals (I), and
 recovered individuals (R). Individuals come into contact with each other at a
-given rate $a$ and, in the case of a $S-I$ contact, the susceptible individual
+given rate $a$ and, in the case of an $S-I$ contact, the susceptible individual
 becomes infected with a probability $b$. We assume that the incubation period
 is short enough to be negligible; that is, a susceptible who contracts the
 disease is infective right away. Infected individuals recover at a constant
 rate $\gamma$, and once recovered, are assumed to be immune to the disease and
 cannot be reinfected. We finally assume that there is no entry into or
-departure from the population, no birth or natural deaths, so that
+departure from the population, no births or natural deaths, so that
 the population remains constant.
 
 According to the mean field approximation, the probability that an infected
@@ -78,18 +77,18 @@ average number of contacts between infected and susceptible individuals is
 given by $a\cdot S/N\cdot I=a\cdot SI/N$. Finally, as the probability that a
 susceptible individual becomes infected after a contact is $b$, the average
 number of new infections will be given by the product of this probability and
-average number of contacts between infected and susceptible individuals,
+the average number of contacts between infected and susceptible individuals,
 $b\cdot a\cdot SI/N=\beta SI/N$. These considerations lead to the following
 description of the model given by a system of differential equations,
 \begin{equation}\label{eq: normal_SIR_theo}
   \begin{array}{l}
     \dot{S}=-\beta SI/N          \\
     \dot{I}=\beta SI/N -\gamma I \\
-    \dot{R}=\gamma I \ ,
+    \dot{R}=\gamma I \ .
   \end{array}
 \end{equation}
 
-Despite the aparent simplicity of the model, the non-linear nature of the
+Despite the apparent simplicity of the model, the non-linear nature of the
 differential equations makes it difficult to find analytical solutions.
 However, important quantitative insights can still be obtained by performing an
 analytical study of the model. We will now derive some important results from
@@ -98,7 +97,7 @@ the SIR model, most of which can be already found in reference
 
 \subsubsection*{Conservation of the total population}
 
-First let's start by the simplest insight: the assumption of population
+First, let's start with the simplest insight: the assumption of population
 conservation is inherently included in the model. We can prove this statement
 by just adding the three differential equations in \cref{eq: normal_SIR_theo},
 \begin{equation}
@@ -106,7 +105,7 @@ by just adding the three differential equations in \cref{eq: normal_SIR_theo},
 \end{equation}
 
 Physicists usually call this kind of quantity a \textbf{conserved quantity}
-or a \textbf{conservation law}. In this case, the conservation law has a
+or a \textbf{conservation law}. In this case the conservation law has a
 particular meaning: the total number of individuals in the population remains
 constant, which was already assumed in the model. In general, conservation laws
 can arise from other symmetries of the system and are not always so obvious. In
@@ -117,15 +116,15 @@ the number of independent variables from three to two, so that we can study the
 dynamics of the system in a two-dimensional phase space given by the variables
 $S$ and $I$, as $R$ can be obtained from the relation $R=N-S-I$.
 
-\subsubsection*{Threshold behaviour: the basic reproduction number}
+\subsubsection*{Threshold behavior: the basic reproduction number}
 
-Now consider the starting point of an epidemic, such our old friend the
-COVID-19 pandemic. For sure at the beginning of the epidemic the number of
-infectedindividuals is not zero, $I(0)>0$, while the number of recovered
+Now consider the starting point of an epidemic, such as our old friend the
+COVID-19 pandemic. At the beginning of the epidemic the number of
+infected individuals is not zero, $I(0)>0$, while the number of recovered
 individuals is indeed zero, $R(0)=0$. Thus, the number of susceptible
 individuals at the beginning of the epidemic is $S(0)=N-I(0)$. If an epidemic
 is to develop, the number of infected individuals must increase at the
-beginning of the epidemic, but which are the conditions for this to happen?
+beginning of the epidemic, but what are the conditions for this to happen?
 
 Just by considering the differential equation for $I$ in \cref{eq:
   normal_SIR_theo} with our initial conditions we find the following
@@ -139,17 +138,16 @@ expression,
     S(0)>\frac{\gamma N}{\beta}
   \end{array}\right. \ \ .
 \end{equation}
-
-The condition \cref{eq: threshold} defines a threshold for the developing of an
-epidemic in the $SIR$ model! This is, there is a critical number of susceptible
+The condition \cref{eq: threshold} defines a threshold for the development of
+an epidemic in the $SIR$ model. This is, there is a critical number of
+susceptible
 individuals below which the epidemic will not develop,
 \begin{equation}
   S_c=\frac{\gamma N}{\beta}\equiv \rho \ .
 \end{equation}
-
 The critical parameter $\rho$ is sometimes called the \textit{relative removal
   rate} and its reciprocal, $\sigma=\beta/(\gamma N)$, the \textit{infection’s
-  contact rate}. This threshold behaviour can be further simplified by
+  contact rate}. This threshold behavior can be further simplified by
 considering the so-called \textit{basic reproduction number}, $R_0$, defined
 as,
 \begin{equation}
@@ -160,7 +158,7 @@ in which we have considered that $S(0)\simeq N$ at the beginning of the
 epidemic.
 
 The basic reproduction number is a very important quantity in
-epidemiology, an it can be proved that it measures the average number of
+epidemiology, and it can be proved that it measures the average number of
 secondary infections given by a primary infection in a \textit{fully
   susceptible population}. To see it we just need to recall the definition of
 the rates and ``read'' the expression. $\beta S(0)/N$ is the rate of new
@@ -187,7 +185,7 @@ Voilà! This is nothing but the basic reproduction number, $R_0$.
 % $t\to\infty$, which basically means that the epidemic dies out, while for
 % $R_0>1$ the epidemic grows.
 
-This threshold behaviour agrees with our intuition given the definition of
+This threshold behavior agrees with our intuition given the definition of
 the basic reproduction number: if a primary infection produces more than 1
 secondary infection an epidemic will develop, while if it does not reach to
 infect at least one individual it will die out. Furthermore, note that
@@ -220,7 +218,7 @@ valid and useful for short times after the beginning of the epidemic.
 
 In \cref{fig: SIR_model}(a) we show the numerical solution of the SIR model for
 a given set of parameters. The fraction of susceptible, infected, and recovered
-population is shown as function of time. The black dashed line represents the
+population is shown as a function of time. The black dashed line represents the
 initial phase approximation of the model, which is in good agreement with the
 numerical solution of the model at the beginning of the epidemic. In the inset,
 we can see that the initial growth of the epidemic is indeed exponential
@@ -233,22 +231,22 @@ we can see that the initial growth of the epidemic is indeed exponential
       SIR_model} \textbf{Numerical and analytical analysis of the SIR model.}
     (a) Numerical solution of the SIR model for a given set of parameters. The
     fraction of susceptible (green), infected (red), and recovered (blue)
-    population is shown as function of time. The black dashed line represents
-    the initial phase approximation of the model. (b) Comparison between the
-    analytical results obtained from the SIR model and the numerical solution
-    of the model for different values of $R_0$. The maximum number of infected
-    individuals, $I_{max}$, and the final number of susceptible individuals,
-    $S_{\infty}$, are shown as function of the basic reproduction number,
-    $R_0$. The analytical results are in good agreement with the numerical
-    solution of the model.
+    individuals is shown as a function of time. The black dashed line
+    represents the initial phase approximation of the model. (b) Comparison
+    between the analytical results obtained from the SIR model and the
+    numerical solution of the model for different values of $R_0$. The maximum
+    number of infected individuals, $I_{max}$, and the final number of
+    susceptible individuals, $S_{\infty}$, are shown as a function of the basic
+    reproduction number, $R_0$. The analytical results are in good agreement
+    with the numerical solution of the model.
   }
 \end{figure}
 
 \subsubsection*{Maximum number of infected individuals}
 
 Another important analytical result that can be obtained from this model is
-the maximum of infected individuals, that gives an idea of how severe the
-epidemic will be. To find this maximum we just need to find the maximum of
+the maximum number of infected individuals, which gives an idea of how severe
+the epidemic will be. To find this maximum we just need to find the maximum of
 $I(t)$, which is given by the condition $\dot{I}=0$. From the differential
 equation for $I$ in \cref{eq: normal_SIR_theo} we find the following relation,
 \begin{equation}
@@ -285,7 +283,7 @@ still a very useful result. In essence, we now can describe the dynamics of the
 system with only one independent variable, $S$, as $I$ can be obtained from the
 relation in \cref{eq: max_I_eq}.
 
-Finally we find an expression for the maximum of infected individuals by
+Finally, we find an expression for the maximum of infected individuals by
 substituting the condition previously found (the maximum occurs when
 $S(t)=\rho$)
 in \cref{eq:  max_I_eq},
@@ -300,7 +298,7 @@ the numerical solution of the model for different values of $R_0$.
 
 \subsubsection*{Final number of susceptible individuals}
 
-Similarly we can find the final number of susceptible individuals at the end
+Similarly, we can find the final number of susceptible individuals at the end
 of
 the epidemic, for sure a very important quantity. By dividing the
 differential
@@ -334,7 +332,7 @@ solution of the model for different values of $R_0$.
 
 \begin{remark}
   Note that all the analytical results that we have obtained can be expressed
-  as function of the initial conditions of the system (e.g. $S(0)$) and the
+  as a function of the initial conditions of the system (e.g., $S(0)$) and the
   basic reproduction number, $R_0$. This is a very important result, as it
   allows us to understand and predict the dynamics of the whole system by just
   knowing, in essence, the basic reproduction number.
@@ -354,22 +352,23 @@ In the SIR model we have considered a frequency-dependent function, where the
 rate of new infections is proportional to the product of the number of
 susceptible and infected individuals divided by the total population $\beta
   SI/N$. This incidence function, known as \textit{standard incidence},
-considers that rate of infection is bounded as the population grows, assuming
-that the probability of a contact between a susceptible and an infected
-individual is less likely as the population grows. However, other incidence
-functions can be considered, such as the \textit{mass action incidence}, where
-the rate of new infections is proportional to the product of the number of
-susceptible and infected individuals, $\beta SI$. This incidence function can
-be used to describe scenarios in which all-to-all contacts are possible
-irrespective of the population size. The choice of the incidence function can
-have important consequences on the dynamics of the disease, as it can affect
-the threshold for the development of an epidemic, the maximum number of
-infected individuals, and the final number of susceptible individuals.
+considers that the rate of infection is bounded as the population grows,
+assuming that the probability of a contact between a susceptible and an
+infected individual is less likely as the population grows. However, other
+incidence functions can be considered, such as the \textit{mass action
+  incidence}, where the rate of new infections is proportional to the product
+of the number of susceptible and infected individuals, $\beta SI$. This
+incidence function can be used to describe scenarios in which all-to-all
+contacts are possible irrespective of the population size. The choice of the
+incidence function can have important consequences on the dynamics of the
+disease, as it can affect the threshold for the development of an epidemic, the
+maximum number of infected individuals, and the final number of susceptible
+individuals.
 
 So far we have shown how, under minimal assumptions, one can build an epidemic
 model such as the SIR model. In addition, we have shown how to obtain some
 important analytical results from the model, such as the threshold for the
-development of an epidemic, i.e. the \textit{basic reproduction number}; the
+development of an epidemic, i.e., the \textit{basic reproduction number}; the
 maximum number of infected individuals, and the final number of susceptible
 individuals. However, the SIR model is one of the simplest compartmental
 models, and more complex models have been developed to account for more
@@ -385,11 +384,11 @@ generation matrix approach.
 Linear stability analysis is a powerful tool that can be used to study the
 dynamics of a \textbf{dynamical system} around its \textbf{fixed points}. The
 basic idea is to linearize the system of differential equations around these
-equilibrium points and study the stability of the system by analysing the
+equilibrium points and study the stability of the system by analyzing the
 \textbf{eigenvalues} of the \textbf{Jacobian} of the system. A
 \textit{dynamical system} is a system that evolves over time,
 such as the SIR model. The \textit{fixed points} of the system are the points
-where it does not change over time, i.e. the points where the derivatives of
+where it does not change over time, i.e., the points where the derivatives of
 the variables of the model are zero. The \textit{Jacobian} of the system is a
 matrix that contains the first-order partial derivatives of the variables of
 the system. The \textit{eigenvalues} of the Jacobian matrix are the roots of
@@ -428,7 +427,6 @@ Now we substitute the fixed point in the Jacobian matrix and we obtain,
     0 & \gamma             & 0
   \end{pmatrix} \ .
 \end{equation}
-
 The eigenvalues of the Jacobian matrix are the roots of the characteristic
 polynomial of the matrix, which is given by $\det(J-\lambda I)=0$. In this case
 the characteristic polynomial is given by,
@@ -444,17 +442,16 @@ The roots of the characteristic polynomial are given by $\lambda_1=\lambda_2=0$
 and $\lambda_3=\beta S^*/N-\gamma$. As we have previously stated, the stability
 of the system is determined by the real part of these eigenvalues. Of course,
 the eigenvalues $\lambda_1$ and $\lambda_2$ are zero, so they do not provide
-any information about the stability of the system.
-
-The eigenvalue $\lambda_3$ is negative if $\beta S^*/N<\gamma$, thus meaning
-that the fixed point $(S^*,I^*,R^*)$ is stable if this condition is satisfied.
-On the other hand, the fixed point is unstable if $\beta S^*/N>\gamma$. Indeed,
-this conditon defines the basic reproduction number, $R_0$, as we can rewrite
-the condition for the stability of the fixed point as $R_0=\beta S^*/\gamma N$
-greater or smaller than 1.
+any information about the stability of the system. The eigenvalue $\lambda_3$
+is negative if $\beta S^*/N<\gamma$, thus meaning that the fixed point
+$(S^*,I^*,R^*)$ is stable if this condition is satisfied. On the other hand,
+the fixed point is unstable if $\beta S^*/N>\gamma$. Indeed, this condition
+defines the basic reproduction number, $R_0$, as we can rewrite the condition
+for the stability of the fixed point as $R_0=\beta S^*/\gamma N$ greater or
+smaller than 1.
 
 % Comment on the conserved quantities that can be already observed from the Jacobian matrix.
-Finally note that the Jacobian matrix also provides us with another important
+Finally, note that the Jacobian matrix also provides us with another important
 insight about the system: the presence of conserved quantities. In this case,
 the sum of the first and third rows of the Jacobian matrix is zero, which
 indicates that the system has two conserved quantities, which we have already
@@ -463,23 +460,23 @@ found: the total number of individuals in the population and \cref{eq:
 
 \begin{remark}
   The stability of the fixed points of a dynamical system can be determined by
-  analysing the eigenvalues of the Jacobian matrix of the system. If the real
+  analyzing the eigenvalues of the Jacobian matrix of the system. If the real
   part of all the eigenvalues is negative, the fixed point is stable, while if
   the real part of at least one eigenvalue is positive, the fixed point is
-  unstable. In epidemic models the basic reproduction number, $R_0$, determines
-  the	stability of the disease-free states of the system, which are the fixed
-  points where the number of infected individuals is zero. If $R_0<1$, the
-  fixed points are stable, while if $R_0>1$, the fixed points are unstable.
-  The basic reproduction number is a threshold for the development of an
-  epidemic: if $R_0<1$, the epidemic will die out, while if $R_0>1$, the
-  epidemic will propagate. In addition, the Jacobian matrix of the system
-  provides us with important insights about the system, such as the presence of
-  conserved quantities.
+  unstable. In epidemic models, the basic reproduction number, $R_0$,
+  determines the	stability of the disease-free states of the system,
+  which are the fixed	points where the number of infected individuals is
+  zero. If $R_0<1$, the fixed points are stable, while if $R_0>1$, the fixed
+  points are unstable. The basic reproduction number is a threshold for the
+  development of an epidemic: if $R_0<1$, the epidemic will die out, while if
+  $R_0>1$, the epidemic will propagate. In addition, the Jacobian matrix of the
+  system provides us with important insights about the system, such as the
+  presence of conserved quantities.
 \end{remark}
 
 \subsection{The next generation matrix method}
 We have previously shown that the basic reproduction number, $R_0$ of a
-compartmental model can be obtained by analysing the stability of the fixed
+compartmental model can be obtained by analyzing the stability of the fixed
 points corresponding to the disease-free state of the model. Specifically, the
 basic reproduction number, $R_0$, is related to the largest non-zero eigenvalue
 of a fixed point, $\Lambda$, such that $R_0>1$ if $\Lambda>0$. However, the
@@ -487,7 +484,7 @@ Jacobian matrix of a compartmental model can be quite large and complicated, so
 the derivation of the basic reproduction number following this method can be
 cumbersome. The next generation matrix method is an ingenious method that can
 be used to derive the basic reproduction number of any compartmental model
-directly, without the need to analyse the stability of the fixed points. We
+directly, without the need to analyze the stability of the fixed points. We
 will make use of this method in \cref{part:nacras,part:VBD} of this thesis.
 
 In the NGM method, $R_0$ is identified as the dominant eigenvalue of a suitably
@@ -497,12 +494,11 @@ evaluated at the disease-free state,  $J^*$, in the form $J=T+\Sigma$, where
 $T$ is the \textit{transmission part}, that describes the production of new
 infections, and $\Sigma$  the \textit{transition part}, that describes changes
 of state. Then, it can be proved \cite{Diekmann2010} that the \textit{basic
-  reproduction number} $R_0$ is given by the spectral radius (i.e. the largest
+  reproduction number} $R_0$ is given by the spectral radius (i.e., the largest
 eigenvalue) of the next generation matrix, $K$, defined as,
 \begin{equation}
   R_0=\rho(K) \quad \textrm{with} \quad K=-T\Sigma^{-1} \
 \end{equation}
-
 To appreciate the power of the NGM method, let's see how it can be applied to a
 slightly more complex model than the SIR model. We will now consider a
 compartmental model for vector-borne plant diseases.
@@ -548,13 +544,11 @@ described by the following system of differential equations
     \dot{I_v}=\alpha S_vI/N-\mu I_v \ ,
   \end{array}
 \end{equation}
-
 We can easily check that the plant population is conserved by adding the
 differential equations for $S$, $I$, and $R$,
 \begin{equation}
   \dot{S}+\dot{I}+\dot{R}=0\Longrightarrow S+I+R=N \ .
 \end{equation}
-
 Similarly, to check if the vector population is conserved we add the
 differential equations for $S_v$ and $I_v$,
 \begin{equation}
@@ -566,7 +560,7 @@ This equation implies that the vector population is conserved only if
 $\delta=\mu$, which is a reasonable assumption given that the birth and death
 rates of vectors are usually similar. By now, this is the case we will
 consider in the following analysis, but we will see in \cref{part:VBD}
-that thinks can get really complicated if we relax this assumption.
+that things can get really complicated if we relax this assumption.
 
 After this initial check, we can proceed to obtain an expression for the basic
 reproduction number, $R_0$. To compute it we can follow the next generation
@@ -650,25 +644,23 @@ Individual-based models describe the dynamics of infectious diseases by
 considering the individuals of the population as discrete entities that can
 interact with each other. These models are particularly useful when the
 population is not well-mixed, the interactions between individuals are
-heterogeneous, the individuals can not be considered as identical or when an
+heterogeneous, the individuals cannot be considered identical or when a
 spatial setting is considered. In individual-based models, the dynamics of
-the
-disease are described by stochastic processes that govern the interactions
+the disease are described by stochastic processes that govern the interactions
 between individuals. These models are usually more complex than compartmental
-models, so that analytical results are not usually available, but they can
+models, so analytical results are not usually available, but they can
 provide more realistic insights into the dynamics of infectious diseases.
 
 In individual-based models the population is represented by a set of
 individuals, each of which can be in different \textbf{states}. More
-formally,
-the \textbf{system} at time $t$ is defined by the set of states of the
-individuals in the population at that time. The states of the individuals can
-change over time according to \textbf{events} that occur in the system, whcih
-consequently change the state of the system. These events can be triggered by
-the interactions between individuals, the environment, internal or other
-external factors. The events are characterized by their \textbf{rates}, which
-determine the probability of occurence per unit time. Mathematically, the
-dynamics of the system are described by the \textbf{master equations}
+formally, the \textbf{system} at time $t$ is defined by the set of states of
+the individuals in the population at that time. The states of the individuals
+can change over time according to \textbf{events} that occur in the system,
+which consequently change the state of the system. These events can be
+triggered by the interactions between individuals, the environment, internal or
+other external factors. The events are characterized by their \textbf{rates},
+which determine the probability of occurrence per unit time. Mathematically,
+the dynamics of the system are described by the \textbf{master equations}
 \cite{Toral_master_eqs}, which are a set of differential equations that
 describe the probability of the system being in a given state at a given
 time.
@@ -686,12 +678,11 @@ which is indeed an exact and unbiased algorithm to simulate stochastic
 processes. Gillespie's algorithm is based on the idea that the system will
 remain in a given state for a random amount of time until an event occurs,
 which will then change the state of the system. Thus, the change of state of
-the system can determined by two independent random processes: the time to
-the
-next event and the particular event that occurs.
+the system can be determined by two independent random processes: the time to
+the next event and the particular event that occurs.
 
 Consider that we are simulating a system with $M$ possible events, each of
-which has a rate $w_i$ of occurence. The time of the next event is given by
+which has a rate $w_i$ of occurrence. The time of the next event is given by
 \begin{equation}
   t_{\textrm{next}}=\frac{-\ln(r_1)}{W} \ ,
 \end{equation}
@@ -779,9 +770,9 @@ instead of comparing $p_i$ with the random number $r_2$ we use $w_i$ over
 $v\cdot W$, as this way only a product is computed (instead of $M$)
 \cite{Toral_master_eqs}; second, we implemented the sorting direct method
 \cite{MCCOLLUM200639}. The method consists in dynamically sorting the events
-and try to apply the most frequent ones first, which can save a considerably
-amount of computational time. In \cref{alg:Chose_apply_event} we show a
-pseudocode implementation of core of the numerical method.
+and trying to apply the most frequent ones first, which can save a considerable
+amount of computational time. In \cref{alg:Chose_apply_event}, we show a
+pseudocode implementation of the core of the numerical method.
 
 We have seen how mathematical models can be used to study the dynamics of
 infectious diseases, which can provide important insights into the spread of
@@ -789,7 +780,7 @@ diseases \textit{at a local level}. However, another important aspect of
 infectious diseases is their spread and establishment \textit{at a global
   level}. In the following section, we will discuss the most common methods
 used to study the potential distribution of diseases and their limitations,
-particularly in a context of climate change.
+particularly in the context of climate change.
 
 \section{\label{sec:Disease biogeography} Disease biogeography}
 
@@ -803,7 +794,7 @@ of
 vectors or reservoirs. Understanding how these factors influence the
 spread of diseases at a geographical scale is essential to predict the
 risk of emergent diseases developing in new areas. This, in turn, can help
-public health authorities to design effective strategies to prevent and
+public health authorities design effective strategies to prevent and
 control
 the spread of diseases.
 
@@ -816,7 +807,7 @@ to environmental variables based on correlative methods. Despite their wide
 use, these models have several limitations, both conceptual and practical. In
 this section, we will briefly review the main concepts of biogeography and
 explain the basic principles of species distribution models. Finally, we will
-discuss how the limitation of using this framework to study the potential
+discuss the limitations of using this framework to study the potential
 distribution of infectious diseases.
 
 % Ecological niche concept
@@ -832,7 +823,8 @@ that are suitable for the species to survive and reproduce. This early
 interpretation, known as the Grinnellian niche, emphasized the abiotic
 factors essential for the survival and distribution of species, but neglected
 the biotic interactions that also shape species' distributions. Indeed, some
-years later Charles S. Elton redefined the niche concept to encompass the roles
+years later, Charles S. Elton redefined the niche concept to encompass the
+roles
 species play within an ecosystem, including their interactions with other
 species. This Eltonian definition shifted the focus towards the biotic
 aspects of ecological niches \cite{Elton1927}.
@@ -840,9 +832,9 @@ aspects of ecological niches \cite{Elton1927}.
 To integrate both views, Hutchinson introduced the concepts of
 fundamental and realized niches \cite{Hutchinson1957}. The fundamental niche
 describes a hypervolume of environmental conditions under which a species can
-survive without immigration (i.e. the Grinnellian niche), while the realized
+survive without immigration (i.e., the Grinnellian niche), while the realized
 niche is the subset of the fundamental niche that the species can actually
-exploit due to biotic interactions (e.g. competition). This distinction
+exploit due to biotic interactions (e.g., competition). This distinction
 between the fundamental and realized niches provides a more comprehensive
 understanding of the ecological niche of a species, taking into account both
 abiotic and biotic factors. For example, a species may have broad tolerances of
@@ -850,8 +842,8 @@ abiotic conditions such as wide ranges of temperature and rainfall, thus
 providing a large fundamental niche, which translates in a wide potential
 distribution of the species. However, the interactions of this species with
 other ones may restrict it to only a subset of the abiotically suitable areas.
-The presence of competitors, predators, and pathogens (e.g. negative
-interactions) or the absence of key mutualistic species (e.g. positive
+The presence of competitors, predators, and pathogens (e.g., negative
+interactions) or the absence of key mutualistic species (e.g., positive
 interactions) can influence the survival of a species, ultimately shaping its
 realized niche. In mathematical terms, we can express the realized niche $R$ of
 a given species as the intersection of the abiotic niche $A$ and the biotic
@@ -880,28 +872,21 @@ niche $B$, $R=A\cap B$ (\cref{fig:niche_concept} (a)).
 
 However, the realized niche of a species can be further constrained by
 dispersal limitations, which can prevent the species from fully exploiting
-its
-fundamental niche. This idea was comprehensively developed by Soberón and
+its fundamental niche. This idea was comprehensively developed by Soberón and
 Peterson in 2005, who introduced the BAM (Biotic-Abiotic-Movement) framework
-to
-clarify the niche concept by emphasizing the species' dispersal capabilities
+to clarify the niche concept by emphasizing the species' dispersal capabilities
 alongside biotic and abiotic factors \cite{Soberon2005}. This framework
 suggests that the full ecological niche of a species includes not only the
 environmental conditions that are abiotically suitable and biotically
-favorable
-but also the areas that the species can physically reach and colonize. For
-example, a species originating from a tropical region in the Americas may
-have
-suitable environmental conditions in other tropical regions around the world,
-such as Southeast Asia, and even may be lucky enough to find an absence of
-competitors or predators in there. Yet, it will not be able to establish
-there
-if it is unable to disperse. So, in mathematical terms, the realized niche
-$R$
-of a species can be expressed as the intersection of the abiotic niche $A$,
-the
-biotic niche $B$, and the dispersal (movement) niche $M$, $R=A\cap B\cap M$
-(\cref{fig:niche_concept} (b)).
+favorable but also the areas that the species can physically reach and
+colonize. For example, a species originating from a tropical region in the
+Americas may have suitable environmental conditions in other tropical regions
+around the world, such as Southeast Asia, and even may be lucky enough to find
+an absence of competitors or predators in there. Yet, it will not be able to
+establish itself there if it is unable to disperse. So, in mathematical terms,
+the realized niche $R$ of a species can be expressed as the intersection of the
+abiotic niche $A$, the biotic niche $B$, and the dispersal (movement) niche
+$M$, $R=A\cap B\cap M$ (\cref{fig:niche_concept} (b)).
 
 % Species distribution models
 \subsection{\label{sec:Species distribution models} Species distribution
@@ -911,23 +896,23 @@ Species distribution models (SDMs) are a powerful tool that can be used to
 predict the potential geographic distribution of species based on the
 environmental conditions that favor their establishment. SDMs are based on
 the concept of ecological niches, and they use environmental data to predict
-the potential distribution of the species. In general, SDMs can be both
+the potential distribution of species. In general, SDMs can be both
 mechanistic and correlative, depending on the underlying assumptions of the
 model. Mechanistic SDMs are based on the physiological or ecological
 requirements of the species, while correlative SDMs are based on statistical
 relationships between the presence and absence of the species in different
 locations and their environmental conditions \cite{Kearney2009}. Thus,
 correlative SDMs make use of statistical models that relate the presence and
-absence of a species to certain environmental variables. If this relation
+absence of a species to certain environmental variables. If this relationship
 renders successful, the model can be then used to predict the potential
 distribution of the species at different locations based on their environmental
-conditions. Because most of the SDMs that have been employed so far are in the
+conditions. Because most of the SDMs that have been employed so far in the
 literature are based on correlative methods, we will refer to correlative SDMs
 as just SDMs in the following.
 
 Many statistical methods can be used to build SDMs, such as logistic
-regression, generalized linear models and machine learning algorithms, like
-random forests or support vector machines or MaxEnt \cite{Franklin2010}. These
+regression, generalized linear models, and machine learning algorithms, like
+random forests, support vector machines, or MaxEnt \cite{Franklin2010}. These
 methods have different strengths and weaknesses, and the choice of method
 depends on the characteristics of the data and the research question. For
 example, logistic regression is simple and interpretable, allowing researchers
@@ -974,21 +959,19 @@ testing set is used to evaluate the performance of the model. We then train the
 model by fitting it to the data and estimating the parameters that best predict
 the presence and absence of the species based on the environmental variables.
 We then evaluate the model to assess its performance using metrics such as the
-area under the receiver operating characteristic curve (AUC), or the Kappa
+area under the receiver operating characteristic curve (AUC) or the Kappa
 statistic. Finally, the model can be used to predict the potential
 distribution of the species at different locations based on their environmental
 conditions.
 
 To illustrate the process of building an SDM, we will consider the example of
 \textit{Ariolimax buttoni}, a species of banana slug native to coastal
-California in the west of the United States (\cref{fig:SDM_example}). This is
+California in the west of the United States (\cref{fig:SDM_example}). This
 example is provided by the \textit{elapid} Python library \cite{Elapid},
-which
-uses temperature, cloud cover and leaf area index as environmental variables
-to
-predict the potential distribution of the banana slug using a MaxEnt model.
-The
-code is freely available at the documentation webpage of the library.
+which uses temperature, cloud cover, and leaf area index as environmental
+variables to predict the potential distribution of the banana slug using a
+MaxEnt model. The code is freely available at the documentation webpage of the
+library.
 
 \begin{theorem}[Species distribution models]
   %\small\sffamily
@@ -1017,10 +1000,9 @@ In \cref{fig:SDM_example}(a) we show the distribution of the banana slug
 only present in coastal California, where the environmental conditions are
 suitable for its survival. In \cref{fig:SDM_example}(b-d) we show the annual
 mean of the environmental variables used to build the SDM \footnote{The
-  standard
-  deviation of these variables are also used in the SDM but are not shown in
-  the figure for simplicity}. The presence and modeled pseudo-absence data of
-the banana slug \textit{Ariolimax buttoni} are shown in
+  standard deviation of these variables are also used in the SDM but is not
+  shown in the figure for simplicity}. The presence and modeled pseudo-absence
+data of the banana slug \textit{Ariolimax buttoni} are shown in
 \cref{fig:SDM_example}(e) and the predicted potential distribution of the
 banana slug based on the environmental variables is shown in
 \cref{fig:SDM_example}(f).
@@ -1052,17 +1034,18 @@ diseases, which we will present in \cref{part:PD_risk} of this thesis.
 
 \subsection{\label{sec:Limitations of SDMs} Limitations of SDMs}
 
-One of the key assumptions of SDMs are that species are at equilibrium with
+One of the key assumptions of SDMs are that species are in equilibrium with
 their environments and that relevant environmental gradients have been
 adequately sampled. However, SDMs are often used in non-equilibrium
-scenarios, such to predict the future potential distribution of species after
+scenarios, such as to predict the future potential distribution of species
+after
 emerging invasions or climate change, which involves that current species
 records are unrepresentative of new conditions. In this new context, new
 combinations of environmental factors and biotic interactions previously unseen
 might play a role in the distribution of the species, thus rendering the
 predictions of the SDMs unreliable. In addition, the successful establishment
 of a species in a new area is influenced by genetic variability, phenotypic
-plasticity and evolutionary changes, which are not accounted for in SDMs
+plasticity, and evolutionary changes, which are not accounted for in SDMs
 \cite{Elith2009}.
 
 Another limitation of SDMs is that the results are highly dependent
@@ -1076,11 +1059,11 @@ the Akaike Information Criterion (AIC) or the Bayesian Information Criterion
 
 For the particular case of the application of SDMs in disease biogeography,
 the limitations of the models are even more pronounced. Infectious diseases are
-the result of complex interactions occuring at multiple spatial and temporal
-scales among pathogens, vectors, hosts and the environment, i.e. a disease is
+the result of complex interactions occurring at multiple spatial and temporal
+scales among pathogens, vectors, hosts, and the environment, i.e., a disease is
 an emergent feature of the pathosystem. Indeed, basically this same idea was
 previously discussed by A. Townsend Peterson in 2008 \cite{Peterson2008},
-despite complex systems science being a relatively new field of study. He
+despite complex systems' science being a relatively new field of study. He
 argued that
 \begin{displayquote}
   ``\textit{Because disease processes are dynamic, taking place on extremely
@@ -1099,7 +1082,7 @@ infectious diseases neglect these complex interactions, which can lead to
 biased predictions of the potential distribution of diseases. The
 disease-based
 SDMs assume that the distribution of disease occurrences can be seen as the
-joint spatial distribution of suitable ecological conditions for all of the
+joint spatial distribution of suitable ecological conditions for all the
 biological species involved in the transmission cycle. Yet, the current
 distribution of the disease may not reflect the full range of suitable
 conditions for its transmission. On the other hand, the pathosystem-based
@@ -1114,9 +1097,8 @@ pathosystem are often non-linear and that the distribution of the disease is
 not the simple intersection of the distributions of the components.
 
 In \cref{ch:commsbio}, we will present a new method to study the potential
-distribution of vector-borne plant diseases that overcomes these limitations
-by
-considering the interactions driving to disease transmission using a
+distribution of vector-borne plant diseases that overcomes these limitations.
+We will consider the interactions driving disease transmission using a
 mathematical epidemiological model while accounting for climatic factors
 limiting the distribution of the pathosystem components.
 
@@ -1127,14 +1109,14 @@ The last part of this thesis, \cref{part:data-driven} is focused on different
 global ecological problems such as ocean acidification or the loss of
 important
 coastal ecosystems like seagrass meadows and coral reefs. The causes of
-these problems have been extensively studied, so that our goal is more
+these problems have been extensively studied, so our goal is more
 practical than theoretical. In this context, we aim to develop new methods to
 solve some challenges that are currently faced by ecologists.
 
 The frameworks presented in these chapters are based on deep learning, a
 subfield of machine learning that uses artificial neural networks to model
 complex patterns in large datasets. In this section, we will provide a brief
-overview to machine learning, specifically focusing on deep learning. After
+overview of machine learning, specifically focusing on deep learning. After
 that, we will introduce the two main types of deep learning models that we
 will
 use in this thesis: long-short-term memory neural networks, which are used in
@@ -1145,47 +1127,40 @@ segmentation problems.
 
 Machine learning is a subfield of artificial intelligence that focuses on the
 development of statistical algorithms that use input data to achieve a
-desired
-task without being literally programmed to produce a particular outcome
+desired task without being literally programmed to produce a particular outcome
 \cite{Michalski2013,ElNaqa2015}. The concept of machine learning was
-pioneered
-by Arthur Samuel in 1959, who demonstrated that machines could learn to play
-checkers and improve at the game through their own experiences, rather than
-through human instruction \cite{Samuel2000}. This capability marks a
+pioneered by Arthur Samuel in 1959, who demonstrated that machines could learn
+to play checkers and improve at the game through their own experiences rather
+than through human instruction \cite{Samuel2000}. This capability marks a
 significant shift from traditional programming methods where decisions and
 rules are explicitly defined by human programmers. The field of machine
 learning integrates principles from computer science, statistics, and
 information theory to create algorithms capable of generalizing behaviors
-from
-input data, allowing machines to perform tasks that typically require human
-intelligence, such as predicting consumer behavior, filtering spam in emails,
-chatting with other humans or even driving autonomous vehicles.
+from input data, allowing machines to perform tasks that typically require
+human intelligence, such as predicting consumer behavior, filtering spam in
+emails, chatting with other humans, or even driving autonomous vehicles.
 
 Machine learning is generally divided into three main types: supervised,
 unsupervised, and reinforcement learning. \textbf{Supervised learning}
 algorithms need a dataset containing several instances of the input data from
 which the model is expected to predict an output (features) together with the
-correct output (labels). Initially, the model parameters are set randomly and
+correct output (labels). Initially, the model parameters are set randomly, and
 the model undergoes a training process where the parameters are iteratively
 adjusted to minimize the difference between the predicted output and the true
 output \cite{Nielsen2015}. On the contrary, \textbf{unsupervised learning} is
 used when the dataset does not contain the labels for each instance of the
 input data. In this case, the algorithms are designed to find patterns and
 structures in the data on their own \cite{Duda2006}. A clear example is that
-of
-clustering algorithms, which group instances of the input data forming
+of clustering algorithms, which group instances of the input data forming
 different clusters based on their similarity in a high-dimensional space.
 Finally, \textbf{reinforcement learning} is a type of machine learning where
-an
-agent learns to make decisions by interacting with an environment. The agent
+an agent learns to make decisions by interacting with an environment. The agent
 receives rewards or penalties based on its actions and learns to optimize its
-decisions (i.e. maximizing the reward or minimizing the penalty) to achieve a
+decisions (i.e., maximizing the reward or minimizing the penalty) to achieve a
 specific goal \cite{Sutton2018}. Reinforcement learning is particularly
-useful
-in applications such as robotics and gaming, being the algorithm behind the
-success of the AlphaGo program that defeated the world champion in the game
-of
-Go \cite{Silver2017}.
+useful in applications such as robotics and gaming, being the algorithm behind
+the success of the AlphaGo program that defeated the world champion in the game
+of Go \cite{Silver2017}.
 
 Data is the cornerstone of machine learning, and the quality and quantity of
 the data used to train the model are crucial to its performance. Traditional
@@ -1194,21 +1169,18 @@ transformed into a suitable format before being fed into the model, which
 prevented the widespread use of machine learning in many applications in its
 early times. However, the surge of representation learning methods, such as
 deep learning, has revolutionized the field of machine learning by allowing
-the
-model to learn the features directly from the raw data, without the need for
+the model to learn the features directly from the raw data without the need for
 manual feature engineering \cite{LeCun2015}. Deep-learning models use
-multiple
-levels of representation obtained by composing simple non-linear
+multiple levels of representation obtained by composing simple non-linear
 transformations, which allow the model to learn very complex functions if
 enough compositions of such transformations are considered. For example, in
 classification tasks, higher layers of representation amplify aspects of the
 input that are important for discrimination and suppress irrelevant
-variations,
-thus allowing the model to learn the features that are most relevant for the
-task at hand. This is particularly useful in image recognition, speech
-recognition, and natural language processing, where the raw data is high
-dimensional and complex, and the features that are relevant for the task are
-not known a priori.
+variations, thus allowing the model to learn the features that are most
+relevant for the task at hand. This is particularly useful in image
+recognition, speech recognition, and natural language processing, where the raw
+data is high dimensional and complex and the features that are relevant for
+the task are not known a priori.
 
 \subsection{\label{sec:Artificial neural networks} Artificial neural
   networks}
@@ -1254,15 +1226,14 @@ model complex patterns in the data. See \cref{fig:Perceptron} for a graphical
 representation of the perceptron model and the activation functions.
 
 The perceptron is a simple model of a biological neuron, but it can be
-combined to form more complex models, i.e. ANNs, which consist of multiple
+combined to form more complex models, i.e., ANNs, which consist of multiple
 layers of neurons connected to each other. The first layer of the network is
 the input layer, which receives the input data, then the hidden layers
 process
 the data, and the output layer produces the final output of the network. The
 most common type of ANNs is the feedforward neural network (FFNN), in which the
-connections between neurons do not form cycles, so that the information flows
-in only one direction, from the input layer to the output layer
-(\cref{fig:ANN}(a)).
+connections between neurons do not form cycles so that the information flows
+in only one direction, from the input to the output layer (\cref{fig:ANN}(a)).
 
 \begin{figure}[H]
   \centering
@@ -1332,7 +1303,7 @@ data that are most relevant for the task at hand.
     data, and the output layer produces the final output of the network.
     (b) Illustration of the gradient descent algorithm used to train the
     network. The weights of the connections between neurons are adjusted to
-    minimize the loss, i.e. the error between the predicted output of the
+    minimize the loss, i.e., the error between the predicted output of the
     network and the true output.}
   \label{fig:ANN}
 \end{figure}
@@ -1365,7 +1336,7 @@ to capture complex patterns, such as non-linear relationships and long-term
 dependencies. FFNNs can be used for time-series forecasting by using the $T$
 previous values of the time series as input to the network and predicting the
 next value of the time series as output. However, this approach does not take
-into account the temporal dependencies in the data, i.e. the relationship
+into account the temporal dependencies in the data, i.e., the relationship
 between the current value of the time series and the previous values, as the
 network treats each input value independently. This limitation can prevent
 the
@@ -1376,7 +1347,7 @@ To address these limitations, more advanced deep learning models have been
 developed for time-series forecasting, recurrent neural networks (RNNs). RNNs
 are a class of artificial neural networks in which node connections arise
 along
-a temporal sequence, i.e. previous values in a time series are linked to
+a temporal sequence, i.e., previous values in a time series are linked to
 current values. In simple words, RNNs predict a point of the time series
 using
 past information. Simple Recurrent Neural Networks (SRNNs) are an extension
@@ -1386,7 +1357,7 @@ is
 encoded in the network as state vectors, $\vec{h}_t$, that are passed from
 one
 time step to the next. In this way, the information flows not only from the
-input layer to the output layer, but also from one time step to the next,
+input to the output layer but also from one time step to the next,
 allowing the network to learn temporal dependencies in the data. A schematic
 representation of the SRNN is shown in \cref{fig:SRNN_scheme}, where we can
 observe how the network receives as input a sequence of data points $x_1,
@@ -1411,7 +1382,7 @@ current input $x_{t}$ and the previous hidden state $h_{t-1}$.
 \end{figure}
 
 Unfortunately, SRNNs suffer from the so-called vanishing gradient problem,
-i.e.
+i.e.,
 distant parts of the time series do not play a role in the training process,
 which prevents the network from learning long-term temporal dependencies.
 This
@@ -1419,7 +1390,7 @@ problem arises because the gradients of the loss function with respect to the
 weights of the connections tend to become very small as they are
 backpropagated
 through the network, which makes it difficult for the network to learn from
-distant parts of the time series. This is, the errors commited in the past
+distant parts of the time series. This is, the errors committed in the past
 are
 not propagated to the present. Another related issue is the exploding
 gradient
@@ -1428,7 +1399,7 @@ connections to diverge, leading to numerical instability.
 
 We can visualize the problem by computing the backpropagation through time.
 Consider that we predict the output time-series $y_t$ at time $t$ using the
-previous $T$ time steps, i.e. $y_t = f(x_t, x_{t-1}, \ldots, x_{t-T})$. The
+previous $T$ time steps, i.e., $y_t = f(x_t, x_{t-1}, \ldots, x_{t-T})$. The
 change in the loss function with respect to the weights of the connections is
 given by
 \begin{equation}\label{eq:loss_RNN}
@@ -1447,10 +1418,10 @@ chain rule
 \end{equation}
 
 The term in red is the one that causes the vanishing and exploding gradient
-problems. Because the term is in a productory, if it is smaller than 1 the
+problems. Because the term is in a product, if it is smaller than 1 the
 gradient will vanish, while if it is larger than 1, the gradient will
 explode.
-This problem repercutes to the whole gradient (\cref{eq:loss_RNN}), which
+This problem impacts the whole gradient (\cref{eq:loss_RNN}), which
 becomes very small or very large, making the training of the network unstable
 and useless.
 
@@ -1458,18 +1429,17 @@ Long-Short Term Memory (LSTM) neural networks overcome this limitation by
 implementing three gates to update and control the cell state (forget gate,
 input gate, output gate), thus allowing to keep long-term dependencies
 \cite{LSTM_NN}. Bidirectional Long-Short Term Memory (BD-LSTM) neural
-networks
-are able to encode both past and future information by implementing two LSTM
-layers flowing in opposite time directions. The forward layer preserve past
-information while the backwards layer preserves future information.Thus,
-using
-the two hidden states combined BD-LSTM are able in any point in time to
-preserve information from both past and future.
+networks are able to encode both past and future information by implementing
+two LSTM layers flowing in opposite time directions. The forward layer
+preserves past information while the backwards layer preserves future
+information. Thus, using the two hidden states combined, BD-LSTM networks are
+able to preserve information from both the past and future at any point in
+time.
 % A schematic representation of the BD-LSTM neural network is shown in (\cref{fig:BD_LSTM_scheme}).
 
 We will make use of BD-LSTM neural networks in \cref{ch:ph} to predict the
 missing values of the ocean pH based on the past and ``future'' available
-observations of temperature, salinity and dissolved oxygen.
+observations of temperature, salinity, and dissolved oxygen.
 
 % \begin{figure}[H]
 %   \centering
@@ -1486,7 +1456,7 @@ observations of temperature, salinity and dissolved oxygen.
 \subsection{\label{sec: Image segmentation} Image segmentation}
 
 Image segmentation is a computer vision task that involves partitioning an
-image into multiple segments, i.e. regions that share similar properties,
+image into multiple segments, i.e., regions that share similar properties,
 such
 as color, texture, or intensity. Image segmentation is used in a wide range
 of
@@ -1501,45 +1471,35 @@ variations in lighting and texture.
   \centering
   \includegraphics[width=1\textwidth]{Figures/CNN.pdf}
   \caption[Convolutional Neural Network]{
-    \textbf{Convolutional Neural Network.} The CNN receives as input an image
-    and produces an output image goes through a series of convolutional and
-    pooling layers, which apply a set of filters to the input image to
-    extract
-    features. The filters are learned during the training process and are
-    used
-    to detect patterns in the image, such as edges, textures, and shapes. The
-    output of the convolutional and poolin layers, which are called feature
-    maps, is passed through a series of non-linear activation functions,
-    which
-    introduce non-linearity into the model and allow the network to model
-    complex patterns in the data.}
+    \textbf{Convolutional Neural Network.} The CNN receives an image as input
+    and produces an output image that goes through a series of convolutional
+    and pooling layers, applying a set of filters to the input image to
+    extract features. The filters are learned during the training process and
+    are used to detect patterns in the image, such as edges, textures, and
+    shapes. The output of the convolutional and pooling layers, which are
+    called feature maps, is passed through a series of non-linear activation
+    functions, which introduce non-linearity into the model and allow the
+    network to learn complex patterns in the data.}
   \label{fig:CNN_scheme}
 \end{figure}
 
 FFNNs can be used for image segmentation. To do so the image is
 flattened\footnote{The image is transformed from a 2D array to a 1D array.}
-and
-fed into the network. For example, in the case of an RGB image, the input
-layer
-of the network would have 3 neurons, one for each color channel, and the
-output
-layer would have $N$ neurons, where $N$ is the number of classes to segment.
-Despite FFNN can be used for image segmentation, they are not well-suited for
-this task because they do not take into account the spatial information in
-the
-image. Indeed, we know how the brain processes images: the visual cortex is
-organized in a hierarchical manner, with neurons in the lower layers
-detecting
-simple patterns, such as edges and textures, and neurons in the higher layers
-detecting more complex patterns, such as shapes and objects. This
-hierarchical
-organization allows the brain to model complex patterns in the image and
-segment the image into different regions based on the spatial information. To
-mimic this hierarchical organization, more advanced deep learning models have
-been developed for image segmentation, which are commonly known as
-convolutional neural networks (CNNs).
+and fed into the network. For example, in the case of an RGB image, the input
+layer of the network would have 3 neurons, one for each color channel, and the
+output layer would have $N$ neurons, where $N$ is the number of classes to
+segment. However, they are not well-suited for this task because they do not
+take into account the spatial information in the image. Indeed, we know how the
+brain processes images: the visual cortex is organized in a hierarchical
+manner, with neurons in the lower layers detecting simple patterns, such as
+edges and textures, and neurons in the higher layers detecting more complex
+patterns, such as shapes and objects. This hierarchical organization allows the
+brain to model complex patterns in the image and segment the image into
+different regions based on the spatial information. To mimic this hierarchical
+organization, more advanced deep learning models have been developed for image
+segmentation, which are commonly known as convolutional neural networks (CNNs).
 
-CNNs are a class of artificial neural networks that are specificallty
+CNNs are a class of artificial neural networks that are specifically
 designed
 to process grid-like data, such as images. CNNs consist of multiple layers of
 neurons, called convolutional layers, which apply a set of filters (or
@@ -1547,10 +1507,10 @@ kernels)
 to the input image to extract features. After each convolutional layer, a
 pooling layer is applied to reduce the spatial dimensions of the feature maps
 and make the network more computationally efficient, allowing the network to
-learn spatial hierarchies of features \cref{fig:CNN_scheme}. After the last
+learn spatial hierarchies of features (\cref{fig:CNN_scheme}). After the last
 pooling layer is applied, the output of the network is flattened and passed
 through a series of fully connected layers to produce the final output of the
-network, e.g. the classification of the image into differen classes, as shown
+network, e.g., the classification of the image into different classes, as shown
 in \cref{fig:CNN_scheme}.
 
 % Mathematical explanation of the convolutional layer
@@ -1570,7 +1530,7 @@ given by the convolution of the image and the filter, which is computed as
 \end{equation}
 where $i$ and $j$ are the spatial coordinates of the output feature map $F$.
 
-For a 2D image with a single channel we can visualize the convolutional
+For a 2D image with a single channel, we can visualize the convolutional
 operation with the following example,
 \begin{equation}
   I = \begin{bmatrix}
@@ -1623,9 +1583,8 @@ maps produced by a CNN (VGG16) is shown in \cref{fig:feature_maps}.
   \label{fig:feature_maps}
 \end{figure}
 
-CNNs are the basic blocks used in more complex models specidifcally design
-for
-image segmentation, such as U-Net or Linknet. These models have achieved
+CNNs are the basic blocks used in more complex models specifically designed
+for image segmentation, such as U-Net or Linknet. These models have achieved
 state-of-the-art performance in image segmentation tasks and have been used
 in
 a wide range of applications, such as medical imaging, object detection, and
@@ -1655,7 +1614,7 @@ the image from the features (\cref{fig:Unet}).
 
 In \cref{ch:posidonia}, we will use different advanced models based on CNNs
 with encoder-decoder architectures to segment satellite images of the coastal
-areas of the Balearic Islands into differen benthic habitats, such as
+areas of the Balearic Islands into different benthic habitats, such as
 seagrass meadows or sandy bottoms.
 
 \subsection{Performance metrics}
@@ -1666,10 +1625,10 @@ These
 metrics are used to compare the performance of different models and to assess
 the quality of the predictions made by the model. The choice of performance
 metrics depends on the task at hand, and different metrics are used for
-classification, time-series forecasting or segmentation tasks.
+classification, time-series forecasting, or segmentation tasks.
 
-For time-series forecasting tasks, most common performance metrics are the
-the mean absolute error (MAE), the mean absolute percentage error (MAPE), the
+For time-series forecasting tasks, the most common performance metrics are the
+mean absolute error (MAE), the mean absolute percentage error (MAPE), the
 mean squared error (MSE), and the root mean squared error (RMSE). The MAE
 measures the average absolute difference between the predicted values and the
 true values,
@@ -1740,18 +1699,16 @@ ecological systems that will be studied throughout the thesis.
   Mortality Event of \textit{Pinna nobilis}}
 
 \textit{Pinna nobilis} is the largest endemic bivalve in the Mediterranean
-Sea,
-and is under a serious extinction risk due to a Mass Mortality Event (MME)
-that
-has occurred throughout the whole Mediterranean basin very recently
+Sea and is under a serious extinction risk due to a Mass Mortality Event (MME)
+that has recently occurred throughout the whole Mediterranean basin
 \cite{March, ZOTOU2020, VAZQUEZ2017}. Right before this
 MME, it was distributed across a wide type of habitats including coastal and
-paralic ecosystems at depths between 0.5 to $\SI{60}{m}$
+paralic ecosystems, at depths between 0.5 to $\SI{60}{m}$
 \cite{butler1993ecology, PRADO2020105220}. In open coastal waters, the
 distribution of the species is mainly associated with seagrass meadows,
 typically of \textit{Posidonia oceanica}, which has been indicated as its
 optimal habitat \cite{Hendriks2011}. Its lifespan is up to 50 years in
-favourable conditions and its size can get up to $\SI{1.2}{m}$, placing it
+favorable conditions and its size can get up to $\SI{1.2}{m}$, placing it
 among the largest bivalves of the  world \cite{Cabanellas2019}. These fan
 mussels play a crucial ecological role in their habitat, as \textit{P.
   nobilis}
@@ -1759,7 +1716,7 @@ individuals filter water, thus retaining a large amount of organic matter
 from
 suspended detritus, contributing to water clarity \cite{TRIGOS2014}.
 Furthermore, it is a habitat-forming species, because its shell provides a
-hard-surface within a soft bottom ecosystem, which can be colonised by
+hard-surface within a soft bottom ecosystem, which can be colonized by
 different benthic species, augmenting biodiversity \cite{Cabanellas2019}. In
 addition, at very dense populations, the species can function as an ecosystem
 engineer, creating biogenic reefs \cite{katsanevakis2016transplantation}.
@@ -1802,7 +1759,7 @@ factors,
 particularly temperature and salinity, significantly influence the expression
 and spread of the disease. Optimal conditions for the parasite's
 proliferation
-are temperatures above 13.5°C and salinity ranges between 36.5 and 39.7 psu.
+are temperatures above 13.5 ºC and salinity ranges between 36.5 and 39.7 psu.
 Marine currents also play a vital role in dispersing the parasite,
 facilitating
 its spread across large areas. This has been evidenced by the rapid spread of
@@ -1817,7 +1774,7 @@ disease spread. In this context, the development of predictive models that
 can
 forecast the spread of the disease and assess the impact of environmental
 factors on the disease dynamics is crucial. In \cref{part:nacras} of this
-thesis, we will develop a compartmenal model to study the dynamics of the MME
+thesis, we will develop a compartmental model to study the dynamics of the MME
 of \textit{P. nobilis} based on the theory of infectious diseases explained
 in
 \cref{sec:Infectious disease modelling}.
@@ -1842,7 +1799,7 @@ on infected plants and transmit it to healthy plants when feeding on them
 symptoms in infected plants, including leaf scorching, chlorosis, wilting,
 and
 finally dieback, which can lead to the death of the plant. Xf is responsible
-for several importan crop diseases, which lead to severe economic losses in
+for several important crop diseases, which lead to severe economic losses in
 agriculture and forestry and pose a serious threat to food security and
 biodiversity worldwide.
 
@@ -1851,7 +1808,7 @@ biodiversity worldwide.
   \includegraphics[width=0.8\textwidth]{Figures/Xf_symptoms.pdf}
   \caption[Symptoms of \textit{Xylella fastidiosa} infection]{
     \textbf{Symptoms of \textit{Xylella fastidiosa} infection.} (a) Leaf
-    scorching in an american Elm leave (b) Wilted squash plant (b) Leaf
+    scorching in an American Elm leaf (b) Wilted squash plant (b) Leaf
     scorching (c) Chlorosis in a grapevine leaf (d) Dieback in an infected
     olive tree.}
   \label{fig:Xylella}
@@ -1859,7 +1816,7 @@ biodiversity worldwide.
 
 As a taxonomic unit, Xf comprises three recognized subspecies,
 \textit{fastidiosa}, \textit{multiplex}, and \textit{pauca}, and more than 90
-sequence types (i.e. genetic lineages) with distinct host ranges.
+sequence types (i.e., genetic lineages) with distinct host ranges.
 These lineages are associated with different diseases in different hosts, and
 some of them are more virulent than others. Xf subsp. \textit{fastidiosa} is
 the most widespread subspecies and is responsible for several important crop
@@ -1871,7 +1828,7 @@ in
 California \cite{Almeida2003}. On the other hand, Xf subsp.
 \textit{pauca} is the most virulent subspecies and is responsible for the
 olive
-quick decline syndrome (OQDS), citrus variegated chlorosis (CVC) and coffee
+quick decline syndrome (OQDS), citrus variegated chlorosis (CVC), and coffee
 leaf scorch (CLS).
 
 Until the beginning of the 21st century, Xf was a pathogen officially
@@ -1881,12 +1838,12 @@ trees in Apulia, Italy, and its rapid spread raised alarm in European
 agriculture \cite{Saponari2013}. Today, all three Xf subspecies
 have been detected in the Balearic Islands (Spain), including \xf{}, and
 several clonal lineages have been found in Corsica and the PACA region of
-France, Alicante (Spain), Tuscany (Italy) and Portugal
+France, Alicante (Spain), Tuscany (Italy), and Portugal
 \cite{Olmo2021,denance2017several,Noales2021}. Outside North
-America, \xf{} is only established on the islands of Mallorca and Taiwan, and
-has recently been detected in Israel, Lebanon and Portugal
-\cite{zecharia2022xylella,carvalho2022dispersion}. In february 2024, some
-months before the writting of this thesis, \xf{} was also found in Italy
+America, \xf{} is only established on the islands of Mallorca and Taiwan and
+has recently been detected in Israel, Lebanon, and Portugal
+\cite{zecharia2022xylella,carvalho2022dispersion}. In February 2024, some
+months before the writing of this thesis, \xf{} was also found in Italy
 \cite{Xf_detection_italy}. In all European outbreaks, the insect vector
 \textit{Philaenus spumarius} is the main and almost unique carrier of Xf
 \cite{cornara2018philaenus}.
@@ -1902,13 +1859,11 @@ hatching
 occurs after enough heat is accumulated, usually in early spring
 \cite{morente2018distribution}. After egg hatching, the  nymphal stage goes
 through five instars during about 5–6 weeks until they become adults
-\cite{weaver1954meadow}. In the fall mature females lay masses of eggs on
-plant
-debris on the soil until they die during winter \cite{Lago2023}. This complex
-life cycle, which is influenced by temperature, gives rise to a seasonal
-pattern of Ps abundance, with a peak in the spring and a decline in the
-summer
-and fall \cite{Lopez2021}.
+\cite{weaver1954meadow}. In the fall, mature females lay masses of eggs on
+plant debris on the soil until they die during winter \cite{Lago2023}. This
+complex life cycle, which is influenced by temperature, gives rise to a
+seasonal pattern of Ps abundance, with a peak in the spring and a decline in
+the summer and fall \cite{Lopez2021}.
 
 \begin{figure}[H]
   \centering
@@ -1918,8 +1873,7 @@ and fall \cite{Lopez2021}.
     shows the distribution of \textit{Xylella fastidiosa} in Europe,
     including
     the Balearic Islands, Corsica, the PACA region of France, Alicante,
-    Tuscany
-    and Portugal. Source: EPPO Global Database.}
+    Tuscany, and Portugal. Source: EPPO Global Database.}
   \label{fig:Xf_distribution}
 \end{figure}
 
@@ -1932,8 +1886,8 @@ of predictive models that can forecast the spread of Xf in affected zones and
 assess the risk of disease establishment in new areas is crucial. Most of the
 efforts to model the spread of Xf have focused on the epidemiology of the
 disease and the role of environmental factors in the spread of the bacterium
-using SDMs, which we have already argued that are not appropriate for this
-task. This has lead to biased predictions and a lack of understanding of the
+using SDMs, which we have already argued are not appropriate for this
+task. This has led to biased predictions and a lack of understanding of the
 mechanisms driving the spread of the disease. On the other hand, most of the
 studies that have focused on the spread of Xf at the local level have ignored
 basic ecological principles, such as the role of the insect vector in the
@@ -1948,16 +1902,15 @@ In \cref{part:VBD} of this thesis, we will develop a compartmental model for
 the local spread of \textit{Xylella fastidiosa} diseases that includes all
 relevant ecological and epidemiological processes of the disease, including
 the seasonal abundance patterns of the insect vector. Later on, on
-\cref{part:PD_risk} we will develop a mechanistic climate-driven
+\cref{part:PD_risk}, we will develop a mechanistic climate-driven
 epidemiological model to assess the risk of establishment of \xf{} in new
 areas. This model will be based on a simplified version of the model
 developed
 in \cref{part:VBD} and will be used to assess the risk of establishment of
 \xf{} based on current and future climate conditions. Noteworthy, our
 methodology helps to advance the field of disease biogeography by providing a
-mechanistic understanding on the role of environmental factors in the spread
-of
-plant diseases.
+mechanistic understanding of the role of environmental factors in the spread
+of plant diseases.
 
 \subsection{\label{sec:The decline of seagrass meadows} The decline of
   seagrass
@@ -1986,8 +1939,7 @@ waves and maintaining shoreline stability
 seagrasses keep overlying
 waters oxygenated and with low concentrations of nutrients and CO$_2$
 \cite{DuarteChiscano1999}. Seagrasses are among the planet’s most effective
-natural ecosystems for sequestering (capturing and storing) carbon,
-performing
+natural ecosystems for sequestering (capturing and storing) carbon, performing
 a rate that is $35$ times faster than tropical rainforests, while their
 sediments never become saturated \cite{Mcleod2011}.
 
@@ -2043,7 +1995,7 @@ efforts.
 \subsection{\label{sec:The structure of coral reefs} The structure of coral
   reefs}
 
-Coral reefs are one of the most biodiverse ecosystems in Earth, holding more
+Coral reefs are one of the most biodiverse ecosystems on Earth, holding more
 than 25\% of marine life with only 1\% of ocean floor coverage
 \cite{reaka1997global}. Corals are colonies of living organisms called polyps,
 held together by a self-produced exoskeleton made of calcium carbonate.
@@ -2084,13 +2036,13 @@ Earth.
   \centering
   \includegraphics[width=\textwidth]{Figures/Corals.pdf}
   \caption[The structure of a coral reef]{
-    \textbf{The structure of coral reefs.} (a) Aereal view of a coral reef in
+    \textbf{The structure of coral reefs.} (a) Aerial view of a coral reef in
     the Great Barrier Reef, Australia. (b) A close-up of a coral reef in the
-    Read Sea, Egypt.}
+    Red Sea, Egypt.}
   \label{fig:Coral_reef}
 \end{figure}
 
-Some more mechanistic hypothesis on reef formation date back to the end of
+Some more mechanistic hypotheses on reef formation date back to the end of
 the
 19th century, when Charles Darwin proposed that coral reefs were formed by
 the
@@ -2126,15 +2078,12 @@ uptake of carbon dioxide (CO$_2$) from the atmosphere by the oceans. When
 CO$_2$ dissolves in seawater, it reacts with water to form carbonic acid
 ($\textrm{H}_2\textrm{CO}_3$), which dissociates into bicarbonate
 ($\textrm{HCO}_3^-$) and hydrogen ions ($\textrm{H}^+$). The increase in
-hydrogen ions leads to a decrease in the pH of the oceans, making them more
+hydrogen ions leads to a decrease in oceanic pH, making them more
 acidic. The pH of the oceans has decreased by 0.1 units since the beginning
-of
-the industrial revolution, which corresponds to a 30\% increase in the
-acidity
-of the oceans \cite{Orr2005}. This trend is expected to continue in the
-future
-as atmospheric CO$_2$ levels continue to rise, leading to further decreases
-in the pH of the oceans.
+of the industrial revolution, which corresponds to a 30\% increase in the
+acidity of the oceans \cite{Orr2005}. This trend is expected to continue in the
+future as atmospheric CO$_2$ levels continue to rise, leading to further
+decreases in the oceanic pH.
 
 \begin{figure}[H]
   \centering
@@ -2182,10 +2131,10 @@ temperature, salinity, and biological activity. In addition, the pH of the
 oceans is influenced by the uptake of CO$_2$ from the atmosphere, which
 varies seasonally and regionally. As a result, monitoring ocean acidification
 requires the collection of large amounts of data on the pH of the oceans.
-These challeges are exacerbated by the fact that pH sensors often fail or drift
-over time, leading to gaps in the time series of ocean pH data. These gaps can
-introduce bias in the estimates of the trends in the pH of the oceans and
-make it difficult to assess the impacts of ocean acidification on marine
+These challenges are exacerbated by the fact that pH sensors often fail or
+drift over time, leading to gaps in the time series of ocean pH data. These
+gaps can introduce bias in the estimates of the trends in the pH of the oceans
+and make it difficult to assess the impacts of ocean acidification on marine
 ecosystems.
 
 In \cref{ch:ph}, we will present a new framework to reconstruct the missing
