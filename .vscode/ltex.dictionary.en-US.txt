@@ -99,3 +99,10 @@ microparasites
 Runge-Kutta
 infectivity
 DifferentialEquations
+trypanosomiasis
+leishmaniasis
+identifiability
+unidentifiability
+phytopathologies
+unidientifiability
+non-stationaty
