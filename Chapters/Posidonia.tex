@@ -235,7 +235,7 @@ the naive baseline of predicting only the majority class (yellow diamonds in
 distribution of the performance metrics in the training and out-of-sample test
 datasets, showing that model performance is consistent in both sets
 (\cref{fig:model_performance}a). The model was able to segment some images in
-the out-of-sample test dataset with notable performance (e.g. 15\% of the
+the out-of-sample test dataset with notable performance (e.g., 15\% of the
 images with an IoU score higher than 80\%, and 20\% of the images with an IoU
 score higher than 70\%), while only 10\% of the images had an IoU score lower
 than 50\% (\cref{fig:model_performance}a and \cref{tab:metrics_img}). This
@@ -607,7 +607,8 @@ resolution of mean depth values.
 Satellite images were processed together with habitat and bathymetric data to
 construct the final training and testing datasets. The NIR band, which is
 strongly attenuated by water, was used to mask out pixels corresponding to land
-using a simple clustering algorithm (i.e. K-means) and subsequently substituted
+using a simple clustering algorithm (i.e., K-means) and subsequently
+substituted
 for bathymetric data. The resulting processed
 satellite images comprise the primary source for the input data of our model.
 The ground truth (or label) dataset consist of raster files analogous to the

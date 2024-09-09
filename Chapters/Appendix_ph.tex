@@ -85,13 +85,14 @@ and $T=1.0$ for temperature. The optimal fits are shown in
 \section{Bidirectional Long-Short Term Memory neural network}
 
 Recurrent Neural Networks (RNNs) are a class of artificial neural networks
-in which node connections arise along a temporal sequence, i.e. previous values
+in which node connections arise along a temporal sequence, i.e., previous
+values
 in a time series are linked to current values. In simple words, RNNs predict a
 point of the time series using past information. Simple Recurrent Neural
 Networks (SRNNs) are the straightforward extension of Feedforward Neural
 Networks, in which past information and learned knowledge is encoded in the
 network as state vectors. SRNNs suffer from the so-called vanishing gradient
-problem, i.e. distant parts of the time series do not play a role in the
+problem, i.e., distant parts of the time series do not play a role in the
 training process. Thus, SRNNs are not capable to learn long-term dependencies.
 Long-Short Term Memory (LSTM) neural networks overcome this limitation by
 implementing three gates to update and control the cell state (forget gate,

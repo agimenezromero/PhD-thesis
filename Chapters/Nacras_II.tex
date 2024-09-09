@@ -36,20 +36,20 @@ extinction, as is the case of \textit{Pinna nobilis}
 livestock and aquaculture \cite{Vurro2010, Tomley2009, Pernet2016}, and impact
 human health, as is the case of the COVID-19 pandemic \cite{Salata2020}. For
 the past decades, parasites have been continuously emerging \cite{Morens2004,
-    Daszak2017}, while globalisation and climate change have contributed to
+    Daszak2017}, while globalization and climate change have contributed to
 their
 evolution. This has allowed these parasites to enter in new ecological niches
 and spread further the diseases they produce \cite{Aguirre2008}. In particular,
 marine infectious diseases are recently increasing due to these and other
 anthropogenic pressures, like pollution and overfishing \cite{Lafferty2004},
-inducing widespread mass mortalities in several species \cite{Eisenlord2016,
+inducing widespread mass mortality in several species \cite{Eisenlord2016,
     JONES201648, VAZQUEZ2017}.
 
 An important subset of marine organisms affected by infectious diseases are
-sessile (i.e. they cannot move), like bivalves, sponges or corals. An
+sessile (i.e., they cannot move), like bivalves, sponges or corals. An
 increasing number of outbreaks affecting marine mollusks have been reported,
-some of them causing mass mortalities in commercially important bivalves
-\cite{Guo2016}. Mainly due to the economic importance of some species (e.g.
+some of them causing mass mortality in commercially important bivalves
+\cite{Guo2016}. Mainly due to the economic importance of some species (e.g.,
 oysters), infectious diseases in bivalve populations have been deeply studied
 \cite{Petton2021, Pernet2018, McLaughlin2005, powell1999modeling}. Recently,
 deterministic compartmental models have been used to describe parasite
@@ -60,7 +60,7 @@ these compartmental models is the assumption of a non-spatial description of
 the system under study. This underlying hypothesis assumes that any pair
 parasite-host of the system can interact at any time, which is unrealistic in
 general. A non-spatial description assumes well mixed populations, which
-implies that the mean distance among hosts is smaller than the the typical
+implies that the mean distance among hosts is smaller than the typical
 distance explored by parasites in their lifetime. This assumption can be quite
 realistic in some situations, as it is in \cite{GimenezRomero2021} where the
 hosts were kept in tanks with water renovation. However, a non-spatial model is
@@ -76,12 +76,13 @@ disease \cite{Anderson1991}. If we first disregard spatial effects and assume a
 non-spatial description, $R_0$ can be obtained from standard methods, like the
 Next Generation Matrix method \cite{Diekmann2010}, and will only depend on
 \textit{intrinsic} characteristics of the pathosystem (host-pathogen system)
-under study. However, this basic reproduction number is unable to characterise
-the threshold behaviour in many situations, including spatially extended
+under study. However, this basic reproduction number is unable to characterize
+the threshold behavior in many situations, including spatially extended
 systems \cite{Cross2007, Li2011, RILEY201568}. In these systems, the
 propagation of an epidemic to the entire system needs that a certain spatial
-threshold is exceeded \cite{Gilligan2008}. Otherwise the disease will only take
-place in suitable localised parts of the system, not being able to propagate to
+threshold is exceeded \cite{Gilligan2008}. Otherwise, the disease will only
+take
+place in suitable localized parts of the system, not being able to propagate to
 the total system. Thus, disease spread will be strongly affected by the host
 spatial distribution and pathogen mobility, which are not accounted for in
 non-spatial models.
@@ -91,17 +92,17 @@ parasite-induced disease affecting immobile hosts in a spatially extended
 system. We will approach the problem both theoretically and through numerical
 simulation. The numerical study is based on Individual-Based Modelling (IBM), a
 method widely used to study ecological systems \cite{Grimm2005}, so that
-individuals are treated as discrete entities, space is introduced explicitly
-and the dynamics are stochastic. Representative average behaviours can be
-obtained by averaging over a sufficient number of realisations, and the
+individuals are treated as discrete entities, space is introduced explicitly,
+and the dynamics are stochastic. Representative average behaviors can be
+obtained by averaging over a sufficient number of realizations, and the
 accuracy of the approach can be calibrated by deriving the corresponding
 non-spatial limit, that can be confronted with the suitable compartmental model
 on which a particular IBM is based. The IBM approach to our problem will allow
-to study in depth the relation between pathogen mobility and immobile host
+studying in depth the relation between pathogen mobility and immobile host
 infection. As parasites move randomly over the space, tracking the position of
 each parasite at different times turns to be of fundamental importance to
 properly capture the stochastic dynamics of infections from parasites to hosts.
-Modelling parasites and hosts as individual entities allows to take into
+Modelling parasites and hosts as individual entities allows taking into
 account the spatial and temporal heterogeneity of interactions between them.
 This heterogeneity and the level of control in microscopic interactions cannot
 be captured by other mathematical approaches such as partial differential
@@ -116,15 +117,15 @@ under study is an extension of the compartmental model presented in
 \cite{GimenezRomero2021}. As a main result, we find that the occurrence of an
 outbreak will depend on the balance between the intrinsic characteristics of
 the pathosystem, well represented by the above described non-spatial basic
-reproductive number, $R_0$, and features that characterise parasite mobility.
-We generalise the basic reproductive number, that we will refer to as
+reproductive number, $R_0$, and features that characterize parasite mobility.
+We generalize the basic reproductive number, that we will refer to as
 $\tilde{R}_0$, such that it accounts for the number of hosts that get infected
 by the appearance of a single infected individual in a fully susceptible
-population in a spatially extended system. $\tilde{R}_0$ characterises the
+population in a spatially extended system. $\tilde{R}_0$ characterizes the
 global epidemic and can be written as a product between $R_0$ and a factor
 describing parasite mobility. The latter factor is smaller and at most equal to
 $1$, which implies that, as it could be expected, it is more difficult to
-induce a global outbreak in a spatially extended system (a two dimensional
+induce a global outbreak in a spatially extended system (a two-dimensional
 lattice in our case) that in a well mixed (non-spatial) population.
 
 % The paper is organised as follows: in \cref{sec:model}, we introduce some
@@ -144,7 +145,7 @@ lattice in our case) that in a well mixed (non-spatial) population.
 The most important biological features of the system under study are as
 follows. First, hosts are immobile, while the disease is transmitted by
 parasites produced by infected hosts. There are two mechanisms by which
-parasites are cleared from the medium: i) they have a finite life time after
+parasites are cleared from the medium: i) they have a finite lifetime after
 which they die or get inactivated; ii) they get absorbed after they infect a
 host and thus are no
 longer in the medium and cannot infect other hosts. Recruiting (birth) of hosts
@@ -159,26 +160,26 @@ presentation of the non-spatial SIRP model, including these biological
 modelling considerations.
 
 Under these considerations, we introduce an individual-based model with
-explicit space characterisation to study the effect of parasite mobility in
+explicit space characterization to study the effect of parasite mobility in
 disease transmission. We consider a square grid of length $L$ with periodic
 boundary conditions and place a single host per site, so that there are $N=L^2$
 hosts. The hosts can be in three discrete states: susceptible, $S$; infected,
 $I$ and dead (or removed), $R$. Then, we introduce the parasite population as a
-new individual with a single state, $P$. Hosts are sessile (i.e. immobile),
+new individual with a single state, $P$. Hosts are sessile (i.e., immobile),
 while parasites are allowed to move between the lattice sites. As initial
 condition we assume that the entire host population is susceptible,
 $S(0)=N=L^2$, and that a small initial number of parasites, $P(0)$ is
 introduced in the system.
 
-Infection occurs when susceptible hosts filter parasites in their close
-proximity. Accordingly, the infection process is implemented between parasites
+Infection occurs when susceptible hosts filter parasites in their proximity.
+Accordingly, the infection process is implemented between parasites
 and susceptible hosts sharing the same lattice site. In particular, susceptible
 hosts in contact with a parasite become infected at rate $\beta$. As the
 infection event implies the filtering of a parasite by a susceptible host, when
 a new infection occurs a parasite of that particular site is removed. Infected
 individuals die at rate $\gamma$ and produce parasites at rate $\lambda$, while
 parasites die at rate $\mu$. Parasites move randomly between the four
-neighbouring lattice sites at rate $\kappa$, which corresponds to a diffusive
+neighboring lattice sites at rate $\kappa$, which corresponds to a diffusive
 motion. \cref{tab:IBM_params} contains the definitions of the variables and
 parameters of the model and \cref{fig:IBM} shows a schematic representation of
 the dynamics.
@@ -237,7 +238,7 @@ the dynamics.
 
 Formally, the model is mathematically described by a system of $N$ master
 equations for the probabilities of the states in each lattice site $i$.
-\cref{eq:scheme} summarises the reactive events. This is
+\cref{eq:scheme} summarizes the reactive events. This is
 very difficult to manage analytically, so the time evolution of the model is
 numerically solved using Gillespie's algorithm \cite{Gillespie1977} (the code
 can be found in \cite{CODE_nacras}).
@@ -252,7 +253,7 @@ can be found in \cite{CODE_nacras}).
 In this section several features of the model are studied, both numerically
 (from IBM simulations) and analytically. All numerical results were obtained
 for a square lattice of length $L=100$, with $N=S(0)=10^4$ hosts and using a
-small initial condition of $P(0)=50$ parasites in the centre site.
+small initial condition of $P(0)=50$ parasites in the center site.
 
 \subsection{Non-spatial limit} \label{sec:MFlimit}
 An important test of the IBM implementation is to show that, under suitable
@@ -309,7 +310,7 @@ final number of dead individuals (\cref{app:Rinf}),
 with $\displaystyle\xi=S(0)\frac{\beta\parentesi{\lambda-\gamma}}{\mu\gamma}$
 and $\displaystyle C=P_0+\frac{\lambda}{\gamma}\parentesi{S(0)+I(0)}-S(0)$.
 
-The non-spatial limit of the model has been evaluated by comparing realisations
+The non-spatial limit of the model has been evaluated by comparing realizations
 of the stochastic model (in the limit $\kappa\gg\mu,\beta$) with numerical
 solutions of the non-spatial ODE system of \cref{eq:SIRP_MF}. Furthermore, the
 analytical expression for $R(\infty)$ using the non-spatial model,
@@ -323,27 +324,21 @@ limit.
 \begin{figure}[H]
     \centering
     \includegraphics[width=\columnwidth]{Figures/MF_comparison.png}
-    \caption[
-        Comparison between the non-spatial model and the individual based model
-        in the high mobility limit
-    ]{Numerical solution of the non-spatial model (\cref{eq:SIRP_MF},
-        dashed lines) compared with numerical solutions of the individual based
-        model
-        (solid lines) approaching the non-spatial limit with fixed
-        $\gamma=\mu=\beta=1$
-        and $\lambda=6$. (a) $\kappa=10^2$, (b) $\kappa=10^3$, (c)
-        $\kappa=10^4$. Panel
-        (d) shows the final fraction of dead hosts, $R(\infty)/N$, as function
-        of $R_0$
+    \caption[Comparison between the non-spatial model and the individual based
+        model in the high mobility limit]{Numerical solution of the non-spatial
+        model (\cref{eq:SIRP_MF}, dashed lines) compared with numerical
+        solutions of the individual based model (solid lines) approaching the
+        non-spatial limit with fixed $\gamma=\mu=\beta=1$ and $\lambda=6$. (a)
+        $\kappa=10^2$, (b) $\kappa=10^3$, (c) $\kappa=10^4$. Panel (d) shows
+        the final fraction of dead hosts, $R(\infty)/N$, as function of $R_0$
         for $\kappa/(\mu+\kappa)=0.999$ with $\mu=1,0.1$ compared to the
-        analytical
-        result.}
+        analytical result.}
     \label{fig:MF_limit}
 \end{figure}
 
 \subsection{Approximate relation between parasites and infected hosts}
 
-In the limit $\kappa\gg\beta,\mu$ a time-scale approximation can be
+In the limit $\kappa\gg\beta,\mu$ a timescale approximation can be
 performed so that the parasite population dynamics directly relates to that of
 the infected hosts. In the non-spatial limit it was already shown in
 \cite{GimenezRomero2021} that, if  $\mu\gg\beta,\gamma$ and $\lambda\gg\beta
@@ -419,11 +414,11 @@ The parasite approximation to infected hosts dynamics, \cref{eq:P_approx_II},
 is numerically verified for different mobility conditions.
 \cref{fig:P_approx}(a)-(b) shows how the approximation improves as $\mu$ grows
 over $\beta,\gamma$ (mean errors are $0.18$ and $0.0081$, respectively) in the
-non-spatial limit, i.e. $\kappa\gg\mu$, as expected. This result is in perfect
+non-spatial limit, i.e., $\kappa\gg\mu$, as expected. This result is in perfect
 agreement with that found in \cite{GimenezRomero2021}. Then,
 \cref{fig:P_approx}(c)-(d) show that the approximation is valid in general when
 $\kappa\ll\mu$ but improves anyway when $\mu\gg\beta,\gamma$ (mean errors are
-0.04 and 0.0026, respectively). Summarising, we see that the lower the value of
+0.04 and 0.0026, respectively). Summarizing, we see that the lower the value of
 $\kappa$ is with respect to $\mu$ the more valid \cref{eq:P_approx_II} is,
 regardless of the value of $\beta,\gamma$, while in the non-spatial limit,
 $\kappa\gg\mu$, the condition $\mu\gg\beta,\gamma$ is needed.
@@ -433,11 +428,11 @@ $\kappa\gg\mu$, the condition $\mu\gg\beta,\gamma$ is needed.
 One of the main questions in epidemiology is to define the conditions under
 which an epidemic outbreak occurs, which usually is translated into the
 existence of a threshold. In a well mixed (non-spatial) system the basic
-reproduction number ($R_0$), that characterises this threshold $R_0=1$, can be
+reproduction number ($R_0$), that characterizes this threshold $R_0=1$, can be
 defined exclusively from \textit{intrinsic} parameters of the pathosystem, as
 the host-pathogen interaction does not depend on the host spatial structure or
 pathogen mobility (see \cref{eq:R0_MF}). In stochastic spatial models this
-formulation of $R_0$ breaks down. First of all, in stochastic models, even
+formulation of $R_0$ breaks down. First, in stochastic models, even
 above the threshold there is a non-zero probability that the disease is unable
 to propagate initially, given by
 $P_{\textrm{outbreak}}=1-\parentesi{1/R_0}^{I(0)}$ \cite{Brauer2008}.
@@ -457,7 +452,7 @@ Having in mind the study in \cref{sec:MFlimit}, we expect that in the high
 mobility limit the basic reproduction number is defined by the non-spatial
 formula, \cref{eq:R0_MF}. On the other hand, the lower the parasite mobility
 is, the more difficult will be for a local outbreak to propagate through the
-system. Thus, it is natural to think of an spatial basic reproduction number of
+system. Thus, it is natural to think of a spatial basic reproduction number of
 the form $\tilde{R}_0=R_0 f(\kappa)$, where $f(\kappa)$ is an increasing
 function of the parasite dispersal rate accounting for parasite mobility
 fulfilling $\lim_{\kappa\to\infty}f(\kappa)=1$.
@@ -480,7 +475,7 @@ The derivation of \cref{eq:R_0ibm} accounts for the number of secondary
 parasites that are able to produce new infections, or equivalently, the number
 of secondary infections produced by an initial infected host. If we consider an
 initial infected individual, on average it will produce $\lambda/\gamma$
-parasites. Then, these parasites can only move to neighbouring sites or die, so
+parasites. Then, these parasites can only move to neighboring sites or die, so
 that the dispersal probability is given by $\kappa/(\mu+\kappa)$. Finally,
 considering that parasites do not affect each other trying to infect the same
 host, the infection probability is given by $\beta/(\mu+\beta)$. Joining all
@@ -502,8 +497,8 @@ number, $R_0$, in order that there is an outbreak, i.e., $\tilde{R}_0>1$.
 
 The spatial threshold, $\tilde{R_0}=1$, given by \cref{eq:R_0ibm}, has been
 numerically checked by computing the phase diagram between the absorbing phase
-$R(\infty)\approx 0$ (no infection, i.e. disease-free state)  and the active
-phase $R(\infty)> 0$ (in which some level of infection has occurred, i.e.
+$R(\infty)\approx 0$ (no infection, i.e., disease-free state)  and the active
+phase $R(\infty)> 0$ (in which some level of infection has occurred, i.e.,
 propagation phase) for several values of the parasite mobility and the basic
 reproduction number of the non-spatial model, $R_0$ \cref{eq:R0_MF}. The
 transition is expected to occur at $\tilde{R}_0=1$, implying from
@@ -518,12 +513,12 @@ this reason we suggest the more general functional form,
 \begin{equation}\label{eq: threshold_corrections}
     R_0^c\sim A\parentesi{\frac{\kappa}{\mu+\kappa}}^{-B} - C\ ,
 \end{equation}
-to be be fitted to numerical data, where $A=1$, $B=1$ and $C=0$ would imply
+to be fitted to numerical data, where $A=1$, $B=1$ and $C=0$ would imply
 a perfect agreement of numerical simulations of the IBM model with
 \cref{eq:R_0ibm}.
 
 In order to obtain the phase diagram, we compute the absorbing state of the
-model as an average over $1000$ realisations for each value of the mobility and
+model as an average over $1000$ realizations for each value of the mobility and
 $R_0$ considered. Then, the critical value $R_0^c$ is computed for each
 mobility value as the $R_0$ value for which the fluctuations of the ``order
 parameter'' $\displaystyle \chi=\avg{{R(\infty})^2}-\avg{R(\infty)}^2$ are
@@ -533,20 +528,16 @@ disease-free and the propagation phases.
 \begin{figure}[H]
     \centering
     \includegraphics[width=1\textwidth]{Figures/PhaseDiagram.png}
-    \caption[
-        Phase diagram and fit for the transition between the disease-free and
-        propagation phases]{(a) Phase diagram showing the transition between
-        the the
-        disease-free phase and the propagation phase for several values of the
-        parasite
-        mobility and $R_0$. The colour code represents the fraction of dead
-        individuals
-        (i.e. $R/N$) in the final state of the epidemic computed by the average
-        over
-        1000 realisations. (b) Fit for the transition line following \cref{eq:
-            threshold_corrections}, where dots are the maxima of the ``order
-        parameter''
-        fluctuations, $\chi=\avg{{R(\infty})^2}-\avg{R(\infty)}^2$}
+    \caption[Phase diagram and fit for the transition between the disease-free
+        and propagation phases]{(a) Phase diagram showing the transition
+        between the disease-free phase and the propagation phase for several
+        values of the parasite mobility and $R_0$. The color code represents
+        the fraction of dead individuals (i.e., $R/N$) in the final state of
+        the
+        epidemic computed by the average over 1000 realizations. (b) Fit for
+        the transition line following \cref{eq:threshold_corrections}, where
+        dots are the maxima of the ``order parameter'' fluctuations,
+        $\chi=\avg{{R(\infty})^2}-\avg{R(\infty)}^2$}
     \label{fig:Phase_diagram}
 \end{figure}
 
@@ -557,14 +548,13 @@ values of the mobility factor and $R_0$. As expected, the lower the mobility
 factor is, the higher the value of $R_0$ is needed for the disease to invade
 the population. \cref{fig:Phase_diagram}(b) shows the fit of \cref{eq:
     threshold_corrections} with less than a $1\%$ of relative error.
-Interestingly,
-we obtain $B=1.07\approx1$ which validates our expression for the spatial
-threshold as a first approximation. However, the values for $A=4.02$ and
-$C=2.7$ show a significant deviation from \cref{eq: R_0_crit dependence} and
-indicate that the expression \cref{eq:R_0ibm} is  an approximation to the
-spatial basic reproduction number, which however seems to contain the right
-dependence on $\kappa/(\mu+\kappa)$, and where $A$ could be a geometric factor
-for a lattice.
+Interestingly, we obtain $B=1.07\approx1$ which validates our expression for
+the spatial threshold as a first approximation. However, the values for
+$A=4.02$ and $C=2.7$ show a significant deviation from \cref{eq: R_0_crit
+    dependence} and indicate that the expression \cref{eq:R_0ibm} is  an
+approximation to the spatial basic reproduction number, which however seems to
+contain the right dependence on $\kappa/(\mu+\kappa)$, and where $A$ could be a
+geometric factor for a lattice.
 
 \subsection{Spreading speed of the infected population and time to extinction}
 
@@ -574,11 +564,11 @@ spreading speed we computed the mean time needed for an infected individual to
 reach the boundary of the system. More specifically, for each particular choice
 of the model parameters, 1000 simulations were run for several system sizes
 ranging from $L=10$ to $L=60$. The computed mean time was found to depend
-linearly with the system size, thus allowing to compute the speed from the
+linearly on the system size, thus allowing to compute the speed from the
 slope of this relation. With this procedure, the spreading speed was computed
 for several values of the parasite mobility and $R_0$, large enough to ensure
 an epidemic outbreak that reached the boundary of the system. In this
-situation, the spreading speed is expected to depend linearly with the square
+situation, the spreading speed is expected to depend linearly on the square
 root of the parasite mobility,
 \begin{equation}\label{eq:front_vel}
     v\sim\sqrt{\kappa} \ .
@@ -594,16 +584,12 @@ agreement with other mathematically similar models \cite{Bertuzzo2010}.
 \begin{figure}[H]
     \centering
     \includegraphics[width=1\textwidth]{Figures/Front_velocity.png}
-    \caption[
-        Analysis of the spreading speed of the infected population
-    ]{(a) Disease spreading speed as function of the square root of
-        the parasite mobility for several values of $R_0$. The plot shows a
-        remarkable
+    \caption[Analysis of the spreading speed of the infected population]{(a)
+        Disease spreading speed as function of the square root of the parasite
+        mobility for several values of $R_0$. The plot shows a remarkable
         agreement with \cref{eq:front_vel}. (b) Disease spreading speed as
-        function of
-        the square root of the distance to the critical value of $R_0$ for
-        several
-        values of the parasite mobility.}
+        function of the square root of the distance to the critical value of
+        $R_0$ for several values of the parasite mobility.}
     \label{fig:front_velocity}
 \end{figure}
 
@@ -631,7 +617,7 @@ threshold, when the disease is expected to spread to the entire system.
 In \cref{fig:extinction_time}(a) the extinction time is plotted against the
 basic reproduction number for some values of the parasite mobility. As
 expected, the extinction time increases for lower values of the parasite
-mobility. The increasing behaviour before the peak can be understood as the
+mobility. The increasing behavior before the peak can be understood as the
 increasing time needed for the initial perturbations to decay to the
 disease-free phase. After the peak, the greater the basic reproduction number
 the faster the epidemic will reach its absorbing state with a non-negligible
@@ -642,21 +628,15 @@ the parasite mobility.
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{Figures/Extinction_time.png}
-    \caption[
-        Analysis of the extinction time of the epidemic]{(a) Extinction time
-        for some values of the parasite mobility.
-        (b) Comparison of the critical $R_0$ value computed with
-        \cref{eq:R_0ibm}
-        compared to the values obtained numerically by computing the maximum of
-        the
-        extinction time. (c) Scaling of the extinction time with several values
-        of the
+    \caption[Analysis of the extinction time of the epidemic]{(a) Extinction
+        time for some values of the parasite mobility. (b) Comparison of the
+        critical $R_0$ value computed with \cref{eq:R_0ibm} compared to the
+        values obtained numerically by computing the maximum of the extinction
+        time. (c) Scaling of the extinction time with several values of the
         parasite mobility. (d) Representation of the square of the extinction
-        time as
-        function of the inverse of the parasite mobility. The inset shows the
-        zone
-        where this relation has been computed, showing a good agreement with
-        \cref{eq:t_ext}.}
+        time as function of the inverse of the parasite mobility. The inset
+        shows the zone where this relation has been computed, showing a good
+        agreement with \cref{eq:t_ext}.}
     \label{fig:extinction_time}
 \end{figure}
 
@@ -664,17 +644,17 @@ In \cref{fig:extinction_time}(b) we compare the numerical value of $R_0$ at
 which the extinction time peaks with the theoretical value of $R_0^c$, computed
 with \cref{eq: threshold_corrections}, showing good agreement. Thus, the
 dependence of the extinction time with $R_0$ should vanish if plotted against
-the distance to $R_0^c$. Furthermore, if the extinction time is normalised
+the distance to $R_0^c$. Furthermore, if the extinction time is normalized
 (dividing each line by its maximum), all the lines should collapse near the
-transition point. In \cref{fig:extinction_time}(c) the normalised extinction
+transition point. In \cref{fig:extinction_time}(c) the normalized extinction
 time is plotted against the distance to the critical value of $R_0$. The
 scaling is shown to be valid only near the transition point, as expected.
 
 In the limiting case where the epidemic dies by infecting a large part of
-the host population, i.e. for a large enough $R_0$ value, the extinction time
+the host population, i.e., for a large enough $R_0$ value, the extinction time
 should follow \cref{eq:t_ext}, as previously discussed. In
 \cref{fig:extinction_time}(d) we show how the extinction time relates to the
-parasite mobility in this limit, following the predicted behaviour.
+parasite mobility in this limit, following the predicted behavior.
 
 \section{Conclusions} \label{sec: conclusions}
 
@@ -685,7 +665,8 @@ constraints affect epidemic spreading in filter-feeder populations or how will
 the infected population of hosts change in space and time. While addressing the
 aforementioned questions, we have shown that there exists a regime of high
 parasite mobility where the time progression of both host and parasite
-populations can be well described by the non-spatial version of the model (i.e.
+populations can be well described by the non-spatial version of the model
+(i.e.,
 the system of ODE's presented in \cite{GimenezRomero2021}). We have also shown
 that a fast-slow approximation for the time progression of the parasite
 population, already presented in \cite{GimenezRomero2021}, can be extended for
@@ -697,7 +678,7 @@ are reported in this contribution.
 We have derived an approximate analytical expression of the
 \textit{spatial} basic reproduction number, that allows to predict the onset of
 a global epidemic in a spatial model. The obtained expression explicitly shows
-a trade-off between the intrinsic pathosystem dynamics (i.e. $R_0$) and a
+a trade-off between the intrinsic pathosystem dynamics (i.e., $R_0$) and a
 factor accounting for parasite mobility. Moreover, the spatial threshold
 defined by $\tilde{R}_0=1$ separates the final state of the system in two
 different phases, namely a disease-free phase and a propagation phase. In the
@@ -708,7 +689,7 @@ introduction of parasites or infected individuals to spread through the system.
 The effect of the parasite mobility in the spatial basic reproduction number is
 clear, the more parasites move the more infections they cause.
 
-The spatiotemporal behaviour of the system has been investigated in the
+The spatio-temporal behavior of the system has been investigated in the
 propagation phase. First, we showed that the infected population spreads
 through the space with a speed directly proportional to the square root of the
 diffusion coefficient of parasites, showing good agreement between the derived
@@ -719,7 +700,7 @@ be analytically computed, in good agreement with simulations. We obtained that
 larger values of the parasite mobility yield more severe epidemics in which
 there are more infections and the extinction is faster.
 
-To summarise, in the present work we have introduced and analysed and
+To summarize, in the present work we have introduced and analyzed and
 Individual-Based approach to epidemic transmission in spatially extended
 systems of immobile hosts. The infection mechanism is due to mobile parasites,
 that are in turn produced by infected hosts. The study allows to answer some
@@ -734,7 +715,7 @@ Although this work has considered the case of a spatially homogeneous
 distribution of hosts, we plan to extend the study to more general cases,
 discussing the effect of inhomogeneous spatial host distributions. Furthermore,
 other biological relevant effects could be added to the model to enhance the
-description of different epidemics, e.g. infected individuals could still
+description of different epidemics, e.g., infected individuals could still
 filter parasites or parasite-load dependent infection process. The model could
 also describe epidemics on other immobile species such as filter feeders like
 sponges or other bivalves, corals, intertidal communities or starfishes
