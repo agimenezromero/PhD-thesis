@@ -458,12 +458,12 @@ the limit $R_0\rightarrow\infty$, in agreement with the prediction of
 
 As shown in the previous section, traditional methods to compute the basic
 reproduction number fail in the case of epidemic models with decaying vector
-populations, $f>1$, unless the timescale of vector population fulfills the
+populations, $f>1$, unless the timescale of the vector population fulfills the
 strong inequality condition \cref{eq:timescales_condition}, as illustrated in
-\cref{sec:R0statvp}. Here we introduce an effective, average definition of
-$R_0$, useful to predict the epidemic onset for vector-borne diseases with
-decaying vector populations, i.e., the case where traditional methods fail. It
-is defined as the \textit{average} number of infections produced by an infected
+\cref{sec:R0statvp}. Here we derive an effective definition of $R_0$ useful to
+predict the epidemic onset for vector-borne diseases with decaying vector
+populations, i.e., the case where traditional methods fail. It is defined as
+the \textit{average} number of infections produced by an infected
 individual in \textit{one generation} \cref{eq:generationtime},
 \begin{equation}\label{eq:R0_non_stationary}
     \overline{R_0}=\avg{R_{0}^{i}(t)}\Big\rvert\limitss{0}{t_g}=
@@ -510,26 +510,26 @@ methods works if $\mu\gg\gamma$.
 \cref{fig:R0_check_mean_value}(a-b) contrasts numerically the validity of
 \cref{eq:R0_non_stationary} to predict the final size of the epidemic as a
 function of the general basic reproduction number, $\overline{R_0}$, in linear
-and logarithmic scale, respectively. We observe that, independently of the
+and logarithmic scales, respectively. We observe that, independently of the
 initial condition of vectors, the outbreak occurs for $\overline{R_0}>1$.
 However, we may notice that for large values of the initial condition of
-vectors the final size of the epidemic grows more slowly, so that larger values
-of $\overline{R_0}$ are needed to produce a proper outbreak. This can be
-explained by the fact that for $\overline{R_0}$ slightly above the threshold,
-$\overline{R_0}=1$, and large values of $f=N_v(0)/N_v^*$, infections are
+vectors, the final size of the epidemic grows more slowly, so that larger
+values of $\overline{R_0}$ are needed to produce a proper outbreak. This can be
+explained by the fact that for $\overline{R_0}$ slightly above the threshold
+($\overline{R_0}=1$) and with large values of $f=N_v(0)/N_v^*$, infections are
 produced only in the transient period of the dynamics, as $R_0<1$. This is,
 while the vector population is decaying to its stationary value, the vectors
 are able to produce new infections, but once the vector population reaches the
-stationary value, the epidemics stops. This transmission mechanism is radically
-different to that of vector-borne diseases with stationary vector populations
-in which the pre-pandemic disease-free state is an equilibrium of the system.
-The phase-space plots in \cref{fig:R0_check_mean_value}(c-d) show that the
-time-averaged basic reproduction number $\overline{R_0}$ is able to accurately
-predict the conditions under which the infected host population will grow, in
-contrast with $R_0$ computed in the post-pandemic fixed point. In essence, for
-$\overline{R_0}>1$ the infected host population, $I_H$, grows before reaching
-the absorbing state, $I_H=I_v=0$, while for $\overline{R_0}<1$ the infected
-host population is monotonically decreasing. We note that
+stationary value, the epidemic stops. This transmission mechanism is radically
+different from that of vector-borne diseases with stationary vector
+populations, in which the pre-pandemic disease-free state is an equilibrium of
+the system. The phase-space plots in \cref{fig:R0_check_mean_value}(c-d) show
+that the time-averaged basic reproduction number, $\overline{R_0}$, is able to
+accurately predict the conditions under which the infected host population will
+grow, in contrast with $R_0$ computed in the post-pandemic fixed point. In
+essence, for $\overline{R_0}>1$, the infected host population, $I_H$, grows
+before reaching the absorbing state, $I_H=I_v=0$, while for $\overline{R_0}<1$
+the infected host population is monotonically decreasing. We note that
 \cref{eq:R0_non_stationary} is similar to the time-averaged basic reproduction
 number presented in \cite{Wesley2009} for the periodic case, which is a
 first-order approximation to the \textit{true} basic reproductive number
@@ -542,8 +542,8 @@ mathematical analyses due to its high phase-space dimensionality and the fact
 that it depends on $4$ parameters. Moreover, in a real-case application, if the
 parameters conforming the model are not known, the model could suffer from
 parameter unidentifiability. However, some approximations can be performed to
-reduce the mathematical complexity of the model, as for instance a fast-slow
-(or adiabatic) approximation.
+reduce the mathematical complexity of the model, such as a fast-slow (or
+adiabatic) approximation.
 
 If the timescale of the vector population evolution is much faster than
 that of the infected hosts, what is expected to be a good approximation in many
@@ -554,7 +554,7 @@ population as
 \begin{equation}
     \epsilon\dot{I}_v=\frac{\alpha}{\mu}S_v\frac{I_H}{N_H} - I_v \ ,
 \end{equation}
-where time has been re-scaled to $t'\to\gamma t$ and $\epsilon=\gamma/\mu$
+where time has been rescaled to $t'\to\gamma t$ and $\epsilon=\gamma/\mu$
 is a small parameter. Then, $\dot{I_v}$ can be neglected, and the infected
 vector population can be obtained from the relationship,
 \begin{equation}\label{eq:Iv_timescale_approx}
@@ -567,13 +567,10 @@ vector population can be obtained from the relationship,
     \caption[Numerical verification of the timescale approximation]{Numerical
         verification of the timescale approximation
         (\cref{eq:Iv_timescale_approx}) with $N_H=100$, $\alpha=\gamma=1$.
-        $\beta$ is
-        chosen such that $R_0=3$. (a) $\mu=1$, (b) $\mu=10$, (c) $\mu=100$.
-        Panel (d)
-        shows a comparison between the approximate and original models for the
-        parameters used in (c), where the approximated models is expected to
-        represent
-        well the original one.}
+        $\beta$ is chosen such that $R_0=3$. (a) $\mu=1$, (b) $\mu=10$, (c)
+        $\mu=100$. Panel (d) shows a comparison between the approximate and
+        original models for the parameters used in (c), where the approximated
+        model is expected to represent well the original one.}
     \label{fig:timescale_approx}
 \end{figure}
 
@@ -597,15 +594,14 @@ must fulfill
 $\displaystyle\frac{\mu}{\gamma}\gg\abs{\ln{\frac{\epsilon}{f-1}}}$ (cf.
 \cref{eq:timescales_condition}) and not only
 $\displaystyle\frac{\mu}{\gamma}\gg 1$. It is important to notice that the
-presence of direct host-to-host transmission would simply re-scale the
+presence of direct host-to-host transmission would simply rescale the
 coefficient $\beta'$, and the SIR reduction \cref{eq:SIR_like} would keep its
 validity.
 
 In \cref{fig:timescale_approx} we numerically verify the validity of the
 presented fast-slow approximation. As expected, we observe that the
 approximation breaks down for $\mu\sim\gamma$ (\cref{fig:timescale_approx}(a)),
-while as
-$\mu$ becomes larger than $\gamma$ the approximation improves
+while as $\mu$ becomes larger than $\gamma$ the approximation improves
 \cref{fig:timescale_approx}(b) and it becomes quantitative when $\mu\gg\gamma$,
 \cref{fig:timescale_approx}(c). Finally, we show in
 \cref{fig:timescale_approx}(d) a comparison between the dynamics of the hosts
@@ -656,14 +652,14 @@ for different values of $f$.
 
 \section{Conclusions}\label{sec:conclusions}
 
-In the present work we have analyzed several features of a compartmental
+In the present chapter we have analyzed several features of a compartmental
 deterministic model for vector-borne diseases with three compartments for hosts
-and two for vectors, that does not consider direct host-to-host nor vertical
+and two for vectors that does not consider direct host-to-host nor vertical
 transmission. The goal is to study the behavior of the model in the
 case that the vector population is not stationary. In this case, the
 pre-pandemic disease-free state is not a fixed point (equilibrium state) of the
 dynamical system, and, in principle, the methods that are customarily used to
-determine the basic reproduction number, $R_0$ do not work. This is so because
+determine the basic reproduction number, $R_0$, do not work. This is so because
 these methods determine the onset of an outbreak by performing a linear
 stability analysis of the disease-free state, assuming that it is a fixed point
 of the model. A common assumption made in the literature is to determine $R_0$
@@ -677,7 +673,7 @@ population overall grows, then $R_0$ as determined from the asymptotic state
 correctly predicts the existence (or not) of an epidemic outbreak, but with a
 temporal delay in its appearance. This result contrasts with the situation in
 which the initial state is above the asymptotic state, with an overall decrease
-in the vector population. In this case $R_0$ determined from the asymptotic
+in the vector population. In this case, $R_0$ determined from the asymptotic
 state may fail badly, predicting no outbreak while a large fraction of the
 population might get infected. We present a simple, albeit useful,
 generalization of $R_0$ that is able to give a reasonable prediction of the
@@ -688,24 +684,25 @@ $R_0$ cannot be applied.
 Compartmental models of vector-borne diseases usually have many
 compartments and parameters, which can lead to a problem of parameter
 unidentifiability. The model analyzed here is not an exception, and when
-applied to real-world cases many combinations of the parameters could
+applied to real-world cases, many combinations of the parameters could
 be able to reproduce the available data. Thus, in order to facilitate the
 application of the model to experimental data, we have studied a useful
 fast-slow (or adiabatic) approximation that allows to reduce the model if the
 parameters fulfill certain conditions. In particular, our study shows that
-under quite realistic assumptions (the typical timescale of hosts infection and
-death is much slower than vector timescales) it is possible to obtain a reduced
-SIR model. We recall that this reduction implies that, under these assumptions,
-the process by which hosts (that could be immobile) get infected through the
-action of vectors is equivalent to a direct interaction among hosts.
+under quite realistic assumptions (the typical timescale of host infection and
+death is much slower than vector timescales), it is possible to obtain a
+reduced SIR model. We recall that this reduction implies that, under these
+assumptions, the process by which hosts (that could be immobile, as they do not
+interact directly) get infected through the action of vectors is equivalent to
+a direct interaction among hosts.
 
 The deterministic compartmental model analyzed here, with some
 modifications, is a clear candidate to study many vector-borne diseases, in
-particular phytopathologies. Furthermore, in case of parameter
-unidientifiability the model reductions performed in this work could be useful
+particular phytopathologies. Furthermore, in the case of parameter
+unidientifiability, the model reductions performed in this work could be useful
 to solve this issue. In any case, this description is still idealized, as
 compartmental models imply a well-mixed assumption in which space is not
-explicitly described. This kind of representations are not always applicable to
-real-world scenarios although are useful as a first approximation. Thus, future
-research should focus on the integration of space and vector mobility in the
-model to account for more realistic situations.
+explicitly described. This kind of representation is not always applicable to
+real-world scenarios, although it is useful as a first approximation. Thus,
+future research should focus on the integration of space and vector mobility in
+the model to account for more realistic situations.
