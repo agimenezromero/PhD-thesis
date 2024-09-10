@@ -49,15 +49,15 @@ not infected.\\
 \noindent\textbf{Data analysis}. All statistical analyses on disease scores
 were carried out using R. 3.5.2 version software
 \cite{R-Development-Core-Team2017}. We used the functions glm and glmer in the
-R package lme4 \cite{Bates2015}  for fitting Generalised Linear Models and
-Generalised Linear Mixed Models (GLMMs) in the analysis of disease incidence
-and severity in the inoculation assays. In all tests, we modelled the response
+R package lme4 \cite{Bates2015}  for fitting Generalized Linear Models and
+Generalized Linear Mixed Models (GLMMs) in the analysis of disease incidence
+and severity in the inoculation assays. In all tests, we modeled the response
 variable (i) disease incidence with the binomial error (logit‐link function)
 and (ii) disease severity with the Poisson error (log‐link function). A
 within-subject (repeated measures) factorial design was performed to evaluate
 differences in disease severity over time among different cultivar-rootstock
 combinations. Cultivars-rootstock and time were treated as fixed factors and
-plant subjects as a random effect. Rootstock and time were analysed as fixed
+plant subjects as a random effect. Rootstock and time were analyzed as fixed
 factors and plant subjects as a random effect. Controls were excluded from the
 analysis, as lesions did not develop on them. For each cultivar, we calculated
 the area under the disease progress curve (AUDPC) from weeks-post-inoculation
@@ -467,14 +467,14 @@ of the disease within vineyards (\cref{figS1}).
     \label{fig:experimental_setup} %S2
 \end{figure}
 
-\section{Modelling climate suitability for PD}\label{app:S2}
+\section{Modeling climate suitability for PD}\label{app:S2}
 \subsection{Modified Growing Degree Days (MGDD) from Arrhenius
     Equation}\label{app:MGDD} %S2 A
 
 Feil and Purcell estimated Xf growth rate as a function of temperature,
 $\sigma(T)$, using Arrhenius’ Law, i.e., $\ln K \sim -1/T$ (see Fig. 3 in
 \cite{Feil2001}). The overall dependence on $T$ is nonmonotonic with two
-different types of behaviour: i) $k$ grows with $T$ until a maximum value is
+different types of behavior: i) $k$ grows with $T$ until a maximum value is
 attained at $T=\SI{28}{\degree C}=\SI{301.15}{K}$; and ii) $k$ decreases beyond
 the maximum. Growth is zero beyond the lowest and highest threshold
 temperatures.
@@ -487,7 +487,7 @@ rate $k$ and the absolute temperature $T$ reads as follows,
 where $A$ is a pre-exponential factor and $E$ an activation energy in units
 of the Boltzmann constant $k_B$. The original use of this equation is for the
 rate constant of a chemical reaction that increases monotonically with $T$, and
-so $E>0$.  To fit the non-monotonic whole growth behaviour of Xf, we considered
+so $E>0$.  To fit the non-monotonic whole growth behavior of Xf, we considered
 two Arrhenius functions with opposite signs in the activation rate,
 \begin{equation}\label{eq: Arrhenius_2}
     k =A_1 \exp(-E_1/T) + A_2 \exp(+E_2/T) \ ,
@@ -527,7 +527,7 @@ $E/b^2$.
 Each exponential in \cref{eq: Arrhenius_2} can be expressed with a simple
 straight line, valid in our temperature range. This approach can be extended by
 adding more exponential terms in \cref{eq: Arrhenius_2} to further improve the
-fit with a multi-linear dependence between Xf$_{\textrm{PD}}$ growth rate and
+fit with a multilinear dependence between Xf$_{\textrm{PD}}$ growth rate and
 temperature, obtaining a function proportional to Xf$_{\textrm{PD}}$ growth
 rate $F(T)=C\cdot\sigma(T)$ (see \cref{figS2}).
 
@@ -545,7 +545,7 @@ rate $F(T)=C\cdot\sigma(T)$ (see \cref{figS2}).
     \label{figS2} %S3
 \end{figure}
 
-Now, this multi-linear fit to the Xf$_{\textrm{PD}}$ growth rate can be
+Now, this multilinear fit to the Xf$_{\textrm{PD}}$ growth rate can be
 used to redefine the classical Growing Degree-Days (GDD) metric into the new
 Modified Growing Degree Days (MGDD). $GDD$s are computed as the integral of a
 particular function of temperature
@@ -644,7 +644,7 @@ The transmission of the disease from infected hosts to susceptible ones is
 mediated by the \textit{transmission rate} $\beta$ while the death of infected
 individuals is regulated by the \textit{mortality rate} $\gamma$.
 
-Analysing the non-trivial fixed point, $\vec{x}=(N, 0, 0)$, it can be
+Analyzing the non-trivial fixed point, $\vec{x}=(N, 0, 0)$, it can be
 proved the existence of an epidemic threshold. As $S$ is a monotonically
 decreasing function, which implies $S(t)<S_0$, one can write the following
 relation,
@@ -662,7 +662,7 @@ measures the number of secondary infections given by a primary infection in a
 fully susceptible population.
 
 We wish to model the risk of PD establishment in a susceptible (healthy)
-population. For this, we characterised the maximum growth rate of the epidemic,
+population. For this, we characterized the maximum growth rate of the epidemic,
 when $S(t)\sim S(0)$. Thus, the growth is well approximated under these
 conditions with
 the (linearised) differential equation,
@@ -688,9 +688,9 @@ cumulative probability of chronic infection that depends on temperature.
 \subsection{Model validation}
 
 We ran several simulations of the model \cref{eq:evolution_eq} with $R_0$
-values between 1 and 14 to validate PD spatiotemporal distribution in the
+values between 1 and 14 to validate PD spatio-temporal distribution in the
 US.
-We found $R_0=8$ as the optimal parameter for maximising the area under a
+We found $R_0=8$ as the optimal parameter for maximizing the area under a
 ROC
 curve (\cref{fig:sup_ROC}), returning an accuracy of more than $80 \%$,
 except for 2006, due to data obtained from an area at the transient-risk
@@ -726,16 +726,16 @@ presence of PD in the US, with an area under the curve of $0.85$.
     \includegraphics[width=0.6\textwidth]{Figures/ROC_curve.png}
     \caption[ROC curve illustrating the model validation procedure]{\textbf{ROC
             curve illustrating the model validation procedure
-            with spatiotemporal data from PD distribution in the US.} TPR
+            with spatio-temporal data from PD distribution in the US.} TPR
         is
         the
         \textit{true positive rate} and FPR the \textit{false positive
             rate}.
         The model
-        accuracy reaches its optimum in $R_0\approx8$ by maximising the
+        accuracy reaches its optimum in $R_0\approx8$ by maximizing the
         true
         positive
-        rate and minimising the false positive rate. The spatiotemporal PD
+        rate and minimizing the false positive rate. The spatio-temporal PD
         distribution
         in the US was obtained from data collected from publications
         between
@@ -748,11 +748,11 @@ presence of PD in the US, with an area under the curve of $0.85$.
 %S2 D
 
 Unlike the validation of our model based on the distribution of PD in the
-USA, there are no spatiotemporal data on PD outbreaks available in Europe to
+USA, there are no spatio-temporal data on PD outbreaks available in Europe to
 estimate $R_0$. One way to solve this problem is to use data on the incidence
 of almond leaf scorch disease in Majorca to fit a SIR model and obtain an
 approximation of $R_0$. The initial date of introduction and progression of the
-almond leaf scorch epidemics is well characterised and both diseases are
+almond leaf scorch epidemics is well characterized, and both diseases are
 transmitted by \textit{P. spumarius} \cite{Moralejo2019,Moralejo2020}. Using
 $\gamma=1/14 \textrm{years}^{-1}$ as the mortality rate \cite{Moralejo2020},
 the best fit was provided by $\beta_{\textrm{opt}}=0.8$, giving rise to
@@ -769,7 +769,7 @@ $\gamma\sim
 gives
 rise to $R_0=4$. Finally, we used the information on the climate suitability
 for the vector in Majorca ($\approx0.8$ on average) to determine a baseline
-scenario for Europe, $R_0=4/0.8=5$. Thus we can argue that $R_0=5$ is a good
+scenario for Europe, $R_0=4/0.8=5$. Thus, we can argue that $R_0=5$ is a good
 proxy for modelling the establishment of PD in Europe. The use of $R_0=5$ is
 furthermore corroborated by the reasonability of the predictions obtained.
 
@@ -795,15 +795,16 @@ furthermore corroborated by the reasonability of the predictions obtained.
 %S2 E
 
 To assess the risk of \textit{Xf} establishment in vineyards, we performed
-spatiotemporal simulations for the world's largest wine-growing areas. The cell
+spatio-temporal simulations for the world's largest wine-growing areas. The
+cell
 size of the abstract grid was determined by the resolution of the data
 collected from ERA5-Land, $0.1$ \textdegree $\cross 0.1$ \textdegree , so the
 spatial resolution is approximately $\SI{9}{km}$ in the latitudes of the
 Mediterranean basin. A small initial infected-plant population was introduced
 annually into each cell assuming that if the conditions are or become
-favourable the disease will propagate locally. We chose $I_i(0)=1$ to re-scale
+favorable the disease will propagate locally. We chose $I_i(0)=1$ to re-scale
 the results to any initial population size, and implemented \cref{eq: final_eq}
-in each cell. Simulation time was discretised in years and computed in two
+in each cell. Simulation time was discretized in years and computed in two
 steps incorporating summer ($F(MGDD)$) and winter ($F'(CDD)$) periods. To
 implement \cref{eq: final_eq} we took into account that the $MGDD$ and $CDD$
 differ at each time step; thereby it required to convert \cref{eq: infect_proc}
@@ -843,8 +844,8 @@ $I(\tau)=I(0)\exp((R_0-1)\tau)$. The minimum risk was intentionally cut off at
 -1 to use a symmetric scale, as otherwise, the logarithmic scale is unbounded.
 
 The numerator of the risk index defined in \cref{eq:riskindex} is formally
-similar to the definition of Lyapunov exponents (LEs), which characterise
-predictability in chaotic systems (the denominator normalises this quantity to
+similar to the definition of Lyapunov exponents (LEs), which characterize
+predictability in chaotic systems (the denominator normalizes this quantity to
 its maximum value). This is not surprising because both the risk of
 \cref{eq:riskindex} and the growth of perturbations in chaotic systems
 correspond to an exponential process.
@@ -854,12 +855,12 @@ goes to $0$ would denote no risk if $r<0$.
 However, Lyapunov exponents are (normally) calculated for autonomous (i.e.
 unforced, and so \textit{steady}) dynamical systems, while \cref{eq:imapevol}
 has $2$ forcing terms (i.e., is non-autonomous).
-The result is a non-exponential behaviour found when $|r|$ is small. So
+The result is a non-exponential behavior found when $|r|$ is small. So
 beyond the expected regions with growing exponential and decreasing exponential
-behaviour, we find a transition zone, where the system is oscillatory and not
+behavior, we find a transition zone, where the system is oscillatory and not
 exponential, as neither growth in more auspicious years for Xf$_{\textrm{PD}}$
 or decrease in less auspicious ones prevails, and neither of the growing or
-decreasing pure exponential behaviours manifests.
+decreasing pure exponential behaviors manifests.
 
 We define the borderlines of this transition region by $I(\tau)\leq10 \cdot
     I(0)$ in the southern boundary and $I(\tau)\geq 0.05 \cdot I(0)$ in the
@@ -886,7 +887,7 @@ the number of infected plants as follows,
 For instance, with $\gamma=\SI{0.2}{years^{-1}}$, $\tau=\SI{39}{years}$ and
 $R_0=5$ (values used for Europe) the transition zones are delimited by
 $-0.09<r(\tau)<0.075$. So, the model outputs can be associated with the
-following behaviours:
+following behaviors:
 \begin{enumerate}
     \item Epidemic-risk zones: $r(\tau)>r_{\textrm{trans}}^{\textrm{max}}$.
           The risk index $r_j(\tau)$ is ranked as high ($r_j(\tau) >$ 0.9),
@@ -962,11 +963,11 @@ included as a Gaussian noise distribution by calculating the mean and
 fluctuations of the variance around the trend of the $MGDD$ and $CDD$ metrics
 for any record in the data set. We show in \cref{figS12} the determination of
 the trend of the metrics $MGDD$ and $CDD$ for Lecce and Bordeaux. \cref{figS13}
-shows three realisations to extrapolate the $MGDD$ and $CDD$ metrics for
+shows three realizations to extrapolate the $MGDD$ and $CDD$ metrics for
 Bordeaux after applying Gaussian noise to the trend. This risk extrapolation to
 2050 implies a linear extrapolation of past MGDD and CDD tendencies. Note that
 because $MGDD$ and $CDD$ functions are nonlinear this is just a rough
-approximation to the future risk, as non-linearities could play a major role in
+approximation to the future risk, as nonlinearities could play a major role in
 a climate change scenario.
 
 \begin{figure}[H]
@@ -1067,7 +1068,7 @@ population.
 
 \subsection{Reduction to a SIR model}
 
-In a time-scale where the vector population changes faster than the host
+In a timescale where the vector population changes faster than the host
 population (a good approximation for Xf$_{\textrm{PD}}$-related diseases), the
 former will almost instantaneously reach the stationary value. Thus, if
 $1/\mu\ll1/\gamma$, or equivalently if $\mu\gg\gamma$, we can rewrite the time
