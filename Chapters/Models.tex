@@ -1120,7 +1120,7 @@ overview of machine learning, specifically focusing on deep learning. After
 that, we will introduce the two main types of deep learning models that we
 will
 use in this thesis: long-short-term memory neural networks, which are used in
-time-series forecasting, and convolutional neural networks, employed in image
+time series forecasting, and convolutional neural networks, employed in image
 segmentation problems.
 
 \subsection{\label{sec:Machine learning} Machine learning}
@@ -1310,30 +1310,29 @@ data that are most relevant for the task at hand.
 
 Several variations of ANNs have been developed to address specific tasks, such
 as image recognition and segmentation, speech recognition, natural language
-processing, and time-series forecasting. These models have been shown to be
+processing, and time series forecasting. These models have been shown to be
 effective at modeling complex patterns in large datasets and have achieved
 state-of-the-art performance in such tasks. In this thesis we have used two
 types of ANNs: long-short-term memory neural networks and convolutional neural
-networks, which are particularly well-suited for time-series forecasting and
+networks, which are particularly well-suited for time series forecasting and
 image segmentation problems, respectively. In the following sections, we will
 provide a brief overview of these models.
 
-\subsection{\label{sec:Time-series forecasting} Time-series forecasting}
+\subsection{\label{sec:Time-series forecasting} Time series forecasting}
 
-Time-series forecasting is a common task in machine learning that involves
+Time series forecasting is a common task in machine learning that involves
 predicting future values of a time series based on past observations. Time
 series are sequences of data points collected at regular intervals over time,
-such as stock prices, weather data, and sales figures. Time-series
-forecasting
+such as stock prices, weather data, and sales figures. Time series forecasting
 is used in a wide range of applications, such as predicting the stock market,
 forecasting the weather, and estimating the demand for products. Traditional
-methods for time-series forecasting include autoregressive integrated moving
+methods for time series forecasting include autoregressive integrated moving
 average (ARIMA) models, exponential smoothing models, and state-space models
 \cite{Hyndman2018}. These models are based on statistical methods and are
 effective at modeling linear relationships in the data, but they often
-struggle
-to capture complex patterns, such as non-linear relationships and long-term
-dependencies. FFNNs can be used for time-series forecasting by using the $T$
+struggle to capture complex patterns, such as non-linear relationships and
+long-term dependencies. FFNNs can be used for time series forecasting by using
+the $T$
 previous values of the time series as input to the network and predicting the
 next value of the time series as output. However, this approach does not take
 into account the temporal dependencies in the data, i.e., the relationship
@@ -1344,7 +1343,7 @@ network from learning temporal patterns in the data, which are crucial for
 accurate forecasting.
 
 To address these limitations, more advanced deep learning models have been
-developed for time-series forecasting, recurrent neural networks (RNNs). RNNs
+developed for time series forecasting, recurrent neural networks (RNNs). RNNs
 are a class of artificial neural networks in which node connections arise
 along
 a temporal sequence, i.e., previous values in a time series are linked to
@@ -1398,7 +1397,7 @@ problem, where the gradients become very large and cause the weights of the
 connections to diverge, leading to numerical instability.
 
 We can visualize the problem by computing the backpropagation through time.
-Consider that we predict the output time-series $y_t$ at time $t$ using the
+Consider that we predict the output time series $y_t$ at time $t$ using the
 previous $T$ time steps, i.e., $y_t = f(x_t, x_{t-1}, \ldots, x_{t-T})$. The
 change in the loss function with respect to the weights of the connections is
 given by
@@ -1625,9 +1624,9 @@ These
 metrics are used to compare the performance of different models and to assess
 the quality of the predictions made by the model. The choice of performance
 metrics depends on the task at hand, and different metrics are used for
-classification, time-series forecasting, or segmentation tasks.
+classification, time series forecasting, or segmentation tasks.
 
-For time-series forecasting tasks, the most common performance metrics are the
+For time series forecasting tasks, the most common performance metrics are the
 mean absolute error (MAE), the mean absolute percentage error (MAPE), the
 mean squared error (MSE), and the root mean squared error (RMSE). The MAE
 measures the average absolute difference between the predicted values and the

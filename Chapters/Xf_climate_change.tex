@@ -47,9 +47,9 @@ rather than the ecological niche of their parts, as is commonly done.
 
 The emergence of \textit{X. fastidiosa} in Europe has renewed interest in
 modeling vector-borne plant diseases, particularly for the risk that Pierce's
-Disease (PD) pose to the European wine industry. Despite recent studies agree
-that the current risk of PD establishment in Europe is primarily confined to
-the Mediterranean basin
+Disease (PD) poses to the European wine industry. Despite recent studies
+agreeing that the current risk of PD establishment in Europe is primarily
+confined to the Mediterranean basin
 \cite{Godefroid2019,Godefroid2022_vector,GimenezRomero2022_CommsBio},
 its potential future progression is not yet clear. Some efforts have been made
 to characterize the geographical distribution of Xf-induced diseases in Europe
@@ -65,37 +65,36 @@ diseases, while capable of providing good approximations, is generally
 inadequate. The observed distribution of the pathogen cannot be separated from
 that of the vector, especially in the case of obligate pathogens such as Xf.
 Furthermore, the potential distribution of the pathogen or the vector alone
-have no epidemiological meaning, what implies that they do not provide
+has no epidemiological meaning, which implies that they do not provide
 quantitative predictions of the severity of the disease. In addition, a larger
 set of available climate models is desirable to properly deal with the inherent
-uncertainty in the predictions,
+uncertainty in the predictions.
 
 To overcome these limitations, here we use a novel climate-driven
 epidemiological model of PD epidemic risk \cite{GimenezRomero2022_CommsBio}.
-The model
-determines the spatio-temporal epidemic risk based on the spatial distribution
-of vectors, temperature-dependent bacterial growth and survival within hosts,
-and subsequent epidemiological dynamics. The model forces the introduction of
-the pathogen and examines whether the disease can establish and spread from
-previous states under climatic conditions of the location. In
-\cite{GimenezRomero2022_CommsBio} the model was used to determine the risk of
-PD under
-current climatic conditions in wine-growing regions worldwide, while a linear
-regression was used to obtain a crude first estimate of the risk in the future.
-This simple estimation is not expected to be reliable, because it overlooks the
-role of nonlinearities in the model and also does not take into account climate
-change scenarios (as described in the manuscript). To assess the potential
-distribution and relative impact of PD on European vineyards under different
-levels of global warming, here we used state-of-the-art regional climate
-projections from the EURO-CORDEX initiative \cite{jacob_regional_2020}. Our
-study takes into account uncertainties in climate projections and provides an
-updated and comprehensive assessment of PD risk in European wine-growing
-regions, addressing previous limitations. We posit that pest risk maps
-constructed from projections of epidemiological models driven by climate data
-provide a more realistic, quantitative and explanatory predictions than
-correlative and probabilistic models. Additionally, they offer valuable
-insights for anticipating and managing the potential impacts of PD and thus
-ensuring the resilience of viticulture despite future climate challenges.
+The model determines the spatio-temporal epidemic risk based on the spatial
+distribution of vectors, temperature-dependent bacterial growth and survival
+within hosts, and subsequent epidemiological dynamics. The model forces the
+introduction of the pathogen and examines whether the disease can establish and
+spread from previous states under climatic conditions of the location. In
+\cite{GimenezRomero2022_CommsBio}, the model was used to determine the risk of
+PD under current climatic conditions in wine-growing regions worldwide, while a
+linear regression was used to obtain a crude first estimate of the risk in the
+future. This simple estimation is not expected to be reliable because it
+overlooks the role of nonlinearities in the model and also does not take into
+account climate change scenarios (as described in the manuscript). To assess
+the potential distribution and relative impact of PD on European vineyards
+under different levels of global warming, here we used state-of-the-art
+regional climate projections from the EURO-CORDEX initiative
+\cite{jacob_regional_2020}. Our study takes into account uncertainties in
+climate projections and provides an updated and comprehensive assessment of PD
+risk in European wine-growing regions, addressing previous limitations. We
+posit that pest risk maps constructed from projections of epidemiological
+models driven by climate data provide more realistic, quantitative, and
+explanatory predictions than correlative and probabilistic models.
+Additionally, they offer valuable insights for anticipating and managing the
+potential impacts of PD and thus ensuring the resilience of viticulture despite
+future climate challenges.
 
 \section{Methods}\label{methods}
 
@@ -123,7 +122,7 @@ a large ensemble of Regional Climate Models (RCMs) driven by Global Climate
 Models (GCMs) from the CMIP5 project \cite{Taylor_2011}. For this, we
 considered the RCP8.5 simulations for 40 combinations of GCMs-RCMs
 (\cref{tab:GCM-RCM}). In order to calculate 20-year mean climatic indexes
-across the different global warming levels (+1.5ºC, +2ºC, +3ºC and +4ºC), we
+across the different global warming levels (+1.5ºC, +2ºC, +3ºC, and +4ºC), we
 relied on the time periods during which each CMIP5 driving model reaches the
 designated level within the RCP8.5 scenario (see
 \cite{diez-sierra_consistency_2023}). This information is available at the IPCC
@@ -264,12 +263,12 @@ $31^{\mathrm{st}}$ October in the Southern Hemisphere as
 \end{equation*}
 
 Altogether, the number of infected hosts is described by the following
-recurrence relation
+recurrence relation,
 \begin{equation*}
     I(t)=I(t-1)e^{\gamma(R_0-1)}\mathcal{F}(MGDD(t))\mathcal{G}(CDD(t)) \ ,
 \end{equation*}
 where $\gamma$ is the death rate of infected vines, $R_0$ is the basic
-reproduction number of the disease and $\mathcal{F}(\cdot)$ and
+reproduction number of the disease, and $\mathcal{F}(\cdot)$ and
 $\mathcal{G}(\cdot)$ are sigmoidal-like functions that relate the MGDD and CDD
 metrics to the probability of developing an infection from a given inoculation.
 
@@ -282,13 +281,13 @@ that
 
 For Europe, we use the climatic suitability of the main vector,
 \textit{Philaenus spumarius}, and $R_0^*=5.0$ for all simulations. For the
-United States we use a homogeneous basic reproductive number $R_0=8.0$ in all
+United States, we use a homogeneous basic reproductive number $R_0=8.0$ in all
 cells, as this choice of the parameter reproduces spatio-temporal data on PD
 epidemics in the US with an area under the curve of $\sim 90\%$. For the rest
 of the zones, we use $R_0=5$ because of the lower presence of vectors compared
 to the United States.
 
-We use $\gamma=0.2$ as previously estimated \cite{Almeida2003} and the
+We use $\gamma=0.2$, as previously estimated in \cite{Almeida2003}, and the
 specific form of $\mathcal{F}(\cdot)$ and $\mathcal{G}(\cdot)$ is given by
 \begin{align}
     \mathcal{F}(x) & = \frac{1}{1+e^{-0.012(x-975)}}        \\
@@ -331,12 +330,12 @@ hourly data and only the daily maximum and minimum temperatures, in the latter
 case using \cref{eq:approx}. The results showed no differences between hourly
 or daily temperatures' computation to estimate MGDD and CDD
 (\cref{fig:MGDD_app,fig:CDD_app}). Because the temporal resolution
-of the E-OBS and ERA-5 land data sets are different and are acquired using
-different methodologies, we evaluated the possible divergence between the MGDD
-and CDD estimates  \cite{GimenezRomero2022_CommsBio}. These metrics calculated
-with both data agreed, showing a mean difference of 54 and 17 units for MGDD
-and CDD, respectively, and a standard deviation of 200 units for both metrics
-(\cref{fig:EOBS_vs_ERA5}).
+of the E-OBS and ERA-5 land data sets is not the same and the data are acquired
+using different methodologies, we evaluated the possible divergence between the
+MGDD and CDD estimates	\cite{GimenezRomero2022_CommsBio}. These metrics
+calculated with both data agreed, showing a mean difference of 54 and 17 units
+for MGDD and CDD, respectively, and a standard deviation of 200 units for both
+metrics (\cref{fig:EOBS_vs_ERA5}).
 
 \subsection{Vector climatic suitability}
 
@@ -382,7 +381,7 @@ exceeded $0.9$ within the range of $0$ to $1$, with a value of $1$ indicating
 perfect prediction and $0.5$ indicating no discriminatory power (i.e., random
 guessing). Finally, the calibrated models were used to predict the suitability
 of \textit{P. spumarius} in the reference historical period (2003-2022) and
-under increasing global warming scenarios (panels b, d, f, h in
+under increasing global warming scenarios (panels b, d, f, and h in
 \cref{fig:Xf_Ps_suitability_change}).
 
 \subsection{Risk velocity}
@@ -392,9 +391,9 @@ we introduced the concept of risk velocity, a metric analogous to the recently
 proposed concept of climatic velocity \cite{Loarie2009}. The risk velocity
 represents the rate at which the risk index changes over time and spreads
 across different locations. From an epidemiological perspective, risk velocity
-can be thought as the speed and direction the host would need to move to
+can be thought of as the speed and direction the host would need to move to
 maintain its current risk conditions under climate change. Risk velocities were
-defined following the definition of climate velocity, as the ratio of the risk
+defined following the definition of climate velocity as the ratio of the risk
 temporal trend and the risk spatial gradient in each cell. Thus, the units for
 the risk velocity correspond to kilometers per year ($km/\mathrm{year}$). Risk
 velocities were computed using the VoCC R package \cite{VoCC, VoCC_paper}.
@@ -419,7 +418,7 @@ suitability was modeled using an SDM based on a previous study
 \cite{Godefroid2022_vector}, with the climatic moisture index
 \cite{willmott_more_1992} and spring maximum temperatures  as key predictors
 (see Methods). Both analyses were evaluated under current (2003-2022) and
-future climate conditions considering scenarios of increasing global warming
+future climate conditions, considering scenarios of increasing global warming
 (+1.5ºC, +2ºC, +3ºC, and +4ºC) based on the latest generation of regional
 climate projections covering Europe \cite{jacob_regional_2020} (see Methods).
 
@@ -428,13 +427,13 @@ growing season and reduces the recovery rate (i.e., CDD) during winter, thus
 favoring the geographic expansion of the pathogen
 (\cref{fig:Xf_Ps_suitability_change} and \cref{fig:Xf_Ps_suitability}).
 Conversely, increasing temperatures tend to reduce the climatic suitability of
-vectors in more arid areas of southern Europe leading to a progressive
+vectors in more arid areas of southern Europe, leading to a progressive
 migration to higher areas and latitudes in continental regions in search of
-climatic refuge. These general trends hold for both organisms under the +2, +3
+climatic refuge. These general trends hold for both organisms under the +2, +3,
 and +4 ºC temperature increase scenarios
 (\cref{fig:Xf_Ps_suitability_change}).
 
-The mechanistic approach to modelling pathogen establishment risk enables
+The mechanistic approach to modeling pathogen establishment risk enables
 each of the two opposing directional processes of growth and survival (MGDD vs.
 CDD) to be appropriately weighted in the final result. For example, the
 Bordeaux region in western France has not been at risk due to low cumulative
@@ -464,14 +463,11 @@ Central Europe, ultimately exposing the region to \xf{}
             projections compared to the current scenario (2003-2022).} Current
         climatic
         suitability for the pathogen (a) and the vector (b). In an increasing
-        temperature scenario (+2ºC , +3ºC and +4ºC) the climatic suitability
-        for the
-        pathogen geographically expands in southern Europe and moves northwards
-        (c, e
-        and g) while the climatic suitability for the vector decreases (d, f
-        and h).
-        The suitability values for each scenario correspond to a 20-year
-        average.}
+        temperature scenario (+2ºC, +3ºC, and +4ºC), the climatic suitability
+        for the pathogen geographically expands in southern Europe and moves
+        northwards (c, e, and g), while the climatic suitability for the vector
+        decreases (d, f, and h). The suitability values for each scenario
+        correspond to a 20-year average.}
     \label{fig:Xf_Ps_suitability_change}
 \end{figure*}
 
@@ -481,12 +477,12 @@ The limited intersection between the climatic suitability ranges for the
 pathogen and the vector (\cref{fig:Xf_Ps_suitability_change}a and b) suggests
 a marginal  risk of PD epidemics in Europe. Since disease transmission requires
 a vector, the climate-suitability maps for \textit{P. spumarius}  indicate a
-lower risk and potential economic impact of \textit{X. fastidiosa}-induced
-diseases on any host in southern Europe, particularly Spain, than previously
-predicted \cite{Schneider2020}. Realistic risk maps require a defined
+lower risk and potential economic impact of Xf induced diseases on any host in
+southern Europe, particularly Spain, than previously predicted
+\cite{Schneider2020}. Realistic risk maps require a defined
 epidemiological framework to account for inter-annual climate variation and
 transmission in disease dynamics, in addition to accounting for changes in the
-distribution of climatic conditions favorable to the pathogen and vector (i.e.
+distribution of climatic conditions favorable to the pathogen and vector (i.e.,
 climatic suitability). Our epidemic risk model focuses on delimiting the
 disease dynamics by simulating an epidemic process in which the emergence of
 newly exposed hosts is influenced by the climatic suitability of the vector,
@@ -497,7 +493,7 @@ index $r$, bounded between $-1$ and $1$. Within this modeling framework,
 different risk categories naturally emerge: no
 risk ($r<-0.1$), transition zone ($-0.1\leq r<0.1$), low risk ($0.1\leq
     r<0.33$), moderate risk ($0.33\leq r<0.66$) and high risk ($r\geq0.66$).
-For further details see the Methods section and the original paper
+For further details, see the Methods section and the original paper
 \cite{GimenezRomero2022_CommsBio}.
 
 \begin{figure*}[t!]
@@ -506,19 +502,20 @@ For further details see the Methods section and the original paper
     \caption[PD risk maps and associated risk velocities under
         different climate projections]{\textbf{PD risk maps and associated risk
             velocities under
-            different climate projections.} (a,b) +1.5ºC climate projection.
-        (c,d) +2ºC
-        climate projection. (e,f) +3ºC climate projection. (g,h) +4ºC climate
+            different climate projections.} (a, b) +1.5ºC climate projection.
+        (c, d) +2ºC
+        climate projection. (e, f) +3ºC climate projection. (g, h) +4ºC climate
         projection. Risk velocities have been calculated only in  risk zones,
         $r > 0$,
-        in each scenario. Hatched lines in panels (b,d,f,h) indicate no risk
+        in each scenario. Hatched lines in panels (b, d, f, and h) indicate no
+        risk
         zones
         where risk velocities have not been calculated.}
     \label{fig:PD_future_risk_zones}
 \end{figure*}
 
 Global warming (+1.5ºC, +2ºC, +3ºC, and +4ºC) is expected to increase the
-risk of PD epidemics in southern Europe, with France, Italy and Portugal being
+risk of PD epidemics in southern Europe, with France, Italy, and Portugal being
 particularly affected (\cref{fig:PD_future_risk_zones} and
 \cref{fig:PD_future_risk}). This general trend affects each of the risk
 categories under the different climate change scenarios
@@ -573,9 +570,9 @@ is bounded by a $\pm$ 1ºC increase (\cref{fig:uncertainty}), e.g., the median
 spatial distribution of risk obtained for a +3ºC warming level is expected to
 occur between the +2ºC and the +4ºC scenarios under a 1$\sigma$ confidence
 level. This means that, depending on the specific model, a given spatial
-distribution of risk (e.g., \cref{fig:uncertainty} h) may manifest under a +4°C
-warming scenario in more conservative projections or a +2°C warming scenario in
-others, while most models project it for a +3°C warming level. This indicates a
+distribution of risk (e.g., \cref{fig:uncertainty} h) may manifest under a +4ºC
+warming scenario in more conservative projections or a +2ºC warming scenario in
+others, while most models project it for a +3ºC warming level. This indicates a
 high degree of confidence in the location and projected severity of future
 outbreaks, but greater uncertainty in their timing.
 
@@ -609,17 +606,16 @@ increasing trend in the risk of PD in Europe under all climate change
 scenarios. The percentage of land area at risk in Europe increases from 0.32\%
 in the +1.5ºC scenario to 1.87\% in the +4ºC, while the number of regions with
 PDO at risk increases from 18.17\% to 47.32\% . The vineyard area  increases
-from 18.67\% to 40.35\% (\cref{tab:general}). At country level
-Portugal and
+from 18.67\% to 40.35\% (\cref{tab:general}). At country level, Portugal and
 Greece face the highest overall risk, escalating from 12\% and 2\% of their
-area  in the +1.5ºC scenario to a striking 47\% and 63\%  respectively in a
+area  in the +1.5ºC scenario to a striking 47\% and 63\%, respectively, in a
 +4ºC scenario. In contrast, countries such as France and Italy experience a
-smaller but still significant increase in risk area, never exceeding the 20\%
+smaller but still significant increase in risk areas, never exceeding the 20\%
 threshold, while Spain, the third-largest wine producer, shows a decreasing
 trend in risk areas above the +2ºC scenario (\cref{fig:vineyards} and
 \cref{tab:countries}). Such contrasting patterns in PD risk between
 countries
-only emerge when using our modelling framework.
+only emerge when using our modeling framework.
 
 A different picture emerges when looking at the spatial distribution of PDO
 regions and vineyards. For example, PD risk within French and Italian PDO
@@ -631,14 +627,14 @@ from 24.21\% and 57.49\% in a +1.5ºC scenario to an astonishing 80\% in a +4ºC
 scenario. Important European PDOs would be at risk from a warming of  +2ºC,
 such as parts of the southern Rhône Valley (Châteneuf du Pape), Provence and
 Languedoc in France, Penedés in Spain, Bairrada in Portugal, and Chianti and
-Brunello di Montalcino among others in Italy (see Supplementary Information). A
-detailed interactive analysis of the impact of PD in European PDO regions and
+Brunello di Montalcino, among others, in Italy (see Supplementary Information).
+A detailed interactive analysis of the impact of PD in European PDO regions and
 vineyards is available on our website \cite{Webpage}.
 
 \section{Discussion}
 
 Previous research has attempted to assess the potential geographic
-distribution of  \xf{} subspecies, the insect vector \textit{P. spumarius} and
+distribution of  \xf{} subspecies, the insect vector \textit{P. spumarius}, and
 PD using species distribution models (SDMs) under future climates. While these
 climate-suitability-based predictions provide insights into the ecological
 niche of key disease players, bioclimatic correlative models neglect disease
@@ -667,25 +663,25 @@ certain coastal areas since the late 1990s. On the contrary, the risk index in
 the Mediterranean islands has remained moderately high with little variation
 over the last 40 years \cite{GimenezRomero2022_CommsBio}.
 
-Despite Pierce's disease has been found in Spain, Portugal, France, Germany
-\cite{Bragard2019}, it has only affected vineyards on the island of Mallorca
-\cite{Moralejo2019}. Perhaps for this reason,
-little attention has been paid to the risk of it reaching continental
-vineyards. Our risk model indicates why this possibility was very low until the
-mid-90s, and what the conditions were for it to occur on the Mediterranean
-islands \cite{GimenezRomero2022_CommsBio}.  In this work,
-we clearly show that  with increasing temperatures PD will become a serious
-threat to important wine-growing areas in southern Europe that were not
-previously at risk. A key finding of our study is the identification of a
-tipping point for the risk of PD establishment at a global mean temperature
-increase of +3ºC. Beyond this threshold, the risk of PD spreading north of the
-Mediterranean region becomes remarkably higher, while the risk of PD epidemics
-in Portugal, Italy and France (\cref{fig:PD_future_risk_zones}) undergoes a
-significant quantitative leap. This suggests that as global temperatures
-continue to rise, the range of PD may expand into new territories. Indeed, the
-projected increase in risk velocities under higher warming scenarios further
-emphasizes the potential for rapid spread of PD into previously unaffected
-regions (\cref{fig:PD_future_risk_zones}).
+Despite Pierce's disease having been found in Spain, Portugal, France and
+Germany \cite{Bragard2019}, it has only affected vineyards on the island of
+Mallorca \cite{Moralejo2019}. Perhaps for this reason, little attention has
+been paid to the risk of it reaching continental vineyards. Our risk model
+indicates why this possibility was very low until the mid-90s, and what the
+conditions were for it to occur on the Mediterranean islands
+\cite{GimenezRomero2022_CommsBio}. In this work, we clearly show that with
+increasing temperatures, PD will become a serious threat to important
+wine-growing areas in southern Europe that were not previously at risk. A key
+finding of our study is the identification of a tipping point for the risk of
+PD establishment at a global mean temperature increase of +3ºC. Beyond this
+threshold, the risk of PD spreading north of the Mediterranean region becomes
+remarkably higher, while the risk of PD epidemics in Portugal, Italy, and
+France (\cref{fig:PD_future_risk_zones}) undergoes a significant quantitative
+leap. This suggests that as global temperatures continue to rise, the range of
+PD may expand into new territories. Indeed, the projected increase in risk
+velocities under higher warming scenarios further emphasizes the potential for
+rapid spread of PD into previously unaffected regions
+(\cref{fig:PD_future_risk_zones}).
 
 Pest risk map projections are subject to uncertainties inherent in the
 variability of climate model predictions \cite{venette2010pest}. While previous
@@ -767,7 +763,7 @@ impact of PD in different European countries.
 
 Our research highlights the complex dynamics of PD and its relationship
 with climate change. By adopting an interdisciplinary approach that integrates
-climate projections, epidemiological modelling, and spatial analysis, we
+climate projections, epidemiological modeling, and spatial analysis, we
 provide valuable insights into the potential establishment and spread of PD in
 European wine-growing regions from the country to the vineyard levels. Our
 study demonstrates that an accurate assessment of the risk of PD establishment

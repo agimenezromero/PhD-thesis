@@ -24,10 +24,10 @@
 \section{Introduction}
 
 Coastal ecosystems, encompassing seagrasses, mangroves, salt marshes, and coral
-reefs, among others, provide invaluable services that contribute to support the
-livelihoods of coastal communities, impacting the well-being of the residents
-\cite{MEA2005,IUCN2008}. Seagrass meadows, in particular, are crucial for
-enhancing coastal biodiversity, protecting shorelines from erosion, and
+reefs, among others, provide invaluable services that contribute to supporting
+the livelihoods of coastal communities, impacting the well-being of the
+residents \cite{MEA2005,IUCN2008}. Seagrass meadows, in particular, are crucial
+for enhancing coastal biodiversity, protecting shorelines from erosion, and
 mitigating climate change by sequestering large quantities of carbon
 \cite{DuarteNCC2013,Mcleod2011}. However, if these habitats are degraded, they
 could leak stored carbon into the atmosphere and further accelerate global
@@ -49,13 +49,13 @@ habitat toward the lower distribution limit imposed by light availability
 In this context, the United Nations (UN) recognized the severity of global
 biodiversity loss and degradation of ecosystems and stressed the negative
 impact that this situation has on food security, nutrition, access to water,
-health of the rural poor and people worldwide. Accordingly, the UN declared the
-period 2021-2030 as the ``Decade of Ocean Science for Sustainable Development''
-and the ``Decade of Ecosystem Restoration'' \cite{UNdecade2000, UNRio},
-underlining the urgency and importance of safeguarding marine ecosystems,
-including \textit{Posidonia oceanica} meadows. Achieving these targets,
-particularly concerning the preservation and restoration of coastal ecosystems,
-requires a rigorous, evidence-based approach to
+and the health of the rural poor and people worldwide. Accordingly, the UN
+declared the period 2021-2030 as the ``Decade of Ocean Science for Sustainable
+Development'' and the ``Decade of Ecosystem Restoration'' \cite{UNdecade2000,
+    UNRio}, underscoring the urgency and importance of safeguarding marine
+ecosystems, including \textit{Posidonia oceanica} meadows. Achieving these
+targets, particularly concerning the preservation and restoration of coastal
+ecosystems, requires a rigorous, evidence-based approach to
 conservation practice and policy. This entails conducting thorough analyses of
 high-quality monitoring data to inform decision-making and validate
 intervention strategies.
@@ -74,8 +74,8 @@ spatio-temporal evaluation of the status of these ecosystems.
 
 A recently emerging possibility is to combine remote sensing technologies with
 available georeferenced habitat data to develop correlative or mechanistic
-models, which are then capable to monitor biodiversity at finer temporal
-scales.  Among various methodologies, Machine Learning (ML) models trained with
+models that are then capable of monitoring biodiversity at finer temporal
+scales. Among various methodologies, Machine Learning (ML) models trained with
 multi-spectral satellite imagery data appear to be the most promising
 \cite{Zhang2013,Senecal2019,Wicaksono2019,Gudzius2021}. In particular, many
 efforts to determine the spatial distribution
@@ -86,12 +86,11 @@ However, despite the seminal insights of many of these works, they present
 numerous limitations that hinder the delivery of functional models suitable for
 a real-case deployment, serving merely as potent proof of concept for the
 methodologies studied. For instance, many of these studies rely on inadequate
-metrics
-for evaluating model performance in image segmentation problems, such as
-accuracy, leading to an overestimation of the model's performance and
+metrics for evaluating model performance in image segmentation problems, such
+as accuracy, leading to an overestimation of the model's performance and
 neglecting more suitable and demanding metrics like Intersection over Union.
 Additionally,
-ground truth data predominantly rely on photo-interpretation, often with a
+ground truth data predominantly rely on photointerpretation, often with a
 limited number of validation points obtained from field data, undermining the
 models' robustness. Several studies employ only a single
 or few satellite images, limiting the models' generalizability, while there's a
@@ -130,7 +129,7 @@ dataset and evaluating its performance on the other regions. We show that our
 model is capable of providing reliable estimates for the distribution of the
 considered habitats and accurate measures for their extension area. In
 addition, we measure the model's loss of accuracy in its estimates for new
-regions, providing a lower bound for the model performance. This is a
+regions, providing a lower bound for model performance. This is a
 crucial step to advance in the development of a reliable map of the
 distribution of \textit{Posidonia oceanica} meadows in the Mediterranean Sea.
 Finally, we train the model with all available data so that the resulting
@@ -145,22 +144,19 @@ Mediterranean Sea.
 We developed a deep learning framework based on convolutional neural networks
 to accurately classify benthic habitats in the Mediterranean Sea using
 satellite imagery (\cref{fig:scheme}). We used a comprehensive and extensive
-habitat dataset of the Balearic sea, comprising a 20-year effort of data
-acquisition based on side-scan sonar supported by photo-interpretation of
+habitat dataset of the Balearic Sea, comprising a 20-year effort of data
+acquisition based on side-scan sonar supported by photointerpretation of
 high-resolution airborne imagery and in-situ observations (\cref{fig:scheme}a).
 The dataset covers  about 2,500 km$^2$ of the coastal habitats of the Balearic
 Islands at high spatial resolution and contains 28 different classes,
 including the ecologically significant species \textit{Posidonia
-    oceanica}, which were
-aggregated in 4 major ecological groups: Posidonia oceanica, Other
-green plants, Rocks \& brown algae and Sandy bottoms
+    oceanica}, which were aggregated in 4 major ecological groups: Posidonia
+oceanica, Other green plants, Rocks \& brown algae, and Sandy bottoms
 (\cref{fig:scheme}a,c, Methods \&  \cref{app:satellite_imagery}). This
-dataset was
-combined with satellite imagery of the coastal areas of the Balearic Islands
-acquired from PlanetScope \cite{planet2017}, covering around 1200 km$^2$ with
-different dates and
-satellite positions (\cref{fig:scheme}b,c, Methods \&
-\cref{app:satellite_imagery}).
+dataset was combined with satellite imagery of the coastal areas of the
+Balearic Islands acquired from PlanetScope \cite{planet2017}, covering around
+1200 km$^2$ with different dates and satellite positions (\cref{fig:scheme}b,c,
+Methods \& \cref{app:satellite_imagery}).
 
 We trained 40 different deep learning models using 4
 different state-of-the-art architectures and 10 different backbones for each
@@ -176,8 +172,7 @@ Thus, the train-test split was roughly 50\%-50\% rather than the traditional
 80\%-20\% split, with the test set representing diverse environmental
 conditions and benthic habitats formed by slightly different species than
 the training set (Methods \& \cref{app:dataset_creation}). This approach
-was
-chosen to simulate real-world scenarios, in which one cannot control for
+was chosen to simulate real-world scenarios in which one cannot control for
 specific environmental conditions, constrained dates for image acquisition, the
 position of the satellite with respect to the sun and the earth, or even find
 new species not contained in the original training dataset. We thereafter refer
@@ -188,34 +183,26 @@ model'' to emphasize this idea.
     \centering
     \includegraphics[width=0.87\textwidth]{Figures/scheme.pdf}
     \caption[AI framework for seagrass monitoring from satellite imagery]{(a)
-        Spatial distribution of the
-        4 main ecological
-        benthic habitats
+        Spatial distribution of the 4 main ecological benthic habitats
         in the Balearic Sea, present in the whole Mediterranean. The dataset
-        provides
-        detailed information at multiple spatial scales up to 3 m resolution.
-        (b-d)
-        Scheme of the pipeline to train CAMELE model. Satellite-based
-        surface
-        reflectance data is merged with bathymetric estimates to produce the
-        inputs
-        (features) of the model. Habitat data obtained with side-scan sonar,
-        photo-interpretation and field observations were used as ground truth
-        data
-        (labels). These features and labels are used to train deep
-        convolutional
-        neural networks to perform image segmentation.}
+        provides detailed information at multiple spatial scales up to 3 m
+        resolution. (b-d) Scheme of the pipeline to train the CAMELE model.
+        Satellite-based surface reflectance data is merged with bathymetric
+        estimates to produce the inputs (features) of the model. Habitat data
+        obtained with side-scan sonar, photointerpretation and field
+        observations were used as ground truth data (labels). These features
+        and labels are used to train deep convolutional neural networks to
+        perform image segmentation.}
     \label{fig:scheme}
 \end{figure}
 
-We performed and extensive evaluation of the models' performance in the
+We performed an extensive evaluation of the models' performance in the
 training and out-of-sample test datasets, using a variety of metrics such as
 Intersection over Union (IoU), Precision, Recall, F1-score, Kappa and Accuracy
 (Methods). Our results show that the best performing framework was to use the
 10 models defined by the Linknet architecture together with the consensus
 prediction approach (Methods and
-\cref{app:architecture_selection,app:out_of_sample}), which
-hereafter we
+\cref{app:architecture_selection,app:out_of_sample}), which hereafter we
 refer to as CAMELE (Consensus for Automated Marine Ecosystem Labelling and
 Evaluation).
 
@@ -225,46 +212,45 @@ CAMELE's performance in both training and out-of-sample test datasets was
 highly notable, with a mean IoU score of 88.22\% and a mean F1-score of
 93.13\% in the training dataset, compared with a mean IoU score of 61.97\%
 and a mean F1-score of 72.77\% in the out-of-sample test dataset
-(\cref{fig:model_performance}a, and \cref{tab:metrics-train,tab:metrics-test}).
-We note that in image segmentation tasks an IoU score greater than 50\% is
-considered an acceptable prediction \cite{dai2016instance} (yellow stars in
-\cref{fig:model_performance}a).
-Furthermore, the model outperforms by a large margin
-the naive baseline of predicting only the majority class (yellow diamonds in
-\cref{fig:model_performance}a). We observe an overlap between the
+(\cref{fig:model_performance}a and \cref{tab:metrics-train,tab:metrics-test}).
+We note that an IoU score greater than 50\% is considered an acceptable
+prediction in image segmentation tasks \cite{dai2016instance} (yellow stars in
+\cref{fig:model_performance}a). Furthermore, the model outperforms by a large
+margin the naive baseline of predicting only the majority class (yellow
+diamonds in \cref{fig:model_performance}a). We observe an overlap between the
 distribution of the performance metrics in the training and out-of-sample test
 datasets, showing that model performance is consistent in both sets
 (\cref{fig:model_performance}a). The model was able to segment some images in
 the out-of-sample test dataset with notable performance (e.g., 15\% of the
-images with an IoU score higher than 80\%, and 20\% of the images with an IoU
+images with an IoU score higher than 80\% and 20\% of the images with an IoU
 score higher than 70\%), while only 10\% of the images had an IoU score lower
 than 50\% (\cref{fig:model_performance}a and \cref{tab:metrics_img}). This
 demonstrates that the model is able to generalize to some extent to new
 regions, with different environmental conditions and the presence of some
 different benthic habitats.
 
-Despite the decrease in performance in the out-of-sample test dataset can be
-attributed to the different environmental conditions, including the presence of
-some different benthic habitats, we observed that a significant part
-of the pixels categorized by the ground truth data as Other green
-plants, Brown algae \& rocks or Sandy bottoms were being classified by the
-model as Posidonia oceanica, substantially affecting the overall
-performance (\cref{app:out_of_sample,fig:confusion_matrix}).
+The decrease in performance in the out-of-sample test dataset can be
+attributed to the different environmental conditions, including the
+presence of different benthic habitats not included in the test dataset.
+However, we observed that a significant part of the pixels categorized by
+the ground truth data as Other green plants, Brown algae \& rocks, or Sandy
+bottoms were being classified by the model as Posidonia oceanica, substantially
+affecting the overall performance of the model
+(\cref{app:out_of_sample,fig:confusion_matrix}).
 Surprisingly, we found that the distribution of response values for the Other
 green plants class in the test dataset is much more similar to the distribution
-of response values of Posidonia oceanica class in the train set
+of response values of the Posidonia oceanica class in the train set
 than to its own class
 (\cref{app:out_of_sample,fig:similarity_train_test_classes}). Then it is not
-surprising that the
-model classifies all those samples as \textit{Posidonia oceanica}. In contrast,
-the model achieved notable performance in segmenting the Posidonia
-oceanica class, with a mean IoU of 77.30\% compared with the mean IoU of
-91.97\% achieved in the training dataset (\cref{tab:metrics_classes}). At
-any
-rate, the model still achieved an overall notable performance in the
-out-of-sample test dataset, demonstrating the generalization capability and
-robustness of CAMELE and highlighting its potential for real-world applications
-in biodiversity monitoring and management.
+surprising that the model classifies all those samples as \textit{Posidonia
+    oceanica}. In contrast, the model achieved notable performance in
+segmenting the Posidonia oceanica class, with a mean IoU of 77.30\% compared
+with the mean IoU of 91.97\% achieved in the training dataset
+(\cref{tab:metrics_classes}). At any rate, the model still achieved an overall
+notable performance in the out-of-sample test dataset, demonstrating the
+generalization capability and robustness of CAMELE and highlighting its
+potential for real-world applications in biodiversity monitoring and
+management.
 
 CAMELE's performance was further evaluated by comparing the true and predicted
 area for each habitat class in each image of the training and out-of-sample
@@ -273,13 +259,13 @@ of the different habitat classes except for the Other green plants class,
 as expected from the previous analysis (\cref{fig:model_performance}b,c).
 Specifically, the median absolute errors committed in the prediction of the
 area of the different habitat classes were 0.98 km$^2$, 0.06 km$^2$, 0.15
-km$^2$ and 0.70 km$^2$ in the training dataset, compared with 2.24 km$^2$, 0.26
-km$^2$, 0.47 km$^2$ and 1.12 km$^2$ in the out-of-sample test dataset, for the
-Posidonia oceanica, Other green plants, Rocks \& brown algae
+km$^2$, and 0.70 km$^2$ in the training dataset, compared with 2.24 km$^2$,
+0.26 km$^2$, 0.47 km$^2$, and 1.12 km$^2$ in the out-of-sample test dataset
+for the Posidonia oceanica, Other green plants, Rocks \& brown algae,
 and Sandy bottoms classes, respectively. However, the relative errors
-were 5.61\%, 11.77\%, 6.77\% and 14.34\% in the training dataset, compared with
-24.92\%, 99.20\%, 28.16\% and 35.05\% in the out-of-sample test dataset. Of
-course, the high relative errors for the Other green plants
+were 5.61\%, 11.77\%, 6.77\%, and 14.34\% in the training dataset, compared
+with 24.92\%, 99.20\%, 28.16\%, and 35.05\% in the out-of-sample test dataset.
+Of course, the high relative errors for the Other green plants
 class in the out-of-sample test dataset are nonsensical, as the true area of
 this class is small, leading to a high relative error. Thus, we observe
 that the absolute errors doubled in the out-of-sample test dataset, while the
@@ -289,8 +275,8 @@ particularly notable, with relative errors significantly decreasing with
 the extent of the area to be predicted, linked to the wider spatial context
 available (\cref{fig:model_performance}d). For instance, the median relative
 error for true extent areas between 1 and 5 km$^2$ was 30\% (86\% for 95\%
-confidence interval) compared with 7\% (86\% for 95\% confidence interval) for
-areas larger than 20 km$^2$.  This finding underscores the importance of
+confidence interval) compared with 7\% (86\% for a 95\% confidence interval)
+for areas larger than 20 km$^2$.  This finding underscores the importance of
 considering the spatial context when predicting the area of benthic habitats,
 highlighting the potential of CAMELE to provide reliable estimates for the
 distribution and extension of the considered habitats in the Mediterranean Sea.
@@ -306,7 +292,7 @@ distribution and extension of the considered habitats in the Mediterranean Sea.
         for each
         habitat class in the training (b) and out-of-sample test (c) datasets.
         The
-        diagonal dashed line indicate perfect prediction. (d) Box plot for the
+        diagonal dashed line indicates perfect prediction. (d) Box plot for the
         absolute
         and relative errors committed in the prediction of \textit{Posidonia
             oceanica}
@@ -325,16 +311,14 @@ distribution and extension of the considered habitats in the Mediterranean Sea.
         and out-of-sample test set]{Example of model predictions for a
         satellite
         image in the training
-        and out-of-sample test set. (a) Satellite image from Pollença bay on
+        and out-of-sample test set. (a) Satellite image from Pollença Bay on
         the island of Mallorca, a part of the training set. Image © 2022 Planet
-        Labs PBC (b) Ground truth
-        data for the benthic habitats in Pollença bay. (c) Habitat
-        classification from CAMELE model in Pollença bay (92.78\% IoU). (d)
-        Satellite image from Formentera island, part of the out-of-sample test
-        set. Image © 2022 Planet
-        Labs PBC (e) Ground truth data for the benthic habitats in Formentera.
-        (f)
-        Habitat classification from CAMELE model in Formentera (82.54\% IoU).}
+        Labs PBC (b) Ground truth data for the benthic habitats in Pollença
+        Bay. (c) Habitat classification from the CAMELE model in Pollença Bay
+        (92.78\% IoU). (d) Satellite image from Formentera, part of the
+        out-of-sample test set. Image © 2022 Planet Labs PBC (e) Ground truth
+        data for the benthic habitats in Formentera. (f) Habitat classification
+        from the CAMELE model in Formentera (82.54\% IoU).}
     \label{fig:example_prediction}
 \end{figure}
 
@@ -351,15 +335,15 @@ extreme sensitivity of this metric to small differences.
 \subsection{Towards a comprehensive model for the Mediterranean Sea}
 
 Finally, we trained CAMELE with all available data (using 13144 patches for the
-actual training and 3286 for the validation set) and provide the scientific
-community with our final trained models, which are freely accessible at
+actual training and 3286 for the validation set), providing the scientific
+community with our final trained models that are freely accessible at
 \cite{GimenezRomero_zenodo}. We thereafter refer to this model as the ``final''
 model.
 
-We evaluated the performance of the final model in the
-complete dataset and, for comparison, also in the previous training and
-out-of-sample test datasets, achieving a median IoU score of 95.22\%, 94.73\%
-and 96.22\%, respectively (\cref{tab:my-table}).
+We evaluated the performance of the final model in the complete dataset and,
+for comparison, also in the previous training and out-of-sample test datasets,
+achieving a median IoU score of 95.22\%, 94.73\%, and 96.22\%, respectively
+(\cref{tab:my-table}).
 
 \begin{figure}[H]
     \centering
@@ -377,14 +361,14 @@ and 96.22\%, respectively (\cref{tab:my-table}).
     \label{fig:model_performance_complete}
 \end{figure}
 
-Notably, the model's
-segmented all the images in the complete dataset with an IoU score higher than
-90\%, with a mean, median and maximum IoU score of 94.64\% 95.22\% and 98.5\%,
-respectively (\cref{tab:metrics_img_final}). Finally, we assessed the model
-robustness by predicting on a new set of images from the Balearic Islands in
-2023, not used in the training or out-of-sample test datasets. The model
-achieved a remarkable mean IoU score of 80\% in this new dataset
-(\cref{tab:metrics_img_final_2023,tab:avg_performance_2023}).
+Notably, the model's segmented all the images in the complete dataset with an
+IoU score higher than 90\%, with a mean, median, and maximum IoU score of
+94.64\% 95.22\%, and 98.5\%, respectively (\cref{tab:metrics_img_final}).
+Finally, we assessed the model's robustness by predicting on a new set of
+images
+from the Balearic Islands in 2023, not used in the training or out-of-sample
+test datasets. The model achieved a remarkable mean IoU score of 80\% in this
+new dataset (\cref{tab:metrics_img_final_2023,tab:avg_performance_2023}).
 
 \begin{table}[H]
     \centering
@@ -417,18 +401,18 @@ achieved a remarkable mean IoU score of 80\% in this new dataset
 In \cref{fig:model_performance_complete}, we present some examples of model
 predictions in different regions of the Balearic Islands, showing the
 ground-truth data for the benthic habitats, the habitat classification from
-CAMELE model trained only with half of the data (from Mallorca island), and the
-habitat classification from CAMELE model trained with all available data. We
-observe that the main differences between the predictions of the two models
-occur in the areas with more complex habitat distribution. In these areas, the
-model trained with all available data is able to capture the complexity of the
-habitat distribution more accurately, providing a more detailed and reliable
-classification of the benthic habitats. In any case, the model trained only
-with data from Mallorca still provides a notable performance in segmenting the
-\textit{Posidonia oceanica} meadows from the other islands, which in the end is
-the most important habitat to be monitored. A web-based application for
-interactively visualizing all model's predictions, together with the ground
-truth data, is available at \cite{Webpage_camele}.
+the CAMELE model trained only with half of the data (from Mallorca island), and
+the habitat classification from the CAMELE model trained with all available
+data. We observe that the main differences between the predictions of the two
+models occur in the areas with more complex habitat distribution. In these
+areas, the model trained with all available data is able to capture the
+complexity of the habitat distribution more accurately, providing a more
+detailed and reliable classification of the benthic habitats. In any case, the
+model trained only with data from Mallorca still provides a notable performance
+in segmenting the \textit{Posidonia oceanica} meadows from the other islands,
+which in the end is the most important habitat to be monitored. A web-based
+application for interactively visualizing all model predictions, together
+with the ground truth data, is available at \cite{Webpage_camele}.
 
 \section{Discussion}
 
@@ -441,9 +425,9 @@ framework for classifying \textit{Posidonia oceanica} meadows from
 multi-spectral satellite imagery based on deep convolutional neural networks,
 which in the last years have been shown to be highly effective in image
 segmentation tasks. This approach takes advantage of both the rich spectral
-and spatial information provided by satellite imagery, and the capacity of deep
+and spatial information provided by satellite imagery and the capacity of deep
 learning models to learn complex patterns and relationships in the data. In
-addition, our analysis do not rely on a single or few satellite images, but
+addition, our analyses do not rely on a single or few satellite images but
 rather on a comprehensive dataset of satellite images, covering a wide
 geographical area and various spatial scales, to ensure representation of
 diverse ecological conditions. This approach is crucial for training models
@@ -546,7 +530,7 @@ Satellite imagery was obtained from Planet under the Education and Research
 Program, which provides limited, non-commercial access to PlanetScope and
 RapidEye imagery \cite{planet2017}. In particular, we acquired PlanetScope
 images obtained through the Super Dove (PSB.SD) instrument, which consists of
-Coastal Blue, Blue, Green I, Green, Yellow, Red, Red Edge, NIR and operates
+Coastal Blue, Blue, Green I, Green, Yellow, Red, Red Edge and NIR and operates
 from 2020. Surface Reflectance (SR) products were selected to ensure
 consistency across localized atmospheric conditions, minimizing uncertainty in
 spectral response across time and location. SR is derived from the standard
@@ -554,15 +538,14 @@ Analytic Product (Radiance) and is processed to top-of-atmosphere reflectance
 and then atmospherically corrected to bottom-of-atmosphere reflectance.
 
 We obtained a total of 60 satellite images along the coast of the Balearic
-Islands, covering up to 1200 km$^2$ surface area for the years 2020 to 2023
+Islands, covering up to 1200 km$^2$ of surface area for the years 2020 to 2023
 (\cref{app:satellite_imagery,fig:images-dataset}). The images were
 acquired for days with clear sky conditions comprised between June and
 September, as these are the months in which the biomass of seagrass and algae
 is more abundant. No other filters were applied to the images, as we aimed to
-train the model in real-case scenarios, in which one can not control for
-specific
+train the model in real-case scenarios in which one cannot control for specific
 environmental conditions, constrained dates for image acquisition, the position
-of the satellite with respect the sun and the earth, etc. Thus, we obtained
+of the satellite with respect to the sun and the earth, etc. Thus, we obtained
 images with different conditions
 (\cref{app:satellite_imagery,tab:metadata_satellite_images}).
 
@@ -570,19 +553,17 @@ images with different conditions
 
 We used georeferenced habitat data from the government of the Balearic
 Islands, corresponding to the outcome of different European and national
-projects comprising a $\sim~20$ year effort of data acquisition covering a
-total of 2,500 km$^2$ \cite{cartografia,ValleVillalonga2023}.
-The first
-project started
-around the year
-2000 and there has been a major recent update around 2018. The data consist of
-28 different habitat classes following the nomenclature and coding of the
-Standard List of Marine Habitats of Spain (LPHME), obtained from side scan
-sonar, photo-interpretation of airborne imagery and in-situ observations. We
-aggregated the different habitat classes in 4 major ecological groups, present
-in the whole Mediterranean Sea. The aggregation was based on feature similarity
-and ecological function, resulting in the following classes: Posidonia
-oceanica, green algae, brown algae \& rocks and sandy bottoms
+projects comprising a $\sim~20$-year effort of data acquisition covering a
+total of 2,500 km$^2$ \cite{cartografia,ValleVillalonga2023}. The first
+project started around the year 2000, and there has been a major recent update
+around 2018. The data consist of 28 different habitat classes following the
+nomenclature and coding of the Standard List of Marine Habitats of Spain
+(LPHME), obtained from side scan sonar, photointerpretation of airborne
+imagery, and in-situ observations. We aggregated the different habitat classes
+into 4 major ecological groups present in the whole Mediterranean Sea. The
+aggregation was based on feature similarity and ecological function, resulting
+in the following classes: Posidonia oceanica, green algae, brown algae \&
+rocks, and sandy bottoms
 (\cref{app:satellite_imagery,tab:ecological_categories}).
 
 \cref{fig:scheme}a shows the spatial distribution of the considered ecological
@@ -611,16 +592,16 @@ using a simple clustering algorithm (i.e., K-means) and subsequently
 substituted
 for bathymetric data. The resulting processed
 satellite images comprise the primary source for the input data of our model.
-The ground truth (or label) dataset consist of raster files analogous to the
+The ground truth (or label) dataset consists of raster files analogous to the
 satellite image with single-band values representing the benthic class
 corresponding to each pixel. To construct it, all pixels of each processed
 satellite image were associated to a given benthic class using the aggregated
 habitat data. Pixels for which a class was not available were masked out in
-both the processed satellite image and label data. Similarly, pixels already
-masked in the satellite image were masked in the label image. Finally, patches
-measuring 256 x 256 pixels ($\sim 750\,m \cross 750\,m$) were extracted from
-each satellite and label image for the years 2020 to 2022 (keeping the year
-2023 as a final test), resulting in a final dataset comprising up to
+both the processed satellite image and label data. Similarly, pixels that were
+already masked in the satellite image were masked in the label image. Finally,
+patches measuring 256 x 256 pixels ($\sim 750\,m \cross 750\,m$) were extracted
+from each satellite and label image for the years 2020 to 2022 (keeping the
+year 2023 as a final test), resulting in a final dataset comprising up to
 16,430 patches.
 
 Despite train-test data split usually follows an 80\%-20\% ratio, training was
@@ -649,10 +630,9 @@ segmentation, such as UNET \cite{Ronneberger2015}, Linknet
 architecture is formed by repeating convolutional blocks, which are usually
 referred to as the ``backbone'' of the model. We tested 10 different backbone
 models for each architecture, leading to the training and evaluation of 40 deep
-learning models, which represents and unprecedented effort in the field. We
+learning models, which represents an unprecedented effort in the field. We
 used the segmentation-models Python library \cite{segmentation_models} to
-define and train
-all models.
+define and train all models.
 
 \subsection{Model training}
 
@@ -678,10 +658,9 @@ effectiveness in handling imbalanced datasets, a common characteristic in tasks
 involving semantic segmentation \cite{rahman2016optimizing}. Dice loss, also
 known as the Sørensen–Dice coefficient \cite{sorensen1948method,
     dice1945measures}, measures the similarity between predicted and ground
-truth
-data by computing the intersection over the union of the two. To further
+truth data by computing the intersection over the union of the two. To further
 account for class imbalance, we applied loss weights inversely proportional to
-the proportion of examples of each class. Learning rate was set to 0.001 to
+the proportion of examples of each class. The learning rate was set to 0.001 to
 ensure a smoother training process.
 
 The models were trained in a computing cluster, using 10 cores and a maximum of
@@ -698,14 +677,14 @@ spatial overlap between the predicted image and the ground truth, as this is a
 suitable metric for image segmentation problems \cite{rahman2016optimizing}.
 Additionally, we considered other metrics such as accuracy
 (\cref{eq:accuracy}), precision (\cref{eq:precision}), recall
-(\cref{eq:recall}), F-1 score (\cref{eq:f1_score}) and Cohen's Kappa
+(\cref{eq:recall}), F-1 score (\cref{eq:f1_score}), and Cohen's Kappa
 (\cref{eq:kappa}) to perform a comprehensive evaluation of the model. Accuracy
 gauges the overall correctness of predictions, precision measures the accuracy
 of positive predictions, recall assesses the model's ability to capture all
 positive instances, and the F-1 score provides a balanced assessment of
 precision and recall. For a binary classification problem, the metrics can be
-defined from the confusion matrix, where TP, TN, FP and FN represent true
-positives, true negatives, false positives and false negatives, respectively,
+defined from the confusion matrix, where TP, TN, FP, and FN represent true
+positives, true negatives, false positives, and false negatives, respectively,
 and $N$ is the total number of pixels in the image.
 
 \begin{equation}\label{eq:accuracy}
@@ -735,7 +714,7 @@ and $N$ is the total number of pixels in the image.
 \end{equation}
 
 These metrics collectively offer a holistic understanding of the model's
-effectiveness in classifying benthic habitats. See Supplementary information
+effectiveness in classifying benthic habitats. See Supplementary Information
 for further details.
 
 \subsection{Consensus prediction}
@@ -768,21 +747,19 @@ architecture to build CAMELE, finally consisting of 10 different models
 
 We then evaluated the performance of each of the 10 models and the consensus
 prediction approach in the training and out-of-sample test datasets
-\cref{app:out_of_sample}. All models
-achieved high performance, with a median IoU of 88.12\% and F1-score of
-93.16\% in the training dataset (\cref{tab:metrics-train}), while the
-models'
-performance in the out-of-sample test dataset was significantly reduced, with a
-median IoU of 60.73\% and F1-score of 71.87\% (\cref{tab:metrics-test}). When
-analyzing the performance of the models individually, we observed the
-emergence of ``specialists'', which performed significantly better than the
-rest of the models in segmenting specific classes. This finding underscores the
-importance of the consensus prediction approach, which leverages the diversity
-of information captured by different models. The consensus prediction approach
-significantly improved the models' performance in the out-of-sample test
-dataset, with an IoU score of 61.97\% and a F1-score of 72.77\%
-(\cref{tab:metrics-test}), highlighting the effectiveness of the
-ensemble-based strategy in mitigating potential biases introduced by individual
-models and enhancing the overall accuracy and generalization capabilities of
-CAMELE. Thus, the consensus prediction approach was selected as the final
-model for CAMELE.
+(\cref{app:out_of_sample}). All models achieved high performance, with a median
+IoU of 88.12\% and F1-score of 93.16\% in the training dataset
+(\cref{tab:metrics-train}), while the models' performance in the out-of-sample
+test dataset was significantly reduced, with a median IoU of 60.73\% and
+F1-score of 71.87\% (\cref{tab:metrics-test}). When analyzing the performance
+of the models individually, we observed the emergence of ``specialists'', which
+performed significantly better than the rest of the models in segmenting
+specific classes. This finding underscores the importance of the consensus
+prediction approach, which leverages the diversity of information captured by
+different models. The consensus prediction approach significantly improved the
+models' performance in the out-of-sample test dataset, with an IoU score of
+61.97\% and a F1-score of 72.77\% (\cref{tab:metrics-test}), highlighting the
+effectiveness of the ensemble-based strategy in mitigating potential biases
+introduced by individual models and enhancing the overall accuracy and
+generalization capabilities of CAMELE. Thus, the consensus prediction approach
+was selected as the final model for CAMELE.

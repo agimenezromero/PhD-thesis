@@ -31,9 +31,9 @@
 \section{Introduction}
 
 Coral reefs form some of the largest biogenic structures in the biosphere
-\cite{wiener2021exploration}, and are prevalent structures across tropical
+\cite{wiener2021exploration} and are prevalent structures across tropical
 coastal waters. Coral reefs often form complex, labyrinthine structures that
-render sailing in tropical waters challenging, but protect the shorelines of
+render sailing in tropical waters challenging but protect the shorelines of
 tropical coastal nations while supporting biodiversity and providing food
 supply supporting local communities \cite{Moberg1999}. The formation of coral
 reefs has intrigued scientists for a long time, with Darwin formulating a model
@@ -49,7 +49,7 @@ reefs) or convoluted or highly-branched structures (e.g., \cite{Purkis2007}),
 and often present nested structures, such as smaller reefs within large coral
 reef lagoons \cite{Bradbury1983}. Whereas previous studies have examined the
 geometry of coral reefs \cite{Bradbury1983,Purkis2007,
-    Zawada2009,Alvarez_Filip2009,Bozec2015, Sous2020}, finding evidences of
+    Zawada2009,Alvarez_Filip2009,Bozec2015, Sous2020}, finding evidence of
 fractality both at individual reef \cite{Bradbury1983,Sous2020} or regional
 scales \cite{Purkis2007, Zawada2009}, a global assessment of coral reef size
 and geometry was hitherto precluded by the lack of data on reef form and size
@@ -60,7 +60,7 @@ estimated 50\% of coral cover lost globally from 1957-2007
 be lost if climate change reaches 1.5 to 2.0 ºC above pre-industrial levels,
 respectively \cite{bindoff2019changing}. Yet, the Kunming-Montreal Biodiversity
 Framework \cite{kunming-montreal-framework} calls for stopping all biodiversity
-losses and restore 30\% of degraded habitats, including coral reefs, by 2030,
+losses and restoring 30\% of degraded habitats, including coral reefs, by 2030,
 which requires action at individual reefs and, therefore, an understanding of
 coral reef form and size as an underpinning for the necessary conservation
 action.
@@ -71,8 +71,8 @@ shallow-water (above 10 m deep) tropical reefs, presents an unprecedented
 opportunity to characterize the form and size of coral reefs on a global scale.
 In contrast to previous efforts, such as NOAA’s Coral Reef Information System
 \cite{oconnor2020}, Khaled bin Sultan Living Oceans Foundation
-\cite{globalreefexpedition2021} or Millennium Coral Reefs \cite{unep2010}, the
-ACA dataset combines an extensive global coverage of reef areas with the direct
+\cite{globalreefexpedition2021}, or Millennium Coral Reefs \cite{unep2010}, the
+ACA dataset combines extensive global coverage of reef areas with the direct
 availability of processed habitat data obtained from recent high-resolution
 (3\,m) satellite imagery using deep learning models. This invaluable resource
 offers a unique vantage point for researchers, scientists, and conservationists
@@ -80,18 +80,18 @@ to explore and understand coral reef ecosystems in ways that were previously
 challenging or impossible. This requires processing the classified images to
 extract a canonical inventory of individual coral reefs that can be used to
 derive macroecological laws and principles from the patterns and trends
-observed across coral reefs. This, in turn, enables to advance and consolidate
-our understanding of these complex ecosystems and the scale of the effort
-required to conserve and restore them.
+observed across coral reefs. In turn, this enables us to advance and
+consolidate our understanding of these complex ecosystems and the scale of the
+effort required to conserve and restore them.
 
 Here we report universal macroecological patterns
-\cite{Brown1995Macroecology} in shallow-water, tropical coral reef size and
+\cite{Brown1995Macroecology} in shallow-water tropical coral reef size and
 geometry using data from the 2022 release of the ACA \cite{allen-coral-atlas}.
 Specifically, we produced a global inventory of individual reefs
 \cite{gimenez_romero_2023_10025083}, allowing the analysis of the size and
 inter-reef distance distributions of individual coral reef areas within each
 coral province of the Atlas. We then examined the relationship between reef
-size, shape and fractal geometry of coral reefs.
+size, shape, and fractal geometry of coral reefs.
 
 \section{Results}
 \subsection{Coral reefs macroecological patterns}
@@ -107,11 +107,11 @@ respectively, across all coral reef provinces in the Atlas (see
 \cref{tab:Province statistics} for statistics in each province).
 
 Our analysis reveals that the size distribution of the area of coral reefs
-in all provinces converge to conform a power-law distribution, $y\sim
+in all provinces converges to conform a power-law distribution, $y\sim
     x^{-\alpha}$, that holds over multiple scales, where $y$ reflects the
-probability of ocurrence of reefs of area class $x \ km^2$
+probability of occurrence of reefs of area class $x \ km^2$
 (\cref{fig:general_analysis} a-b). This behavior was consistent across all
-provinces within a range of 3 to 5 decades in coral reef area, yielding an
+provinces within a range of 3 to 5 decades in the coral reef area, yielding an
 average exponent of $\left<\alpha\right>=1.84$ ($95\%$ CI: $1.55$ to $2.12$)
 (see Methods). The global size-frequency distribution of coral reefs, fitted to
 all data independently on the province, conforms to a power-law with an
@@ -129,19 +129,13 @@ power-law scaling of the reef size distribution.
     \includegraphics[width=\textwidth]{Figures/general_analysis.png}
     \caption[Macroecological patterns of global coral reef size,
         geometry and spacing]{\textbf{Macroecological patterns of global coral
-            reef
-            size,
-            geometry and spacing.} (a) Size distribution. The black line
-        corresponds to a
-        fitted power-law of exponent $1.8$. (b) Complementary cumulative
-        distribution
-        function (CCDF) with corresponding exponent of $1.8$. (c)
-        Area-Perimeter
-        relation. The black dashed line corresponds to a fitted power-law with
-        exponent
-        $1.23$. (d) Inter-reef distance distribution. The black dotted line
-        corresponds
-        to a fitted power-law to the distribution tail with a exponent of
+            reef size, geometry, and spacing.} (a) Size distribution. The black
+        line corresponds to a fitted power-law of exponent $1.8$. (b)
+        Complementary cumulative distribution function (CCDF) with
+        corresponding exponent of $1.8$. (c) Area-Perimeter relation. The black
+        dashed line corresponds to a fitted power-law with exponent $1.23$. (d)
+        Inter-reef distance distribution. The black dotted line corresponds
+        to a fitted power-law to the distribution tail with an exponent of
         $2.33$.}
     \label{fig:general_analysis}
 \end{figure}
@@ -160,7 +154,7 @@ fitted for each province independently, we found a mean exponent of
 $\left<\alpha\right>=1.2574$ ($95\%$ CI: $1.1757$ to $1.3391$), practically
 identical to the general exponent. The exponent for the area-perimeter
 relationship is significantly lower than the value of $2$ that would be found
-for a smooth euclidean geometry. According to fractal analysis, the fractal
+for a smooth Euclidean geometry. According to fractal analysis, the fractal
 dimensions of the perimeter and area of coral reefs are given by $D_P=1.2950$
 and $D_A=1.6289$ (see Methods), respectively, which are clearly different from
 the putative euclidean dimensions of $D_P=1$ and $D_A=2$. Taking each province
@@ -197,7 +191,7 @@ obtained from the area-perimeter relationship
 areas is quite stable around the mean, although it increases slightly for large
 coral reefs (\cref{fig:individual_reef_analysis} a). On the other hand, the
 fractal dimension for the perimeter shows a more pronounced increase as
-function of reef size. This indicates that as coral reefs grow, their contour
+a function of reef size. This indicates that as coral reefs grow, their contour
 gets more and more convoluted, increasing its complexity, while its surface
 remains geometrically more stable.
 
@@ -209,13 +203,13 @@ reefs decreases rapidly with increasing size
 with this result: transitioning from round to elongated shapes or keeping the
 rounded shape while developing holes, reef lagoons, within their surface. These
 two processes are not necessarily mutually exclusive, as elongated shapes could
-appear from evolution of empty rounded shapes. The results obtained for the
-elongation index measurement show that both processes must occur, as reefs
-elongation increase with size while showing very high variance. This hypothesis
-can be contrasted by examining the different shapes that coral reefs have
-formed (\cref{fig:individual_reef_analysis} e).
+appear from the evolution of empty, rounded shapes. The results obtained for
+the elongation index measurement show that both processes must occur, as reef
+elongation increases with size while showing very high variance. This
+hypothesis can be contrasted by examining the different shapes that coral reefs
+have formed (\cref{fig:individual_reef_analysis} e).
 
-Altogether, our analysis indicate that coral reefs evolve from simple
+Altogether, our analyses indicate that coral reefs evolve from simple
 rounded filled shapes (high compactness and low elongation index) to more
 complex elongated and less compact forms (low compactness and high elongation
 index), giving rise to fractal objects with stable surface fractal dimension
@@ -234,11 +228,11 @@ and increasing perimeter fractal dimension as they grow
         perimeter;
         (c) the compactness and area and (d) the elongation index and area. The
         black
-        line corresponds to the mean values of the Y axis measure as function
+        line corresponds to the mean values of the Y axis measure as a function
         of the X
         axis measure. The red histogram corresponds to the distribution of the
         Y axis
-        measure. (e) Example of coral reefs shape as function of their
+        measure. (e) Example of coral reefs shape as a function of their
         surface.}
     \label{fig:individual_reef_analysis}
 \end{figure}
@@ -252,7 +246,7 @@ biological, and ecological processes that come into play during the development
 of the different structures present at each organization level. The different
 coral provinces can be understood as the largest organizational level of these
 organisms, and the processes involved in maintaining such big structures should
-be different from that of individual reefs, giving rise to a different fractal
+be different from those of individual reefs, giving rise to a different fractal
 dimension.
 
 \begin{figure}[H]
@@ -262,17 +256,12 @@ dimension.
         surface]{\textbf{Box
             Counting Dimension of coral reef provinces surface.} (a)
         Scaling of the measure (number of boxes of length $\epsilon$,
-        $N(\epsilon)$) as
-        function of the ruler used (box length $\epsilon$). The slope of the
-        fit for
-        each province corresponds to its Box-Counting surface fractal
-        dimension, $D$.
-        (b) Histogram of the obtained Box-Counting fractal dimensions. The
-        solid black
-        line represents the mean Box-Counting fractal dimension,
-        $\left<D\right>$. (c)
-        Box-counting surface dimension for each coral province. Black dashed
-        lines
+        $N(\epsilon)$) as a function of the ruler used (box length $\epsilon$).
+        The slope of the fit for each province corresponds to its Box-Counting
+        surface fractal dimension, $D$. (b) Histogram of the obtained
+        Box-Counting fractal dimensions. The solid black line represents the
+        mean Box-Counting fractal dimension, $\left<D\right>$. (c) Box-counting
+        surface dimension for each coral province. Black dashed lines
         correspond to a 1 $\sigma$ deviation from the mean.}
     \label{fig:Box_Counting_Dimension}
 \end{figure}
@@ -280,15 +269,14 @@ dimension.
 To investigate this hypothesis, we computed the surface fractal dimension
 for each coral province as a whole using the well-known box-counting algorithm
 (Methods, \cref{fig:Box_Counting_SI}). We found a mean fractal dimension
-of
-$\left<D\right>=1.42$ (95\% CI: 1.24 to 1.59), consistent across the different
-coral provinces assuming a normal distribution
+of $\left<D\right>=1.42$ (95\% CI: 1.24 to 1.59), consistent across the
+different coral provinces assuming a normal distribution
 (\cref{fig:Box_Counting_Dimension}). The fractal dimension of coral reef
 landscapes is similar to those expected from sizes expanding along a Fibonacci
 series, which yield a fractal dimension of 1.44 \cite{Sorensen1998}. This
 suggests, again, that coral reefs are self-organized systems that exhibit
-similar patterns of complexity and irregularity at different scales, and that
-the fractality is an intrinsic property of coral reefs that likely arise from
+similar patterns of complexity and irregularity at different scales and that
+the fractality is an intrinsic property of coral reefs that likely arises from
 the underlying biological, physical, and ecological processes involved in their
 growth dynamics.
 
@@ -306,7 +294,7 @@ geometries are fundamental features of these ecosystems, which reflect the
 underlying ecological and physical processes that shape them across scales.
 Furthermore, because the exponent of the power-law size distribution and the
 fractal dimensions are consistent across different regions, these features are
-not only fundamental, but universal laws reflecting coral reef growth
+not only fundamental but universal laws reflecting coral reef growth
 processes.
 
 These universal scaling properties must be used to challenge mechanistic
@@ -318,25 +306,24 @@ coral reefs, hydrodynamic flows, and the dynamics of the limiting nutrients
 transported to support photosynthesis and calcification, further constrained by
 sea level change and available vertical accommodation space \cite{Nakamura2007,
     Mistr2003, Bosscher1992}. Realistic models of coral reef growth and
-dynamics
-should be able to reproduce the universal features described here, such as the
-power law in coral reef size distribution, the fractal geometries and the
-changes in reef shape with size.
+dynamics should be able to reproduce the universal features described here,
+such as the power law in coral reef size distribution, the fractal geometries,
+and the changes in reef shape with size.
 
-Power-law distributions have been also found in many natural systems
+Power-law distributions have also been found in many natural systems
 \cite{SOLE1995, west2000scaling, Brown2002, Chave2003, Marquet2005,
     Corral2019}.
 Different mechanisms can produce such emergent power-laws
 \cite{Markovic2014}: Self-Organized Criticality, in which the system evolves
 naturally towards a critical state \cite{Per1988}; Highly Optimized Tolerance,
 in which the system evolves following a trade-off between yield, cost of
-resources and tolerance to risk \cite{Carlson1999,Carlson2000}, or correlated
+resources, and tolerance to risk \cite{Carlson1999,Carlson2000}, or correlated
 noise models, in which external drives and internal dynamics compete on similar
 time scales, yielding a non-critical steady state characterized by heavy-tailed
 distributions \cite{Newman1996}. Ecological power-laws can arise through a
 combination of several ecological and physical processes, including competition
-for resources, random disturbances leading to failure or loss. In
-\cite{Scanlon2007, Kefi2007} it was shown that the emergence of power-laws in
+for resources and random disturbances leading to failure or loss. In
+\cite{Scanlon2007, Kefi2007}, it was shown that the emergence of power-laws in
 vegetation patterns requires the interplay between global competitive and
 locally facilitative interactions \cite{Scanlon2007, Kefi2007}. These power-law
 distributions are different from those obtained in classical critical systems,
@@ -349,17 +336,17 @@ emergent critical point, namely an optimal balance between robustness and
 flexibility \cite{Munoz2018}. In the case of corals, this could reflect a
 balance among self-organization dynamics driven by competition for space and
 resources with other species, environmental factors like ocean currents and
-water quality, predation interactions within the reef ecosystem and local
+water quality, predation interactions within the reef ecosystem, and local
 facilitative interactions, such as energy dissipation. The combination of these
 mechanisms should be explored in developing models of coral reef formation.
 
-Fractal models have been also used to investigate universal principles that
+Fractal models have also been used to investigate universal principles that
 govern the structure and dynamics of complex ecological systems
 \cite{Brown2002}, such as the geometry of benthic ecosystems or power-law
 scaling \cite{Schmid1999}. In coral reef ecosystems, fractal geometry might
 emerge as an efficient structure for nutrient acquisition \cite{Sous2020}. The
 fact that $D_P>1$ implies that the reef contour is highly convoluted, while
-$D_A<2$ is the result of the development of multiples holes in the reef
+$D_A<2$ is the result of the development of multiple holes in the reef
 surface. The combination of these mechanisms maximizes the chance that coral
 individuals living at the reef surface are in contact with an external flow,
 thus being able to obtain nutrients. According to \cite{George2021}, coral
@@ -376,7 +363,7 @@ fringing has been postulated to result mostly from reduced accommodation space
 as coral reefs grow, and the interaction with sea level \cite{Kennedy2002}, but
 has also been explained as resulting from the interaction between reefs and
 nutrients transported along hydrodynamic flows from a prevalent direction
-\cite{Mistr2003}. Reefs inside reef structures can be also observed, suggesting
+\cite{Mistr2003}. Reefs inside reef structures can also be observed, suggesting
 that as coral reefs expand in size, smaller reefs appear inside them, starting
 as compact coral heads to then develop empty inner spaces. Overall, this
 phenomenology suggests that a Turing instability
@@ -385,10 +372,10 @@ been previously suggested \cite{Mistr2003}, arising due to the interplay
 between diffusion of nutrient species and nutrient uptake and recycling
 processes within reefs. However, the Turing mechanism would yield a normal
 distribution of inter-reef distances, not compatible with the heavy-tailed
-inter-reef distance distribution found in this study neither with the obtained
+inter-reef distance distribution found in this study, neither with the obtained
 power-law scaling.
 
-Overall, our findings have important implications for understanding of the
+Overall, our findings have important implications for the understanding of the
 structure and function of coral reefs, as well as for their conservation and
 management. The macroecological characterization of universal laws in the
 geometry of coral reefs, along with the dataset of unique coral reefs globally,
