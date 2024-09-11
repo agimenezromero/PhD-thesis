@@ -156,7 +156,11 @@
 %----------------------------------------------------------------------------------------
 %	PREFACE
 %----------------------------------------------------------------------------------------
+\pagebreak
+\thispagestyle{empty}
 
+\phantomsection
+\addcontentsline{toc}{chapter}{\textcolor{ocre}{Preface}}
 \input{Front/Preface.tex}
 
 \newpage
@@ -166,8 +170,9 @@
 %----------------------------------------------------------------------------------------
 %	ABSTRACT
 %----------------------------------------------------------------------------------------
-
 \input{Front/Abstract.tex}
+\phantomsection
+\addcontentsline{toc}{chapter}{\textcolor{ocre}{Abstract}}
 
 %----------------------------------------------------------------------------------------
 %	RESUMEN
@@ -193,7 +198,9 @@
 \thispagestyle{plain} % empty
 \mbox{}
 
+\phantomsection
 \input{Front/Acknowledgements.tex}
+\addcontentsline{toc}{chapter}{\textcolor{ocre}{Acknowledgements}}
 
 %----------------------------------------------------------------------------------------
 %	TABLE OF CONTENTS
@@ -210,15 +217,13 @@
 	\hypersetup{hidelinks}
 	\listoffigures % Output the list of figures
 }
-
-%\addcontentsline{toc}{chapter}{\textcolor{ocre}{List of figures}}
+\addcontentsline{toc}{chapter}{\textcolor{ocre}{List of figures}}
 
 {
 	\hypersetup{hidelinks}
 	\listoftables % Output the list of tables
 }
-
-%\addcontentsline{toc}{chapter}{\textcolor{ocre}{List of tables}}
+\addcontentsline{toc}{chapter}{\textcolor{ocre}{List of tables}}
 
 %----------------------------------------------------------------------------------------
 %	LIST OF ABBREVIATIONS
@@ -230,8 +235,7 @@
 
 \chapter*{List of acronyms}
 \input{Front/Acronyms.tex}
-
-%\addcontentsline{toc}{chapter}{\textcolor{ocre}{List of acronyms}}
+\addcontentsline{toc}{chapter}{\textcolor{ocre}{List of acronyms}}
 
 %----------------------------------------------------------------------------------------
 
@@ -244,6 +248,11 @@
 \chapterspacebelow{5.25cm} % Amount of vertical whitespace from the top margin to the start of the text on chapter pages
 
 \chapter*{List of publications}
+\addcontentsline{toc}{chapter}{\textcolor{ocre}{List of publications}}
+
+{\LARGE{\textbf{Publications in this thesis}}}
+
+\vspace{0.5 cm}
 
 \begin{enumerate}
 	\item \fullcite{GimenezRomero2021_e}\mybibexclude{GimenezRomero2021_e}
@@ -278,9 +287,9 @@
 	      \fullcite{GimenezRomero2024_posi_e}\mybibexclude{GimenezRomero2024_posi_e}
 \end{enumerate}
 
-\chapter*{Other publications}
+\vspace{0.5cm}
 
-\underline{\textbf{\Large Scientific publications}}
+{\LARGE{\textbf{Other publications}}}
 
 \vspace{0.5 cm}
 
@@ -304,7 +313,7 @@
 
 \vspace{0.5 cm}
 
-\noindent\underline{\textbf{\Large Technical reports}}
+{\LARGE{\textbf{Technical reports}}}
 
 \vspace{0.5 cm}
 
@@ -320,7 +329,7 @@
 
 \vspace{0.5 cm}
 
-\noindent\underline{\textbf{\Large Scientific dissemination}}
+{\LARGE{\textbf{Scientific dissemination}}}
 
 \vspace{0.5 cm}
 
