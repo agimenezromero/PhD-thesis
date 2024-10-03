@@ -170,20 +170,25 @@
 %----------------------------------------------------------------------------------------
 %	ABSTRACT
 %----------------------------------------------------------------------------------------
-\input{Front/Abstract.tex}
+\pagebreak
+\thispagestyle{empty}
+
 \phantomsection
 \addcontentsline{toc}{chapter}{\textcolor{ocre}{Abstract}}
+\input{Front/Abstract.tex}
 
 %----------------------------------------------------------------------------------------
 %	RESUMEN
 %----------------------------------------------------------------------------------------
-
+\pagebreak
+\thispagestyle{empty}
 \input{Front/Resumen.tex}
 
 %----------------------------------------------------------------------------------------
 %	RESUM
 %----------------------------------------------------------------------------------------
-
+\pagebreak
+\thispagestyle{empty}
 \input{Front/Resum.tex}
 
 \newpage
@@ -563,21 +568,24 @@
 %	BIBLIOGRAPHY
 %----------------------------------------------------------------------------------------
 
-% \chapterimage{} % Chapter heading image
-% \chapterspaceabove{2.5cm} % Whitespace from the top of the page to the chapter title on chapter pages
-% \chapterspacebelow{2cm} % Amount of vertical whitespace from the top margin to the start of the text on chapter pages
+\chapterimage{} % Chapter heading image
+\chapterspaceabove{2.5cm} % Whitespace from the top of the page to the chapter title on chapter pages
+\chapterspacebelow{2cm} % Amount of vertical whitespace from the top margin to the start of the text on chapter pages
 
 %------------------------------------------------
 
 %\chapter*{Bibliography}
+
 \newpage
+\cleardoublepage
+\phantomsection
+\addcontentsline{toc}{chapter}{\textcolor{ocre}{Bibliography}}
+
+% Set the page headers to display a Bibliography chapter name
 \markboth{\sffamily\tiny\bfseries
 	Bibliography}{\sffamily\tiny\bfseries Bibliography}
-% Set the page headers to display a Bibliography chapter name
-\printbibliography[notcategory=fullcited,resetnumbers]
 
-\addcontentsline{toc}{chapter}{\textcolor{ocre}{Bibliography}}
-% Add a Bibliography heading to the table of contents
+\printbibliography[notcategory=fullcited,resetnumbers]
 
 %\section*{Articles}
 %\addcontentsline{toc}{section}{Articles} % Add the Articles subheading to the table of contents
