@@ -2,7 +2,7 @@
 
 This repository contains my PhD thesis entitled "Theoretical and data-driven models in Ecology".
 
-The final version of the thesis is available at [Zenodo](https://doi.org/10.5281/zenodo.1234567).
+The final version of the thesis is available at [Zenodo](https://doi.org/10.5281/zenodo.14845774).
 
 ## Abstract
 
