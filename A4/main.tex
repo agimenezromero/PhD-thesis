@@ -1,0 +1,670 @@
+\documentclass[
+	11pt, % Default font size, select one of 10pt, 11pt or 12pt
+	%fleqn, % Left align equations
+	a4paper, %a4paper, b5paper
+]{LegrandOrangeBook}
+
+\usepackage{caption}
+\DeclareCaptionFont{lmss}{\fontfamily{lmss}\selectfont}
+
+% Book information for PDF metadata, remove/comment this block if not required 
+\hypersetup{
+	pdftitle={Theoretical and data-driven models in Ecology},
+	% Title field
+	pdfauthor={Àlex Giménez Romero}, % Author field
+	pdfsubject={PhD thesis}, % Subject field
+	pdfkeywords={Ecology, Mathematical Modeling, Computational Modeling,
+			Machine Learning, Epidemics},
+	% Keywords
+	pdfcreator={LaTeX}, % Content creator field
+}
+
+\DeclareUnicodeCharacter{0301}{*************************************}
+
+% Bibliography files
+\addbibresource{refs.bib}
+
+\definecolor{ocre}{RGB}{40, 173, 213} % Define the color used for highlighting throughout the book
+\definecolor{part_title}{RGB}{29, 117, 175} % Define the color used for the title of parts
+\definecolor{ref_color}{RGB}{255, 153, 0} % Define the color used for the title of parts
+
+\chapterimage{} % Chapter heading image
+\chapterspaceabove{6.5cm} % Default whitespace from the top of the page to the chapter title on chapter pages
+\chapterspacebelow{6.75cm} % Default amount of vertical whitespace from the top margin to the start of the text on chapter pages
+
+%----------------------------------------------------------------------------------------
+
+\usepackage{siunitx}
+\usepackage[capitalise, nameinlink]{cleveref}
+\usepackage{float}
+\usepackage{physics}
+\usepackage{arydshln}
+\usepackage{esint}
+\usepackage{amssymb}
+\usepackage{subfigure}
+\usepackage[labelfont=bf, font=lmss]{caption}
+\usepackage{longtable}
+\usepackage{tabularray}
+\usepackage{csquotes}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+
+% Theme for longtblr
+\DefTblrTemplate{caption-text}{short}{\InsertTblrText{entry}}
+
+\DefTblrTemplate{capcont}{short}{%
+	\par\centering
+	\UseTblrTemplate
+	{caption-tag}{default}%
+	\UseTblrTemplate
+	{caption-sep}{default}%
+	\UseTblrTemplate {caption-text}{short}
+	\UseTblrTemplate {conthead-text}{default}
+	\par
+}
+\NewTblrTheme{shortcaption}{%
+	\SetTblrTemplate{capcont}{short}%
+}
+
+%% Acronyms %%
+\newcommand{\abbrlabel}[1]{\makebox[3cm][l]{\textbf{#1}\ \dotfill}}
+\newenvironment{abbreviations}{\begin{list}{}{\renewcommand{\makelabel}{\abbrlabel}}}{\end{list}}
+
+%% My commands %%
+\newcommand{\dif}{\mathrm{d}}
+\newcommand{\avg}[1]{\left<#1\right>}
+\newcommand{\parentesi}[1]{\left(#1\right)}
+\newcommand{\claudator}[1]{\left[#1\right]}
+\newcommand{\keys}[1]{\left\{#1\right\}}
+\newcommand{\limitss}[2]{_{#1}^{#2}}
+\newcommand{\dpart}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\der}[2]{\frac{\dif #1}{\dif #2}}
+
+\newcommand{\xf}{Xf$_{\mathrm{PD}}$}
+\newcommand{\webpage}{\href{https://pdrisk.ifisc.uib-csic.es/future}{webpage}}
+
+\newcommand{\AG}[1]{\textcolor{red}{#1}}
+\newcommand{\addref}[1]{\AG{(REF)}}
+
+%% Appendix %%
+\AtBeginEnvironment{appendices}{\crefalias{section}{appendix}}
+\AtBeginEnvironment{appendices}{\crefalias{subsection}{appendix}}
+\renewcommand\appendixtocname{\textcolor{ocre}{Appendices}}
+
+%% Citation fullcite%%
+\preto\fullcite{\AtNextCite{\defcounter{maxnames}{99}}}
+
+\DeclareBibliographyCategory{fullcited}
+\newcommand{\mybibexclude}[1]{\addtocategory{fullcited}{#1}}
+
+\begin{document}
+
+\frontmatter % Use Roman page numbering style
+
+%----------------------------------------------------------------------------------------
+%	COVER PAGE
+%----------------------------------------------------------------------------------------
+
+\input{Front/cover.tex}
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\input{Front/title_page.tex}
+
+%----------------------------------------------------------------------------------------
+%	COPYRIGHT PAGE
+%----------------------------------------------------------------------------------------
+
+\thispagestyle{empty} % Suppress headers and footers on this page
+
+~\vfill % Push the text down to the bottom of the page
+\sffamily
+
+\noindent \textbf{Supervisors:}
+
+\noindent Manuel Matías \\
+
+\noindent Àlex Giménez Romero.
+
+\noindent \textit{Theoretical and data-driven models in Ecology.} \copyright
+
+\noindent Palma de Mallorca, September 2024
+\pagebreak
+
+%----------------------------------------------------------------------------------------
+%	DEDICATION
+%----------------------------------------------------------------------------------------
+\input{Front/Dedication.tex}
+\newpage
+\thispagestyle{plain} % empty
+\mbox{}
+
+%----------------------------------------------------------------------------------------
+%	INTERNATIONAL PhD PROGRAM IN PHYSICS
+%----------------------------------------------------------------------------------------
+
+\newpage
+\thispagestyle{plain} % empty
+\mbox{}
+\input{Front/International.tex}
+\newpage
+\thispagestyle{plain} % empty
+\mbox{}
+
+%----------------------------------------------------------------------------------------
+%	PREFACE
+%----------------------------------------------------------------------------------------
+\pagebreak
+\thispagestyle{empty}
+
+\phantomsection
+\addcontentsline{toc}{chapter}{\textcolor{ocre}{Preface}}
+\input{Front/Preface.tex}
+
+\newpage
+\thispagestyle{plain} % empty
+\mbox{}
+
+%----------------------------------------------------------------------------------------
+%	ABSTRACT
+%----------------------------------------------------------------------------------------
+\pagebreak
+\thispagestyle{empty}
+
+\phantomsection
+\addcontentsline{toc}{chapter}{\textcolor{ocre}{Abstract}}
+\input{Front/Abstract.tex}
+
+%----------------------------------------------------------------------------------------
+%	RESUMEN
+%----------------------------------------------------------------------------------------
+\pagebreak
+\thispagestyle{empty}
+\input{Front/Resumen.tex}
+
+%----------------------------------------------------------------------------------------
+%	RESUM
+%----------------------------------------------------------------------------------------
+\pagebreak
+\thispagestyle{empty}
+\input{Front/Resum.tex}
+
+\newpage
+\thispagestyle{plain} % empty
+\mbox{}
+
+%----------------------------------------------------------------------------------------
+%	ACKNOWLEDGEMENTS
+%----------------------------------------------------------------------------------------
+
+\newpage
+\thispagestyle{plain} % empty
+\mbox{}
+
+\phantomsection
+\input{Front/Acknowledgements.tex}
+\addcontentsline{toc}{chapter}{\textcolor{ocre}{Acknowledgements}}
+
+%----------------------------------------------------------------------------------------
+%	TABLE OF CONTENTS
+%----------------------------------------------------------------------------------------
+
+\pagestyle{empty} % Disable headers and footers for the following pages
+
+{
+	\hypersetup{hidelinks}
+	\tableofcontents % Output the table of contents
+}
+
+{
+	\hypersetup{hidelinks}
+	\listoffigures % Output the list of figures
+}
+\addcontentsline{toc}{chapter}{\textcolor{ocre}{List of figures}}
+
+{
+	\hypersetup{hidelinks}
+	\listoftables % Output the list of tables
+}
+\addcontentsline{toc}{chapter}{\textcolor{ocre}{List of tables}}
+
+%----------------------------------------------------------------------------------------
+%	LIST OF ABBREVIATIONS
+%----------------------------------------------------------------------------------------
+
+\chapterimage{} % Chapter heading image
+\chapterspaceabove{6.75cm} % Whitespace from the top of the page to the chapter title on chapter pages
+\chapterspacebelow{7.25cm} % Amount of vertical whitespace from the top margin to the start of the text on chapter pages
+
+\chapter*{List of acronyms}
+\input{Front/Acronyms.tex}
+\addcontentsline{toc}{chapter}{\textcolor{ocre}{List of acronyms}}
+
+%----------------------------------------------------------------------------------------
+
+%----------------------------------------------------------------------------------------
+%	LIST OF PUBLICATIONS
+%----------------------------------------------------------------------------------------
+
+\chapterimage{} % Chapter heading image
+\chapterspaceabove{5.75cm} % Whitespace from the top of the page to the chapter title on chapter pages
+\chapterspacebelow{5.25cm} % Amount of vertical whitespace from the top margin to the start of the text on chapter pages
+
+\chapter*{List of publications}
+\addcontentsline{toc}{chapter}{\textcolor{ocre}{List of publications}}
+
+{\LARGE{\textbf{Publications in this thesis}}}
+
+\vspace{0.5 cm}
+
+\begin{enumerate}
+	\item \fullcite{GimenezRomero2021_e}\mybibexclude{GimenezRomero2021_e}
+	      \vspace{0.5 cm}
+	\item \fullcite{Flecha2022_e}\mybibexclude{Flecha2022_e}
+	      \vspace{0.5 cm}
+	\item
+
+	      \fullcite{GimenezRomero_2022_RSos_e}\mybibexclude{GimenezRomero_2022_RSos_e}
+	      \vspace{0.5 cm}
+	\item
+
+	      \fullcite{GimenezRomero2022_PRE_e}\mybibexclude{GimenezRomero2022_PRE_e}
+	      \vspace{0.5 cm}
+	\item
+
+	      \fullcite{GimenezRomero2022_CommsBio_e}\mybibexclude{GimenezRomero2022_CommsBio_e}
+	      \vspace{0.5 cm}
+	\item \fullcite{GimenezRomero2023_e}\mybibexclude{GimenezRomero2023_e}
+	      \vspace{0.5 cm}
+	\item
+
+	      \fullcite{GimenezRomero2023_PD_e}\mybibexclude{GimenezRomero2023_PD_e}
+	      \vspace{0.5 cm}
+	\item \fullcite{GimenezRomero2024_e}\mybibexclude{GimenezRomero2024_e}
+	      \vspace{0.5 cm}
+	\item À. Giménez-Romero, M. A. Matías and C. M. Duarte, ``Universal
+	      spatial properties of coral reefs'' (Submitted for publication)
+	      \vspace{0.5cm}
+	\item
+
+	      \fullcite{GimenezRomero2024_posi_e}\mybibexclude{GimenezRomero2024_posi_e}
+\end{enumerate}
+
+\vspace{0.5cm}
+
+{\LARGE{\textbf{Other publications}}}
+
+\vspace{0.5 cm}
+
+\begin{enumerate}
+	\setcounter{enumi}{10}
+	\item \fullcite{Lago2023_e}\mybibexclude{Lago2023_e}
+	      \vspace{0.5 cm}
+	\item
+
+	      \fullcite{Moralejo2024_e}\mybibexclude{Moralejo2024_e}
+	      \vspace{0.5 cm}
+
+	\item
+
+	      \fullcite{Moralejo2023_Phytophthora_e}\mybibexclude{Moralejo2023_Phytophthora_e}
+	      \vspace{0.5 cm}
+	\item À. Giménez-Romero, M. A. Matías and C. M. Duarte, ``A
+	      comprehensive dataset on global coral reefs size and geometry''
+	      (Submitted for publication)
+\end{enumerate}
+
+\vspace{0.5 cm}
+
+{\LARGE{\textbf{Technical reports}}}
+
+\vspace{0.5 cm}
+
+\begin{enumerate}
+	\item D. P. Bebber, S. J. Gurr, A. Karley, L. M. Lozada-Ellison,
+	      T. Beale and À. Giménez-Romero, ``Interdisciplinary Analysis of
+	      Plant Health Threats to Arable and Horticultural Crops in
+	      Scotland'',
+	      \href{https://doi.org/10.5281/zenodo.11613888}{Scotland's Centre
+		      of Expertise
+		      for Plant Health (2024)}
+\end{enumerate}
+
+\vspace{0.5 cm}
+
+{\LARGE{\textbf{Scientific dissemination}}}
+
+\vspace{0.5 cm}
+
+\begin{enumerate}
+	\item À. Giménez-Romero and M. A. Matías, ``Descifrando
+	      el
+	      fondo marino desde el espacio con los ojos de la
+	      inteligencia artificial'',
+
+	      \href{https://theconversation.com/descifrando-el-fondo-marino-desde-el-espacio-con-los-ojos-de-la-inteligencia-artificial-219879}{The
+		      Conversation (2023)}
+	      \vspace{0.5 cm}
+
+	\item À. Giménez-Romero, E. Moralejo and M. A.
+	      Matías, ``Xylella fastidiosa y el cambio climático
+	      amenazan la viticultura
+	      europea: hemos calculado cuánto'',
+
+	      \href{https://theconversation.com/xylella-fastidiosa-y-el-cambio-climatico-amenazan-la-viticultura-europea-hemos-calculado-cuanto-229446}{The
+		      Conversation (2024)}
+
+\end{enumerate}
+
+\cleardoublepage % Start the following content on a new page
+
+\mainmatter % Use Arabic page numbering style
+\pagestyle{fancy} % Enable default headers and footers again
+
+%----------------------------------------------------------------------------------------
+%	PART I: Introduction
+%----------------------------------------------------------------------------------------
+% {
+% \hypersetup{hidelinks}
+% \part{Introduction}
+% }
+
+%----------------------------------------------------------------------------------------
+%	Introduction
+%----------------------------------------------------------------------------------------
+\chapterimage{biodiversity.pdf}
+\chapterspaceabove{6.75cm}
+\chapterspacebelow{7.25cm}
+
+\chapter{Introduction}\label{ch:introduction}
+\input{Chapters/Introduction.tex}
+
+%----------------------------------------------------------------------------------------
+%	Scientific background
+%----------------------------------------------------------------------------------------
+\chapterimage{models_ecology.pdf}
+\chapterspaceabove{6.75cm}
+\chapterspacebelow{7.25cm}
+
+\chapter{Scientific background}\label{ch:background}
+\input{Chapters/Models.tex}
+
+%----------------------------------------------------------------------------------------
+%	PART II: Modeling parasite-produced marine diseases
+%----------------------------------------------------------------------------------------
+{
+	\hypersetup{hidelinks}
+	\part{Parasite-produced marine diseases}\label{part:nacras}
+}
+\input{Chapters/Summary_part_II.tex}
+
+%----------------------------------------------------------------------------------------
+%	Modeling parasite-produced marine diseases: The case of the mass
+%   mortality event of Pinna nobilis
+%----------------------------------------------------------------------------------------
+\chapterimage{nacra.pdf}
+\chapterspaceabove{7.75cm}
+\chapterspacebelow{7.25cm}
+
+\chapter{The case of the mass mortality event of \textit{Pinna
+	  nobilis}}\label{ch:nacras_I}
+\input{Chapters/Nacras_I.tex}
+
+%----------------------------------------------------------------------------------------
+%	Spatial effects in parasite-induced marine diseases of immobile hosts
+%----------------------------------------------------------------------------------------
+\chapterimage{nacra2.pdf}
+\chapterspaceabove{6.75cm}
+\chapterspacebelow{7.25cm}
+
+\chapter{Spatial effects in parasite-induced marine
+  diseases}\label{ch:nacras_II}
+\input{Chapters/Nacras_II.tex}
+
+%----------------------------------------------------------------------------------------
+%	PART III: Towards more realistic models for Xylella fastidiosa spread
+%----------------------------------------------------------------------------------------
+{
+	\hypersetup{hidelinks}
+	\part{Modeling vector-borne plant diseases}\label{part:VBD}
+}
+\input{Chapters/Summary_part_III.tex}
+
+%----------------------------------------------------------------------------------------
+%	Vector-borne diseases with non-stationary vector populations: the case
+%   of growing and decaying populations
+%----------------------------------------------------------------------------------------
+\chapterimage{olivar_tramuntana.pdf}
+\chapterspaceabove{6.75cm}
+\chapterspacebelow{7.25cm}
+
+\chapter{Non-stationary vector populations}\label{ch:xf_PRE}
+\input{Chapters/Xf_PRE.tex}
+
+%----------------------------------------------------------------------------------------
+%	A compartmental model for Xylella fastidiosa diseases with explicit
+%   vector seasonal dynamics
+%----------------------------------------------------------------------------------------
+\chapterimage{almond.pdf}
+\chapterspaceabove{6.75cm}
+\chapterspacebelow{7.25cm}
+
+\chapter{A compartmental model for \textit{Xylella fastidiosa}
+  diseases}\label{ch:xf_phyto}
+\input{Chapters/Xf_phyto.tex}
+
+%----------------------------------------------------------------------------------------
+%	PART IV: Modeling the risk of establishment of vector-borne plant diseases
+%----------------------------------------------------------------------------------------
+{
+	\hypersetup{hidelinks}
+	\part{Modeling the risk of vector-borne plant
+		diseases}\label{part:PD_risk}
+}
+\input{Chapters/Summary_part_IV.tex}
+
+%----------------------------------------------------------------------------------------
+%	Global predictions for the risk of establishment of Pierce’s disease
+%   of grapevines
+%----------------------------------------------------------------------------------------
+\chapterimage{vineyards.pdf}
+\chapterspaceabove{6.75cm}
+\chapterspacebelow{7.25cm}
+
+\chapter{Global predictions for Pierce’s disease risk}\label{ch:commsbio}
+\input{Chapters/Xf_commsbio.tex}
+
+%----------------------------------------------------------------------------------------
+%	Global warming significantly increases the risk of Pierce's disease epidemics
+%   in European vineyards	
+%----------------------------------------------------------------------------------------
+\chapterimage{PD_global_warming.pdf}
+\chapterspaceabove{6.75cm}
+\chapterspacebelow{7.25cm}
+
+\chapter{Pierce's disease risk under global
+  warming}\label{ch:xf_climate_change}
+\input{Chapters/Xf_climate_change.tex}
+
+%----------------------------------------------------------------------------------------
+%	High-resolution climate data reveals increased risk of Pierce's Disease for 
+%   grapevines worldwide	
+%----------------------------------------------------------------------------------------
+\chapterimage{ribeira-sacra.pdf}
+\chapterspaceabove{6.75cm}
+\chapterspacebelow{7.25cm}
+
+\chapter{Pierce's disease risk with high-resolution climate
+  data}\label{ch:xf_high_resolution}
+\input{Chapters/Xf_high_resolution.tex}
+
+%----------------------------------------------------------------------------------------
+%	PART IV: Data-driven methods for global ecological problems
+%----------------------------------------------------------------------------------------
+{
+	\hypersetup{hidelinks}
+	\part{Data-driven methods for global ecological
+		problems}\label{part:data-driven}
+}
+\input{Chapters/Summary_part_V.tex}
+
+%----------------------------------------------------------------------------------------
+%	pH trends and seasonal cycle in the coastal Balearic Sea reconstructed
+%   through machine learning
+%----------------------------------------------------------------------------------------
+\chapterimage{mar.pdf}
+\chapterspaceabove{6.75cm}
+\chapterspacebelow{7.25cm}
+
+\chapter{Reconstructing coastal pH time-series with machine
+  learning}\label{ch:ph}
+\input{Chapters/ph.tex}
+
+%----------------------------------------------------------------------------------------
+%	Mapping the distribution of seagrass meadows from space with deep
+%   convolutional neural networks
+%----------------------------------------------------------------------------------------
+\chapterimage{posidonia-oceanica.pdf}
+\chapterspaceabove{6.75cm}
+\chapterspacebelow{7.25cm}
+
+\chapter{Mapping the distribution of seagrass meadows from
+  space}\label{ch:posidonia}
+\input{Chapters/Posidonia.tex}
+
+%----------------------------------------------------------------------------------------
+%	Universal spatial properties of coral reefs	
+%----------------------------------------------------------------------------------------
+\chapterimage{coral_reefs.pdf}
+\chapterspaceabove{6.75cm}
+\chapterspacebelow{7.25cm}
+
+\chapter{Universal spatial properties of coral reefs}\label{ch:coral_reefs}
+\input{Chapters/Coral_reefs.tex}
+
+%----------------------------------------------------------------------------------------
+%	PART V: Discussion
+%----------------------------------------------------------------------------------------
+{
+	\hypersetup{hidelinks}
+	\part{Discussion}\label{part:discussion}
+}
+
+\chapterimage{}
+\chapterspaceabove{6.75cm}
+\chapterspacebelow{7.25cm}
+
+\chapter{Main contributions}
+\input{Chapters/Main_contributions.tex}
+
+\chapter{General discussion}
+\input{Chapters/Outlook.tex}
+
+\stopcontents[part] % Manually stop the 'part' table of contents here so the previous Part page table of contents doesn't list the following chapters
+
+%----------------------------------------------------------------------------------------
+%	BIBLIOGRAPHY
+%----------------------------------------------------------------------------------------
+
+\chapterimage{} % Chapter heading image
+\chapterspaceabove{2.5cm} % Whitespace from the top of the page to the chapter title on chapter pages
+\chapterspacebelow{2cm} % Amount of vertical whitespace from the top margin to the start of the text on chapter pages
+
+%------------------------------------------------
+
+%\chapter*{Bibliography}
+
+\newpage
+\cleardoublepage
+\phantomsection
+\addcontentsline{toc}{chapter}{\textcolor{ocre}{Bibliography}}
+
+% Set the page headers to display a Bibliography chapter name
+\markboth{\sffamily\tiny\bfseries
+	Bibliography}{\sffamily\tiny\bfseries Bibliography}
+
+\printbibliography[notcategory=fullcited,resetnumbers]
+
+%\section*{Articles}
+%\addcontentsline{toc}{section}{Articles} % Add the Articles subheading to the table of contents
+
+%\printbibliography[heading=bibempty, type=article] % Output article bibliography entries
+
+%\section*{Books}
+%\addcontentsline{toc}{section}{Books} % Add the Books subheading to the table of contents
+
+%\printbibliography[heading=bibempty, type=book] % Output book bibliography entries
+
+%----------------------------------------------------------------------------------------
+%	INDEX
+%----------------------------------------------------------------------------------------
+
+% \cleardoublepage % Make sure the index starts on an odd (right side) page
+% \phantomsection
+% \addcontentsline{toc}{chapter}{\textcolor{ocre}{Index}}
+% % Add an Index heading to the table of contents
+% \printindex % Output the index
+
+%----------------------------------------------------------------------------------------
+%	APPENDICES
+%----------------------------------------------------------------------------------------
+
+\cleardoublepage % Make sure the index starts on an odd (right side) page
+% \phantomsection
+
+\chapterimage{} % Chapter heading image
+\chapterspaceabove{2.5cm} % Whitespace from the top of the page to the chapter title on chapter pages
+\chapterspacebelow{2cm} % Amount of vertical whitespace from the top margin to the start of the text on chapter pages
+
+\begin{appendices}
+
+	% Change the chapter name to Appendix, i.e. "Appendix A: Title", instead of "Chapter A: Title" in the headers
+	\renewcommand{\chaptername}{Appendix}
+
+	% Change the references to sections as Appendix instead of Section
+	\crefname{section}{Appendix}{Appendices}
+
+	%------------------------------------------------
+
+	\chapterimage{}
+	\chapterspaceabove{6.75cm}
+	\chapterspacebelow{7.25cm}
+
+	\chapter{Analysis of the SIRP model}
+	\input{Chapters/Appendix_Nacras.tex}
+
+	%------------------------------------------------
+
+	%------------------------------------------------
+
+	\chapter{Analysis of the SIR-V model and application to Xf
+	  diseases}\label[appendix]{app:VBD}
+	\input{Chapters/Appendix_VBD.tex}
+
+	%------------------------------------------------
+
+	\chapter{Modeling Pierce’s disease risk}\label[appendix]{app:PD_risk}
+	\input{Chapters/Appendix_PD_risk.tex}
+
+	%------------------------------------------------
+
+	\chapter{Nonlinear time-series analysis and reconstruction}
+	\input{Chapters/Appendix_ph.tex}
+
+	%------------------------------------------------
+
+	\chapter{Mapping marine habitats with deep learning}
+	\input{Chapters/Appendix_posidonia.tex}
+
+	%------------------------------------------------
+
+	\chapter{Coral reef macroecological patterns}
+	\input{Chapters/Appendix_coral_reefs.tex}
+
+\end{appendices}
+
+%----------------------------------------------------------------------------------------
+
+\end{document}
